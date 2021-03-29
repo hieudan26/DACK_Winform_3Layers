@@ -1,0 +1,14 @@
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\bin\Debug\netcoreapp3.1\BUS_Management.deps.json
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\bin\Debug\netcoreapp3.1\BUS_Management.dll
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\bin\Debug\netcoreapp3.1\BUS_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\obj\Debug\netcoreapp3.1\BUS_Management.AssemblyInfoInputs.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\obj\Debug\netcoreapp3.1\BUS_Management.AssemblyInfo.cs
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\obj\Debug\netcoreapp3.1\BUS_Management.csproj.CoreCompileInputs.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\obj\Debug\netcoreapp3.1\BUS_Management.dll
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\obj\Debug\netcoreapp3.1\BUS_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\bin\Debug\netcoreapp3.1\DAL_Management.dll
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\bin\Debug\netcoreapp3.1\DTO_Management.dll
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\bin\Debug\netcoreapp3.1\DAL_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\bin\Debug\netcoreapp3.1\DTO_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\obj\Debug\netcoreapp3.1\BUS_Management.csprojAssemblyReference.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\Vehicle management system\obj\Debug\netcoreapp3.1\BUS_Management.csproj.CopyComplete

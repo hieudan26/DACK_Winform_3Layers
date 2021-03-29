@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Vehicle_management_system</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL_Management\DAL_Management.csproj" />
+    <ProjectReference Include="..\DTO_Management\DTO_Management.csproj" />
+  </ItemGroup>
+
+</Project>
