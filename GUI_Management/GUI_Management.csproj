@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3_older">
+      <HintPath>..\..\..\..\Guna IU framework\Bunifu_UI_v1.5.3_older.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\..\Guna IU framework\Guna.UI.dll</HintPath>
     </Reference>
@@ -51,20 +54,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fGuiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGuiXe.Designer.cs">
+      <DependentUpon>fGuiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs">
+    <Compile Include="fQuanLyXeGui.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
+    <Compile Include="fQuanLyXeGui.Designer.cs">
+      <DependentUpon>fQuanLyXeGui.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UC_Intro.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,8 +98,17 @@
     <Compile Include="UC_Signin.Designer.cs">
       <DependentUpon>UC_Signin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fGuiXe.resx">
+      <DependentUpon>fGuiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyXeGui.resx">
+      <DependentUpon>fQuanLyXeGui.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,6 +166,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye_real.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoVinfast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car wash.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_E0422.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vehicle_pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car wash1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,3 +6,11 @@ E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management
 E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\DTO_Management\obj\Debug\DTO_Management.csproj.CoreCompileInputs.cache
 E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\DTO_Management\obj\Debug\DTO_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DoAnCuoiKy_3Layers\Vehicle management system\DTO_Management\obj\Debug\DTO_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\bin\Debug\DTO_Management.exe.config
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\bin\Debug\DTO_Management.exe
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\bin\Debug\DTO_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\obj\Debug\DTO_Management.Properties.Resources.resources
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\obj\Debug\DTO_Management.csproj.GenerateResource.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\obj\Debug\DTO_Management.csproj.CoreCompileInputs.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\obj\Debug\DTO_Management.exe
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DTO_Management\obj\Debug\DTO_Management.pdb

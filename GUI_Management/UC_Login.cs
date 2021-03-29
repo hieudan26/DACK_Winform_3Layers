@@ -64,9 +64,9 @@ namespace GUI_Management
 
                 if (this.accBUS.loginAccount(acc))
                 {
-                    Form test = new Test();
+                    fMain form = new fMain();
                     this.Hide();
-                    test.ShowDialog();
+                    form.ShowDialog();
                     this.Show();
                 }
                 else
