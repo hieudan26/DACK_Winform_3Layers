@@ -40,7 +40,7 @@ namespace GUI_Management
             this.btnText1 = new Guna.UI.WinForms.GunaButton();
             this.btnUpImg1 = new System.Windows.Forms.Button();
             this.btnUpImg2 = new System.Windows.Forms.Button();
-            this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnConfirm = new Guna.UI.WinForms.GunaGradientButton();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox2)).BeginInit();
@@ -209,33 +209,34 @@ namespace GUI_Management
             this.btnUpImg2.UseVisualStyleBackColor = false;
             this.btnUpImg2.Click += new System.EventHandler(this.btnUpImg2_Click);
             // 
-            // gunaGradientButton1
+            // btnConfirm
             // 
-            this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton1.AnimationSpeed = 0.03F;
-            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.Fuchsia;
-            this.gunaGradientButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton1.Font = new System.Drawing.Font("Times New Roman", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = null;
-            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(293, 357);
-            this.gunaGradientButton1.Name = "gunaGradientButton1";
-            this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.OnHoverImage = null;
-            this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.Radius = 17;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(160, 42);
-            this.gunaGradientButton1.TabIndex = 13;
-            this.gunaGradientButton1.Text = "CONFIRM";
-            this.gunaGradientButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnConfirm.AnimationHoverSpeed = 0.07F;
+            this.btnConfirm.AnimationSpeed = 0.03F;
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.btnConfirm.BaseColor2 = System.Drawing.Color.Fuchsia;
+            this.btnConfirm.BorderColor = System.Drawing.Color.Black;
+            this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnConfirm.FocusedColor = System.Drawing.Color.Empty;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Image = null;
+            this.btnConfirm.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnConfirm.Location = new System.Drawing.Point(293, 357);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnConfirm.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnConfirm.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnConfirm.OnHoverImage = null;
+            this.btnConfirm.OnPressedColor = System.Drawing.Color.Black;
+            this.btnConfirm.Radius = 17;
+            this.btnConfirm.Size = new System.Drawing.Size(160, 42);
+            this.btnConfirm.TabIndex = 13;
+            this.btnConfirm.Text = "CONFIRM";
+            this.btnConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // fGuiXe
             // 
@@ -243,7 +244,7 @@ namespace GUI_Management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(765, 411);
-            this.Controls.Add(this.gunaGradientButton1);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnUpImg2);
             this.Controls.Add(this.btnUpImg1);
             this.Controls.Add(this.btnText1);
@@ -280,6 +281,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaButton btnText1;
         private System.Windows.Forms.Button btnUpImg1;
         private System.Windows.Forms.Button btnUpImg2;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        private Guna.UI.WinForms.GunaGradientButton btnConfirm;
     }
 }

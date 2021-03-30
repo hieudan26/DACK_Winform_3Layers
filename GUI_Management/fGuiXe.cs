@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_Management;
+using DTO_Management;
 
 namespace GUI_Management
 {
     public partial class fGuiXe : Form
     {
+        vehicleBUS vehBUS = new vehicleBUS();
         public fGuiXe()
         {
             InitializeComponent();
@@ -77,6 +81,33 @@ namespace GUI_Management
             else
             {
                 MessageBox.Show("Can't add image, pls select type of vehicle", "Upload Image", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if (this.picBox1.Image == null || this.picBox2.Image == null)
+            {
+                MessageBox.Show("Can't insert new vehicle if you don't upload your image", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int type = this.cbLoaiXe.SelectedIndex;
+                
+                MemoryStream pic1 = new MemoryStream();
+                this.picBox1.Image.Save(pic1, this.picBox1.Image.RawFormat);
+
+                MemoryStream pic2 = new MemoryStream();
+                this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
+                vehicleDTO vehDTO = new vehicleDTO(0, type, pic1, pic2);
+                if (this.vehBUS.insertVehicle(vehDTO))
+                {
+                    MessageBox.Show("Successfully~~");
+                }
+                else
+                {
+                    MessageBox.Show("Unsuccessfully~~");
+                }
             }
         }
     }
