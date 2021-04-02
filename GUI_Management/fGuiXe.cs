@@ -26,6 +26,7 @@ namespace GUI_Management
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            form.pnlMove.Visible = false;
         }
 
         private void fGuiXe_Load(object sender, EventArgs e)

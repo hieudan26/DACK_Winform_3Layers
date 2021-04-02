@@ -61,10 +61,11 @@ namespace GUI_Management
             this.gunaShadowPanel1.Controls.Add(this.pictureBox1);
             this.gunaShadowPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaShadowPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaShadowPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
             this.gunaShadowPanel1.Radius = 2;
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(242, 559);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(182, 454);
             this.gunaShadowPanel1.TabIndex = 0;
             // 
             // btnExit
@@ -80,14 +81,15 @@ namespace GUI_Management
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(103, 504);
+            this.btnExit.Location = new System.Drawing.Point(77, 410);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
             this.btnExit.OnHoverImage = null;
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(57, 31);
+            this.btnExit.Size = new System.Drawing.Size(43, 25);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "X";
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -96,18 +98,20 @@ namespace GUI_Management
             // pnlMove
             // 
             this.pnlMove.BackColor = System.Drawing.Color.LightGray;
-            this.pnlMove.Location = new System.Drawing.Point(29, 226);
+            this.pnlMove.Location = new System.Drawing.Point(22, 184);
+            this.pnlMove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMove.Name = "pnlMove";
-            this.pnlMove.Size = new System.Drawing.Size(5, 47);
+            this.pnlMove.Size = new System.Drawing.Size(4, 38);
             this.pnlMove.TabIndex = 1;
             this.pnlMove.Visible = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(29, 160);
+            this.panel1.Location = new System.Drawing.Point(22, 130);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 5);
+            this.panel1.Size = new System.Drawing.Size(141, 4);
             this.panel1.TabIndex = 1;
             // 
             // btnDoanhThu
@@ -125,7 +129,8 @@ namespace GUI_Management
             this.btnDoanhThu.ForeColor = System.Drawing.Color.Snow;
             this.btnDoanhThu.Image = null;
             this.btnDoanhThu.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDoanhThu.Location = new System.Drawing.Point(57, 415);
+            this.btnDoanhThu.Location = new System.Drawing.Point(43, 337);
+            this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDoanhThu.Name = "btnDoanhThu";
             this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btnDoanhThu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(39)))), ((int)(((byte)(205)))));
@@ -134,7 +139,7 @@ namespace GUI_Management
             this.btnDoanhThu.OnHoverImage = null;
             this.btnDoanhThu.OnPressedColor = System.Drawing.Color.Black;
             this.btnDoanhThu.Radius = 5;
-            this.btnDoanhThu.Size = new System.Drawing.Size(160, 47);
+            this.btnDoanhThu.Size = new System.Drawing.Size(120, 38);
             this.btnDoanhThu.TabIndex = 4;
             this.btnDoanhThu.Text = "DOANH THU";
             this.btnDoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -155,7 +160,8 @@ namespace GUI_Management
             this.btnBaiXe.ForeColor = System.Drawing.Color.Snow;
             this.btnBaiXe.Image = null;
             this.btnBaiXe.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBaiXe.Location = new System.Drawing.Point(57, 319);
+            this.btnBaiXe.Location = new System.Drawing.Point(43, 259);
+            this.btnBaiXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBaiXe.Name = "btnBaiXe";
             this.btnBaiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btnBaiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(39)))), ((int)(((byte)(205)))));
@@ -164,7 +170,7 @@ namespace GUI_Management
             this.btnBaiXe.OnHoverImage = null;
             this.btnBaiXe.OnPressedColor = System.Drawing.Color.Black;
             this.btnBaiXe.Radius = 5;
-            this.btnBaiXe.Size = new System.Drawing.Size(160, 47);
+            this.btnBaiXe.Size = new System.Drawing.Size(120, 38);
             this.btnBaiXe.TabIndex = 3;
             this.btnBaiXe.Text = "BÃI XE";
             this.btnBaiXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -185,7 +191,8 @@ namespace GUI_Management
             this.btnGuiXe.ForeColor = System.Drawing.Color.Snow;
             this.btnGuiXe.Image = null;
             this.btnGuiXe.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnGuiXe.Location = new System.Drawing.Point(57, 226);
+            this.btnGuiXe.Location = new System.Drawing.Point(43, 184);
+            this.btnGuiXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuiXe.Name = "btnGuiXe";
             this.btnGuiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btnGuiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(39)))), ((int)(((byte)(205)))));
@@ -194,7 +201,7 @@ namespace GUI_Management
             this.btnGuiXe.OnHoverImage = null;
             this.btnGuiXe.OnPressedColor = System.Drawing.Color.Black;
             this.btnGuiXe.Radius = 5;
-            this.btnGuiXe.Size = new System.Drawing.Size(160, 47);
+            this.btnGuiXe.Size = new System.Drawing.Size(120, 38);
             this.btnGuiXe.TabIndex = 1;
             this.btnGuiXe.Text = "GỬI XE";
             this.btnGuiXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -203,9 +210,10 @@ namespace GUI_Management
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI_Management.Properties.Resources.logoVinfast;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -214,17 +222,19 @@ namespace GUI_Management
             // 
             this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.pnlChildForm.Controls.Add(this.pictureBox2);
-            this.pnlChildForm.Location = new System.Drawing.Point(242, 0);
+            this.pnlChildForm.Location = new System.Drawing.Point(182, 0);
+            this.pnlChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(766, 462);
+            this.pnlChildForm.Size = new System.Drawing.Size(574, 375);
             this.pnlChildForm.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GUI_Management.Properties.Resources.Loading;
-            this.pictureBox2.Location = new System.Drawing.Point(149, 99);
+            this.pictureBox2.Location = new System.Drawing.Point(112, 80);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(472, 269);
+            this.pictureBox2.Size = new System.Drawing.Size(354, 219);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -236,9 +246,10 @@ namespace GUI_Management
             this.gunaGradient2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
-            this.gunaGradient2Panel1.Location = new System.Drawing.Point(242, 459);
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(182, 373);
+            this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(766, 100);
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(574, 81);
             this.gunaGradient2Panel1.TabIndex = 4;
             // 
             // label1
@@ -246,22 +257,24 @@ namespace GUI_Management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.label1.Location = new System.Drawing.Point(150, 19);
+            this.label1.Location = new System.Drawing.Point(112, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 72);
+            this.label1.Size = new System.Drawing.Size(377, 57);
             this.label1.TabIndex = 18;
             this.label1.Text = "QUẢN LÝ XE GỬI";
             // 
             // fQuanLyXeGui
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(1008, 559);
+            this.ClientSize = new System.Drawing.Size(756, 454);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.gunaShadowPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fQuanLyXeGui";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -282,14 +295,14 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaGradientButton btnGuiXe;
-        private System.Windows.Forms.Panel pnlMove;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaGradientButton btnDoanhThu;
         private Guna.UI.WinForms.GunaGradientButton btnBaiXe;
-        private System.Windows.Forms.Panel pnlChildForm;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaButton btnExit;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel pnlMove;
+        public System.Windows.Forms.Panel pnlChildForm;
     }
 }
