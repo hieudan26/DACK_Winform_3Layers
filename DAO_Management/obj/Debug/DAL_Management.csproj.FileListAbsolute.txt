@@ -24,3 +24,16 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DAO_Management\
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DAO_Management\obj\Debug\DAL_Management.csproj.CopyComplete
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DAO_Management\obj\Debug\DAO_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\DAO_Management\obj\Debug\DAO_Management.pdb
+D:\HK2N2\WIndow\DACK\DAO_Management\bin\Debug\DAO_Management.exe.config
+D:\HK2N2\WIndow\DACK\DAO_Management\bin\Debug\DAO_Management.exe
+D:\HK2N2\WIndow\DACK\DAO_Management\bin\Debug\DAO_Management.pdb
+D:\HK2N2\WIndow\DACK\DAO_Management\bin\Debug\DTO_Management.exe
+D:\HK2N2\WIndow\DACK\DAO_Management\bin\Debug\DTO_Management.pdb
+D:\HK2N2\WIndow\DACK\DAO_Management\bin\Debug\DTO_Management.exe.config
+D:\HK2N2\WIndow\DACK\DAO_Management\obj\Debug\DAL_Management.csprojAssemblyReference.cache
+D:\HK2N2\WIndow\DACK\DAO_Management\obj\Debug\DAO_Management.Properties.Resources.resources
+D:\HK2N2\WIndow\DACK\DAO_Management\obj\Debug\DAL_Management.csproj.GenerateResource.cache
+D:\HK2N2\WIndow\DACK\DAO_Management\obj\Debug\DAL_Management.csproj.CoreCompileInputs.cache
+D:\HK2N2\WIndow\DACK\DAO_Management\obj\Debug\DAL_Management.csproj.CopyComplete
+D:\HK2N2\WIndow\DACK\DAO_Management\obj\Debug\DAO_Management.exe
+D:\HK2N2\WIndow\DACK\DAO_Management\obj\Debug\DAO_Management.pdb

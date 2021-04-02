@@ -86,9 +86,9 @@ namespace GUI_Management
             }
         }
 
-        public void openForm()
+        public void openForm(vehicleDTO vel)
         {
-            form.openChildForm(new fphiGui());
+            form.openChildForm(new fphiGui(vel));
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace GUI_Management
                 {
                     MessageBox.Show("Successfully~~");
                     //thu phi
-                    openForm();
+                    openForm(vehDTO);
                     //end
                 }
                 else

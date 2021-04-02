@@ -53,5 +53,38 @@ namespace DAL_Management
                 return false;
            // }
         }
+        public bool insertGuiXe(vehicleDTO vel,int type)
+        {
+            ////if (!vel.verifyPass(acc.Username, acc.Password))
+            ////{
+            ////    return false;
+            ////}
+            //else
+            //{
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO GuiXe (IdXe, type, NgayGui)" +
+         "VALUES (@IdXe, @type,@NgayGui)", this.getConnection);
+
+                cmd.Parameters.Add("@IdXe", SqlDbType.Int).Value = vel.ID;
+                cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
+                cmd.Parameters.Add("@NgayGui", SqlDbType.DateTime).Value = DateTime.Now;
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
+            // }
+        }
+
     }
 }
