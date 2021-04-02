@@ -218,7 +218,7 @@ namespace GUI_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
             this.Controls.Add(this.Captcha);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

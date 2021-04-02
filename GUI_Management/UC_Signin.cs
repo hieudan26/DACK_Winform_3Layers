@@ -86,7 +86,8 @@ namespace GUI_Management
             this.Visible = false;
             f.btnSignIn.BaseColor1 = Color.LightPink;
             f.btnSignIn.BaseColor2 = Color.LightBlue;
-            f.btnSignIn.BorderColor = Color.Black;
+            f.btnSignIn.BorderColor = Color.White;
+            f.btnSignIn.ForeColor = Color.White;
             this.txtUser.Text = "";
             this.txtPass.Text = "";
             this.txtConfirmPass.Text = "";

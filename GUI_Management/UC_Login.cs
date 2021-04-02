@@ -149,9 +149,10 @@ namespace GUI_Management
             this.txtPassNew.Text = "";
             this.txtPassCurr.Text = "";
             this.Visible = false;
-            f.btnLogIn.BaseColor1 = Color.LightGreen;
+            f.btnLogIn.BaseColor1 = Color.Magenta;
             f.btnLogIn.BaseColor2 = Color.DeepSkyBlue;
-            f.btnLogIn.BorderColor = Color.Black;
+            f.btnLogIn.BorderColor = Color.White;
+            f.btnLogIn.ForeColor = Color.White;
         }
 
         Form1 f;

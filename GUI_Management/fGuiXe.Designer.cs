@@ -48,15 +48,17 @@ namespace GUI_Management
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Red;
-            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.BackColor = System.Drawing.Color.DarkGray;
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(3, 3);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(55, 28);
+            this.btnExit.Size = new System.Drawing.Size(33, 30);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
+            this.btnExit.MouseHover += new System.EventHandler(this.btnExit_MouseHover);
             // 
             // flowLayoutPanel1
             // 
@@ -70,11 +72,11 @@ namespace GUI_Management
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Salmon;
-            this.label1.Location = new System.Drawing.Point(281, 35);
+            this.label1.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.label1.Location = new System.Drawing.Point(417, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 67);
+            this.label1.Size = new System.Drawing.Size(244, 95);
             this.label1.TabIndex = 2;
             this.label1.Text = "GỬI XE";
             // 
@@ -82,8 +84,8 @@ namespace GUI_Management
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.label2.Location = new System.Drawing.Point(227, 108);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(67, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 23);
             this.label2.TabIndex = 3;
@@ -92,7 +94,7 @@ namespace GUI_Management
             // cbLoaiXe
             // 
             this.cbLoaiXe.BackColor = System.Drawing.Color.Transparent;
-            this.cbLoaiXe.BaseColor = System.Drawing.Color.LightGray;
+            this.cbLoaiXe.BaseColor = System.Drawing.Color.WhiteSmoke;
             this.cbLoaiXe.BorderColor = System.Drawing.Color.Silver;
             this.cbLoaiXe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbLoaiXe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -104,7 +106,7 @@ namespace GUI_Management
             "Xe Đạp",
             "Xe Motor",
             "Xe Hơi/Oto"});
-            this.cbLoaiXe.Location = new System.Drawing.Point(327, 105);
+            this.cbLoaiXe.Location = new System.Drawing.Point(167, 83);
             this.cbLoaiXe.Name = "cbLoaiXe";
             this.cbLoaiXe.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbLoaiXe.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -115,10 +117,10 @@ namespace GUI_Management
             // 
             // picBox1
             // 
-            this.picBox1.BaseColor = System.Drawing.Color.LightCyan;
-            this.picBox1.Location = new System.Drawing.Point(28, 165);
+            this.picBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.picBox1.Location = new System.Drawing.Point(20, 173);
             this.picBox1.Name = "picBox1";
-            this.picBox1.Size = new System.Drawing.Size(120, 101);
+            this.picBox1.Size = new System.Drawing.Size(120, 108);
             this.picBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox1.TabIndex = 6;
             this.picBox1.TabStop = false;
@@ -126,10 +128,10 @@ namespace GUI_Management
             // 
             // picBox2
             // 
-            this.picBox2.BaseColor = System.Drawing.Color.LightCyan;
-            this.picBox2.Location = new System.Drawing.Point(468, 165);
+            this.picBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.picBox2.Location = new System.Drawing.Point(460, 173);
             this.picBox2.Name = "picBox2";
-            this.picBox2.Size = new System.Drawing.Size(120, 101);
+            this.picBox2.Size = new System.Drawing.Size(120, 108);
             this.picBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox2.TabIndex = 5;
             this.picBox2.TabStop = false;
@@ -139,21 +141,24 @@ namespace GUI_Management
             // 
             this.btnText2.AnimationHoverSpeed = 0.07F;
             this.btnText2.AnimationSpeed = 0.03F;
-            this.btnText2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnText2.BackColor = System.Drawing.Color.Transparent;
+            this.btnText2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
             this.btnText2.BorderColor = System.Drawing.Color.Black;
+            this.btnText2.BorderSize = 1;
             this.btnText2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnText2.FocusedColor = System.Drawing.Color.Empty;
             this.btnText2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnText2.ForeColor = System.Drawing.Color.White;
             this.btnText2.Image = null;
             this.btnText2.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnText2.Location = new System.Drawing.Point(468, 263);
+            this.btnText2.Location = new System.Drawing.Point(460, 278);
             this.btnText2.Name = "btnText2";
-            this.btnText2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnText2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnText2.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnText2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.btnText2.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnText2.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnText2.OnHoverImage = null;
             this.btnText2.OnPressedColor = System.Drawing.Color.Black;
+            this.btnText2.Radius = 15;
             this.btnText2.Size = new System.Drawing.Size(120, 42);
             this.btnText2.TabIndex = 7;
             this.btnText2.Text = "Text";
@@ -163,21 +168,24 @@ namespace GUI_Management
             // 
             this.btnText1.AnimationHoverSpeed = 0.07F;
             this.btnText1.AnimationSpeed = 0.03F;
-            this.btnText1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnText1.BackColor = System.Drawing.Color.Transparent;
+            this.btnText1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
             this.btnText1.BorderColor = System.Drawing.Color.Black;
+            this.btnText1.BorderSize = 1;
             this.btnText1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnText1.FocusedColor = System.Drawing.Color.Empty;
             this.btnText1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnText1.ForeColor = System.Drawing.Color.White;
             this.btnText1.Image = null;
             this.btnText1.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnText1.Location = new System.Drawing.Point(28, 263);
+            this.btnText1.Location = new System.Drawing.Point(20, 278);
             this.btnText1.Name = "btnText1";
-            this.btnText1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnText1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnText1.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnText1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.btnText1.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnText1.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnText1.OnHoverImage = null;
             this.btnText1.OnPressedColor = System.Drawing.Color.Black;
+            this.btnText1.Radius = 15;
             this.btnText1.Size = new System.Drawing.Size(120, 42);
             this.btnText1.TabIndex = 8;
             this.btnText1.Text = "Text";
@@ -185,9 +193,9 @@ namespace GUI_Management
             // 
             // btnUpImg1
             // 
-            this.btnUpImg1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnUpImg1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btnUpImg1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpImg1.Location = new System.Drawing.Point(191, 193);
+            this.btnUpImg1.Location = new System.Drawing.Point(183, 208);
             this.btnUpImg1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpImg1.Name = "btnUpImg1";
             this.btnUpImg1.Size = new System.Drawing.Size(116, 49);
@@ -198,9 +206,9 @@ namespace GUI_Management
             // 
             // btnUpImg2
             // 
-            this.btnUpImg2.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnUpImg2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btnUpImg2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpImg2.Location = new System.Drawing.Point(631, 194);
+            this.btnUpImg2.Location = new System.Drawing.Point(627, 208);
             this.btnUpImg2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpImg2.Name = "btnUpImg2";
             this.btnUpImg2.Size = new System.Drawing.Size(116, 49);
@@ -214,9 +222,10 @@ namespace GUI_Management
             this.btnConfirm.AnimationHoverSpeed = 0.07F;
             this.btnConfirm.AnimationSpeed = 0.03F;
             this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.btnConfirm.BaseColor2 = System.Drawing.Color.Fuchsia;
+            this.btnConfirm.BaseColor1 = System.Drawing.Color.Magenta;
+            this.btnConfirm.BaseColor2 = System.Drawing.Color.DeepSkyBlue;
             this.btnConfirm.BorderColor = System.Drawing.Color.Black;
+            this.btnConfirm.BorderSize = 2;
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirm.FocusedColor = System.Drawing.Color.Empty;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,13 +234,13 @@ namespace GUI_Management
             this.btnConfirm.ImageSize = new System.Drawing.Size(20, 20);
             this.btnConfirm.Location = new System.Drawing.Point(293, 357);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnConfirm.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnConfirm.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnConfirm.OnHoverBaseColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.btnConfirm.OnHoverBaseColor2 = System.Drawing.Color.Magenta;
+            this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnConfirm.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnConfirm.OnHoverImage = null;
             this.btnConfirm.OnPressedColor = System.Drawing.Color.Black;
-            this.btnConfirm.Radius = 17;
+            this.btnConfirm.Radius = 15;
             this.btnConfirm.Size = new System.Drawing.Size(160, 42);
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "CONFIRM";
@@ -242,7 +251,7 @@ namespace GUI_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(765, 411);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnUpImg2);
