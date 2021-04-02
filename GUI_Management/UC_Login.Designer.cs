@@ -80,7 +80,7 @@ namespace GUI_Management
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label1);
@@ -247,7 +247,7 @@ namespace GUI_Management
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.label6);
@@ -427,7 +427,7 @@ namespace GUI_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(110)))), ((int)(((byte)(114)))));
             this.Controls.Add(this.tabControl1);
             this.Name = "UC_Login";
             this.Size = new System.Drawing.Size(484, 450);

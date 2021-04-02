@@ -50,3 +50,4 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\obj\Debug\GUI_Management.fQuanLyXeGui.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\obj\Debug\GUI_Management.fGuiXe.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\bin\Debug\Bunifu_UI_v1.5.3_older.dll
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\obj\Debug\GUI_Management.fphiGui.resources

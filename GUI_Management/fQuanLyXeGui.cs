@@ -25,19 +25,25 @@ namespace GUI_Management
             this.pnlMove.Top = this.btnGuiXe.Top;
             //end panel move
 
-            this.openChildForm(new fGuiXe());
+            //border change color
+            this.btnGuiXe.BorderColor = Color.Black;
+            this.btnBaiXe.BorderColor = Color.White;
+            this.btnDoanhThu.BorderColor = Color.White;
+            //end
+
+            this.openChildForm(new fGuiXe(this));
         }
 
-        private void btnPhiGui_Click(object sender, EventArgs e)
-        {
-            //panel move
-            this.pnlMove.Visible = true;
-            this.pnlMove.Height = this.btnPhiGui.Height;
-            this.pnlMove.Top = this.btnPhiGui.Top;
-            //end panel move
+        //private void btnPhiGui_Click(object sender, EventArgs e)
+        //{
+        //    //panel move
+        //    this.pnlMove.Visible = true;
+        //    this.pnlMove.Height = this.btnPhiGui.Height;
+        //    this.pnlMove.Top = this.btnPhiGui.Top;
+        //    //end panel move
 
-
-        }
+        //    this.openChildForm(new fphiGui());
+        //}
 
         private void btnBaiXe_Click(object sender, EventArgs e)
         {
@@ -47,7 +53,11 @@ namespace GUI_Management
             this.pnlMove.Top = this.btnBaiXe.Top;
             //end panel move
 
-
+            //border change color
+            this.btnGuiXe.BorderColor = Color.White;
+            this.btnBaiXe.BorderColor = Color.Black;
+            this.btnDoanhThu.BorderColor = Color.White;
+            //end
         }
 
         private void btnDoanhThu_Click(object sender, EventArgs e)
@@ -58,12 +68,16 @@ namespace GUI_Management
             this.pnlMove.Top = this.btnDoanhThu.Top;
             //end panel move
 
-
+            //border change color
+            this.btnGuiXe.BorderColor = Color.White;
+            this.btnBaiXe.BorderColor = Color.White;
+            this.btnDoanhThu.BorderColor = Color.Black;
+            //end
         }
 
         //open child form
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (this.activeForm != null)
             {
@@ -79,5 +93,20 @@ namespace GUI_Management
             childForm.Show();
         }
         //end
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gunaCirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -16,9 +16,11 @@ namespace GUI_Management
     public partial class fGuiXe : Form
     {
         vehicleBUS vehBUS = new vehicleBUS();
-        public fGuiXe()
+        fQuanLyXeGui form;
+        public fGuiXe(fQuanLyXeGui Form)
         {
             InitializeComponent();
+            this.form = Form;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -84,6 +86,11 @@ namespace GUI_Management
             }
         }
 
+        public void openForm()
+        {
+            form.openChildForm(new fphiGui());
+        }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             if (this.picBox1.Image == null || this.picBox2.Image == null)
@@ -103,12 +110,28 @@ namespace GUI_Management
                 if (this.vehBUS.insertVehicle(vehDTO))
                 {
                     MessageBox.Show("Successfully~~");
+                    //thu phi
+                    openForm();
+                    //end
                 }
                 else
                 {
                     MessageBox.Show("Unsuccessfully~~");
                 }
+                
             }
+        }
+
+        private void btnExit_MouseHover(object sender, EventArgs e)
+        {
+            this.btnExit.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.ForeColor = Color.White;
+        }
+
+        private void btnExit_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnExit.BackColor = Color.DarkGray;
+            this.btnExit.ForeColor = Color.Black;
         }
     }
 }
