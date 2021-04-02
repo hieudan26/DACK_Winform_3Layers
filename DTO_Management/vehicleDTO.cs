@@ -35,7 +35,6 @@ namespace DTO_Management
             this.bImg1 = img1;
             this.bImg2 = img2;
         }
-
         ~vehicleDTO() { }
     }
 }

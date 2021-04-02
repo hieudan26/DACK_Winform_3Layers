@@ -51,3 +51,30 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\obj\Debug\GUI_Management.fGuiXe.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\bin\Debug\Bunifu_UI_v1.5.3_older.dll
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_\GUI_Management\obj\Debug\GUI_Management.fphiGui.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\GUI_Management.exe.config
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\GUI_Management.exe
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\GUI_Management.pdb
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\BUS_Management.exe
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DTO_Management.exe
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DAO_Management.exe
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\BUS_Management.pdb
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\BUS_Management.exe.config
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DTO_Management.pdb
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DTO_Management.exe.config
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DAO_Management.pdb
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DAO_Management.exe.config
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.csprojAssemblyReference.cache
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fGuiXe.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fMain.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.Form1.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fphiGui.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fQuanLyXeGui.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.Properties.Resources.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.UC_Intro.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.UC_Login.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.UC_Signin.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.csproj.GenerateResource.cache
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.csproj.CoreCompileInputs.cache
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.csproj.CopyComplete
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.exe
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.pdb

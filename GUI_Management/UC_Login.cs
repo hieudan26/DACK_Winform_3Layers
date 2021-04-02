@@ -153,6 +153,7 @@ namespace GUI_Management
             f.btnLogIn.BaseColor2 = Color.DeepSkyBlue;
             f.btnLogIn.BorderColor = Color.White;
             f.btnLogIn.ForeColor = Color.White;
+            
         }
 
         Form1 f;
