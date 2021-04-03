@@ -16,15 +16,19 @@ namespace GUI_Management
     {
         vehicleDTO vel = new vehicleDTO();
         vehicleBUS vehBUS = new vehicleBUS();
+        //fQuanLyXeGui formQuanLyXeGui;
+
         public fphiGui(vehicleDTO Vel)
         {
             InitializeComponent();
             this.vel = Vel;
+            //this.formQuanLyXeGui = fQuanLy;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            //this.formQuanLyXeGui.pnlMove.Visible = false;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -50,14 +54,16 @@ namespace GUI_Management
         }
         private void UpdatePhi()
         {
-            this.labelGio.Text = "Giá theo giờ:   " + phiGuiDTO.PhiGio;
-            this.labelNgay.Text = "Giá theo ngày:   " + phiGuiDTO.PhiNgay;
-            this.labelTuan.Text = "Giá theo tuần:   " + phiGuiDTO.PhiTuan;
-            this.labelThang.Text = "Giá theo tháng:   " + phiGuiDTO.PhiThang;
+            this.labelGio.Text = "Giá theo giờ:       ..........." + phiGuiDTO.PhiGio + " VND";
+            this.labelNgay.Text = "Giá theo ngày:    ..........." + phiGuiDTO.PhiNgay + " VND";
+            this.labelTuan.Text = "Giá theo tuần:     ..........." + phiGuiDTO.PhiTuan + " VND";
+            this.labelThang.Text = "Giá theo tháng:   ..........." + phiGuiDTO.PhiThang + " VND";
         }
         private void fphiGui_Load(object sender, EventArgs e)
         {
-            phiGuiBUS.UpdatePhi();
+            DateTime day = DateTime.Now;
+            int thu = (int)day.DayOfWeek;
+            phiGuiBUS.UpdatePhi(thu);
             this.UpdatePhi();
         }
     }

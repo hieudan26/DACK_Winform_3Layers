@@ -20,5 +20,10 @@ namespace BUS_Management
         {
             return Vehicle.insertGuiXe(vel, type);
         }
+
+        public int countVehicle(int type)
+        {
+            return Vehicle.countVehicle(type);
+        }
     }
 }

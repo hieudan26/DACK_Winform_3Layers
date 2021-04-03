@@ -16,17 +16,17 @@ namespace GUI_Management
     public partial class fGuiXe : Form
     {
         vehicleBUS vehBUS = new vehicleBUS();
-        fQuanLyXeGui form;
+        fQuanLyXeGui formQuanLyXeGui;
         public fGuiXe(fQuanLyXeGui Form)
         {
             InitializeComponent();
-            this.form = Form;
+            this.formQuanLyXeGui = Form;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            form.pnlMove.Visible = false;
+            this.formQuanLyXeGui.pnlMove.Visible = false;
         }
 
         private void fGuiXe_Load(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace GUI_Management
 
         public void openForm(vehicleDTO vel)
         {
-            form.openChildForm(new fphiGui(vel));
+            this.formQuanLyXeGui.openChildForm(new fphiGui(vel));
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

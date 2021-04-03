@@ -34,7 +34,6 @@ namespace GUI_Management
             this.btnSign = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ImgBtn2 = new Guna.UI.WinForms.GunaImageButton();
             this.ImgBtn1 = new Guna.UI.WinForms.GunaImageButton();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@ namespace GUI_Management
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ImgBtn2 = new Guna.UI.WinForms.GunaImageButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -113,31 +113,17 @@ namespace GUI_Management
             this.panel1.Size = new System.Drawing.Size(451, 196);
             this.panel1.TabIndex = 14;
             // 
-            // ImgBtn2
-            // 
-            this.ImgBtn2.BackColor = System.Drawing.Color.Black;
-            this.ImgBtn2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.ImgBtn2.Image = null;
-            this.ImgBtn2.ImageSize = new System.Drawing.Size(64, 64);
-            this.ImgBtn2.Location = new System.Drawing.Point(417, 153);
-            this.ImgBtn2.Name = "ImgBtn2";
-            this.ImgBtn2.OnHoverImage = null;
-            this.ImgBtn2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.ImgBtn2.Size = new System.Drawing.Size(31, 22);
-            this.ImgBtn2.TabIndex = 16;
-            this.ImgBtn2.Click += new System.EventHandler(this.ImgBtn2_Click);
-            // 
             // ImgBtn1
             // 
             this.ImgBtn1.BackColor = System.Drawing.Color.Black;
             this.ImgBtn1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.ImgBtn1.Image = null;
+            this.ImgBtn1.Image = global::GUI_Management.Properties.Resources.eye_real;
             this.ImgBtn1.ImageSize = new System.Drawing.Size(64, 64);
-            this.ImgBtn1.Location = new System.Drawing.Point(417, 91);
+            this.ImgBtn1.Location = new System.Drawing.Point(398, 90);
             this.ImgBtn1.Name = "ImgBtn1";
             this.ImgBtn1.OnHoverImage = null;
             this.ImgBtn1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.ImgBtn1.Size = new System.Drawing.Size(31, 22);
+            this.ImgBtn1.Size = new System.Drawing.Size(50, 23);
             this.ImgBtn1.TabIndex = 15;
             this.ImgBtn1.Click += new System.EventHandler(this.ImgBtn1_Click);
             // 
@@ -146,7 +132,7 @@ namespace GUI_Management
             this.txtConfirmPass.Location = new System.Drawing.Point(187, 153);
             this.txtConfirmPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConfirmPass.Name = "txtConfirmPass";
-            this.txtConfirmPass.Size = new System.Drawing.Size(224, 22);
+            this.txtConfirmPass.Size = new System.Drawing.Size(206, 22);
             this.txtConfirmPass.TabIndex = 4;
             this.txtConfirmPass.UseSystemPasswordChar = true;
             // 
@@ -165,7 +151,7 @@ namespace GUI_Management
             this.txtPass.Location = new System.Drawing.Point(187, 91);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(224, 22);
+            this.txtPass.Size = new System.Drawing.Size(206, 22);
             this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
             // 
@@ -176,7 +162,7 @@ namespace GUI_Management
             this.txtUser.Location = new System.Drawing.Point(187, 32);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(224, 22);
+            this.txtUser.Size = new System.Drawing.Size(206, 22);
             this.txtUser.TabIndex = 1;
             this.txtUser.Text = "Write your username";
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
@@ -213,6 +199,20 @@ namespace GUI_Management
             this.label1.Size = new System.Drawing.Size(186, 56);
             this.label1.TabIndex = 13;
             this.label1.Text = "SIGN IN";
+            // 
+            // ImgBtn2
+            // 
+            this.ImgBtn2.BackColor = System.Drawing.Color.Black;
+            this.ImgBtn2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ImgBtn2.Image = global::GUI_Management.Properties.Resources.eye_real;
+            this.ImgBtn2.ImageSize = new System.Drawing.Size(64, 64);
+            this.ImgBtn2.Location = new System.Drawing.Point(398, 153);
+            this.ImgBtn2.Name = "ImgBtn2";
+            this.ImgBtn2.OnHoverImage = null;
+            this.ImgBtn2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.ImgBtn2.Size = new System.Drawing.Size(50, 23);
+            this.ImgBtn2.TabIndex = 16;
+            this.ImgBtn2.Click += new System.EventHandler(this.ImgBtn2_Click);
             // 
             // UC_Signin
             // 

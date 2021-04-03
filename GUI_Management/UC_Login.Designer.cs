@@ -36,7 +36,6 @@ namespace GUI_Management
             this.lLForgotPass = new System.Windows.Forms.LinkLabel();
             this.btnLog = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ImaBtnShowPass = new Guna.UI.WinForms.GunaImageButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -48,8 +47,6 @@ namespace GUI_Management
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.ImgBtn2 = new Guna.UI.WinForms.GunaImageButton();
-            this.ImgBtn1 = new Guna.UI.WinForms.GunaImageButton();
             this.txtPassNew = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtUserNew = new System.Windows.Forms.TextBox();
@@ -59,6 +56,9 @@ namespace GUI_Management
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.ImaBtnShowPass = new Guna.UI.WinForms.GunaImageButton();
+            this.ImgBtn2 = new Guna.UI.WinForms.GunaImageButton();
+            this.ImgBtn1 = new Guna.UI.WinForms.GunaImageButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -155,20 +155,6 @@ namespace GUI_Management
             this.panel1.Size = new System.Drawing.Size(432, 162);
             this.panel1.TabIndex = 13;
             // 
-            // ImaBtnShowPass
-            // 
-            this.ImaBtnShowPass.BackColor = System.Drawing.Color.Black;
-            this.ImaBtnShowPass.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.ImaBtnShowPass.Image = global::GUI_Management.Properties.Resources.eye_real;
-            this.ImaBtnShowPass.ImageSize = new System.Drawing.Size(64, 64);
-            this.ImaBtnShowPass.Location = new System.Drawing.Point(391, 100);
-            this.ImaBtnShowPass.Name = "ImaBtnShowPass";
-            this.ImaBtnShowPass.OnHoverImage = null;
-            this.ImaBtnShowPass.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.ImaBtnShowPass.Size = new System.Drawing.Size(31, 22);
-            this.ImaBtnShowPass.TabIndex = 12;
-            this.ImaBtnShowPass.Click += new System.EventHandler(this.ImaBtnShowPass_Click);
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -185,7 +171,7 @@ namespace GUI_Management
             this.txtPass.Location = new System.Drawing.Point(122, 100);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(263, 22);
+            this.txtPass.Size = new System.Drawing.Size(249, 22);
             this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
             // 
@@ -207,7 +193,7 @@ namespace GUI_Management
             this.txtUser.Location = new System.Drawing.Point(122, 38);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(263, 22);
+            this.txtUser.Size = new System.Drawing.Size(249, 22);
             this.txtUser.TabIndex = 1;
             this.txtUser.Text = "Write your username";
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
@@ -298,40 +284,12 @@ namespace GUI_Management
             this.panel4.Size = new System.Drawing.Size(432, 192);
             this.panel4.TabIndex = 18;
             // 
-            // ImgBtn2
-            // 
-            this.ImgBtn2.BackColor = System.Drawing.Color.Black;
-            this.ImgBtn2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.ImgBtn2.Image = global::GUI_Management.Properties.Resources.eye_real;
-            this.ImgBtn2.ImageSize = new System.Drawing.Size(64, 64);
-            this.ImgBtn2.Location = new System.Drawing.Point(392, 155);
-            this.ImgBtn2.Name = "ImgBtn2";
-            this.ImgBtn2.OnHoverImage = null;
-            this.ImgBtn2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.ImgBtn2.Size = new System.Drawing.Size(31, 22);
-            this.ImgBtn2.TabIndex = 14;
-            this.ImgBtn2.Click += new System.EventHandler(this.ImgBtn2_Click);
-            // 
-            // ImgBtn1
-            // 
-            this.ImgBtn1.BackColor = System.Drawing.Color.Black;
-            this.ImgBtn1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.ImgBtn1.Image = global::GUI_Management.Properties.Resources.eye_real;
-            this.ImgBtn1.ImageSize = new System.Drawing.Size(64, 64);
-            this.ImgBtn1.Location = new System.Drawing.Point(392, 108);
-            this.ImgBtn1.Name = "ImgBtn1";
-            this.ImgBtn1.OnHoverImage = null;
-            this.ImgBtn1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.ImgBtn1.Size = new System.Drawing.Size(31, 22);
-            this.ImgBtn1.TabIndex = 13;
-            this.ImgBtn1.Click += new System.EventHandler(this.ImgBtn1_Click);
-            // 
             // txtPassNew
             // 
             this.txtPassNew.Location = new System.Drawing.Point(145, 155);
             this.txtPassNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassNew.Name = "txtPassNew";
-            this.txtPassNew.Size = new System.Drawing.Size(241, 22);
+            this.txtPassNew.Size = new System.Drawing.Size(219, 22);
             this.txtPassNew.TabIndex = 6;
             this.txtPassNew.UseSystemPasswordChar = true;
             // 
@@ -352,7 +310,7 @@ namespace GUI_Management
             this.txtUserNew.Location = new System.Drawing.Point(145, 66);
             this.txtUserNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUserNew.Name = "txtUserNew";
-            this.txtUserNew.Size = new System.Drawing.Size(241, 22);
+            this.txtUserNew.Size = new System.Drawing.Size(219, 22);
             this.txtUserNew.TabIndex = 4;
             this.txtUserNew.Text = "Write your username";
             this.txtUserNew.TextChanged += new System.EventHandler(this.txtUserNew_TextChanged);
@@ -374,7 +332,7 @@ namespace GUI_Management
             this.txtPassCurr.Location = new System.Drawing.Point(145, 108);
             this.txtPassCurr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassCurr.Name = "txtPassCurr";
-            this.txtPassCurr.Size = new System.Drawing.Size(241, 22);
+            this.txtPassCurr.Size = new System.Drawing.Size(219, 22);
             this.txtPassCurr.TabIndex = 2;
             this.txtPassCurr.UseSystemPasswordChar = true;
             // 
@@ -385,7 +343,7 @@ namespace GUI_Management
             this.txtUserCurr.Location = new System.Drawing.Point(145, 19);
             this.txtUserCurr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUserCurr.Name = "txtUserCurr";
-            this.txtUserCurr.Size = new System.Drawing.Size(241, 22);
+            this.txtUserCurr.Size = new System.Drawing.Size(219, 22);
             this.txtUserCurr.TabIndex = 1;
             this.txtUserCurr.Text = "Write your username";
             this.txtUserCurr.TextChanged += new System.EventHandler(this.txtUserCurr_TextChanged);
@@ -422,6 +380,48 @@ namespace GUI_Management
             this.label6.Size = new System.Drawing.Size(330, 56);
             this.label6.TabIndex = 17;
             this.label6.Text = "CHANGE INFO";
+            // 
+            // ImaBtnShowPass
+            // 
+            this.ImaBtnShowPass.BackColor = System.Drawing.Color.Black;
+            this.ImaBtnShowPass.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ImaBtnShowPass.Image = global::GUI_Management.Properties.Resources.eye_real;
+            this.ImaBtnShowPass.ImageSize = new System.Drawing.Size(64, 64);
+            this.ImaBtnShowPass.Location = new System.Drawing.Point(377, 100);
+            this.ImaBtnShowPass.Name = "ImaBtnShowPass";
+            this.ImaBtnShowPass.OnHoverImage = null;
+            this.ImaBtnShowPass.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.ImaBtnShowPass.Size = new System.Drawing.Size(52, 22);
+            this.ImaBtnShowPass.TabIndex = 12;
+            this.ImaBtnShowPass.Click += new System.EventHandler(this.ImaBtnShowPass_Click);
+            // 
+            // ImgBtn2
+            // 
+            this.ImgBtn2.BackColor = System.Drawing.Color.Black;
+            this.ImgBtn2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ImgBtn2.Image = global::GUI_Management.Properties.Resources.eye_real;
+            this.ImgBtn2.ImageSize = new System.Drawing.Size(64, 64);
+            this.ImgBtn2.Location = new System.Drawing.Point(370, 155);
+            this.ImgBtn2.Name = "ImgBtn2";
+            this.ImgBtn2.OnHoverImage = null;
+            this.ImgBtn2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.ImgBtn2.Size = new System.Drawing.Size(53, 22);
+            this.ImgBtn2.TabIndex = 14;
+            this.ImgBtn2.Click += new System.EventHandler(this.ImgBtn2_Click);
+            // 
+            // ImgBtn1
+            // 
+            this.ImgBtn1.BackColor = System.Drawing.Color.Black;
+            this.ImgBtn1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ImgBtn1.Image = global::GUI_Management.Properties.Resources.eye_real;
+            this.ImgBtn1.ImageSize = new System.Drawing.Size(64, 64);
+            this.ImgBtn1.Location = new System.Drawing.Point(370, 108);
+            this.ImgBtn1.Name = "ImgBtn1";
+            this.ImgBtn1.OnHoverImage = null;
+            this.ImgBtn1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.ImgBtn1.Size = new System.Drawing.Size(53, 22);
+            this.ImgBtn1.TabIndex = 13;
+            this.ImgBtn1.Click += new System.EventHandler(this.ImgBtn1_Click);
             // 
             // UC_Login
             // 

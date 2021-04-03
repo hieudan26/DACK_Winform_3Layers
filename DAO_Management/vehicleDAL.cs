@@ -21,46 +21,61 @@ namespace DAL_Management
             return table;
         }
 
+        //them object xe
         public bool insertVehicle(vehicleDTO vel)
         {
-            ////if (!vel.verifyPass(acc.Username, acc.Password))
-            ////{
-            ////    return false;
-            ////}
-            //else
-            //{
-                try
-                {
-                    this.openConnection();
+            try
+            {
+                this.openConnection();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (type, img1, img2)" +
-             "VALUES (@type, @img1,@img2)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (type, img1, img2)" +
+            "VALUES (@type, @img1,@img2)", this.getConnection);
 
-                    cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
-                    cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
-                    cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();
-                if (cmd.ExecuteNonQuery() == 1)
-                        return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: ", ex.Message);
-                }
-                finally
-                {
-                    this.closeConnection();
-                }
-                return false;
-           // }
+                cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
+                cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
+                cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();
+            if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
         }
+
+        //dem loai xe
+        public int countVehicle(int type)
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from Vehicle where type = " + type, this.getConnection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return (int)table.Rows[0]["SoLuong"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return -1;
+        }
+
+        //can nhac
         public bool insertGuiXe(vehicleDTO vel,int type)
         {
-            ////if (!vel.verifyPass(acc.Username, acc.Password))
-            ////{
-            ////    return false;
-            ////}
-            //else
-            //{
             try
             {
                 this.openConnection();
@@ -83,7 +98,6 @@ namespace DAL_Management
                 this.closeConnection();
             }
             return false;
-            // }
         }
 
     }
