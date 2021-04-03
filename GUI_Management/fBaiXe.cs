@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_Management;
 
 namespace GUI_Management
 {
     public partial class fBaiXe : Form
     {
         fQuanLyXeGui formQuanLyXeGui;
+        vehicleBUS VehicleBUS = new vehicleBUS();
 
         public fBaiXe(fQuanLyXeGui fQuanLy)
         {
@@ -36,6 +38,39 @@ namespace GUI_Management
         {
             this.btnExit.BackColor = Color.DarkGray;
             this.btnExit.ForeColor = Color.Black;
+        }
+
+        private void fBaiXe_Load(object sender, EventArgs e)
+        {
+            //danh sach xe dap
+            List<int> IDbicycle = VehicleBUS.danhSachID(0);
+            foreach (var item in IDbicycle)
+            {
+                Button btnBike = new Button();
+                btnBike.Text = item.ToString();
+                btnBike.AutoSize = true;
+                this.flpKhuA.Controls.Add(btnBike);
+            }
+
+            //danh sach motor
+            List<int> IDmotor = VehicleBUS.danhSachID(1);
+            foreach(var item in IDmotor)
+            {
+                Button btnMotor = new Button();
+                btnMotor.Text = item.ToString();
+                btnMotor.AutoSize = true;
+                this.flpKhuB.Controls.Add(btnMotor);
+            }
+
+            //danh sach xe hoi
+            List<int> IDcar = VehicleBUS.danhSachID(2);
+            foreach (var item in IDcar)
+            {
+                Button btnCar = new Button();
+                btnCar.Text = item.ToString();
+                btnCar.AutoSize = true;
+                this.flpKhuC.Controls.Add(btnCar    );
+            }
         }
     }
 }

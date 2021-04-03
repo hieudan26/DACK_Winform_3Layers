@@ -32,9 +32,9 @@ namespace GUI_Management
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpKhuA = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpKhuB = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpKhuC = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,29 +78,29 @@ namespace GUI_Management
             this.label1.TabIndex = 4;
             this.label1.Text = "BÃI XE";
             // 
-            // flowLayoutPanel2
+            // flpKhuA
             // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(22, 176);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(212, 201);
-            this.flowLayoutPanel2.TabIndex = 5;
+            this.flpKhuA.AutoScroll = true;
+            this.flpKhuA.Location = new System.Drawing.Point(22, 176);
+            this.flpKhuA.Name = "flpKhuA";
+            this.flpKhuA.Size = new System.Drawing.Size(212, 201);
+            this.flpKhuA.TabIndex = 5;
             // 
-            // flowLayoutPanel3
+            // flpKhuB
             // 
-            this.flowLayoutPanel3.AutoScroll = true;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(266, 176);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(212, 201);
-            this.flowLayoutPanel3.TabIndex = 6;
+            this.flpKhuB.AutoScroll = true;
+            this.flpKhuB.Location = new System.Drawing.Point(266, 176);
+            this.flpKhuB.Name = "flpKhuB";
+            this.flpKhuB.Size = new System.Drawing.Size(212, 201);
+            this.flpKhuB.TabIndex = 6;
             // 
-            // flowLayoutPanel4
+            // flpKhuC
             // 
-            this.flowLayoutPanel4.AutoScroll = true;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(514, 176);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(212, 201);
-            this.flowLayoutPanel4.TabIndex = 7;
+            this.flpKhuC.AutoScroll = true;
+            this.flpKhuC.Location = new System.Drawing.Point(514, 176);
+            this.flpKhuC.Name = "flpKhuC";
+            this.flpKhuC.Size = new System.Drawing.Size(212, 201);
+            this.flpKhuC.TabIndex = 7;
             // 
             // label2
             // 
@@ -170,15 +170,16 @@ namespace GUI_Management
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.flowLayoutPanel4);
-            this.Controls.Add(this.flowLayoutPanel3);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flpKhuC);
+            this.Controls.Add(this.flpKhuB);
+            this.Controls.Add(this.flpKhuA);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fBaiXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fBaiXe";
+            this.Load += new System.EventHandler(this.fBaiXe_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,9 +191,9 @@ namespace GUI_Management
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel flpKhuA;
+        private System.Windows.Forms.FlowLayoutPanel flpKhuB;
+        private System.Windows.Forms.FlowLayoutPanel flpKhuC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

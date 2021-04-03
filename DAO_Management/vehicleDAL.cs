@@ -49,13 +49,73 @@ namespace DAL_Management
         }
 
         //dem loai xe
-        public int countVehicle(int type)
+        public int countVehicleType(int type)
         {
             try
             {
                 this.openConnection();
 
                 SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from Vehicle where type = " + type, this.getConnection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return (int)table.Rows[0]["SoLuong"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return -1;
+        }
+
+        //List vehicle theo ID
+        public List<int> danhSachID(int type)
+        {
+            List<int> lID = new List<int>();
+            try
+            {
+                int soLuong = this.countVehicleType(type);
+
+                if (type != -1 || type != 0)
+                {
+                    this.openConnection();
+
+                    SqlCommand cmd = new SqlCommand("select ID from Vehicle where type = " + type, this.getConnection);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    for (int i = 0; i < soLuong; i++)
+                    {
+                        lID.Add((int)(table.Rows[i]["ID"]));
+                    }
+                }    
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return lID;
+        }
+
+        //dem tong cong
+        public int countVehicleTotal()
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("select count(*) as Total from Vehicle", this.getConnection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
