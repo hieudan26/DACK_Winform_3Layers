@@ -21,6 +21,7 @@ namespace GUI_Management
         public fphiGui(vehicleDTO Vel)
         {
             InitializeComponent();
+
             this.vel = Vel;
             //this.formQuanLyXeGui = fQuanLy;
         }
@@ -33,7 +34,13 @@ namespace GUI_Management
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            vehBUS.insertGuiXe(this.vel, 1);
+            vel.ADDGuiXe(this.cbLoaiGui.SelectedIndex, DateTime.Now);
+            if(vehBUS.insertVehicle(this.vel))
+            {
+                MessageBox.Show("Insert Successfully");
+            }
+            else
+                MessageBox.Show("Insert Failed");
         }
 
         private void btnExit_MouseHover(object sender, EventArgs e)
@@ -62,7 +69,7 @@ namespace GUI_Management
         private void fphiGui_Load(object sender, EventArgs e)
         {
             DateTime day = DateTime.Now;
-            int thu = (int)day.DayOfWeek;
+            int thu = 1;//(int)day.DayOfWeek;
             phiGuiBUS.UpdatePhi(thu);
             this.UpdatePhi();
         }

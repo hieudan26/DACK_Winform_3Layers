@@ -26,7 +26,7 @@ namespace DAL_Management
         public bool UpdatePrice(int thu)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM TienGui where thu = " + thu, this.getConnection);
-            
+           
             DataTable table = this.GetPrice(cmd);
             
             if(table.Rows.Count > 0)
