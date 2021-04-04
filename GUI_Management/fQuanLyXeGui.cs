@@ -58,6 +58,8 @@ namespace GUI_Management
             this.btnBaiXe.BorderColor = Color.Black;
             this.btnDoanhThu.BorderColor = Color.White;
             //end
+
+            this.openChildForm(new fBaiXe(this));
         }
 
         private void btnDoanhThu_Click(object sender, EventArgs e)

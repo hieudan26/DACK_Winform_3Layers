@@ -16,5 +16,24 @@ namespace BUS_Management
         {
             return Vehicle.insertVehicle(vel);
         }
+        public bool insertGuiXe(vehicleDTO vel,int type)
+        {
+            return Vehicle.insertGuiXe(vel, type);
+        }
+
+        public int countVehicleType(int type)
+        {
+            return Vehicle.countVehicleType(type);
+        }
+
+        public int countVehicleTotal()
+        {
+            return Vehicle.countVehicleTotal();
+        }
+
+        public List<int> danhSachID(int type)
+        {
+            return Vehicle.danhSachID(type);
+        }
     }
 }

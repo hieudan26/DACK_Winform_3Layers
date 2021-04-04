@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fBaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBaiXe.Designer.cs">
+      <DependentUpon>fBaiXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="fGuiXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="UC_Signin.Designer.cs">
       <DependentUpon>UC_Signin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fBaiXe.resx">
+      <DependentUpon>fBaiXe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fGuiXe.resx">
       <DependentUpon>fGuiXe.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
