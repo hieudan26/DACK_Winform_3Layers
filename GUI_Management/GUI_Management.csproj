@@ -60,6 +60,12 @@
     <Compile Include="fBaiXe.Designer.cs">
       <DependentUpon>fBaiXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="fdoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdoanhThu.Designer.cs">
+      <DependentUpon>fdoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="fGuiXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="fBaiXe.resx">
       <DependentUpon>fBaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdoanhThu.resx">
+      <DependentUpon>fdoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fGuiXe.resx">
       <DependentUpon>fGuiXe.cs</DependentUpon>
@@ -220,6 +229,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eyes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UP1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

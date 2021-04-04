@@ -35,11 +35,14 @@ namespace GUI_Management
             this.flpKhuA = new System.Windows.Forms.FlowLayoutPanel();
             this.flpKhuB = new System.Windows.Forms.FlowLayoutPanel();
             this.flpKhuC = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbA = new System.Windows.Forms.Label();
+            this.lbB = new System.Windows.Forms.Label();
+            this.lbC = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
+            this.gunaVScrollBar2 = new Guna.UI.WinForms.GunaVScrollBar();
+            this.gunaVScrollBar3 = new Guna.UI.WinForms.GunaVScrollBar();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,60 +83,60 @@ namespace GUI_Management
             // 
             // flpKhuA
             // 
-            this.flpKhuA.AutoScroll = true;
-            this.flpKhuA.Location = new System.Drawing.Point(22, 176);
+            this.flpKhuA.Location = new System.Drawing.Point(28, 184);
             this.flpKhuA.Name = "flpKhuA";
             this.flpKhuA.Size = new System.Drawing.Size(212, 201);
             this.flpKhuA.TabIndex = 5;
             // 
             // flpKhuB
             // 
-            this.flpKhuB.AutoScroll = true;
-            this.flpKhuB.Location = new System.Drawing.Point(266, 176);
+            this.flpKhuB.Location = new System.Drawing.Point(272, 184);
             this.flpKhuB.Name = "flpKhuB";
             this.flpKhuB.Size = new System.Drawing.Size(212, 201);
             this.flpKhuB.TabIndex = 6;
             // 
             // flpKhuC
             // 
-            this.flpKhuC.AutoScroll = true;
-            this.flpKhuC.Location = new System.Drawing.Point(514, 176);
+            this.flpKhuC.Location = new System.Drawing.Point(520, 184);
             this.flpKhuC.Name = "flpKhuC";
             this.flpKhuC.Size = new System.Drawing.Size(212, 201);
             this.flpKhuC.TabIndex = 7;
             // 
-            // label2
+            // lbA
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DeepPink;
-            this.label2.Location = new System.Drawing.Point(67, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 22);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Bãi Xe Khu A";
+            this.lbA.AutoSize = true;
+            this.lbA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbA.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbA.Location = new System.Drawing.Point(49, 149);
+            this.lbA.Name = "lbA";
+            this.lbA.Size = new System.Drawing.Size(123, 24);
+            this.lbA.TabIndex = 8;
+            this.lbA.Text = "Bãi Xe Khu A";
             // 
-            // label3
+            // lbB
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DeepPink;
-            this.label3.Location = new System.Drawing.Point(310, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 22);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Bãi Xe Khu B";
+            this.lbB.AutoSize = true;
+            this.lbB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbB.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbB.Location = new System.Drawing.Point(296, 149);
+            this.lbB.Name = "lbB";
+            this.lbB.Size = new System.Drawing.Size(124, 24);
+            this.lbB.TabIndex = 9;
+            this.lbB.Text = "Bãi Xe Khu B";
             // 
-            // label4
+            // lbC
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DeepPink;
-            this.label4.Location = new System.Drawing.Point(565, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 22);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Bãi Xe Khu C";
+            this.lbC.AutoSize = true;
+            this.lbC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbC.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbC.Location = new System.Drawing.Point(542, 149);
+            this.lbC.Name = "lbC";
+            this.lbC.Size = new System.Drawing.Size(125, 24);
+            this.lbC.TabIndex = 10;
+            this.lbC.Text = "Bãi Xe Khu C";
             // 
             // label5
             // 
@@ -159,17 +162,65 @@ namespace GUI_Management
             this.label6.TabIndex = 12;
             this.label6.Text = "~";
             // 
+            // gunaVScrollBar1
+            // 
+            this.gunaVScrollBar1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaVScrollBar1.LargeChange = 10;
+            this.gunaVScrollBar1.Location = new System.Drawing.Point(246, 184);
+            this.gunaVScrollBar1.Maximum = 100;
+            this.gunaVScrollBar1.Name = "gunaVScrollBar1";
+            this.gunaVScrollBar1.Radius = 2;
+            this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.LavenderBlush;
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(6, 201);
+            this.gunaVScrollBar1.TabIndex = 13;
+            this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.Crimson;
+            this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.LightCoral;
+            this.gunaVScrollBar1.ThumbPressedColor = System.Drawing.Color.MistyRose;
+            // 
+            // gunaVScrollBar2
+            // 
+            this.gunaVScrollBar2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaVScrollBar2.LargeChange = 10;
+            this.gunaVScrollBar2.Location = new System.Drawing.Point(490, 184);
+            this.gunaVScrollBar2.Maximum = 100;
+            this.gunaVScrollBar2.Name = "gunaVScrollBar2";
+            this.gunaVScrollBar2.Radius = 2;
+            this.gunaVScrollBar2.ScrollIdleColor = System.Drawing.Color.GhostWhite;
+            this.gunaVScrollBar2.Size = new System.Drawing.Size(6, 201);
+            this.gunaVScrollBar2.TabIndex = 14;
+            this.gunaVScrollBar2.ThumbColor = System.Drawing.Color.SandyBrown;
+            this.gunaVScrollBar2.ThumbHoverColor = System.Drawing.Color.LightCoral;
+            this.gunaVScrollBar2.ThumbPressedColor = System.Drawing.Color.MistyRose;
+            // 
+            // gunaVScrollBar3
+            // 
+            this.gunaVScrollBar3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaVScrollBar3.LargeChange = 10;
+            this.gunaVScrollBar3.Location = new System.Drawing.Point(738, 184);
+            this.gunaVScrollBar3.Maximum = 100;
+            this.gunaVScrollBar3.Name = "gunaVScrollBar3";
+            this.gunaVScrollBar3.Radius = 2;
+            this.gunaVScrollBar3.ScrollIdleColor = System.Drawing.Color.LightCyan;
+            this.gunaVScrollBar3.Size = new System.Drawing.Size(6, 201);
+            this.gunaVScrollBar3.TabIndex = 15;
+            this.gunaVScrollBar3.ThumbColor = System.Drawing.Color.RoyalBlue;
+            this.gunaVScrollBar3.ThumbHoverColor = System.Drawing.Color.LightCoral;
+            this.gunaVScrollBar3.ThumbPressedColor = System.Drawing.Color.MistyRose;
+            // 
             // fBaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(765, 411);
+            this.Controls.Add(this.gunaVScrollBar3);
+            this.Controls.Add(this.gunaVScrollBar2);
+            this.Controls.Add(this.gunaVScrollBar1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbC);
+            this.Controls.Add(this.lbB);
+            this.Controls.Add(this.lbA);
             this.Controls.Add(this.flpKhuC);
             this.Controls.Add(this.flpKhuB);
             this.Controls.Add(this.flpKhuA);
@@ -194,10 +245,13 @@ namespace GUI_Management
         private System.Windows.Forms.FlowLayoutPanel flpKhuA;
         private System.Windows.Forms.FlowLayoutPanel flpKhuB;
         private System.Windows.Forms.FlowLayoutPanel flpKhuC;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbA;
+        private System.Windows.Forms.Label lbB;
+        private System.Windows.Forms.Label lbC;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
+        private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar2;
+        private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar3;
     }
 }

@@ -134,8 +134,5 @@ namespace DAL_Management
             }
             return -1;
         }
-
-        //can nhac
-
     }
 }

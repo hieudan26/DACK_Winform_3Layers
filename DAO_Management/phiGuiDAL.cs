@@ -44,7 +44,6 @@ namespace DAL_Management
                 MessageBox.Show("Can't get price");
                 return false;
             }    
-               
         }
     }
 }

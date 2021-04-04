@@ -32,33 +32,6 @@ namespace GUI_Management
             //this.formQuanLyXeGui.pnlMove.Visible = false;
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            vel.ADDGuiXe(this.cbLoaiGui.SelectedIndex, DateTime.Now);
-            if(vehBUS.insertVehicle(this.vel))
-            {
-                MessageBox.Show("Insert Successfully");
-            }
-            else
-                MessageBox.Show("Insert Failed");
-        }
-
-        private void btnExit_MouseHover(object sender, EventArgs e)
-        {
-            this.btnExit.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.ForeColor = Color.White;
-        }
-
-        private void btnExit_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnExit.BackColor = Color.DarkGray;
-            this.btnExit.ForeColor = Color.Black;
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
         private void UpdatePhi()
         {
             this.labelGio.Text = "Giá theo giờ:       ..........." + phiGuiDTO.PhiGio + " VND";
@@ -66,12 +39,24 @@ namespace GUI_Management
             this.labelTuan.Text = "Giá theo tuần:     ..........." + phiGuiDTO.PhiTuan + " VND";
             this.labelThang.Text = "Giá theo tháng:   ..........." + phiGuiDTO.PhiThang + " VND";
         }
+
         private void fphiGui_Load(object sender, EventArgs e)
         {
             DateTime day = DateTime.Now;
-            int thu = 1;//(int)day.DayOfWeek;
+            int thu = (int)day.DayOfWeek;
             phiGuiBUS.UpdatePhi(thu);
             this.UpdatePhi();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            vel.ADDGuiXe(this.cbLoaiGui.SelectedIndex, DateTime.Now);
+            if (vehBUS.insertVehicle(this.vel))
+            {
+                MessageBox.Show("Insert Successfully");
+            }
+            else
+                MessageBox.Show("Insert Failed");
         }
     }
 }

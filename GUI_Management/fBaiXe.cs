@@ -40,15 +40,37 @@ namespace GUI_Management
             this.btnExit.ForeColor = Color.Black;
         }
 
+        private Guna.UI.Lib.ScrollBar.PanelScrollHelper vScrollHelper1;
+
         private void fBaiXe_Load(object sender, EventArgs e)
         {
             //danh sach xe dap
             List<int> IDbicycle = VehicleBUS.danhSachID(0);
+
             foreach (var item in IDbicycle)
             {
-                Button btnBike = new Button();
+                vScrollHelper1 = new Guna.UI.Lib.ScrollBar.PanelScrollHelper(this.flpKhuA, this.gunaVScrollBar1, true);
+                
+
+                Guna.UI.WinForms.GunaGradientButton btnBike = new Guna.UI.WinForms.GunaGradientButton();
                 btnBike.Text = item.ToString();
-                btnBike.AutoSize = true;
+
+                //design button
+                btnBike.Width = 130;
+                btnBike.Height = 40;
+                btnBike.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnBike.BaseColor1 = Color.AntiqueWhite;
+                btnBike.BaseColor2 = Color.LightPink;
+                btnBike.Image = null;
+                btnBike.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                btnBike.ForeColor = Color.Black;
+                btnBike.Radius = 3;
+                btnBike.OnHoverBaseColor1 = Color.LightPink;
+                btnBike.OnHoverBaseColor2 = Color.AntiqueWhite;
+                btnBike.BorderSize = 2;
+                btnBike.BorderColor = Color.Black;
+                //end
+
                 this.flpKhuA.Controls.Add(btnBike);
             }
 
@@ -56,9 +78,27 @@ namespace GUI_Management
             List<int> IDmotor = VehicleBUS.danhSachID(1);
             foreach(var item in IDmotor)
             {
-                Button btnMotor = new Button();
+                vScrollHelper1 = new Guna.UI.Lib.ScrollBar.PanelScrollHelper(this.flpKhuB, this.gunaVScrollBar2, true);
+
+                Guna.UI.WinForms.GunaGradientButton btnMotor = new Guna.UI.WinForms.GunaGradientButton();
                 btnMotor.Text = item.ToString();
-                btnMotor.AutoSize = true;
+
+                //design button
+                btnMotor.Width = 130;
+                btnMotor.Height = 40;
+                btnMotor.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnMotor.BaseColor1 = Color.AntiqueWhite;
+                btnMotor.BaseColor2 = Color.LightPink;
+                btnMotor.Image = null;
+                btnMotor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                btnMotor.ForeColor = Color.Black;
+                btnMotor.Radius = 5;
+                btnMotor.OnHoverBaseColor1 = Color.LightPink;
+                btnMotor.OnHoverBaseColor2 = Color.AntiqueWhite;
+                btnMotor.BorderSize = 2;
+                btnMotor.BorderColor = Color.Black;
+                //end
+
                 this.flpKhuB.Controls.Add(btnMotor);
             }
 
@@ -66,10 +106,28 @@ namespace GUI_Management
             List<int> IDcar = VehicleBUS.danhSachID(2);
             foreach (var item in IDcar)
             {
-                Button btnCar = new Button();
+                vScrollHelper1 = new Guna.UI.Lib.ScrollBar.PanelScrollHelper(this.flpKhuC, this.gunaVScrollBar3, true);
+
+                Guna.UI.WinForms.GunaGradientButton btnCar = new Guna.UI.WinForms.GunaGradientButton();
                 btnCar.Text = item.ToString();
-                btnCar.AutoSize = true;
-                this.flpKhuC.Controls.Add(btnCar    );
+
+                //design button
+                btnCar.Width = 130;
+                btnCar.Height = 40;
+                btnCar.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnCar.BaseColor1 = Color.AntiqueWhite;
+                btnCar.BaseColor2 = Color.LightPink;
+                btnCar.Image = null;
+                btnCar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                btnCar.ForeColor = Color.Black;
+                btnCar.Radius = 5;
+                btnCar.OnHoverBaseColor1 = Color.LightPink;
+                btnCar.OnHoverBaseColor2 = Color.AntiqueWhite;
+                btnCar.BorderSize = 2;
+                btnCar.BorderColor = Color.Black;
+                //end
+
+                this.flpKhuC.Controls.Add(btnCar);
             }
         }
     }
