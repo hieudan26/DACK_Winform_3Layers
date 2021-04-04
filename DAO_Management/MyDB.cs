@@ -10,8 +10,12 @@ namespace DAL_Management
 {
     public class MyDB
     {
-        protected SqlConnection con = new SqlConnection(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=DoAnWinF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-    
+        //Dan
+        //protected SqlConnection con = new SqlConnection(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=DoAnWinF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+        //AthonyducThang
+        protected SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DE070V4\D2T;Initial Catalog=DoAnWinF;Integrated Security=True");
+
         protected SqlConnection getConnection
         {
             get { return this.con; }

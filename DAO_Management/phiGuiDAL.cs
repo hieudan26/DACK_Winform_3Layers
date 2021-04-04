@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL_Management;
 using DTO_Management;
-namespace DAO_Management
+
+namespace DAL_Management
 {
     public class phiGuiDAL : MyDB
     {
@@ -21,17 +22,20 @@ namespace DAO_Management
             adapter.Fill(table);
             return table;
         }
+
         public bool UpdatePrice(int thu)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TienGui", this.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TienGui where thu = " + thu, this.getConnection);
+            
             DataTable table = this.GetPrice(cmd);
+            
             if(table.Rows.Count > 0)
             {
-                DataRow Row = table.Rows[thu];
-                int gio = int.Parse(Row[1].ToString());
-                int ngay = int.Parse(Row[2].ToString());
-                int tuan = int.Parse(Row[3].ToString());
-                int thang = int.Parse(Row[4].ToString());
+                //DataRow Row = table.Rows[thu];
+                int gio = int.Parse(table.Rows[0]["gio"].ToString());
+                int ngay = int.Parse(table.Rows[0]["ngay"].ToString());
+                int tuan = int.Parse(table.Rows[0]["tuan"].ToString());
+                int thang = int.Parse(table.Rows[0]["thang"].ToString());
                 phiGuiDTO.Update(gio, ngay, tuan, thang);
                 return true;
             }

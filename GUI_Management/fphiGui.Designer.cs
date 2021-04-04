@@ -53,19 +53,19 @@ namespace GUI_Management
             this.flowLayoutPanel1.Controls.Add(this.btnExit);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(560, 27);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(765, 33);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.DarkGray;
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(2, 2);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Location = new System.Drawing.Point(3, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(24, 24);
+            this.btnExit.Size = new System.Drawing.Size(32, 30);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -79,10 +79,9 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label1.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(174, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(229, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 76);
+            this.label1.Size = new System.Drawing.Size(272, 95);
             this.label1.TabIndex = 3;
             this.label1.Text = "PHÍ GỬI";
             // 
@@ -91,10 +90,9 @@ namespace GUI_Management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(28, 139);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(38, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Size = new System.Drawing.Size(93, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Loại Gửi:";
             // 
@@ -114,32 +112,30 @@ namespace GUI_Management
             "Day(s)",
             "Week(s)",
             "Month(s)"});
-            this.cbLoaiGui.Location = new System.Drawing.Point(120, 136);
-            this.cbLoaiGui.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLoaiGui.Location = new System.Drawing.Point(161, 228);
+            this.cbLoaiGui.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLoaiGui.Name = "cbLoaiGui";
             this.cbLoaiGui.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbLoaiGui.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbLoaiGui.Radius = 5;
-            this.cbLoaiGui.Size = new System.Drawing.Size(108, 26);
+            this.cbLoaiGui.Size = new System.Drawing.Size(143, 31);
             this.cbLoaiGui.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(378, 106);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(501, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(352, 83);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(469, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 8;
             // 
             // label5
@@ -147,10 +143,9 @@ namespace GUI_Management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(362, 104);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(480, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 19);
+            this.label5.Size = new System.Drawing.Size(96, 23);
             this.label5.TabIndex = 9;
             this.label5.Text = "Bảng Giá:";
             // 
@@ -168,8 +163,8 @@ namespace GUI_Management
             this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Image = null;
             this.btnOK.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnOK.Location = new System.Drawing.Point(110, 191);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOK.Location = new System.Drawing.Point(148, 296);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.OnHoverBaseColor1 = System.Drawing.Color.DeepSkyBlue;
             this.btnOK.OnHoverBaseColor2 = System.Drawing.Color.Magenta;
@@ -177,7 +172,7 @@ namespace GUI_Management
             this.btnOK.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnOK.OnHoverImage = null;
             this.btnOK.OnPressedColor = System.Drawing.Color.Black;
-            this.btnOK.Size = new System.Drawing.Size(45, 41);
+            this.btnOK.Size = new System.Drawing.Size(60, 50);
             this.btnOK.TabIndex = 13;
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -187,10 +182,9 @@ namespace GUI_Management
             this.labelGio.AutoSize = true;
             this.labelGio.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGio.ForeColor = System.Drawing.Color.Black;
-            this.labelGio.Location = new System.Drawing.Point(304, 139);
-            this.labelGio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelGio.Location = new System.Drawing.Point(402, 217);
             this.labelGio.Name = "labelGio";
-            this.labelGio.Size = new System.Drawing.Size(168, 19);
+            this.labelGio.Size = new System.Drawing.Size(211, 23);
             this.labelGio.TabIndex = 14;
             this.labelGio.Text = "Giá theo giờ:       ...........";
             this.labelGio.Click += new System.EventHandler(this.label6_Click);
@@ -200,10 +194,9 @@ namespace GUI_Management
             this.labelTuan.AutoSize = true;
             this.labelTuan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTuan.ForeColor = System.Drawing.Color.Black;
-            this.labelTuan.Location = new System.Drawing.Point(304, 214);
-            this.labelTuan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTuan.Location = new System.Drawing.Point(402, 309);
             this.labelTuan.Name = "labelTuan";
-            this.labelTuan.Size = new System.Drawing.Size(168, 19);
+            this.labelTuan.Size = new System.Drawing.Size(212, 23);
             this.labelTuan.TabIndex = 15;
             this.labelTuan.Text = "Giá theo tuần:     ...........";
             // 
@@ -212,10 +205,9 @@ namespace GUI_Management
             this.labelThang.AutoSize = true;
             this.labelThang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelThang.ForeColor = System.Drawing.Color.Black;
-            this.labelThang.Location = new System.Drawing.Point(304, 251);
-            this.labelThang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelThang.Location = new System.Drawing.Point(402, 355);
             this.labelThang.Name = "labelThang";
-            this.labelThang.Size = new System.Drawing.Size(168, 19);
+            this.labelThang.Size = new System.Drawing.Size(212, 23);
             this.labelThang.TabIndex = 16;
             this.labelThang.Text = "Giá theo tháng:   ...........";
             // 
@@ -224,10 +216,9 @@ namespace GUI_Management
             this.labelNgay.AutoSize = true;
             this.labelNgay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNgay.ForeColor = System.Drawing.Color.Black;
-            this.labelNgay.Location = new System.Drawing.Point(304, 176);
-            this.labelNgay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNgay.Location = new System.Drawing.Point(402, 263);
             this.labelNgay.Name = "labelNgay";
-            this.labelNgay.Size = new System.Drawing.Size(167, 19);
+            this.labelNgay.Size = new System.Drawing.Size(210, 23);
             this.labelNgay.TabIndex = 17;
             this.labelNgay.Text = "Giá theo ngày:    ...........";
             // 
@@ -239,10 +230,10 @@ namespace GUI_Management
             this.gunaGradientPanel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(111)))), ((int)(((byte)(211)))));
             this.gunaGradientPanel1.GradientColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(227)))));
             this.gunaGradientPanel1.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(217)))), ((int)(((byte)(178)))));
-            this.gunaGradientPanel1.Location = new System.Drawing.Point(266, 106);
-            this.gunaGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaGradientPanel1.Location = new System.Drawing.Point(353, 165);
+            this.gunaGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientPanel1.Name = "gunaGradientPanel1";
-            this.gunaGradientPanel1.Size = new System.Drawing.Size(4, 180);
+            this.gunaGradientPanel1.Size = new System.Drawing.Size(5, 222);
             this.gunaGradientPanel1.TabIndex = 10;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
             // 
@@ -250,18 +241,18 @@ namespace GUI_Management
             // 
             this.dTpickerThu.CustomFormat = "dddd";
             this.dTpickerThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTpickerThu.Location = new System.Drawing.Point(449, 106);
-            this.dTpickerThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dTpickerThu.Location = new System.Drawing.Point(596, 176);
+            this.dTpickerThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTpickerThu.Name = "dTpickerThu";
-            this.dTpickerThu.Size = new System.Drawing.Size(95, 20);
+            this.dTpickerThu.Size = new System.Drawing.Size(125, 22);
             this.dTpickerThu.TabIndex = 11;
             // 
             // fphiGui
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(560, 296);
+            this.ClientSize = new System.Drawing.Size(765, 411);
             this.Controls.Add(this.labelNgay);
             this.Controls.Add(this.labelThang);
             this.Controls.Add(this.labelTuan);
@@ -277,7 +268,7 @@ namespace GUI_Management
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fphiGui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fphiGui";
