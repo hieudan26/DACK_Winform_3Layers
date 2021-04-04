@@ -28,13 +28,15 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (type, img1, img2)" +
-            "VALUES (@type, @img1,@img2)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (type, img1, img2,TypeGui,NgayGui)" +
+            "VALUES (@type, @img1,@img2,@TypeGui,@NgayGui)", this.getConnection);
 
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
                 cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
                 cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();
-            if (cmd.ExecuteNonQuery() == 1)
+                cmd.Parameters.Add("@TypeGui", SqlDbType.Int).Value = vel.typeGui;
+                cmd.Parameters.Add("@NgayGui", SqlDbType.DateTime).Value = vel.ngayGui;
+                if (cmd.ExecuteNonQuery() == 1)
                     return true;
             }
             catch (Exception ex)
@@ -134,31 +136,6 @@ namespace DAL_Management
         }
 
         //can nhac
-        public bool insertGuiXe(vehicleDTO vel,int type)
-        {
-            try
-            {
-                this.openConnection();
-
-                SqlCommand cmd = new SqlCommand("INSERT INTO GuiXe (IdXe, type, NgayGui)" +
-         "VALUES (@IdXe, @type,@NgayGui)", this.getConnection);
-
-                cmd.Parameters.Add("@IdXe", SqlDbType.Int).Value = vel.ID;
-                cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
-                cmd.Parameters.Add("@NgayGui", SqlDbType.DateTime).Value = DateTime.Now;
-                if (cmd.ExecuteNonQuery() == 1)
-                    return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: ", ex.Message);
-            }
-            finally
-            {
-                this.closeConnection();
-            }
-            return false;
-        }
 
     }
 }

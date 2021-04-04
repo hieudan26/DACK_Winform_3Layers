@@ -23,8 +23,14 @@ namespace DTO_Management
         
 
         private int itype;
-
         public int type { get => itype; set => itype = value; }
+
+      
+        private int itypeGui;
+        public int typeGui { get => itypeGui; set => itypeGui = value; }
+        
+        private DateTime dngayGui;
+        public DateTime ngayGui { get => dngayGui; set => dngayGui = value; }
 
         public vehicleDTO() { }
 
@@ -34,6 +40,12 @@ namespace DTO_Management
             this.itype = type;
             this.bImg1 = img1;
             this.bImg2 = img2;
+
+        }
+        public void ADDGuiXe(int TypeGui, DateTime NgayGui)
+        {
+            this.itypeGui = TypeGui;
+            this.dngayGui = NgayGui;
         }
         ~vehicleDTO() { }
     }
