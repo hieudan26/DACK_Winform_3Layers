@@ -72,6 +72,12 @@
     <Compile Include="fGuiXe.Designer.cs">
       <DependentUpon>fGuiXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="finfoXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="finfoXe.Designer.cs">
+      <DependentUpon>finfoXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fGuiXe.resx">
       <DependentUpon>fGuiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="finfoXe.resx">
+      <DependentUpon>finfoXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>

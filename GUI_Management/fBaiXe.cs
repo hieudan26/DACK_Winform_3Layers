@@ -71,6 +71,10 @@ namespace GUI_Management
                 btnBike.BorderColor = Color.Black;
                 //end
 
+                //event click
+                btnBike.Click += new System.EventHandler(this.btnBike_Click);
+                //end
+
                 this.flpKhuA.Controls.Add(btnBike);
             }
 
@@ -97,6 +101,10 @@ namespace GUI_Management
                 btnMotor.OnHoverBaseColor2 = Color.AntiqueWhite;
                 btnMotor.BorderSize = 2;
                 btnMotor.BorderColor = Color.Black;
+                //end
+
+                //event click
+                btnMotor.Click += new System.EventHandler(this.btnMotor_Click);
                 //end
 
                 this.flpKhuB.Controls.Add(btnMotor);
@@ -127,8 +135,30 @@ namespace GUI_Management
                 btnCar.BorderColor = Color.Black;
                 //end
 
+                //event click
+                btnCar.Click += new System.EventHandler(this.btnCar_Click);
+                //end
+
                 this.flpKhuC.Controls.Add(btnCar);
             }
+        }
+
+        private void btnCar_Click(object sender, EventArgs e)
+        {
+            finfoXe form = new finfoXe();
+            form.ShowDialog();
+        }
+
+        private void btnMotor_Click(object sender, EventArgs e)
+        {
+            finfoXe form = new finfoXe();
+            form.ShowDialog();
+        }
+
+        private void btnBike_Click(object sender, EventArgs e)
+        {
+            finfoXe form = new finfoXe();
+            form.ShowDialog();
         }
     }
 }
