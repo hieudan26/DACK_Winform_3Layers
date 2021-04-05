@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS_Management;
+using DTO_Management;
 
 namespace GUI_Management
 {
@@ -15,6 +17,8 @@ namespace GUI_Management
     {
         fQuanLyXeGui formQuanLyXeGui;
         vehicleBUS VehicleBUS = new vehicleBUS();
+        vehicleDTO vehicleDTO = new vehicleDTO();
+        public int ID;
 
         public fBaiXe(fQuanLyXeGui fQuanLy)
         {
@@ -72,6 +76,7 @@ namespace GUI_Management
                 //end
 
                 //event click
+                this.ID = item;
                 btnBike.Click += new System.EventHandler(this.btnBike_Click);
                 //end
 
@@ -143,10 +148,17 @@ namespace GUI_Management
             }
         }
 
+        //public void openForm(vehicleDTO vel)
+        //{
+        //    this.formQuanLyXeGui.openChildForm(new finfoXe(vel));
+        //}
+
         private void btnCar_Click(object sender, EventArgs e)
         {
             finfoXe form = new finfoXe();
+            
             form.ShowDialog();
+            
         }
 
         private void btnMotor_Click(object sender, EventArgs e)
@@ -157,8 +169,25 @@ namespace GUI_Management
 
         private void btnBike_Click(object sender, EventArgs e)
         {
+            //string temp = "img1";
+            //finfoXe form = new finfoXe();
+            //MemoryStream ms = VehicleBUS.getImg1(ID, temp);
+            //form.pictureBox1.Image = Image.FromStream(ms);
+            //form.ShowDialog();
             finfoXe form = new finfoXe();
-            form.ShowDialog();
+            DataTable table = this.VehicleBUS.getVehicleByID(ID);
+            Byte[] pic = new Byte[0];
+            pic = (Byte[])(table.Rows[0]["img1"]);
+            MemoryStream ms = new MemoryStream(pic);
+            form.pictureBox1.Image = Image.FromStream(ms);
+            form.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            Byte[] pic2 = new Byte[0];
+            pic2 = (Byte[])(table.Rows[0]["img2"]);
+            MemoryStream ms2 = new MemoryStream(pic2);
+            form.pictureBox2.Image = Image.FromStream(ms2);
+            form.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            form.Show();
         }
     }
 }

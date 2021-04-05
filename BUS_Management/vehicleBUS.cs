@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,11 @@ namespace BUS_Management
     public class vehicleBUS
     {
         vehicleDAL Vehicle = new vehicleDAL();
+
+        public DataTable getVehicleByID(int id)
+        {
+            return Vehicle.getVehicleByID(id);
+        }
         
         public bool insertVehicle(vehicleDTO vel)
         {
@@ -30,6 +37,11 @@ namespace BUS_Management
         public List<int> danhSachID(int type)
         {
             return Vehicle.danhSachID(type);
+        }
+
+        public MemoryStream getImg1(int id, string imgx)
+        {
+            return Vehicle.getImage1(id, imgx);
         }
     }
 }

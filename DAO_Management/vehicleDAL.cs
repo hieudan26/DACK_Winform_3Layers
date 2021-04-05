@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,43 @@ namespace DAL_Management
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+
+        //lay vehicle bang id
+        public DataTable getVehicleByID(int id)
+        {
+            SqlCommand cmd = new SqlCommand("Select * from Vehicle where ID = @id");
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+            DataTable table = this.getVehicle(cmd);
+            return table;
+        }
+
+        //Lay hinh 1 ra
+        public MemoryStream getImage1(int ID, string imgx)
+        {
+            //this.openConnection();
+            SqlCommand cmd = new SqlCommand("Select " + imgx + " from Vehicle where ID = @id");
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+
+            //SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+
+            DataTable table = this.getVehicle(cmd);
+
+            if (table.Rows.Count == 1)
+            {
+                Byte[] pic = new Byte[0];
+                pic = (Byte[])(table.Rows[0][imgx]);
+                MemoryStream ms = new MemoryStream(pic);
+                return ms;
+                this.closeConnection();
+            }
+            else
+            {
+                this.closeConnection();
+                return null;
+                
+            }
         }
 
         //them object xe
