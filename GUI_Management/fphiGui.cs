@@ -16,14 +16,14 @@ namespace GUI_Management
     {
         vehicleDTO vel = new vehicleDTO();
         vehicleBUS vehBUS = new vehicleBUS();
-        //fQuanLyXeGui formQuanLyXeGui;
+        fQuanLyXeGui formQuanLyXeGui;
 
-        public fphiGui(vehicleDTO Vel)
+        public fphiGui(vehicleDTO Vel,fQuanLyXeGui fQuanLy)
         {
             InitializeComponent();
 
             this.vel = Vel;
-            //this.formQuanLyXeGui = fQuanLy;
+            this.formQuanLyXeGui = fQuanLy;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -57,6 +57,12 @@ namespace GUI_Management
             }
             else
                 MessageBox.Show("Insert Failed");
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            fGuiXe f = new fGuiXe(formQuanLyXeGui);
+            formQuanLyXeGui.openChildForm(f);
         }
     }
 }

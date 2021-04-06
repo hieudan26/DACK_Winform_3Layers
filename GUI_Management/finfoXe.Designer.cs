@@ -42,6 +42,7 @@ namespace GUI_Management
             this.gunaTextBox3 = new Guna.UI.WinForms.GunaTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@ namespace GUI_Management
             this.gunaGradientPanel1.Size = new System.Drawing.Size(800, 14);
             this.gunaGradientPanel1.TabIndex = 6;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
+            this.gunaGradientPanel1.Click += new System.EventHandler(this.gunaGradientPanel1_Click);
             // 
             // label2
             // 
@@ -194,12 +196,37 @@ namespace GUI_Management
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.AnimationHoverSpeed = 0.07F;
+            this.btnBack.AnimationSpeed = 0.03F;
+            this.btnBack.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
+            this.btnBack.BorderColor = System.Drawing.Color.Black;
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBack.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Image = null;
+            this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBack.Location = new System.Drawing.Point(668, 409);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBack.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBack.OnHoverImage = null;
+            this.btnBack.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBack.Size = new System.Drawing.Size(56, 20);
+            this.btnBack.TabIndex = 21;
+            this.btnBack.Text = "Back";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // finfoXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gunaTextBox3);
@@ -216,6 +243,7 @@ namespace GUI_Management
             this.Name = "finfoXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "finfoXe";
+            this.Load += new System.EventHandler(this.finfoXe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -237,5 +265,6 @@ namespace GUI_Management
         public Guna.UI.WinForms.GunaTextBox gunaTextBox3;
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI.WinForms.GunaButton btnBack;
     }
 }

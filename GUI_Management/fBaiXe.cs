@@ -18,7 +18,7 @@ namespace GUI_Management
         fQuanLyXeGui formQuanLyXeGui;
         vehicleBUS VehicleBUS = new vehicleBUS();
         vehicleDTO vehicleDTO = new vehicleDTO();
-        public int ID;
+        //public int ID;
 
         public fBaiXe(fQuanLyXeGui fQuanLy)
         {
@@ -45,6 +45,11 @@ namespace GUI_Management
         }
 
         private Guna.UI.Lib.ScrollBar.PanelScrollHelper vScrollHelper1;
+
+        //private void findID(int id)
+        //{
+        //    this.ID = id;
+        //}
 
         private void fBaiXe_Load(object sender, EventArgs e)
         {
@@ -76,7 +81,7 @@ namespace GUI_Management
                 //end
 
                 //event click
-                this.ID = item;
+                //this.ID = item;
                 btnBike.Click += new System.EventHandler(this.btnBike_Click);
                 //end
 
@@ -155,27 +160,11 @@ namespace GUI_Management
 
         private void btnCar_Click(object sender, EventArgs e)
         {
-            finfoXe form = new finfoXe();
-            
-            form.ShowDialog();
-            
-        }
+            Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
+            int id = Convert.ToInt32(btn.Text);
 
-        private void btnMotor_Click(object sender, EventArgs e)
-        {
-            finfoXe form = new finfoXe();
-            form.ShowDialog();
-        }
-
-        private void btnBike_Click(object sender, EventArgs e)
-        {
-            //string temp = "img1";
-            //finfoXe form = new finfoXe();
-            //MemoryStream ms = VehicleBUS.getImg1(ID, temp);
-            //form.pictureBox1.Image = Image.FromStream(ms);
-            //form.ShowDialog();
-            finfoXe form = new finfoXe();
-            DataTable table = this.VehicleBUS.getVehicleByID(ID);
+            finfoXe form = new finfoXe(formQuanLyXeGui);
+            DataTable table = this.VehicleBUS.getVehicleByID(id);
             Byte[] pic = new Byte[0];
             pic = (Byte[])(table.Rows[0]["img1"]);
             MemoryStream ms = new MemoryStream(pic);
@@ -187,7 +176,65 @@ namespace GUI_Management
             MemoryStream ms2 = new MemoryStream(pic2);
             form.pictureBox2.Image = Image.FromStream(ms2);
             form.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            form.Show();
+
+            form.gunaTextBox1.Text = id.ToString();
+
+            form.gunaTextBox2.Text = "Xe Hơi";
+
+            this.formQuanLyXeGui.openChildForm(form);
+
+        }
+
+        private void btnMotor_Click(object sender, EventArgs e)
+        {
+            Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
+            int id = Convert.ToInt32(btn.Text);
+
+            finfoXe form = new finfoXe(formQuanLyXeGui);
+            DataTable table = this.VehicleBUS.getVehicleByID(id);
+            Byte[] pic = new Byte[0];
+            pic = (Byte[])(table.Rows[0]["img1"]);
+            MemoryStream ms = new MemoryStream(pic);
+            form.pictureBox1.Image = Image.FromStream(ms);
+            form.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            Byte[] pic2 = new Byte[0];
+            pic2 = (Byte[])(table.Rows[0]["img2"]);
+            MemoryStream ms2 = new MemoryStream(pic2);
+            form.pictureBox2.Image = Image.FromStream(ms2);
+            form.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            form.gunaTextBox1.Text = id.ToString();
+
+            form.gunaTextBox2.Text = "Xe Motor";
+
+            this.formQuanLyXeGui.openChildForm(form);
+        }
+
+        private void btnBike_Click(object sender, EventArgs e)
+        {
+            Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
+            int id = Convert.ToInt32(btn.Text);
+
+            finfoXe form = new finfoXe(formQuanLyXeGui);
+            DataTable table = this.VehicleBUS.getVehicleByID(id);
+            Byte[] pic = new Byte[0];
+            pic = (Byte[])(table.Rows[0]["img1"]);
+            MemoryStream ms = new MemoryStream(pic);
+            form.pictureBox1.Image = Image.FromStream(ms);
+            form.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            Byte[] pic2 = new Byte[0];
+            pic2 = (Byte[])(table.Rows[0]["img2"]);
+            MemoryStream ms2 = new MemoryStream(pic2);
+            form.pictureBox2.Image = Image.FromStream(ms2);
+            form.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            form.gunaTextBox1.Text = id.ToString();
+
+            form.gunaTextBox2.Text = "Xe Dap";
+            
+            this.formQuanLyXeGui.openChildForm(form);
         }
     }
 }

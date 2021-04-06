@@ -14,11 +14,13 @@ namespace GUI_Management
     public partial class finfoXe : Form
     {
         vehicleDTO vehicleDTO = new vehicleDTO();
-
-        public finfoXe()
+        fQuanLyXeGui formQuanLyXeGui;
+        public finfoXe(fQuanLyXeGui formQuanLyXeGui)
         {
             InitializeComponent();
             //this.vehicleDTO = vel;
+            //this.vehicleDTO.ID = id;
+            this.formQuanLyXeGui = formQuanLyXeGui;
         }
 
         
@@ -26,6 +28,22 @@ namespace GUI_Management
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void finfoXe_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaGradientPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            fBaiXe f = new fBaiXe(formQuanLyXeGui);
+            formQuanLyXeGui.openChildForm(f);
         }
     }
 }

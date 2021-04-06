@@ -89,7 +89,7 @@ namespace GUI_Management
 
         public void openForm(vehicleDTO vel)
         {
-            this.formQuanLyXeGui.openChildForm(new fphiGui(vel));
+            this.formQuanLyXeGui.openChildForm(new fphiGui(vel, formQuanLyXeGui));
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

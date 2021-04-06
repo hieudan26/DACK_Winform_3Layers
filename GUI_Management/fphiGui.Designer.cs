@@ -43,6 +43,8 @@ namespace GUI_Management
             this.gunaGradientPanel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.btnOK = new System.Windows.Forms.Button();
+            this.btnBack = new Guna.UI.WinForms.GunaButton();
+            this.gunaGradientPanel2 = new Guna.UI.WinForms.GunaGradientPanel();
             this.SuspendLayout();
             // 
             // label1
@@ -218,12 +220,54 @@ namespace GUI_Management
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.AnimationHoverSpeed = 0.07F;
+            this.btnBack.AnimationSpeed = 0.03F;
+            this.btnBack.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
+            this.btnBack.BorderColor = System.Drawing.Color.Black;
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBack.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Image = null;
+            this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBack.Location = new System.Drawing.Point(697, 379);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBack.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBack.OnHoverImage = null;
+            this.btnBack.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBack.Size = new System.Drawing.Size(56, 20);
+            this.btnBack.TabIndex = 20;
+            this.btnBack.Text = "Back";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // gunaGradientPanel2
+            // 
+            this.gunaGradientPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.gunaGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gunaGradientPanel2.BackgroundImage")));
+            this.gunaGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gunaGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaGradientPanel2.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.gunaGradientPanel2.GradientColor2 = System.Drawing.Color.White;
+            this.gunaGradientPanel2.GradientColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.gunaGradientPanel2.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.gunaGradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.gunaGradientPanel2.Name = "gunaGradientPanel2";
+            this.gunaGradientPanel2.Size = new System.Drawing.Size(765, 14);
+            this.gunaGradientPanel2.TabIndex = 21;
+            this.gunaGradientPanel2.Text = "gunaGradientPanel2";
+            // 
             // fphiGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(765, 411);
+            this.Controls.Add(this.gunaGradientPanel2);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.gunaDateTimePicker1);
             this.Controls.Add(this.labelNgay);
@@ -262,5 +306,7 @@ namespace GUI_Management
         private System.Windows.Forms.Label labelNgay;
         private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
         private System.Windows.Forms.Button btnOK;
+        private Guna.UI.WinForms.GunaButton btnBack;
+        private Guna.UI.WinForms.GunaGradientPanel gunaGradientPanel2;
     }
 }
