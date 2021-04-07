@@ -22,12 +22,12 @@ namespace DAL_Management
             return table;
         }
 
-        //Lay ra tien theo thu
-        public int layTienTheoThu(int thu, string loaiGui)
+        //Lay ra tien theo dayWeek
+        public int layTienTheoThu(int dayWeek, string loaiGui)
         {
             int temp = -1;
-            SqlCommand cmd = new SqlCommand("select * from TienGui where thu = @thu",this.getConnection);
-            cmd.Parameters.Add("@thu", SqlDbType.Int).Value = thu;
+            SqlCommand cmd = new SqlCommand("select * from FEE_PARKING where dayWeek = @dayWeek",this.getConnection);
+            cmd.Parameters.Add("@dayWeek", SqlDbType.Int).Value = dayWeek;
 
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
@@ -47,13 +47,13 @@ namespace DAL_Management
         public int getLoaiGuiXe(int id)
         {
             int type = -1;
-            SqlCommand cmd = new SqlCommand("Select * from Vehicle where ID = @id");
+            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING where id = @id");
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             DataTable table = this.getVehicle(cmd);
             if (table.Rows.Count == 1)
             {
-                type = (int)table.Rows[0]["TypeGui"];
+                type = (int)table.Rows[0]["typePark"];
                 return type;
             }
             else
@@ -66,7 +66,7 @@ namespace DAL_Management
         //lay vehicle bang id
         public DataTable getVehicleByID(int id)
         {
-            SqlCommand cmd = new SqlCommand("Select * from Vehicle where ID = @id");
+            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING where id = @id");
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             DataTable table = this.getVehicle(cmd);
@@ -74,11 +74,11 @@ namespace DAL_Management
         }
 
         //Lay hinh 1 ra ?? de lam gi ? =)) 
-        public MemoryStream getImage1(int ID, string imgx)
+        public MemoryStream getImage1(int id, string imgx)
         {
             //this.openConnection();
-            SqlCommand cmd = new SqlCommand("Select " + imgx + " from Vehicle where ID = @id");
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+            SqlCommand cmd = new SqlCommand("Select " + imgx + " from VEHICLE_PARKING where id = @id");
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             //SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
 
@@ -107,14 +107,14 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (type, img1, img2,TypeGui,NgayGui)" +
-            "VALUES (@type, @img1,@img2,@TypeGui,@NgayGui)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_PARKING (type, img1, img2,typePark,timeIn)" +
+            "VALUES (@type, @img1,@img2,@typePark,@timeIn)", this.getConnection);
 
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
                 cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
                 cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();
-                cmd.Parameters.Add("@TypeGui", SqlDbType.Int).Value = vel.typeGui;
-                cmd.Parameters.Add("@NgayGui", SqlDbType.DateTime).Value = vel.ngayGui;
+                cmd.Parameters.Add("@typePark", SqlDbType.Int).Value = vel.typeGui;
+                cmd.Parameters.Add("@timeIn", SqlDbType.DateTime).Value = vel.ngayGui;
                 if (cmd.ExecuteNonQuery() == 1)
                     return true;
             }
@@ -136,7 +136,7 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from Vehicle where type = " + type, this.getConnection);
+                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE_PARKING where type = " + type, this.getConnection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
@@ -154,7 +154,7 @@ namespace DAL_Management
             return -1;
         }
 
-        //List vehicle theo ID
+        //List vehicle theo id
         public List<int> danhSachID(int type)
         {
             List<int> lID = new List<int>();
@@ -166,14 +166,14 @@ namespace DAL_Management
                 {
                     this.openConnection();
 
-                    SqlCommand cmd = new SqlCommand("select ID from Vehicle where type = " + type, this.getConnection);
+                    SqlCommand cmd = new SqlCommand("select id from VEHICLE_PARKING where type = " + type, this.getConnection);
 
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     for (int i = 0; i < soLuong; i++)
                     {
-                        lID.Add((int)(table.Rows[i]["ID"]));
+                        lID.Add((int)(table.Rows[i]["id"]));
                     }
                 }    
                 
@@ -196,7 +196,7 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("select count(*) as Total from Vehicle", this.getConnection);
+                SqlCommand cmd = new SqlCommand("select count(*) as Total from VEHICLE_PARKING", this.getConnection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
