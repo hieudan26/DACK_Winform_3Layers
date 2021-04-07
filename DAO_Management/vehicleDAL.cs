@@ -22,6 +22,47 @@ namespace DAL_Management
             return table;
         }
 
+        //Lay ra tien theo thu
+        public int layTienTheoThu(int thu, string loaiGui)
+        {
+            int temp = -1;
+            SqlCommand cmd = new SqlCommand("select * from TienGui where thu = @thu",this.getConnection);
+            cmd.Parameters.Add("@thu", SqlDbType.Int).Value = thu;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table.Rows.Count == 1)
+            {
+                temp = (int)table.Rows[0][loaiGui];
+                return temp;
+            }
+            else
+                return temp;
+
+        }
+
+        //lay ra loai gui --0: gio -- 1: ngay -- 2: tuan -- 3: thang
+        public int getLoaiGuiXe(int id)
+        {
+            int type = -1;
+            SqlCommand cmd = new SqlCommand("Select * from Vehicle where ID = @id");
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+            DataTable table = this.getVehicle(cmd);
+            if (table.Rows.Count == 1)
+            {
+                type = (int)table.Rows[0]["TypeGui"];
+                return type;
+            }
+            else
+            {
+                return type;
+            } 
+                
+        }    
+
         //lay vehicle bang id
         public DataTable getVehicleByID(int id)
         {
@@ -32,7 +73,7 @@ namespace DAL_Management
             return table;
         }
 
-        //Lay hinh 1 ra
+        //Lay hinh 1 ra ?? de lam gi ? =)) 
         public MemoryStream getImage1(int ID, string imgx)
         {
             //this.openConnection();

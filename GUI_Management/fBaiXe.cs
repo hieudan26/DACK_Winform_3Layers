@@ -46,11 +46,6 @@ namespace GUI_Management
 
         private Guna.UI.Lib.ScrollBar.PanelScrollHelper vScrollHelper1;
 
-        //private void findID(int id)
-        //{
-        //    this.ID = id;
-        //}
-
         private void fBaiXe_Load(object sender, EventArgs e)
         {
             //danh sach xe dap
@@ -151,12 +146,20 @@ namespace GUI_Management
 
                 this.flpKhuC.Controls.Add(btnCar);
             }
-        }
 
-        //public void openForm(vehicleDTO vel)
-        //{
-        //    this.formQuanLyXeGui.openChildForm(new finfoXe(vel));
-        //}
+            //Hien thi trạng thái bãi giữ xe
+            int soChoTrongKhuA = 100 - this.VehicleBUS.countVehicleType(0);
+            this.lbStatusA.Font = new System.Drawing.Font("Times New Roman", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusA.Text = "Khu A còn: " + soChoTrongKhuA + " chỗ trống";
+
+            int soChoTrongKhuB = 100 - this.VehicleBUS.countVehicleType(1);
+            this.lbStatusB.Font = new System.Drawing.Font("Times New Roman", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusB.Text = "Khu B còn: " + soChoTrongKhuB + " chỗ trống";
+
+            int soChoTrongKhuC = 100 - this.VehicleBUS.countVehicleType(2);
+            this.lbStatusC.Font = new System.Drawing.Font("Times New Roman", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusC.Text = "Khu C còn: " + soChoTrongKhuC + " chỗ trống";
+        }
 
         private void btnCar_Click(object sender, EventArgs e)
         {
@@ -168,18 +171,31 @@ namespace GUI_Management
             Byte[] pic = new Byte[0];
             pic = (Byte[])(table.Rows[0]["img1"]);
             MemoryStream ms = new MemoryStream(pic);
-            form.pictureBox1.Image = Image.FromStream(ms);
-            form.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            form.pBHinh1.Image = Image.FromStream(ms);
+            form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             Byte[] pic2 = new Byte[0];
             pic2 = (Byte[])(table.Rows[0]["img2"]);
             MemoryStream ms2 = new MemoryStream(pic2);
-            form.pictureBox2.Image = Image.FromStream(ms2);
-            form.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            form.pBHinh2.Image = Image.FromStream(ms2);
+            form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.gunaTextBox1.Text = id.ToString();
+            form.txtID.Text = id.ToString();
 
-            form.gunaTextBox2.Text = "Xe Hơi";
+            form.txtLoaiXe.Text = "Xe Hơi";
+
+            form.lbHinh1.Text = "Bảng Số";
+
+            form.lbHinh2.Text = "Hiệu Xe";
+
+            int thu = this.xacDinhThu();
+
+            String loaiGui = this.LoaiGui(id);
+
+
+            int phi_theo_thu = this.VehicleBUS.layTienTheoThu(thu, loaiGui);
+
+            form.txtTongTien.Text = phi_theo_thu.ToString();
 
             this.formQuanLyXeGui.openChildForm(form);
 
@@ -195,18 +211,31 @@ namespace GUI_Management
             Byte[] pic = new Byte[0];
             pic = (Byte[])(table.Rows[0]["img1"]);
             MemoryStream ms = new MemoryStream(pic);
-            form.pictureBox1.Image = Image.FromStream(ms);
-            form.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            form.pBHinh1.Image = Image.FromStream(ms);
+            form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             Byte[] pic2 = new Byte[0];
             pic2 = (Byte[])(table.Rows[0]["img2"]);
             MemoryStream ms2 = new MemoryStream(pic2);
-            form.pictureBox2.Image = Image.FromStream(ms2);
-            form.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            form.pBHinh2.Image = Image.FromStream(ms2);
+            form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.gunaTextBox1.Text = id.ToString();
+            form.txtID.Text = id.ToString();
 
-            form.gunaTextBox2.Text = "Xe Motor";
+            form.txtLoaiXe.Text = "Xe Motor";
+
+            form.lbHinh1.Text = "Bảng Số";
+
+            form.lbHinh2.Text = "Người Gửi";
+
+            int thu = this.xacDinhThu();
+
+            String loaiGui = this.LoaiGui(id);
+
+
+            int phi_theo_thu = this.VehicleBUS.layTienTheoThu(thu, loaiGui);
+
+            form.txtTongTien.Text = phi_theo_thu.ToString();
 
             this.formQuanLyXeGui.openChildForm(form);
         }
@@ -221,20 +250,66 @@ namespace GUI_Management
             Byte[] pic = new Byte[0];
             pic = (Byte[])(table.Rows[0]["img1"]);
             MemoryStream ms = new MemoryStream(pic);
-            form.pictureBox1.Image = Image.FromStream(ms);
-            form.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            form.pBHinh1.Image = Image.FromStream(ms);
+            form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             Byte[] pic2 = new Byte[0];
             pic2 = (Byte[])(table.Rows[0]["img2"]);
             MemoryStream ms2 = new MemoryStream(pic2);
-            form.pictureBox2.Image = Image.FromStream(ms2);
-            form.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            form.pBHinh2.Image = Image.FromStream(ms2);
+            form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.gunaTextBox1.Text = id.ToString();
+            form.txtID.Text = id.ToString();
 
-            form.gunaTextBox2.Text = "Xe Dap";
+            form.txtLoaiXe.Text = "Xe Dap";
+
+            form.lbHinh1.Text = "Hình Xe";
+
+            form.lbHinh2.Text = "Người Gửi";
+
+            //Xác định thứ trong tuần
+            int thu = this.xacDinhThu();
+
+            String loaiGui = this.LoaiGui(id);
+
+
+            int phi_theo_thu = this.VehicleBUS.layTienTheoThu(thu, loaiGui);
+
+            form.txtTongTien.Text = phi_theo_thu.ToString();
             
             this.formQuanLyXeGui.openChildForm(form);
+        }
+
+        public int xacDinhThu()
+        {
+            int thu = (int)DateTime.Now.DayOfWeek + 1;
+            if (thu == 1)
+                thu = 8;
+
+            return thu;
+        }
+
+        public string LoaiGui(int id)
+        {
+            string LoaiGui = "";
+            int lg = this.VehicleBUS.getTypeGuiXe(id);
+            if (lg == 0)
+            {
+                LoaiGui = "gio";
+            }    
+            else if (lg == 1)
+            {
+                LoaiGui = "ngay";
+            }    
+            else if (lg == 2)
+            {
+                LoaiGui = "tuan";
+            }    
+            else
+            {
+                LoaiGui = "thang";
+            }
+            return LoaiGui;
         }
     }
 }

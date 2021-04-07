@@ -43,5 +43,17 @@ namespace BUS_Management
         {
             return Vehicle.getImage1(id, imgx);
         }
+
+        //Lay ra phi gui xe theo thu
+        public int layTienTheoThu(int thu, string loaiGui)
+        {
+            return Vehicle.layTienTheoThu(thu, loaiGui);
+        }
+
+        //Lay ra loai gui xe
+        public int getTypeGuiXe(int id)
+        {
+            return Vehicle.getLoaiGuiXe(id);
+        }
     }
 }

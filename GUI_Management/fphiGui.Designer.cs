@@ -232,7 +232,7 @@ namespace GUI_Management
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Image = null;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(697, 379);
+            this.btnBack.Location = new System.Drawing.Point(660, 379);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;

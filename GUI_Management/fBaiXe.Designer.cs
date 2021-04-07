@@ -43,6 +43,9 @@ namespace GUI_Management
             this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
             this.gunaVScrollBar2 = new Guna.UI.WinForms.GunaVScrollBar();
             this.gunaVScrollBar3 = new Guna.UI.WinForms.GunaVScrollBar();
+            this.lbStatusA = new Guna.UI.WinForms.GunaLabel();
+            this.lbStatusB = new Guna.UI.WinForms.GunaLabel();
+            this.lbStatusC = new Guna.UI.WinForms.GunaLabel();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,23 +86,23 @@ namespace GUI_Management
             // 
             // flpKhuA
             // 
-            this.flpKhuA.Location = new System.Drawing.Point(28, 184);
+            this.flpKhuA.Location = new System.Drawing.Point(41, 183);
             this.flpKhuA.Name = "flpKhuA";
-            this.flpKhuA.Size = new System.Drawing.Size(212, 201);
+            this.flpKhuA.Size = new System.Drawing.Size(212, 233);
             this.flpKhuA.TabIndex = 5;
             // 
             // flpKhuB
             // 
-            this.flpKhuB.Location = new System.Drawing.Point(272, 184);
+            this.flpKhuB.Location = new System.Drawing.Point(285, 183);
             this.flpKhuB.Name = "flpKhuB";
-            this.flpKhuB.Size = new System.Drawing.Size(212, 201);
+            this.flpKhuB.Size = new System.Drawing.Size(212, 233);
             this.flpKhuB.TabIndex = 6;
             // 
             // flpKhuC
             // 
-            this.flpKhuC.Location = new System.Drawing.Point(520, 184);
+            this.flpKhuC.Location = new System.Drawing.Point(533, 183);
             this.flpKhuC.Name = "flpKhuC";
-            this.flpKhuC.Size = new System.Drawing.Size(212, 201);
+            this.flpKhuC.Size = new System.Drawing.Size(212, 233);
             this.flpKhuC.TabIndex = 7;
             // 
             // lbA
@@ -108,7 +111,7 @@ namespace GUI_Management
             this.lbA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbA.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbA.Location = new System.Drawing.Point(49, 149);
+            this.lbA.Location = new System.Drawing.Point(68, 148);
             this.lbA.Name = "lbA";
             this.lbA.Size = new System.Drawing.Size(123, 24);
             this.lbA.TabIndex = 8;
@@ -120,7 +123,7 @@ namespace GUI_Management
             this.lbB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbB.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbB.Location = new System.Drawing.Point(296, 149);
+            this.lbB.Location = new System.Drawing.Point(315, 148);
             this.lbB.Name = "lbB";
             this.lbB.Size = new System.Drawing.Size(124, 24);
             this.lbB.TabIndex = 9;
@@ -132,7 +135,7 @@ namespace GUI_Management
             this.lbC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbC.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbC.Location = new System.Drawing.Point(542, 149);
+            this.lbC.Location = new System.Drawing.Point(561, 148);
             this.lbC.Name = "lbC";
             this.lbC.Size = new System.Drawing.Size(125, 24);
             this.lbC.TabIndex = 10;
@@ -166,12 +169,12 @@ namespace GUI_Management
             // 
             this.gunaVScrollBar1.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar1.LargeChange = 10;
-            this.gunaVScrollBar1.Location = new System.Drawing.Point(246, 184);
+            this.gunaVScrollBar1.Location = new System.Drawing.Point(259, 183);
             this.gunaVScrollBar1.Maximum = 100;
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.Radius = 2;
             this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.LavenderBlush;
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(6, 201);
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(6, 233);
             this.gunaVScrollBar1.TabIndex = 13;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.Crimson;
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -181,12 +184,12 @@ namespace GUI_Management
             // 
             this.gunaVScrollBar2.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar2.LargeChange = 10;
-            this.gunaVScrollBar2.Location = new System.Drawing.Point(490, 184);
+            this.gunaVScrollBar2.Location = new System.Drawing.Point(503, 183);
             this.gunaVScrollBar2.Maximum = 100;
             this.gunaVScrollBar2.Name = "gunaVScrollBar2";
             this.gunaVScrollBar2.Radius = 2;
             this.gunaVScrollBar2.ScrollIdleColor = System.Drawing.Color.GhostWhite;
-            this.gunaVScrollBar2.Size = new System.Drawing.Size(6, 201);
+            this.gunaVScrollBar2.Size = new System.Drawing.Size(6, 233);
             this.gunaVScrollBar2.TabIndex = 14;
             this.gunaVScrollBar2.ThumbColor = System.Drawing.Color.SandyBrown;
             this.gunaVScrollBar2.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -196,23 +199,53 @@ namespace GUI_Management
             // 
             this.gunaVScrollBar3.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar3.LargeChange = 10;
-            this.gunaVScrollBar3.Location = new System.Drawing.Point(738, 184);
+            this.gunaVScrollBar3.Location = new System.Drawing.Point(751, 183);
             this.gunaVScrollBar3.Maximum = 100;
             this.gunaVScrollBar3.Name = "gunaVScrollBar3";
             this.gunaVScrollBar3.Radius = 2;
             this.gunaVScrollBar3.ScrollIdleColor = System.Drawing.Color.LightCyan;
-            this.gunaVScrollBar3.Size = new System.Drawing.Size(6, 201);
+            this.gunaVScrollBar3.Size = new System.Drawing.Size(6, 233);
             this.gunaVScrollBar3.TabIndex = 15;
             this.gunaVScrollBar3.ThumbColor = System.Drawing.Color.RoyalBlue;
             this.gunaVScrollBar3.ThumbHoverColor = System.Drawing.Color.LightCoral;
             this.gunaVScrollBar3.ThumbPressedColor = System.Drawing.Color.MistyRose;
+            // 
+            // lbStatusA
+            // 
+            this.lbStatusA.AutoSize = true;
+            this.lbStatusA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbStatusA.Location = new System.Drawing.Point(64, 430);
+            this.lbStatusA.Name = "lbStatusA";
+            this.lbStatusA.Size = new System.Drawing.Size(0, 20);
+            this.lbStatusA.TabIndex = 16;
+            // 
+            // lbStatusB
+            // 
+            this.lbStatusB.AutoSize = true;
+            this.lbStatusB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbStatusB.Location = new System.Drawing.Point(311, 430);
+            this.lbStatusB.Name = "lbStatusB";
+            this.lbStatusB.Size = new System.Drawing.Size(0, 20);
+            this.lbStatusB.TabIndex = 17;
+            // 
+            // lbStatusC
+            // 
+            this.lbStatusC.AutoSize = true;
+            this.lbStatusC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbStatusC.Location = new System.Drawing.Point(557, 430);
+            this.lbStatusC.Name = "lbStatusC";
+            this.lbStatusC.Size = new System.Drawing.Size(0, 20);
+            this.lbStatusC.TabIndex = 18;
             // 
             // fBaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(765, 411);
+            this.ClientSize = new System.Drawing.Size(765, 460);
+            this.Controls.Add(this.lbStatusC);
+            this.Controls.Add(this.lbStatusB);
+            this.Controls.Add(this.lbStatusA);
             this.Controls.Add(this.gunaVScrollBar3);
             this.Controls.Add(this.gunaVScrollBar2);
             this.Controls.Add(this.gunaVScrollBar1);
@@ -253,5 +286,8 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar2;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar3;
+        private Guna.UI.WinForms.GunaLabel lbStatusA;
+        private Guna.UI.WinForms.GunaLabel lbStatusB;
+        private Guna.UI.WinForms.GunaLabel lbStatusC;
     }
 }
