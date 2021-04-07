@@ -109,11 +109,11 @@ namespace GUI_Management
             // 
             this.lbA.AutoSize = true;
             this.lbA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbA.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbA.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
             this.lbA.Location = new System.Drawing.Point(68, 148);
             this.lbA.Name = "lbA";
-            this.lbA.Size = new System.Drawing.Size(123, 24);
+            this.lbA.Size = new System.Drawing.Size(142, 25);
             this.lbA.TabIndex = 8;
             this.lbA.Text = "Bãi Xe Khu A";
             // 
@@ -121,11 +121,11 @@ namespace GUI_Management
             // 
             this.lbB.AutoSize = true;
             this.lbB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbB.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbB.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
             this.lbB.Location = new System.Drawing.Point(315, 148);
             this.lbB.Name = "lbB";
-            this.lbB.Size = new System.Drawing.Size(124, 24);
+            this.lbB.Size = new System.Drawing.Size(140, 25);
             this.lbB.TabIndex = 9;
             this.lbB.Text = "Bãi Xe Khu B";
             // 
@@ -133,11 +133,11 @@ namespace GUI_Management
             // 
             this.lbC.AutoSize = true;
             this.lbC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbC.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbC.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
             this.lbC.Location = new System.Drawing.Point(561, 148);
             this.lbC.Name = "lbC";
-            this.lbC.Size = new System.Drawing.Size(125, 24);
+            this.lbC.Size = new System.Drawing.Size(141, 25);
             this.lbC.TabIndex = 10;
             this.lbC.Text = "Bãi Xe Khu C";
             // 

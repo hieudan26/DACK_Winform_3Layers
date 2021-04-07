@@ -117,7 +117,7 @@ namespace GUI_Management
             // 
             // picBox1
             // 
-            this.picBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.picBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(214)))), ((int)(((byte)(229)))));
             this.picBox1.Location = new System.Drawing.Point(20, 173);
             this.picBox1.Name = "picBox1";
             this.picBox1.Size = new System.Drawing.Size(120, 108);
@@ -128,7 +128,7 @@ namespace GUI_Management
             // 
             // picBox2
             // 
-            this.picBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.picBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(214)))), ((int)(((byte)(229)))));
             this.picBox2.Location = new System.Drawing.Point(460, 173);
             this.picBox2.Name = "picBox2";
             this.picBox2.Size = new System.Drawing.Size(120, 108);
@@ -142,7 +142,7 @@ namespace GUI_Management
             this.btnText2.AnimationHoverSpeed = 0.07F;
             this.btnText2.AnimationSpeed = 0.03F;
             this.btnText2.BackColor = System.Drawing.Color.Transparent;
-            this.btnText2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnText2.BaseColor = System.Drawing.Color.LightGreen;
             this.btnText2.BorderColor = System.Drawing.Color.Black;
             this.btnText2.BorderSize = 1;
             this.btnText2.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -169,7 +169,7 @@ namespace GUI_Management
             this.btnText1.AnimationHoverSpeed = 0.07F;
             this.btnText1.AnimationSpeed = 0.03F;
             this.btnText1.BackColor = System.Drawing.Color.Transparent;
-            this.btnText1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnText1.BaseColor = System.Drawing.Color.LightGreen;
             this.btnText1.BorderColor = System.Drawing.Color.Black;
             this.btnText1.BorderSize = 1;
             this.btnText1.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -193,7 +193,7 @@ namespace GUI_Management
             // 
             // btnUpImg1
             // 
-            this.btnUpImg1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.btnUpImg1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
             this.btnUpImg1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpImg1.Location = new System.Drawing.Point(183, 208);
             this.btnUpImg1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -206,7 +206,7 @@ namespace GUI_Management
             // 
             // btnUpImg2
             // 
-            this.btnUpImg2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.btnUpImg2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
             this.btnUpImg2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpImg2.Location = new System.Drawing.Point(627, 208);
             this.btnUpImg2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -222,26 +222,27 @@ namespace GUI_Management
             this.btnConfirm.AnimationHoverSpeed = 0.07F;
             this.btnConfirm.AnimationSpeed = 0.03F;
             this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.BaseColor1 = System.Drawing.Color.Magenta;
-            this.btnConfirm.BaseColor2 = System.Drawing.Color.DeepSkyBlue;
+            this.btnConfirm.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(214)))), ((int)(((byte)(229)))));
+            this.btnConfirm.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(163)))), ((int)(((byte)(164)))));
             this.btnConfirm.BorderColor = System.Drawing.Color.Black;
-            this.btnConfirm.BorderSize = 2;
+            this.btnConfirm.BorderSize = 1;
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirm.FocusedColor = System.Drawing.Color.Empty;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.Black;
             this.btnConfirm.Image = null;
             this.btnConfirm.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnConfirm.Location = new System.Drawing.Point(293, 357);
+            this.btnConfirm.Location = new System.Drawing.Point(293, 356);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.OnHoverBaseColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.btnConfirm.OnHoverBaseColor2 = System.Drawing.Color.Magenta;
-            this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnConfirm.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnConfirm.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(163)))), ((int)(((byte)(164)))));
+            this.btnConfirm.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(214)))), ((int)(((byte)(229)))));
+            this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnConfirm.OnHoverForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnConfirm.OnHoverImage = null;
             this.btnConfirm.OnPressedColor = System.Drawing.Color.Black;
-            this.btnConfirm.Radius = 15;
-            this.btnConfirm.Size = new System.Drawing.Size(160, 42);
+            this.btnConfirm.OnPressedDepth = 60;
+            this.btnConfirm.Radius = 12;
+            this.btnConfirm.Size = new System.Drawing.Size(160, 43);
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "CONFIRM";
             this.btnConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

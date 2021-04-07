@@ -209,9 +209,9 @@ namespace GUI_Management
             // 
             // btnOK
             // 
-            this.btnOK.BackColor = System.Drawing.Color.MintCream;
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(163)))), ((int)(((byte)(164)))));
             this.btnOK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(90, 256);
+            this.btnOK.Location = new System.Drawing.Point(95, 279);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(165, 49);

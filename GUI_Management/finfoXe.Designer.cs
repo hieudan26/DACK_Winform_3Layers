@@ -208,14 +208,14 @@ namespace GUI_Management
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Image = null;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(668, 418);
+            this.btnBack.Location = new System.Drawing.Point(672, 418);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnBack.OnHoverForeColor = System.Drawing.Color.White;
             this.btnBack.OnHoverImage = null;
             this.btnBack.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBack.Size = new System.Drawing.Size(56, 20);
+            this.btnBack.Size = new System.Drawing.Size(52, 20);
             this.btnBack.TabIndex = 21;
             this.btnBack.Text = "Back";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);

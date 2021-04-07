@@ -36,16 +36,16 @@ namespace GUI_Management
             this.btnDoanhThu = new Guna.UI.WinForms.GunaGradientButton();
             this.btnBaiXe = new Guna.UI.WinForms.GunaGradientButton();
             this.btnGuiXe = new Guna.UI.WinForms.GunaGradientButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gunaShadowPanel1.SuspendLayout();
-            this.pnlChildForm.SuspendLayout();
-            this.gunaGradient2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gunaGradient2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaShadowPanel1
@@ -120,26 +120,26 @@ namespace GUI_Management
             this.btnDoanhThu.AnimationHoverSpeed = 0.07F;
             this.btnDoanhThu.AnimationSpeed = 0.03F;
             this.btnDoanhThu.BackColor = System.Drawing.Color.Transparent;
-            this.btnDoanhThu.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.btnDoanhThu.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnDoanhThu.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnDoanhThu.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
             this.btnDoanhThu.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnDoanhThu.BorderSize = 1;
             this.btnDoanhThu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDoanhThu.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoanhThu.ForeColor = System.Drawing.Color.Snow;
+            this.btnDoanhThu.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.btnDoanhThu.Image = null;
             this.btnDoanhThu.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDoanhThu.Location = new System.Drawing.Point(57, 415);
             this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDoanhThu.Name = "btnDoanhThu";
-            this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.btnDoanhThu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(39)))), ((int)(((byte)(205)))));
+            this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnDoanhThu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
             this.btnDoanhThu.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnDoanhThu.OnHoverForeColor = System.Drawing.Color.White;
             this.btnDoanhThu.OnHoverImage = null;
             this.btnDoanhThu.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDoanhThu.Radius = 5;
+            this.btnDoanhThu.Radius = 7;
             this.btnDoanhThu.Size = new System.Drawing.Size(160, 47);
             this.btnDoanhThu.TabIndex = 4;
             this.btnDoanhThu.Text = "DOANH THU";
@@ -151,26 +151,26 @@ namespace GUI_Management
             this.btnBaiXe.AnimationHoverSpeed = 0.07F;
             this.btnBaiXe.AnimationSpeed = 0.03F;
             this.btnBaiXe.BackColor = System.Drawing.Color.Transparent;
-            this.btnBaiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.btnBaiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnBaiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnBaiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
             this.btnBaiXe.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaiXe.BorderSize = 1;
             this.btnBaiXe.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBaiXe.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBaiXe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaiXe.ForeColor = System.Drawing.Color.Snow;
+            this.btnBaiXe.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaiXe.ForeColor = System.Drawing.Color.Black;
             this.btnBaiXe.Image = null;
             this.btnBaiXe.ImageSize = new System.Drawing.Size(20, 20);
             this.btnBaiXe.Location = new System.Drawing.Point(57, 319);
             this.btnBaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBaiXe.Name = "btnBaiXe";
-            this.btnBaiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.btnBaiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(39)))), ((int)(((byte)(205)))));
+            this.btnBaiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnBaiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
             this.btnBaiXe.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnBaiXe.OnHoverForeColor = System.Drawing.Color.White;
             this.btnBaiXe.OnHoverImage = null;
             this.btnBaiXe.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBaiXe.Radius = 5;
+            this.btnBaiXe.Radius = 7;
             this.btnBaiXe.Size = new System.Drawing.Size(160, 47);
             this.btnBaiXe.TabIndex = 3;
             this.btnBaiXe.Text = "BÃI XE";
@@ -182,31 +182,42 @@ namespace GUI_Management
             this.btnGuiXe.AnimationHoverSpeed = 0.07F;
             this.btnGuiXe.AnimationSpeed = 0.03F;
             this.btnGuiXe.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.btnGuiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnGuiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnGuiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
             this.btnGuiXe.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnGuiXe.BorderSize = 1;
             this.btnGuiXe.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnGuiXe.FocusedColor = System.Drawing.Color.Empty;
-            this.btnGuiXe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuiXe.ForeColor = System.Drawing.Color.Snow;
+            this.btnGuiXe.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuiXe.ForeColor = System.Drawing.Color.Black;
             this.btnGuiXe.Image = null;
             this.btnGuiXe.ImageSize = new System.Drawing.Size(20, 20);
             this.btnGuiXe.Location = new System.Drawing.Point(57, 226);
             this.btnGuiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuiXe.Name = "btnGuiXe";
-            this.btnGuiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.btnGuiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(39)))), ((int)(((byte)(205)))));
+            this.btnGuiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnGuiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
             this.btnGuiXe.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnGuiXe.OnHoverForeColor = System.Drawing.Color.White;
             this.btnGuiXe.OnHoverImage = null;
             this.btnGuiXe.OnPressedColor = System.Drawing.Color.Black;
-            this.btnGuiXe.Radius = 5;
+            this.btnGuiXe.Radius = 7;
             this.btnGuiXe.Size = new System.Drawing.Size(160, 47);
             this.btnGuiXe.TabIndex = 1;
             this.btnGuiXe.Text = "GỬI XE";
             this.btnGuiXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnGuiXe.Click += new System.EventHandler(this.btnGuiXe_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.logoVinfast;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlChildForm
             // 
@@ -217,6 +228,17 @@ namespace GUI_Management
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(765, 462);
             this.pnlChildForm.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUI_Management.Properties.Resources.Loading;
+            this.pictureBox2.Location = new System.Drawing.Point(149, 98);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(472, 270);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // gunaGradient2Panel1
             // 
@@ -242,28 +264,6 @@ namespace GUI_Management
             this.label1.TabIndex = 19;
             this.label1.Text = "QUẢN LÝ XE GỬI";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.logoVinfast;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GUI_Management.Properties.Resources.Loading;
-            this.pictureBox2.Location = new System.Drawing.Point(149, 98);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(472, 270);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // fQuanLyXeGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,11 +281,11 @@ namespace GUI_Management
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Xe Gửi";
             this.gunaShadowPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlChildForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
