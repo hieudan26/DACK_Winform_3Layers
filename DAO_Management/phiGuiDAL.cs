@@ -25,17 +25,17 @@ namespace DAL_Management
 
         public bool UpdatePrice(int thu)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TienGui where thu = " + thu, this.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM FEE_PARKING where dayWeek = " + thu, this.getConnection);
            
             DataTable table = this.GetPrice(cmd);
             
             if(table.Rows.Count > 0)
             {
                 //DataRow Row = table.Rows[thu];
-                int gio = int.Parse(table.Rows[0]["gio"].ToString());
-                int ngay = int.Parse(table.Rows[0]["ngay"].ToString());
-                int tuan = int.Parse(table.Rows[0]["tuan"].ToString());
-                int thang = int.Parse(table.Rows[0]["thang"].ToString());
+                int gio = int.Parse(table.Rows[0]["hourFee"].ToString());
+                int ngay = int.Parse(table.Rows[0]["dateFee"].ToString());
+                int tuan = int.Parse(table.Rows[0]["weekFee"].ToString());
+                int thang = int.Parse(table.Rows[0]["monthFee"].ToString());
                 phiGuiDTO.Update(gio, ngay, tuan, thang);
                 return true;
             }

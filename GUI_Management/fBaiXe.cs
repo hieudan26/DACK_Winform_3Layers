@@ -295,19 +295,19 @@ namespace GUI_Management
             int lg = this.VehicleBUS.getTypeGuiXe(id);
             if (lg == 0)
             {
-                LoaiGui = "gio";
+                LoaiGui = "hourFee";
             }    
             else if (lg == 1)
             {
-                LoaiGui = "ngay";
+                LoaiGui = "dateFee";
             }    
             else if (lg == 2)
             {
-                LoaiGui = "tuan";
+                LoaiGui = "weekFee";
             }    
             else
             {
-                LoaiGui = "thang";
+                LoaiGui = "monthFee";
             }
             return LoaiGui;
         }

@@ -33,7 +33,7 @@ namespace DAL_Management
                 {
                     this.openConnection();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO log (Username, Password)" +
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Log (Username, Password)" +
              "VALUES (@username, @pass)", this.getConnection);
 
                     cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = acc.Username;
@@ -60,7 +60,7 @@ namespace DAL_Management
 
             DataTable table = new DataTable();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM log WHERE Username = @username", this.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Log WHERE Username = @username", this.getConnection);
 
             cmd.Parameters.Add("@Username", SqlDbType.NVarChar).Value = acc.Username;
 
@@ -81,7 +81,7 @@ namespace DAL_Management
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT * FROM log WHERE Username = @username AND Password = @password", this.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Log WHERE Username = @username AND Password = @password", this.getConnection);
 
             command.Parameters.Add("@username", SqlDbType.NVarChar).Value = acc.Username;
             command.Parameters.Add("@password", SqlDbType.NVarChar).Value = acc.Password;
@@ -103,7 +103,7 @@ namespace DAL_Management
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT * FROM log WHERE Username = @username", this.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Log WHERE Username = @username", this.getConnection);
 
             command.Parameters.Add("@username", SqlDbType.NVarChar).Value = accold.Username;
 
@@ -113,9 +113,9 @@ namespace DAL_Management
 
             if (table.Rows.Count > 0)
             {
-                int id = Convert.ToInt32(table.Rows[0]["ID"]);
+                int id = Convert.ToInt32(table.Rows[0]["id"]);
 
-                command = new SqlCommand("UPDATE log SET Username = @usernamenew, PASSWORD = @passwordnew WHERE ID = @id", this.getConnection);
+                command = new SqlCommand("UPDATE Log SET Username = @usernamenew, PASSWORD = @passwordnew WHERE id = @id", this.getConnection);
 
                 command.Parameters.Add("@usernamenew", SqlDbType.NVarChar).Value = accnew.Username;
 
@@ -133,7 +133,7 @@ namespace DAL_Management
                 SqlDataAdapter adapter2 = new SqlDataAdapter();
 
                 DataTable table2 = new DataTable();
-                SqlCommand command2 = new SqlCommand("SELECT Username FROM log WHERE ID = " + id, this.getConnection);
+                SqlCommand command2 = new SqlCommand("SELECT Username FROM Log WHERE id = " + id, this.getConnection);
 
                 adapter2.SelectCommand = command2;
 
@@ -158,7 +158,7 @@ namespace DAL_Management
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT * FROM log WHERE Username = @username", this.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Log WHERE Username = @username", this.getConnection);
 
             command.Parameters.Add("@username", SqlDbType.NVarChar).Value = acc.Username;
 
