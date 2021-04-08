@@ -10,15 +10,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO_Management;
 using BUS_Management;
+using System.IO;
 
 namespace GUI_Management
 {
     public partial class fdoanhThu : Form
     {
         vehicleBUS vehicleBUS = new vehicleBUS();
-        public fdoanhThu()
+        fQuanLyXeGui fQuanLyXeGui = new fQuanLyXeGui();
+        public fdoanhThu(fQuanLyXeGui fQuanLy)
         {
             InitializeComponent();
+            this.fQuanLyXeGui = fQuanLy;
         }
 
         int counter = 0;
@@ -168,7 +171,31 @@ namespace GUI_Management
 
         private void dgvExpired_DoubleClick(object sender, EventArgs e)
         {
+            finfoXe form = new finfoXe(this.fQuanLyXeGui);
+            form.txtID.Text = this.dgvExpired.CurrentRow.Cells[0].Value.ToString();
+            if ((int)this.dgvExpired.CurrentRow.Cells[1].Value == 0)
+            {
+                form.txtLoaiXe.Text = "Xe Đạp";
+            }    
+            else if ((int)this.dgvExpired.CurrentRow.Cells[1].Value == 1)
+            {
+                form.txtLoaiXe.Text = "Xe Máy";
+            }    
+            else
+            {
+                form.txtLoaiXe.Text = "Xe Hơi";
+            }
+            byte[] pic;
+            pic = (byte[])this.dgvExpired.CurrentRow.Cells[2].Value;
+            MemoryStream picture = new MemoryStream(pic);
+            form.pBHinh1.Image = Image.FromStream(picture);
 
+            byte[] pic2;
+            pic2 = (byte[])this.dgvExpired.CurrentRow.Cells[3].Value;
+            MemoryStream picture2 = new MemoryStream(pic2);
+            form.pBHinh2.Image = Image.FromStream(picture2);
+
+            this.fQuanLyXeGui.openChildForm(form);
         }
     }
 }
