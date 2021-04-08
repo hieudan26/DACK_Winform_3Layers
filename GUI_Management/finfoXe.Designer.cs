@@ -117,9 +117,9 @@ namespace GUI_Management
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(12, 397);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 23);
+            this.label5.Size = new System.Drawing.Size(165, 23);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Tổng Tiền Dịch Vụ:";
+            this.label5.Text = "Tiền Dịch Vụ Gửi:";
             // 
             // label6
             // 

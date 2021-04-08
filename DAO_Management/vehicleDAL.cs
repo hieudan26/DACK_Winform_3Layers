@@ -22,6 +22,139 @@ namespace DAL_Management
             return table;
         }
 
+        //list id xe gửi trong ngày
+        public List<int> danhSachID_InDay(int type)
+        {
+            List<int> lID = new List<int>();
+            try
+            {
+                int soLuong = this.countVehicleType(type);
+
+                if (type != -1 || type != 0)
+                {
+                    this.openConnection();
+
+                    DateTime curr = DateTime.Now;
+                    string start = " 00:00:00";
+                    string end = " 23:59:59";
+                    string tmp = curr.ToString("yyyy-MM-dd");
+
+                    SqlCommand cmd = new SqlCommand("select id from VEHICLE_PARKING where timeIn between '" + tmp + start + "' and '" + tmp + end + "'and type = " + type, this.getConnection);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    for (int i = 0; i < soLuong - 1; i++)
+                    {
+                        lID.Add((int)(table.Rows[i]["id"]));
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return lID;
+        }
+
+        //lấy ra số lượng xe TRONG NGÀY theo LOẠI
+        public int countVehicle_byType_InDay(int type)
+        {
+            try
+            {
+                this.openConnection();
+
+                DateTime curr = DateTime.Now;
+                string start = " 00:00:00";
+                string end = " 23:59:59";
+                string tmp = curr.ToString("yyyy-MM-dd");
+
+                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE_PARKING where timeIn between '" + tmp + start + "' and '" + tmp + end + "' and type = " + type, this.getConnection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return (int)table.Rows[0]["SoLuong"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return -1;
+        }
+
+        //lấy ra danh sách các xe gửi quá hạn
+        public DataTable getVehicleExpired()
+        {
+            SqlCommand cmd = new SqlCommand("select id, type, img1, img2, timeIn from VEHICLE_PARKING");
+            DataTable table = this.getVehicle(cmd);
+            table.AcceptChanges();
+
+            for (int i = table.Rows.Count - 1; i >= 0; i--)
+            {
+                DataRow item = table.Rows[i];
+                if (this.compareDateTime_theoTypeGui((int)item["type"], (DateTime)item["timeIn"]) == 1)
+                    table.Rows.Remove(item);
+            }
+            
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+                return null;       
+        }
+
+        //trả về 1 => quá tgian
+        private int compareDateTime_theoTypeGui(int typeGui, DateTime timeIn)
+        {
+            DateTime cur = DateTime.Now;
+            if (typeGui == 0) //Gửi theo giờ
+            {
+                cur = cur.AddHours(-1); // Lấy datetime hiện tại -1 giờ
+                //so sánh datetime vào vs datetime hiện tại -1 giờ nếu datetime hiện tại -1 giờ <= datetime vào thì chưa quá giờ
+                return this.compareDatetime(timeIn, cur);
+                
+            }    
+            else if (typeGui == 1) //Gửi theo ngày
+            {
+                cur = cur.AddDays(-1); // lấy datetime hiện tại -1 ngày
+                return this.compareDatetime(timeIn, cur);
+            }
+            else if (typeGui == 2) //Gửi theo tuần
+            {
+                cur = cur.AddDays(-7);
+                return this.compareDatetime(timeIn, cur);
+            }    
+            else //Gửi theo tháng
+            {
+                cur = cur.AddMonths(-1);
+                return this.compareDatetime(timeIn, cur);
+            }    
+        }
+
+        //private hàm con so sánh trả về 1 khi quá tgian, 0 khi vẫn còn tgian
+        private int compareDatetime(DateTime timeIn, DateTime cur)
+        {
+            if (timeIn.CompareTo(cur) == -1 || timeIn.Equals(cur) == true)
+            {
+                return 0;
+            }    
+            else
+            {
+                return 1;
+            }    
+        }
+
         //Lay ra tien theo dayWeek
         public int layTienTheoThu(int dayWeek, string loaiGui)
         {
@@ -171,7 +304,7 @@ namespace DAL_Management
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    for (int i = 0; i < soLuong; i++)
+                    for (int i = 0; i < soLuong - 1; i++)
                     {
                         lID.Add((int)(table.Rows[i]["id"]));
                     }

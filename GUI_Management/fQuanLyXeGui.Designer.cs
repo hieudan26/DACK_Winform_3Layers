@@ -126,7 +126,7 @@ namespace GUI_Management
             this.btnDoanhThu.BorderSize = 1;
             this.btnDoanhThu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDoanhThu.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDoanhThu.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanhThu.Font = new System.Drawing.Font("High Tower Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.btnDoanhThu.Image = null;
             this.btnDoanhThu.ImageSize = new System.Drawing.Size(20, 20);
@@ -157,7 +157,7 @@ namespace GUI_Management
             this.btnBaiXe.BorderSize = 1;
             this.btnBaiXe.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBaiXe.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBaiXe.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaiXe.Font = new System.Drawing.Font("High Tower Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaiXe.ForeColor = System.Drawing.Color.Black;
             this.btnBaiXe.Image = null;
             this.btnBaiXe.ImageSize = new System.Drawing.Size(20, 20);
@@ -188,7 +188,7 @@ namespace GUI_Management
             this.btnGuiXe.BorderSize = 1;
             this.btnGuiXe.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnGuiXe.FocusedColor = System.Drawing.Color.Empty;
-            this.btnGuiXe.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuiXe.Font = new System.Drawing.Font("High Tower Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuiXe.ForeColor = System.Drawing.Color.Black;
             this.btnGuiXe.Image = null;
             this.btnGuiXe.ImageSize = new System.Drawing.Size(20, 20);

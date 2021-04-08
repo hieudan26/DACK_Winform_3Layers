@@ -16,44 +16,62 @@ namespace BUS_Management
 
         public DataTable getVehicleByID(int id)
         {
-            return Vehicle.getVehicleByID(id);
+            return this.Vehicle.getVehicleByID(id);
         }
         
         public bool insertVehicle(vehicleDTO vel)
         {
-            return Vehicle.insertVehicle(vel);
+            return this.Vehicle.insertVehicle(vel);
         }
 
         public int countVehicleType(int type)
         {
-            return Vehicle.countVehicleType(type);
+            return this.Vehicle.countVehicleType(type);
         }
 
         public int countVehicleTotal()
         {
-            return Vehicle.countVehicleTotal();
+            return this.Vehicle.countVehicleTotal();
         }
 
         public List<int> danhSachID(int type)
         {
-            return Vehicle.danhSachID(type);
+            return this.Vehicle.danhSachID(type);
         }
 
         public MemoryStream getImg1(int id, string imgx)
         {
-            return Vehicle.getImage1(id, imgx);
+            return this.Vehicle.getImage1(id, imgx);
         }
 
         //Lay ra phi gui xe theo thu
         public int layTienTheoThu(int thu, string loaiGui)
         {
-            return Vehicle.layTienTheoThu(thu, loaiGui);
+            return this.Vehicle.layTienTheoThu(thu, loaiGui);
         }
 
         //Lay ra loai gui xe
         public int getTypeGuiXe(int id)
         {
-            return Vehicle.getLoaiGuiXe(id);
+            return this.Vehicle.getLoaiGuiXe(id);
+        }
+
+        //Lấy ra danh sách xe gửi quá hạn
+        public DataTable getVehicleExpired()
+        {
+            return this.Vehicle.getVehicleExpired();
+        }
+
+        //Đếm số lượng xe theo loại vào bãi trong ngày
+        public int countVehicle_byType_InDay(int type)
+        {
+            return this.Vehicle.countVehicle_byType_InDay(type);
+        }
+
+        //list id xe gửi trong ngày
+        public List<int> listID_InDay(int type)
+        {
+            return this.Vehicle.danhSachID_InDay(type);
         }
     }
 }
