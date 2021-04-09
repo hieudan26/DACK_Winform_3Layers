@@ -180,3 +180,8 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v4\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v4\GUI_Management\obj\Debug\Interop.WMPLib.dll
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v4\GUI_Management\obj\Debug\AxInterop.WMPLib.dll
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v4\GUI_Management\obj\Debug\GUI_Management.csproj.ResolveComReference.cache
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\Interop.WMPLib.dll
+D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\AxInterop.WMPLib.dll
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\Interop.WMPLib.dll
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\AxInterop.WMPLib.dll
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.csproj.ResolveComReference.cache
