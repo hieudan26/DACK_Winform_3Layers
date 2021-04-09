@@ -88,21 +88,21 @@ namespace GUI_Management
             // 
             this.flpKhuA.Location = new System.Drawing.Point(41, 183);
             this.flpKhuA.Name = "flpKhuA";
-            this.flpKhuA.Size = new System.Drawing.Size(212, 233);
+            this.flpKhuA.Size = new System.Drawing.Size(212, 228);
             this.flpKhuA.TabIndex = 5;
             // 
             // flpKhuB
             // 
             this.flpKhuB.Location = new System.Drawing.Point(285, 183);
             this.flpKhuB.Name = "flpKhuB";
-            this.flpKhuB.Size = new System.Drawing.Size(212, 233);
+            this.flpKhuB.Size = new System.Drawing.Size(212, 228);
             this.flpKhuB.TabIndex = 6;
             // 
             // flpKhuC
             // 
             this.flpKhuC.Location = new System.Drawing.Point(533, 183);
             this.flpKhuC.Name = "flpKhuC";
-            this.flpKhuC.Size = new System.Drawing.Size(212, 233);
+            this.flpKhuC.Size = new System.Drawing.Size(212, 228);
             this.flpKhuC.TabIndex = 7;
             // 
             // lbA
@@ -174,7 +174,7 @@ namespace GUI_Management
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.Radius = 2;
             this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.LavenderBlush;
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(6, 233);
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(6, 228);
             this.gunaVScrollBar1.TabIndex = 13;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.Crimson;
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -189,7 +189,7 @@ namespace GUI_Management
             this.gunaVScrollBar2.Name = "gunaVScrollBar2";
             this.gunaVScrollBar2.Radius = 2;
             this.gunaVScrollBar2.ScrollIdleColor = System.Drawing.Color.GhostWhite;
-            this.gunaVScrollBar2.Size = new System.Drawing.Size(6, 233);
+            this.gunaVScrollBar2.Size = new System.Drawing.Size(6, 228);
             this.gunaVScrollBar2.TabIndex = 14;
             this.gunaVScrollBar2.ThumbColor = System.Drawing.Color.SandyBrown;
             this.gunaVScrollBar2.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -204,7 +204,7 @@ namespace GUI_Management
             this.gunaVScrollBar3.Name = "gunaVScrollBar3";
             this.gunaVScrollBar3.Radius = 2;
             this.gunaVScrollBar3.ScrollIdleColor = System.Drawing.Color.LightCyan;
-            this.gunaVScrollBar3.Size = new System.Drawing.Size(6, 233);
+            this.gunaVScrollBar3.Size = new System.Drawing.Size(6, 228);
             this.gunaVScrollBar3.TabIndex = 15;
             this.gunaVScrollBar3.ThumbColor = System.Drawing.Color.RoyalBlue;
             this.gunaVScrollBar3.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -214,7 +214,7 @@ namespace GUI_Management
             // 
             this.lbStatusA.AutoSize = true;
             this.lbStatusA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbStatusA.Location = new System.Drawing.Point(64, 430);
+            this.lbStatusA.Location = new System.Drawing.Point(64, 422);
             this.lbStatusA.Name = "lbStatusA";
             this.lbStatusA.Size = new System.Drawing.Size(0, 20);
             this.lbStatusA.TabIndex = 16;
@@ -223,7 +223,7 @@ namespace GUI_Management
             // 
             this.lbStatusB.AutoSize = true;
             this.lbStatusB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbStatusB.Location = new System.Drawing.Point(311, 430);
+            this.lbStatusB.Location = new System.Drawing.Point(311, 422);
             this.lbStatusB.Name = "lbStatusB";
             this.lbStatusB.Size = new System.Drawing.Size(0, 20);
             this.lbStatusB.TabIndex = 17;
@@ -232,7 +232,7 @@ namespace GUI_Management
             // 
             this.lbStatusC.AutoSize = true;
             this.lbStatusC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbStatusC.Location = new System.Drawing.Point(557, 430);
+            this.lbStatusC.Location = new System.Drawing.Point(557, 422);
             this.lbStatusC.Name = "lbStatusC";
             this.lbStatusC.Size = new System.Drawing.Size(0, 20);
             this.lbStatusC.TabIndex = 18;

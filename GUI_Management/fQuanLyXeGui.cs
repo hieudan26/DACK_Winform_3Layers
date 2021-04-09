@@ -76,7 +76,7 @@ namespace GUI_Management
             this.btnDoanhThu.BorderColor = Color.Black;
             //end
 
-            this.openChildForm(new fdoanhThu());
+            this.openChildForm(new fdoanhThu(this));
         }
 
         //open child form

@@ -204,8 +204,8 @@ namespace GUI_Management
             this.gunaDateTimePicker1.Radius = 5;
             this.gunaDateTimePicker1.Size = new System.Drawing.Size(125, 44);
             this.gunaDateTimePicker1.TabIndex = 18;
-            this.gunaDateTimePicker1.Text = "Sunday";
-            this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 4, 16, 7, 23, 999);
+            this.gunaDateTimePicker1.Text = "Friday";
+            this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 9, 0, 0, 0, 0);
             // 
             // btnOK
             // 

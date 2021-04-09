@@ -34,7 +34,7 @@ namespace GUI_Management
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbContent = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,20 +54,22 @@ namespace GUI_Management
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTong = new Guna.UI.WinForms.GunaLineTextBox();
+            this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnPrint = new Guna.UI.WinForms.GunaGradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpired)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbContent
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.label1.Font = new System.Drawing.Font("Mistral", 46.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(-12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(737, 93);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "DOANH THU TRONG NGÀY";
+            this.lbContent.AutoSize = true;
+            this.lbContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
+            this.lbContent.Font = new System.Drawing.Font("Mistral", 46.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.lbContent.Location = new System.Drawing.Point(-12, 9);
+            this.lbContent.Name = "lbContent";
+            this.lbContent.Size = new System.Drawing.Size(737, 93);
+            this.lbContent.TabIndex = 4;
+            this.lbContent.Text = "DOANH THU TRONG NGÀY";
             // 
             // timer1
             // 
@@ -161,6 +163,7 @@ namespace GUI_Management
             // 
             this.txtSLXeDap.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSLXeDap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSLXeDap.Enabled = false;
             this.txtSLXeDap.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSLXeDap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSLXeDap.LineColor = System.Drawing.Color.ForestGreen;
@@ -175,6 +178,7 @@ namespace GUI_Management
             // 
             this.txtDTXeDap.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDTXeDap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDTXeDap.Enabled = false;
             this.txtDTXeDap.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtDTXeDap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDTXeDap.LineColor = System.Drawing.Color.ForestGreen;
@@ -189,6 +193,7 @@ namespace GUI_Management
             // 
             this.txtSLXeMay.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSLXeMay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSLXeMay.Enabled = false;
             this.txtSLXeMay.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSLXeMay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSLXeMay.LineColor = System.Drawing.Color.ForestGreen;
@@ -203,6 +208,7 @@ namespace GUI_Management
             // 
             this.txtDTXeMay.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDTXeMay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDTXeMay.Enabled = false;
             this.txtDTXeMay.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtDTXeMay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDTXeMay.LineColor = System.Drawing.Color.ForestGreen;
@@ -217,6 +223,7 @@ namespace GUI_Management
             // 
             this.txtSLXeHoi.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSLXeHoi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSLXeHoi.Enabled = false;
             this.txtSLXeHoi.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSLXeHoi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSLXeHoi.LineColor = System.Drawing.Color.ForestGreen;
@@ -231,6 +238,7 @@ namespace GUI_Management
             // 
             this.txtDTXeHoi.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDTXeHoi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDTXeHoi.Enabled = false;
             this.txtDTXeHoi.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtDTXeHoi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDTXeHoi.LineColor = System.Drawing.Color.ForestGreen;
@@ -281,6 +289,7 @@ namespace GUI_Management
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvExpired.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvExpired.RowHeadersVisible = false;
             this.dgvExpired.RowHeadersWidth = 51;
             this.dgvExpired.RowTemplate.Height = 24;
             this.dgvExpired.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -336,6 +345,7 @@ namespace GUI_Management
             // 
             this.txtTong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTong.Enabled = false;
             this.txtTong.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTong.LineColor = System.Drawing.Color.ForestGreen;
@@ -346,12 +356,72 @@ namespace GUI_Management
             this.txtTong.Size = new System.Drawing.Size(127, 30);
             this.txtTong.TabIndex = 26;
             // 
+            // btnSave
+            // 
+            this.btnSave.AnimationHoverSpeed = 0.07F;
+            this.btnSave.AnimationSpeed = 0.03F;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnSave.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
+            this.btnSave.Image = null;
+            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSave.Location = new System.Drawing.Point(438, 405);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnSave.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSave.OnHoverImage = null;
+            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSave.Radius = 3;
+            this.btnSave.Size = new System.Drawing.Size(90, 33);
+            this.btnSave.TabIndex = 27;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.AnimationHoverSpeed = 0.07F;
+            this.btnPrint.AnimationSpeed = 0.03F;
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnPrint.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnPrint.BorderColor = System.Drawing.Color.Black;
+            this.btnPrint.BorderSize = 1;
+            this.btnPrint.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPrint.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
+            this.btnPrint.Image = null;
+            this.btnPrint.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPrint.Location = new System.Drawing.Point(580, 405);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnPrint.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnPrint.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPrint.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPrint.OnHoverImage = null;
+            this.btnPrint.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPrint.Radius = 3;
+            this.btnPrint.Size = new System.Drawing.Size(110, 33);
+            this.btnPrint.TabIndex = 28;
+            this.btnPrint.Text = "PRINT";
+            this.btnPrint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // fdoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(765, 460);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTong);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -370,7 +440,7 @@ namespace GUI_Management
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fdoanhThu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -384,7 +454,7 @@ namespace GUI_Management
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbContent;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
@@ -404,5 +474,7 @@ namespace GUI_Management
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label9;
         private Guna.UI.WinForms.GunaLineTextBox txtTong;
+        private Guna.UI.WinForms.GunaGradientButton btnSave;
+        private Guna.UI.WinForms.GunaGradientButton btnPrint;
     }
 }

@@ -39,11 +39,6 @@ namespace BUS_Management
             return this.Vehicle.danhSachID(type);
         }
 
-        public MemoryStream getImg1(int id, string imgx)
-        {
-            return this.Vehicle.getImage1(id, imgx);
-        }
-
         //Lay ra phi gui xe theo thu
         public int layTienTheoThu(int thu, string loaiGui)
         {
@@ -72,6 +67,18 @@ namespace BUS_Management
         public List<int> listID_InDay(int type)
         {
             return this.Vehicle.danhSachID_InDay(type);
+        }
+
+        //update info vehicle
+        public bool UpdateInfoVehicle(int id, int loaiXe, int loaiGui, MemoryStream img1, MemoryStream img2, DateTime timeIn)
+        {
+            return this.Vehicle.UpdateInfoVehicle(id, loaiXe, loaiGui, img1, img2, timeIn);
+        }
+
+        //delete vehicle
+        public bool DelVehicle(int id)
+        {
+            return this.Vehicle.DeleteVehicle(id);
         }
     }
 }

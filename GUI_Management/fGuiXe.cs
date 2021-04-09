@@ -107,6 +107,7 @@ namespace GUI_Management
 
                 MemoryStream pic2 = new MemoryStream();
                 this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
+
                 vehicleDTO vehDTO = new vehicleDTO(0, type, pic1, pic2);
                 MessageBox.Show("Successfully~~");
                 //thu phi

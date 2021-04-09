@@ -29,7 +29,6 @@ namespace GUI_Management
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            //this.formQuanLyXeGui.pnlMove.Visible = false;
         }
 
         private void UpdatePhi()
@@ -50,8 +49,8 @@ namespace GUI_Management
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            vel.ADDGuiXe(this.cbLoaiGui.SelectedIndex, DateTime.Now);
-            if (vehBUS.insertVehicle(this.vel))
+            this.vel.ADDGuiXe(this.cbLoaiGui.SelectedIndex, DateTime.Now);
+            if (this.vehBUS.insertVehicle(this.vel))
             {
                 MessageBox.Show("Insert Successfully");
             }

@@ -22,34 +22,73 @@ namespace DAL_Management
             return table;
         }
 
+        //Del vehicle
+        public bool DeleteVehicle(int id)
+        {
+            SqlCommand cmd = new SqlCommand("Delete from VEHICLE_PARKING where id = @id", this.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            this.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                this.closeConnection();
+                return true;
+            }
+            else
+            {
+                this.closeConnection();
+                return false;
+            }
+        }    
+
+        //Edit_Update thông tin xe gửi
+        public bool UpdateInfoVehicle(int id, int loaiXe, int loaiGui, MemoryStream img1, MemoryStream img2, DateTime timeIn)
+        {
+            SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set type = @loaiXe, img1 = @img1, img2 = @img2, typePark = @loaiGui, timeIn = @tI where id = @id", this.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@loaiXe", SqlDbType.Int).Value = loaiXe;
+            cmd.Parameters.Add("@img1", SqlDbType.Image).Value = img1.ToArray();
+            cmd.Parameters.Add("@img2", SqlDbType.Image).Value = img2.ToArray();
+            cmd.Parameters.Add("@loaiGui", SqlDbType.Int).Value = loaiGui;
+            cmd.Parameters.Add("@tI", SqlDbType.DateTime).Value = timeIn;
+
+            this.openConnection();
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                this.closeConnection();
+                return true;
+            }
+            else
+            {
+                this.closeConnection();
+                return false;
+            }
+        }
+
         //list id xe gửi trong ngày
         public List<int> danhSachID_InDay(int type)
         {
             List<int> lID = new List<int>();
             try
             {
-                int soLuong = this.countVehicleType(type);
+                //int soLuong = this.countVehicleType(type);
 
-                if (type != -1 || type != 0)
+                this.openConnection();
+
+                DateTime curr = DateTime.Now;
+                string start = " 00:00:00";
+                string end = " 23:59:59";
+                string tmp = curr.ToString("yyyy-MM-dd");
+
+                SqlCommand cmd = new SqlCommand("select id from VEHICLE_PARKING where timeIn between '" + tmp + start + "' and '" + tmp + end + "'and type = " + type, this.getConnection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    this.openConnection();
-
-                    DateTime curr = DateTime.Now;
-                    string start = " 00:00:00";
-                    string end = " 23:59:59";
-                    string tmp = curr.ToString("yyyy-MM-dd");
-
-                    SqlCommand cmd = new SqlCommand("select id from VEHICLE_PARKING where timeIn between '" + tmp + start + "' and '" + tmp + end + "'and type = " + type, this.getConnection);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    for (int i = 0; i < soLuong - 1; i++)
-                    {
-                        lID.Add((int)(table.Rows[i]["id"]));
-                    }
+                    lID.Add((int)(table.Rows[i]["id"]));
                 }
-
             }
             catch (Exception ex)
             {
@@ -95,7 +134,7 @@ namespace DAL_Management
         //lấy ra danh sách các xe gửi quá hạn
         public DataTable getVehicleExpired()
         {
-            SqlCommand cmd = new SqlCommand("select id, type, img1, img2, timeIn from VEHICLE_PARKING");
+            SqlCommand cmd = new SqlCommand("select * from VEHICLE_PARKING");
             DataTable table = this.getVehicle(cmd);
             table.AcceptChanges();
 
@@ -206,33 +245,6 @@ namespace DAL_Management
             return table;
         }
 
-        //Lay hinh 1 ra ?? de lam gi ? =)) 
-        public MemoryStream getImage1(int id, string imgx)
-        {
-            //this.openConnection();
-            SqlCommand cmd = new SqlCommand("Select " + imgx + " from VEHICLE_PARKING where id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
-            //SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
-
-            DataTable table = this.getVehicle(cmd);
-
-            if (table.Rows.Count == 1)
-            {
-                Byte[] pic = new Byte[0];
-                pic = (Byte[])(table.Rows[0][imgx]);
-                MemoryStream ms = new MemoryStream(pic);
-                return ms;
-                this.closeConnection();
-            }
-            else
-            {
-                this.closeConnection();
-                return null;
-                
-            }
-        }
-
         //them object xe
         public bool insertVehicle(vehicleDTO vel)
         {
@@ -240,7 +252,7 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_PARKING (type, img1, img2,typePark,timeIn)" +
+                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_PARKING (type, img1, img2,typePark, timeIn)" +
             "VALUES (@type, @img1,@img2,@typePark,@timeIn)", this.getConnection);
 
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
@@ -304,7 +316,7 @@ namespace DAL_Management
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    for (int i = 0; i < soLuong - 1; i++)
+                    for (int i = 0; i < soLuong; i++)
                     {
                         lID.Add((int)(table.Rows[i]["id"]));
                     }

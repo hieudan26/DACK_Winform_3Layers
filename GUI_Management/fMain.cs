@@ -19,7 +19,11 @@ namespace GUI_Management
 
         private void fMain_Load(object sender, EventArgs e)
         {
+            //AthonyducThang
+            this.axWindowsMediaPlayer1.URL = @"E:\HK2_21\Lập trình trên Window HK2_21\car washing phineas.mp4";
 
+            //Đan
+            //this.axWindowsMediaPlayer1.URL = @"";
         }
 
         private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
