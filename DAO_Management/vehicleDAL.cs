@@ -23,10 +23,10 @@ namespace DAL_Management
         }
 
         //Del vehicle
-        public bool DeleteVehicle(int id)
+        public bool DeleteVehicle(string id)
         {
-            SqlCommand cmd = new SqlCommand("Delete from VEHICLE_PARKING where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlCommand cmd = new SqlCommand("Delete from VEHICLE where id = @id", this.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             this.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -41,16 +41,13 @@ namespace DAL_Management
         }    
 
         //Edit_Update thông tin xe gửi
-        public bool UpdateInfoVehicle(int id, int loaiXe, int loaiGui, MemoryStream img1, MemoryStream img2, DateTime timeIn)
+        public bool UpdateInfoVehicle(string id, int loaiXe, MemoryStream img1, MemoryStream img2)
         {
-            SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set type = @loaiXe, img1 = @img1, img2 = @img2, typePark = @loaiGui, timeIn = @tI where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlCommand cmd = new SqlCommand("update VEHICLE set type = @loaiXe, img1 = @img1, img2 = @img2 where id = @id", this.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             cmd.Parameters.Add("@loaiXe", SqlDbType.Int).Value = loaiXe;
             cmd.Parameters.Add("@img1", SqlDbType.Image).Value = img1.ToArray();
             cmd.Parameters.Add("@img2", SqlDbType.Image).Value = img2.ToArray();
-            cmd.Parameters.Add("@loaiGui", SqlDbType.Int).Value = loaiGui;
-            cmd.Parameters.Add("@tI", SqlDbType.DateTime).Value = timeIn;
-
             this.openConnection();
 
             if (cmd.ExecuteNonQuery() == 1)
@@ -64,8 +61,142 @@ namespace DAL_Management
                 return false;
             }
         }
+        //lay vehicle bang id
+        public DataTable getVehicleByID(string id)
+        {
+            SqlCommand cmd = new SqlCommand("Select * from VEHICLE where id = @id");
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+
+            DataTable table = this.getVehicle(cmd);
+            return table;
+        }
+
+        //them object xe
+        public bool insertVehicle(vehicleDTO vel)
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE(id,type, img1, img2)" +
+            "VALUES (@id,@type, @img1,@img2)", this.getConnection);
+                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = vel.id;
+                cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
+                cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
+                cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
+        }
+
+        //dem loai xe
+        public int countVehicleType(int type)
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE where type = " + type, this.getConnection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return (int)table.Rows[0]["SoLuong"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return -1;
+        }
+
+        //List vehicle theo id
+        public List<int> danhSachID(int type)
+        {
+            List<int> lID = new List<int>();
+            try
+            {
+                int soLuong = this.countVehicleType(type);
+
+                if (type != -1 || type != 0)
+                {
+                    this.openConnection();
+
+                    SqlCommand cmd = new SqlCommand("select id from VEHICLE where type = " + type, this.getConnection);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    for (int i = 0; i < soLuong; i++)
+                    {
+                        lID.Add((int)(table.Rows[i]["id"]));
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return lID;
+        }
+
+        //dem tong cong
+        public int countVehicleTotal()
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("select count(*) as Total from VEHICLE", this.getConnection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return (int)table.Rows[0]["SoLuong"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return -1;
+        }
+        public bool checkFullVehicle(int type)
+        {
+            SqlCommand cmd = new SqlCommand("Select * from VEHICLE where type = @type");
+            cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
+
+            DataTable table = this.getVehicle(cmd);
+            if (table.Rows.Count < 100)
+                return false;
+            else
+                return true;
+        }
+
 
         //list id xe gửi trong ngày
+        /*
         public List<int> danhSachID_InDay(int type)
         {
             List<int> lID = new List<int>();
@@ -100,8 +231,9 @@ namespace DAL_Management
             }
             return lID;
         }
-
+        */
         //lấy ra số lượng xe TRONG NGÀY theo LOẠI
+        /*
         public int countVehicle_byType_InDay(int type)
         {
             try
@@ -216,7 +348,7 @@ namespace DAL_Management
         }
 
         //lay ra loai gui --0: gio -- 1: ngay -- 2: tuan -- 3: thang
-        public int getLoaiGuiXe(int id)
+        public int getLoaiGuiXe(string id)
         {
             int type = -1;
             SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING where id = @id");
@@ -234,140 +366,7 @@ namespace DAL_Management
             } 
                 
         }    
+        */
 
-        //lay vehicle bang id
-        public DataTable getVehicleByID(int id)
-        {
-            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING where id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
-            DataTable table = this.getVehicle(cmd);
-            return table;
-        }
-
-        //them object xe
-        public bool insertVehicle(vehicleDTO vel)
-        {
-            try
-            {
-                this.openConnection();
-
-                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_PARKING (type, img1, img2,typePark, timeIn)" +
-            "VALUES (@type, @img1,@img2,@typePark,@timeIn)", this.getConnection);
-
-                cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
-                cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
-                cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();
-                cmd.Parameters.Add("@typePark", SqlDbType.Int).Value = vel.typeGui;
-                cmd.Parameters.Add("@timeIn", SqlDbType.DateTime).Value = vel.ngayGui;
-                if (cmd.ExecuteNonQuery() == 1)
-                    return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: ", ex.Message);
-            }
-            finally
-            {
-                this.closeConnection();
-            }
-            return false;
-        }
-
-        //dem loai xe
-        public int countVehicleType(int type)
-        {
-            try
-            {
-                this.openConnection();
-
-                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE_PARKING where type = " + type, this.getConnection);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                return (int)table.Rows[0]["SoLuong"];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: ", ex.Message);
-            }
-            finally
-            {
-                this.closeConnection();
-            }
-            return -1;
-        }
-
-        //List vehicle theo id
-        public List<int> danhSachID(int type)
-        {
-            List<int> lID = new List<int>();
-            try
-            {
-                int soLuong = this.countVehicleType(type);
-
-                if (type != -1 || type != 0)
-                {
-                    this.openConnection();
-
-                    SqlCommand cmd = new SqlCommand("select id from VEHICLE_PARKING where type = " + type, this.getConnection);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    for (int i = 0; i < soLuong; i++)
-                    {
-                        lID.Add((int)(table.Rows[i]["id"]));
-                    }
-                }    
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: ", ex.Message);
-            }
-            finally
-            {
-                this.closeConnection();
-            }
-            return lID;
-        }
-
-        //dem tong cong
-        public int countVehicleTotal()
-        {
-            try
-            {
-                this.openConnection();
-
-                SqlCommand cmd = new SqlCommand("select count(*) as Total from VEHICLE_PARKING", this.getConnection);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                return (int)table.Rows[0]["SoLuong"];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: ", ex.Message);
-            }
-            finally
-            {
-                this.closeConnection();
-            }
-            return -1;
-        }
-        public bool checkFullVehicle(int type)
-        {
-            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING where type = @type");
-            cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
-
-            DataTable table = this.getVehicle(cmd);
-            if (table.Rows.Count < 100)
-                return false;
-            else
-                return true;
-        }
     }
 }

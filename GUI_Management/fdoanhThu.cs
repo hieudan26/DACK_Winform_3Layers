@@ -17,7 +17,7 @@ namespace GUI_Management
 {
     public partial class fdoanhThu : Form
     {
-        vehicleBUS vehicleBUS = new vehicleBUS();
+        vehicleParkingBUS vehicleBUS = new vehicleParkingBUS();
         fQuanLyXeGui fQuanLyXeGui = new fQuanLyXeGui();
         public fdoanhThu(fQuanLyXeGui fQuanLy)
         {
@@ -102,7 +102,8 @@ namespace GUI_Management
             {
                 foreach (var item in this.vehicleBUS.listID_InDay(type))
                 {
-                    thu += this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(item));
+                    int loai = this.vehicleBUS.getTypeGuiXe(item);
+                    thu += this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(loai));
                 }
             }  
             return thu;
@@ -116,15 +117,15 @@ namespace GUI_Management
                 System.Data.DataTable table = this.vehicleBUS.getVehicleExpired();
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    if (this.vehicleBUS.getTypeGuiXe((int)table.Rows[i]["id"]) == 0) //giờ
+                    if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["typePark"]) == 0) //giờ
                     {
                         phat += (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(0))) * 2;
                     }
-                    else if (this.vehicleBUS.getTypeGuiXe((int)table.Rows[i]["id"]) == 1) //ngày
+                    else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["typePark"]) == 1) //ngày
                     {
                         phat += (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(1))) * 2;
                     }
-                    else if (this.vehicleBUS.getTypeGuiXe((int)table.Rows[i]["id"]) == 2) //tuần
+                    else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["typePark"]) == 2) //tuần
                     {
                         phat += (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(3)));
                     }
@@ -180,19 +181,19 @@ namespace GUI_Management
             return thu;
         }
 
-        private string LoaiGui(int id)
+        private string LoaiGui(int type)
         {
             string LoaiGui = "";
-            int lg = this.vehicleBUS.getTypeGuiXe(id);
-            if (lg == 0)
+            
+            if (type == 0)
             {
                 LoaiGui = "hourFee";
             }
-            else if (lg == 1)
+            else if (type == 1)
             {
                 LoaiGui = "dateFee";
             }
-            else if (lg == 2)
+            else if (type == 2)
             {
                 LoaiGui = "weekFee";
             }
@@ -255,15 +256,15 @@ namespace GUI_Management
                 {
                     if (id == (int)table.Rows[i]["id"])
                     {
-                        if (this.vehicleBUS.getTypeGuiXe((int)table.Rows[i]["id"]) == 0) //giờ
+                        if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["id"]) == 0) //giờ
                         {
                             doanhThuPhat = (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(0))) * 2;
                         }
-                        else if (this.vehicleBUS.getTypeGuiXe((int)table.Rows[i]["id"]) == 1) //ngày
+                        else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["id"]) == 1) //ngày
                         {
                             doanhThuPhat = (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(1))) * 2;
                         }
-                        else if (this.vehicleBUS.getTypeGuiXe((int)table.Rows[i]["id"]) == 2) //tuần
+                        else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["id"]) == 2) //tuần
                         {
                             doanhThuPhat = (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(3)));
                         }

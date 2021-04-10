@@ -16,8 +16,8 @@ namespace GUI_Management
     public partial class fBaiXe : Form
     {
         fQuanLyXeGui formQuanLyXeGui;
-        vehicleBUS VehicleBUS = new vehicleBUS();
-        vehicleDTO vehicleDTO = new vehicleDTO();
+        vehicleParkingBUS VehicleBUS = new vehicleParkingBUS();
+        vehicleParkingDTO vehicleDTO = new vehicleParkingDTO();
         private Guna.UI.Lib.ScrollBar.PanelScrollHelper vScrollHelper1;
         //public int ID;
 
@@ -55,7 +55,7 @@ namespace GUI_Management
         private void fBaiXe_Load(object sender, EventArgs e)
         {
             //danh sach xe dap
-            List<int> IDbicycle = VehicleBUS.danhSachID(0);
+            List<string> IDbicycle = VehicleBUS.danhSachID(0);
             if (IDbicycle.Count != 0)
             {
                 foreach (var item in IDbicycle)
@@ -92,7 +92,7 @@ namespace GUI_Management
             }    
 
             //danh sach motor
-            List<int> IDmotor = VehicleBUS.danhSachID(1);
+            List<string> IDmotor = VehicleBUS.danhSachID(1);
             if (IDmotor.Count != 0)
             {
                 foreach (var item in IDmotor)
@@ -127,7 +127,7 @@ namespace GUI_Management
             }    
 
             //danh sach xe hoi
-            List<int> IDcar = VehicleBUS.danhSachID(2);
+            List<string> IDcar = VehicleBUS.danhSachID(2);
             if (IDcar.Count != 0)
             {
                 foreach (var item in IDcar)
@@ -182,7 +182,7 @@ namespace GUI_Management
         private void btnCar_Click(object sender, EventArgs e)
         {
             Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
-            int id = Convert.ToInt32(btn.Text);
+            string id =btn.Text;
 
             finfoXe form = new finfoXe(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
@@ -222,7 +222,7 @@ namespace GUI_Management
         private void btnMotor_Click(object sender, EventArgs e)
         {
             Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
-            int id = Convert.ToInt32(btn.Text);
+            string id =btn.Text;
 
             finfoXe form = new finfoXe(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
@@ -262,7 +262,7 @@ namespace GUI_Management
         private void btnBike_Click(object sender, EventArgs e)
         {
             Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
-            int id = Convert.ToInt32(btn.Text);
+            string id =btn.Text;
 
             finfoXe form = new finfoXe(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
@@ -309,7 +309,7 @@ namespace GUI_Management
             return thu;
         }
 
-        public string LoaiGui(int id)
+        public string LoaiGui(string id)
         {
             string LoaiGui = "";
             int lg = this.VehicleBUS.getTypeGuiXe(id);

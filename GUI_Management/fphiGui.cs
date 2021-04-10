@@ -14,15 +14,15 @@ namespace GUI_Management
 {
     public partial class fphiGui : Form
     {
-        vehicleDTO vel = new vehicleDTO();
-        vehicleBUS vehBUS = new vehicleBUS();
+        vehicleParkingDTO vel = new vehicleParkingDTO();
+        vehicleParkingBUS vehBUS = new vehicleParkingBUS();
         fQuanLyXeGui formQuanLyXeGui;
 
         public fphiGui(vehicleDTO Vel,fQuanLyXeGui fQuanLy)
         {
             InitializeComponent();
 
-            this.vel = Vel;
+            this.vel.id = Vel.id;
             this.formQuanLyXeGui = fQuanLy;
         }
 
@@ -49,7 +49,9 @@ namespace GUI_Management
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.vel.ADDGuiXe(this.cbLoaiGui.SelectedIndex, DateTime.Now);
+            this.vel.typeGui = this.cbLoaiGui.SelectedIndex;
+            this.vel.ngayGui = DateTime.Now;
+
             if (this.vehBUS.insertVehicle(this.vel))
             {
                 MessageBox.Show("Insert Successfully");

@@ -15,8 +15,8 @@ namespace GUI_Management
 {
     public partial class finfoXe : Form
     {
-        vehicleDTO vehicleDTO = new vehicleDTO();
-        vehicleBUS vehicleBUS = new vehicleBUS();
+        vehicleParkingDTO vehicleDTO = new vehicleParkingDTO();
+        vehicleParkingBUS vehicleBUS = new vehicleParkingBUS();
         fQuanLyXeGui formQuanLyXeGui;
         string type;
         public finfoXe(fQuanLyXeGui formQuanLyXeGui, string type)
@@ -64,7 +64,7 @@ namespace GUI_Management
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(this.txtID.Text);
+            string id = this.txtID.Text;
             int loaiXe;
             if (this.txtLoaiXe.Text == "Xe Đạp")
             {
@@ -109,7 +109,7 @@ namespace GUI_Management
                 {
                     this.pBHinh1.Image.Save(pic1, this.pBHinh1.Image.RawFormat);
                     this.pBHinh2.Image.Save(pic2, this.pBHinh2.Image.RawFormat);
-                    if (this.vehicleBUS.UpdateInfoVehicle(id, loaiXe, loaiGui, pic1, pic2, timeIn))
+                    if (this.vehicleBUS.UpdateInfoVehicleAll(id,loaiGui, timeIn, loaiXe, pic1, pic2))
                     {
                         MessageBox.Show("Vehicle Information Updated", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } 
@@ -154,7 +154,7 @@ namespace GUI_Management
         {
             try
             {
-                int id = Convert.ToInt32(this.txtID.Text);
+                string id = this.txtID.Text;
                 if (MessageBox.Show("Are You Sure ?!?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (this.vehicleBUS.DelVehicle(id))
