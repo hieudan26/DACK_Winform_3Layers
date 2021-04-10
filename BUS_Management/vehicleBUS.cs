@@ -80,5 +80,10 @@ namespace BUS_Management
         {
             return this.Vehicle.DeleteVehicle(id);
         }
+        // check full
+        public bool checkFullVehicle(int type)
+        {
+            return this.Vehicle.checkFullVehicle(type);
+        }
     }
 }

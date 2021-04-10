@@ -38,18 +38,53 @@ namespace GUI_Management
         {
             if (this.cbLoaiXe.SelectedIndex == 0)
             {
-                this.btnText1.Text = "Hình Xe";
-                this.btnText2.Text = "Người Gửi";
+                if(vehBUS.checkFullVehicle(0) == false)
+                {
+                    this.btnText1.Text = "Hình Xe";
+                    this.btnText2.Text = "Người Gửi";
+                }    
+                else
+                {
+                    
+                    MessageBox.Show("Bai xe dap da het cho","Add Vehicle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    this.cbLoaiXe.SelectedItem = null;
+                    this.btnText1.Text = "";
+                    this.btnText2.Text = "";
+                }
             }    
             else if(this.cbLoaiXe.SelectedIndex == 1)
             {
-                this.btnText1.Text = "Bảng Số";
-                this.btnText2.Text = "Người Gửi";
+                if (vehBUS.checkFullVehicle(1) == false)
+                {
+                    this.btnText1.Text = "Bảng Số";
+                    this.btnText2.Text = "Người Gửi";
+                }
+                else
+                {
+                    
+                    MessageBox.Show("Bai xe may da het cho", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.cbLoaiXe.SelectedItem = null;
+                    this.btnText1.Text = "";
+                    this.btnText2.Text = "";
+                }
+                
             }    
             else
             {
-                this.btnText1.Text = "Bảng Số";
-                this.btnText2.Text = "Hiệu Xe";
+                if (vehBUS.checkFullVehicle(2) == false)
+                {
+                    this.btnText1.Text = "Bảng Số";
+                    this.btnText2.Text = "Hiệu Xe";
+                }
+                else
+                {
+                    
+                    MessageBox.Show("Bai xe hoi da het cho", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.cbLoaiXe.SelectedItem = null;
+                    this.btnText1.Text = "";
+                    this.btnText2.Text = "";
+                }
+                
             }    
         }
 

@@ -358,5 +358,16 @@ namespace DAL_Management
             }
             return -1;
         }
+        public bool checkFullVehicle(int type)
+        {
+            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING where type = @type");
+            cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
+
+            DataTable table = this.getVehicle(cmd);
+            if (table.Rows.Count < 100)
+                return false;
+            else
+                return true;
+        }
     }
 }
