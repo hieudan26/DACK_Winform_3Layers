@@ -9,9 +9,9 @@ namespace DTO_Management
 {
     public class vehicleDTO
     {
-        private int iID;
+        private string iid;
 
-        public int ID { get => iID; set => iID = value; }
+        public string id { get => iid; set => iid = value; }
         
         private MemoryStream bImg1;
 
@@ -26,27 +26,18 @@ namespace DTO_Management
         public int type { get => itype; set => itype = value; }
 
       
-        private int itypeGui;
-        public int typeGui { get => itypeGui; set => itypeGui = value; }
         
-        private DateTime dngayGui;
-        public DateTime ngayGui { get => dngayGui; set => dngayGui = value; }
 
         public vehicleDTO() { }
 
-        public vehicleDTO(int id, int type, MemoryStream img1, MemoryStream img2)
+        public vehicleDTO(string id, int type, MemoryStream img1, MemoryStream img2)
         {
-            this.iID = id;
+            this.iid = id;
             this.itype = type;
             this.bImg1 = img1;
             this.bImg2 = img2;
+        }
 
-        }
-        public void ADDGuiXe(int TypeGui, DateTime NgayGui)
-        {
-            this.itypeGui = TypeGui;
-            this.dngayGui = NgayGui;
-        }
         ~vehicleDTO() { }
     }
 }

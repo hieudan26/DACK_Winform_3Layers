@@ -14,7 +14,7 @@ namespace BUS_Management
     {
         vehicleDAL Vehicle = new vehicleDAL();
 
-        public DataTable getVehicleByID(int id)
+        public DataTable getVehicleByID(string id)
         {
             return this.Vehicle.getVehicleByID(id);
         }
@@ -38,7 +38,17 @@ namespace BUS_Management
         {
             return this.Vehicle.danhSachID(type);
         }
-
+        //delete vehicle
+        public bool DelVehicle(string id)
+        {
+            return this.Vehicle.DeleteVehicle(id);
+        }
+        // check full
+        public bool checkFullVehicle(int type)
+        {
+            return this.Vehicle.checkFullVehicle(type);
+        }
+        /*
         //Lay ra phi gui xe theo thu
         public int layTienTheoThu(int thu, string loaiGui)
         {
@@ -74,11 +84,7 @@ namespace BUS_Management
         {
             return this.Vehicle.UpdateInfoVehicle(id, loaiXe, loaiGui, img1, img2, timeIn);
         }
+         */
 
-        //delete vehicle
-        public bool DelVehicle(int id)
-        {
-            return this.Vehicle.DeleteVehicle(id);
-        }
     }
 }
