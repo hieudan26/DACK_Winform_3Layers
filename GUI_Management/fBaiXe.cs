@@ -67,7 +67,7 @@ namespace GUI_Management
                     btnBike.Text = item.ToString();
 
                     //design button
-                    btnBike.Width = 130;
+                    btnBike.Width = 140;
                     btnBike.Height = 40;
                     btnBike.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btnBike.BaseColor1 = Color.AntiqueWhite;

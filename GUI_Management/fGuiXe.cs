@@ -38,15 +38,14 @@ namespace GUI_Management
         {
             if (this.cbLoaiXe.SelectedIndex == 0)
             {
-                if(vehBUS.checkFullVehicle(0) == false)
+                if(this.vehBUS.checkFullVehicle(0) == false)
                 {
                     this.btnText1.Text = "Hình Xe";
                     this.btnText2.Text = "Người Gửi";
                 }    
                 else
                 {
-                    
-                    MessageBox.Show("Bai xe dap da het cho","Add Vehicle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Bãi Xe Đạp Đã Hết Chỗ", "Add Vehicle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     this.cbLoaiXe.SelectedItem = null;
                     this.btnText1.Text = "";
                     this.btnText2.Text = "";
@@ -54,43 +53,39 @@ namespace GUI_Management
             }    
             else if(this.cbLoaiXe.SelectedIndex == 1)
             {
-                if (vehBUS.checkFullVehicle(1) == false)
+                if (this.vehBUS.checkFullVehicle(1) == false)
                 {
                     this.btnText1.Text = "Bảng Số";
                     this.btnText2.Text = "Người Gửi";
                 }
                 else
                 {
-                    
-                    MessageBox.Show("Bai xe may da het cho", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bãi Xe Máy Đã Hết Chỗ", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.cbLoaiXe.SelectedItem = null;
                     this.btnText1.Text = "";
                     this.btnText2.Text = "";
                 }
-                
             }    
             else
             {
-                if (vehBUS.checkFullVehicle(2) == false)
+                if (this.vehBUS.checkFullVehicle(2) == false)
                 {
                     this.btnText1.Text = "Bảng Số";
                     this.btnText2.Text = "Hiệu Xe";
                 }
                 else
                 {
-                    
-                    MessageBox.Show("Bai xe hoi da het cho", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bãi Xe Hơi Đã Hết Chỗ", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.cbLoaiXe.SelectedItem = null;
                     this.btnText1.Text = "";
                     this.btnText2.Text = "";
                 }
-                
             }    
         }
 
         private void btnUpImg1_Click(object sender, EventArgs e)
         {
-            if (this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
+            if (this.txtID.Text == "" || this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
             {
                 OpenFileDialog opf = new OpenFileDialog();
                 opf.Filter = "Select Image(*.jpg; *.png; *gif)|*.jpg; *.png; *.gif";
@@ -107,7 +102,7 @@ namespace GUI_Management
 
         private void btnUpImg2_Click(object sender, EventArgs e)
         {
-            if (this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
+            if (this.txtID.Text == "" || this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
             {
                 OpenFileDialog opf = new OpenFileDialog();
                 opf.Filter = "Select Image(*.jpg; *.png; *gif)|*.jpg; *.png; *.gif";
@@ -133,6 +128,10 @@ namespace GUI_Management
             {
                 MessageBox.Show("Can't insert new vehicle if you don't upload your image", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (this.txtID.Text == "")
+            {
+                MessageBox.Show("Can't insert new vehicle if you don't have id", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
             else
             {
                 int type = this.cbLoaiXe.SelectedIndex;
@@ -143,13 +142,13 @@ namespace GUI_Management
                 MemoryStream pic2 = new MemoryStream();
                 this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
 
-                vehicleDTO vehDTO = new vehicleDTO("135", type, pic1, pic2);
+                vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2);
                 this.vehBUS.insertVehicle(vehDTO);
                 MessageBox.Show("Successfully~~");
+
                 //thu phi
                 this.openForm(vehDTO);
                 //end
-                
             }
         }
 

@@ -66,7 +66,7 @@ namespace GUI_Management
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
             this.gunaShadowPanel1.Radius = 2;
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(243, 559);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(243, 627);
             this.gunaShadowPanel1.TabIndex = 0;
             // 
             // btnExit
@@ -82,7 +82,7 @@ namespace GUI_Management
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(103, 505);
+            this.btnExit.Location = new System.Drawing.Point(97, 561);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -226,16 +226,16 @@ namespace GUI_Management
             this.pnlChildForm.Location = new System.Drawing.Point(243, 0);
             this.pnlChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(765, 462);
+            this.pnlChildForm.Size = new System.Drawing.Size(857, 523);
             this.pnlChildForm.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GUI_Management.Properties.Resources.Loading;
-            this.pictureBox2.Location = new System.Drawing.Point(149, 98);
+            this.pictureBox2.Location = new System.Drawing.Point(183, 106);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(472, 270);
+            this.pictureBox2.Size = new System.Drawing.Size(501, 311);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -247,10 +247,10 @@ namespace GUI_Management
             this.gunaGradient2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
-            this.gunaGradient2Panel1.Location = new System.Drawing.Point(243, 459);
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(243, 527);
             this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(765, 100);
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(857, 100);
             this.gunaGradient2Panel1.TabIndex = 4;
             // 
             // label1
@@ -258,7 +258,7 @@ namespace GUI_Management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.label1.Location = new System.Drawing.Point(147, 14);
+            this.label1.Location = new System.Drawing.Point(196, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(471, 72);
             this.label1.TabIndex = 19;
@@ -269,7 +269,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.ClientSize = new System.Drawing.Size(1008, 559);
+            this.ClientSize = new System.Drawing.Size(1100, 627);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.gunaShadowPanel1);
             this.Controls.Add(this.pnlChildForm);

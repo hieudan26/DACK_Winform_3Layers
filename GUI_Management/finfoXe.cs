@@ -109,7 +109,7 @@ namespace GUI_Management
                 {
                     this.pBHinh1.Image.Save(pic1, this.pBHinh1.Image.RawFormat);
                     this.pBHinh2.Image.Save(pic2, this.pBHinh2.Image.RawFormat);
-                    if (this.vehicleBUS.UpdateInfoVehicleAll(id,loaiGui, timeIn, loaiXe, pic1, pic2))
+                    if (this.vehicleBUS.UpdateInfoVehicleAll(id ,loaiGui, timeIn, loaiXe, pic1, pic2))
                     {
                         MessageBox.Show("Vehicle Information Updated", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } 
