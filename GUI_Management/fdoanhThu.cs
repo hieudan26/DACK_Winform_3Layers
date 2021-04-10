@@ -365,7 +365,7 @@ namespace GUI_Management
 
                 string oTemp = "";
                 //in ra bang
-                for (r = 0; r <= 1; r++)
+                for (r = 0; r <= RowCount - 1; r++)
                 {
                     for (int c = 0; c <= ColumnCount - 1; c++)
                     {
