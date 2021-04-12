@@ -42,7 +42,6 @@ namespace GUI_Management
 
             else
             {
-
                 lbContent.Text = txt.Substring(0, counter);
 
                 if (lbContent.ForeColor == System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54))))))
@@ -117,15 +116,15 @@ namespace GUI_Management
                 System.Data.DataTable table = this.vehicleBUS.getVehicleExpired();
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["typePark"]) == 0) //giờ
+                    if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["id"]) == 0) //giờ
                     {
                         phat += (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(0))) * 2;
                     }
-                    else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["typePark"]) == 1) //ngày
+                    else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["id"]) == 1) //ngày
                     {
                         phat += (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(1))) * 2;
                     }
-                    else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["typePark"]) == 2) //tuần
+                    else if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["id"]) == 2) //tuần
                     {
                         phat += (this.vehicleBUS.layTienTheoThu(this.xacDinhThu(), this.LoaiGui(3)));
                     }
@@ -216,7 +215,7 @@ namespace GUI_Management
         {
             finfoXe form = new finfoXe(this.fQuanLyXeGui, "DoanhThu");
 
-            int id = Convert.ToInt32(this.dgvExpired.CurrentRow.Cells[0].Value);
+            string id = this.dgvExpired.CurrentRow.Cells[0].Value.ToString();
 
             form.txtID.Text = this.dgvExpired.CurrentRow.Cells[0].Value.ToString();
             if ((int)this.dgvExpired.CurrentRow.Cells[1].Value == 0)
@@ -237,16 +236,16 @@ namespace GUI_Management
             form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
             form.pBHinh2.Image = Image.FromStream(this.picture(3));
 
-            form.txtLoaiGui.Text = this.LoaiGui(id);
+            form.txtLoaiGui.Text = this.LoaiGui(this.vehicleBUS.getTypeGuiXe(id));
 
-            form.txtDTGui.Text = this.dgvExpired.CurrentRow.Cells[5].Value.ToString();
+            form.txtDTGui.Text = this.dgvExpired.CurrentRow.Cells[6].Value.ToString();
 
             form.txtTongTien.Text = this.loadDoanhThuPhat(id).ToString();
 
             this.fQuanLyXeGui.openChildForm(form);
         }
 
-        private int loadDoanhThuPhat(int id)
+        private int loadDoanhThuPhat(string id)
         {
             int doanhThuPhat = 0;
             if (this.LoadDataGridView())
@@ -254,7 +253,7 @@ namespace GUI_Management
                 System.Data.DataTable table = this.vehicleBUS.getVehicleExpired();
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    if (id == (int)table.Rows[i]["id"])
+                    if (id == (string)table.Rows[i]["id"])
                     {
                         if (this.vehicleBUS.getTypeGuiXe((string)table.Rows[i]["id"]) == 0) //giờ
                         {
@@ -325,10 +324,6 @@ namespace GUI_Management
         }
         public void Export_Data_To_Word(DataGridView DGV, string filename)
         {
-            
-
-
-
             if (DGV.Rows.Count != 0)
             {
                 int RowCount = DGV.Rows.Count;
