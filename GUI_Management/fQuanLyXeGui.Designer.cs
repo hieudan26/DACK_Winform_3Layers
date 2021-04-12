@@ -38,13 +38,14 @@ namespace GUI_Management
             this.btnGuiXe = new Guna.UI.WinForms.GunaGradientButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbLoad = new System.Windows.Forms.PictureBox();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLayXe = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).BeginInit();
             this.gunaGradient2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@ namespace GUI_Management
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.gunaShadowPanel1.Controls.Add(this.btnLayXe);
             this.gunaShadowPanel1.Controls.Add(this.btnExit);
             this.gunaShadowPanel1.Controls.Add(this.pnlMove);
             this.gunaShadowPanel1.Controls.Add(this.panel1);
@@ -82,7 +84,7 @@ namespace GUI_Management
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(97, 561);
+            this.btnExit.Location = new System.Drawing.Point(97, 578);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -130,7 +132,7 @@ namespace GUI_Management
             this.btnDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.btnDoanhThu.Image = null;
             this.btnDoanhThu.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDoanhThu.Location = new System.Drawing.Point(57, 415);
+            this.btnDoanhThu.Location = new System.Drawing.Point(57, 510);
             this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDoanhThu.Name = "btnDoanhThu";
             this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
@@ -222,23 +224,25 @@ namespace GUI_Management
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.pnlChildForm.Controls.Add(this.pictureBox2);
+            this.pnlChildForm.Controls.Add(this.pbLoad);
             this.pnlChildForm.Location = new System.Drawing.Point(243, 0);
             this.pnlChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(857, 523);
             this.pnlChildForm.TabIndex = 2;
             // 
-            // pictureBox2
+            // pbLoad
             // 
-            this.pictureBox2.Image = global::GUI_Management.Properties.Resources.Loading;
-            this.pictureBox2.Location = new System.Drawing.Point(183, 106);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(501, 311);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pbLoad.Image = global::GUI_Management.Properties.Resources.unnamed;
+            this.pbLoad.Location = new System.Drawing.Point(195, 79);
+            this.pbLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLoad.Name = "pbLoad";
+            this.pbLoad.Size = new System.Drawing.Size(472, 383);
+            this.pbLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLoad.TabIndex = 0;
+            this.pbLoad.TabStop = false;
+            this.pbLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseDown);
+            this.pbLoad.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseMove);
             // 
             // gunaGradient2Panel1
             // 
@@ -264,6 +268,37 @@ namespace GUI_Management
             this.label1.TabIndex = 19;
             this.label1.Text = "QUẢN LÝ XE GỬI";
             // 
+            // btnLayXe
+            // 
+            this.btnLayXe.AnimationHoverSpeed = 0.07F;
+            this.btnLayXe.AnimationSpeed = 0.03F;
+            this.btnLayXe.BackColor = System.Drawing.Color.Transparent;
+            this.btnLayXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnLayXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnLayXe.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLayXe.BorderSize = 1;
+            this.btnLayXe.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLayXe.FocusedColor = System.Drawing.Color.Empty;
+            this.btnLayXe.Font = new System.Drawing.Font("High Tower Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLayXe.ForeColor = System.Drawing.Color.Black;
+            this.btnLayXe.Image = null;
+            this.btnLayXe.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnLayXe.Location = new System.Drawing.Point(57, 415);
+            this.btnLayXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLayXe.Name = "btnLayXe";
+            this.btnLayXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnLayXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnLayXe.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnLayXe.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnLayXe.OnHoverImage = null;
+            this.btnLayXe.OnPressedColor = System.Drawing.Color.Black;
+            this.btnLayXe.Radius = 7;
+            this.btnLayXe.Size = new System.Drawing.Size(160, 47);
+            this.btnLayXe.TabIndex = 5;
+            this.btnLayXe.Text = "LẤY XE";
+            this.btnLayXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLayXe.Click += new System.EventHandler(this.btnLayXe_Click);
+            // 
             // fQuanLyXeGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,7 +318,7 @@ namespace GUI_Management
             this.gunaShadowPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlChildForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).EndInit();
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -298,11 +333,12 @@ namespace GUI_Management
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaGradientButton btnDoanhThu;
         private Guna.UI.WinForms.GunaGradientButton btnBaiXe;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbLoad;
         private Guna.UI.WinForms.GunaButton btnExit;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
         public System.Windows.Forms.Panel pnlMove;
         public System.Windows.Forms.Panel pnlChildForm;
         private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaGradientButton btnLayXe;
     }
 }

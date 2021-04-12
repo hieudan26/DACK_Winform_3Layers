@@ -324,10 +324,6 @@ namespace GUI_Management
         }
         public void Export_Data_To_Word(DataGridView DGV, string filename)
         {
-            
-
-
-
             if (DGV.Rows.Count != 0)
             {
                 int RowCount = DGV.Rows.Count;
