@@ -16,6 +16,7 @@ namespace GUI_Management
     {
         doanhThuParkingBUS doanhThuBUS = new doanhThuParkingBUS();
         vehicleParkingBUS vehParkingBUS = new vehicleParkingBUS();
+        vehicleBUS vehBUS = new vehicleBUS();
         public flayXe()
         {
             InitializeComponent();
@@ -40,14 +41,51 @@ namespace GUI_Management
 
         private void cbTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cbTypeFilter.SelectedIndex == 0) // Lọc xe đạp
+            int index = this.cbTypeFilter.SelectedIndex;
+            if (this.cbTypeFilter.SelectedIndex == 3) // Lọc xe đạp
             {
-                DataTable table = this.vehParkingBUS.getTypeGuiXe()
+                DataTable table = this.vehParkingBUS.getVehicleExpired();
+                dgvXe.DataSource = table;
             }   
-            esle if (this.cbTypeFilter.SelectedIndex == 1) // Lọc xe máy
+            else if (this.cbTypeFilter.SelectedIndex < 3)  // Lọc xe máy
             {
+                DataTable table = this.vehParkingBUS.danhSachXetheoLoai(index);
+                dgvXe.DataSource = table;
+            }
+            else if (this.cbTypeFilter.SelectedIndex == 4 )  // Lọc xe máy
+            {
+                DataTable table = this.vehParkingBUS.getVehicleNotExpired();
+                dgvXe.DataSource = table;
+            }
+            else
+            {
+                DataTable table = this.vehParkingBUS.getAllVehicle();
+                dgvXe.DataSource = table;
+            }
+        }
 
-            }    
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            string IDxe = this.dgvXe.CurrentRow.Cells[0].Value.ToString();
+            MessageBox.Show("Do you want to take out : " + IDxe, "Take Out vehicle", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            try
+            {
+                if (true)
+                {
+                    if (this.vehParkingBUS.DelVehicle(IDxe) && this.vehBUS.DelVehicle(IDxe))
+                        MessageBox.Show("Vehicle is taken out");
+                    else
+                        MessageBox.Show("Vehicle is taken out Error");
+                    DataTable table = this.vehParkingBUS.getAllVehicle();
+                    dgvXe.DataSource = table;
+                    this.cbTypeFilter.SelectedIndex = 5;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
