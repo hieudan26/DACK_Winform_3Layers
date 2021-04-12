@@ -91,5 +91,18 @@ namespace BUS_Management
         {
             return this.Vehicle.UpdateInfoVehicleAll(id, loaiGui, timeIn, loaiXe, img1, img2);
         }
+        //get all vehicle
+        public DataTable getAllVehicle()
+        {
+            return this.Vehicle.getAllVehicle();
+        }
+        public DataTable danhSachXetheoLoai(int type)
+        {
+            return this.Vehicle.danhSachXetheoLoai(type);
+        }
+        public DataTable getVehicleNotExpired()
+        {
+            return this.Vehicle.getVehicleNotExpired();
+        }
     }
 }

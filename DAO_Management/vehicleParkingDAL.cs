@@ -173,7 +173,27 @@ namespace DAO_Management
             else
                 return null;
         }
+        //Xe khoong heet han
+        public DataTable getVehicleNotExpired()
+        {
+            SqlCommand cmd = new SqlCommand("select * from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
+            DataTable table = this.getVehicle(cmd);
+            table.AcceptChanges();
 
+            for (int i = table.Rows.Count - 1; i >= 0; i--)
+            {
+                DataRow item = table.Rows[i];
+                if (this.compareDateTime_theoTypeGui((int)item["type"], (DateTime)item["timeIn"]) == 0)
+                    table.Rows.Remove(item);
+            }
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+                return null;
+        }
         //trả về 1 => quá tgian
         private int compareDateTime_theoTypeGui(int typeGui, DateTime timeIn)
         {
@@ -262,11 +282,16 @@ namespace DAO_Management
             SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
-
             DataTable table = this.getVehicle(cmd);
             return table;
         }
-
+        //lay toan bo xe
+        public DataTable getAllVehicle()
+        {
+            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id ",this.con);
+            DataTable table = this.getVehicle(cmd);
+            return table;
+        }
         //them object xe
         public bool insertVehicle(vehicleParkingDTO vel)
         {
@@ -356,7 +381,15 @@ namespace DAO_Management
             }
             return lID;
         }
-
+        public DataTable danhSachXetheoLoai(int type)
+        {
+            this.openConnection();
+            SqlCommand cmd = new SqlCommand("select * from VEHICLE_PARKING " +
+                "inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id" +
+                " where type = " + type, this.getConnection);
+            return this.getVehicle(cmd);
+                   
+        }
         //dem tong cong
         public int countVehicleTotal()
         {
