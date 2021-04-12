@@ -51,22 +51,22 @@ namespace GUI_Management
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.label1.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Mistral", 72F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(229, 24);
+            this.label1.Location = new System.Drawing.Point(197, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 95);
+            this.label1.Size = new System.Drawing.Size(405, 143);
             this.label1.TabIndex = 3;
             this.label1.Text = "PHÍ GỬI";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(35, 215);
+            this.label2.Location = new System.Drawing.Point(43, 266);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 23);
+            this.label2.Size = new System.Drawing.Size(112, 26);
             this.label2.TabIndex = 4;
             this.label2.Text = "Loại Gửi:";
             // 
@@ -86,20 +86,20 @@ namespace GUI_Management
             "Day(s)",
             "Week(s)",
             "Month(s)"});
-            this.cbLoaiGui.Location = new System.Drawing.Point(158, 211);
+            this.cbLoaiGui.Location = new System.Drawing.Point(186, 265);
             this.cbLoaiGui.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLoaiGui.Name = "cbLoaiGui";
             this.cbLoaiGui.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbLoaiGui.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbLoaiGui.Radius = 5;
-            this.cbLoaiGui.Size = new System.Drawing.Size(143, 31);
+            this.cbLoaiGui.Size = new System.Drawing.Size(162, 31);
             this.cbLoaiGui.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(498, 159);
+            this.label3.Location = new System.Drawing.Point(524, 231);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 7;
@@ -115,55 +115,55 @@ namespace GUI_Management
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(477, 157);
+            this.label5.Location = new System.Drawing.Point(435, 180);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 23);
+            this.label5.Size = new System.Drawing.Size(145, 35);
             this.label5.TabIndex = 9;
             this.label5.Text = "Bảng Giá:";
             // 
             // labelGio
             // 
             this.labelGio.AutoSize = true;
-            this.labelGio.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGio.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGio.ForeColor = System.Drawing.Color.Black;
-            this.labelGio.Location = new System.Drawing.Point(399, 200);
+            this.labelGio.Location = new System.Drawing.Point(405, 248);
             this.labelGio.Name = "labelGio";
-            this.labelGio.Size = new System.Drawing.Size(211, 23);
+            this.labelGio.Size = new System.Drawing.Size(253, 26);
             this.labelGio.TabIndex = 14;
             this.labelGio.Text = "Giá theo giờ:       ...........";
             // 
             // labelTuan
             // 
             this.labelTuan.AutoSize = true;
-            this.labelTuan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTuan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTuan.ForeColor = System.Drawing.Color.Black;
-            this.labelTuan.Location = new System.Drawing.Point(399, 292);
+            this.labelTuan.Location = new System.Drawing.Point(405, 372);
             this.labelTuan.Name = "labelTuan";
-            this.labelTuan.Size = new System.Drawing.Size(212, 23);
+            this.labelTuan.Size = new System.Drawing.Size(255, 26);
             this.labelTuan.TabIndex = 15;
             this.labelTuan.Text = "Giá theo tuần:     ...........";
             // 
             // labelThang
             // 
             this.labelThang.AutoSize = true;
-            this.labelThang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelThang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelThang.ForeColor = System.Drawing.Color.Black;
-            this.labelThang.Location = new System.Drawing.Point(399, 338);
+            this.labelThang.Location = new System.Drawing.Point(405, 433);
             this.labelThang.Name = "labelThang";
-            this.labelThang.Size = new System.Drawing.Size(212, 23);
+            this.labelThang.Size = new System.Drawing.Size(255, 26);
             this.labelThang.TabIndex = 16;
             this.labelThang.Text = "Giá theo tháng:   ...........";
             // 
             // labelNgay
             // 
             this.labelNgay.AutoSize = true;
-            this.labelNgay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNgay.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNgay.ForeColor = System.Drawing.Color.Black;
-            this.labelNgay.Location = new System.Drawing.Point(399, 246);
+            this.labelNgay.Location = new System.Drawing.Point(405, 312);
             this.labelNgay.Name = "labelNgay";
-            this.labelNgay.Size = new System.Drawing.Size(210, 23);
+            this.labelNgay.Size = new System.Drawing.Size(252, 26);
             this.labelNgay.TabIndex = 17;
             this.labelNgay.Text = "Giá theo ngày:    ...........";
             // 
@@ -175,10 +175,10 @@ namespace GUI_Management
             this.gunaGradientPanel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(111)))), ((int)(((byte)(211)))));
             this.gunaGradientPanel1.GradientColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(227)))));
             this.gunaGradientPanel1.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(217)))), ((int)(((byte)(178)))));
-            this.gunaGradientPanel1.Location = new System.Drawing.Point(361, 143);
+            this.gunaGradientPanel1.Location = new System.Drawing.Point(377, 171);
             this.gunaGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientPanel1.Name = "gunaGradientPanel1";
-            this.gunaGradientPanel1.Size = new System.Drawing.Size(2, 230);
+            this.gunaGradientPanel1.Size = new System.Drawing.Size(2, 330);
             this.gunaGradientPanel1.TabIndex = 10;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
             // 
@@ -193,7 +193,7 @@ namespace GUI_Management
             this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
             this.gunaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(591, 143);
+            this.gunaDateTimePicker1.Location = new System.Drawing.Point(623, 171);
             this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
@@ -202,7 +202,7 @@ namespace GUI_Management
             this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaDateTimePicker1.Radius = 5;
-            this.gunaDateTimePicker1.Size = new System.Drawing.Size(125, 44);
+            this.gunaDateTimePicker1.Size = new System.Drawing.Size(162, 44);
             this.gunaDateTimePicker1.TabIndex = 18;
             this.gunaDateTimePicker1.Text = "Friday";
             this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 9, 0, 0, 0, 0);
@@ -211,7 +211,7 @@ namespace GUI_Management
             // 
             this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(163)))), ((int)(((byte)(164)))));
             this.btnOK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(95, 279);
+            this.btnOK.Location = new System.Drawing.Point(101, 372);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(165, 49);
@@ -232,7 +232,7 @@ namespace GUI_Management
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Image = null;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(660, 379);
+            this.btnBack.Location = new System.Drawing.Point(762, 26);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -256,7 +256,7 @@ namespace GUI_Management
             this.gunaGradientPanel2.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.gunaGradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.gunaGradientPanel2.Name = "gunaGradientPanel2";
-            this.gunaGradientPanel2.Size = new System.Drawing.Size(765, 14);
+            this.gunaGradientPanel2.Size = new System.Drawing.Size(830, 14);
             this.gunaGradientPanel2.TabIndex = 21;
             this.gunaGradientPanel2.Text = "gunaGradientPanel2";
             // 
@@ -265,7 +265,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(765, 411);
+            this.ClientSize = new System.Drawing.Size(830, 536);
             this.Controls.Add(this.gunaGradientPanel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnOK);

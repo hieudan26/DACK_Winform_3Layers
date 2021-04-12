@@ -59,11 +59,11 @@ namespace GUI_Management
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.label1.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Mistral", 55.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(85, 17);
+            this.label1.Location = new System.Drawing.Point(32, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(607, 95);
+            this.label1.Size = new System.Drawing.Size(705, 110);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thông Tin Chi Tiết Xe";
             // 
@@ -79,7 +79,7 @@ namespace GUI_Management
             this.gunaGradientPanel1.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.gunaGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaGradientPanel1.Name = "gunaGradientPanel1";
-            this.gunaGradientPanel1.Size = new System.Drawing.Size(800, 14);
+            this.gunaGradientPanel1.Size = new System.Drawing.Size(830, 14);
             this.gunaGradientPanel1.TabIndex = 6;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
             // 
@@ -88,7 +88,7 @@ namespace GUI_Management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(12, 148);
+            this.label2.Location = new System.Drawing.Point(47, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 23);
             this.label2.TabIndex = 7;
@@ -99,7 +99,7 @@ namespace GUI_Management
             this.lbHinh1.AutoSize = true;
             this.lbHinh1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHinh1.ForeColor = System.Drawing.Color.Black;
-            this.lbHinh1.Location = new System.Drawing.Point(438, 159);
+            this.lbHinh1.Location = new System.Drawing.Point(480, 205);
             this.lbHinh1.Name = "lbHinh1";
             this.lbHinh1.Size = new System.Drawing.Size(73, 23);
             this.lbHinh1.TabIndex = 8;
@@ -110,7 +110,7 @@ namespace GUI_Management
             this.lbHinh2.AutoSize = true;
             this.lbHinh2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHinh2.ForeColor = System.Drawing.Color.Black;
-            this.lbHinh2.Location = new System.Drawing.Point(438, 303);
+            this.lbHinh2.Location = new System.Drawing.Point(480, 361);
             this.lbHinh2.Name = "lbHinh2";
             this.lbHinh2.Size = new System.Drawing.Size(73, 23);
             this.lbHinh2.TabIndex = 9;
@@ -121,7 +121,7 @@ namespace GUI_Management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(12, 415);
+            this.label5.Location = new System.Drawing.Point(47, 457);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 23);
             this.label5.TabIndex = 10;
@@ -132,7 +132,7 @@ namespace GUI_Management
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(12, 213);
+            this.label6.Location = new System.Drawing.Point(47, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 23);
             this.label6.TabIndex = 11;
@@ -148,11 +148,11 @@ namespace GUI_Management
             this.txtID.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtID.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtID.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(161, 139);
+            this.txtID.Location = new System.Drawing.Point(207, 152);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.SelectedText = "";
-            this.txtID.Size = new System.Drawing.Size(180, 32);
+            this.txtID.Size = new System.Drawing.Size(202, 32);
             this.txtID.TabIndex = 12;
             this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -165,11 +165,11 @@ namespace GUI_Management
             this.txtLoaiXe.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLoaiXe.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLoaiXe.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiXe.Location = new System.Drawing.Point(161, 204);
+            this.txtLoaiXe.Location = new System.Drawing.Point(207, 222);
             this.txtLoaiXe.Name = "txtLoaiXe";
             this.txtLoaiXe.PasswordChar = '\0';
             this.txtLoaiXe.SelectedText = "";
-            this.txtLoaiXe.Size = new System.Drawing.Size(180, 32);
+            this.txtLoaiXe.Size = new System.Drawing.Size(202, 32);
             this.txtLoaiXe.TabIndex = 13;
             this.txtLoaiXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -182,27 +182,27 @@ namespace GUI_Management
             this.txtTongTien.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTongTien.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTongTien.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(214, 406);
+            this.txtTongTien.Location = new System.Drawing.Point(260, 448);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.PasswordChar = '\0';
             this.txtTongTien.SelectedText = "";
-            this.txtTongTien.Size = new System.Drawing.Size(127, 32);
+            this.txtTongTien.Size = new System.Drawing.Size(149, 32);
             this.txtTongTien.TabIndex = 14;
             this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pBHinh1
             // 
-            this.pBHinh1.Location = new System.Drawing.Point(575, 124);
+            this.pBHinh1.Location = new System.Drawing.Point(591, 165);
             this.pBHinh1.Name = "pBHinh1";
-            this.pBHinh1.Size = new System.Drawing.Size(159, 89);
+            this.pBHinh1.Size = new System.Drawing.Size(185, 109);
             this.pBHinh1.TabIndex = 15;
             this.pBHinh1.TabStop = false;
             // 
             // pBHinh2
             // 
-            this.pBHinh2.Location = new System.Drawing.Point(575, 281);
+            this.pBHinh2.Location = new System.Drawing.Point(591, 333);
             this.pBHinh2.Name = "pBHinh2";
-            this.pBHinh2.Size = new System.Drawing.Size(159, 81);
+            this.pBHinh2.Size = new System.Drawing.Size(185, 117);
             this.pBHinh2.TabIndex = 16;
             this.pBHinh2.TabStop = false;
             // 
@@ -218,7 +218,7 @@ namespace GUI_Management
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Image = null;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(682, 411);
+            this.btnBack.Location = new System.Drawing.Point(778, 20);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -245,7 +245,7 @@ namespace GUI_Management
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnEdit.Image = null;
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEdit.Location = new System.Drawing.Point(397, 398);
+            this.btnEdit.Location = new System.Drawing.Point(463, 477);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnEdit.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
@@ -275,7 +275,7 @@ namespace GUI_Management
             this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnRemove.Image = null;
             this.btnRemove.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRemove.Location = new System.Drawing.Point(535, 398);
+            this.btnRemove.Location = new System.Drawing.Point(635, 477);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnRemove.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
@@ -284,7 +284,7 @@ namespace GUI_Management
             this.btnRemove.OnHoverImage = null;
             this.btnRemove.OnPressedColor = System.Drawing.Color.Black;
             this.btnRemove.Radius = 3;
-            this.btnRemove.Size = new System.Drawing.Size(119, 33);
+            this.btnRemove.Size = new System.Drawing.Size(141, 33);
             this.btnRemove.TabIndex = 23;
             this.btnRemove.Text = "REMOVE";
             this.btnRemove.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -299,11 +299,11 @@ namespace GUI_Management
             this.txtLoaiGui.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLoaiGui.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLoaiGui.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiGui.Location = new System.Drawing.Point(161, 272);
+            this.txtLoaiGui.Location = new System.Drawing.Point(207, 302);
             this.txtLoaiGui.Name = "txtLoaiGui";
             this.txtLoaiGui.PasswordChar = '\0';
             this.txtLoaiGui.SelectedText = "";
-            this.txtLoaiGui.Size = new System.Drawing.Size(180, 32);
+            this.txtLoaiGui.Size = new System.Drawing.Size(202, 32);
             this.txtLoaiGui.TabIndex = 25;
             this.txtLoaiGui.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -312,7 +312,7 @@ namespace GUI_Management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(12, 281);
+            this.label3.Location = new System.Drawing.Point(47, 311);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 23);
             this.label3.TabIndex = 24;
@@ -327,19 +327,20 @@ namespace GUI_Management
             this.txtDTGui.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtDTGui.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtDTGui.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDTGui.Location = new System.Drawing.Point(161, 342);
+            this.txtDTGui.Location = new System.Drawing.Point(207, 376);
             this.txtDTGui.Name = "txtDTGui";
             this.txtDTGui.PasswordChar = '\0';
             this.txtDTGui.SelectedText = "";
-            this.txtDTGui.Size = new System.Drawing.Size(180, 32);
+            this.txtDTGui.Size = new System.Drawing.Size(202, 32);
             this.txtDTGui.TabIndex = 27;
+            this.txtDTGui.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(12, 351);
+            this.label4.Location = new System.Drawing.Point(47, 385);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 23);
             this.label4.TabIndex = 26;
@@ -349,10 +350,10 @@ namespace GUI_Management
             // 
             this.btnUpImg1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
             this.btnUpImg1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpImg1.Location = new System.Drawing.Point(575, 105);
+            this.btnUpImg1.Location = new System.Drawing.Point(591, 141);
             this.btnUpImg1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpImg1.Name = "btnUpImg1";
-            this.btnUpImg1.Size = new System.Drawing.Size(159, 25);
+            this.btnUpImg1.Size = new System.Drawing.Size(185, 25);
             this.btnUpImg1.TabIndex = 28;
             this.btnUpImg1.Text = "UP IMG";
             this.btnUpImg1.UseVisualStyleBackColor = false;
@@ -362,10 +363,10 @@ namespace GUI_Management
             // 
             this.btnUpImg2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
             this.btnUpImg2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpImg2.Location = new System.Drawing.Point(575, 258);
+            this.btnUpImg2.Location = new System.Drawing.Point(591, 309);
             this.btnUpImg2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpImg2.Name = "btnUpImg2";
-            this.btnUpImg2.Size = new System.Drawing.Size(159, 25);
+            this.btnUpImg2.Size = new System.Drawing.Size(185, 25);
             this.btnUpImg2.TabIndex = 29;
             this.btnUpImg2.Text = "UP IMG";
             this.btnUpImg2.UseVisualStyleBackColor = false;
@@ -376,7 +377,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(830, 536);
             this.Controls.Add(this.btnUpImg2);
             this.Controls.Add(this.btnUpImg1);
             this.Controls.Add(this.txtDTGui);

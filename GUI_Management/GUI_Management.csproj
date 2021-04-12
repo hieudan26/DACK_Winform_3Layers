@@ -82,6 +82,12 @@
     <Compile Include="finfoXe.Designer.cs">
       <DependentUpon>finfoXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="flayXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flayXe.Designer.cs">
+      <DependentUpon>flayXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="finfoXe.resx">
       <DependentUpon>finfoXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flayXe.resx">
+      <DependentUpon>flayXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
@@ -277,6 +286,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

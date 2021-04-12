@@ -55,7 +55,7 @@ namespace GUI_Management
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(765, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(883, 33);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnExit
@@ -78,7 +78,7 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label1.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(250, 36);
+            this.label1.Location = new System.Drawing.Point(336, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 95);
             this.label1.TabIndex = 4;
@@ -86,23 +86,23 @@ namespace GUI_Management
             // 
             // flpKhuA
             // 
-            this.flpKhuA.Location = new System.Drawing.Point(41, 183);
+            this.flpKhuA.Location = new System.Drawing.Point(44, 193);
             this.flpKhuA.Name = "flpKhuA";
-            this.flpKhuA.Size = new System.Drawing.Size(212, 228);
+            this.flpKhuA.Size = new System.Drawing.Size(223, 259);
             this.flpKhuA.TabIndex = 5;
             // 
             // flpKhuB
             // 
-            this.flpKhuB.Location = new System.Drawing.Point(285, 183);
+            this.flpKhuB.Location = new System.Drawing.Point(320, 193);
             this.flpKhuB.Name = "flpKhuB";
-            this.flpKhuB.Size = new System.Drawing.Size(212, 228);
+            this.flpKhuB.Size = new System.Drawing.Size(225, 259);
             this.flpKhuB.TabIndex = 6;
             // 
             // flpKhuC
             // 
-            this.flpKhuC.Location = new System.Drawing.Point(533, 183);
+            this.flpKhuC.Location = new System.Drawing.Point(598, 193);
             this.flpKhuC.Name = "flpKhuC";
-            this.flpKhuC.Size = new System.Drawing.Size(212, 228);
+            this.flpKhuC.Size = new System.Drawing.Size(223, 259);
             this.flpKhuC.TabIndex = 7;
             // 
             // lbA
@@ -111,7 +111,7 @@ namespace GUI_Management
             this.lbA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbA.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
-            this.lbA.Location = new System.Drawing.Point(68, 148);
+            this.lbA.Location = new System.Drawing.Point(81, 158);
             this.lbA.Name = "lbA";
             this.lbA.Size = new System.Drawing.Size(142, 25);
             this.lbA.TabIndex = 8;
@@ -123,7 +123,7 @@ namespace GUI_Management
             this.lbB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbB.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
-            this.lbB.Location = new System.Drawing.Point(315, 148);
+            this.lbB.Location = new System.Drawing.Point(350, 158);
             this.lbB.Name = "lbB";
             this.lbB.Size = new System.Drawing.Size(140, 25);
             this.lbB.TabIndex = 9;
@@ -135,7 +135,7 @@ namespace GUI_Management
             this.lbC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbC.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(153)))), ((int)(((byte)(146)))));
-            this.lbC.Location = new System.Drawing.Point(561, 148);
+            this.lbC.Location = new System.Drawing.Point(626, 158);
             this.lbC.Name = "lbC";
             this.lbC.Size = new System.Drawing.Size(141, 25);
             this.lbC.TabIndex = 10;
@@ -147,7 +147,7 @@ namespace GUI_Management
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label5.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label5.Location = new System.Drawing.Point(134, 36);
+            this.label5.Location = new System.Drawing.Point(220, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 95);
             this.label5.TabIndex = 11;
@@ -159,7 +159,7 @@ namespace GUI_Management
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label6.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label6.Location = new System.Drawing.Point(495, 36);
+            this.label6.Location = new System.Drawing.Point(581, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 95);
             this.label6.TabIndex = 12;
@@ -169,12 +169,12 @@ namespace GUI_Management
             // 
             this.gunaVScrollBar1.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar1.LargeChange = 10;
-            this.gunaVScrollBar1.Location = new System.Drawing.Point(259, 183);
+            this.gunaVScrollBar1.Location = new System.Drawing.Point(261, 193);
             this.gunaVScrollBar1.Maximum = 100;
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.Radius = 2;
             this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.LavenderBlush;
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(6, 228);
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(6, 259);
             this.gunaVScrollBar1.TabIndex = 13;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.Crimson;
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -184,12 +184,12 @@ namespace GUI_Management
             // 
             this.gunaVScrollBar2.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar2.LargeChange = 10;
-            this.gunaVScrollBar2.Location = new System.Drawing.Point(503, 183);
+            this.gunaVScrollBar2.Location = new System.Drawing.Point(547, 193);
             this.gunaVScrollBar2.Maximum = 100;
             this.gunaVScrollBar2.Name = "gunaVScrollBar2";
             this.gunaVScrollBar2.Radius = 2;
             this.gunaVScrollBar2.ScrollIdleColor = System.Drawing.Color.GhostWhite;
-            this.gunaVScrollBar2.Size = new System.Drawing.Size(6, 228);
+            this.gunaVScrollBar2.Size = new System.Drawing.Size(6, 259);
             this.gunaVScrollBar2.TabIndex = 14;
             this.gunaVScrollBar2.ThumbColor = System.Drawing.Color.SandyBrown;
             this.gunaVScrollBar2.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -199,12 +199,12 @@ namespace GUI_Management
             // 
             this.gunaVScrollBar3.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar3.LargeChange = 10;
-            this.gunaVScrollBar3.Location = new System.Drawing.Point(751, 183);
+            this.gunaVScrollBar3.Location = new System.Drawing.Point(815, 193);
             this.gunaVScrollBar3.Maximum = 100;
             this.gunaVScrollBar3.Name = "gunaVScrollBar3";
             this.gunaVScrollBar3.Radius = 2;
             this.gunaVScrollBar3.ScrollIdleColor = System.Drawing.Color.LightCyan;
-            this.gunaVScrollBar3.Size = new System.Drawing.Size(6, 228);
+            this.gunaVScrollBar3.Size = new System.Drawing.Size(6, 259);
             this.gunaVScrollBar3.TabIndex = 15;
             this.gunaVScrollBar3.ThumbColor = System.Drawing.Color.RoyalBlue;
             this.gunaVScrollBar3.ThumbHoverColor = System.Drawing.Color.LightCoral;
@@ -214,35 +214,39 @@ namespace GUI_Management
             // 
             this.lbStatusA.AutoSize = true;
             this.lbStatusA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbStatusA.Location = new System.Drawing.Point(64, 422);
+            this.lbStatusA.Location = new System.Drawing.Point(77, 497);
             this.lbStatusA.Name = "lbStatusA";
-            this.lbStatusA.Size = new System.Drawing.Size(0, 20);
+            this.lbStatusA.Size = new System.Drawing.Size(34, 20);
             this.lbStatusA.TabIndex = 16;
+            this.lbStatusA.Text = "text";
+            this.lbStatusA.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SingleBitPerPixel;
             // 
             // lbStatusB
             // 
             this.lbStatusB.AutoSize = true;
             this.lbStatusB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbStatusB.Location = new System.Drawing.Point(311, 422);
+            this.lbStatusB.Location = new System.Drawing.Point(357, 497);
             this.lbStatusB.Name = "lbStatusB";
-            this.lbStatusB.Size = new System.Drawing.Size(0, 20);
+            this.lbStatusB.Size = new System.Drawing.Size(34, 20);
             this.lbStatusB.TabIndex = 17;
+            this.lbStatusB.Text = "text";
             // 
             // lbStatusC
             // 
             this.lbStatusC.AutoSize = true;
             this.lbStatusC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbStatusC.Location = new System.Drawing.Point(557, 422);
+            this.lbStatusC.Location = new System.Drawing.Point(632, 497);
             this.lbStatusC.Name = "lbStatusC";
-            this.lbStatusC.Size = new System.Drawing.Size(0, 20);
+            this.lbStatusC.Size = new System.Drawing.Size(34, 20);
             this.lbStatusC.TabIndex = 18;
+            this.lbStatusC.Text = "text";
             // 
             // fBaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(765, 460);
+            this.ClientSize = new System.Drawing.Size(883, 536);
             this.Controls.Add(this.lbStatusC);
             this.Controls.Add(this.lbStatusB);
             this.Controls.Add(this.lbStatusA);

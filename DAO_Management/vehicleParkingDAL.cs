@@ -45,8 +45,8 @@ namespace DAO_Management
         //Edit_Update thông tin xe gửi
         public bool UpdateInfoVehicle(string id,  int loaiGui, DateTime timeIn)
         {
-            SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set typePark = @loaiGui, timeIn = @tI where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set typePark = @loaiGui, timeIn = @tI where @id", this.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             cmd.Parameters.Add("@loaiGui", SqlDbType.Int).Value = loaiGui;
             cmd.Parameters.Add("@tI", SqlDbType.DateTime).Value = timeIn;
 
@@ -67,7 +67,7 @@ namespace DAO_Management
         {
             velDAL.UpdateInfoVehicle(id, loaiXe, img1, img2);
             SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set typePark = @loaiGui, timeIn = @tI where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             cmd.Parameters.Add("@loaiGui", SqlDbType.Int).Value = loaiGui;
             cmd.Parameters.Add("@tI", SqlDbType.DateTime).Value = timeIn;
 
@@ -99,7 +99,7 @@ namespace DAO_Management
                 string end = " 23:59:59";
                 string tmp = curr.ToString("yyyy-MM-dd");
 
-                SqlCommand cmd = new SqlCommand("select VEHICLE.id from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id =VEHICLE.id " +
+                SqlCommand cmd = new SqlCommand("select VEHICLE.id from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                     "where VEHICLE_PARKING.timeIn between '" + tmp + start + "' and '" + tmp + end + "'and VEHICLE.type = " + type, this.getConnection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -133,7 +133,7 @@ namespace DAO_Management
                 string end = " 23:59:59";
                 string tmp = curr.ToString("yyyy-MM-dd");
 
-                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id =VEHICLE.id " +
+                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                     "where timeIn between '" + tmp + start + "' and '" + tmp + end + "' and type = " + type, this.getConnection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -155,7 +155,7 @@ namespace DAO_Management
         //lấy ra danh sách các xe gửi quá hạn
         public DataTable getVehicleExpired()
         {
-            SqlCommand cmd = new SqlCommand("select * from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id =VEHICLE.id");
+            SqlCommand cmd = new SqlCommand("select * from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
             DataTable table = this.getVehicle(cmd);
             table.AcceptChanges();
 
@@ -259,7 +259,7 @@ namespace DAO_Management
         //lay vehicle bang id
         public DataTable getVehicleByID(string id)
         {
-            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id =VEHICLE.id " +
+            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
 
@@ -274,8 +274,8 @@ namespace DAO_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_PARKING (id,typePark, timeIn)" +
-            "VALUES (@id,@type,@timeIn)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_PARKING (id, typePark, timeIn)" +
+            "VALUES (@id, @type, @timeIn)", this.getConnection);
                 cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = vel.id;
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.typeGui;
                 cmd.Parameters.Add("@timeIn", SqlDbType.DateTime).Value = vel.ngayGui;
@@ -301,7 +301,7 @@ namespace DAO_Management
                 this.openConnection();
 
                 SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE_PARKING " +
-                    "inner join VEHICLE on VEHICLE_PARKING.id =VEHICLE.id " +
+                    "inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                     "where type = " + type, this.getConnection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -384,7 +384,7 @@ namespace DAO_Management
         public bool checkFullVehicle(int type)
         {
             SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING " +
-                "inner join VEHICLE on VEHICLE_PARKING.id =VEHICLE.id" +
+                "inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id" +
                 " where type = @type");
             cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
 
