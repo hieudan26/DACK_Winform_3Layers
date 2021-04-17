@@ -49,22 +49,22 @@ namespace GUI_Management
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.pnlMove = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.pbLoad = new System.Windows.Forms.PictureBox();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1_ParkService = new System.Windows.Forms.Timer(this.components);
             this.timer1_FixService = new System.Windows.Forms.Timer(this.components);
             this.timer1_WashService = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbLoad = new System.Windows.Forms.PictureBox();
             this.btn.SuspendLayout();
             this.pnlDropDownWashService.SuspendLayout();
             this.pnlDropDownFixService.SuspendLayout();
             this.pnlDropDownParkService.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).BeginInit();
             this.gunaGradient2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).BeginInit();
             this.SuspendLayout();
             // 
             // btn
@@ -544,17 +544,6 @@ namespace GUI_Management
             this.panel1.Size = new System.Drawing.Size(188, 5);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.logoVinfast;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
@@ -564,19 +553,6 @@ namespace GUI_Management
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(857, 556);
             this.pnlChildForm.TabIndex = 2;
-            // 
-            // pbLoad
-            // 
-            this.pbLoad.Image = global::GUI_Management.Properties.Resources.unnamed;
-            this.pbLoad.Location = new System.Drawing.Point(185, 62);
-            this.pbLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLoad.Name = "pbLoad";
-            this.pbLoad.Size = new System.Drawing.Size(501, 429);
-            this.pbLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLoad.TabIndex = 0;
-            this.pbLoad.TabStop = false;
-            this.pbLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseDown);
-            this.pbLoad.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseMove);
             // 
             // gunaGradient2Panel1
             // 
@@ -615,6 +591,30 @@ namespace GUI_Management
             // 
             this.timer1_WashService.Tick += new System.EventHandler(this.timer1_WashService_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.apple_spring;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbLoad
+            // 
+            this.pbLoad.Image = global::GUI_Management.Properties.Resources.unnamed;
+            this.pbLoad.Location = new System.Drawing.Point(185, 62);
+            this.pbLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLoad.Name = "pbLoad";
+            this.pbLoad.Size = new System.Drawing.Size(501, 429);
+            this.pbLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLoad.TabIndex = 0;
+            this.pbLoad.TabStop = false;
+            this.pbLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseDown);
+            this.pbLoad.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseMove);
+            // 
             // fQuanLyXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -635,11 +635,11 @@ namespace GUI_Management
             this.pnlDropDownWashService.ResumeLayout(false);
             this.pnlDropDownFixService.ResumeLayout(false);
             this.pnlDropDownParkService.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlChildForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).EndInit();
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).EndInit();
             this.ResumeLayout(false);
 
         }
