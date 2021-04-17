@@ -13,13 +13,13 @@ using BUS_Management;
 
 namespace GUI_Management
 {
-    public partial class finfoXe : Form
+    public partial class finfoXeGui : Form
     {
         vehicleParkingDTO vehicleDTO = new vehicleParkingDTO();
         vehicleParkingBUS vehicleBUS = new vehicleParkingBUS();
-        fQuanLyXeGui formQuanLyXeGui;
+        fQuanLyXe formQuanLyXeGui;
         string type;
-        public finfoXe(fQuanLyXeGui formQuanLyXeGui, string type)
+        public finfoXeGui(fQuanLyXe formQuanLyXeGui, string type)
         {
             InitializeComponent();
             //this.vehicleDTO = vel;
@@ -39,7 +39,7 @@ namespace GUI_Management
 
         public void BacktoBaiXe()
         {
-            fBaiXe f = new fBaiXe(formQuanLyXeGui);
+            fbaiXe f = new fbaiXe(formQuanLyXeGui);
             formQuanLyXeGui.openChildForm(f);
         }
 
@@ -65,23 +65,6 @@ namespace GUI_Management
         private void btnEdit_Click(object sender, EventArgs e)
         {
             string id = this.txtID.Text;
-            int loaiXe;
-            if (this.txtLoaiXe.Text == "Xe Đạp")
-            {
-                loaiXe = 0;
-            }    
-            else if (this.txtLoaiXe.Text == "Xe Máy")
-            {
-                loaiXe = 1;
-            }    
-            else
-            {
-                loaiXe = 2;
-            }    
-
-            MemoryStream pic1 = new MemoryStream();
-            MemoryStream pic2 = new MemoryStream();
-
             int loaiGui;
             if (this.txtLoaiGui.Text == "hourFee")
             {
@@ -107,9 +90,7 @@ namespace GUI_Management
             {
                 try
                 {
-                    this.pBHinh1.Image.Save(pic1, this.pBHinh1.Image.RawFormat);
-                    this.pBHinh2.Image.Save(pic2, this.pBHinh2.Image.RawFormat);
-                    if (this.vehicleBUS.UpdateInfoVehicleAll(id ,loaiGui, timeIn, loaiXe, pic1, pic2))
+                    if (this.vehicleBUS.UpdateInfoVehicle(id, loaiGui, timeIn))
                     {
                         MessageBox.Show("Vehicle Information Updated", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } 
@@ -126,27 +107,6 @@ namespace GUI_Management
             else
             {
                 MessageBox.Show("Empty Fields", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
-        private void btnUpImg1_Click(object sender, EventArgs e)
-        {
-
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Select Image(*.jpg; *.png; *gif)|*.jpg; *.png; *.gif";
-            if (opf.ShowDialog() == DialogResult.OK)
-            {
-                this.pBHinh1.Image = Image.FromFile(opf.FileName);
-            }
-        }
-
-        private void btnUpImg2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Select Image(*.jpg; *.png; *gif)|*.jpg; *.png; *.gif";
-            if (opf.ShowDialog() == DialogResult.OK)
-            {
-                this.pBHinh2.Image = Image.FromFile(opf.FileName);
             }
         }
 

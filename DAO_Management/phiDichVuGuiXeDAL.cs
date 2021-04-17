@@ -36,7 +36,7 @@ namespace DAL_Management
                 int ngay = int.Parse(table.Rows[0]["dateFee"].ToString());
                 int tuan = int.Parse(table.Rows[0]["weekFee"].ToString());
                 int thang = int.Parse(table.Rows[0]["monthFee"].ToString());
-                phiGuiDTO.Update(gio, ngay, tuan, thang);
+                phiDichVuGuiXeDTO.Update(gio, ngay, tuan, thang);
                 return true;
             }
             else

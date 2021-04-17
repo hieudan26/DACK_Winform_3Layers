@@ -14,6 +14,18 @@ namespace BUS_Management
     {
         vehicleDAL Vehicle = new vehicleDAL();
 
+        //update status veh
+        public bool UpdateStatusVehicle(string id, string type_status, int status)
+        {
+            return this.Vehicle.UpdateStatusVehicle(id, type_status, status);
+        }
+
+        //Check Id đã tồn tại chưa?
+        public bool CheckID_Exited(string id)
+        {
+            return this.Vehicle.CheckID_Exited(id);
+        }
+
         public DataTable getVehicleByID(string id)
         {
             return this.Vehicle.getVehicleByID(id);

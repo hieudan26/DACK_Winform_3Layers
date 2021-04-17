@@ -46,6 +46,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,13 +57,16 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="XanderUI">
+      <HintPath>..\..\..\..\Guna IU framework\XanderUI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fBaiXe.cs">
+    <Compile Include="fbaiXe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fBaiXe.Designer.cs">
-      <DependentUpon>fBaiXe.cs</DependentUpon>
+    <Compile Include="fbaiXe.Designer.cs">
+      <DependentUpon>fbaiXe.cs</DependentUpon>
     </Compile>
     <Compile Include="fdoanhThu.cs">
       <SubType>Form</SubType>
@@ -70,23 +74,59 @@
     <Compile Include="fdoanhThu.Designer.cs">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="fGuiXe.cs">
+    <Compile Include="finfoXeRua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fGuiXe.Designer.cs">
-      <DependentUpon>fGuiXe.cs</DependentUpon>
+    <Compile Include="finfoXeRua.Designer.cs">
+      <DependentUpon>finfoXeRua.cs</DependentUpon>
     </Compile>
-    <Compile Include="finfoXe.cs">
+    <Compile Include="finfoXeSua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="finfoXe.Designer.cs">
-      <DependentUpon>finfoXe.cs</DependentUpon>
+    <Compile Include="finfoXeSua.Designer.cs">
+      <DependentUpon>finfoXeSua.cs</DependentUpon>
     </Compile>
-    <Compile Include="flayXe.cs">
+    <Compile Include="fotherServices_Fix.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="flayXe.Designer.cs">
-      <DependentUpon>flayXe.cs</DependentUpon>
+    <Compile Include="fotherServices_Fix.Designer.cs">
+      <DependentUpon>fotherServices_Fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fotherServices_Park.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fotherServices_Park.Designer.cs">
+      <DependentUpon>fotherServices_Park.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fotherServices_Wash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fotherServices_Wash.Designer.cs">
+      <DependentUpon>fotherServices_Wash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fphiSuaXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fphiSuaXe.Designer.cs">
+      <DependentUpon>fphiSuaXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fVehicle.Designer.cs">
+      <DependentUpon>fVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="finfoXeGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="finfoXeGui.Designer.cs">
+      <DependentUpon>finfoXeGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flayXeGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flayXeGui.Designer.cs">
+      <DependentUpon>flayXeGui.cs</DependentUpon>
     </Compile>
     <Compile Include="fMain.cs">
       <SubType>Form</SubType>
@@ -100,17 +140,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="fphiGui.cs">
+    <Compile Include="fphiGuiXe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fphiGui.Designer.cs">
-      <DependentUpon>fphiGui.cs</DependentUpon>
+    <Compile Include="fphiGuiXe.Designer.cs">
+      <DependentUpon>fphiGuiXe.cs</DependentUpon>
     </Compile>
-    <Compile Include="fQuanLyXeGui.cs">
+    <Compile Include="fQuanLyXe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLyXeGui.Designer.cs">
-      <DependentUpon>fQuanLyXeGui.cs</DependentUpon>
+    <Compile Include="fQuanLyXe.Designer.cs">
+      <DependentUpon>fQuanLyXe.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,20 +177,38 @@
     <Compile Include="UC_Signin.Designer.cs">
       <DependentUpon>UC_Signin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fBaiXe.resx">
-      <DependentUpon>fBaiXe.cs</DependentUpon>
+    <EmbeddedResource Include="fbaiXe.resx">
+      <DependentUpon>fbaiXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fdoanhThu.resx">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fGuiXe.resx">
-      <DependentUpon>fGuiXe.cs</DependentUpon>
+    <EmbeddedResource Include="finfoXeRua.resx">
+      <DependentUpon>finfoXeRua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="finfoXe.resx">
-      <DependentUpon>finfoXe.cs</DependentUpon>
+    <EmbeddedResource Include="finfoXeSua.resx">
+      <DependentUpon>finfoXeSua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="flayXe.resx">
-      <DependentUpon>flayXe.cs</DependentUpon>
+    <EmbeddedResource Include="fotherServices_Fix.resx">
+      <DependentUpon>fotherServices_Fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fotherServices_Park.resx">
+      <DependentUpon>fotherServices_Park.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fotherServices_Wash.resx">
+      <DependentUpon>fotherServices_Wash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fphiSuaXe.resx">
+      <DependentUpon>fphiSuaXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fVehicle.resx">
+      <DependentUpon>fVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="finfoXeGui.resx">
+      <DependentUpon>finfoXeGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flayXeGui.resx">
+      <DependentUpon>flayXeGui.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
@@ -158,11 +216,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fphiGui.resx">
-      <DependentUpon>fphiGui.cs</DependentUpon>
+    <EmbeddedResource Include="fphiGuiXe.resx">
+      <DependentUpon>fphiGuiXe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLyXeGui.resx">
-      <DependentUpon>fQuanLyXeGui.cs</DependentUpon>
+    <EmbeddedResource Include="fQuanLyXe.resx">
+      <DependentUpon>fQuanLyXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -289,6 +347,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\unnamed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\louis vutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castrol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

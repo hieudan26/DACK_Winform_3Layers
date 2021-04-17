@@ -22,6 +22,44 @@ namespace DAL_Management
             return table;
         }
 
+
+        //Update status
+        public bool UpdateStatusVehicle(string id, string type_status, int status)
+        {
+            SqlCommand cmd;
+            if (type_status == "FIX")
+                cmd = new SqlCommand("update VEHICLE set fix = @status where id = @id", this.getConnection);
+            else if (type_status == "WASH")
+                cmd = new SqlCommand("update VEHICLE set wash = @status where id = @id", this.getConnection);
+            else
+                cmd = new SqlCommand("update VEHICLE set park = @status where id = @id", this.getConnection);
+
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@status", SqlDbType.Int).Value = status;
+
+            this.openConnection();
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                this.closeConnection();
+                return true;
+            }
+            else
+            {
+                this.closeConnection();
+                return false;
+            }
+        }
+
+        //Ktra ID tồn tại
+        public bool CheckID_Exited(string id)
+        {
+            DataTable table = this.getVehicleByID(id);
+            if (table.Rows.Count > 0)
+                return true;
+            return false;
+        }
+
         //Del vehicle
         public bool DeleteVehicle(string id)
         {
@@ -78,12 +116,15 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE(id,type, img1, img2)" +
-            "VALUES (@id,@type, @img1,@img2)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE(id,type, img1, img2, park, fix, wash)" +
+            "VALUES (@id,@type, @img1,@img2, @park, @fix, @wash)", this.getConnection);
                 cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = vel.id;
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
                 cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
                 cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();
+                cmd.Parameters.Add("@park", SqlDbType.Int).Value = vel.park;
+                cmd.Parameters.Add("@fix", SqlDbType.Int).Value = vel.fix;
+                cmd.Parameters.Add("@wash", SqlDbType.Int).Value = vel.wash;
                 if (cmd.ExecuteNonQuery() == 1)
                     return true;
             }

@@ -28,7 +28,7 @@ namespace GUI_Management
 
         private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fQuanLyXeGui form = new fQuanLyXeGui();
+            fQuanLyXe form = new fQuanLyXe();
             this.Hide();
             form.ShowDialog();
             this.Show();

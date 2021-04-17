@@ -13,15 +13,15 @@ using DTO_Management;
 
 namespace GUI_Management
 {
-    public partial class fBaiXe : Form
+    public partial class fbaiXe : Form
     {
-        fQuanLyXeGui formQuanLyXeGui;
+        fQuanLyXe formQuanLyXeGui;
         vehicleParkingBUS VehicleBUS = new vehicleParkingBUS();
         vehicleParkingDTO vehicleDTO = new vehicleParkingDTO();
         private Guna.UI.Lib.ScrollBar.PanelScrollHelper vScrollHelper1;
         //public int ID;
 
-        public fBaiXe(fQuanLyXeGui fQuanLy)
+        public fbaiXe(fQuanLyXe fQuanLy)
         {
             InitializeComponent();
             this.formQuanLyXeGui = fQuanLy;
@@ -179,12 +179,13 @@ namespace GUI_Management
             MemoryStream ms = new MemoryStream(pic);
             return ms;
         }
+
         private void btnCar_Click(object sender, EventArgs e)
         {
             Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
             string id =btn.Text;
 
-            finfoXe form = new finfoXe(formQuanLyXeGui, "BaiXe");
+            finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
             form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -224,7 +225,7 @@ namespace GUI_Management
             Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
             string id =btn.Text;
 
-            finfoXe form = new finfoXe(formQuanLyXeGui, "BaiXe");
+            finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
             form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -264,7 +265,7 @@ namespace GUI_Management
             Guna.UI.WinForms.GunaGradientButton btn = sender as Guna.UI.WinForms.GunaGradientButton;
             string id =btn.Text;
 
-            finfoXe form = new finfoXe(formQuanLyXeGui, "BaiXe");
+            finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
             form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;

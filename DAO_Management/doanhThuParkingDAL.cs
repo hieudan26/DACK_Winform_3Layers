@@ -20,6 +20,41 @@ namespace DAL_Management
             adapter.Fill(table);
             return table;
         }
+
+        //Tong thu nhap trong ngày
+        public int sumDoanhThu_InDay()
+        {
+            int sum = 0;
+            DateTime curr = DateTime.Now;
+            string start = " 00:00:00";
+            string end = " 23:59:59";
+            string tmp = curr.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select sum(totalFee) as sum from REVENUE_PARKING " +
+                "where timeOut between '" + tmp + start + "' and '" + tmp + end + "'", this.getConnection);
+
+            DataTable table = this.getDoanhThuParking(cmd);
+            if (table.Rows[0]["sum"].ToString() != "")
+                sum = (int)table.Rows[0]["sum"];
+            return sum;
+        }
+
+        //get doanh thu trong ngay
+        public DataTable getDoanhThuParking_InDay()
+        {
+                //this.openConnection();
+            DateTime curr = DateTime.Now;
+            string start = " 00:00:00";
+            string end = " 23:59:59";
+            string tmp = curr.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from REVENUE_PARKING " +
+                "where timeOut between '" + tmp + start + "' and '" + tmp + end + "'", this.getConnection);
+
+            DataTable table = this.getDoanhThuParking(cmd);
+            return table;
+        }
+
         public bool insert_doanhThuParking(doanhThuParkingDTO doanhThu)
         {
             try

@@ -12,17 +12,17 @@ using BUS_Management;
 
 namespace GUI_Management
 {
-    public partial class fphiGui : Form
+    public partial class fphiGuiXe : Form
     {
         vehicleParkingDTO vel = new vehicleParkingDTO();
         vehicleParkingBUS vehBUS = new vehicleParkingBUS();
-        fQuanLyXeGui formQuanLyXeGui;
+        fQuanLyXe formQuanLyXeGui;
 
-        public fphiGui(vehicleDTO Vel,fQuanLyXeGui fQuanLy)
+        public fphiGuiXe(string id,fQuanLyXe fQuanLy)
         {
             InitializeComponent();
 
-            this.vel.id = Vel.id;
+            this.vel.id = id;
             this.formQuanLyXeGui = fQuanLy;
         }
 
@@ -33,17 +33,18 @@ namespace GUI_Management
 
         private void UpdatePhi()
         {
-            this.labelGio.Text = "Giá theo giờ:       ..........." + phiGuiDTO.PhiGio + " VND";
-            this.labelNgay.Text = "Giá theo ngày:    ..........." + phiGuiDTO.PhiNgay + " VND";
-            this.labelTuan.Text = "Giá theo tuần:     ..........." + phiGuiDTO.PhiTuan + " VND";
-            this.labelThang.Text = "Giá theo tháng:   ..........." + phiGuiDTO.PhiThang + " VND";
+            this.labelGio.Text = "Giá theo giờ:       ..........." + phiDichVuGuiXeDTO.PhiGio + " VND";
+            this.labelNgay.Text = "Giá theo ngày:    ..........." + phiDichVuGuiXeDTO.PhiNgay + " VND";
+            this.labelTuan.Text = "Giá theo tuần:     ..........." + phiDichVuGuiXeDTO.PhiTuan + " VND";
+            this.labelThang.Text = "Giá theo tháng:   ..........." + phiDichVuGuiXeDTO.PhiThang + " VND";
         }
 
         private void fphiGui_Load(object sender, EventArgs e)
         {
             DateTime day = DateTime.Now;
+            this.dtPicker.Value = day;
             int thu = (int)day.DayOfWeek;
-            phiGuiBUS.UpdatePhi(thu);
+            phiDichVuGuiXeBUS.UpdatePhi(thu);
             this.UpdatePhi();
         }
 
@@ -55,6 +56,7 @@ namespace GUI_Management
             if (this.vehBUS.insertVehicle(this.vel))
             {
                 MessageBox.Show("Insert Successfully");
+                this.cbLoaiGui.SelectedIndex = -1;
             }
             else
                 MessageBox.Show("Insert Failed");
@@ -62,7 +64,7 @@ namespace GUI_Management
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            fGuiXe f = new fGuiXe(formQuanLyXeGui);
+            fVehicle f = new fVehicle(formQuanLyXeGui);
             formQuanLyXeGui.openChildForm(f);
         }
     }

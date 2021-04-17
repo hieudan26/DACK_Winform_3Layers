@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO_Management
 {
-    static public class phiGuiDTO
+    static public class phiDichVuGuiXeDTO
     {
         static public int PhiGio;
         
@@ -18,10 +18,10 @@ namespace DTO_Management
         
         static public void Update(int gio,int ngay,int tuan,int thang)
         {
-            phiGuiDTO.PhiGio = gio;
-            phiGuiDTO.PhiNgay = ngay;
-            phiGuiDTO.PhiTuan = tuan;
-            phiGuiDTO.PhiThang = thang;
+            phiDichVuGuiXeDTO.PhiGio = gio;
+            phiDichVuGuiXeDTO.PhiNgay = ngay;
+            phiDichVuGuiXeDTO.PhiTuan = tuan;
+            phiDichVuGuiXeDTO.PhiThang = thang;
         }
     }
 }

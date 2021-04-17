@@ -93,6 +93,16 @@ namespace GUI_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Castrol {
+            get {
+                object obj = ResourceManager.GetObject("Castrol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Day_s_ {
             get {
                 object obj = ResourceManager.GetObject("Day(s)", resourceCulture);
@@ -246,6 +256,16 @@ namespace GUI_Management.Properties {
         internal static System.Drawing.Bitmap logoVinfast {
             get {
                 object obj = ResourceManager.GetObject("logoVinfast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap louis_vutton {
+            get {
+                object obj = ResourceManager.GetObject("louis vutton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

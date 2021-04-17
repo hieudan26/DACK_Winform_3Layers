@@ -15,9 +15,20 @@ namespace BUS_Management
     {
         vehicleParkingDAL Vehicle = new vehicleParkingDAL();
 
+        //get status
+        public DataTable getStatus(string id)
+        {
+            return this.Vehicle.getStatus(id);
+        }
+
         public DataTable getVehicleByID(string id)
         {
             return this.Vehicle.getVehicleByID(id);
+        }
+
+        public DataTable getVehicleByID_GanDung(string id)
+        {
+            return this.Vehicle.getVehicleByID_GanDung(id);
         }
 
         public bool insertVehicle(vehicleParkingDTO vel)
@@ -86,11 +97,7 @@ namespace BUS_Management
         {
             return this.Vehicle.checkFullVehicle(type);
         }
-        //Update all
-        public bool UpdateInfoVehicleAll(string id, int loaiGui, DateTime timeIn, int loaiXe, MemoryStream img1, MemoryStream img2)
-        {
-            return this.Vehicle.UpdateInfoVehicleAll(id, loaiGui, timeIn, loaiXe, img1, img2);
-        }
+       
         //get all vehicle
         public DataTable getAllVehicle()
         {

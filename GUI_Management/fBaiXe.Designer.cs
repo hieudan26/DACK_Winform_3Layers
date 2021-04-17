@@ -1,7 +1,7 @@
 ﻿
 namespace GUI_Management
 {
-    partial class fBaiXe
+    partial class fbaiXe
     {
         /// <summary>
         /// Required designer variable.
@@ -76,11 +76,11 @@ namespace GUI_Management
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.label1.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(336, 36);
+            this.label1.Location = new System.Drawing.Point(261, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 95);
+            this.label1.Size = new System.Drawing.Size(370, 112);
             this.label1.TabIndex = 4;
             this.label1.Text = "BÃI XE";
             // 
@@ -147,7 +147,7 @@ namespace GUI_Management
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label5.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label5.Location = new System.Drawing.Point(220, 36);
+            this.label5.Location = new System.Drawing.Point(85, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 95);
             this.label5.TabIndex = 11;
@@ -159,7 +159,7 @@ namespace GUI_Management
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label6.Font = new System.Drawing.Font("Mistral", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label6.Location = new System.Drawing.Point(581, 36);
+            this.label6.Location = new System.Drawing.Point(673, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 95);
             this.label6.TabIndex = 12;

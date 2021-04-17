@@ -24,6 +24,18 @@ namespace DAO_Management
             return table;
         }
 
+        //get status
+        public DataTable getStatus(string id)
+        {
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id, park, fix, wash from VEHICLE_PARKING, VEHICLE where VEHICLE_PARKING.id = VEHICLE.id and VEHICLE.id = @id");
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            DataTable table = this.getVehicle(cmd);
+            if (table.Rows.Count > 0)
+                return table;
+            else
+                return null;
+        }
+
         //Del vehicle
         public bool DeleteVehicle(string id)
         {
@@ -45,27 +57,6 @@ namespace DAO_Management
         //Edit_Update thông tin xe gửi
         public bool UpdateInfoVehicle(string id,  int loaiGui, DateTime timeIn)
         {
-            SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set typePark = @loaiGui, timeIn = @tI where @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
-            cmd.Parameters.Add("@loaiGui", SqlDbType.Int).Value = loaiGui;
-            cmd.Parameters.Add("@tI", SqlDbType.DateTime).Value = timeIn;
-
-            this.openConnection();
-
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                this.closeConnection();
-                return true;
-            }
-            else
-            {
-                this.closeConnection();
-                return false;
-            }
-        }
-        public bool UpdateInfoVehicleAll(string id, int loaiGui, DateTime timeIn, int loaiXe, MemoryStream img1, MemoryStream img2)
-        {
-            velDAL.UpdateInfoVehicle(id, loaiXe, img1, img2);
             SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set typePark = @loaiGui, timeIn = @tI where id = @id", this.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             cmd.Parameters.Add("@loaiGui", SqlDbType.Int).Value = loaiGui;
@@ -84,13 +75,13 @@ namespace DAO_Management
                 return false;
             }
         }
+
         //list id xe gửi trong ngày
         public List<string> danhSachID_InDay(int type)
         {
             List<string> lID = new List<string>();
             try
             {
-                //int soLuong = this.countVehicleType(type);
 
                 this.openConnection();
 
@@ -120,6 +111,7 @@ namespace DAO_Management
             }
             return lID;
         }
+        
 
         //lấy ra số lượng xe TRONG NGÀY theo LOẠI
         public int countVehicle_byType_InDay(int type)
@@ -155,14 +147,14 @@ namespace DAO_Management
         //lấy ra danh sách các xe gửi quá hạn
         public DataTable getVehicleExpired()
         {
-            SqlCommand cmd = new SqlCommand("select * from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
             DataTable table = this.getVehicle(cmd);
             table.AcceptChanges();
 
             for (int i = table.Rows.Count - 1; i >= 0; i--)
             {
                 DataRow item = table.Rows[i];
-                if (this.compareDateTime_theoTypeGui((int)item["type"], (DateTime)item["timeIn"]) == 1)
+                if (this.compareDateTime_theoTypeGui((int)item["typePark"], (DateTime)item["timeIn"]) == 1)
                     table.Rows.Remove(item);
             }
 
@@ -173,17 +165,18 @@ namespace DAO_Management
             else
                 return null;
         }
+
         //Xe khoong heet han
         public DataTable getVehicleNotExpired()
         {
-            SqlCommand cmd = new SqlCommand("select * from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
             DataTable table = this.getVehicle(cmd);
             table.AcceptChanges();
 
             for (int i = table.Rows.Count - 1; i >= 0; i--)
             {
                 DataRow item = table.Rows[i];
-                if (this.compareDateTime_theoTypeGui((int)item["type"], (DateTime)item["timeIn"]) == 0)
+                if (this.compareDateTime_theoTypeGui((int)item["typePark"], (DateTime)item["timeIn"]) == 0)
                     table.Rows.Remove(item);
             }
 
@@ -194,6 +187,7 @@ namespace DAO_Management
             else
                 return null;
         }
+
         //trả về 1 => quá tgian
         private int compareDateTime_theoTypeGui(int typeGui, DateTime timeIn)
         {
@@ -276,22 +270,37 @@ namespace DAO_Management
 
         }
 
+        //lay vehicle bang id gần đúng
+        public DataTable getVehicleByID_GanDung(string id)
+        {
+            SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
+                "where VEHICLE.id like N'%" + id + "%'");
+            //cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            DataTable table = this.getVehicle(cmd);
+            return table;
+        }
+
         //lay vehicle bang id
         public DataTable getVehicleByID(string id)
         {
-            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
+            SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             DataTable table = this.getVehicle(cmd);
             return table;
         }
+
         //lay toan bo xe
         public DataTable getAllVehicle()
         {
-            SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id ",this.con);
+            SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id ", this.con);
             DataTable table = this.getVehicle(cmd);
-            return table;
+            if (table.Rows.Count > 0)
+                return table;
+            else
+                return null;
         }
+
         //them object xe
         public bool insertVehicle(vehicleParkingDTO vel)
         {
@@ -381,15 +390,17 @@ namespace DAO_Management
             }
             return lID;
         }
+
         public DataTable danhSachXetheoLoai(int type)
         {
             this.openConnection();
-            SqlCommand cmd = new SqlCommand("select * from VEHICLE_PARKING " +
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING " +
                 "inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id" +
                 " where type = " + type, this.getConnection);
             return this.getVehicle(cmd);
                    
         }
+
         //dem tong cong
         public int countVehicleTotal()
         {
@@ -414,6 +425,7 @@ namespace DAO_Management
             }
             return -1;
         }
+
         public bool checkFullVehicle(int type)
         {
             SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING " +

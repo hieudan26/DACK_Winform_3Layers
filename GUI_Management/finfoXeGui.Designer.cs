@@ -1,7 +1,7 @@
 ﻿
 namespace GUI_Management
 {
-    partial class finfoXe
+    partial class finfoXeGui
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace GUI_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(finfoXe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(finfoXeGui));
             this.label1 = new System.Windows.Forms.Label();
             this.gunaGradientPanel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,8 +49,6 @@ namespace GUI_Management
             this.label3 = new System.Windows.Forms.Label();
             this.txtDTGui = new Guna.UI.WinForms.GunaTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnUpImg1 = new System.Windows.Forms.Button();
-            this.btnUpImg2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBHinh1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBHinh2)).BeginInit();
             this.SuspendLayout();
@@ -59,11 +57,11 @@ namespace GUI_Management
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.label1.Font = new System.Drawing.Font("Mistral", 55.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(32, 17);
+            this.label1.Location = new System.Drawing.Point(19, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(705, 110);
+            this.label1.Size = new System.Drawing.Size(757, 83);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thông Tin Chi Tiết Xe";
             // 
@@ -161,6 +159,7 @@ namespace GUI_Management
             this.txtLoaiXe.BaseColor = System.Drawing.Color.White;
             this.txtLoaiXe.BorderColor = System.Drawing.Color.Silver;
             this.txtLoaiXe.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLoaiXe.Enabled = false;
             this.txtLoaiXe.FocusedBaseColor = System.Drawing.Color.White;
             this.txtLoaiXe.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLoaiXe.FocusedForeColor = System.Drawing.SystemColors.ControlText;
@@ -178,6 +177,7 @@ namespace GUI_Management
             this.txtTongTien.BaseColor = System.Drawing.Color.White;
             this.txtTongTien.BorderColor = System.Drawing.Color.Silver;
             this.txtTongTien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTongTien.Enabled = false;
             this.txtTongTien.FocusedBaseColor = System.Drawing.Color.White;
             this.txtTongTien.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTongTien.FocusedForeColor = System.Drawing.SystemColors.ControlText;
@@ -192,17 +192,17 @@ namespace GUI_Management
             // 
             // pBHinh1
             // 
-            this.pBHinh1.Location = new System.Drawing.Point(591, 165);
+            this.pBHinh1.Location = new System.Drawing.Point(591, 152);
             this.pBHinh1.Name = "pBHinh1";
-            this.pBHinh1.Size = new System.Drawing.Size(185, 109);
+            this.pBHinh1.Size = new System.Drawing.Size(185, 125);
             this.pBHinh1.TabIndex = 15;
             this.pBHinh1.TabStop = false;
             // 
             // pBHinh2
             // 
-            this.pBHinh2.Location = new System.Drawing.Point(591, 333);
+            this.pBHinh2.Location = new System.Drawing.Point(591, 311);
             this.pBHinh2.Name = "pBHinh2";
-            this.pBHinh2.Size = new System.Drawing.Size(185, 117);
+            this.pBHinh2.Size = new System.Drawing.Size(185, 126);
             this.pBHinh2.TabIndex = 16;
             this.pBHinh2.TabStop = false;
             // 
@@ -346,40 +346,12 @@ namespace GUI_Management
             this.label4.TabIndex = 26;
             this.label4.Text = "Ngày-Giờ Gửi:";
             // 
-            // btnUpImg1
-            // 
-            this.btnUpImg1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
-            this.btnUpImg1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpImg1.Location = new System.Drawing.Point(591, 141);
-            this.btnUpImg1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpImg1.Name = "btnUpImg1";
-            this.btnUpImg1.Size = new System.Drawing.Size(185, 25);
-            this.btnUpImg1.TabIndex = 28;
-            this.btnUpImg1.Text = "UP IMG";
-            this.btnUpImg1.UseVisualStyleBackColor = false;
-            this.btnUpImg1.Click += new System.EventHandler(this.btnUpImg1_Click);
-            // 
-            // btnUpImg2
-            // 
-            this.btnUpImg2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
-            this.btnUpImg2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpImg2.Location = new System.Drawing.Point(591, 309);
-            this.btnUpImg2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpImg2.Name = "btnUpImg2";
-            this.btnUpImg2.Size = new System.Drawing.Size(185, 25);
-            this.btnUpImg2.TabIndex = 29;
-            this.btnUpImg2.Text = "UP IMG";
-            this.btnUpImg2.UseVisualStyleBackColor = false;
-            this.btnUpImg2.Click += new System.EventHandler(this.btnUpImg2_Click);
-            // 
             // finfoXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(830, 536);
-            this.Controls.Add(this.btnUpImg2);
-            this.Controls.Add(this.btnUpImg1);
             this.Controls.Add(this.txtDTGui);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtLoaiGui);
@@ -431,7 +403,5 @@ namespace GUI_Management
         public System.Windows.Forms.Label label3;
         public Guna.UI.WinForms.GunaTextBox txtDTGui;
         public System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnUpImg1;
-        private System.Windows.Forms.Button btnUpImg2;
     }
 }

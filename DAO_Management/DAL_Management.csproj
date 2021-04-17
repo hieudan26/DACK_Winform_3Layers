@@ -47,19 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAL.cs" />
+    <Compile Include="doanhThuFixDAL.cs" />
     <Compile Include="doanhThuParkingDAL.cs" />
+    <Compile Include="doanhThuWashDAL.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="phiGuiDAL.cs" />
+    <Compile Include="phiDichVuGuiXeDAL.cs" />
+    <Compile Include="phiDichVuSuaXeDAL.cs" />
     <Compile Include="vehicleDAL.cs" />
     <Compile Include="MyDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vehicleFixDAL.cs" />
     <Compile Include="vehicleParkingDAL.cs" />
+    <Compile Include="vehicleWashDAL.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

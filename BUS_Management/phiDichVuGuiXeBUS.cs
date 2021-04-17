@@ -8,7 +8,7 @@ using DAL_Management;
 
 namespace BUS_Management
 {
-    static public class phiGuiBUS
+    static public class phiDichVuGuiXeBUS
     { 
         static public void UpdatePhi(int IThu)
         {

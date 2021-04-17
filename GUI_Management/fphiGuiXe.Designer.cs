@@ -1,7 +1,7 @@
 ﻿
 namespace GUI_Management
 {
-    partial class fphiGui
+    partial class fphiGuiXe
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace GUI_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fphiGui));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fphiGuiXe));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbLoaiGui = new Guna.UI.WinForms.GunaComboBox();
@@ -41,7 +41,7 @@ namespace GUI_Management
             this.labelThang = new System.Windows.Forms.Label();
             this.labelNgay = new System.Windows.Forms.Label();
             this.gunaGradientPanel1 = new Guna.UI.WinForms.GunaGradientPanel();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtPicker = new Guna.UI.WinForms.GunaDateTimePicker();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.gunaGradientPanel2 = new Guna.UI.WinForms.GunaGradientPanel();
@@ -51,11 +51,11 @@ namespace GUI_Management
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.label1.Font = new System.Drawing.Font("Mistral", 72F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 64.8F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.label1.Location = new System.Drawing.Point(197, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(405, 143);
+            this.label1.Size = new System.Drawing.Size(472, 122);
             this.label1.TabIndex = 3;
             this.label1.Text = "PHÍ GỬI";
             // 
@@ -182,30 +182,30 @@ namespace GUI_Management
             this.gunaGradientPanel1.TabIndex = 10;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
             // 
-            // gunaDateTimePicker1
+            // dtPicker
             // 
-            this.gunaDateTimePicker1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaDateTimePicker1.BaseColor = System.Drawing.Color.MintCream;
-            this.gunaDateTimePicker1.BorderColor = System.Drawing.Color.SeaGreen;
-            this.gunaDateTimePicker1.CustomFormat = "dddd";
-            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(623, 171);
-            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
-            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Radius = 5;
-            this.gunaDateTimePicker1.Size = new System.Drawing.Size(162, 44);
-            this.gunaDateTimePicker1.TabIndex = 18;
-            this.gunaDateTimePicker1.Text = "Friday";
-            this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 9, 0, 0, 0, 0);
+            this.dtPicker.BackColor = System.Drawing.Color.Transparent;
+            this.dtPicker.BaseColor = System.Drawing.Color.MintCream;
+            this.dtPicker.BorderColor = System.Drawing.Color.SeaGreen;
+            this.dtPicker.CustomFormat = "dddd";
+            this.dtPicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtPicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtPicker.ForeColor = System.Drawing.Color.Black;
+            this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPicker.Location = new System.Drawing.Point(623, 171);
+            this.dtPicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtPicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtPicker.Name = "dtPicker";
+            this.dtPicker.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtPicker.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker.OnPressedColor = System.Drawing.Color.Black;
+            this.dtPicker.Radius = 5;
+            this.dtPicker.Size = new System.Drawing.Size(162, 44);
+            this.dtPicker.TabIndex = 18;
+            this.dtPicker.Text = "Friday";
+            this.dtPicker.Value = new System.DateTime(2021, 4, 9, 0, 0, 0, 0);
             // 
             // btnOK
             // 
@@ -234,11 +234,11 @@ namespace GUI_Management
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
             this.btnBack.Location = new System.Drawing.Point(762, 26);
             this.btnBack.Name = "btnBack";
-            this.btnBack.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnBack.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnBack.OnHoverForeColor = System.Drawing.Color.White;
             this.btnBack.OnHoverImage = null;
-            this.btnBack.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBack.OnPressedColor = System.Drawing.Color.Transparent;
             this.btnBack.Size = new System.Drawing.Size(56, 20);
             this.btnBack.TabIndex = 20;
             this.btnBack.Text = "Back";
@@ -260,7 +260,7 @@ namespace GUI_Management
             this.gunaGradientPanel2.TabIndex = 21;
             this.gunaGradientPanel2.Text = "gunaGradientPanel2";
             // 
-            // fphiGui
+            // fphiGuiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,7 +269,7 @@ namespace GUI_Management
             this.Controls.Add(this.gunaGradientPanel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.gunaDateTimePicker1);
+            this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.labelNgay);
             this.Controls.Add(this.labelThang);
             this.Controls.Add(this.labelTuan);
@@ -283,7 +283,7 @@ namespace GUI_Management
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "fphiGui";
+            this.Name = "fphiGuiXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fphiGui";
             this.Load += new System.EventHandler(this.fphiGui_Load);
@@ -304,7 +304,7 @@ namespace GUI_Management
         private System.Windows.Forms.Label labelTuan;
         private System.Windows.Forms.Label labelThang;
         private System.Windows.Forms.Label labelNgay;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
+        private Guna.UI.WinForms.GunaDateTimePicker dtPicker;
         private System.Windows.Forms.Button btnOK;
         private Guna.UI.WinForms.GunaButton btnBack;
         private Guna.UI.WinForms.GunaGradientPanel gunaGradientPanel2;
