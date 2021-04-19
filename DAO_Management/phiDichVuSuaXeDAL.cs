@@ -23,10 +23,13 @@ namespace DAL_Management
 
         public string getFee_byService(string service)
         {
+            string temp = "";
             SqlCommand cmd = new SqlCommand("select service_fee from SERVICE_VEHICLE_FIX where service = @ser");
             cmd.Parameters.Add("@ser", SqlDbType.NVarChar).Value = service;
             DataTable table = this.GetPrice(cmd);
-            return table.Rows[0]["service_fee"].ToString();
+            if (table.Rows.Count > 0)
+                temp = table.Rows[0]["service_fee"].ToString();
+            return temp;
         }
 
         public DataTable getDichVu_ByType(int type)

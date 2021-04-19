@@ -21,6 +21,7 @@ namespace GUI_Management
             InitializeComponent();
         }
 
+        //add veh
         private void btnAddService_Click(object sender, EventArgs e)
         {
             //panel move
@@ -31,13 +32,16 @@ namespace GUI_Management
 
             this.openChildForm(new fVehicle(this));
         }
+        //end add veh
 
+        //Gửi
         private void btnBaiXe_Click(object sender, EventArgs e)
         {
             //border change color
             //this.btnGuiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.Black;
             this.btnLayXe.BorderColor = Color.White;
+            this.btnOther_Park.BorderColor = Color.White;
             //end
 
             this.openChildForm(new fbaiXe(this));
@@ -50,22 +54,61 @@ namespace GUI_Management
             //this.btnGuiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.White;
             this.btnLayXe.BorderColor = Color.Black;
+            this.btnOther_Park.BorderColor = Color.White;
             //end
 
             this.openChildForm(new flayXeGui(this));
         }
 
-        private void btnDoanhThu_Click(object sender, EventArgs e)
+        private void btnOther_Park_Click(object sender, EventArgs e)
         {
             //border change color
             //this.btnGuiXe.BorderColor = Color.White;
-            //this.btnBaiXe.BorderColor = Color.White;
-            //this.btnLayXe.BorderColor = Color.White;
-            //this.btnDoanhThu.BorderColor = Color.Black;
+            this.btnBaiXe.BorderColor = Color.White;
+            this.btnLayXe.BorderColor = Color.White;
+            this.btnOther_Park.BorderColor = Color.Black;
             //end
 
-            this.openChildForm(new fdoanhThu(this));
+            this.openChildForm(new fotherServices_Park(this));
         }
+
+        private void timer1_XeGui_Tick(object sender, EventArgs e)
+        {
+            if (this.isCollapsed_1)
+            {
+                this.pnlDropDownParkService.Height += 90;
+                if (this.pnlDropDownParkService.Size == this.pnlDropDownParkService.MaximumSize)
+                {
+                    this.pnlDropDownFixService.Visible = false;
+                    this.pnlDropDownWashService.Visible = false;
+                    this.timer1_ParkService.Stop();
+                    this.isCollapsed_1 = false;
+                }
+            }
+            else
+            {
+                this.pnlDropDownParkService.Height -= 50;
+                if (this.pnlDropDownParkService.Size == this.pnlDropDownParkService.MinimumSize)
+                {
+                    this.pnlDropDownFixService.Visible = true;
+                    this.pnlDropDownWashService.Visible = true;
+                    this.timer1_ParkService.Stop();
+                    this.isCollapsed_1 = true;
+                }
+            }
+        }
+
+        private void btnXeGui_Click(object sender, EventArgs e)
+        {
+            this.timer1_ParkService.Start();
+
+            //panel move
+            this.pnlMove.Visible = true;
+            this.pnlMove.Height = this.pnlDropDownParkService.MinimumSize.Height;
+            this.pnlMove.Top = this.pnlDropDownParkService.Top;
+            //end panel move
+        }
+        //end gửi
 
         //open child form
         private Form activeForm = null;
@@ -86,21 +129,14 @@ namespace GUI_Management
         }
         //end
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void gunaCirclePictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        //exit
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+        //end exit
 
+        //play with image
         Point mdLoc;
         private void pbLoad_MouseDown(object sender, MouseEventArgs e)
         {
@@ -116,51 +152,17 @@ namespace GUI_Management
                 this.pbLoad.Location = new Point(this.pbLoad.Left + dx, this.pbLoad.Top + dy);
             }
         }
+        //end
 
-        private void timer1_XeGui_Tick(object sender, EventArgs e)
-        {
-            if (this.isCollapsed_1)
-            {
-                this.pnlDropDownParkService.Height += 30;
-                if (this.pnlDropDownParkService.Size == this.pnlDropDownParkService.MaximumSize)
-                {
-                    this.pnlDropDownFixService.Visible = false;
-                    this.pnlDropDownWashService.Visible = false;
-                    this.timer1_ParkService.Stop();
-                    this.isCollapsed_1 = false;
-                }
-            }    
-            else
-            {
-                this.pnlDropDownParkService.Height -= 30;
-                if (this.pnlDropDownParkService.Size == this.pnlDropDownParkService.MinimumSize)
-                {
-                    this.pnlDropDownFixService.Visible = true;
-                    this.pnlDropDownWashService.Visible = true;
-                    this.timer1_ParkService.Stop();
-                    this.isCollapsed_1 = true;
-                }
-            }    
-        }
-
-        private void btnXeGui_Click(object sender, EventArgs e)
-        {
-            this.timer1_ParkService.Start();
-            
-            //panel move
-            this.pnlMove.Visible = true;
-            this.pnlMove.Height = this.pnlDropDownParkService.MinimumSize.Height;
-            this.pnlMove.Top = this.pnlDropDownParkService.Top;
-            //end panel move
-        }
-
+        //fix
         private void timer1_FixService_Tick(object sender, EventArgs e)
         {
             if (this.isCollapsed_2)
             {
-                this.pnlDropDownFixService.Height += 30;
+                this.pnlDropDownFixService.Height += 90;
                 if (this.pnlDropDownFixService.Size == this.pnlDropDownFixService.MaximumSize)
                 {
+                    this.btnDoanhThu.Visible = false;
                     this.pnlDropDownWashService.Visible = false;
                     this.timer1_FixService.Stop();
                     this.isCollapsed_2 = false;
@@ -168,9 +170,10 @@ namespace GUI_Management
             }
             else
             {
-                this.pnlDropDownFixService.Height -= 30;
+                this.pnlDropDownFixService.Height -= 50;
                 if (this.pnlDropDownFixService.Size == this.pnlDropDownFixService.MinimumSize)
                 {
+                    this.btnDoanhThu.Visible = true;
                     this.pnlDropDownWashService.Visible = true;
                     this.timer1_FixService.Stop();
                     this.isCollapsed_2 = true;
@@ -200,7 +203,9 @@ namespace GUI_Management
         {
             this.openChildForm(new finfoXeSua(this));
         }
+        //end fix
 
+        //wash
         private void btnWashService_Click(object sender, EventArgs e)
         {
             this.timer1_WashService.Start();
@@ -216,7 +221,7 @@ namespace GUI_Management
         {
             if (this.isCollapsed_3)
             {
-                this.pnlDropDownWashService.Height += 30;
+                this.pnlDropDownWashService.Height += 90;
                 if (this.pnlDropDownWashService.Size == this.pnlDropDownWashService.MaximumSize)
                 {
                     this.btnDoanhThu.Visible = false;
@@ -226,7 +231,7 @@ namespace GUI_Management
             }
             else
             {
-                this.pnlDropDownWashService.Height -= 30;
+                this.pnlDropDownWashService.Height -= 500;
                 if (this.pnlDropDownWashService.Size == this.pnlDropDownWashService.MinimumSize)
                 {
                     this.btnDoanhThu.Visible = true;
@@ -245,10 +250,19 @@ namespace GUI_Management
         {
             this.openChildForm(new fotherServices_Wash(this));
         }
+        //end wash
 
-        private void btnOther_Park_Click(object sender, EventArgs e)
+        //Doanh thu
+        private void btnDoanhThu_Click(object sender, EventArgs e)
         {
-            this.openChildForm(new fotherServices_Park(this));
+            //panel move
+            this.pnlMove.Visible = true;
+            this.pnlMove.Height = this.btnDoanhThu.Height;
+            this.pnlMove.Top = this.btnDoanhThu.Top;
+            //end panel move
+
+            this.openChildForm(new fdoanhThu(this));
         }
+        //end doanh thu
     }
 }

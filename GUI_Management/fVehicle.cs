@@ -170,7 +170,7 @@ namespace GUI_Management
                     MemoryStream pic2 = new MemoryStream();
                     this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
 
-                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2, 1, 0, 0);
+                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2, 0, 0, 0);
                     if (this.vehBUS.insertVehicle(vehDTO))
                     {
                         MessageBox.Show("Successfully~~");
@@ -214,7 +214,7 @@ namespace GUI_Management
                     MemoryStream pic2 = new MemoryStream();
                     this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
 
-                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2, 0, 1, 0);
+                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2, 0, 0, 0);
 
                     if (this.vehBUS.insertVehicle(vehDTO))
                     {

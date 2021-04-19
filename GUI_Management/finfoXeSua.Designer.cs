@@ -436,6 +436,7 @@ namespace GUI_Management
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "finfoXeSua";
             this.Text = "finfoXeSua";
+            this.Load += new System.EventHandler(this.finfoXeSua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFix)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

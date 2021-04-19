@@ -90,14 +90,18 @@ namespace GUI_Management
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.cbTypeFilter.SelectedIndex = -1;
-            string id = this.txtSearch.Text;
-            if (this.vehWashBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
+            try
             {
-                this.dgvWash.RowTemplate.Height = 80;
-                this.dgvWash.DataSource = this.vehWashBUS.getVehicleByID_GanDung(this.txtSearch.Text);
-                this.designDataGridView(2, 3);
+                this.cbTypeFilter.SelectedIndex = -1;
+                string id = this.txtSearch.Text;
+                if (this.vehWashBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
+                {
+                    this.dgvWash.RowTemplate.Height = 80;
+                    this.dgvWash.DataSource = this.vehWashBUS.getVehicleByID_GanDung(this.txtSearch.Text);
+                    this.designDataGridView(2, 3);
+                }
             }
+            catch { }
         }
 
         private void dgvWash_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -116,12 +120,46 @@ namespace GUI_Management
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            string id = this.dgvWash.CurrentRow.Cells[0].Value.ToString();
-            if (MessageBox.Show("Are you sure?", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            try
             {
-                if (this.vehWashBUS.DeleteVehicleWash(id))
+                string id = this.dgvWash.CurrentRow.Cells[0].Value.ToString();
+                if (MessageBox.Show("Are you sure?", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Delete successful", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (this.vehWashBUS.DeleteVehicleWash(id))
+                    {
+                        MessageBox.Show("Delete successful", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        this.cbTypeFilter.SelectedIndex = 3;
+                        DataTable table = this.vehWashBUS.getAllVehicleWash();
+                        if (table != null)
+                        {
+                            this.dgvWash.DataSource = table;
+                            this.designDataGridView(2, 3);
+                        }
+                        else
+                        {
+                            this.dgvWash.DataSource = null;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete unsuccessful", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        this.dgvWash.DataSource = null;
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = this.dgvWash.CurrentRow.Cells[0].Value.ToString();
+                int totalFee = this.vehWashBUS.getWash_fee(id);
+                doanhThuWashDTO doanhThuWashDTO = new doanhThuWashDTO(id, DateTime.Now, totalFee);
+                if (this.dtWashBUS.insert_doanhThuWash(doanhThuWashDTO) && this.vehWashBUS.DeleteVehicleWash(id))
+                {
+                    MessageBox.Show("Thanh toán thành công dịch vụ", "Info Wash", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cbTypeFilter.SelectedIndex = 3;
                     DataTable table = this.vehWashBUS.getAllVehicleWash();
                     if (table != null)
@@ -133,39 +171,13 @@ namespace GUI_Management
                     {
                         this.dgvWash.DataSource = null;
                     }
-                }    
-                else
-                {
-                    MessageBox.Show("Delete unsuccessful", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                    this.dgvWash.DataSource = null;
-                }    
-            }    
-        }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            string id = this.dgvWash.CurrentRow.Cells[0].Value.ToString();
-            int totalFee = this.vehWashBUS.getWash_fee(id);
-            doanhThuWashDTO doanhThuWashDTO = new doanhThuWashDTO(id, DateTime.Now, totalFee);
-            if (this.dtWashBUS.insert_doanhThuWash(doanhThuWashDTO) && this.vehWashBUS.DeleteVehicleWash(id))
-            {
-                MessageBox.Show("Thanh toán thành công dịch vụ", "Info Wash", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbTypeFilter.SelectedIndex = 3;
-                DataTable table = this.vehWashBUS.getAllVehicleWash();
-                if (table != null)
-                {
-                    this.dgvWash.DataSource = table;
-                    this.designDataGridView(2, 3);
                 }
                 else
                 {
-                    this.dgvWash.DataSource = null;
+                    MessageBox.Show("Thanh toán không thành công", "Info Wash", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Thanh toán không thành công", "Info Wash", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch { }
         }
     }
 }

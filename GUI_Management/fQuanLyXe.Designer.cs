@@ -49,22 +49,22 @@ namespace GUI_Management
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.pnlMove = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
+            this.pbLoad = new System.Windows.Forms.PictureBox();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1_ParkService = new System.Windows.Forms.Timer(this.components);
             this.timer1_FixService = new System.Windows.Forms.Timer(this.components);
             this.timer1_WashService = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbLoad = new System.Windows.Forms.PictureBox();
             this.btn.SuspendLayout();
             this.pnlDropDownWashService.SuspendLayout();
             this.pnlDropDownFixService.SuspendLayout();
             this.pnlDropDownParkService.SuspendLayout();
-            this.pnlChildForm.SuspendLayout();
-            this.gunaGradient2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).BeginInit();
+            this.gunaGradient2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn
@@ -96,7 +96,7 @@ namespace GUI_Management
             this.pnlDropDownWashService.Controls.Add(this.btnOther_Wash);
             this.pnlDropDownWashService.Controls.Add(this.btnThanhToan_Wash);
             this.pnlDropDownWashService.Controls.Add(this.btnWashService);
-            this.pnlDropDownWashService.Location = new System.Drawing.Point(57, 408);
+            this.pnlDropDownWashService.Location = new System.Drawing.Point(57, 421);
             this.pnlDropDownWashService.MaximumSize = new System.Drawing.Size(160, 165);
             this.pnlDropDownWashService.MinimumSize = new System.Drawing.Size(160, 51);
             this.pnlDropDownWashService.Name = "pnlDropDownWashService";
@@ -200,8 +200,8 @@ namespace GUI_Management
             this.btnDoanhThu.AnimationHoverSpeed = 0.07F;
             this.btnDoanhThu.AnimationSpeed = 0.03F;
             this.btnDoanhThu.BackColor = System.Drawing.Color.Transparent;
-            this.btnDoanhThu.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnDoanhThu.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnDoanhThu.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDoanhThu.BaseColor2 = System.Drawing.Color.Gainsboro;
             this.btnDoanhThu.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnDoanhThu.BorderSize = 1;
             this.btnDoanhThu.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -210,17 +210,16 @@ namespace GUI_Management
             this.btnDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.btnDoanhThu.Image = null;
             this.btnDoanhThu.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDoanhThu.Location = new System.Drawing.Point(57, 541);
+            this.btnDoanhThu.Location = new System.Drawing.Point(57, 494);
             this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDoanhThu.Name = "btnDoanhThu";
-            this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnDoanhThu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
+            this.btnDoanhThu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnDoanhThu.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnDoanhThu.OnHoverForeColor = System.Drawing.Color.White;
             this.btnDoanhThu.OnHoverImage = null;
             this.btnDoanhThu.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDoanhThu.Radius = 7;
-            this.btnDoanhThu.Size = new System.Drawing.Size(160, 30);
+            this.btnDoanhThu.Size = new System.Drawing.Size(160, 51);
             this.btnDoanhThu.TabIndex = 4;
             this.btnDoanhThu.Text = "DOANH THU";
             this.btnDoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -232,7 +231,7 @@ namespace GUI_Management
             this.pnlDropDownFixService.Controls.Add(this.btnOther_Fix);
             this.pnlDropDownFixService.Controls.Add(this.btnInfoFix_Vehicle);
             this.pnlDropDownFixService.Controls.Add(this.btnFixService);
-            this.pnlDropDownFixService.Location = new System.Drawing.Point(57, 338);
+            this.pnlDropDownFixService.Location = new System.Drawing.Point(57, 345);
             this.pnlDropDownFixService.MaximumSize = new System.Drawing.Size(160, 163);
             this.pnlDropDownFixService.MinimumSize = new System.Drawing.Size(160, 51);
             this.pnlDropDownFixService.Name = "pnlDropDownFixService";
@@ -338,7 +337,7 @@ namespace GUI_Management
             this.pnlDropDownParkService.Controls.Add(this.btnParkService);
             this.pnlDropDownParkService.Controls.Add(this.btnLayXe);
             this.pnlDropDownParkService.Controls.Add(this.btnBaiXe);
-            this.pnlDropDownParkService.Location = new System.Drawing.Point(57, 265);
+            this.pnlDropDownParkService.Location = new System.Drawing.Point(57, 269);
             this.pnlDropDownParkService.MaximumSize = new System.Drawing.Size(160, 218);
             this.pnlDropDownParkService.MinimumSize = new System.Drawing.Size(160, 51);
             this.pnlDropDownParkService.Name = "pnlDropDownParkService";
@@ -511,7 +510,7 @@ namespace GUI_Management
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(97, 578);
+            this.btnExit.Location = new System.Drawing.Point(93, 599);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -544,6 +543,17 @@ namespace GUI_Management
             this.panel1.Size = new System.Drawing.Size(188, 5);
             this.panel1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.apple_spring;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
@@ -553,6 +563,19 @@ namespace GUI_Management
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(857, 556);
             this.pnlChildForm.TabIndex = 2;
+            // 
+            // pbLoad
+            // 
+            this.pbLoad.Image = global::GUI_Management.Properties.Resources.unnamed;
+            this.pbLoad.Location = new System.Drawing.Point(185, 62);
+            this.pbLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLoad.Name = "pbLoad";
+            this.pbLoad.Size = new System.Drawing.Size(501, 429);
+            this.pbLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLoad.TabIndex = 0;
+            this.pbLoad.TabStop = false;
+            this.pbLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseDown);
+            this.pbLoad.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseMove);
             // 
             // gunaGradient2Panel1
             // 
@@ -591,30 +614,6 @@ namespace GUI_Management
             // 
             this.timer1_WashService.Tick += new System.EventHandler(this.timer1_WashService_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.apple_spring;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbLoad
-            // 
-            this.pbLoad.Image = global::GUI_Management.Properties.Resources.unnamed;
-            this.pbLoad.Location = new System.Drawing.Point(185, 62);
-            this.pbLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLoad.Name = "pbLoad";
-            this.pbLoad.Size = new System.Drawing.Size(501, 429);
-            this.pbLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLoad.TabIndex = 0;
-            this.pbLoad.TabStop = false;
-            this.pbLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseDown);
-            this.pbLoad.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbLoad_MouseMove);
-            // 
             // fQuanLyXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -635,11 +634,11 @@ namespace GUI_Management
             this.pnlDropDownWashService.ResumeLayout(false);
             this.pnlDropDownFixService.ResumeLayout(false);
             this.pnlDropDownParkService.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlChildForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).EndInit();
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).EndInit();
             this.ResumeLayout(false);
 
         }

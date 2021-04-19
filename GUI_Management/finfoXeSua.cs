@@ -73,33 +73,39 @@ namespace GUI_Management
 
         private void dgvFix_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.txtTienSua.Text = "";
-            //this.txtDichVuSua.Text = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
-            if (this.phiSuaBUS.getDichVu_ByType(Convert.ToInt32(this.dgvFix.CurrentRow.Cells[2].Value)) != null)
+            if (this.dgvFix.DataSource != null)
             {
-                this.cbDichVu.DataSource = this.phiSuaBUS.getDichVu_ByType(Convert.ToInt32(this.dgvFix.CurrentRow.Cells[2].Value));
-                this.cbDichVu.DisplayMember = "service";
-                this.cbDichVu.ValueMember = "service";
-            }
-            else
-            {
-                MessageBox.Show("Can't Load DataSource");
-            }
-            
+                this.txtTienSua.Text = "";
+                //this.txtDichVuSua.Text = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
+                if (this.phiSuaBUS.getDichVu_ByType(Convert.ToInt32(this.dgvFix.CurrentRow.Cells[2].Value)) != null)
+                {
+                    this.cbDichVu.DataSource = this.phiSuaBUS.getDichVu_ByType(Convert.ToInt32(this.dgvFix.CurrentRow.Cells[2].Value));
+                    this.cbDichVu.DisplayMember = "service";
+                    this.cbDichVu.ValueMember = "service";
+                }
+                else
+                {
+                    MessageBox.Show("Can't Load DataSource");
+                }
+            }    
 
             //this.txtTienSua.Text = this.phiSuaBUS.getFee_byService(this.cbDichVu.Text);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.cbTypeFilter.SelectedIndex = -1;
-            string id = this.txtSearch.Text;
-            if (this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
+            try
             {
-                this.dgvFix.RowTemplate.Height = 80;
-                this.dgvFix.DataSource = this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text);
-                this.designDataGridView(3, 4);
+                this.cbTypeFilter.SelectedIndex = -1;
+                string id = this.txtSearch.Text;
+                if (this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
+                {
+                    this.dgvFix.RowTemplate.Height = 80;
+                    this.dgvFix.DataSource = this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text);
+                    this.designDataGridView(3, 4);
+                }
             }
+            catch { }
         }
 
         private void cbDichVu_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,92 +135,109 @@ namespace GUI_Management
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (this.cbDichVu.SelectedIndex != -1)
+            try
             {
-                string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
-                string service = this.cbDichVu.Text;
-                vehicleFixDTO vehFixDTO = new vehicleFixDTO(id, service);
-                if (this.vehFixBUS.VerifyIDandService_Existed(id, service) == false)
+                if (this.cbDichVu.SelectedIndex != -1)
                 {
-                    if (this.vehFixBUS.insertVehicle_FIX(vehFixDTO))
+                    string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
+                    string service = this.cbDichVu.Text;
+                    vehicleFixDTO vehFixDTO = new vehicleFixDTO(id, service);
+                    if (this.vehFixBUS.VerifyIDandService_Existed(id, service) == false)
                     {
-                        MessageBox.Show("Thêm dịch vụ sửa thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.cbTypeFilter.SelectedIndex = 3;
-                        DataTable table = this.vehFixBUS.getVehicleFix_info_all();
-                        if (table != null)
+                        if (this.vehFixBUS.insertVehicle_FIX(vehFixDTO))
                         {
-                            this.dgvFix.DataSource = table;
-                            this.designDataGridView(3, 4);
+                            MessageBox.Show("Thêm dịch vụ sửa thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.cbTypeFilter.SelectedIndex = 3;
+                            DataTable table = this.vehFixBUS.getVehicleFix_info_all();
+                            if (table != null)
+                            {
+                                this.dgvFix.DataSource = table;
+                                this.designDataGridView(3, 4);
+                            }
+                            else
+                            {
+                                this.dgvFix.DataSource = null;
+                            }
                         }
                         else
                         {
+                            MessageBox.Show("Thêm dịch vụ sửa không thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             this.dgvFix.DataSource = null;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Thêm dịch vụ sửa không thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.dgvFix.DataSource = null;
+                        MessageBox.Show("Xe đã và đang sử dụng dịch vụ này.\nVui lòng chọn lại", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }   
-                else
-                {
-                    MessageBox.Show("Xe đã và đang sử dụng dịch vụ này.\nVui lòng chọn lại", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }    
+                }
             }
+            catch { }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
-            string service = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
-            if (this.vehFixBUS.DeleteVehicleFix(id, service))
+            try
             {
-                MessageBox.Show("Xóa dịch vụ sửa thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbTypeFilter.SelectedIndex = 3;
-                DataTable table = this.vehFixBUS.getVehicleFix_info_all();
-                if (table != null)
+                string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
+                string service = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
+                if (this.vehFixBUS.DeleteVehicleFix(id, service))
                 {
-                    this.dgvFix.DataSource = table;
-                    this.designDataGridView(3, 4);
+                    MessageBox.Show("Xóa dịch vụ sửa thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbTypeFilter.SelectedIndex = 3;
+                    DataTable table = this.vehFixBUS.getVehicleFix_info_all();
+                    if (table != null)
+                    {
+                        this.dgvFix.DataSource = table;
+                        this.designDataGridView(3, 4);
+                    }
+                    else
+                    {
+                        this.dgvFix.DataSource = null;
+                    }
                 }
                 else
                 {
+                    MessageBox.Show("Xóa dịch vụ sửa không thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.dgvFix.DataSource = null;
                 }
             }
-            else
-            {
-                MessageBox.Show("Xóa dịch vụ sửa không thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.dgvFix.DataSource = null;
-            }
+            catch { }
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
-            string service = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
-            int totalFee = Convert.ToInt32(this.phiSuaBUS.getFee_byService(service));
-            doanhThuFixDTO doanhThuFixDTO = new doanhThuFixDTO(id, DateTime.Now, totalFee);
-            if (this.dtFixBUS.insert_doanhThuFix(doanhThuFixDTO) && this.vehFixBUS.DeleteVehicleFix(id, service))
+            try
             {
-                MessageBox.Show("Thanh toán thành công dịch vụ: " + service + " trị giá: " + totalFee + " VND" , "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbTypeFilter.SelectedIndex = 3;
-                DataTable table = this.vehFixBUS.getVehicleFix_info_all();
-                if (table != null)
+                string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
+                string service = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
+                int totalFee = Convert.ToInt32(this.phiSuaBUS.getFee_byService(service));
+                doanhThuFixDTO doanhThuFixDTO = new doanhThuFixDTO(id, DateTime.Now, totalFee);
+                if (this.dtFixBUS.insert_doanhThuFix(doanhThuFixDTO) && this.vehFixBUS.DeleteVehicleFix(id, service))
                 {
-                    this.dgvFix.DataSource = table;
-                    this.designDataGridView(4, 5);
+                    MessageBox.Show("Thanh toán thành công dịch vụ: " + service + " trị giá: " + totalFee + " VND", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbTypeFilter.SelectedIndex = 3;
+                    DataTable table = this.vehFixBUS.getVehicleFix_info_all();
+                    if (table != null)
+                    {
+                        this.dgvFix.DataSource = table;
+                        this.designDataGridView(4, 5);
+                    }
+                    else
+                    {
+                        this.dgvFix.DataSource = null;
+                    }
                 }
                 else
                 {
-                    this.dgvFix.DataSource = null;
+                    MessageBox.Show("Thanh toán không thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }    
-            else
-            {
-                MessageBox.Show("Thanh toán không thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+            }
+            catch { }
+        }
+
+        private void finfoXeSua_Load(object sender, EventArgs e)
+        {
+            //this.cbDichVu.DataSource = null;
         }
     }
 }

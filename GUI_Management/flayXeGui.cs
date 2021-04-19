@@ -255,14 +255,18 @@ namespace GUI_Management
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.cbTypeFilter.SelectedIndex = -1;
-            string id = this.txtSearch.Text;
-            if (this.vehParkingBUS.getVehicleByID(id) != null)
+            try
             {
-                this.dgvXe.RowTemplate.Height = 80;
-                this.dgvXe.DataSource = this.vehParkingBUS.getVehicleByID_GanDung(id);
-                this.designDataGridView(5, 6);
-            }    
+                this.cbTypeFilter.SelectedIndex = -1;
+                string id = this.txtSearch.Text;
+                if (this.vehParkingBUS.getVehicleByID(id) != null)
+                {
+                    this.dgvXe.RowTemplate.Height = 80;
+                    this.dgvXe.DataSource = this.vehParkingBUS.getVehicleByID_GanDung(id);
+                    this.designDataGridView(5, 6);
+                }
+            }
+            catch { }
         }
 
         private void flayXe_Load(object sender, EventArgs e)

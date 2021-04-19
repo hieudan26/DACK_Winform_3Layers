@@ -15,8 +15,9 @@ namespace GUI_Management
     public partial class fphiGuiXe : Form
     {
         vehicleParkingDTO vel = new vehicleParkingDTO();
-        vehicleParkingBUS vehBUS = new vehicleParkingBUS();
+        vehicleParkingBUS vehParkBus = new vehicleParkingBUS();
         fQuanLyXe formQuanLyXeGui;
+        vehicleBUS vehicleBUS = new vehicleBUS();
 
         public fphiGuiXe(string id,fQuanLyXe fQuanLy)
         {
@@ -53,7 +54,7 @@ namespace GUI_Management
             this.vel.typeGui = this.cbLoaiGui.SelectedIndex;
             this.vel.ngayGui = DateTime.Now;
 
-            if (this.vehBUS.insertVehicle(this.vel))
+            if (this.vehParkBus.insertVehicle(this.vel) && this.vehicleBUS.UpdateStatusVehicle(this.vel.id, "PARK", 1))
             {
                 MessageBox.Show("Insert Successfully");
                 this.cbLoaiGui.SelectedIndex = -1;

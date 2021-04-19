@@ -20,6 +20,7 @@ namespace GUI_Management
         phiDichVuSuaXeBUS phiSuaBUS = new phiDichVuSuaXeBUS();
         public List<string> list_Service = new List<string>();
         fQuanLyXe formQuanLyXeGui;
+        vehicleBUS vehicleBUS = new vehicleBUS();
 
         public fphiSuaXe(string id, fQuanLyXe fQuanLy, int type)
         {
@@ -38,16 +39,20 @@ namespace GUI_Management
 
         private void btnFix_Click(object sender, EventArgs e)
         {
-            int choice = this.cbDichVu.SelectedIndex;
-            this.vehFixDTO.service = this.list_Service[choice];
-            if (this.vehFixBUS.insertVehicle_FIX(this.vehFixDTO))
+            try
             {
-                MessageBox.Show("Đã thêm thành công vào danh sách sửa", "Sửa Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int choice = this.cbDichVu.SelectedIndex;
+                this.vehFixDTO.service = this.list_Service[choice];
+                if (this.vehFixBUS.insertVehicle_FIX(this.vehFixDTO) && this.vehicleBUS.UpdateStatusVehicle(this.vehFixDTO.id, "FIX", 1))
+                {
+                    MessageBox.Show("Đã thêm thành công vào danh sách sửa", "Sửa Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Đã thêm không thành công vào danh sách sửa", "Sửa Xe", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Đã thêm không thành công vào danh sách sửa", "Sửa Xe", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
+            catch { }
         }
 
         private void SaveList(DataTable table)
