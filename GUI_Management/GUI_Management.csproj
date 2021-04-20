@@ -110,6 +110,12 @@
     <Compile Include="fphiSuaXe.Designer.cs">
       <DependentUpon>fphiSuaXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="fProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fProgressBar.Designer.cs">
+      <DependentUpon>fProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="fVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fphiSuaXe.resx">
       <DependentUpon>fphiSuaXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fProgressBar.resx">
+      <DependentUpon>fProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fVehicle.resx">
       <DependentUpon>fVehicle.cs</DependentUpon>
