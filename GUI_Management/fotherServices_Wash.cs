@@ -123,7 +123,7 @@ namespace GUI_Management
             {
                 MessageBox.Show("Successfully");
                 //this.fotherServices_Wash_Load(sender, e);
-                this.fQuanLy.openChildForm(new fphiSuaXe(id, this.fQuanLy, type));
+                this.fQuanLy.openChildForm(new fphiSuaXe(id, this.fQuanLy, type,3));
             }
             else
             {
@@ -139,7 +139,7 @@ namespace GUI_Management
             if (this.vehicleBUS.UpdateStatusVehicle(id, "PARK", 1))
             {
                 MessageBox.Show("Successfully");
-                this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy));
+                this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy,3));
             }
             else
             {

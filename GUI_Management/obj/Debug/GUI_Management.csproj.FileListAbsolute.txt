@@ -64,11 +64,8 @@ D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DTO_Management.exe.config
 D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DAO_Management.pdb
 D:\HK2N2\WIndow\DACK\GUI_Management\bin\Debug\DAO_Management.exe.config
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.csprojAssemblyReference.cache
-D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fGuiXe.resources
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fMain.resources
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.Form1.resources
-D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fphiGui.resources
-D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fQuanLyXeGui.resources
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.Properties.Resources.resources
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.UC_Intro.resources
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.UC_Login.resources
@@ -142,7 +139,6 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v3\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v3\GUI_Management\obj\Debug\GUI_Management.fdoanhThu.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v3\GUI_Management\obj\Debug\GUI_Management.finfoXe.resources
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fdoanhThu.resources
-D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.finfoXe.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v4\GUI_Management\bin\Debug\GUI_Management.exe.config
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v4\GUI_Management\bin\Debug\GUI_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v4\GUI_Management\bin\Debug\GUI_Management.pdb
@@ -260,7 +256,6 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v6\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v6\GUI_Management\obj\Debug\GUI_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v6\GUI_Management\obj\Debug\GUI_Management.pdb
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v6\GUI_Management\obj\Debug\GUI_Management.flayXe.resources
-D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.flayXe.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v7\GUI_Management\bin\Debug\GUI_Management.exe.config
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v7\GUI_Management\bin\Debug\GUI_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v7\GUI_Management\bin\Debug\GUI_Management.pdb
@@ -306,3 +301,15 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v7\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v7\GUI_Management\obj\Debug\GUI_Management.fotherServices_Park.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v7\GUI_Management\obj\Debug\GUI_Management.fotherServices_Fix.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v7\GUI_Management\obj\Debug\GUI_Management.fotherServices_Wash.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.finfoXeRua.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.finfoXeSua.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fotherServices_Fix.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fotherServices_Park.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fotherServices_Wash.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fphiSuaXe.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fProgressBar.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fVehicle.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.finfoXeGui.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.flayXeGui.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fphiGuiXe.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fQuanLyXe.resources

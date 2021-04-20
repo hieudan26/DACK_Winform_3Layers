@@ -21,20 +21,46 @@ namespace GUI_Management
         public List<string> list_Service = new List<string>();
         fQuanLyXe formQuanLyXeGui;
         vehicleBUS vehicleBUS = new vehicleBUS();
-
-        public fphiSuaXe(string id, fQuanLyXe fQuanLy, int type)
+        int indexform;
+        public fphiSuaXe(string id, fQuanLyXe fQuanLy, int type,int indexform)
         {
             InitializeComponent();
             this.vehFixDTO.id = id;
             this.formQuanLyXeGui = fQuanLy;
             this.vehDTO.type = type;
+            this.indexform = indexform;
             //this.ve
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            fVehicle f = new fVehicle(formQuanLyXeGui);
-            formQuanLyXeGui.openChildForm(f);
+            switch (this.indexform)
+            {
+                case 0:
+                    {
+                        fVehicle f = new fVehicle(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+                case 1:
+                    {
+                        fotherServices_Park f = new fotherServices_Park(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+                case 2:
+                    {
+                        fotherServices_Fix f = new fotherServices_Fix(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+                case 3:
+                    {
+                        fotherServices_Wash f = new fotherServices_Wash(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+            }
         }
 
         private void btnFix_Click(object sender, EventArgs e)

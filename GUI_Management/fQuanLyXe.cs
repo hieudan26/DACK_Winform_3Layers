@@ -24,10 +24,14 @@ namespace GUI_Management
         //add veh
         private void btnAddService_Click(object sender, EventArgs e)
         {
+            if (this.isCollapsed_1 == false)
+                this.HiddenPark();
+            if (this.isCollapsed_2 == false)
+                this.HiddenFix();
+            if (this.isCollapsed_3 == false)
+                this.HiddenWash();
             //panel move
-            this.pnlMove.Visible = true;
-            this.pnlMove.Height = this.btnAddService.Height;
-            this.pnlMove.Top = this.btnAddService.Top;
+            this.PanelMoveAdd();
             //end panel move
 
             this.openChildForm(new fVehicle(this));
@@ -37,6 +41,7 @@ namespace GUI_Management
         //Gửi
         private void btnBaiXe_Click(object sender, EventArgs e)
         {
+            this.PanelMoveParkService();
             //border change color
             //this.btnGuiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.Black;
@@ -50,6 +55,7 @@ namespace GUI_Management
 
         private void btnLayXe_Click(object sender, EventArgs e)
         {
+            this.PanelMoveParkService();
             //border change color
             //this.btnGuiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.White;
@@ -62,6 +68,7 @@ namespace GUI_Management
 
         private void btnOther_Park_Click(object sender, EventArgs e)
         {
+            this.PanelMoveParkService();
             //border change color
             //this.btnGuiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.White;
@@ -87,7 +94,7 @@ namespace GUI_Management
             }
             else
             {
-                this.pnlDropDownParkService.Height -= 50;
+                this.pnlDropDownParkService.Height -= 90;
                 if (this.pnlDropDownParkService.Size == this.pnlDropDownParkService.MinimumSize)
                 {
                     this.pnlDropDownFixService.Visible = true;
@@ -100,12 +107,14 @@ namespace GUI_Management
 
         private void btnXeGui_Click(object sender, EventArgs e)
         {
+            if (this.isCollapsed_2 == false)
+                this.HiddenFix();
+            if (this.isCollapsed_3 == false)
+                this.HiddenWash();
             this.timer1_ParkService.Start();
 
             //panel move
-            this.pnlMove.Visible = true;
-            this.pnlMove.Height = this.pnlDropDownParkService.MinimumSize.Height;
-            this.pnlMove.Top = this.pnlDropDownParkService.Top;
+            this.PanelMoveParkService();
             //end panel move
         }
         //end gửi
@@ -162,7 +171,7 @@ namespace GUI_Management
                 this.pnlDropDownFixService.Height += 90;
                 if (this.pnlDropDownFixService.Size == this.pnlDropDownFixService.MaximumSize)
                 {
-                    this.btnDoanhThu.Visible = false;
+                    //this.btnDoanhThu.Visible = false;
                     this.pnlDropDownWashService.Visible = false;
                     this.timer1_FixService.Stop();
                     this.isCollapsed_2 = false;
@@ -170,7 +179,7 @@ namespace GUI_Management
             }
             else
             {
-                this.pnlDropDownFixService.Height -= 50;
+                this.pnlDropDownFixService.Height -= 90;
                 if (this.pnlDropDownFixService.Size == this.pnlDropDownFixService.MinimumSize)
                 {
                     this.btnDoanhThu.Visible = true;
@@ -183,24 +192,28 @@ namespace GUI_Management
 
         private void btnFixService_Click(object sender, EventArgs e)
         {
+            if (this.isCollapsed_1 == false)
+                this.HiddenPark();
+            if (this.isCollapsed_3 == false)
+                this.HiddenWash();
             this.timer1_FixService.Start();
 
             //panel move
-            this.pnlMove.Visible = true;
-            this.pnlMove.Height = this.pnlDropDownFixService.MinimumSize.Height;
-            this.pnlMove.Top = this.pnlDropDownFixService.Top;
+            this.PanelMoveFix();
             //end panel move
         }
 
         //Mở đki cho xe chọn 2 dịch vụ còn lại trong danh sách sửa
         private void btnOther_Fix_Click(object sender, EventArgs e)
         {
+            this.PanelMoveFix();
             this.openChildForm(new fotherServices_Fix(this));
         }
 
         //Thông tin xe sửa
         private void btnInfoFix_Vehicle_Click_1(object sender, EventArgs e)
         {
+            this.PanelMoveFix();
             this.openChildForm(new finfoXeSua(this));
         }
         //end fix
@@ -208,12 +221,14 @@ namespace GUI_Management
         //wash
         private void btnWashService_Click(object sender, EventArgs e)
         {
+            if (this.isCollapsed_1 == false)
+                this.HiddenPark();
+            if (this.isCollapsed_2 == false)
+                this.HiddenFix();
             this.timer1_WashService.Start();
 
             //panel move
-            this.pnlMove.Visible = true;
-            this.pnlMove.Height = this.pnlDropDownWashService.MinimumSize.Height;
-            this.pnlMove.Top = this.pnlDropDownWashService.Top;
+            this.PanelMoveWash();
             //end panel move
         }
 
@@ -243,11 +258,13 @@ namespace GUI_Management
 
         private void btnThanhToan_Wash_Click(object sender, EventArgs e)
         {
+            this.PanelMoveWash();
             this.openChildForm(new finfoXeRua(this));
         }
 
         private void btnOther_Wash_Click(object sender, EventArgs e)
         {
+            this.PanelMoveWash();
             this.openChildForm(new fotherServices_Wash(this));
         }
         //end wash
@@ -255,14 +272,68 @@ namespace GUI_Management
         //Doanh thu
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
+            if (this.isCollapsed_1 == false)
+                this.HiddenPark();
+            if (this.isCollapsed_2 == false)
+                this.HiddenFix();
+            if (this.isCollapsed_3 == false)
+                this.HiddenWash();
             //panel move
-            this.pnlMove.Visible = true;
-            this.pnlMove.Height = this.btnDoanhThu.Height;
-            this.pnlMove.Top = this.btnDoanhThu.Top;
+            this.PanelMoveDoanhThu();
             //end panel move
 
             this.openChildForm(new fdoanhThu(this));
         }
         //end doanh thu
+        private void HiddenPark()
+        {
+            this.pnlDropDownParkService.Size = this.pnlDropDownParkService.MinimumSize;
+            this.pnlDropDownFixService.Visible = true;
+            this.pnlDropDownWashService.Visible = true;
+            this.isCollapsed_1 = true;
+        }
+        private void HiddenFix()
+        {
+            this.pnlDropDownFixService.Size = this.pnlDropDownFixService.MinimumSize;
+            this.btnDoanhThu.Visible = true;
+            this.pnlDropDownWashService.Visible = true;
+            this.isCollapsed_2 = true;
+        }
+        private void HiddenWash()
+        {
+            this.pnlDropDownWashService.Size = this.pnlDropDownWashService.MinimumSize;
+            this.btnDoanhThu.Visible = true;
+            this.isCollapsed_3 = true;
+        }
+        private void PanelMoveAdd()
+        {
+            this.pnlMove.Visible = true;
+            this.pnlMove.Height = this.btnAddService.Height;
+            this.pnlMove.Top = this.btnAddService.Top;
+        }
+        private void PanelMoveParkService()
+        {
+            this.pnlMove.Visible = true;
+            this.pnlMove.Height = this.pnlDropDownParkService.MinimumSize.Height;
+            this.pnlMove.Top = this.pnlDropDownParkService.Top;
+        }
+        private void PanelMoveFix()
+        {
+            this.pnlMove.Visible = true;
+            this.pnlMove.Height = this.pnlDropDownFixService.MinimumSize.Height;
+            this.pnlMove.Top = this.pnlDropDownFixService.Top;
+        }
+        private void PanelMoveWash()
+        {
+            this.pnlMove.Visible = true;
+            this.pnlMove.Height = this.pnlDropDownWashService.MinimumSize.Height;
+            this.pnlMove.Top = this.pnlDropDownWashService.Top;
+        }
+        private void PanelMoveDoanhThu()
+        {
+            this.pnlMove.Visible = true;
+            this.pnlMove.Height = this.btnDoanhThu.Height;
+            this.pnlMove.Top = this.btnDoanhThu.Top;
+        }
     }
 }

@@ -139,7 +139,7 @@ namespace GUI_Management
             if (this.vehBUS.UpdateStatusVehicle(id, "PARK", 1))
             {
                 MessageBox.Show("Successfully");
-                this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy));
+                this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy,2));
             }
             else
             {

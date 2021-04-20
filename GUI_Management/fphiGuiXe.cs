@@ -18,13 +18,14 @@ namespace GUI_Management
         vehicleParkingBUS vehParkBus = new vehicleParkingBUS();
         fQuanLyXe formQuanLyXeGui;
         vehicleBUS vehicleBUS = new vehicleBUS();
-
-        public fphiGuiXe(string id,fQuanLyXe fQuanLy)
+        int indexform;
+        public fphiGuiXe(string id,fQuanLyXe fQuanLy,int indexform)
         {
             InitializeComponent();
 
             this.vel.id = id;
             this.formQuanLyXeGui = fQuanLy;
+            this.indexform = indexform;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -58,6 +59,9 @@ namespace GUI_Management
             {
                 MessageBox.Show("Insert Successfully");
                 this.cbLoaiGui.SelectedIndex = -1;
+                fVehicle f = new fVehicle(formQuanLyXeGui);
+                formQuanLyXeGui.openChildForm(f);
+                
             }
             else
                 MessageBox.Show("Insert Failed");
@@ -65,8 +69,33 @@ namespace GUI_Management
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            fVehicle f = new fVehicle(formQuanLyXeGui);
-            formQuanLyXeGui.openChildForm(f);
+            switch(this.indexform)
+            {
+                case 0:
+                    {
+                        fVehicle f = new fVehicle(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+                case 1:
+                    {
+                        fotherServices_Park f = new fotherServices_Park(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+                case 2:
+                    {
+                        fotherServices_Fix f = new fotherServices_Fix(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+                case 3:
+                    {
+                        fotherServices_Wash f = new fotherServices_Wash(formQuanLyXeGui);
+                        formQuanLyXeGui.openChildForm(f);
+                        break;
+                    }
+            }
         }
     }
 }
