@@ -138,7 +138,7 @@ namespace GUI_Management
             {
                 MessageBox.Show("Successfully");
                 this.fotherServices_Park_Load(sender, e);
-                this.fQuanLy.openChildForm(new fphiSuaXe(id, this.fQuanLy, type));
+                this.fQuanLy.openChildForm(new fphiSuaXe(id, this.fQuanLy, type,1));
             }    
             else
             {

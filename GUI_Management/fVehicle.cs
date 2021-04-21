@@ -122,13 +122,13 @@ namespace GUI_Management
         //open child form gửi
         public void openForm_Gui(vehicleDTO vel)
         {
-            this.formQuanLyXeGui.openChildForm(new fphiGuiXe(vel.id, formQuanLyXeGui));
+            this.formQuanLyXeGui.openChildForm(new fphiGuiXe(vel.id, formQuanLyXeGui,0));
         }
 
         //open child form sửa
         public void openForm_Sua(vehicleDTO vel, int type)
         {
-            this.formQuanLyXeGui.openChildForm(new fphiSuaXe(vel.id, formQuanLyXeGui, type));
+            this.formQuanLyXeGui.openChildForm(new fphiSuaXe(vel.id, formQuanLyXeGui, type,0));
         }
 
         private void btnExit_MouseHover(object sender, EventArgs e)
