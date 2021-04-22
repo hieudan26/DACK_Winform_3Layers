@@ -12,6 +12,7 @@ using DTO_Management;
 using BUS_Management;
 using System.IO;
 using Microsoft.Office.Interop.Word;
+using System.Drawing.Printing;
 
 namespace GUI_Management
 {
@@ -149,16 +150,41 @@ namespace GUI_Management
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (this.cbThanhToan.SelectedIndex != -1)
+            {
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.DefaultExt = "*.docx";
+                savefile.Filter = "DOCX files(*.docx)|*.docx";
+
+                if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
+                {
+                    MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Export_Data_To_Word(this.dgvExpired, savefile.FileName);
+                }
+            }    
+            else
+            {
+                MessageBox.Show("Chọn Bảng Cần Lưu", "Doanh Thu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
+        }
+
+        private void btnSaveAll_Click(object sender, EventArgs e)
+        {
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.DefaultExt = "*.docx";
             savefile.Filter = "DOCX files(*.docx)|*.docx";
 
             if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
             {
-                Export_Data_To_Word(dgvExpired, savefile.FileName);
                 MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Export_AllData_To_Word(this.dgvExpired, savefile.FileName);
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+        }
+
         public void CreateDocument(string docFilePath, Image image)
         {
             _Application oWord = new Microsoft.Office.Interop.Word.Application();
@@ -192,123 +218,180 @@ namespace GUI_Management
                 return returnImage;
             }
         }
+
+        public void Export_AllData_To_Word(DataGridView DGV, string filename)
+        {
+
+            try
+            {
+                Microsoft.Office.Interop.Word.Application winword = new Microsoft.Office.Interop.Word.Application();
+                winword.ShowAnimation = false;
+                winword.Visible = false;
+                object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Document document = winword.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+                document.Content.SetRange(0, 0);
+                document.Content.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+
+
+                Microsoft.Office.Interop.Word.Paragraph paraHeading = document.Content.Paragraphs.Add(ref missing);
+                paraHeading.Range.Text = "BẢNG DOANH THU NGÀY " + DateTime.Now.ToString("dd/MM/yyyy");
+                paraHeading.Range.Font.Size = 28;
+                paraHeading.Range.Font.Name = "Times New Roman";
+                paraHeading.Range.Bold = 1;
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                paraHeading.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                paraHeading.Range.InsertParagraphAfter();
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                paraHeading.Range.InsertParagraphAfter();
+
+                this.ExporterObjects_Paragraph(ref document, this.doanhThuParkingBUS.getdoanhThuParking_InDay(), "Bảng gửi xe");
+                this.ExporterObjects_Paragraph(ref document, this.doanhThuFixBUS.getDoanhThuFix_InDay(), "Bảng sửa xe ");
+                this.ExporterObjects_Paragraph(ref document, this.doanhThuWashBUS.getDoanhThuWash_InDay(), "Bảng rửa xe");
+
+                Microsoft.Office.Interop.Word.Paragraph para1 = document.Content.Paragraphs.Add(ref missing);
+                para1.Range.Font.Size = 16;
+                para1.Range.Font.Name = "Times New Roman";
+                para1.Range.Bold = 0;
+                para1.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                para1.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para1.Range.Text = "\nDoanh thu gửi Xe: " + this.txtGuiXe.Text +
+                                    "\nDoanh thu Sửa Xe: " + this.txtSuaXe.Text +
+                                    "\nDoanh thu Rửa Xe: " + this.txtRuaXe.Text +
+                                    "\nTổng Doanh Thu: " + this.txtTongCong.Text;
+                para1.Range.InsertParagraphAfter();
+
+
+                // Word.WdParagraphAlignment.wdAlignParagraphRight;
+                //Save the document
+                document.SaveAs2(filename);
+                ((Microsoft.Office.Interop.Word._Document)document).Close(ref missing, ref missing, ref missing);
+                ((Microsoft.Office.Interop.Word._Application)winword).Quit(ref missing, ref missing, ref missing);
+
+
+                MessageBox.Show("Document created successfully !");
+                System.Diagnostics.Process.Start(filename);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void Export_Data_To_Word(DataGridView DGV, string filename)
         {
-            //if (DGV.Rows.Count != 0)
-            //{
-            //    int RowCount = DGV.Rows.Count;
-            //    int ColumnCount = DGV.Columns.Count;
-            //    Object[,] DataArray = new object[RowCount + 1, ColumnCount + 1];
+            try
+            {
+                Microsoft.Office.Interop.Word.Application winword = new Microsoft.Office.Interop.Word.Application();
+                winword.ShowAnimation = false;
+                winword.Visible = false;
+                object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Document document = winword.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+                document.Content.SetRange(0, 0);
+                document.Content.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
 
-            //    //add row
-            //    int r = 0;
-            //    for (int c = 0; c <= ColumnCount - 1; c++)
-            //    {
-            //        for (r = 0; r <= RowCount - 1; r++)
-            //        {
-            //            DataArray[r, c] = DGV.Rows[r].Cells[c].Value;
-            //        }
-            //    }
 
-            //    Document oDoc = new Document();
+                Microsoft.Office.Interop.Word.Paragraph paraHeading = document.Content.Paragraphs.Add(ref missing);
+                paraHeading.Range.Text = "BẢNG DOANH THU NGÀY " + DateTime.Now.ToString("dd/MM/yyyy");
+                paraHeading.Range.Font.Size = 28;
+                paraHeading.Range.Font.Name = "Times New Roman";
+                paraHeading.Range.Bold = 1;
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                paraHeading.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                paraHeading.Range.InsertParagraphAfter();
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                paraHeading.Range.InsertParagraphAfter();
 
-            //    oDoc.Application.Visible = true;
-            //    //page orintation
-            //    oDoc.PageSetup.Orientation = WdOrientation.wdOrientLandscape;
-            //    dynamic oRange = oDoc.Content.Application.Selection.Range;
-            //    //in ra doanh thu
-            //    Object oMissing = System.Reflection.Missing.Value;
-            //    var oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
-            //    string Temp = "\nSố Lượng xe đạp: " + this.txtSLXeDap.Text + "\n"
-            //                  + "Doanh Thu xe đạp: " + this.txtDTXeDap.Text + "\n"
-            //                  + "Số Lượng xe máy: " + this.txtSLXeMay.Text + "\n"
-            //                  + "Doanh Thu xe máy: " + this.txtDTXeMay.Text + "\n"
-            //                  + "Số Lượng xe hơi: " + this.txtSLXeHoi.Text + "\n"
-            //                  + "Doanh Thu xe hơi: " + this.txtDTXeHoi.Text + "\n"
-            //                  + "Tổng Doanh Thu trong ngày hôm nay: " + this.txtTong.Text + "\n";
-            //    oPara1.Range.InsertBefore(Temp);
-            //    oPara1.Range.InsertParagraph();
 
-            //    string oTemp = "";
-            //    //in ra bang
-            //    for (r = 0; r <= RowCount - 1; r++)
-            //    {
-            //        for (int c = 0; c <= ColumnCount - 1; c++)
-            //        {
-            //            oTemp = oTemp + DataArray[r, c] + "\t";
-            //        }
-            //    }
-            //    //table format
-            //    oRange.Text = oTemp;
+                System.Data.DataTable table = DGV.DataSource as System.Data.DataTable;
+                this.ExporterObjects_Paragraph(ref document, table, ("Bảng " + this.cbThanhToan.SelectedItem.ToString()));
 
-            //    object Separator = WdTableFieldSeparator.wdSeparateByTabs;
-            //    object ApplyBorders = true;
-            //    object AutoFit = true;
-            //    object AutoFitBehavior = WdAutoFitBehavior.wdAutoFitContent;
 
-            //    oRange.ConvertToTable(ref Separator, ref RowCount, ref ColumnCount,
-            //                          Type.Missing, Type.Missing, ref ApplyBorders,
-            //                          Type.Missing, Type.Missing, Type.Missing,
-            //                          Type.Missing, Type.Missing, Type.Missing,
-            //                          Type.Missing, ref AutoFit, ref AutoFitBehavior, Type.Missing);
+                Microsoft.Office.Interop.Word.Paragraph para1 = document.Content.Paragraphs.Add(ref missing);
+                para1.Range.Font.Size = 16;
+                para1.Range.Font.Name = "Times New Roman";
+                para1.Range.Bold = 0;
+                para1.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                para1.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para1.Range.Text = "\nDoanh thu gửi Xe: " + this.txtGuiXe.Text +
+                                    "\nDoanh thu Sửa Xe: " + this.txtSuaXe.Text +
+                                    "\nDoanh thu Rửa Xe: " + this.txtRuaXe.Text +
+                                    "\nTổng Doanh Thu: " + this.txtTongCong.Text;
+                para1.Range.InsertParagraphAfter();
 
-            //    oRange.Select();
 
-            //    oDoc.Application.Selection.Tables[1].Select();
-            //    oDoc.Application.Selection.Tables[1].Rows.AllowBreakAcrossPages = 0;
-            //    oDoc.Application.Selection.Tables[1].Rows.Alignment = 0;
-            //    oDoc.Application.Selection.Tables[1].Rows[1].Select();
-            //    oDoc.Application.Selection.InsertRowsAbove(1);
-            //    oDoc.Application.Selection.Tables[1].Rows[1].Select();
+                // Word.WdParagraphAlignment.wdAlignParagraphRight;
+                //Save the document
+                document.SaveAs2(filename);
+                ((Microsoft.Office.Interop.Word._Document)document).Close(ref missing, ref missing, ref missing);
+                ((Microsoft.Office.Interop.Word._Application)winword).Quit(ref missing, ref missing, ref missing);
 
-            //    //header row style
-            //    oDoc.Application.Selection.Tables[1].Rows[1].Range.Bold = 1;
-            //    oDoc.Application.Selection.Tables[1].Rows[1].Range.Font.Name = "Tahoma";
-            //    oDoc.Application.Selection.Tables[1].Rows[1].Range.Font.Size = 14;
 
-            //    //add header row manually
-            //    for (int c = 0; c <= ColumnCount - 1; c++)
-            //    {
-            //        oDoc.Application.Selection.Tables[1].Cell(1, c + 1).Range.Text = DGV.Columns[c].HeaderText;
-            //    }
-            //    //table style
-            //    oDoc.Application.Selection.Tables[1].set_Style("Grid Table 4 - Accent 5");
-            //    oDoc.Application.Selection.Tables[1].Rows[1].Select();
-            //    oDoc.Application.Selection.Cells.VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                MessageBox.Show("Document created successfully !");
+                System.Diagnostics.Process.Start(filename);
 
-            //    //header text
-            //    foreach (Section section in oDoc.Application.ActiveDocument.Sections)
-            //    {
-            //        Range headerRange = section.Headers[WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
-            //        headerRange.Fields.Add(headerRange, WdFieldType.wdFieldPage);
-            //        headerRange.Text = "Bảng xe quá hạn";
-            //        headerRange.Font.Size = 16;
-            //        headerRange.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
-            //    }
-            //    byte[] imgbyte;
-            //    MemoryStream ms;
-            //    Image finalPic;
-            //    //save image
-            //    for (r = 0; r <= RowCount - 1; r++)
-            //    {
-            //        imgbyte = (byte[])dgvExpired.Rows[r].Cells[2].Value;
-            //        ms = new MemoryStream(imgbyte);
-            //        finalPic = (Image)(new Bitmap(Image.FromStream(ms), new Size(70, 70)));
-            //        Clipboard.SetDataObject(finalPic);
-            //        oDoc.Application.Selection.Tables[1].Cell(r + 2, 3).Range.Paste();
-            //        oDoc.Application.Selection.Tables[1].Cell(r + 2, 3).Range.InsertParagraph();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-            //        imgbyte = (byte[])dgvExpired.Rows[r].Cells[3].Value;
-            //        ms = new MemoryStream(imgbyte);
-            //        finalPic = (Image)(new Bitmap(Image.FromStream(ms), new Size(70, 70)));
-            //        Clipboard.SetDataObject(finalPic);
-            //        oDoc.Application.Selection.Tables[1].Cell(r + 2, 4).Range.Paste();
-            //        oDoc.Application.Selection.Tables[1].Cell(r + 2, 4).Range.InsertParagraph();
-            //    }
-                
-            //    //save the file
-            //    oDoc.SaveAs(filename);
-            //}
+        private void ExporterObjects_Paragraph(ref Document document, System.Data.DataTable datatable, string namePara)
+        {
+            try
+            {
+                object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Paragraph para = document.Content.Paragraphs.Add(ref missing);
+                para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                para.Range.Font.Bold = 1;
+                para.Range.Font.Size = 16;
+                para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para.Range.Text = "\n" + namePara;
+                para.Range.InsertParagraphAfter();
+
+
+                para.Range.Font.Bold = 1;
+                para.Range.Font.Size = 14;
+                para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                if (datatable.Rows.Count > 0)
+                {
+                    Microsoft.Office.Interop.Word.Table firstTable = document.Tables.Add(para.Range, datatable.Rows.Count, datatable.Columns.Count, ref missing, ref missing);
+                    firstTable.Borders.Enable = 1;
+                    firstTable.Cell(1, 1).Range.Text = "Biển số";
+                    firstTable.Cell(1, 2).Range.Text = "Thời gian thanh toán";
+                    firstTable.Cell(1, 3).Range.Text = "Tiền trả" + " (VNĐ)";
+                    Object beforeRow = Type.Missing;
+
+                    para.Range.Font.Bold = 0;
+                    para.Range.Font.Size = 14;
+                    para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                    para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
+
+                    for (int i = 0; i < datatable.Rows.Count; i++)
+                    {
+                        firstTable.Rows.Add(ref beforeRow);
+                        firstTable.Cell(i + 2, 1).Range.Text = datatable.Rows[i][0].ToString();
+                        firstTable.Cell(i + 2, 2).Range.Text = datatable.Rows[i][1].ToString();
+                        firstTable.Cell(i + 2, 3).Range.Text = datatable.Rows[i][2].ToString();
+                    }
+                }
+                else
+                {
+                    Microsoft.Office.Interop.Word.Table firstTable = document.Tables.Add(para.Range, 1, datatable.Columns.Count, ref missing, ref missing);
+                    firstTable.Borders.Enable = 1;
+                    firstTable.Cell(1, 1).Range.Text = "Biển số";
+                    firstTable.Cell(1, 2).Range.Text = "Thời gian thanh toán";
+                    firstTable.Cell(1, 3).Range.Text = "Tiền trả" + " (VNĐ)";
+                    Object beforeRow = Type.Missing;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Err " + ex.Message);
+            }
         }
 
         private void cbThanhToan_SelectedIndexChanged(object sender, EventArgs e)

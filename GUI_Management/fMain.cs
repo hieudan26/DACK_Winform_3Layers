@@ -33,5 +33,18 @@ namespace GUI_Management
             form.ShowDialog();
             this.Show();
         }
+
+        private void jobsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fQuanLyNhanVien form = new fQuanLyNhanVien();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }

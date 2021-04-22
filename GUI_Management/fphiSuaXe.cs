@@ -22,7 +22,8 @@ namespace GUI_Management
         fQuanLyXe formQuanLyXeGui;
         vehicleBUS vehicleBUS = new vehicleBUS();
         int indexform;
-        public fphiSuaXe(string id, fQuanLyXe fQuanLy, int type,int indexform)
+
+        public fphiSuaXe(string id, fQuanLyXe fQuanLy, int type, int indexform)
         {
             InitializeComponent();
             this.vehFixDTO.id = id;

@@ -62,6 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="faddNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="faddNhanVien.Designer.cs">
+      <DependentUpon>faddNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="fbaiXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     <Compile Include="fdoanhThu.Designer.cs">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="finfoNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="finfoNhanVien.Designer.cs">
+      <DependentUpon>finfoNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="finfoXeRua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     </Compile>
     <Compile Include="finfoXeSua.Designer.cs">
       <DependentUpon>finfoXeSua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flistNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flistNhanVien.Designer.cs">
+      <DependentUpon>flistNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="fotherServices_Fix.cs">
       <SubType>Form</SubType>
@@ -115,6 +133,12 @@
     </Compile>
     <Compile Include="fProgressBar.Designer.cs">
       <DependentUpon>fProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyNhanVien.Designer.cs">
+      <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="fVehicle.cs">
       <SubType>Form</SubType>
@@ -183,17 +207,26 @@
     <Compile Include="UC_Signin.Designer.cs">
       <DependentUpon>UC_Signin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="faddNhanVien.resx">
+      <DependentUpon>faddNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fbaiXe.resx">
       <DependentUpon>fbaiXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fdoanhThu.resx">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="finfoNhanVien.resx">
+      <DependentUpon>finfoNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="finfoXeRua.resx">
       <DependentUpon>finfoXeRua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="finfoXeSua.resx">
       <DependentUpon>finfoXeSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flistNhanVien.resx">
+      <DependentUpon>flistNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fotherServices_Fix.resx">
       <DependentUpon>fotherServices_Fix.cs</DependentUpon>
@@ -209,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fProgressBar.resx">
       <DependentUpon>fProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyNhanVien.resx">
+      <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fVehicle.resx">
       <DependentUpon>fVehicle.cs</DependentUpon>
@@ -365,6 +401,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\apple_spring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

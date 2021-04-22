@@ -24,6 +24,7 @@ namespace GUI_Management
             this.fQuanLy = fQuanLy;
         }
 
+        //btn EXIT
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,6 +42,7 @@ namespace GUI_Management
             this.btnExit.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.ForeColor = Color.White;
         }
+        //End btn EXIT
 
         private void designDataGridView(int i1, int i2)
         {
@@ -70,65 +72,82 @@ namespace GUI_Management
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.flpService.Controls.Count != 0)
-                this.flpService.Controls.Clear();
+            this.clearpnl();
             DataTable table = this.vehicleWashBUS.getStatus(this.dgv.CurrentRow.Cells[0].Value.ToString());
             int park = Convert.ToInt32(table.Rows[0]["park"].ToString());
             int fix = Convert.ToInt32(table.Rows[0]["fix"].ToString());
             //int wash = Convert.ToInt32(table.Rows[0]["wash"].ToString());
             if (park == 0)
             {
-                Guna.UI.WinForms.GunaGradientButton btnPark = new Guna.UI.WinForms.GunaGradientButton();
-                btnPark.Text = "PARK";
-                btnPark.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-                btnPark.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                btnPark.ForeColor = Color.DarkGreen;
-                btnPark.Radius = 4;
-                btnPark.Image = null;
-                btnPark.BaseColor1 = Color.White;
-                btnPark.BaseColor2 = Color.Gray;
-                btnPark.OnHoverBaseColor1 = Color.Gray;
-                btnPark.OnHoverBaseColor2 = Color.White;
-
-                this.flpService.Controls.Add(btnPark);
-                btnPark.Click += new System.EventHandler(this.btnPark_Click);
+                this.sinhbtnPark();
             }
-
+            //#f8a5c2//#f1f2f6//248, 165, 194//241, 242, 246
             if (fix == 0)
             {
-                Guna.UI.WinForms.GunaGradientButton btnFix = new Guna.UI.WinForms.GunaGradientButton();
-                btnFix.Text = "FIX";
-                btnFix.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-                btnFix.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                btnFix.ForeColor = Color.DarkGreen;
-                btnFix.Radius = 4;
-                btnFix.Image = null;
-                btnFix.BaseColor1 = Color.White;
-                btnFix.BaseColor2 = Color.Gray;
-                btnFix.OnHoverBaseColor1 = Color.Gray;
-                btnFix.OnHoverBaseColor2 = Color.White;
-                //if (this.flpService.Controls.Count < 2)
-                this.flpService.Controls.Add(btnFix);
-
-                btnFix.Click += new System.EventHandler(this.btnFix_Click);
+                this.sinhbtnFix();
             }
         }
+
+        //Làm sạch panel (vì mỗi object xe có trạng thái dịch vụ khác nhau)
+        private void clearpnl()
+        {
+            if (this.flpService.Controls.Count != 0)
+                this.flpService.Controls.Clear();
+        }
+        //end
+
+        //sinh button Fix
+        private void sinhbtnFix()
+        {
+            //design btn
+            Guna.UI.WinForms.GunaGradientButton btnFix = new Guna.UI.WinForms.GunaGradientButton();
+            btnFix.Text = "FIX";
+            btnFix.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            btnFix.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnFix.ForeColor = Color.DarkGreen;
+            btnFix.Radius = 4;
+            btnFix.Image = null;
+            btnFix.BaseColor1 = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(165)))), ((int)(((byte)(194)))));
+            btnFix.BaseColor2 = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            btnFix.OnHoverBaseColor1 = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            btnFix.OnHoverBaseColor2 = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(165)))), ((int)(((byte)(194)))));
+            //end design
+
+            //thêm vào panel và thêm event click
+            this.flpService.Controls.Add(btnFix);
+            btnFix.Click += new System.EventHandler(this.btnFix_Click);
+        }
+        //end button Fix
+
+        //sinh button Park
+        private void sinhbtnPark()
+        {
+            //design
+            Guna.UI.WinForms.GunaGradientButton btnPark = new Guna.UI.WinForms.GunaGradientButton();
+            btnPark.Text = "PARK";
+            btnPark.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            btnPark.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnPark.ForeColor = Color.DarkGreen;
+            btnPark.Radius = 4;
+            btnPark.Image = null;
+            btnPark.BaseColor1 = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(165)))), ((int)(((byte)(194)))));
+            btnPark.BaseColor2 = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            btnPark.OnHoverBaseColor1 = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            btnPark.OnHoverBaseColor2 = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(165)))), ((int)(((byte)(194)))));
+            //end design
+
+            //thêm vào panel và tạo event click
+            this.flpService.Controls.Add(btnPark);
+            btnPark.Click += new System.EventHandler(this.btnPark_Click);
+        }
+        //end sinh button Park
 
         private void btnFix_Click(object sender, EventArgs e)
         {
             string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
             int type = Convert.ToInt32(this.dgv.CurrentRow.Cells[1].Value);
 
-            if (this.vehicleBUS.UpdateStatusVehicle(id, "FIX", 1))
-            {
-                MessageBox.Show("Successfully");
-                //this.fotherServices_Wash_Load(sender, e);
-                this.fQuanLy.openChildForm(new fphiSuaXe(id, this.fQuanLy, type,3));
-            }
-            else
-            {
-                MessageBox.Show("Unsuccessfully");
-            }
+            this.fQuanLy.openChildForm(new fphiSuaXe(id, this.fQuanLy, type, 3));
         }
 
         private void btnPark_Click(object sender, EventArgs e)
@@ -136,15 +155,7 @@ namespace GUI_Management
             string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
             int type = Convert.ToInt32(this.dgv.CurrentRow.Cells[1].Value);
 
-            if (this.vehicleBUS.UpdateStatusVehicle(id, "PARK", 1))
-            {
-                MessageBox.Show("Successfully");
-                this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy,3));
-            }
-            else
-            {
-                MessageBox.Show("Unsuccessfully");
-            }
+            this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy, 3));
         }
     }
 }

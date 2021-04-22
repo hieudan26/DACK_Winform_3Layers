@@ -241,7 +241,7 @@ namespace GUI_Management
             this.lbStatusC.TabIndex = 18;
             this.lbStatusC.Text = "text";
             // 
-            // fBaiXe
+            // fbaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -264,7 +264,7 @@ namespace GUI_Management
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fBaiXe";
+            this.Name = "fbaiXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fBaiXe";
             this.Load += new System.EventHandler(this.fBaiXe_Load);

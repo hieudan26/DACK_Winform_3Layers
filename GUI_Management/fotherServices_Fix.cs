@@ -26,6 +26,7 @@ namespace GUI_Management
             this.fQuanLy = fQuanLy;
         }
 
+        //btn EXIT
         private void btnExit_MouseHover(object sender, EventArgs e)
         {
             this.btnExit.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -37,6 +38,13 @@ namespace GUI_Management
             this.btnExit.BackColor = Color.DarkGray;
             this.btnExit.ForeColor = Color.Black;
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.fQuanLy.pnlMove.Visible = false;
+        }
+        //end btn EXIT
 
         private void designDataGridView(int i1, int i2)
         {
@@ -51,12 +59,6 @@ namespace GUI_Management
             this.dgv.AllowUserToAddRows = false;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.fQuanLy.pnlMove.Visible = false;
-        }
-
         private void fotherServices_Fix_Load(object sender, EventArgs e)
         {
             this.dgv.RowTemplate.Height = 80;
@@ -64,7 +66,6 @@ namespace GUI_Management
             {
                 this.dgv.DataSource = this.vehicleFixBUS.getVehicleFix_info_all();
                 this.designDataGridView(3, 4);
-
             }
             else
                 this.dgv.DataSource = null;
@@ -72,49 +73,73 @@ namespace GUI_Management
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.flpService.Controls.Count != 0)
-                this.flpService.Controls.Clear();
+            this.clearPnl();
             DataTable table = this.vehicleFixBUS.getStatus(this.dgv.CurrentRow.Cells[0].Value.ToString());
             int park = Convert.ToInt32(table.Rows[0]["park"].ToString());
             //int fix = Convert.ToInt32(table.Rows[0]["fix"].ToString());
             int wash = Convert.ToInt32(table.Rows[0]["wash"].ToString());
             if (park == 0)
             {
-                Guna.UI.WinForms.GunaGradientButton btnPark = new Guna.UI.WinForms.GunaGradientButton();
-                btnPark.Text = "PARK";
-                btnPark.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-                btnPark.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                btnPark.ForeColor = Color.DarkGreen;
-                btnPark.Radius = 4;
-                btnPark.Image = null;
-                btnPark.BaseColor1 = Color.White;
-                btnPark.BaseColor2 = Color.Gray;
-                btnPark.OnHoverBaseColor1 = Color.Gray;
-                btnPark.OnHoverBaseColor2 = Color.White;
-                
-                this.flpService.Controls.Add(btnPark);
-                btnPark.Click += new System.EventHandler(this.btnPark_Click);
+                this.sinhbtnPark();   
             }
 
             if (wash == 0)
             {
-                Guna.UI.WinForms.GunaGradientButton btnWash = new Guna.UI.WinForms.GunaGradientButton();
-                btnWash.Text = "WASH";
-                btnWash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-                btnWash.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                btnWash.ForeColor = Color.DarkGreen;
-                btnWash.Radius = 4;
-                btnWash.Image = null;
-                btnWash.BaseColor1 = Color.White;
-                btnWash.BaseColor2 = Color.Gray;
-                btnWash.OnHoverBaseColor1 = Color.Gray;
-                btnWash.OnHoverBaseColor2 = Color.White;
-                //if (this.flpService.Controls.Count < 2)
-                this.flpService.Controls.Add(btnWash);
-
-                btnWash.Click += new System.EventHandler(this.btnWash_Click);
+                this.sinhbtnWash();
             }
         }
+
+        //clear panel
+        private void clearPnl()
+        {
+            if (this.flpService.Controls.Count != 0)
+                this.flpService.Controls.Clear();
+        }
+        //end
+
+        //sinh btn park
+        private void sinhbtnPark()
+        {
+            //design
+            Guna.UI.WinForms.GunaGradientButton btnPark = new Guna.UI.WinForms.GunaGradientButton();
+            btnPark.Text = "PARK";
+            btnPark.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            btnPark.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnPark.ForeColor = Color.DarkGreen;
+            btnPark.Radius = 4;
+            btnPark.Image = null;
+            btnPark.BaseColor1 = Color.White;
+            btnPark.BaseColor2 = Color.Gray;
+            btnPark.OnHoverBaseColor1 = Color.Gray;
+            btnPark.OnHoverBaseColor2 = Color.White;
+            //end design
+
+            this.flpService.Controls.Add(btnPark);
+            btnPark.Click += new System.EventHandler(this.btnPark_Click);
+        }
+        //end sinh btn park
+
+        //sinh btn wash
+        private void sinhbtnWash()
+        {
+            //design
+            Guna.UI.WinForms.GunaGradientButton btnWash = new Guna.UI.WinForms.GunaGradientButton();
+            btnWash.Text = "WASH";
+            btnWash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            btnWash.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnWash.ForeColor = Color.DarkGreen;
+            btnWash.Radius = 4;
+            btnWash.Image = null;
+            btnWash.BaseColor1 = Color.White;
+            btnWash.BaseColor2 = Color.Gray;
+            btnWash.OnHoverBaseColor1 = Color.Gray;
+            btnWash.OnHoverBaseColor2 = Color.White;
+            //design
+
+            this.flpService.Controls.Add(btnWash);
+            btnWash.Click += new System.EventHandler(this.btnWash_Click);
+        }
+        //end sinh btn wash
 
         private void btnWash_Click(object sender, EventArgs e)
         {
@@ -136,15 +161,7 @@ namespace GUI_Management
             string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
             int type = Convert.ToInt32(this.dgv.CurrentRow.Cells[2].Value);
 
-            if (this.vehBUS.UpdateStatusVehicle(id, "PARK", 1))
-            {
-                MessageBox.Show("Successfully");
-                this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy,2));
-            }
-            else
-            {
-                MessageBox.Show("Unsuccessfully");
-            }
+            this.fQuanLy.openChildForm(new fphiGuiXe(id, this.fQuanLy, 2));
         }
     }
 }

@@ -34,9 +34,7 @@ namespace GUI_Management
             this.vehicleManagemenyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jobsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.techniqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl = new Guna.UI.WinForms.GunaGradient2Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.menuStrip1.SuspendLayout();
@@ -49,10 +47,7 @@ namespace GUI_Management
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vehicleManagemenyToolStripMenuItem,
-            this.jobsToolStripMenuItem,
-            this.employToolStripMenuItem,
-            this.techniqueToolStripMenuItem,
-            this.contractToolStripMenuItem});
+            this.jobsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(791, 30);
@@ -64,7 +59,7 @@ namespace GUI_Management
             this.vehicleManagemenyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addVehicleToolStripMenuItem});
             this.vehicleManagemenyToolStripMenuItem.Name = "vehicleManagemenyToolStripMenuItem";
-            this.vehicleManagemenyToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.vehicleManagemenyToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.vehicleManagemenyToolStripMenuItem.Text = "Vehicle Management";
             // 
             // addVehicleToolStripMenuItem
@@ -76,27 +71,19 @@ namespace GUI_Management
             // 
             // jobsToolStripMenuItem
             // 
+            this.jobsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quảnLýNhânViênToolStripMenuItem});
             this.jobsToolStripMenuItem.Name = "jobsToolStripMenuItem";
-            this.jobsToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
-            this.jobsToolStripMenuItem.Text = "Jobs";
+            this.jobsToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.jobsToolStripMenuItem.Text = "Employees Management";
+            this.jobsToolStripMenuItem.Click += new System.EventHandler(this.jobsToolStripMenuItem_Click);
             // 
-            // employToolStripMenuItem
+            // quảnLýNhânViênToolStripMenuItem
             // 
-            this.employToolStripMenuItem.Name = "employToolStripMenuItem";
-            this.employToolStripMenuItem.Size = new System.Drawing.Size(95, 26);
-            this.employToolStripMenuItem.Text = "Employees";
-            // 
-            // techniqueToolStripMenuItem
-            // 
-            this.techniqueToolStripMenuItem.Name = "techniqueToolStripMenuItem";
-            this.techniqueToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
-            this.techniqueToolStripMenuItem.Text = "Technique";
-            // 
-            // contractToolStripMenuItem
-            // 
-            this.contractToolStripMenuItem.Name = "contractToolStripMenuItem";
-            this.contractToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
-            this.contractToolStripMenuItem.Text = "Contract";
+            this.quảnLýNhânViênToolStripMenuItem.Name = "quảnLýNhânViênToolStripMenuItem";
+            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quảnLýNhânViênToolStripMenuItem.Text = "Quản Lý Nhân Viên";
+            this.quảnLýNhânViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNhânViênToolStripMenuItem_Click);
             // 
             // pnl
             // 
@@ -150,11 +137,9 @@ namespace GUI_Management
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem vehicleManagemenyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jobsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem employToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addVehicleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem techniqueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contractToolStripMenuItem;
         private Guna.UI.WinForms.GunaGradient2Panel pnl;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýNhânViênToolStripMenuItem;
     }
 }

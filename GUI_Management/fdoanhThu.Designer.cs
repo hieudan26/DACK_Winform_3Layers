@@ -30,10 +30,10 @@ namespace GUI_Management
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbContent = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
@@ -50,6 +50,7 @@ namespace GUI_Management
             this.txtTongCong = new Guna.UI.WinForms.GunaLineTextBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.cbThanhToan = new Guna.UI.WinForms.GunaComboBox();
+            this.btnSaveAll = new Guna.UI.WinForms.GunaGradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpired)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,30 +84,30 @@ namespace GUI_Management
             // 
             // dgvExpired
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
-            this.dgvExpired.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
+            this.dgvExpired.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExpired.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExpired.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvExpired.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpired.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvExpired.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpired.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpired.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvExpired.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExpired.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExpired.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvExpired.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvExpired.EnableHeadersVisualStyles = false;
             this.dgvExpired.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
@@ -114,14 +115,14 @@ namespace GUI_Management
             this.dgvExpired.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvExpired.Name = "dgvExpired";
             this.dgvExpired.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpired.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpired.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvExpired.RowHeadersVisible = false;
             this.dgvExpired.RowHeadersWidth = 51;
             this.dgvExpired.RowTemplate.Height = 24;
@@ -179,7 +180,7 @@ namespace GUI_Management
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnSave.Image = null;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(547, 481);
+            this.btnSave.Location = new System.Drawing.Point(408, 481);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
@@ -224,6 +225,7 @@ namespace GUI_Management
             this.btnPrint.TabIndex = 28;
             this.btnPrint.Text = "PRINT";
             this.btnPrint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gunaLabel1
             // 
@@ -348,12 +350,44 @@ namespace GUI_Management
             this.cbThanhToan.TabIndex = 37;
             this.cbThanhToan.SelectedIndexChanged += new System.EventHandler(this.cbThanhToan_SelectedIndexChanged);
             // 
+            // btnSaveAll
+            // 
+            this.btnSaveAll.AnimationHoverSpeed = 0.07F;
+            this.btnSaveAll.AnimationSpeed = 0.03F;
+            this.btnSaveAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveAll.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnSaveAll.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnSaveAll.BorderColor = System.Drawing.Color.Black;
+            this.btnSaveAll.BorderSize = 1;
+            this.btnSaveAll.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSaveAll.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSaveAll.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
+            this.btnSaveAll.Image = null;
+            this.btnSaveAll.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSaveAll.Location = new System.Drawing.Point(531, 481);
+            this.btnSaveAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveAll.Name = "btnSaveAll";
+            this.btnSaveAll.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnSaveAll.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnSaveAll.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSaveAll.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSaveAll.OnHoverImage = null;
+            this.btnSaveAll.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSaveAll.Radius = 3;
+            this.btnSaveAll.Size = new System.Drawing.Size(135, 37);
+            this.btnSaveAll.TabIndex = 38;
+            this.btnSaveAll.Text = "SAVE ALL";
+            this.btnSaveAll.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
+            // 
             // fdoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(883, 536);
+            this.Controls.Add(this.btnSaveAll);
             this.Controls.Add(this.cbThanhToan);
             this.Controls.Add(this.txtTongCong);
             this.Controls.Add(this.gunaLabel4);
@@ -399,5 +433,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaLineTextBox txtTongCong;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaComboBox cbThanhToan;
+        private Guna.UI.WinForms.GunaGradientButton btnSaveAll;
     }
 }

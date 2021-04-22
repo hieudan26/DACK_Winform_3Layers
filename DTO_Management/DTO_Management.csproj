@@ -56,8 +56,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="doanhThuWashDTO.cs" />
+    <Compile Include="nhanVienDTO.cs" />
     <Compile Include="phiDichVuSuaXeDTO.cs" />
     <Compile Include="phiDichVuGuiXeDTO.cs" />
+    <Compile Include="phongBanDTO.cs" />
     <Compile Include="vehicleDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
