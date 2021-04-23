@@ -175,6 +175,7 @@ namespace GUI_Management
             this.btnEdit.TabIndex = 45;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // cbTypeTho
             // 
@@ -272,6 +273,7 @@ namespace GUI_Management
             this.btnUpImg.TabIndex = 40;
             this.btnUpImg.Text = "UP IMAGE";
             this.btnUpImg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpImg.Click += new System.EventHandler(this.btnUpImg_Click);
             // 
             // label9
             // 
@@ -370,6 +372,7 @@ namespace GUI_Management
             this.btnFind.TabIndex = 50;
             this.btnFind.Text = "FIND";
             this.btnFind.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnRemove
             // 
@@ -399,6 +402,7 @@ namespace GUI_Management
             this.btnRemove.TabIndex = 51;
             this.btnRemove.Text = "REMOVE";
             this.btnRemove.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // finfoNhanVien
             // 
@@ -429,6 +433,7 @@ namespace GUI_Management
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "finfoNhanVien";
             this.Text = "finfoNhanVien";
+            this.Load += new System.EventHandler(this.finfoNhanVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNhanVien)).EndInit();
@@ -441,19 +446,11 @@ namespace GUI_Management
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rbNo;
-        private System.Windows.Forms.RadioButton rbYes;
         private System.Windows.Forms.Label label5;
-        private Guna.UI.WinForms.GunaDateTimePicker dtpDoB;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
         private Guna.UI.WinForms.GunaGradientButton btnEdit;
-        private Guna.UI.WinForms.GunaComboBox cbTypeTho;
-        private Guna.UI.WinForms.GunaComboBox cbSex;
-        private Guna.UI.WinForms.GunaLineTextBox txtId_CMND;
-        private Guna.UI.WinForms.GunaLineTextBox txtTenNV;
         private Guna.UI.WinForms.GunaButton btnUpImg;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pbNhanVien;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -461,5 +458,13 @@ namespace GUI_Management
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaGradientButton btnFind;
         private Guna.UI.WinForms.GunaGradientButton btnRemove;
+        public System.Windows.Forms.RadioButton rbNo;
+        public System.Windows.Forms.RadioButton rbYes;
+        public Guna.UI.WinForms.GunaDateTimePicker dtpDoB;
+        public Guna.UI.WinForms.GunaComboBox cbTypeTho;
+        public Guna.UI.WinForms.GunaComboBox cbSex;
+        public Guna.UI.WinForms.GunaLineTextBox txtId_CMND;
+        public Guna.UI.WinForms.GunaLineTextBox txtTenNV;
+        public System.Windows.Forms.PictureBox pbNhanVien;
     }
 }

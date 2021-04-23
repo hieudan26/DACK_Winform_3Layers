@@ -64,7 +64,7 @@ namespace GUI_Management
 
         private void btnDanhSach_Click(object sender, EventArgs e)
         {
-            this.openChildForm(new flistNhanVien());
+            this.openChildForm(new flistNhanVien(this));
         }
     }
 }

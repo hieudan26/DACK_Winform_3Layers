@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace DAL_Management
 {
     public class nhanVienDAL : MyDB
     {
+        phongBanDAL phongBanDAL = new phongBanDAL();
+
         public DataTable getEmployee(SqlCommand cmd)
         {
             cmd.Connection = this.getConnection;
@@ -19,6 +22,53 @@ namespace DAL_Management
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+
+        //update thông tin nhân viên theo id
+        public bool UpdateInfoEmployee(string name, DateTime dob, string gender, string typeTho, MemoryStream img,string IdEmployee)
+        {
+            string NameDepart = "";
+            if (typeTho == "Bảo Vệ")
+            {
+                NameDepart = "Phòng Bảo Vệ";
+            }    
+            else if (typeTho == "Thợ Sửa")
+            {
+                NameDepart = "Phòng Sửa Xe";
+            }    
+            else
+            {
+                NameDepart = "Phòng Rửa Xe";
+            }
+
+            string idDep = this.phongBanDAL.getPhongBan_byName(NameDepart).Rows[0]["id"].ToString();
+
+            try {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("update EMPLOYEES set name = @name, departmentId = @deptid, birthdate = @dob, gender = @gender, typeTho = @typeTho, img = @img where id = @id", this.getConnection);
+                cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                cmd.Parameters.Add("@deptid", SqlDbType.NVarChar).Value = idDep;
+                cmd.Parameters.Add("@dob", SqlDbType.Date).Value = dob;
+                cmd.Parameters.Add("@gender", SqlDbType.NVarChar).Value = gender;
+                cmd.Parameters.Add("@typeTho", SqlDbType.NVarChar).Value = typeTho;
+                cmd.Parameters.Add("@img", SqlDbType.Image).Value = img.ToArray();
+                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = IdEmployee;
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
         }
 
         //Del nhân viên
@@ -43,6 +93,22 @@ namespace DAL_Management
                 this.closeConnection();
             }
             return false;
+        }
+
+        //tìm kiếm nhân viên theo id_cmnd
+        public DataTable getEmployee_byID(string id)
+        {
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where id = @id");
+            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         //tìm kiếm hỗn hợp 

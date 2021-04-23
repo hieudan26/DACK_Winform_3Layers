@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,12 @@ namespace GUI_Management
     {
         nhanVienBUS nhanVienBUS = new nhanVienBUS();
         phongBanBUS phongBanBUS = new phongBanBUS();
+        fQuanLyNhanVien fQuanLyNhanVien = new fQuanLyNhanVien();
 
-        public flistNhanVien()
+        public flistNhanVien(fQuanLyNhanVien fQuanLy)
         {
             InitializeComponent();
+            this.fQuanLyNhanVien = fQuanLy;
         }
 
         //design dgv
@@ -119,6 +122,36 @@ namespace GUI_Management
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dgv_DoubleClick(object sender, EventArgs e)
+        {
+            finfoNhanVien form = new finfoNhanVien();
+            string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
+            string name = this.dgv.CurrentRow.Cells[1].Value.ToString();
+            DateTime dob = DateTime.Parse(this.dgv.CurrentRow.Cells[3].Value.ToString());
+            string gender = this.dgv.CurrentRow.Cells[4].Value.ToString();
+            string typeTho = this.dgv.CurrentRow.Cells[5].Value.ToString();
+            Byte[] pic = new Byte[0];
+            pic = (Byte[])(this.dgv.CurrentRow.Cells[6].Value);
+            MemoryStream ms = new MemoryStream(pic);
+
+            form.txtId_CMND.Text = id;
+            form.txtTenNV.Text = name;
+            form.dtpDoB.Value = dob;
+            form.cbSex.Text = gender;
+            form.cbTypeTho.Text = typeTho;
+            form.pbNhanVien.Image = Image.FromStream(ms);
+            form.pbNhanVien.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (this.phongBanBUS.ktraLeader(id))
+            {
+                form.rbYes.Checked = true;
+            }
+            else
+            {
+                form.rbNo.Checked = true;
+            }
+            this.fQuanLyNhanVien.openChildForm(form);
         }
     }
 }

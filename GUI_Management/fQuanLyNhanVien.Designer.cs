@@ -36,9 +36,9 @@ namespace GUI_Management
             this.btnLuong = new Guna.UI.WinForms.GunaButton();
             this.btnSchedule = new Guna.UI.WinForms.GunaButton();
             this.btnAddEmployee = new Guna.UI.WinForms.GunaButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDanhSach = new Guna.UI.WinForms.GunaButton();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -197,6 +197,16 @@ namespace GUI_Management
             this.btnAddEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.money;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 129);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnDanhSach
             // 
             this.btnDanhSach.AnimationHoverSpeed = 0.07F;
@@ -236,16 +246,6 @@ namespace GUI_Management
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1302, 21);
             this.gunaShadowPanel1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.money;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 129);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // fQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,6 +254,7 @@ namespace GUI_Management
             this.Controls.Add(this.gunaGradient2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fQuanLyNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fQuanLyNhanVien";
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaLinePanel1.ResumeLayout(false);
