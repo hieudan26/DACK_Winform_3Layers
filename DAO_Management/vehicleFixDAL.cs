@@ -100,6 +100,17 @@ namespace DAL_Management
                 return null;
         }
 
+        //get datatable thông tin vehicle fix tất cả distinct
+        public DataTable getVehicleFix_info_all_distinct()
+        {
+            SqlCommand cmd = new SqlCommand("select distinct VEHICLE_FIX.id, type, CAST(img1 AS VARBINARY(8000)) as img1, CAST(img2 AS VARBINARY(8000)) as img2  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
+            DataTable table = this.getVehicleFix(cmd);
+            if (table.Rows.Count > 0)
+                return table;
+            else
+                return null;
+        }
+
         //get datatable thông tin vehicle fix tất cả
         public DataTable getVehicleFix_info_all()
         {

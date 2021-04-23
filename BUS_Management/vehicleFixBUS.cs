@@ -13,6 +13,12 @@ namespace BUS_Management
     {
         vehicleFixDAL vehFixDAL = new vehicleFixDAL();
 
+        //get datatable thông tin vehicle fix tất cả distinct
+        public DataTable getVehicleFix_info_all_distinct()
+        {
+            return this.vehFixDAL.getVehicleFix_info_all_distinct();
+        }
+
         //get status
         public DataTable getStatus(string id)
         {

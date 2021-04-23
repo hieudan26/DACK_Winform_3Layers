@@ -33,20 +33,27 @@ namespace GUI_Management
             switch (type)
             {
                 case "BaiXe": { this.BacktoBaiXe(); break; }
-                case "DoanhThu": { this.BacktoDoanhThu(); break; }
+                case "LayXeGui": { this.BacktoLayXeGui(); break; }
+                case "Other": { this.BacktoOther(); break; }
             }
+        }
+
+        public void BacktoOther()
+        {
+            fotherServices_Park f = new fotherServices_Park(this.formQuanLyXeGui);
+            this.formQuanLyXeGui.openChildForm(f);
         }
 
         public void BacktoBaiXe()
         {
-            fbaiXe f = new fbaiXe(formQuanLyXeGui);
-            formQuanLyXeGui.openChildForm(f);
+            fbaiXe f = new fbaiXe(this.formQuanLyXeGui);
+            this.formQuanLyXeGui.openChildForm(f);
         }
 
-        public void BacktoDoanhThu()
+        public void BacktoLayXeGui()
         {
-            fdoanhThu f = new fdoanhThu(formQuanLyXeGui);
-            formQuanLyXeGui.openChildForm(f);
+            flayXeGui f = new flayXeGui(this.formQuanLyXeGui);
+            this.formQuanLyXeGui.openChildForm(f);
         }
 
         private bool verify()

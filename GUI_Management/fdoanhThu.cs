@@ -159,7 +159,7 @@ namespace GUI_Management
                 if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
                 {
                     MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Export_Data_To_Word(this.dgvExpired, savefile.FileName);
+                    Export_Data_To_Word(this.dgvExpired, savefile.FileName, 1);
                 }
             }    
             else
@@ -177,12 +177,21 @@ namespace GUI_Management
             if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
             {
                 MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Export_AllData_To_Word(this.dgvExpired, savefile.FileName);
+                Export_AllData_To_Word(this.dgvExpired, savefile.FileName, 1);
             }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.DefaultExt = "*.pdf";
+            savefile.Filter = "PDF files(*.PDF)|*.pdf";
+
+            if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
+            {
+                Export_AllData_To_Word(dgvExpired, savefile.FileName, 2);
+                MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public void CreateDocument(string docFilePath, Image image)
@@ -219,7 +228,7 @@ namespace GUI_Management
             }
         }
 
-        public void Export_AllData_To_Word(DataGridView DGV, string filename)
+        public void Export_AllData_To_Word(DataGridView DGV, string filename, int value)//1: Word,2: PDF
         {
 
             try
@@ -262,8 +271,19 @@ namespace GUI_Management
 
 
                 // Word.WdParagraphAlignment.wdAlignParagraphRight;
+                //Save pdf
+                //object outputFileName = filename.Replace(".doc", ".pdf");
+                //object fileFormat = WdSaveFormat.wdFormatPDF;
+                //document.SaveAs(ref outputFileName, ref fileFormat);
                 //Save the document
-                document.SaveAs2(filename);
+                if (value == 1)
+                    document.SaveAs2(filename);
+                else
+                {
+                    object outputFileName = filename.Replace(".doc", ".pdf");
+                    object fileFormat = WdSaveFormat.wdFormatPDF;
+                    document.SaveAs(ref outputFileName, ref fileFormat);
+                }
                 ((Microsoft.Office.Interop.Word._Document)document).Close(ref missing, ref missing, ref missing);
                 ((Microsoft.Office.Interop.Word._Application)winword).Quit(ref missing, ref missing, ref missing);
 
@@ -278,7 +298,7 @@ namespace GUI_Management
             }
         }
 
-        public void Export_Data_To_Word(DataGridView DGV, string filename)
+        public void Export_Data_To_Word(DataGridView DGV, string filename, int value)//1: Word,2: PDF
         {
             try
             {
@@ -322,7 +342,13 @@ namespace GUI_Management
 
                 // Word.WdParagraphAlignment.wdAlignParagraphRight;
                 //Save the document
-                document.SaveAs2(filename);
+                if (value == 1)
+                    document.SaveAs2(filename);
+                else
+                {
+                    object fileFormat = WdSaveFormat.wdFormatPDF;
+                    document.SaveAs2(filename, ref fileFormat);
+                }
                 ((Microsoft.Office.Interop.Word._Document)document).Close(ref missing, ref missing, ref missing);
                 ((Microsoft.Office.Interop.Word._Application)winword).Quit(ref missing, ref missing, ref missing);
 

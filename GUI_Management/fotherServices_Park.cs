@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -163,6 +164,99 @@ namespace GUI_Management
 
             this.fotherServices_Park_Load(sender, e);
             this.fQuanLy.openChildForm(new fphiSuaXe(id, this.fQuanLy, type, 1));
+        }
+
+        private MemoryStream picture(DataTable table, string img)
+        {
+            Byte[] pic = new Byte[0];
+            pic = (Byte[])(table.Rows[0][img]);
+            MemoryStream ms = new MemoryStream(pic);
+            return ms;
+        }
+
+        private int xacDinhThu()
+        {
+            int thu = (int)DateTime.Now.DayOfWeek + 1;
+            if (thu == 1)
+                thu = 8;
+
+            return thu;
+        }
+
+        private string LoaiGui(int type)
+        {
+            string LoaiGui = "";
+
+            if (type == 0)
+            {
+                LoaiGui = "hourFee";
+            }
+            else if (type == 1)
+            {
+                LoaiGui = "dateFee";
+            }
+            else if (type == 2)
+            {
+                LoaiGui = "weekFee";
+            }
+            else
+            {
+                LoaiGui = "monthFee";
+            }
+            return LoaiGui;
+        }
+
+        private void dgv_DoubleClick(object sender, EventArgs e)
+        {
+            finfoXeGui form = new finfoXeGui(fQuanLy, "Other");
+            string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
+            DataTable table = this.vehicleParkingBUS.getVehicleByID(id);
+            form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
+            form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            form.pBHinh2.Image = Image.FromStream(this.picture(table, "img2"));
+            form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            form.txtID.Text = id.ToString();
+
+            if (int.Parse(table.Rows[0]["type"].ToString()) == 0)
+            {
+                form.txtLoaiXe.Text = "Xe Đạp";
+                form.lbHinh1.Text = "Hình Xe";
+                form.lbHinh2.Text = "Người Gửi";
+            }
+            else if (int.Parse(table.Rows[0]["type"].ToString()) == 1)
+            {
+                form.txtLoaiXe.Text = "Xe Máy";
+                form.lbHinh1.Text = "Bảng Số";
+                form.lbHinh2.Text = "Người Gửi";
+            }
+            else
+            {
+                form.txtLoaiXe.Text = "Xe Hơi";
+                form.lbHinh1.Text = "Bảng Số";
+                form.lbHinh2.Text = "Hiệu Xe";
+            }
+
+
+            //Xác định thứ trong tuần
+            int thu = this.xacDinhThu();
+
+            String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["typePark"].ToString()));
+
+            form.txtLoaiGui.Text = loaiGui;
+
+            int phi_theo_thu = 0;
+            if (loaiGui != "")
+            {
+                phi_theo_thu = this.vehicleParkingBUS.layTienTheoThu(thu, loaiGui);
+            }
+
+            form.txtDTGui.Text = table.Rows[0]["timeIn"].ToString();
+
+            form.txtTongTien.Text = phi_theo_thu.ToString();
+
+            this.fQuanLy.openChildForm(form);
         }
     }
 }

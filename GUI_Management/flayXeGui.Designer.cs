@@ -153,7 +153,7 @@ namespace GUI_Management
             this.dgvXe.ThemeStyle.RowsStyle.Height = 24;
             this.dgvXe.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
             this.dgvXe.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvXe_CellClick);
+            this.dgvXe.DoubleClick += new System.EventHandler(this.dgvXe_DoubleClick);
             // 
             // label2
             // 
