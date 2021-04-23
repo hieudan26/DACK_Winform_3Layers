@@ -66,5 +66,10 @@ namespace GUI_Management
         {
             this.openChildForm(new flistNhanVien(this));
         }
+
+        private void btnInfoNhanVien_Click(object sender, EventArgs e)
+        {
+            this.openChildForm(new finfoNhanVien());
+        }
     }
 }

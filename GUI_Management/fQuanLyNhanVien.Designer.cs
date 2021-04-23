@@ -39,6 +39,7 @@ namespace GUI_Management
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDanhSach = new Guna.UI.WinForms.GunaButton();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.btnInfoNhanVien = new Guna.UI.WinForms.GunaButton();
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +71,7 @@ namespace GUI_Management
             // gunaLinePanel1
             // 
             this.gunaLinePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.gunaLinePanel1.Controls.Add(this.btnInfoNhanVien);
             this.gunaLinePanel1.Controls.Add(this.btnExit);
             this.gunaLinePanel1.Controls.Add(this.btnLuong);
             this.gunaLinePanel1.Controls.Add(this.btnSchedule);
@@ -129,7 +131,7 @@ namespace GUI_Management
             this.btnLuong.ForeColor = System.Drawing.Color.Black;
             this.btnLuong.Image = null;
             this.btnLuong.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLuong.Location = new System.Drawing.Point(6, 475);
+            this.btnLuong.Location = new System.Drawing.Point(6, 510);
             this.btnLuong.Name = "btnLuong";
             this.btnLuong.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnLuong.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -156,7 +158,7 @@ namespace GUI_Management
             this.btnSchedule.ForeColor = System.Drawing.Color.Black;
             this.btnSchedule.Image = null;
             this.btnSchedule.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSchedule.Location = new System.Drawing.Point(6, 377);
+            this.btnSchedule.Location = new System.Drawing.Point(6, 431);
             this.btnSchedule.Name = "btnSchedule";
             this.btnSchedule.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSchedule.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -221,7 +223,7 @@ namespace GUI_Management
             this.btnDanhSach.ForeColor = System.Drawing.Color.Black;
             this.btnDanhSach.Image = null;
             this.btnDanhSach.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDanhSach.Location = new System.Drawing.Point(6, 289);
+            this.btnDanhSach.Location = new System.Drawing.Point(6, 273);
             this.btnDanhSach.Name = "btnDanhSach";
             this.btnDanhSach.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnDanhSach.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -245,6 +247,34 @@ namespace GUI_Management
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1302, 21);
             this.gunaShadowPanel1.TabIndex = 0;
+            // 
+            // btnInfoNhanVien
+            // 
+            this.btnInfoNhanVien.AnimationHoverSpeed = 0.07F;
+            this.btnInfoNhanVien.AnimationSpeed = 0.03F;
+            this.btnInfoNhanVien.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfoNhanVien.BaseColor = System.Drawing.Color.LemonChiffon;
+            this.btnInfoNhanVien.BorderColor = System.Drawing.Color.Black;
+            this.btnInfoNhanVien.BorderSize = 2;
+            this.btnInfoNhanVien.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnInfoNhanVien.FocusedColor = System.Drawing.Color.Empty;
+            this.btnInfoNhanVien.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfoNhanVien.ForeColor = System.Drawing.Color.Black;
+            this.btnInfoNhanVien.Image = null;
+            this.btnInfoNhanVien.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnInfoNhanVien.Location = new System.Drawing.Point(6, 353);
+            this.btnInfoNhanVien.Name = "btnInfoNhanVien";
+            this.btnInfoNhanVien.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnInfoNhanVien.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnInfoNhanVien.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnInfoNhanVien.OnHoverImage = null;
+            this.btnInfoNhanVien.OnPressedColor = System.Drawing.Color.Black;
+            this.btnInfoNhanVien.Radius = 3;
+            this.btnInfoNhanVien.Size = new System.Drawing.Size(194, 42);
+            this.btnInfoNhanVien.TabIndex = 11;
+            this.btnInfoNhanVien.Text = "Info Nhân Viên";
+            this.btnInfoNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnInfoNhanVien.Click += new System.EventHandler(this.btnInfoNhanVien_Click);
             // 
             // fQuanLyNhanVien
             // 
@@ -275,5 +305,6 @@ namespace GUI_Management
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaButton btnExit;
         private System.Windows.Forms.Panel pnlChildForm;
+        private Guna.UI.WinForms.GunaButton btnInfoNhanVien;
     }
 }
