@@ -72,7 +72,7 @@ namespace GUI_Management
                     btnBike.Text = item.ToString();
 
                     //design button
-                    btnBike.Width = 140;
+                    btnBike.Width = 160;
                     btnBike.Height = 40;
                     btnBike.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btnBike.BaseColor1 = Color.AntiqueWhite;
@@ -108,7 +108,7 @@ namespace GUI_Management
                     btnMotor.Text = item.ToString();
 
                     //design button
-                    btnMotor.Width = 130;
+                    btnMotor.Width = 160;
                     btnMotor.Height = 40;
                     btnMotor.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btnMotor.BaseColor1 = Color.AntiqueWhite;
@@ -143,7 +143,7 @@ namespace GUI_Management
                     btnCar.Text = item.ToString();
 
                     //design button
-                    btnCar.Width = 130;
+                    btnCar.Width = 160;
                     btnCar.Height = 40;
                     btnCar.Font = new System.Drawing.Font("Times New Roman", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btnCar.BaseColor1 = Color.AntiqueWhite;

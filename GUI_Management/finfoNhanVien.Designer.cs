@@ -191,7 +191,8 @@ namespace GUI_Management
             this.cbTypeTho.Items.AddRange(new object[] {
             "Bảo Vệ",
             "Thợ Sửa",
-            "Thợ Rửa"});
+            "Thợ Rửa",
+            "Nhân Viên"});
             this.cbTypeTho.Location = new System.Drawing.Point(219, 461);
             this.cbTypeTho.Name = "cbTypeTho";
             this.cbTypeTho.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));

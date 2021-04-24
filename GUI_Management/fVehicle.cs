@@ -87,7 +87,7 @@ namespace GUI_Management
 
         private void btnUpImg1_Click(object sender, EventArgs e)
         {
-            if (this.txtID.Text != "" || this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
+            if (this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
             {
                 OpenFileDialog opf = new OpenFileDialog();
                 opf.Filter = "Select Image(*.jpg; *.png; *gif)|*.jpg; *.png; *.gif";
@@ -98,13 +98,13 @@ namespace GUI_Management
             }    
             else
             {
-                MessageBox.Show("Can't add image, pls select type of vehicle or txtbox", "Upload Image", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Can't add image, pls select type of vehicle", "Upload Image", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }
 
         private void btnUpImg2_Click(object sender, EventArgs e)
         {
-            if (this.txtID.Text != "" || this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
+            if (this.cbLoaiXe.SelectedIndex == 0 || this.cbLoaiXe.SelectedIndex == 1 || this.cbLoaiXe.SelectedIndex == 2)
             {
                 OpenFileDialog opf = new OpenFileDialog();
                 opf.Filter = "Select Image(*.jpg; *.png; *gif)|*.jpg; *.png; *.gif";
@@ -115,7 +115,7 @@ namespace GUI_Management
             }
             else
             {
-                MessageBox.Show("Can't add image, pls select type of vehicle or txtbox", "Upload Image", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Can't add image, pls select type of vehicle", "Upload Image", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

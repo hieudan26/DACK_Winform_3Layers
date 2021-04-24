@@ -349,5 +349,10 @@ namespace GUI_Management
         {
 
         }
+
+        private void pnlMove_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

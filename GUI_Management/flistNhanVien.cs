@@ -68,7 +68,14 @@ namespace GUI_Management
                     this.dgv.DataSource = table;
                     this.designDataGridView(6);
                 }    
-                else
+                else if (index == 3)
+                {
+                    string typeTho = "Nhân Viên";
+                    table = this.nhanVienBUS.getNv_typeTho(typeTho);
+                    this.dgv.DataSource = table;
+                    this.designDataGridView(6);
+                }    
+                else 
                 {
                     table = this.nhanVienBUS.getAllEmployees();
                     this.dgv.DataSource = table;

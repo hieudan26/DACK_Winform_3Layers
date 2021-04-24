@@ -38,17 +38,17 @@ namespace GUI_Management
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.uC_Intro1 = new GUI_Management.UC_Intro();
             this.uC_Signin1 = new GUI_Management.UC_Signin();
             this.uC_Login1 = new GUI_Management.UC_Login();
+            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaShadowPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
-            this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
+            this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -56,7 +56,7 @@ namespace GUI_Management
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(0, 521);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(0, 645);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // gunaShadowPanel1
@@ -76,7 +76,7 @@ namespace GUI_Management
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
             this.gunaShadowPanel1.ShadowDepth = 50;
             this.gunaShadowPanel1.ShadowStyle = Guna.UI.WinForms.ShadowMode.Dropped;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(333, 521);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(333, 645);
             this.gunaShadowPanel1.TabIndex = 2;
             // 
             // btnExit
@@ -92,7 +92,7 @@ namespace GUI_Management
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(13, 387);
+            this.btnExit.Location = new System.Drawing.Point(22, 450);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -110,7 +110,7 @@ namespace GUI_Management
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.panel3.Controls.Add(this.btnSignIn);
             this.panel3.Controls.Add(this.btnLogIn);
-            this.panel3.Location = new System.Drawing.Point(132, 298);
+            this.panel3.Location = new System.Drawing.Point(131, 370);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 197);
@@ -144,7 +144,7 @@ namespace GUI_Management
             this.btnSignIn.Radius = 25;
             this.btnSignIn.Size = new System.Drawing.Size(233, 62);
             this.btnSignIn.TabIndex = 5;
-            this.btnSignIn.Text = "SIGN IN";
+            this.btnSignIn.Text = "SIGN UP";
             this.btnSignIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
@@ -188,7 +188,7 @@ namespace GUI_Management
             this.gunaLinkLabel1.Font = new System.Drawing.Font("Times New Roman", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLinkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.gunaLinkLabel1.Location = new System.Drawing.Point(19, 464);
+            this.gunaLinkLabel1.Location = new System.Drawing.Point(23, 549);
             this.gunaLinkLabel1.Name = "gunaLinkLabel1";
             this.gunaLinkLabel1.Size = new System.Drawing.Size(47, 18);
             this.gunaLinkLabel1.TabIndex = 20;
@@ -221,16 +221,39 @@ namespace GUI_Management
             this.label1.TabIndex = 17;
             this.label1.Text = "WELCOME";
             // 
-            // gunaPanel1
+            // gunaPanel2
             // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.gunaPanel1.Controls.Add(this.gunaDateTimePicker1);
-            this.gunaPanel1.Controls.Add(this.gunaPanel2);
-            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel1.Location = new System.Drawing.Point(333, 0);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(503, 521);
-            this.gunaPanel1.TabIndex = 6;
+            this.gunaPanel2.Controls.Add(this.uC_Intro1);
+            this.gunaPanel2.Controls.Add(this.uC_Signin1);
+            this.gunaPanel2.Controls.Add(this.uC_Login1);
+            this.gunaPanel2.Location = new System.Drawing.Point(51, 81);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(591, 512);
+            this.gunaPanel2.TabIndex = 0;
+            this.gunaPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel2_Paint);
+            // 
+            // uC_Intro1
+            // 
+            this.uC_Intro1.Location = new System.Drawing.Point(-3, 0);
+            this.uC_Intro1.Name = "uC_Intro1";
+            this.uC_Intro1.Size = new System.Drawing.Size(594, 528);
+            this.uC_Intro1.TabIndex = 2;
+            // 
+            // uC_Signin1
+            // 
+            this.uC_Signin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
+            this.uC_Signin1.Location = new System.Drawing.Point(-3, 0);
+            this.uC_Signin1.Name = "uC_Signin1";
+            this.uC_Signin1.Size = new System.Drawing.Size(594, 528);
+            this.uC_Signin1.TabIndex = 1;
+            // 
+            // uC_Login1
+            // 
+            this.uC_Login1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(110)))), ((int)(((byte)(114)))));
+            this.uC_Login1.Location = new System.Drawing.Point(-3, 3);
+            this.uC_Login1.Name = "uC_Login1";
+            this.uC_Login1.Size = new System.Drawing.Size(594, 515);
+            this.uC_Login1.TabIndex = 0;
             // 
             // gunaDateTimePicker1
             // 
@@ -243,7 +266,7 @@ namespace GUI_Management
             this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
             this.gunaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(184, 21);
+            this.gunaDateTimePicker1.Location = new System.Drawing.Point(283, 21);
             this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
@@ -257,47 +280,23 @@ namespace GUI_Management
             this.gunaDateTimePicker1.Text = "11:12:24 AM";
             this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 3, 11, 12, 24, 0);
             // 
-            // gunaPanel2
+            // gunaPanel1
             // 
-            this.gunaPanel2.Controls.Add(this.uC_Intro1);
-            this.gunaPanel2.Controls.Add(this.uC_Signin1);
-            this.gunaPanel2.Controls.Add(this.uC_Login1);
-            this.gunaPanel2.Location = new System.Drawing.Point(18, 57);
-            this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(462, 426);
-            this.gunaPanel2.TabIndex = 0;
-            // 
-            // uC_Intro1
-            // 
-            this.uC_Intro1.Location = new System.Drawing.Point(-15, -4);
-            this.uC_Intro1.Name = "uC_Intro1";
-            this.uC_Intro1.Size = new System.Drawing.Size(519, 431);
-            this.uC_Intro1.TabIndex = 2;
-            // 
-            // uC_Signin1
-            // 
-            this.uC_Signin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.uC_Signin1.Location = new System.Drawing.Point(-18, 0);
-            this.uC_Signin1.Name = "uC_Signin1";
-            this.uC_Signin1.Size = new System.Drawing.Size(500, 437);
-            this.uC_Signin1.TabIndex = 1;
-            this.uC_Signin1.Load += new System.EventHandler(this.uC_Signin1_Load);
-            // 
-            // uC_Login1
-            // 
-            this.uC_Login1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(110)))), ((int)(((byte)(114)))));
-            this.uC_Login1.Location = new System.Drawing.Point(-2, 0);
-            this.uC_Login1.Name = "uC_Login1";
-            this.uC_Login1.Size = new System.Drawing.Size(484, 450);
-            this.uC_Login1.TabIndex = 0;
-            this.uC_Login1.Load += new System.EventHandler(this.uC_Login1_Load);
+            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
+            this.gunaPanel1.Controls.Add(this.gunaDateTimePicker1);
+            this.gunaPanel1.Controls.Add(this.gunaPanel2);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel1.Location = new System.Drawing.Point(333, 0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(694, 645);
+            this.gunaPanel1.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.ClientSize = new System.Drawing.Size(836, 521);
+            this.ClientSize = new System.Drawing.Size(1027, 645);
             this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.gunaShadowPanel1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -310,8 +309,8 @@ namespace GUI_Management
             this.gunaShadowPanel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
-            this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel2.ResumeLayout(false);
+            this.gunaPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -327,12 +326,12 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton btnExit;
-        private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private UC_Login uC_Login1;
         private UC_Intro uC_Intro1;
         private UC_Signin uC_Signin1;
-        private UC_Login uC_Login1;
     }
 }
 

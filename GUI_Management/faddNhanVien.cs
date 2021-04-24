@@ -53,6 +53,10 @@ namespace GUI_Management
                 else if (typeTho == "Thợ Sửa")
                 {
                     dept_name = "Phòng Sửa Xe";
+                }   
+                else if (typeTho == "Nhân Viên")
+                {
+                    dept_name = "Phòng Nhân Viên";
                 }    
                 else
                 {
@@ -130,43 +134,46 @@ namespace GUI_Management
                 string id_cmnd = this.txtId_CMND.Text;
                 string dept_id = this.Dept_Id(); // ""
                 DateTime dob = this.dtpDoB.Value;
-                if (!this.checkDoB(dob))
+                if (this.checkDoB(dob))
                 {
-                    MessageBox.Show("U must be > 15 years old or < 65 years old. Ok ?", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                string sex = this.cbSex.Text;
-                string typeTho = this.cbTypeTho.Text;
-                MemoryStream pic = new MemoryStream();
-                this.pbNhanVien.Image.Save(pic, this.pbNhanVien.Image.RawFormat);
-                nhanVienDTO nhanVienDTO = new nhanVienDTO(id_cmnd, name, dept_id, dob, sex, pic, typeTho);
-                if (this.rbYes.Checked == true)
-                {
-                    if (this.phongBanBUS.ktraTruongPhong(dept_id)) // ==true chưa có trưởng phòng
+                    string sex = this.cbSex.Text;
+                    string typeTho = this.cbTypeTho.Text;
+                    MemoryStream pic = new MemoryStream();
+                    this.pbNhanVien.Image.Save(pic, this.pbNhanVien.Image.RawFormat);
+                    nhanVienDTO nhanVienDTO = new nhanVienDTO(id_cmnd, name, dept_id, dob, sex, pic, typeTho);
+                    if (this.rbYes.Checked == true)
                     {
-                        if (this.nhanVienBUS.insertEmployee(nhanVienDTO) && this.phongBanBUS.update_leaderId_Department(dept_id, id_cmnd))
+                        if (this.phongBanBUS.ktraTruongPhong(dept_id)) // ==true chưa có trưởng phòng
                         {
-                            MessageBox.Show("Thêm nhân viên_trưởng phòng thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (this.nhanVienBUS.insertEmployee(nhanVienDTO) && this.phongBanBUS.update_leaderId_Department(dept_id, id_cmnd))
+                            {
+                                MessageBox.Show("Thêm nhân viên_trưởng phòng thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Thêm nhân viên_trưởng phòng không thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }    
                         }    
                         else
                         {
-                            MessageBox.Show("Thêm nhân viên_trưởng phòng không thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Phòng Ban đã có trưởng phòng", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }    
                     }    
                     else
                     {
-                        MessageBox.Show("Phòng Ban đã có trưởng phòng", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (this.nhanVienBUS.insertEmployee(nhanVienDTO))
+                        {
+                            MessageBox.Show("Thêm nhân viên thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm nhân viên không thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }    
-                }    
+                }
                 else
                 {
-                    if (this.nhanVienBUS.insertEmployee(nhanVienDTO))
-                    {
-                        MessageBox.Show("Thêm nhân viên thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm nhân viên không thành công", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("U must be > 15 years old or < 65 years old. Ok ?", "Add Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }    
             }    
             else

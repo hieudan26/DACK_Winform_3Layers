@@ -15,6 +15,8 @@ namespace GUI_Management
     public partial class UC_Login : UserControl
     {
         AccountBUS accBUS = new AccountBUS();
+        Form1 f;
+
         public UC_Login()
         {
             InitializeComponent();
@@ -153,11 +155,8 @@ namespace GUI_Management
             f.btnLogIn.BaseColor2 = Color.DeepSkyBlue;
             f.btnLogIn.BorderColor = Color.White;
             f.btnLogIn.ForeColor = Color.White;
-            
         }
 
-        Form1 f;
-        
         public void SetParent(Form1 F)
         {
             this.f = F;

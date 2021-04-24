@@ -87,7 +87,7 @@ namespace GUI_Management
             this.btn.Name = "btn";
             this.btn.Radius = 2;
             this.btn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.btn.Size = new System.Drawing.Size(243, 647);
+            this.btn.Size = new System.Drawing.Size(243, 699);
             this.btn.TabIndex = 0;
             // 
             // pnlDropDownWashService
@@ -96,7 +96,7 @@ namespace GUI_Management
             this.pnlDropDownWashService.Controls.Add(this.btnWashService);
             this.pnlDropDownWashService.Controls.Add(this.btnOther_Wash);
             this.pnlDropDownWashService.Controls.Add(this.btnThanhToan_Wash);
-            this.pnlDropDownWashService.Location = new System.Drawing.Point(57, 421);
+            this.pnlDropDownWashService.Location = new System.Drawing.Point(57, 454);
             this.pnlDropDownWashService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDropDownWashService.MaximumSize = new System.Drawing.Size(160, 165);
             this.pnlDropDownWashService.MinimumSize = new System.Drawing.Size(160, 50);
@@ -211,7 +211,7 @@ namespace GUI_Management
             this.btnDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.btnDoanhThu.Image = null;
             this.btnDoanhThu.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDoanhThu.Location = new System.Drawing.Point(57, 494);
+            this.btnDoanhThu.Location = new System.Drawing.Point(57, 534);
             this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDoanhThu.Name = "btnDoanhThu";
             this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
@@ -232,7 +232,7 @@ namespace GUI_Management
             this.pnlDropDownFixService.Controls.Add(this.btnOther_Fix);
             this.pnlDropDownFixService.Controls.Add(this.btnInfoFix_Vehicle);
             this.pnlDropDownFixService.Controls.Add(this.btnFixService);
-            this.pnlDropDownFixService.Location = new System.Drawing.Point(57, 345);
+            this.pnlDropDownFixService.Location = new System.Drawing.Point(57, 370);
             this.pnlDropDownFixService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDropDownFixService.MaximumSize = new System.Drawing.Size(160, 162);
             this.pnlDropDownFixService.MinimumSize = new System.Drawing.Size(160, 50);
@@ -339,7 +339,7 @@ namespace GUI_Management
             this.pnlDropDownParkService.Controls.Add(this.btnParkService);
             this.pnlDropDownParkService.Controls.Add(this.btnLayXe);
             this.pnlDropDownParkService.Controls.Add(this.btnBaiXe);
-            this.pnlDropDownParkService.Location = new System.Drawing.Point(57, 270);
+            this.pnlDropDownParkService.Location = new System.Drawing.Point(57, 289);
             this.pnlDropDownParkService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDropDownParkService.MaximumSize = new System.Drawing.Size(160, 218);
             this.pnlDropDownParkService.MinimumSize = new System.Drawing.Size(160, 50);
@@ -485,7 +485,7 @@ namespace GUI_Management
             this.btnAddService.ForeColor = System.Drawing.Color.Black;
             this.btnAddService.Image = null;
             this.btnAddService.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddService.Location = new System.Drawing.Point(57, 193);
+            this.btnAddService.Location = new System.Drawing.Point(57, 207);
             this.btnAddService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddService.Name = "btnAddService";
             this.btnAddService.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
@@ -513,7 +513,7 @@ namespace GUI_Management
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(93, 599);
+            this.btnExit.Location = new System.Drawing.Point(94, 635);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -536,6 +536,7 @@ namespace GUI_Management
             this.pnlMove.Size = new System.Drawing.Size(5, 50);
             this.pnlMove.TabIndex = 1;
             this.pnlMove.Visible = false;
+            this.pnlMove.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMove_Paint);
             // 
             // panel1
             // 
@@ -564,14 +565,14 @@ namespace GUI_Management
             this.pnlChildForm.Location = new System.Drawing.Point(243, 0);
             this.pnlChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(857, 556);
+            this.pnlChildForm.Size = new System.Drawing.Size(1097, 605);
             this.pnlChildForm.TabIndex = 2;
             this.pnlChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlChildForm_Paint);
             // 
             // pbLoad
             // 
             this.pbLoad.Image = global::GUI_Management.Properties.Resources.unnamed;
-            this.pbLoad.Location = new System.Drawing.Point(185, 62);
+            this.pbLoad.Location = new System.Drawing.Point(298, 86);
             this.pbLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbLoad.Name = "pbLoad";
             this.pbLoad.Size = new System.Drawing.Size(501, 430);
@@ -589,10 +590,10 @@ namespace GUI_Management
             this.gunaGradient2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(172)))), ((int)(((byte)(132)))));
-            this.gunaGradient2Panel1.Location = new System.Drawing.Point(243, 547);
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(243, 599);
             this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(857, 100);
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1097, 100);
             this.gunaGradient2Panel1.TabIndex = 4;
             // 
             // label1
@@ -600,7 +601,7 @@ namespace GUI_Management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.label1.Location = new System.Drawing.Point(261, 10);
+            this.label1.Location = new System.Drawing.Point(392, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(357, 72);
             this.label1.TabIndex = 19;
@@ -626,7 +627,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.ClientSize = new System.Drawing.Size(1100, 647);
+            this.ClientSize = new System.Drawing.Size(1340, 699);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.btn);
             this.Controls.Add(this.pnlChildForm);

@@ -53,7 +53,7 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label1.Font = new System.Drawing.Font("Arial", 64.8F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(197, 26);
+            this.label1.Location = new System.Drawing.Point(323, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(472, 122);
             this.label1.TabIndex = 3;
@@ -64,7 +64,7 @@ namespace GUI_Management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(43, 266);
+            this.label2.Location = new System.Drawing.Point(42, 311);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 26);
             this.label2.TabIndex = 4;
@@ -86,20 +86,20 @@ namespace GUI_Management
             "Day(s)",
             "Week(s)",
             "Month(s)"});
-            this.cbLoaiGui.Location = new System.Drawing.Point(186, 265);
+            this.cbLoaiGui.Location = new System.Drawing.Point(185, 310);
             this.cbLoaiGui.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLoaiGui.Name = "cbLoaiGui";
             this.cbLoaiGui.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbLoaiGui.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbLoaiGui.Radius = 5;
-            this.cbLoaiGui.Size = new System.Drawing.Size(162, 31);
+            this.cbLoaiGui.Size = new System.Drawing.Size(252, 31);
             this.cbLoaiGui.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(524, 231);
+            this.label3.Location = new System.Drawing.Point(732, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 7;
@@ -117,7 +117,7 @@ namespace GUI_Management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(435, 180);
+            this.label5.Location = new System.Drawing.Point(612, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 35);
             this.label5.TabIndex = 9;
@@ -128,7 +128,7 @@ namespace GUI_Management
             this.labelGio.AutoSize = true;
             this.labelGio.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGio.ForeColor = System.Drawing.Color.Black;
-            this.labelGio.Location = new System.Drawing.Point(405, 248);
+            this.labelGio.Location = new System.Drawing.Point(613, 315);
             this.labelGio.Name = "labelGio";
             this.labelGio.Size = new System.Drawing.Size(253, 26);
             this.labelGio.TabIndex = 14;
@@ -139,7 +139,7 @@ namespace GUI_Management
             this.labelTuan.AutoSize = true;
             this.labelTuan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTuan.ForeColor = System.Drawing.Color.Black;
-            this.labelTuan.Location = new System.Drawing.Point(405, 372);
+            this.labelTuan.Location = new System.Drawing.Point(613, 443);
             this.labelTuan.Name = "labelTuan";
             this.labelTuan.Size = new System.Drawing.Size(255, 26);
             this.labelTuan.TabIndex = 15;
@@ -150,7 +150,7 @@ namespace GUI_Management
             this.labelThang.AutoSize = true;
             this.labelThang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelThang.ForeColor = System.Drawing.Color.Black;
-            this.labelThang.Location = new System.Drawing.Point(405, 433);
+            this.labelThang.Location = new System.Drawing.Point(613, 503);
             this.labelThang.Name = "labelThang";
             this.labelThang.Size = new System.Drawing.Size(255, 26);
             this.labelThang.TabIndex = 16;
@@ -161,7 +161,7 @@ namespace GUI_Management
             this.labelNgay.AutoSize = true;
             this.labelNgay.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNgay.ForeColor = System.Drawing.Color.Black;
-            this.labelNgay.Location = new System.Drawing.Point(405, 312);
+            this.labelNgay.Location = new System.Drawing.Point(613, 379);
             this.labelNgay.Name = "labelNgay";
             this.labelNgay.Size = new System.Drawing.Size(252, 26);
             this.labelNgay.TabIndex = 17;
@@ -175,10 +175,10 @@ namespace GUI_Management
             this.gunaGradientPanel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(111)))), ((int)(((byte)(211)))));
             this.gunaGradientPanel1.GradientColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(227)))));
             this.gunaGradientPanel1.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(217)))), ((int)(((byte)(178)))));
-            this.gunaGradientPanel1.Location = new System.Drawing.Point(377, 171);
+            this.gunaGradientPanel1.Location = new System.Drawing.Point(544, 180);
             this.gunaGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientPanel1.Name = "gunaGradientPanel1";
-            this.gunaGradientPanel1.Size = new System.Drawing.Size(2, 330);
+            this.gunaGradientPanel1.Size = new System.Drawing.Size(2, 400);
             this.gunaGradientPanel1.TabIndex = 10;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
             // 
@@ -187,13 +187,13 @@ namespace GUI_Management
             this.dtPicker.BackColor = System.Drawing.Color.Transparent;
             this.dtPicker.BaseColor = System.Drawing.Color.MintCream;
             this.dtPicker.BorderColor = System.Drawing.Color.SeaGreen;
-            this.dtPicker.CustomFormat = "dddd";
+            this.dtPicker.CustomFormat = "dd/MM - dddd";
             this.dtPicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtPicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtPicker.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtPicker.ForeColor = System.Drawing.Color.Black;
+            this.dtPicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPicker.ForeColor = System.Drawing.Color.DeepPink;
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPicker.Location = new System.Drawing.Point(623, 171);
+            this.dtPicker.Location = new System.Drawing.Point(781, 225);
             this.dtPicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtPicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtPicker.Name = "dtPicker";
@@ -202,16 +202,16 @@ namespace GUI_Management
             this.dtPicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtPicker.OnPressedColor = System.Drawing.Color.Black;
             this.dtPicker.Radius = 5;
-            this.dtPicker.Size = new System.Drawing.Size(162, 44);
+            this.dtPicker.Size = new System.Drawing.Size(241, 44);
             this.dtPicker.TabIndex = 18;
-            this.dtPicker.Text = "Friday";
+            this.dtPicker.Text = "09/04 - Friday";
             this.dtPicker.Value = new System.DateTime(2021, 4, 9, 0, 0, 0, 0);
             // 
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(163)))), ((int)(((byte)(164)))));
             this.btnOK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(101, 372);
+            this.btnOK.Location = new System.Drawing.Point(162, 414);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(165, 49);
@@ -232,7 +232,7 @@ namespace GUI_Management
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Image = null;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(762, 26);
+            this.btnBack.Location = new System.Drawing.Point(1015, 20);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -256,7 +256,7 @@ namespace GUI_Management
             this.gunaGradientPanel2.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.gunaGradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.gunaGradientPanel2.Name = "gunaGradientPanel2";
-            this.gunaGradientPanel2.Size = new System.Drawing.Size(830, 14);
+            this.gunaGradientPanel2.Size = new System.Drawing.Size(1083, 14);
             this.gunaGradientPanel2.TabIndex = 21;
             this.gunaGradientPanel2.Text = "gunaGradientPanel2";
             // 
@@ -265,7 +265,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(830, 536);
+            this.ClientSize = new System.Drawing.Size(1083, 605);
             this.Controls.Add(this.gunaGradientPanel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnOK);

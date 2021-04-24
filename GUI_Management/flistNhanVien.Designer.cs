@@ -81,6 +81,7 @@ namespace GUI_Management
             "Phòng Bảo Vệ",
             "Phòng Sửa Xe",
             "Phòng Rửa Xe",
+            "Phòng Nhân Viên",
             "Tất Cả"});
             this.cbFilter.Location = new System.Drawing.Point(147, 130);
             this.cbFilter.Name = "cbFilter";

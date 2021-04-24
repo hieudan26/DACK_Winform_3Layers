@@ -48,7 +48,7 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label1.Font = new System.Drawing.Font("Arial", 64.8F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(206, 21);
+            this.label1.Location = new System.Drawing.Point(309, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(503, 122);
             this.label1.TabIndex = 4;
@@ -66,7 +66,7 @@ namespace GUI_Management
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Image = null;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(794, 21);
+            this.btnBack.Location = new System.Drawing.Point(1015, 20);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -82,7 +82,7 @@ namespace GUI_Management
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(35, 383);
+            this.gunaLabel1.Location = new System.Drawing.Point(63, 462);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(162, 27);
             this.gunaLabel1.TabIndex = 24;
@@ -110,7 +110,7 @@ namespace GUI_Management
             "Dịch Vụ 8",
             "Dịch Vụ 9",
             "Dịch Vụ 10"});
-            this.cbDichVu.Location = new System.Drawing.Point(203, 379);
+            this.cbDichVu.Location = new System.Drawing.Point(243, 454);
             this.cbDichVu.Name = "cbDichVu";
             this.cbDichVu.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbDichVu.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -122,7 +122,7 @@ namespace GUI_Management
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(495, 383);
+            this.gunaLabel2.Location = new System.Drawing.Point(627, 458);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(147, 27);
             this.gunaLabel2.TabIndex = 26;
@@ -136,11 +136,11 @@ namespace GUI_Management
             this.txtGiaTien.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtGiaTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaTien.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtGiaTien.Location = new System.Drawing.Point(663, 379);
+            this.txtGiaTien.Location = new System.Drawing.Point(806, 452);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.PasswordChar = '\0';
             this.txtGiaTien.SelectedText = "";
-            this.txtGiaTien.Size = new System.Drawing.Size(154, 33);
+            this.txtGiaTien.Size = new System.Drawing.Size(205, 33);
             this.txtGiaTien.TabIndex = 31;
             // 
             // btnFix
@@ -158,7 +158,7 @@ namespace GUI_Management
             this.btnFix.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnFix.Image = null;
             this.btnFix.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFix.Location = new System.Drawing.Point(348, 464);
+            this.btnFix.Location = new System.Drawing.Point(454, 547);
             this.btnFix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFix.Name = "btnFix";
             this.btnFix.OnHoverBaseColor1 = System.Drawing.Color.White;
@@ -168,7 +168,7 @@ namespace GUI_Management
             this.btnFix.OnHoverImage = null;
             this.btnFix.OnPressedColor = System.Drawing.Color.Black;
             this.btnFix.Radius = 3;
-            this.btnFix.Size = new System.Drawing.Size(149, 37);
+            this.btnFix.Size = new System.Drawing.Size(194, 41);
             this.btnFix.TabIndex = 34;
             this.btnFix.Text = "FIX";
             this.btnFix.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -179,9 +179,9 @@ namespace GUI_Management
             this.gunaTransfarantPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaTransfarantPictureBox1.BaseColor = System.Drawing.Color.Black;
             this.gunaTransfarantPictureBox1.Image = global::GUI_Management.Properties.Resources.Castrol;
-            this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(141, 127);
+            this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(231, 145);
             this.gunaTransfarantPictureBox1.Name = "gunaTransfarantPictureBox1";
-            this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(625, 203);
+            this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(625, 284);
             this.gunaTransfarantPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaTransfarantPictureBox1.TabIndex = 35;
             this.gunaTransfarantPictureBox1.TabStop = false;
@@ -198,7 +198,7 @@ namespace GUI_Management
             this.gunaGradientPanel2.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.gunaGradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.gunaGradientPanel2.Name = "gunaGradientPanel2";
-            this.gunaGradientPanel2.Size = new System.Drawing.Size(862, 14);
+            this.gunaGradientPanel2.Size = new System.Drawing.Size(1083, 14);
             this.gunaGradientPanel2.TabIndex = 22;
             this.gunaGradientPanel2.Text = "gunaGradientPanel2";
             // 
@@ -207,7 +207,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(862, 536);
+            this.ClientSize = new System.Drawing.Size(1083, 605);
             this.Controls.Add(this.gunaTransfarantPictureBox1);
             this.Controls.Add(this.btnFix);
             this.Controls.Add(this.txtGiaTien);

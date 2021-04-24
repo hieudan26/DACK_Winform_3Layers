@@ -43,12 +43,12 @@ namespace GUI_Management
                 {
                     this.dgvFix.DataSource = table;
                     this.designDataGridView(3, 4);
-                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                 }
                 else
                 {
                     this.dgvFix.DataSource = null;
-                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                 }    
             }    
             else
@@ -58,12 +58,12 @@ namespace GUI_Management
                 {
                     this.dgvFix.DataSource = table;
                     this.designDataGridView(3, 4);
-                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                 }
                 else
                 {
                     this.dgvFix.DataSource = null;
-                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                 }
             }    
         }
@@ -115,7 +115,7 @@ namespace GUI_Management
                         this.dgvFix.RowTemplate.Height = 80;
                         this.dgvFix.DataSource = this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text);
                         this.designDataGridView(3, 4);
-                        this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                     }
                 }    
             }
@@ -167,7 +167,7 @@ namespace GUI_Management
                             {
                                 this.dgvFix.DataSource = table;
                                 this.designDataGridView(3, 4);
-                                this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                                this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                             }
                             else
                             {
@@ -231,7 +231,7 @@ namespace GUI_Management
                     {
                         this.dgvFix.DataSource = table;
                         this.designDataGridView(3, 4);
-                        this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                     }
                     else
                     {
@@ -275,7 +275,7 @@ namespace GUI_Management
                     {
                         this.dgvFix.DataSource = table;
                         this.designDataGridView(3, 4);
-                        this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                     }
                     else
                     {

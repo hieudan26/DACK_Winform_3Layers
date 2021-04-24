@@ -59,7 +59,7 @@ namespace GUI_Management
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(830, 35);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1083, 35);
             this.flowLayoutPanel1.TabIndex = 50;
             // 
             // btnExit
@@ -82,7 +82,7 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label1.Font = new System.Drawing.Font("Arial", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(31, 38);
+            this.label1.Location = new System.Drawing.Point(181, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(757, 83);
             this.label1.TabIndex = 51;
@@ -103,7 +103,7 @@ namespace GUI_Management
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnSearch.Image = null;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearch.Location = new System.Drawing.Point(664, 133);
+            this.btnSearch.Location = new System.Drawing.Point(750, 137);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
@@ -126,11 +126,11 @@ namespace GUI_Management
             this.txtSearch.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtSearch.Location = new System.Drawing.Point(513, 133);
+            this.txtSearch.Location = new System.Drawing.Point(587, 137);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(131, 30);
+            this.txtSearch.Size = new System.Drawing.Size(143, 30);
             this.txtSearch.TabIndex = 56;
             // 
             // label2
@@ -138,7 +138,7 @@ namespace GUI_Management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(351, 137);
+            this.label2.Location = new System.Drawing.Point(425, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 23);
             this.label2.TabIndex = 55;
@@ -165,7 +165,7 @@ namespace GUI_Management
             this.cbTypeFilter.Name = "cbTypeFilter";
             this.cbTypeFilter.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTypeFilter.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbTypeFilter.Size = new System.Drawing.Size(170, 31);
+            this.cbTypeFilter.Size = new System.Drawing.Size(195, 31);
             this.cbTypeFilter.TabIndex = 54;
             this.cbTypeFilter.SelectedIndexChanged += new System.EventHandler(this.cbTypeFilter_SelectedIndexChanged);
             // 
@@ -209,7 +209,7 @@ namespace GUI_Management
             this.dgvWash.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvWash.EnableHeadersVisualStyles = false;
             this.dgvWash.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
-            this.dgvWash.Location = new System.Drawing.Point(45, 182);
+            this.dgvWash.Location = new System.Drawing.Point(45, 194);
             this.dgvWash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvWash.Name = "dgvWash";
             this.dgvWash.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -226,7 +226,7 @@ namespace GUI_Management
             this.dgvWash.RowTemplate.Height = 24;
             this.dgvWash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvWash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWash.Size = new System.Drawing.Size(735, 237);
+            this.dgvWash.Size = new System.Drawing.Size(994, 311);
             this.dgvWash.TabIndex = 52;
             this.dgvWash.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Green;
             this.dgvWash.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
@@ -262,11 +262,11 @@ namespace GUI_Management
             this.txtTienRua.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTienRua.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTienRua.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienRua.Location = new System.Drawing.Point(628, 471);
+            this.txtTienRua.Location = new System.Drawing.Point(846, 531);
             this.txtTienRua.Name = "txtTienRua";
             this.txtTienRua.PasswordChar = '\0';
             this.txtTienRua.SelectedText = "";
-            this.txtTienRua.Size = new System.Drawing.Size(152, 32);
+            this.txtTienRua.Size = new System.Drawing.Size(193, 32);
             this.txtTienRua.TabIndex = 59;
             this.txtTienRua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -275,7 +275,7 @@ namespace GUI_Management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(437, 480);
+            this.label5.Location = new System.Drawing.Point(642, 540);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 23);
             this.label5.TabIndex = 58;
@@ -296,7 +296,7 @@ namespace GUI_Management
             this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnRemove.Image = null;
             this.btnRemove.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRemove.Location = new System.Drawing.Point(46, 471);
+            this.btnRemove.Location = new System.Drawing.Point(45, 530);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnRemove.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
@@ -326,7 +326,7 @@ namespace GUI_Management
             this.btnThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnThanhToan.Image = null;
             this.btnThanhToan.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnThanhToan.Location = new System.Drawing.Point(221, 471);
+            this.btnThanhToan.Location = new System.Drawing.Point(286, 530);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
             this.btnThanhToan.OnHoverBaseColor2 = System.Drawing.Color.Red;
@@ -347,7 +347,7 @@ namespace GUI_Management
             this.lbCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lbCount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCount.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbCount.Location = new System.Drawing.Point(160, 421);
+            this.lbCount.Location = new System.Drawing.Point(872, 164);
             this.lbCount.Name = "lbCount";
             this.lbCount.Size = new System.Drawing.Size(150, 28);
             this.lbCount.TabIndex = 62;
@@ -363,7 +363,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(830, 536);
+            this.ClientSize = new System.Drawing.Size(1083, 605);
             this.Controls.Add(this.lbCount);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnThanhToan);

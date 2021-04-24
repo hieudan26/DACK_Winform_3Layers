@@ -72,6 +72,8 @@ namespace GUI_Management
             this.btnSignIn.BorderSize = 1;
             this.btnSignIn.ForeColor = Color.Black;
             this.btnSignIn.BorderColor = Color.Black;
+            //this.uC_Signin1.Load += new EventHandler(uC_Signin1_Load);
+            //this.uC_Login1.Load += new EventHandler(uC_Login1_Load);
         }
 
         private void uC_Login1_Load(object sender, EventArgs e)
@@ -82,6 +84,21 @@ namespace GUI_Management
         private void uC_Signin1_Load(object sender, EventArgs e)
         {
             this.uC_Login1.SetParent(this);
+        }
+
+        //private void uC_Login1_Load(object sender, EventArgs e)
+        //{
+        //    this.uC_Signin1.SetParent(this);
+        //}
+
+        //private void uC_Signin1_Load(object sender, EventArgs e)
+        //{
+        //    this.uC_Login1.SetParent(this);
+        //}
+
+        private void gunaPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -94,6 +94,26 @@ namespace GUI_Management
             this.Captcha.Checked = false;
         }
 
+        private void born_captcha()
+        {
+            Random rd = new Random();
+            int num = rd.Next(6, 8);
+            string capt = "";
+            int totl = 0;
+            do
+            {
+                int chr = rd.Next(48, 123);
+                if ((chr >= 48 && chr <= 57) || (chr >= 65 && chr <= 90) || (chr >= 97 && chr <= 122))
+                {
+                    capt = capt + (char)chr;
+                    totl++;
+                    if (totl == num)
+                        break;
+                }
+            } while (true);
+            this.lbCaptcha.Text = capt; 
+        }
+
         private void btnSign_Click(object sender, EventArgs e)
         {
             AccountDTO acc = new AccountDTO(0, this.txtUser.Text, this.txtPass.Text);
@@ -115,17 +135,24 @@ namespace GUI_Management
                     }
                     else
                     {
-                        if (!accBUS.insertAccount(acc))
+                        if (this.lbCaptcha.Text == this.txtCaptcha.Text)
                         {
-                            this.txtUser.Text = "";
-                            this.txtPass.Text = "";
-                            this.txtConfirmPass.Text = "";
-                            this.txtUser.Focus();
-                            MessageBox.Show("Wrong format Password!!");
-                        }   
+                            if (!accBUS.insertAccount(acc))
+                            {
+                                this.txtUser.Text = "";
+                                this.txtPass.Text = "";
+                                this.txtConfirmPass.Text = "";
+                                this.txtUser.Focus();
+                                MessageBox.Show("Wrong format Password!!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Successfully!!");
+                            }
+                        }    
                         else
                         {
-                            MessageBox.Show("Successfully!!");
+                            MessageBox.Show("Captcha is incorrect !!", "SIGN UP", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }    
                     }    
                 }    
@@ -143,6 +170,16 @@ namespace GUI_Management
         public void SetParent(Form1 F)
         {
             this.f = F;
+        }
+
+        private void UC_Signup_Load(object sender, EventArgs e)
+        {
+            this.born_captcha();
+        }
+
+        private void btnLoadCapt_Click(object sender, EventArgs e)
+        {
+            this.born_captcha();
         }
     }
 }

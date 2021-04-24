@@ -353,7 +353,6 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.Properties.Resources.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.UC_Intro.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.UC_Login.resources
-E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.UC_Signin.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.csproj.GenerateResource.cache
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.csproj.CoreCompileInputs.cache
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.csproj.CopyComplete
@@ -363,3 +362,4 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.fQuanLyNhanVien.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.flistNhanVien.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.finfoNhanVien.resources
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.UC_Signin.resources
