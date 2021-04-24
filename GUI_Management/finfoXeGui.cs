@@ -16,7 +16,8 @@ namespace GUI_Management
     public partial class finfoXeGui : Form
     {
         vehicleParkingDTO vehicleDTO = new vehicleParkingDTO();
-        vehicleParkingBUS vehicleBUS = new vehicleParkingBUS();
+        vehicleParkingBUS vehicleParkingBUS = new vehicleParkingBUS();
+        vehicleBUS vehicleBUS = new vehicleBUS();
         fQuanLyXe formQuanLyXeGui;
         string type;
         public finfoXeGui(fQuanLyXe formQuanLyXeGui, string type)
@@ -97,7 +98,7 @@ namespace GUI_Management
             {
                 try
                 {
-                    if (this.vehicleBUS.UpdateInfoVehicle(id, loaiGui, timeIn))
+                    if (this.vehicleParkingBUS.UpdateInfoVehicle(id, loaiGui, timeIn))
                     {
                         MessageBox.Show("Vehicle Information Updated", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } 
@@ -117,6 +118,22 @@ namespace GUI_Management
             }
         }
 
+        private bool checkOtherService(string idxe)
+        {
+            DataTable table = this.vehicleBUS.getVehicleByID(idxe);
+            int park = int.Parse(table.Rows[0]["park"].ToString());
+            int fix = int.Parse(table.Rows[0]["fix"].ToString());
+            int wash = int.Parse(table.Rows[0]["wash"].ToString());
+            if (park != 0 || fix != 0 || wash != 0)
+            {
+                return true;          //đang sài dịch vụ khác không xóa c=khỏi vehicle
+            }
+            else
+            {
+                return false;        //không còn dịch vụ nào xóa đc
+            }
+        }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
             try
@@ -124,9 +141,20 @@ namespace GUI_Management
                 string id = this.txtID.Text;
                 if (MessageBox.Show("Are You Sure ?!?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (this.vehicleBUS.DelVehicle(id))
+                    if (this.vehicleParkingBUS.DelVehicle(id) && this.vehicleBUS.UpdateStatusVehicle(id, "PARK", 0))
                     {
                         MessageBox.Show("Vehicle Deleted", "Delete Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (!this.checkOtherService(id))
+                        {
+                            if (this.vehicleBUS.DelVehicle(id))
+                            {
+                                MessageBox.Show("Xóa Thành Công Trong Bảng VEHICLE", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xóa Không Thành Công Trong Bảng VEHICLE", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            }
+                        }
                         this.txtID.Text = "";
                         this.txtLoaiGui.Text = "";
                         this.txtLoaiXe.Text = "";

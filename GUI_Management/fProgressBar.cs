@@ -42,7 +42,7 @@ namespace GUI_Management
 
         private void timer1_Prog_Tick(object sender, EventArgs e)
         {
-            this.gunaCircleProgressBar1.Increment(1);
+            this.gunaCircleProgressBar1.Increment(3);
         }
     }
 }

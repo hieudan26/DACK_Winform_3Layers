@@ -29,6 +29,7 @@ namespace GUI_Management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@ namespace GUI_Management
             this.lbStatusA = new Guna.UI.WinForms.GunaLabel();
             this.lbStatusB = new Guna.UI.WinForms.GunaLabel();
             this.lbStatusC = new Guna.UI.WinForms.GunaLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,6 +243,10 @@ namespace GUI_Management
             this.lbStatusC.TabIndex = 18;
             this.lbStatusC.Text = "text";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // fbaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,5 +299,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaLabel lbStatusA;
         private Guna.UI.WinForms.GunaLabel lbStatusB;
         private Guna.UI.WinForms.GunaLabel lbStatusC;
+        private System.Windows.Forms.Timer timer1;
     }
 }

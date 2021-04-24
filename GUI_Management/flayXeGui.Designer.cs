@@ -29,6 +29,7 @@ namespace GUI_Management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,6 +44,8 @@ namespace GUI_Management
             this.label3 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI.WinForms.GunaLineTextBox();
             this.btnSearch = new Guna.UI.WinForms.GunaGradientButton();
+            this.lbCount = new Guna.UI.WinForms.GunaLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXe)).BeginInit();
             this.SuspendLayout();
@@ -280,12 +283,30 @@ namespace GUI_Management
             this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lbCount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbCount.Location = new System.Drawing.Point(153, 489);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(150, 28);
+            this.lbCount.TabIndex = 33;
+            this.lbCount.Text = "Số Lượng Xe: 0";
+            this.lbCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // flayXeGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(883, 537);
+            this.Controls.Add(this.lbCount);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label3);
@@ -319,5 +340,7 @@ namespace GUI_Management
         public System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaLineTextBox txtSearch;
         private Guna.UI.WinForms.GunaGradientButton btnSearch;
+        private Guna.UI.WinForms.GunaLabel lbCount;
+        private System.Windows.Forms.Timer timer1;
     }
 }

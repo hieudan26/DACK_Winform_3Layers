@@ -51,9 +51,14 @@ namespace GUI_Management
             lb.Font = new System.Drawing.Font("Times New Roman", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lb.Text = str + soChoTrong + " chỗ trống";
         }
-
+        fProgressBar form = new fProgressBar();
         private void fBaiXe_Load(object sender, EventArgs e)
         {
+            //load progress bar
+            this.timer1.Start();
+            form.ShowDialog();
+            //end
+
             //danh sach xe dap
             List<string> IDbicycle = VehicleBUS.danhSachID(0);
             if (IDbicycle.Count != 0)
@@ -333,6 +338,18 @@ namespace GUI_Management
             else
                 return LoaiGui;
             return LoaiGui;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //fProgressBar form = new fProgressBar();
+            form.gunaCircleProgressBar1.Increment(10);
+            
+            if (form.gunaCircleProgressBar1.Value >= form.gunaCircleProgressBar1.Maximum)
+            {
+                timer1.Stop();
+                form.Close();
+            }    
         }
     }
 }

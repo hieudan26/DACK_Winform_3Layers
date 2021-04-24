@@ -31,8 +31,8 @@ namespace GUI_Management
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTheme = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.timer_Theme = new System.Windows.Forms.Timer(this.components);
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
+            this.timer_Theme = new System.Windows.Forms.Timer(this.components);
             this.timer1_Prog = new System.Windows.Forms.Timer(this.components);
             this.pnlTheme.SuspendLayout();
             this.SuspendLayout();
@@ -47,14 +47,8 @@ namespace GUI_Management
             this.pnlTheme.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.pnlTheme.Location = new System.Drawing.Point(0, 0);
             this.pnlTheme.Name = "pnlTheme";
-            this.pnlTheme.Size = new System.Drawing.Size(836, 554);
+            this.pnlTheme.Size = new System.Drawing.Size(601, 391);
             this.pnlTheme.TabIndex = 0;
-            // 
-            // timer_Theme
-            // 
-            this.timer_Theme.Enabled = true;
-            this.timer_Theme.Interval = 1500;
-            this.timer_Theme.Tick += new System.EventHandler(this.timer_Theme_Tick);
             // 
             // gunaCircleProgressBar1
             // 
@@ -69,8 +63,8 @@ namespace GUI_Management
             this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
             this.gunaCircleProgressBar1.LineEndCap = System.Drawing.Drawing2D.LineCap.Round;
             this.gunaCircleProgressBar1.LineStartCap = System.Drawing.Drawing2D.LineCap.Round;
-            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(282, 139);
-            this.gunaCircleProgressBar1.Maximum = 300;
+            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(178, 74);
+            this.gunaCircleProgressBar1.Maximum = 200;
             this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
             this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(126)))));
@@ -80,11 +74,17 @@ namespace GUI_Management
             this.gunaCircleProgressBar1.TabIndex = 0;
             this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
             this.gunaCircleProgressBar1.UseProgressPercentText = true;
-            this.gunaCircleProgressBar1.Value = 100;
+            this.gunaCircleProgressBar1.Value = 50;
+            // 
+            // timer_Theme
+            // 
+            this.timer_Theme.Enabled = true;
+            this.timer_Theme.Interval = 1500;
+            this.timer_Theme.Tick += new System.EventHandler(this.timer_Theme_Tick);
             // 
             // timer1_Prog
             // 
-            this.timer1_Prog.Interval = 50;
+            this.timer1_Prog.Interval = 1000;
             this.timer1_Prog.Tick += new System.EventHandler(this.timer1_Prog_Tick);
             // 
             // fProgressBar
@@ -92,10 +92,11 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(836, 554);
+            this.ClientSize = new System.Drawing.Size(601, 391);
             this.Controls.Add(this.pnlTheme);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fProgressBar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fProgressBar";
             this.Load += new System.EventHandler(this.fProgressBar_Load);
             this.pnlTheme.ResumeLayout(false);
@@ -107,7 +108,7 @@ namespace GUI_Management
 
         private Guna.UI.WinForms.GunaGradient2Panel pnlTheme;
         private System.Windows.Forms.Timer timer_Theme;
-        private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
         private System.Windows.Forms.Timer timer1_Prog;
+        public Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
     }
 }

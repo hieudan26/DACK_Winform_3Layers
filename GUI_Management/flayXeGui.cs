@@ -21,6 +21,7 @@ namespace GUI_Management
         vehicleParkingBUS vehParkingBUS = new vehicleParkingBUS();
         vehicleBUS vehBUS = new vehicleBUS();
         fQuanLyXe formQuanLyXeGui;
+        fProgressBar fLoad = new fProgressBar();
 
         public flayXeGui(fQuanLyXe quanLyXe)
         {
@@ -61,6 +62,10 @@ namespace GUI_Management
 
         private void cbTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Load Progress bar
+            this.timer1.Start();
+            fLoad.ShowDialog();
+            //end
             int index = this.cbTypeFilter.SelectedIndex;
             this.dgvXe.RowTemplate.Height = 80;
             if (this.cbTypeFilter.SelectedIndex == 3) // Lọc xe hết hạn
@@ -71,10 +76,12 @@ namespace GUI_Management
                 {
                     this.dgvXe.DataSource = table;
                     this.designDataGridView(2, 3);
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }    
                 else
                 {
                     this.dgvXe.DataSource = null;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
             }   
             else if (this.cbTypeFilter.SelectedIndex < 3 && this.cbTypeFilter.SelectedIndex >= 0)  // Lọc xe đạp, máy, hơi
@@ -85,10 +92,12 @@ namespace GUI_Management
                 {
                     this.dgvXe.DataSource = table;
                     this.designDataGridView(2, 3);
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
                 else
                 {
                     this.dgvXe.DataSource = null;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
             }
             else if (this.cbTypeFilter.SelectedIndex == 4 )  // Lọc xe còn hạn
@@ -99,10 +108,12 @@ namespace GUI_Management
                 {
                     this.dgvXe.DataSource = table;
                     this.designDataGridView(2, 3);
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
                 else
                 {
                     this.dgvXe.DataSource = null;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
             }
             else
@@ -112,10 +123,12 @@ namespace GUI_Management
                 {
                     this.dgvXe.DataSource = table;
                     this.designDataGridView(2, 3);
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
                 else
                 {
                     this.dgvXe.DataSource = null;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
             }
         }
@@ -169,6 +182,22 @@ namespace GUI_Management
             return totalFee;
         }
 
+        private bool checkOtherService(string idxe)
+        {
+            DataTable table = this.vehBUS.getVehicleByID(idxe);
+            int park = int.Parse(table.Rows[0]["park"].ToString());
+            int fix = int.Parse(table.Rows[0]["fix"].ToString());
+            int wash = int.Parse(table.Rows[0]["wash"].ToString());
+            if (park != 0 || fix != 0 || wash != 0)
+            {
+                return true;          //đang sài dịch vụ khác không xóa c=khỏi vehicle
+            }    
+            else
+            {
+                return false;        //không còn dịch vụ nào xóa đc
+            }    
+        }
+
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             try
@@ -188,9 +217,20 @@ namespace GUI_Management
                     doanhThuParkingDTO doanhthuDTO = new doanhThuParkingDTO(IDxe, DateTime.Now, this.totalfee(IDxe));
                     this.doanhThuBUS.insert_doanhThuParking(doanhthuDTO);
 
-                    if (this.vehParkingBUS.DelVehicle(IDxe) && this.vehBUS.DelVehicle(IDxe))
+                    if (this.vehParkingBUS.DelVehicle(IDxe) && this.vehBUS.UpdateStatusVehicle(IDxe,"PARK",0))
                     {
                         MessageBox.Show("Vehicle is taken out", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (!this.checkOtherService(IDxe))
+                        {
+                            if (this.vehBUS.DelVehicle(IDxe))
+                            {
+                                MessageBox.Show("Đã Xóa Trong Table VEHICLE", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Đã Xóa Không Thành Công Trong Table VEHICLE", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }    
+                        }    
                     }    
                     else
                         MessageBox.Show("Vehicle is taken out Error", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -199,11 +239,13 @@ namespace GUI_Management
                     if (table != null)
                     {
                         this.dgvXe.DataSource = table;
-                        this.designDataGridView(5, 6);
+                        this.designDataGridView(2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                     }
                     else
                     {
                         this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                     }
                 }
                 else
@@ -253,20 +295,25 @@ namespace GUI_Management
         {
             try
             {
-                this.cbTypeFilter.SelectedIndex = -1;
-                string id = this.txtSearch.Text;
-                if (this.vehParkingBUS.getVehicleByID(id) != null)
+                if (this.txtSearch.Text != "")
                 {
-                    this.dgvXe.RowTemplate.Height = 80;
-                    this.dgvXe.DataSource = this.vehParkingBUS.getVehicleByID_GanDung(id);
-                    this.designDataGridView(5, 6);
-                }
+                    this.cbTypeFilter.SelectedIndex = -1;
+                    string id = this.txtSearch.Text;
+                    if (this.vehParkingBUS.getVehicleByID(id) != null)
+                    {
+                        this.dgvXe.RowTemplate.Height = 80;
+                        this.dgvXe.DataSource = this.vehParkingBUS.getVehicleByID_GanDung(id);
+                        this.designDataGridView(2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                }    
             }
             catch { }
         }
 
         private void flayXe_Load(object sender, EventArgs e)
         {
+            
         }
 
         private MemoryStream picture(DataTable table, string img)
@@ -328,6 +375,18 @@ namespace GUI_Management
             form.txtTongTien.Text = phi_theo_thu.ToString();
 
             this.formQuanLyXeGui.openChildForm(form);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //fProgressBar form = new fProgressBar();
+            fLoad.gunaCircleProgressBar1.Increment(15);
+
+            if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
+            {
+                timer1.Stop();
+                fLoad.Close();
+            }
         }
     }
 }

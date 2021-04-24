@@ -18,6 +18,8 @@ namespace GUI_Management
         phiDichVuSuaXeBUS phiSuaBUS = new phiDichVuSuaXeBUS();
         fQuanLyXe formQuanLyXeGui;
         doanhThuFixBUS dtFixBUS = new doanhThuFixBUS();
+        vehicleBUS vehicleBUS = new vehicleBUS();
+        fProgressBar fLoad = new fProgressBar();
 
         public finfoXeSua(fQuanLyXe fQuanLy)
         {
@@ -27,6 +29,10 @@ namespace GUI_Management
 
         private void cbTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Load Progress bar
+            this.timer1.Start();
+            fLoad.ShowDialog();
+            //end
             int index = this.cbTypeFilter.SelectedIndex;
             this.dgvFix.RowTemplate.Height = 80;
             if (index < 3 && index >=0)
@@ -37,10 +43,12 @@ namespace GUI_Management
                 {
                     this.dgvFix.DataSource = table;
                     this.designDataGridView(3, 4);
+                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                 }
                 else
                 {
                     this.dgvFix.DataSource = null;
+                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                 }    
             }    
             else
@@ -50,10 +58,12 @@ namespace GUI_Management
                 {
                     this.dgvFix.DataSource = table;
                     this.designDataGridView(3, 4);
+                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                 }
                 else
                 {
                     this.dgvFix.DataSource = null;
+                    this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                 }
             }    
         }
@@ -96,14 +106,18 @@ namespace GUI_Management
         {
             try
             {
-                this.cbTypeFilter.SelectedIndex = -1;
-                string id = this.txtSearch.Text;
-                if (this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
+                if (this.txtSearch.Text != "")
                 {
-                    this.dgvFix.RowTemplate.Height = 80;
-                    this.dgvFix.DataSource = this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text);
-                    this.designDataGridView(3, 4);
-                }
+                    this.cbTypeFilter.SelectedIndex = -1;
+                    string id = this.txtSearch.Text;
+                    if (this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
+                    {
+                        this.dgvFix.RowTemplate.Height = 80;
+                        this.dgvFix.DataSource = this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text);
+                        this.designDataGridView(3, 4);
+                        this.lbCount.Text = "" + this.dgvFix.Rows.Count;
+                    }
+                }    
             }
             catch { }
         }
@@ -153,6 +167,7 @@ namespace GUI_Management
                             {
                                 this.dgvFix.DataSource = table;
                                 this.designDataGridView(3, 4);
+                                this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                             }
                             else
                             {
@@ -174,21 +189,49 @@ namespace GUI_Management
             catch { }
         }
 
+        private bool checkOtherService(string idxe)
+        {
+            DataTable table = this.vehicleBUS.getVehicleByID(idxe);
+            int park = int.Parse(table.Rows[0]["park"].ToString());
+            int fix = int.Parse(table.Rows[0]["fix"].ToString());
+            int wash = int.Parse(table.Rows[0]["wash"].ToString());
+            if (park != 0 || fix != 0 || wash != 0)
+            {
+                return true;          //đang sài dịch vụ khác không xóa c=khỏi vehicle
+            }
+            else
+            {
+                return false;        //không còn dịch vụ nào xóa đc
+            }
+        }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
             try
             {
                 string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
                 string service = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
-                if (this.vehFixBUS.DeleteVehicleFix(id, service))
+                if (this.vehFixBUS.DeleteVehicleFix(id, service) && this.vehicleBUS.UpdateStatusVehicle(id, "FIX", 0))
                 {
                     MessageBox.Show("Xóa dịch vụ sửa thành công", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (!this.checkOtherService(id))
+                    {
+                        if (this.vehicleBUS.DelVehicle(id))
+                        {
+                            MessageBox.Show("Xóa Thành Công Trong Bảng VEHICLE", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa Không Thành Công Trong Bảng VEHICLE", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        }
+                    }
                     this.cbTypeFilter.SelectedIndex = 3;
                     DataTable table = this.vehFixBUS.getVehicleFix_info_all();
                     if (table != null)
                     {
                         this.dgvFix.DataSource = table;
                         this.designDataGridView(3, 4);
+                        this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                     }
                     else
                     {
@@ -212,19 +255,32 @@ namespace GUI_Management
                 string service = this.dgvFix.CurrentRow.Cells[1].Value.ToString();
                 int totalFee = Convert.ToInt32(this.phiSuaBUS.getFee_byService(service));
                 doanhThuFixDTO doanhThuFixDTO = new doanhThuFixDTO(id, DateTime.Now, totalFee);
-                if (this.dtFixBUS.insert_doanhThuFix(doanhThuFixDTO) && this.vehFixBUS.DeleteVehicleFix(id, service))
+                if (this.dtFixBUS.insert_doanhThuFix(doanhThuFixDTO) && this.vehFixBUS.DeleteVehicleFix(id, service) && this.vehicleBUS.UpdateStatusVehicle(id, "FIX", 0))
                 {
                     MessageBox.Show("Thanh toán thành công dịch vụ: " + service + " trị giá: " + totalFee + " VND", "Info Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (!this.checkOtherService(id))
+                    {
+                        if (this.vehicleBUS.DelVehicle(id))
+                        {
+                            MessageBox.Show("Xóa Thành Công Trong Bảng VEHICLE", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa Không Thành Công Trong Bảng VEHICLE", "Info Wash", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        }
+                    }
                     this.cbTypeFilter.SelectedIndex = 3;
                     DataTable table = this.vehFixBUS.getVehicleFix_info_all();
                     if (table != null)
                     {
                         this.dgvFix.DataSource = table;
-                        this.designDataGridView(4, 5);
+                        this.designDataGridView(3, 4);
+                        this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                     }
                     else
                     {
                         this.dgvFix.DataSource = null;
+                        this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                     }
                 }
                 else
@@ -238,6 +294,18 @@ namespace GUI_Management
         private void finfoXeSua_Load(object sender, EventArgs e)
         {
             //this.cbDichVu.DataSource = null;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //fProgressBar form = new fProgressBar();
+            fLoad.gunaCircleProgressBar1.Increment(15);
+
+            if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
+            {
+                timer1.Stop();
+                fLoad.Close();
+            }
         }
     }
 }
