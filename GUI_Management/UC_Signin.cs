@@ -172,12 +172,12 @@ namespace GUI_Management
             this.f = F;
         }
 
-        private void UC_Signup_Load(object sender, EventArgs e)
+        private void btnLoadCapt_Click(object sender, EventArgs e)
         {
             this.born_captcha();
         }
 
-        private void btnLoadCapt_Click(object sender, EventArgs e)
+        private void UC_Signin_Load(object sender, EventArgs e)
         {
             this.born_captcha();
         }

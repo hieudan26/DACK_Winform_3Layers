@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,10 @@ namespace GUI_Management
 
         private void fProgressBar_Load(object sender, EventArgs e)
         {
+            GraphicsPath shape;
+            shape = new GraphicsPath();
+            shape.AddEllipse(0, 0, this.Width, this.Height);
+            this.Region = new Region(shape);
             this.gunaCircleProgressBar1.Value = 0;
             this.timer1_Prog.Start();
         }

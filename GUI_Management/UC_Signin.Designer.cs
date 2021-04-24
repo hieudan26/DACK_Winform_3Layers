@@ -267,7 +267,7 @@ namespace GUI_Management
             this.btnLoadCapt.TabIndex = 19;
             this.btnLoadCapt.Click += new System.EventHandler(this.btnLoadCapt_Click);
             // 
-            // UC_Signup
+            // UC_Signin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -279,8 +279,9 @@ namespace GUI_Management
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Name = "UC_Signup";
+            this.Name = "UC_Signin";
             this.Size = new System.Drawing.Size(598, 520);
+            this.Load += new System.EventHandler(this.UC_Signin_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

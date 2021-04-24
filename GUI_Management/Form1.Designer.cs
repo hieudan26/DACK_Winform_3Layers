@@ -234,18 +234,19 @@ namespace GUI_Management
             // 
             // uC_Intro1
             // 
-            this.uC_Intro1.Location = new System.Drawing.Point(-3, 0);
+            this.uC_Intro1.Location = new System.Drawing.Point(0, -16);
             this.uC_Intro1.Name = "uC_Intro1";
-            this.uC_Intro1.Size = new System.Drawing.Size(594, 528);
+            this.uC_Intro1.Size = new System.Drawing.Size(594, 534);
             this.uC_Intro1.TabIndex = 2;
             // 
             // uC_Signin1
             // 
             this.uC_Signin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.uC_Signin1.Location = new System.Drawing.Point(-3, 0);
+            this.uC_Signin1.Location = new System.Drawing.Point(-3, 3);
             this.uC_Signin1.Name = "uC_Signin1";
             this.uC_Signin1.Size = new System.Drawing.Size(594, 528);
             this.uC_Signin1.TabIndex = 1;
+            this.uC_Signin1.Load += new System.EventHandler(this.uC_Signin1_Load_1);
             // 
             // uC_Login1
             // 
@@ -254,6 +255,7 @@ namespace GUI_Management
             this.uC_Login1.Name = "uC_Login1";
             this.uC_Login1.Size = new System.Drawing.Size(594, 515);
             this.uC_Login1.TabIndex = 0;
+            this.uC_Login1.Load += new System.EventHandler(this.uC_Login1_Load_1);
             // 
             // gunaDateTimePicker1
             // 

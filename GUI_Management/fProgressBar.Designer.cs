@@ -47,7 +47,7 @@ namespace GUI_Management
             this.pnlTheme.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.pnlTheme.Location = new System.Drawing.Point(0, 0);
             this.pnlTheme.Name = "pnlTheme";
-            this.pnlTheme.Size = new System.Drawing.Size(601, 391);
+            this.pnlTheme.Size = new System.Drawing.Size(280, 240);
             this.pnlTheme.TabIndex = 0;
             // 
             // gunaCircleProgressBar1
@@ -63,14 +63,14 @@ namespace GUI_Management
             this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
             this.gunaCircleProgressBar1.LineEndCap = System.Drawing.Drawing2D.LineCap.Round;
             this.gunaCircleProgressBar1.LineStartCap = System.Drawing.Drawing2D.LineCap.Round;
-            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(178, 74);
+            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(12, 3);
             this.gunaCircleProgressBar1.Maximum = 200;
             this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
             this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(126)))));
             this.gunaCircleProgressBar1.ProgressOffset = 20;
             this.gunaCircleProgressBar1.ProgressThickness = 40;
-            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(262, 237);
+            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(265, 237);
             this.gunaCircleProgressBar1.TabIndex = 0;
             this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
             this.gunaCircleProgressBar1.UseProgressPercentText = true;
@@ -92,7 +92,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(601, 391);
+            this.ClientSize = new System.Drawing.Size(280, 240);
             this.Controls.Add(this.pnlTheme);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fProgressBar";
