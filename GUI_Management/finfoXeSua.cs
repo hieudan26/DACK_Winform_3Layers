@@ -270,7 +270,7 @@ namespace GUI_Management
                     if (table != null)
                     {
                        this.designDataGridView(table, 3, 4);
-                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
+                       this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                     }
                     else
                     {

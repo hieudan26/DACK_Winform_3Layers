@@ -24,6 +24,10 @@ namespace GUI_Management
         doanhThuFixBUS doanhThuFixBUS = new doanhThuFixBUS();
         doanhThuWashBUS doanhThuWashBUS = new doanhThuWashBUS();
 
+        int sumGuiXe;
+        int sumSuaXe;
+        int sumRuaXe;
+
         public fdoanhThu(fQuanLyXe fQuanLy)
         {
             InitializeComponent();
@@ -79,11 +83,11 @@ namespace GUI_Management
         {
             try
             {
-                int sumGuiXe = this.doanhThuParkingBUS.sumDoanhThu_InDay();
+                this.sumGuiXe = this.doanhThuParkingBUS.sumDoanhThu_InDay();
                 this.txtGuiXe.Text = sumGuiXe.ToString() + " VND";
-                int sumSuaXe = this.doanhThuFixBUS.sumDoanhThu_InDay();
+                this.sumSuaXe = this.doanhThuFixBUS.sumDoanhThu_InDay();
                 this.txtSuaXe.Text = sumSuaXe.ToString() + " VND";
-                int sumRuaXe = this.doanhThuWashBUS.sumDoanhThu_InDay();
+                this.sumRuaXe = this.doanhThuWashBUS.sumDoanhThu_InDay();
                 this.txtRuaXe.Text = sumRuaXe.ToString() + " VND";
 
                 this.txtTongCong.Text = (sumGuiXe + sumRuaXe + sumSuaXe).ToString() + " VND";
@@ -434,6 +438,12 @@ namespace GUI_Management
             {
                 this.LoadDataGridView(this.doanhThuWashBUS.getDoanhThuWash_InDay());
             }    
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+            fStatics_DTvehicle form = new fStatics_DTvehicle(this.fQuanLyXeGui, this.sumGuiXe, this.sumSuaXe, this.sumRuaXe);
+            this.fQuanLyXeGui.openChildForm(form);
         }
     }
 }

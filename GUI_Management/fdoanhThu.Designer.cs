@@ -51,6 +51,7 @@ namespace GUI_Management
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.cbThanhToan = new Guna.UI.WinForms.GunaComboBox();
             this.btnSaveAll = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnChiTiet = new Guna.UI.WinForms.GunaGradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpired)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +89,7 @@ namespace GUI_Management
             this.dgvExpired.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvExpired.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExpired.BackgroundColor = System.Drawing.Color.Honeydew;
+            this.dgvExpired.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpired.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvExpired.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -380,12 +382,44 @@ namespace GUI_Management
             this.btnSaveAll.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
             // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.AnimationHoverSpeed = 0.07F;
+            this.btnChiTiet.AnimationSpeed = 0.03F;
+            this.btnChiTiet.BackColor = System.Drawing.Color.Transparent;
+            this.btnChiTiet.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnChiTiet.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnChiTiet.BorderColor = System.Drawing.Color.Black;
+            this.btnChiTiet.BorderSize = 1;
+            this.btnChiTiet.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnChiTiet.FocusedColor = System.Drawing.Color.Empty;
+            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChiTiet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
+            this.btnChiTiet.Image = null;
+            this.btnChiTiet.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnChiTiet.Location = new System.Drawing.Point(46, 544);
+            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnChiTiet.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnChiTiet.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnChiTiet.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnChiTiet.OnHoverImage = null;
+            this.btnChiTiet.OnPressedColor = System.Drawing.Color.Black;
+            this.btnChiTiet.Radius = 3;
+            this.btnChiTiet.Size = new System.Drawing.Size(113, 37);
+            this.btnChiTiet.TabIndex = 39;
+            this.btnChiTiet.Text = "CHI TIẾT";
+            this.btnChiTiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
+            // 
             // fdoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1083, 605);
+            this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnSaveAll);
             this.Controls.Add(this.cbThanhToan);
             this.Controls.Add(this.txtTongCong);
@@ -433,5 +467,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaComboBox cbThanhToan;
         private Guna.UI.WinForms.GunaGradientButton btnSaveAll;
+        private Guna.UI.WinForms.GunaGradientButton btnChiTiet;
     }
 }
