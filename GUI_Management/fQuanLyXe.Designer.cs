@@ -89,6 +89,7 @@ namespace GUI_Management
             this.btn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
             this.btn.Size = new System.Drawing.Size(243, 699);
             this.btn.TabIndex = 0;
+            this.btn.Paint += new System.Windows.Forms.PaintEventHandler(this.btn_Paint);
             // 
             // pnlDropDownWashService
             // 
@@ -96,7 +97,7 @@ namespace GUI_Management
             this.pnlDropDownWashService.Controls.Add(this.btnWashService);
             this.pnlDropDownWashService.Controls.Add(this.btnOther_Wash);
             this.pnlDropDownWashService.Controls.Add(this.btnThanhToan_Wash);
-            this.pnlDropDownWashService.Location = new System.Drawing.Point(57, 454);
+            this.pnlDropDownWashService.Location = new System.Drawing.Point(57, 452);
             this.pnlDropDownWashService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDropDownWashService.MaximumSize = new System.Drawing.Size(160, 165);
             this.pnlDropDownWashService.MinimumSize = new System.Drawing.Size(160, 50);
@@ -109,8 +110,8 @@ namespace GUI_Management
             this.btnWashService.AnimationHoverSpeed = 0.07F;
             this.btnWashService.AnimationSpeed = 0.03F;
             this.btnWashService.BackColor = System.Drawing.Color.Transparent;
-            this.btnWashService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnWashService.BaseColor2 = System.Drawing.Color.Gainsboro;
+            this.btnWashService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnWashService.BaseColor2 = System.Drawing.Color.PaleGreen;
             this.btnWashService.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnWashService.BorderSize = 1;
             this.btnWashService.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -122,8 +123,8 @@ namespace GUI_Management
             this.btnWashService.Location = new System.Drawing.Point(0, 0);
             this.btnWashService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWashService.Name = "btnWashService";
-            this.btnWashService.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
-            this.btnWashService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnWashService.OnHoverBaseColor1 = System.Drawing.Color.PaleGreen;
+            this.btnWashService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnWashService.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnWashService.OnHoverForeColor = System.Drawing.Color.White;
             this.btnWashService.OnHoverImage = null;
@@ -139,8 +140,8 @@ namespace GUI_Management
             this.btnOther_Wash.AnimationHoverSpeed = 0.07F;
             this.btnOther_Wash.AnimationSpeed = 0.03F;
             this.btnOther_Wash.BackColor = System.Drawing.Color.Transparent;
-            this.btnOther_Wash.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnOther_Wash.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnOther_Wash.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnOther_Wash.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnOther_Wash.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnOther_Wash.BorderSize = 1;
             this.btnOther_Wash.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -152,8 +153,8 @@ namespace GUI_Management
             this.btnOther_Wash.Location = new System.Drawing.Point(3, 112);
             this.btnOther_Wash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOther_Wash.Name = "btnOther_Wash";
-            this.btnOther_Wash.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnOther_Wash.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnOther_Wash.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOther_Wash.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnOther_Wash.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnOther_Wash.OnHoverForeColor = System.Drawing.Color.White;
             this.btnOther_Wash.OnHoverImage = null;
@@ -170,8 +171,8 @@ namespace GUI_Management
             this.btnThanhToan_Wash.AnimationHoverSpeed = 0.07F;
             this.btnThanhToan_Wash.AnimationSpeed = 0.03F;
             this.btnThanhToan_Wash.BackColor = System.Drawing.Color.Transparent;
-            this.btnThanhToan_Wash.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnThanhToan_Wash.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnThanhToan_Wash.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnThanhToan_Wash.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnThanhToan_Wash.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnThanhToan_Wash.BorderSize = 1;
             this.btnThanhToan_Wash.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -183,8 +184,8 @@ namespace GUI_Management
             this.btnThanhToan_Wash.Location = new System.Drawing.Point(3, 57);
             this.btnThanhToan_Wash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThanhToan_Wash.Name = "btnThanhToan_Wash";
-            this.btnThanhToan_Wash.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnThanhToan_Wash.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnThanhToan_Wash.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThanhToan_Wash.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnThanhToan_Wash.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnThanhToan_Wash.OnHoverForeColor = System.Drawing.Color.White;
             this.btnThanhToan_Wash.OnHoverImage = null;
@@ -201,8 +202,8 @@ namespace GUI_Management
             this.btnDoanhThu.AnimationHoverSpeed = 0.07F;
             this.btnDoanhThu.AnimationSpeed = 0.03F;
             this.btnDoanhThu.BackColor = System.Drawing.Color.Transparent;
-            this.btnDoanhThu.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnDoanhThu.BaseColor2 = System.Drawing.Color.Gainsboro;
+            this.btnDoanhThu.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDoanhThu.BaseColor2 = System.Drawing.Color.PaleGreen;
             this.btnDoanhThu.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnDoanhThu.BorderSize = 1;
             this.btnDoanhThu.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -214,8 +215,8 @@ namespace GUI_Management
             this.btnDoanhThu.Location = new System.Drawing.Point(57, 534);
             this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDoanhThu.Name = "btnDoanhThu";
-            this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
-            this.btnDoanhThu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDoanhThu.OnHoverBaseColor1 = System.Drawing.Color.PaleGreen;
+            this.btnDoanhThu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDoanhThu.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnDoanhThu.OnHoverForeColor = System.Drawing.Color.White;
             this.btnDoanhThu.OnHoverImage = null;
@@ -232,7 +233,7 @@ namespace GUI_Management
             this.pnlDropDownFixService.Controls.Add(this.btnOther_Fix);
             this.pnlDropDownFixService.Controls.Add(this.btnInfoFix_Vehicle);
             this.pnlDropDownFixService.Controls.Add(this.btnFixService);
-            this.pnlDropDownFixService.Location = new System.Drawing.Point(57, 370);
+            this.pnlDropDownFixService.Location = new System.Drawing.Point(57, 368);
             this.pnlDropDownFixService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDropDownFixService.MaximumSize = new System.Drawing.Size(160, 162);
             this.pnlDropDownFixService.MinimumSize = new System.Drawing.Size(160, 50);
@@ -245,8 +246,8 @@ namespace GUI_Management
             this.btnOther_Fix.AnimationHoverSpeed = 0.07F;
             this.btnOther_Fix.AnimationSpeed = 0.03F;
             this.btnOther_Fix.BackColor = System.Drawing.Color.Transparent;
-            this.btnOther_Fix.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnOther_Fix.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnOther_Fix.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnOther_Fix.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnOther_Fix.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnOther_Fix.BorderSize = 1;
             this.btnOther_Fix.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -258,8 +259,8 @@ namespace GUI_Management
             this.btnOther_Fix.Location = new System.Drawing.Point(3, 110);
             this.btnOther_Fix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOther_Fix.Name = "btnOther_Fix";
-            this.btnOther_Fix.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnOther_Fix.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnOther_Fix.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOther_Fix.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnOther_Fix.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnOther_Fix.OnHoverForeColor = System.Drawing.Color.White;
             this.btnOther_Fix.OnHoverImage = null;
@@ -276,8 +277,8 @@ namespace GUI_Management
             this.btnInfoFix_Vehicle.AnimationHoverSpeed = 0.07F;
             this.btnInfoFix_Vehicle.AnimationSpeed = 0.03F;
             this.btnInfoFix_Vehicle.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfoFix_Vehicle.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnInfoFix_Vehicle.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnInfoFix_Vehicle.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnInfoFix_Vehicle.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnInfoFix_Vehicle.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnInfoFix_Vehicle.BorderSize = 1;
             this.btnInfoFix_Vehicle.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -289,8 +290,8 @@ namespace GUI_Management
             this.btnInfoFix_Vehicle.Location = new System.Drawing.Point(3, 55);
             this.btnInfoFix_Vehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInfoFix_Vehicle.Name = "btnInfoFix_Vehicle";
-            this.btnInfoFix_Vehicle.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnInfoFix_Vehicle.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnInfoFix_Vehicle.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnInfoFix_Vehicle.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnInfoFix_Vehicle.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnInfoFix_Vehicle.OnHoverForeColor = System.Drawing.Color.White;
             this.btnInfoFix_Vehicle.OnHoverImage = null;
@@ -307,8 +308,8 @@ namespace GUI_Management
             this.btnFixService.AnimationHoverSpeed = 0.07F;
             this.btnFixService.AnimationSpeed = 0.03F;
             this.btnFixService.BackColor = System.Drawing.Color.Transparent;
-            this.btnFixService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnFixService.BaseColor2 = System.Drawing.Color.Gainsboro;
+            this.btnFixService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFixService.BaseColor2 = System.Drawing.Color.PaleGreen;
             this.btnFixService.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnFixService.BorderSize = 1;
             this.btnFixService.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -317,16 +318,16 @@ namespace GUI_Management
             this.btnFixService.ForeColor = System.Drawing.Color.Black;
             this.btnFixService.Image = null;
             this.btnFixService.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFixService.Location = new System.Drawing.Point(3, 0);
+            this.btnFixService.Location = new System.Drawing.Point(0, 0);
             this.btnFixService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFixService.Name = "btnFixService";
-            this.btnFixService.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
-            this.btnFixService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnFixService.OnHoverBaseColor1 = System.Drawing.Color.PaleGreen;
+            this.btnFixService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnFixService.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnFixService.OnHoverForeColor = System.Drawing.Color.White;
             this.btnFixService.OnHoverImage = null;
             this.btnFixService.OnPressedColor = System.Drawing.Color.Black;
-            this.btnFixService.Size = new System.Drawing.Size(157, 50);
+            this.btnFixService.Size = new System.Drawing.Size(160, 50);
             this.btnFixService.TabIndex = 2;
             this.btnFixService.Text = "FIX SERVICE";
             this.btnFixService.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -339,7 +340,7 @@ namespace GUI_Management
             this.pnlDropDownParkService.Controls.Add(this.btnParkService);
             this.pnlDropDownParkService.Controls.Add(this.btnLayXe);
             this.pnlDropDownParkService.Controls.Add(this.btnBaiXe);
-            this.pnlDropDownParkService.Location = new System.Drawing.Point(57, 289);
+            this.pnlDropDownParkService.Location = new System.Drawing.Point(57, 288);
             this.pnlDropDownParkService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDropDownParkService.MaximumSize = new System.Drawing.Size(160, 218);
             this.pnlDropDownParkService.MinimumSize = new System.Drawing.Size(160, 50);
@@ -352,8 +353,8 @@ namespace GUI_Management
             this.btnOther_Park.AnimationHoverSpeed = 0.07F;
             this.btnOther_Park.AnimationSpeed = 0.03F;
             this.btnOther_Park.BackColor = System.Drawing.Color.Transparent;
-            this.btnOther_Park.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnOther_Park.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnOther_Park.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnOther_Park.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnOther_Park.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnOther_Park.BorderSize = 1;
             this.btnOther_Park.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -365,8 +366,8 @@ namespace GUI_Management
             this.btnOther_Park.Location = new System.Drawing.Point(3, 165);
             this.btnOther_Park.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOther_Park.Name = "btnOther_Park";
-            this.btnOther_Park.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnOther_Park.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnOther_Park.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOther_Park.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnOther_Park.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnOther_Park.OnHoverForeColor = System.Drawing.Color.White;
             this.btnOther_Park.OnHoverImage = null;
@@ -383,8 +384,8 @@ namespace GUI_Management
             this.btnParkService.AnimationHoverSpeed = 0.07F;
             this.btnParkService.AnimationSpeed = 0.03F;
             this.btnParkService.BackColor = System.Drawing.Color.Transparent;
-            this.btnParkService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnParkService.BaseColor2 = System.Drawing.Color.Gainsboro;
+            this.btnParkService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnParkService.BaseColor2 = System.Drawing.Color.PaleGreen;
             this.btnParkService.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnParkService.BorderSize = 1;
             this.btnParkService.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -393,16 +394,16 @@ namespace GUI_Management
             this.btnParkService.ForeColor = System.Drawing.Color.Black;
             this.btnParkService.Image = null;
             this.btnParkService.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnParkService.Location = new System.Drawing.Point(3, 0);
+            this.btnParkService.Location = new System.Drawing.Point(0, 0);
             this.btnParkService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnParkService.Name = "btnParkService";
-            this.btnParkService.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
-            this.btnParkService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnParkService.OnHoverBaseColor1 = System.Drawing.Color.PaleGreen;
+            this.btnParkService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnParkService.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnParkService.OnHoverForeColor = System.Drawing.Color.White;
             this.btnParkService.OnHoverImage = null;
             this.btnParkService.OnPressedColor = System.Drawing.Color.Black;
-            this.btnParkService.Size = new System.Drawing.Size(155, 50);
+            this.btnParkService.Size = new System.Drawing.Size(158, 50);
             this.btnParkService.TabIndex = 2;
             this.btnParkService.Text = "PARK SERVICE";
             this.btnParkService.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -413,8 +414,8 @@ namespace GUI_Management
             this.btnLayXe.AnimationHoverSpeed = 0.07F;
             this.btnLayXe.AnimationSpeed = 0.03F;
             this.btnLayXe.BackColor = System.Drawing.Color.Transparent;
-            this.btnLayXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnLayXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnLayXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnLayXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLayXe.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnLayXe.BorderSize = 1;
             this.btnLayXe.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -426,8 +427,8 @@ namespace GUI_Management
             this.btnLayXe.Location = new System.Drawing.Point(3, 110);
             this.btnLayXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLayXe.Name = "btnLayXe";
-            this.btnLayXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnLayXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnLayXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLayXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnLayXe.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnLayXe.OnHoverForeColor = System.Drawing.Color.White;
             this.btnLayXe.OnHoverImage = null;
@@ -444,8 +445,8 @@ namespace GUI_Management
             this.btnBaiXe.AnimationHoverSpeed = 0.07F;
             this.btnBaiXe.AnimationSpeed = 0.03F;
             this.btnBaiXe.BackColor = System.Drawing.Color.Transparent;
-            this.btnBaiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
-            this.btnBaiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
+            this.btnBaiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBaiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnBaiXe.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaiXe.BorderSize = 1;
             this.btnBaiXe.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -457,8 +458,8 @@ namespace GUI_Management
             this.btnBaiXe.Location = new System.Drawing.Point(3, 55);
             this.btnBaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBaiXe.Name = "btnBaiXe";
-            this.btnBaiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(218)))));
-            this.btnBaiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(107)))));
+            this.btnBaiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBaiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnBaiXe.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnBaiXe.OnHoverForeColor = System.Drawing.Color.White;
             this.btnBaiXe.OnHoverImage = null;
@@ -475,8 +476,8 @@ namespace GUI_Management
             this.btnAddService.AnimationHoverSpeed = 0.07F;
             this.btnAddService.AnimationSpeed = 0.03F;
             this.btnAddService.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAddService.BaseColor2 = System.Drawing.Color.Gainsboro;
+            this.btnAddService.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAddService.BaseColor2 = System.Drawing.Color.PaleGreen;
             this.btnAddService.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnAddService.BorderSize = 1;
             this.btnAddService.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -488,8 +489,8 @@ namespace GUI_Management
             this.btnAddService.Location = new System.Drawing.Point(57, 207);
             this.btnAddService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddService.Name = "btnAddService";
-            this.btnAddService.OnHoverBaseColor1 = System.Drawing.Color.Gainsboro;
-            this.btnAddService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAddService.OnHoverBaseColor1 = System.Drawing.Color.PaleGreen;
+            this.btnAddService.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddService.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddService.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddService.OnHoverImage = null;
@@ -530,7 +531,7 @@ namespace GUI_Management
             // pnlMove
             // 
             this.pnlMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
-            this.pnlMove.Location = new System.Drawing.Point(29, 193);
+            this.pnlMove.Location = new System.Drawing.Point(29, 207);
             this.pnlMove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMove.Name = "pnlMove";
             this.pnlMove.Size = new System.Drawing.Size(5, 50);

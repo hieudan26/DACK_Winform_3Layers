@@ -343,7 +343,7 @@ namespace GUI_Management
         private void timer1_Tick(object sender, EventArgs e)
         {
             //fProgressBar form = new fProgressBar();
-            form.gunaCircleProgressBar1.Increment(10);
+            form.gunaCircleProgressBar1.Increment(25);
             
             if (form.gunaCircleProgressBar1.Value >= form.gunaCircleProgressBar1.Maximum)
             {

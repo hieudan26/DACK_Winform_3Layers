@@ -26,12 +26,13 @@ namespace GUI_Management
             this.fQuanLyXe = quanly;
         }
 
-        private void designDataGridView(int i1, int i2)
+        private void designDataGridView(DataTable table, int i1, int i2)
         {
+            this.dgvWash.RowTemplate.Height = 80;
             this.dgvWash.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             DataGridViewImageColumn picCol2 = new DataGridViewImageColumn();
-
+            this.dgvWash.DataSource = table;
             picCol = (DataGridViewImageColumn)this.dgvWash.Columns[i1];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             picCol2 = (DataGridViewImageColumn)this.dgvWash.Columns[i2];
@@ -46,20 +47,20 @@ namespace GUI_Management
             fLoad.ShowDialog();
             //end
             int index = this.cbTypeFilter.SelectedIndex;
-            this.dgvWash.RowTemplate.Height = 80;
             if (index < 3 && index >= 0)
             {
                 this.txtSearch.Text = "";
                 DataTable table = this.vehWashBUS.getDataVehicleWash_ByType(index);
                 if (table != null)
                 {
-                    this.dgvWash.DataSource = table;
-                    this.designDataGridView(2, 3);
+                    //this.dgvWash.DataSource = table;
+                    this.designDataGridView(table, 2, 3);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                 }
                 else
                 {
                     this.dgvWash.DataSource = null;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                 }
             }
             else
@@ -67,13 +68,13 @@ namespace GUI_Management
                 DataTable table = this.vehWashBUS.getAllVehicleWash();
                 if (table != null)
                 {
-                    this.dgvWash.DataSource = table;
-                    this.designDataGridView(2, 3);
+                    this.designDataGridView(table, 2, 3);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                 }
                 else
                 {
                     this.dgvWash.DataSource = null;
+                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                 }
             }    
         }
@@ -106,9 +107,8 @@ namespace GUI_Management
                     string id = this.txtSearch.Text;
                     if (this.vehWashBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
                     {
-                        this.dgvWash.RowTemplate.Height = 80;
-                        this.dgvWash.DataSource = this.vehWashBUS.getVehicleByID_GanDung(this.txtSearch.Text);
-                        this.designDataGridView(2, 3);
+                        DataTable table = this.vehWashBUS.getVehicleByID_GanDung(this.txtSearch.Text);
+                        this.designDataGridView(table, 2, 3);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                     }
                 }    
@@ -175,13 +175,13 @@ namespace GUI_Management
                         DataTable table = this.vehWashBUS.getAllVehicleWash();
                         if (table != null)
                         {
-                            this.dgvWash.DataSource = table;
-                            this.designDataGridView(2, 3);
+                            this.designDataGridView(table, 2, 3);
                             this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                         }
                         else
                         {
                             this.dgvWash.DataSource = null;
+                            this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                         }
                     }
                     else
@@ -222,13 +222,13 @@ namespace GUI_Management
                     DataTable table = this.vehWashBUS.getAllVehicleWash();
                     if (table != null)
                     {
-                        this.dgvWash.DataSource = table;
-                        this.designDataGridView(2, 3);
+                        this.designDataGridView(table, 2, 3);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                     }
                     else
                     {
                         this.dgvWash.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvWash.Rows.Count;
                     }
                 }
                 else
@@ -245,7 +245,7 @@ namespace GUI_Management
         private void timer1_Tick(object sender, EventArgs e)
         {
             //fProgressBar form = new fProgressBar();
-            fLoad.gunaCircleProgressBar1.Increment(15);
+            fLoad.gunaCircleProgressBar1.Increment(25);
 
             if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
             {

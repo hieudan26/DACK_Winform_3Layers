@@ -34,15 +34,13 @@ namespace GUI_Management
             fLoad.ShowDialog();
             //end
             int index = this.cbTypeFilter.SelectedIndex;
-            this.dgvFix.RowTemplate.Height = 80;
             if (index < 3 && index >=0)
             {
                 this.txtSearch.Text = "";
                 DataTable table = this.vehFixBUS.getVehicleFix_info_byType(index);
                 if (table != null)
                 {
-                    this.dgvFix.DataSource = table;
-                    this.designDataGridView(3, 4);
+                    this.designDataGridView(table, 3, 4);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                 }
                 else
@@ -56,8 +54,7 @@ namespace GUI_Management
                 DataTable table = this.vehFixBUS.getVehicleFix_info_all();
                 if (table != null)
                 {
-                    this.dgvFix.DataSource = table;
-                    this.designDataGridView(3, 4);
+                    this.designDataGridView(table, 3, 4);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                 }
                 else
@@ -68,12 +65,14 @@ namespace GUI_Management
             }    
         }
 
-        private void designDataGridView(int i1, int i2)
+        private void designDataGridView(DataTable table, int i1, int i2)
         {
+
+            this.dgvFix.RowTemplate.Height = 80;
             this.dgvFix.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             DataGridViewImageColumn picCol2 = new DataGridViewImageColumn();
-
+            this.dgvFix.DataSource = table;
             picCol = (DataGridViewImageColumn)this.dgvFix.Columns[i1];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             picCol2 = (DataGridViewImageColumn)this.dgvFix.Columns[i2];
@@ -112,9 +111,8 @@ namespace GUI_Management
                     string id = this.txtSearch.Text;
                     if (this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text) != null)
                     {
-                        this.dgvFix.RowTemplate.Height = 80;
-                        this.dgvFix.DataSource = this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text);
-                        this.designDataGridView(3, 4);
+                        DataTable table = this.vehFixBUS.getVehicleByID_GanDung(this.txtSearch.Text);
+                        this.designDataGridView(table, 3, 4);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                     }
                 }    
@@ -165,8 +163,7 @@ namespace GUI_Management
                             DataTable table = this.vehFixBUS.getVehicleFix_info_all();
                             if (table != null)
                             {
-                                this.dgvFix.DataSource = table;
-                                this.designDataGridView(3, 4);
+                                this.designDataGridView(table, 3, 4);
                                 this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                             }
                             else
@@ -229,8 +226,7 @@ namespace GUI_Management
                     DataTable table = this.vehFixBUS.getVehicleFix_info_all();
                     if (table != null)
                     {
-                        this.dgvFix.DataSource = table;
-                        this.designDataGridView(3, 4);
+                        this.designDataGridView(table, 3, 4);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                     }
                     else
@@ -273,8 +269,7 @@ namespace GUI_Management
                     DataTable table = this.vehFixBUS.getVehicleFix_info_all();
                     if (table != null)
                     {
-                        this.dgvFix.DataSource = table;
-                        this.designDataGridView(3, 4);
+                       this.designDataGridView(table, 3, 4);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvFix.Rows.Count;
                     }
                     else
@@ -299,7 +294,7 @@ namespace GUI_Management
         private void timer1_Tick(object sender, EventArgs e)
         {
             //fProgressBar form = new fProgressBar();
-            fLoad.gunaCircleProgressBar1.Increment(15);
+            fLoad.gunaCircleProgressBar1.Increment(25);
 
             if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
             {

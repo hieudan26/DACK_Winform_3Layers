@@ -354,5 +354,10 @@ namespace GUI_Management
         {
 
         }
+
+        private void btn_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

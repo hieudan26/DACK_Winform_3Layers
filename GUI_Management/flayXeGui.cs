@@ -47,12 +47,13 @@ namespace GUI_Management
             this.formQuanLyXeGui.pnlMove.Visible = false;
         }
 
-        private void designDataGridView(int i1, int i2)
+        private void designDataGridView(DataTable table, int i1, int i2)
         {
+            this.dgvXe.RowTemplate.Height = 80;
             this.dgvXe.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             DataGridViewImageColumn picCol2 = new DataGridViewImageColumn();
-            
+            this.dgvXe.DataSource = table;
             picCol = (DataGridViewImageColumn)this.dgvXe.Columns[i1];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             picCol2 = (DataGridViewImageColumn)this.dgvXe.Columns[i2];
@@ -67,15 +68,13 @@ namespace GUI_Management
             fLoad.ShowDialog();
             //end
             int index = this.cbTypeFilter.SelectedIndex;
-            this.dgvXe.RowTemplate.Height = 80;
             if (this.cbTypeFilter.SelectedIndex == 3) // Lọc xe hết hạn
             {
                 this.txtSearch.Text = "";
                 DataTable table = this.vehParkingBUS.getVehicleExpired();
                 if (table != null)
                 {
-                    this.dgvXe.DataSource = table;
-                    this.designDataGridView(2, 3);
+                    this.designDataGridView(table, 2, 3);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }    
                 else
@@ -90,8 +89,7 @@ namespace GUI_Management
                 DataTable table = this.vehParkingBUS.danhSachXetheoLoai(index);
                 if (table != null)
                 {
-                    this.dgvXe.DataSource = table;
-                    this.designDataGridView(2, 3);
+                    this.designDataGridView(table, 2, 3);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
                 else
@@ -106,8 +104,7 @@ namespace GUI_Management
                 DataTable table = this.vehParkingBUS.getVehicleNotExpired();
                 if (table != null)
                 {
-                    this.dgvXe.DataSource = table;
-                    this.designDataGridView(2, 3);
+                    this.designDataGridView(table, 2, 3);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
                 else
@@ -121,8 +118,7 @@ namespace GUI_Management
                 DataTable table = this.vehParkingBUS.getAllVehicle();
                 if (table != null)
                 {
-                    this.dgvXe.DataSource = table;
-                    this.designDataGridView(2, 3);
+                    this.designDataGridView(table, 2, 3);
                     this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                 }
                 else
@@ -238,8 +234,7 @@ namespace GUI_Management
                     DataTable table = this.vehParkingBUS.getAllVehicle();
                     if (table != null)
                     {
-                        this.dgvXe.DataSource = table;
-                        this.designDataGridView(2, 3);
+                        this.designDataGridView(table, 2, 3);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                     }
                     else
@@ -301,9 +296,8 @@ namespace GUI_Management
                     string id = this.txtSearch.Text;
                     if (this.vehParkingBUS.getVehicleByID(id) != null)
                     {
-                        this.dgvXe.RowTemplate.Height = 80;
-                        this.dgvXe.DataSource = this.vehParkingBUS.getVehicleByID_GanDung(id);
-                        this.designDataGridView(2, 3);
+                        DataTable table = this.vehParkingBUS.getVehicleByID_GanDung(id);
+                        this.designDataGridView(table, 2, 3);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
                     }
                 }    
@@ -380,7 +374,7 @@ namespace GUI_Management
         private void timer1_Tick(object sender, EventArgs e)
         {
             //fProgressBar form = new fProgressBar();
-            fLoad.gunaCircleProgressBar1.Increment(15);
+            fLoad.gunaCircleProgressBar1.Increment(25);
 
             if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
             {
