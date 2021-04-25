@@ -39,25 +39,20 @@ namespace GUI_Management
         //end add veh
 
         //Gửi
-        private void btnBaiXe_Click(object sender, EventArgs e)
+        private void btnBaiXe_Click_1(object sender, EventArgs e)
         {
-            this.PanelMoveParkService();
-            //border change color
-            //this.btnGuiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.Black;
             this.btnLayXe.BorderColor = Color.White;
             this.btnOther_Park.BorderColor = Color.White;
-            //end
-
             this.openChildForm(new fbaiXe(this));
         }
 
-
         private void btnLayXe_Click(object sender, EventArgs e)
         {
-            this.PanelMoveParkService();
+            //this.PanelMoveParkService();
             //border change color
             //this.btnGuiXe.BorderColor = Color.White;
+            //this.btnBaiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.White;
             this.btnLayXe.BorderColor = Color.Black;
             this.btnOther_Park.BorderColor = Color.White;
@@ -68,7 +63,7 @@ namespace GUI_Management
 
         private void btnOther_Park_Click(object sender, EventArgs e)
         {
-            this.PanelMoveParkService();
+            //this.PanelMoveParkService();
             //border change color
             //this.btnGuiXe.BorderColor = Color.White;
             this.btnBaiXe.BorderColor = Color.White;

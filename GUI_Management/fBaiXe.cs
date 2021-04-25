@@ -18,6 +18,7 @@ namespace GUI_Management
         fQuanLyXe formQuanLyXeGui;
         vehicleParkingBUS VehicleBUS = new vehicleParkingBUS();
         vehicleParkingDTO vehicleDTO = new vehicleParkingDTO();
+        fProgressBar formLoad = new fProgressBar();
         private Guna.UI.Lib.ScrollBar.PanelScrollHelper vScrollHelper1;
         //public int ID;
 
@@ -25,6 +26,8 @@ namespace GUI_Management
         {
             InitializeComponent();
             this.formQuanLyXeGui = fQuanLy;
+            this.timer1.Start();
+            this.formLoad.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -51,14 +54,9 @@ namespace GUI_Management
             lb.Font = new System.Drawing.Font("Times New Roman", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lb.Text = str + soChoTrong + " chỗ trống";
         }
-        fProgressBar form = new fProgressBar();
+        
         private void fBaiXe_Load(object sender, EventArgs e)
         {
-            //load progress bar
-            this.timer1.Start();
-            form.ShowDialog();
-            //end
-
             //danh sach xe dap
             List<string> IDbicycle = VehicleBUS.danhSachID(0);
             if (IDbicycle.Count != 0)
@@ -342,14 +340,16 @@ namespace GUI_Management
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //fProgressBar form = new fProgressBar();
-            form.gunaCircleProgressBar1.Increment(25);
-            
-            if (form.gunaCircleProgressBar1.Value >= form.gunaCircleProgressBar1.Maximum)
+            ////fProgressBar form = new fProgressBar();
+            formLoad.gunaCircleProgressBar1.Increment(25);
+
+            if (formLoad.gunaCircleProgressBar1.Value >= formLoad.gunaCircleProgressBar1.Maximum)
             {
                 timer1.Stop();
-                form.Close();
-            }    
+                formLoad.Close();
+                //this.formQuanLyXeGui.btnBaiXe.BorderColor = Color.White;
+                //this.formQuanLyXeGui.btnBaiXe.ForeColor = Color.Black;
+            }
         }
     }
 }
