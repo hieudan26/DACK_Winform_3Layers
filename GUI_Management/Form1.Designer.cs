@@ -39,11 +39,11 @@ namespace GUI_Management
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.uC_Intro1 = new GUI_Management.UC_Intro();
             this.uC_Signin1 = new GUI_Management.UC_Signin();
             this.uC_Login1 = new GUI_Management.UC_Login();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaShadowPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
@@ -232,6 +232,42 @@ namespace GUI_Management
             this.gunaPanel2.TabIndex = 0;
             this.gunaPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel2_Paint);
             // 
+            // gunaDateTimePicker1
+            // 
+            this.gunaDateTimePicker1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaDateTimePicker1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gunaDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.gunaDateTimePicker1.CustomFormat = "hh:mm:ss";
+            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.Gray;
+            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Sienna;
+            this.gunaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.gunaDateTimePicker1.Location = new System.Drawing.Point(277, 21);
+            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
+            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaDateTimePicker1.Radius = 7;
+            this.gunaDateTimePicker1.Size = new System.Drawing.Size(174, 38);
+            this.gunaDateTimePicker1.TabIndex = 1;
+            this.gunaDateTimePicker1.Text = "11:12:24 AM";
+            this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 3, 11, 12, 24, 0);
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
+            this.gunaPanel1.Controls.Add(this.gunaDateTimePicker1);
+            this.gunaPanel1.Controls.Add(this.gunaPanel2);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel1.Location = new System.Drawing.Point(333, 0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(694, 645);
+            this.gunaPanel1.TabIndex = 6;
+            // 
             // uC_Intro1
             // 
             this.uC_Intro1.Location = new System.Drawing.Point(0, -16);
@@ -257,42 +293,6 @@ namespace GUI_Management
             this.uC_Login1.TabIndex = 0;
             this.uC_Login1.Load += new System.EventHandler(this.uC_Login1_Load_1);
             // 
-            // gunaDateTimePicker1
-            // 
-            this.gunaDateTimePicker1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaDateTimePicker1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(218)))), ((int)(((byte)(226)))));
-            this.gunaDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.CustomFormat = "hh:mm:ss";
-            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.Gray;
-            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(283, 21);
-            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
-            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Radius = 7;
-            this.gunaDateTimePicker1.Size = new System.Drawing.Size(162, 30);
-            this.gunaDateTimePicker1.TabIndex = 1;
-            this.gunaDateTimePicker1.Text = "11:12:24 AM";
-            this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 3, 11, 12, 24, 0);
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.gunaPanel1.Controls.Add(this.gunaDateTimePicker1);
-            this.gunaPanel1.Controls.Add(this.gunaPanel2);
-            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel1.Location = new System.Drawing.Point(333, 0);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(694, 645);
-            this.gunaPanel1.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,6 +307,7 @@ namespace GUI_Management
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel1.PerformLayout();
             this.panel3.ResumeLayout(false);
