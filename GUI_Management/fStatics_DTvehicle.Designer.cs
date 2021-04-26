@@ -36,6 +36,7 @@ namespace GUI_Management
             this.BD = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.gunaGradientPanel2 = new Guna.UI.WinForms.GunaGradientPanel();
+            this.btnChange = new Guna.UI.WinForms.GunaGradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.BD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,12 +96,45 @@ namespace GUI_Management
             this.gunaGradientPanel2.TabIndex = 25;
             this.gunaGradientPanel2.Text = "gunaGradientPanel2";
             // 
+            // btnChange
+            // 
+            this.btnChange.Animated = true;
+            this.btnChange.AnimationHoverSpeed = 0.07F;
+            this.btnChange.AnimationSpeed = 0.03F;
+            this.btnChange.BackColor = System.Drawing.Color.Transparent;
+            this.btnChange.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnChange.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnChange.BorderColor = System.Drawing.Color.Black;
+            this.btnChange.BorderSize = 1;
+            this.btnChange.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnChange.FocusedColor = System.Drawing.Color.Empty;
+            this.btnChange.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
+            this.btnChange.Image = null;
+            this.btnChange.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnChange.Location = new System.Drawing.Point(482, 519);
+            this.btnChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnChange.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnChange.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnChange.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnChange.OnHoverImage = null;
+            this.btnChange.OnPressedColor = System.Drawing.Color.Black;
+            this.btnChange.Radius = 3;
+            this.btnChange.Size = new System.Drawing.Size(129, 37);
+            this.btnChange.TabIndex = 30;
+            this.btnChange.Text = "CHANGE";
+            this.btnChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
             // fStatics_DTvehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1083, 605);
+            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.gunaGradientPanel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.BD);
@@ -119,5 +153,6 @@ namespace GUI_Management
         private System.Windows.Forms.DataVisualization.Charting.Chart BD;
         private Guna.UI.WinForms.GunaButton btnBack;
         private Guna.UI.WinForms.GunaGradientPanel gunaGradientPanel2;
+        private Guna.UI.WinForms.GunaGradientButton btnChange;
     }
 }

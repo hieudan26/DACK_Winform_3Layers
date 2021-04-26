@@ -61,16 +61,21 @@ namespace GUI_Management
             this.dgvXe.AllowUserToAddRows = false;
         }
 
-        private void cbTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadProgressBar()
         {
             //Load Progress bar
             this.timer1.Start();
             fLoad.ShowDialog();
             //end
+        }
+
+        private void cbTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
             int index = this.cbTypeFilter.SelectedIndex;
             if (this.cbTypeFilter.SelectedIndex == 3) // Lọc xe hết hạn
             {
                 this.txtSearch.Text = "";
+                this.LoadProgressBar();
                 DataTable table = this.vehParkingBUS.getVehicleExpired();
                 if (table != null)
                 {
@@ -86,6 +91,7 @@ namespace GUI_Management
             else if (this.cbTypeFilter.SelectedIndex < 3 && this.cbTypeFilter.SelectedIndex >= 0)  // Lọc xe đạp, máy, hơi
             {
                 this.txtSearch.Text = "";
+                this.LoadProgressBar();
                 DataTable table = this.vehParkingBUS.danhSachXetheoLoai(index);
                 if (table != null)
                 {
@@ -101,6 +107,7 @@ namespace GUI_Management
             else if (this.cbTypeFilter.SelectedIndex == 4 )  // Lọc xe còn hạn
             {
                 this.txtSearch.Text = "";
+                this.LoadProgressBar();
                 DataTable table = this.vehParkingBUS.getVehicleNotExpired();
                 if (table != null)
                 {
@@ -115,6 +122,7 @@ namespace GUI_Management
             }
             else
             {
+                this.LoadProgressBar();
                 DataTable table = this.vehParkingBUS.getAllVehicle();
                 if (table != null)
                 {
@@ -131,6 +139,7 @@ namespace GUI_Management
 
         private bool checkHetHan(string id)
         {
+            this.LoadProgressBar();
             DataTable table = this.vehParkingBUS.getVehicleExpired();
             if (table == null)
                 return false;
@@ -172,9 +181,19 @@ namespace GUI_Management
                 }    
                 else
                 {
-                    totalFee = this.vehParkingBUS.layTienTheoThu(thu, "monthFee")*2;
+                    totalFee = this.vehParkingBUS.layTienTheoThu(thu, "monthFee") * 2;
                 }    
             }
+            /////////////////////////////////////////////////
+            int type = int.Parse(this.dgvXe.CurrentRow.Cells[1].Value.ToString());
+            if (type == 0)
+            {
+                totalFee = totalFee - (int)totalFee / 2;
+            } 
+            else if (type == 2)
+            {
+                totalFee = totalFee * 2;
+            }    
             return totalFee;
         }
 
@@ -231,6 +250,7 @@ namespace GUI_Management
                     else
                         MessageBox.Show("Vehicle is taken out Error", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.cbTypeFilter.SelectedIndex = 5;
+                    this.LoadProgressBar();
                     DataTable table = this.vehParkingBUS.getAllVehicle();
                     if (table != null)
                     {
@@ -296,6 +316,7 @@ namespace GUI_Management
                     string id = this.txtSearch.Text;
                     if (this.vehParkingBUS.getVehicleByID(id) != null)
                     {
+                        this.LoadProgressBar();
                         DataTable table = this.vehParkingBUS.getVehicleByID_GanDung(id);
                         this.designDataGridView(table, 2, 3);
                         this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;

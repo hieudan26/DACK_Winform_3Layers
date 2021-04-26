@@ -122,7 +122,7 @@ namespace GUI_Management
         //open child form gửi
         public void openForm_Gui(vehicleDTO vel)
         {
-            this.formQuanLyXeGui.openChildForm(new fphiGuiXe(vel.id, formQuanLyXeGui,0));
+            this.formQuanLyXeGui.openChildForm(new fphiGuiXe(vel.id, formQuanLyXeGui, 0));
         }
 
         //open child form sửa

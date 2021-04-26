@@ -13,6 +13,23 @@ namespace BUS_Management
     {
         phiDichVuSuaXeDAL phiDAL = new phiDichVuSuaXeDAL();
 
+        //Remove
+        public bool DeleteService(string service)
+        {
+            return this.phiDAL.DeleteService(service);
+        }
+
+        //Edit
+        public bool UpdateService_fee(string service, int service_fee)
+        {
+            return this.phiDAL.UpdateService_fee(service, service_fee);
+        }
+
+        public bool insertService(int type, string service, int fee)
+        {
+            return this.phiDAL.insertService(type, service, fee);
+        }
+
         public string getFee_byService(string service)
         {
             return this.phiDAL.getFee_byService(service);

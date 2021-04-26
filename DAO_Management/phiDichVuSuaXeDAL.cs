@@ -21,6 +21,86 @@ namespace DAL_Management
             return table;
         }
 
+        //Remove
+        public bool DeleteService(string service)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Delete from SERVICE_VEHICLE_FIX where service = @service", this.getConnection);
+                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+
+                this.openConnection();
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
+        }
+
+        //Edit
+        public bool UpdateService_fee(string service, int service_fee)
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("update SERVICE_VEHICLE_FIX set service_fee = @service_fee where service = @service", this.getConnection);
+
+                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+                cmd.Parameters.Add("@service_fee", SqlDbType.Int).Value = service_fee;
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
+        }
+
+        //add 
+        public bool insertService(int type, string service, int fee)
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO SERVICE_VEHICLE_FIX(type, service, service_fee)" +
+            "VALUES (@type, @service, @service_fee)", this.getConnection);
+                cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
+                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+                cmd.Parameters.Add("@service_fee", SqlDbType.Int).Value = fee;
+
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
+        }
+
         public string getFee_byService(string service)
         {
             string temp = "";

@@ -45,6 +45,7 @@ namespace GUI_Management
             this.btnOK = new System.Windows.Forms.Button();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.gunaGradientPanel2 = new Guna.UI.WinForms.GunaGradientPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +100,7 @@ namespace GUI_Management
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(732, 285);
+            this.label3.Location = new System.Drawing.Point(739, 294);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 7;
@@ -117,7 +118,7 @@ namespace GUI_Management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(612, 225);
+            this.label5.Location = new System.Drawing.Point(610, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 35);
             this.label5.TabIndex = 9;
@@ -128,7 +129,7 @@ namespace GUI_Management
             this.labelGio.AutoSize = true;
             this.labelGio.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGio.ForeColor = System.Drawing.Color.Black;
-            this.labelGio.Location = new System.Drawing.Point(613, 315);
+            this.labelGio.Location = new System.Drawing.Point(620, 311);
             this.labelGio.Name = "labelGio";
             this.labelGio.Size = new System.Drawing.Size(253, 26);
             this.labelGio.TabIndex = 14;
@@ -139,7 +140,7 @@ namespace GUI_Management
             this.labelTuan.AutoSize = true;
             this.labelTuan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTuan.ForeColor = System.Drawing.Color.Black;
-            this.labelTuan.Location = new System.Drawing.Point(613, 443);
+            this.labelTuan.Location = new System.Drawing.Point(620, 439);
             this.labelTuan.Name = "labelTuan";
             this.labelTuan.Size = new System.Drawing.Size(255, 26);
             this.labelTuan.TabIndex = 15;
@@ -150,7 +151,7 @@ namespace GUI_Management
             this.labelThang.AutoSize = true;
             this.labelThang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelThang.ForeColor = System.Drawing.Color.Black;
-            this.labelThang.Location = new System.Drawing.Point(613, 503);
+            this.labelThang.Location = new System.Drawing.Point(620, 499);
             this.labelThang.Name = "labelThang";
             this.labelThang.Size = new System.Drawing.Size(255, 26);
             this.labelThang.TabIndex = 16;
@@ -161,7 +162,7 @@ namespace GUI_Management
             this.labelNgay.AutoSize = true;
             this.labelNgay.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNgay.ForeColor = System.Drawing.Color.Black;
-            this.labelNgay.Location = new System.Drawing.Point(613, 379);
+            this.labelNgay.Location = new System.Drawing.Point(620, 375);
             this.labelNgay.Name = "labelNgay";
             this.labelNgay.Size = new System.Drawing.Size(252, 26);
             this.labelNgay.TabIndex = 17;
@@ -193,7 +194,7 @@ namespace GUI_Management
             this.dtPicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtPicker.ForeColor = System.Drawing.Color.DeepPink;
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPicker.Location = new System.Drawing.Point(781, 225);
+            this.dtPicker.Location = new System.Drawing.Point(779, 224);
             this.dtPicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtPicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtPicker.Name = "dtPicker";
@@ -260,12 +261,24 @@ namespace GUI_Management
             this.gunaGradientPanel2.TabIndex = 21;
             this.gunaGradientPanel2.Text = "gunaGradientPanel2";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(700, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(275, 20);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Xe Đạp: 0.5 -- Xe Máy: 1 -- Xe Hơi: 2";
+            // 
             // fphiGuiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1083, 605);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.gunaGradientPanel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnOK);
@@ -308,5 +321,6 @@ namespace GUI_Management
         private System.Windows.Forms.Button btnOK;
         private Guna.UI.WinForms.GunaButton btnBack;
         private Guna.UI.WinForms.GunaGradientPanel gunaGradientPanel2;
+        private System.Windows.Forms.Label label6;
     }
 }

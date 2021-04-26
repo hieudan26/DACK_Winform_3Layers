@@ -16,10 +16,12 @@ namespace GUI_Management
     {
         vehicleParkingDTO vel = new vehicleParkingDTO();
         vehicleParkingBUS vehParkBus = new vehicleParkingBUS();
+        phiDichVuGuiXeBUS phiDichVuGuiXeBUS = new phiDichVuGuiXeBUS();
         fQuanLyXe formQuanLyXeGui;
         vehicleBUS vehicleBUS = new vehicleBUS();
         int indexform;
-        public fphiGuiXe(string id,fQuanLyXe fQuanLy,int indexform)
+
+        public fphiGuiXe(string id, fQuanLyXe fQuanLy, int indexform)
         {
             InitializeComponent();
 
@@ -46,7 +48,7 @@ namespace GUI_Management
             DateTime day = DateTime.Now;
             this.dtPicker.Value = day;
             int thu = (int)day.DayOfWeek;
-            phiDichVuGuiXeBUS.UpdatePhi(thu);
+            this.phiDichVuGuiXeBUS.UpdatePhi(thu);
             this.UpdatePhi();
         }
 

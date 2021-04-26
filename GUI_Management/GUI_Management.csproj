@@ -81,6 +81,18 @@
     <Compile Include="fdoanhThu.Designer.cs">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="fEdit_dichVuSuaXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEdit_dichVuSuaXe.Designer.cs">
+      <DependentUpon>fEdit_dichVuSuaXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEdit_phiGuiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEdit_phiGuiXe.Designer.cs">
+      <DependentUpon>fEdit_phiGuiXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="finfoNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     </Compile>
     <Compile Include="fProgressBar.Designer.cs">
       <DependentUpon>fProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyCongViec.Designer.cs">
+      <DependentUpon>fQuanLyCongViec.cs</DependentUpon>
     </Compile>
     <Compile Include="fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
@@ -223,6 +241,12 @@
     <EmbeddedResource Include="fdoanhThu.resx">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fEdit_dichVuSuaXe.resx">
+      <DependentUpon>fEdit_dichVuSuaXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEdit_phiGuiXe.resx">
+      <DependentUpon>fEdit_phiGuiXe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="finfoNhanVien.resx">
       <DependentUpon>finfoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fProgressBar.resx">
       <DependentUpon>fProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyCongViec.resx">
+      <DependentUpon>fQuanLyCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
@@ -334,52 +361,10 @@
     <None Include="Resources\logoVinfast.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IMG_E0422.JPG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\vehicle_pic.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\car wash1.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Loading.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Hour%28s%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Day%28s%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Week%28s%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Month%28s%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\eyes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Down1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UP1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Down %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
@@ -402,9 +387,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\unnamed.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\louis vutton.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Castrol.png" />

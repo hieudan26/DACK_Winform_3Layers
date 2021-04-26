@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL_Management;
 using DTO_Management;
 
 namespace DAL_Management
@@ -21,6 +20,50 @@ namespace DAL_Management
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+
+        public bool editPrice(int thu, int gio, int ngay, int tuan, int thang)
+        {
+            try
+            {
+                this.openConnection();
+
+                SqlCommand cmd = new SqlCommand("update FEE_PARKING set hourFee = @gio, dateFee = @ngay, weekFee = @tuan, monthFee = @thang where dayWeek = @thu", this.getConnection);
+                cmd.Parameters.Add("@gio", SqlDbType.Int).Value = gio;
+                cmd.Parameters.Add("@ngay", SqlDbType.Int).Value = ngay;
+                cmd.Parameters.Add("@tuan", SqlDbType.Int).Value = tuan;
+                cmd.Parameters.Add("@thang", SqlDbType.Int).Value = thang;
+                cmd.Parameters.Add("@thu", SqlDbType.Int).Value = thu;
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return false;
+        }
+
+        public DataTable getAllPrice()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Select dayWeek as Thu, hourFee as Gio, dateFee as Ngay, weekFee as Tuan, monthFee as Thang from FEE_PARKING");
+                DataTable table = this.GetPrice(cmd);
+                return table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return null;
         }
 
         public bool UpdatePrice(int thu)
