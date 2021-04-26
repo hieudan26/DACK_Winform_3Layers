@@ -16,7 +16,7 @@ namespace GUI_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fQuanLyCongViec());
+            Application.Run(new Form1());
         }
     }
 }

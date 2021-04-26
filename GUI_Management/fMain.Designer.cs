@@ -37,6 +37,8 @@ namespace GUI_Management
             this.quảnLýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl = new Guna.UI.WinForms.GunaGradient2Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.servicesManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýCôngViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -47,10 +49,11 @@ namespace GUI_Management
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vehicleManagemenyToolStripMenuItem,
-            this.jobsToolStripMenuItem});
+            this.jobsToolStripMenuItem,
+            this.servicesManagementToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(791, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(791, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,9 +97,9 @@ namespace GUI_Management
             this.pnl.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnl.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnl.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.pnl.Location = new System.Drawing.Point(0, 30);
+            this.pnl.Location = new System.Drawing.Point(0, 28);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(791, 466);
+            this.pnl.Size = new System.Drawing.Size(791, 468);
             this.pnl.TabIndex = 1;
             // 
             // axWindowsMediaPlayer1
@@ -107,6 +110,21 @@ namespace GUI_Management
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(514, 305);
             this.axWindowsMediaPlayer1.TabIndex = 0;
+            // 
+            // servicesManagementToolStripMenuItem
+            // 
+            this.servicesManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quảnLýCôngViệcToolStripMenuItem});
+            this.servicesManagementToolStripMenuItem.Name = "servicesManagementToolStripMenuItem";
+            this.servicesManagementToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.servicesManagementToolStripMenuItem.Text = "Services Management";
+            // 
+            // quảnLýCôngViệcToolStripMenuItem
+            // 
+            this.quảnLýCôngViệcToolStripMenuItem.Name = "quảnLýCôngViệcToolStripMenuItem";
+            this.quảnLýCôngViệcToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quảnLýCôngViệcToolStripMenuItem.Text = "Quản Lý Công Việc";
+            this.quảnLýCôngViệcToolStripMenuItem.Click += new System.EventHandler(this.quảnLýCôngViệcToolStripMenuItem_Click);
             // 
             // fMain
             // 
@@ -141,5 +159,7 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaGradient2Panel pnl;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.ToolStripMenuItem quảnLýNhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem servicesManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýCôngViệcToolStripMenuItem;
     }
 }

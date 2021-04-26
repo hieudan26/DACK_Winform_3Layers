@@ -46,5 +46,13 @@ namespace GUI_Management
             form.ShowDialog();
             this.Show();
         }
+
+        private void quảnLýCôngViệcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fQuanLyCongViec form = new fQuanLyCongViec();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }
