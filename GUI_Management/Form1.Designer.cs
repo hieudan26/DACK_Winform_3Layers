@@ -39,11 +39,11 @@ namespace GUI_Management
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.uC_Intro1 = new GUI_Management.UC_Intro();
             this.uC_Signin1 = new GUI_Management.UC_Signin();
             this.uC_Login1 = new GUI_Management.UC_Login();
+            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaShadowPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
@@ -232,6 +232,31 @@ namespace GUI_Management
             this.gunaPanel2.TabIndex = 0;
             this.gunaPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel2_Paint);
             // 
+            // uC_Intro1
+            // 
+            this.uC_Intro1.Location = new System.Drawing.Point(-3, -6);
+            this.uC_Intro1.Name = "uC_Intro1";
+            this.uC_Intro1.Size = new System.Drawing.Size(594, 534);
+            this.uC_Intro1.TabIndex = 2;
+            // 
+            // uC_Signin1
+            // 
+            this.uC_Signin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
+            this.uC_Signin1.Location = new System.Drawing.Point(-3, 0);
+            this.uC_Signin1.Name = "uC_Signin1";
+            this.uC_Signin1.Size = new System.Drawing.Size(594, 528);
+            this.uC_Signin1.TabIndex = 1;
+            this.uC_Signin1.Load += new System.EventHandler(this.uC_Signin1_Load_1);
+            // 
+            // uC_Login1
+            // 
+            this.uC_Login1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(110)))), ((int)(((byte)(114)))));
+            this.uC_Login1.Location = new System.Drawing.Point(-3, 0);
+            this.uC_Login1.Name = "uC_Login1";
+            this.uC_Login1.Size = new System.Drawing.Size(594, 518);
+            this.uC_Login1.TabIndex = 0;
+            this.uC_Login1.Load += new System.EventHandler(this.uC_Login1_Load_1);
+            // 
             // gunaDateTimePicker1
             // 
             this.gunaDateTimePicker1.BackColor = System.Drawing.Color.Transparent;
@@ -267,31 +292,6 @@ namespace GUI_Management
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(694, 645);
             this.gunaPanel1.TabIndex = 6;
-            // 
-            // uC_Intro1
-            // 
-            this.uC_Intro1.Location = new System.Drawing.Point(0, -16);
-            this.uC_Intro1.Name = "uC_Intro1";
-            this.uC_Intro1.Size = new System.Drawing.Size(594, 534);
-            this.uC_Intro1.TabIndex = 2;
-            // 
-            // uC_Signin1
-            // 
-            this.uC_Signin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.uC_Signin1.Location = new System.Drawing.Point(-3, 3);
-            this.uC_Signin1.Name = "uC_Signin1";
-            this.uC_Signin1.Size = new System.Drawing.Size(594, 528);
-            this.uC_Signin1.TabIndex = 1;
-            this.uC_Signin1.Load += new System.EventHandler(this.uC_Signin1_Load_1);
-            // 
-            // uC_Login1
-            // 
-            this.uC_Login1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(110)))), ((int)(((byte)(114)))));
-            this.uC_Login1.Location = new System.Drawing.Point(-3, 3);
-            this.uC_Login1.Name = "uC_Login1";
-            this.uC_Login1.Size = new System.Drawing.Size(594, 515);
-            this.uC_Login1.TabIndex = 0;
-            this.uC_Login1.Load += new System.EventHandler(this.uC_Login1_Load_1);
             // 
             // Form1
             // 

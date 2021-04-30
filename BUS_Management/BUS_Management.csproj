@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="nhanVienBUS.cs" />
     <Compile Include="phiDichVuGuiXeBUS.cs" />
+    <Compile Include="phiDichVuRuaXeBUS.cs" />
     <Compile Include="phiDichVuSuaXeBUS.cs" />
     <Compile Include="phongBanBUS.cs" />
     <Compile Include="Program.cs" />

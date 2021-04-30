@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="nhanVienDAL.cs" />
     <Compile Include="phiDichVuGuiXeDAL.cs" />
+    <Compile Include="phiDichVuRuaXeDAL.cs" />
     <Compile Include="phiDichVuSuaXeDAL.cs" />
     <Compile Include="phongBanDAL.cs" />
     <Compile Include="vehicleDAL.cs" />

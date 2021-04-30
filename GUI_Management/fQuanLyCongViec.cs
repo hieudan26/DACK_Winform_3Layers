@@ -65,5 +65,10 @@ namespace GUI_Management
         {
             this.openChildForm(new fEdit_dichVuSuaXe());
         }
+
+        private void gunaGradientButton3_Click(object sender, EventArgs e)
+        {
+            this.openChildForm(new fEdit_phiRuaXe());
+        }
     }
 }

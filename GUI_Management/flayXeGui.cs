@@ -72,69 +72,167 @@ namespace GUI_Management
         private void cbTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = this.cbTypeFilter.SelectedIndex;
-            if (this.cbTypeFilter.SelectedIndex == 3) // Lọc xe hết hạn
+            if (this.rbNo.Checked == true)
             {
-                this.txtSearch.Text = "";
-                this.LoadProgressBar();
-                DataTable table = this.vehParkingBUS.getVehicleExpired();
-                if (table != null)
+                if (this.cbTypeFilter.SelectedIndex == 3) // Lọc xe hết hạn
                 {
-                    this.designDataGridView(table, 2, 3);
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
-                }    
+                    this.txtSearch.Text = "";
+                    this.LoadProgressBar();
+                    DataTable table = this.vehParkingBUS.getVehicleExpired();
+                    if (table != null)
+                    {
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                }
+                else if (this.cbTypeFilter.SelectedIndex < 3 && this.cbTypeFilter.SelectedIndex >= 0)  // Lọc xe đạp, máy, hơi
+                {
+                    this.txtSearch.Text = "";
+                    this.LoadProgressBar();
+                    DataTable table = this.vehParkingBUS.danhSachXetheoLoai(index);
+                    if (table != null)
+                    {
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                        //MessageBox.Show("" + DateTime.Parse(table.Rows[0]["timeIn"].ToString()));
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                }
+                else if (this.cbTypeFilter.SelectedIndex == 4)  // Lọc xe còn hạn
+                {
+                    this.txtSearch.Text = "";
+                    this.LoadProgressBar();
+                    DataTable table = this.vehParkingBUS.getVehicleNotExpired();
+                    if (table != null)
+                    {
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                }
                 else
                 {
-                    this.dgvXe.DataSource = null;
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    this.LoadProgressBar();
+                    DataTable table = this.vehParkingBUS.getAllVehicle();
+                    if (table != null)
+                    {
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
                 }
-            }   
-            else if (this.cbTypeFilter.SelectedIndex < 3 && this.cbTypeFilter.SelectedIndex >= 0)  // Lọc xe đạp, máy, hơi
-            {
-                this.txtSearch.Text = "";
-                this.LoadProgressBar();
-                DataTable table = this.vehParkingBUS.danhSachXetheoLoai(index);
-                if (table != null)
-                {
-                    this.designDataGridView(table, 2, 3);
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
-                }
-                else
-                {
-                    this.dgvXe.DataSource = null;
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
-                }
-            }
-            else if (this.cbTypeFilter.SelectedIndex == 4 )  // Lọc xe còn hạn
-            {
-                this.txtSearch.Text = "";
-                this.LoadProgressBar();
-                DataTable table = this.vehParkingBUS.getVehicleNotExpired();
-                if (table != null)
-                {
-                    this.designDataGridView(table, 2, 3);
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
-                }
-                else
-                {
-                    this.dgvXe.DataSource = null;
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
-                }
-            }
+            }    
             else
             {
-                this.LoadProgressBar();
-                DataTable table = this.vehParkingBUS.getAllVehicle();
-                if (table != null)
+                //MM/dd/YYYY
+                DateTime dt1 = DateTime.Parse(this.dtP1.Value.ToString("yyyy-MM-dd"));
+                DateTime dt2 = DateTime.Parse(this.dtP2.Value.ToString("yyyy-MM-dd"));
+                if (this.cbTypeFilter.SelectedIndex == 3) // Lọc xe hết hạn
                 {
-                    this.designDataGridView(table, 2, 3);
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    this.txtSearch.Text = "";
+                    this.LoadProgressBar(); 
+                    DataTable table = this.vehParkingBUS.getVehicleExpired();
+                    if (table != null)
+                    {
+                        this.getDataSource_WithDate(table, dt1, dt2);
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                }
+                else if (this.cbTypeFilter.SelectedIndex < 3 && this.cbTypeFilter.SelectedIndex >= 0)  // Lọc xe đạp, máy, hơi
+                {
+                    this.txtSearch.Text = "";
+                    this.LoadProgressBar();
+                    DataTable table = this.vehParkingBUS.danhSachXetheoLoai(index);
+                    if (table != null)
+                    {
+                        this.getDataSource_WithDate(table, dt1, dt2);
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                        //MessageBox.Show("" + DateTime.Parse(table.Rows[0]["timeIn"].ToString()));
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                }
+                else if (this.cbTypeFilter.SelectedIndex == 4)  // Lọc xe còn hạn
+                {
+                    this.txtSearch.Text = "";
+                    this.LoadProgressBar();
+                    DataTable table = this.vehParkingBUS.getVehicleNotExpired();
+                    if (table != null)
+                    {
+                        this.getDataSource_WithDate(table, dt1, dt2);
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
                 }
                 else
                 {
-                    this.dgvXe.DataSource = null;
-                    this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    this.LoadProgressBar();
+                    DataTable table = this.vehParkingBUS.getAllVehicle();
+                    if (table != null)
+                    {
+                        this.getDataSource_WithDate(table, dt1, dt2);
+                        this.designDataGridView(table, 2, 3);
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
+                    else
+                    {
+                        this.dgvXe.DataSource = null;
+                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                    }
                 }
+            }    
+        }
+
+        private DataTable getDataSource_WithDate(DataTable table, DateTime dt1, DateTime dt2)
+        {
+            for (int i = table.Rows.Count - 1; i >= 0; i--)
+            {
+                DataRow item = table.Rows[i];
+                string timeIn_str = DateTime.Parse(item["timeIn"].ToString()).ToString("yyyy-MM-dd");
+                DateTime timeIn = DateTime.Parse(timeIn_str);
+                if ((DateTime.Compare(dt1, timeIn) == 1)
+                    || (DateTime.Compare(dt2, timeIn) == -1))
+                    table.Rows.Remove(item);
             }
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+                return null;
         }
 
         private bool checkHetHan(string id)
@@ -328,7 +426,8 @@ namespace GUI_Management
 
         private void flayXe_Load(object sender, EventArgs e)
         {
-            
+            this.dtP1.Value = DateTime.Now;
+            this.dtP2.Value = DateTime.Now;
         }
 
         private MemoryStream picture(DataTable table, string img)
@@ -402,6 +501,20 @@ namespace GUI_Management
                 timer1.Stop();
                 fLoad.Close();
             }
+        }
+
+        private void rbYes_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cbTypeFilter_SelectedIndexChanged(sender, e);
+            this.dtP1.Enabled = false;
+            this.dtP2.Enabled = false;
+        }
+
+        private void rbNo_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cbTypeFilter_SelectedIndexChanged(sender, e);
+            this.dtP1.Enabled = true;
+            this.dtP2.Enabled = true;
         }
     }
 }

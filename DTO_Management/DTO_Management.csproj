@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="doanhThuWashDTO.cs" />
     <Compile Include="nhanVienDTO.cs" />
+    <Compile Include="phiDichVuRuaXeDTO.cs" />
     <Compile Include="phiDichVuSuaXeDTO.cs" />
     <Compile Include="phiDichVuGuiXeDTO.cs" />
     <Compile Include="phongBanDTO.cs" />
