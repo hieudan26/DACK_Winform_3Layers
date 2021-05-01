@@ -21,6 +21,21 @@ namespace DAL_Management
             return table;
         }
 
+        //get all
+        public DataTable getAll()
+        {
+            SqlCommand cmd = new SqlCommand("select * from CUSTOMER_VEHICLE");
+            DataTable table = this.getcustomer_Vehicle(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }    
+            else
+            {
+                return null;
+            }    
+        }
+
         //insert
         public bool insertcustomer_Vehicle(customer_VehicleDTO customer_VehicleDTO)
         {

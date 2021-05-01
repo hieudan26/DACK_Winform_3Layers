@@ -24,6 +24,27 @@ namespace GUI_Management
             InitializeComponent();
         }
 
+        private DataTable UpdateDanhSachVehID(DataTable tableBu)
+        {
+            DataTable table = this.customer_VehicleBUS.getAll();
+            if (table != null)
+            {
+                for (int i = table.Rows.Count - 1; i >= 0; i--)
+                {
+                    DataRow item = table.Rows[i];
+                    for (int j = tableBu.Rows.Count - 1; j >= 0; j--)
+                    {
+                        DataRow itemBu = tableBu.Rows[j];
+                        if (item["id_Veh"].ToString() == itemBu["id"].ToString())
+                        {
+                            tableBu.Rows.Remove(itemBu);
+                        }    
+                    }
+                }
+            }
+            return tableBu;
+        }
+
         private void flienKetVehicle_Load(object sender, EventArgs e)
         {
             this.Loadcb_Customer();
@@ -32,7 +53,7 @@ namespace GUI_Management
 
         private void Loadcb_Veh()
         {
-            this.cbIDxe.DataSource = this.vehicleParkingBUS.getAllVehicle();
+            this.cbIDxe.DataSource = this.UpdateDanhSachVehID(this.vehicleParkingBUS.getAllVehicle());
             this.cbIDxe.DisplayMember = "id";
             this.cbIDxe.ValueMember = "typePark";
         }
@@ -106,6 +127,7 @@ namespace GUI_Management
                 if (this.customer_VehicleBUS.insertcustomer_Vehicle(customer_VehicleDTO))
                 {
                     MessageBox.Show("Sở hữu xe thành công", "liên kết xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Loadcb_Veh();
                 }    
                 else
                 {
