@@ -30,10 +30,10 @@ namespace GUI_Management
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExit = new System.Windows.Forms.Button();
             this.lb_Content = new System.Windows.Forms.Label();
@@ -50,10 +50,10 @@ namespace GUI_Management
             this.rbNo = new Guna.UI.WinForms.GunaRadioButton();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.dtP1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dtP2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.dtP1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXe)).BeginInit();
             this.panel1.SuspendLayout();
@@ -98,30 +98,30 @@ namespace GUI_Management
             // 
             // dgvXe
             // 
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
-            this.dgvXe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
+            this.dgvXe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvXe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvXe.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dgvXe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvXe.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvXe.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvXe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvXe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvXe.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvXe.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvXe.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvXe.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvXe.EnableHeadersVisualStyles = false;
             this.dgvXe.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
@@ -129,14 +129,14 @@ namespace GUI_Management
             this.dgvXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvXe.Name = "dgvXe";
             this.dgvXe.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvXe.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvXe.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvXe.RowHeadersVisible = false;
             this.dgvXe.RowHeadersWidth = 51;
             this.dgvXe.RowTemplate.Height = 24;
@@ -326,7 +326,6 @@ namespace GUI_Management
             // rbNo
             // 
             this.rbNo.BaseColor = System.Drawing.SystemColors.Control;
-            this.rbNo.Checked = true;
             this.rbNo.CheckedOffColor = System.Drawing.Color.Gray;
             this.rbNo.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.rbNo.FillColor = System.Drawing.Color.Black;
@@ -363,16 +362,39 @@ namespace GUI_Management
             this.panel1.Size = new System.Drawing.Size(1006, 78);
             this.panel1.TabIndex = 34;
             // 
-            // gunaGradient2Panel2
+            // dtP2
             // 
-            this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.Black;
-            this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.WhiteSmoke;
-            this.gunaGradient2Panel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.gunaGradient2Panel2.Location = new System.Drawing.Point(381, 9);
-            this.gunaGradient2Panel2.Name = "gunaGradient2Panel2";
-            this.gunaGradient2Panel2.Size = new System.Drawing.Size(3, 60);
-            this.gunaGradient2Panel2.TabIndex = 3;
+            this.dtP2.BackColor = System.Drawing.Color.Transparent;
+            this.dtP2.BaseColor = System.Drawing.Color.White;
+            this.dtP2.BorderColor = System.Drawing.Color.Silver;
+            this.dtP2.CustomFormat = null;
+            this.dtP2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtP2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtP2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtP2.ForeColor = System.Drawing.Color.Black;
+            this.dtP2.Location = new System.Drawing.Point(725, 27);
+            this.dtP2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtP2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtP2.Name = "dtP2";
+            this.dtP2.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtP2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtP2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtP2.OnPressedColor = System.Drawing.Color.Black;
+            this.dtP2.Radius = 8;
+            this.dtP2.Size = new System.Drawing.Size(250, 30);
+            this.dtP2.TabIndex = 5;
+            this.dtP2.Text = "Friday, April 30, 2021";
+            this.dtP2.Value = new System.DateTime(2021, 4, 30, 23, 14, 47, 882);
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(673, 29);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(46, 23);
+            this.gunaLabel1.TabIndex = 4;
+            this.gunaLabel1.Text = "AND";
             // 
             // dtP1
             // 
@@ -398,39 +420,16 @@ namespace GUI_Management
             this.dtP1.Text = "Friday, April 30, 2021";
             this.dtP1.Value = new System.DateTime(2021, 4, 30, 23, 14, 47, 882);
             // 
-            // gunaLabel1
+            // gunaGradient2Panel2
             // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(673, 29);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(46, 23);
-            this.gunaLabel1.TabIndex = 4;
-            this.gunaLabel1.Text = "AND";
-            // 
-            // dtP2
-            // 
-            this.dtP2.BackColor = System.Drawing.Color.Transparent;
-            this.dtP2.BaseColor = System.Drawing.Color.White;
-            this.dtP2.BorderColor = System.Drawing.Color.Silver;
-            this.dtP2.CustomFormat = null;
-            this.dtP2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtP2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtP2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtP2.ForeColor = System.Drawing.Color.Black;
-            this.dtP2.Location = new System.Drawing.Point(725, 27);
-            this.dtP2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtP2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtP2.Name = "dtP2";
-            this.dtP2.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtP2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtP2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtP2.OnPressedColor = System.Drawing.Color.Black;
-            this.dtP2.Radius = 8;
-            this.dtP2.Size = new System.Drawing.Size(250, 30);
-            this.dtP2.TabIndex = 5;
-            this.dtP2.Text = "Friday, April 30, 2021";
-            this.dtP2.Value = new System.DateTime(2021, 4, 30, 23, 14, 47, 882);
+            this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.Black;
+            this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.WhiteSmoke;
+            this.gunaGradient2Panel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gunaGradient2Panel2.Location = new System.Drawing.Point(381, 9);
+            this.gunaGradient2Panel2.Name = "gunaGradient2Panel2";
+            this.gunaGradient2Panel2.Size = new System.Drawing.Size(3, 60);
+            this.gunaGradient2Panel2.TabIndex = 3;
             // 
             // flayXeGui
             // 

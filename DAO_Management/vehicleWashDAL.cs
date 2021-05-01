@@ -69,7 +69,7 @@ namespace DAL_Management
                 return -1;
         }
 
-        //lay vehicle fix bang id gần đúng
+        //lay vehicle wash bang id gần đúng
         public DataTable getVehicleByID_GanDung(string id)
         {
             SqlCommand cmd = new SqlCommand("Select VEHICLE_WASH.id, VEHICLE_WASH.type, img1, img2 from VEHICLE_WASH inner join VEHICLE on VEHICLE_WASH.id = VEHICLE.id " +

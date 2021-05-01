@@ -114,7 +114,7 @@ namespace DAL_Management
         //get datatable thông tin vehicle fix tất cả
         public DataTable getVehicleFix_info_all()
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE_FIX.id, service, type, img1, img2  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
+            SqlCommand cmd = new SqlCommand("select distinct VEHICLE_FIX.id, type  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
                 return table;

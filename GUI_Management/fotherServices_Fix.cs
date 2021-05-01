@@ -46,26 +46,28 @@ namespace GUI_Management
         }
         //end btn EXIT
 
-        private void designDataGridView(int i1, int i2)
-        {
-            this.dgv.ReadOnly = true;
-            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            DataGridViewImageColumn picCol2 = new DataGridViewImageColumn();
+        //private void designDataGridView(int i1, int i2)
+        //{
+        //    this.dgv.ReadOnly = true;
+        //    DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+        //    DataGridViewImageColumn picCol2 = new DataGridViewImageColumn();
 
-            picCol = (DataGridViewImageColumn)this.dgv.Columns[i1];
-            picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            picCol2 = (DataGridViewImageColumn)this.dgv.Columns[i2];
-            picCol2.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            this.dgv.AllowUserToAddRows = false;
-        }
+        //    picCol = (DataGridViewImageColumn)this.dgv.Columns[i1];
+        //    picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+        //    picCol2 = (DataGridViewImageColumn)this.dgv.Columns[i2];
+        //    picCol2.ImageLayout = DataGridViewImageCellLayout.Stretch;
+        //    this.dgv.AllowUserToAddRows = false;
+        //}
 
         private void fotherServices_Fix_Load(object sender, EventArgs e)
         {
+            this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 80;
+            this.dgv.AllowUserToAddRows = false;
             if (this.vehicleFixBUS.getVehicleFix_info_all() != null)
             {
                 this.dgv.DataSource = this.vehicleFixBUS.getVehicleFix_info_all();
-                this.designDataGridView(3, 4);
+                //this.designDataGridView(3, 4);
             }
             else
                 this.dgv.DataSource = null;

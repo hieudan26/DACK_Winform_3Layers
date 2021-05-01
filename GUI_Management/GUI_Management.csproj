@@ -63,6 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="faddDichVuSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="faddDichVuSua.Designer.cs">
+      <DependentUpon>faddDichVuSua.cs</DependentUpon>
+    </Compile>
     <Compile Include="faddKhach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     <Compile Include="UC_Signin.Designer.cs">
       <DependentUpon>UC_Signin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="faddDichVuSua.resx">
+      <DependentUpon>faddDichVuSua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="faddKhach.resx">
       <DependentUpon>faddKhach.cs</DependentUpon>
     </EmbeddedResource>

@@ -302,5 +302,67 @@ namespace GUI_Management
                 fLoad.Close();
             }
         }
+
+        private string type(int loaiXe)
+        {
+            if (loaiXe == 0)
+            {
+                return "Xe Đạp";
+            }    
+            else if (loaiXe == 1)
+            {
+                return "Xe Máy";
+            }    
+            else
+            {
+                return "Xe Hơi";
+            }    
+        }
+
+        private DataTable table_DichVuChuaDung(string idXe, DataTable tableBu)
+        {
+            try
+            {
+                for (int i = tableBu.Rows.Count - 1; i >= 0; i--)
+                {
+                    DataRow row = tableBu.Rows[i];
+                    string service = row["service"].ToString();
+                    if (this.vehFixBUS.VerifyIDandService_Existed(idXe, service))
+                    {
+                        tableBu.Rows.Remove(row);
+                    }
+                }
+                DataColumn col = tableBu.Columns[0];
+                tableBu.Columns.Remove(col);
+                return tableBu;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
+            return null;
+        }
+
+        private void dgvFix_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //type 2
+                int loaiXe = int.Parse(this.dgvFix.CurrentRow.Cells[2].Value.ToString());
+                faddDichVuSua form = new faddDichVuSua(loaiXe);
+                string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
+                form.txtIDXe.Text = id;
+                form.txtTypeXe.Text = this.type(loaiXe);
+                form.dgvServices.RowTemplate.Height = 30;
+                form.dgvServices.ReadOnly = true;
+                form.dgvServices.DataSource = this.table_DichVuChuaDung(id, this.phiSuaBUS.getDichVu_ByType(loaiXe));
+                form.dgvServices.AllowUserToAddRows = false;
+                this.formQuanLyXeGui.openChildForm(form);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

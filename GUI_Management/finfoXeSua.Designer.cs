@@ -239,6 +239,7 @@ namespace GUI_Management
             this.dgvFix.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
             this.dgvFix.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvFix.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFix_CellClick);
+            this.dgvFix.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFix_CellDoubleClick);
             // 
             // btnSearch
             // 

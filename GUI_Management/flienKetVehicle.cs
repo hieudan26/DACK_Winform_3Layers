@@ -53,20 +53,34 @@ namespace GUI_Management
 
         private void Loadcb_Veh()
         {
-            this.cbIDxe.DataSource = this.UpdateDanhSachVehID(this.vehicleParkingBUS.getAllVehicle());
-            this.cbIDxe.DisplayMember = "id";
-            this.cbIDxe.ValueMember = "typePark";
+            try
+            {
+                this.cbIDxe.DataSource = this.UpdateDanhSachVehID(this.vehicleParkingBUS.getAllVehicle());
+                this.cbIDxe.DisplayMember = "id";
+                this.cbIDxe.ValueMember = "typePark";
+            }    
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
         }
 
         private void Loadcb_Customer()
         {
-            this.textBox1.Visible = false;
-            this.textBox2.Visible = false;
-            this.cbIDCustomer.DataSource = this.customerBUS.getAllCustomer_ChoThue();
-            this.cbIDCustomer.DisplayMember = "id";
-            this.cbIDCustomer.ValueMember = "fname";
+            try
+            {
+                this.textBox1.Visible = false;
+                this.textBox2.Visible = false;
+                this.cbIDCustomer.DataSource = this.customerBUS.getAllCustomer_ChoThue();
+                this.cbIDCustomer.DisplayMember = "id";
+                this.cbIDCustomer.ValueMember = "fname";
 
-            this.LoadTxt_FullName();
+                this.LoadTxt_FullName();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
         }
 
         private void LoadTxt_FullName()
@@ -78,12 +92,26 @@ namespace GUI_Management
 
         private void AddBinding_Fname()
         {
-            this.textBox1.DataBindings.Add(new Binding("Text", this.cbIDCustomer.DataSource, "fname"));
+            try
+            {
+                this.textBox1.DataBindings.Add(new Binding("Text", this.cbIDCustomer.DataSource, "fname"));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
         }
 
         private void AddBinding_Lname()
         {
-            this.textBox2.DataBindings.Add(new Binding("Text", this.cbIDCustomer.DataSource, "lname"));
+            try
+            {
+                this.textBox2.DataBindings.Add(new Binding("Text", this.cbIDCustomer.DataSource, "lname"));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
         }
 
         private void cbIDCustomer_SelectedIndexChanged(object sender, EventArgs e)
