@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL_Management;
-using DAO_Management;
+using GUI_Management;
 using DTO_Management;
 
 namespace BUS_Management

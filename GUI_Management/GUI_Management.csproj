@@ -63,6 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="faddKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="faddKhach.Designer.cs">
+      <DependentUpon>faddKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="faddNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     <Compile Include="finfoXeSua.Designer.cs">
       <DependentUpon>finfoXeSua.cs</DependentUpon>
     </Compile>
+    <Compile Include="flienKetVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flienKetVehicle.Designer.cs">
+      <DependentUpon>flienKetVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="flistNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +170,12 @@
     </Compile>
     <Compile Include="fQuanLyCongViec.Designer.cs">
       <DependentUpon>fQuanLyCongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyHopDong.Designer.cs">
+      <DependentUpon>fQuanLyHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
@@ -238,6 +256,9 @@
     <Compile Include="UC_Signin.Designer.cs">
       <DependentUpon>UC_Signin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="faddKhach.resx">
+      <DependentUpon>faddKhach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="faddNhanVien.resx">
       <DependentUpon>faddNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +286,9 @@
     <EmbeddedResource Include="finfoXeSua.resx">
       <DependentUpon>finfoXeSua.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="flienKetVehicle.resx">
+      <DependentUpon>flienKetVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="flistNhanVien.resx">
       <DependentUpon>flistNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyCongViec.resx">
       <DependentUpon>fQuanLyCongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyHopDong.resx">
+      <DependentUpon>fQuanLyHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>

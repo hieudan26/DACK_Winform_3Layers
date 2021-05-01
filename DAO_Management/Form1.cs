@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DAO_Management
+namespace GUI_Management
 {
     public partial class Form1 : Form
     {

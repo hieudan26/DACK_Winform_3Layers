@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DAL_Management;
 using DTO_Management;
 
-namespace DAO_Management
+namespace GUI_Management
 {
     public class vehicleParkingDAL : MyDB
     {

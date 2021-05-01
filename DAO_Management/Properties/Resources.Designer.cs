@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace DAO_Management.Properties
+namespace GUI_Management.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.

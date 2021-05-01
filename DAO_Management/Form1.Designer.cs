@@ -1,5 +1,5 @@
 ﻿
-namespace DAO_Management
+namespace GUI_Management
 {
     partial class Form1
     {

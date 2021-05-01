@@ -54,5 +54,31 @@ namespace GUI_Management
             form.ShowDialog();
             this.Show();
         }
+
+        private void thêmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            faddKhach form = new faddKhach(0);
+            form.Text = "Khách Thuê Xe Form"; 
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void thêmKháchHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            faddKhach form = new faddKhach(1);
+            form.Text = "Khách Cho Thuê Xe Form";
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void làmHợpĐồngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            flienKetVehicle form = new flienKetVehicle();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }

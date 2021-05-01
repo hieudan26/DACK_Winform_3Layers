@@ -368,3 +368,6 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.fEdit_phiSuaXe.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.fEdit_dichVuSuaXe.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.fEdit_phiRuaXe.resources
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.fQuanLyHopDong.resources
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.faddKhach.resources
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.flienKetVehicle.resources

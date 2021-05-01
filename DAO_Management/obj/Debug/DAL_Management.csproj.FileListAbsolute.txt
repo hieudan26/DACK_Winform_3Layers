@@ -128,3 +128,4 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\DAO_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\DAO_Management\obj\Debug\DAL_Management.csproj.CopyComplete
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\DAO_Management\obj\Debug\DAO_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\DAO_Management\obj\Debug\DAO_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\DAO_Management\bin\Debug\Guna.UI.dll
