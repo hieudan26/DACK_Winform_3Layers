@@ -45,8 +45,8 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO CUSTOMER_VEHICLE(id_Cus, id_Veh)" +
             "VALUES (@id_Cus, @id_Veh)", this.getConnection);
-                cmd.Parameters.Add("@id_Cus", SqlDbType.NVarChar).Value = customer_VehicleDTO.id_Cus;
-                cmd.Parameters.Add("@id_Veh", SqlDbType.NVarChar).Value = customer_VehicleDTO.id_Veh;
+                cmd.Parameters.Add("@id_Cus", SqlDbType.NChar).Value = customer_VehicleDTO.id_Cus;
+                cmd.Parameters.Add("@id_Veh", SqlDbType.NChar).Value = customer_VehicleDTO.id_Veh;
 
                 if (cmd.ExecuteNonQuery() == 1)
                     return true;

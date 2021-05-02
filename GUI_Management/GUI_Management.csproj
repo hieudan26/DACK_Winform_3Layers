@@ -129,6 +129,12 @@
     <Compile Include="finfoXeSua.Designer.cs">
       <DependentUpon>finfoXeSua.cs</DependentUpon>
     </Compile>
+    <Compile Include="flamHopDongChoThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flamHopDongChoThue.Designer.cs">
+      <DependentUpon>flamHopDongChoThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="flienKetVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="finfoXeSua.resx">
       <DependentUpon>finfoXeSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flamHopDongChoThue.resx">
+      <DependentUpon>flamHopDongChoThue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="flienKetVehicle.resx">
       <DependentUpon>flienKetVehicle.cs</DependentUpon>

@@ -67,7 +67,6 @@ namespace GUI_Management
 
         private void designDataGridView(DataTable table, int i1, int i2)
         {
-
             this.dgvFix.RowTemplate.Height = 80;
             this.dgvFix.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
@@ -274,7 +273,7 @@ namespace GUI_Management
                     }
                     else
                     {
-                        this.dgvFix.DataSource = null;
+                        //this.dgvFix.DataSource = null;
                         this.lbCount.Text = "" + this.dgvFix.Rows.Count;
                     }
                 }
@@ -349,14 +348,15 @@ namespace GUI_Management
             {
                 //type 2
                 int loaiXe = int.Parse(this.dgvFix.CurrentRow.Cells[2].Value.ToString());
-                faddDichVuSua form = new faddDichVuSua(loaiXe);
                 string id = this.dgvFix.CurrentRow.Cells[0].Value.ToString();
+                faddDichVuSua form = new faddDichVuSua(this.table_DichVuChuaDung(id, this.phiSuaBUS.getDichVu_ByType(loaiXe)), loaiXe, this.formQuanLyXeGui);
                 form.txtIDXe.Text = id;
                 form.txtTypeXe.Text = this.type(loaiXe);
                 form.dgvServices.RowTemplate.Height = 30;
                 form.dgvServices.ReadOnly = true;
-                form.dgvServices.DataSource = this.table_DichVuChuaDung(id, this.phiSuaBUS.getDichVu_ByType(loaiXe));
+                //form.dgvServices.DataSource = ;
                 form.dgvServices.AllowUserToAddRows = false;
+                form.loadLabelSum();
                 this.formQuanLyXeGui.openChildForm(form);
             }
             catch (Exception ex)

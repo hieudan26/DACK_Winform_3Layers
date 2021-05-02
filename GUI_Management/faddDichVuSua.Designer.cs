@@ -47,6 +47,9 @@ namespace GUI_Management
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.btnClear = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnBack = new Guna.UI.WinForms.GunaButton();
+            this.lbSum1 = new Guna.UI.WinForms.GunaLabel();
+            this.lbSUM2 = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSer_Of_ID)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +60,7 @@ namespace GUI_Management
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.Location = new System.Drawing.Point(303, 9);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(467, 60);
+            this.gunaLabel1.Size = new System.Drawing.Size(458, 59);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "ADD DỊCH VỤ SỬA XE";
             // 
@@ -341,12 +344,59 @@ namespace GUI_Management
             this.btnClear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.AnimationHoverSpeed = 0.07F;
+            this.btnBack.AnimationSpeed = 0.03F;
+            this.btnBack.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
+            this.btnBack.BorderColor = System.Drawing.Color.Black;
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBack.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Image = null;
+            this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBack.Location = new System.Drawing.Point(997, 9);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBack.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBack.OnHoverImage = null;
+            this.btnBack.OnPressedColor = System.Drawing.Color.Transparent;
+            this.btnBack.Size = new System.Drawing.Size(56, 20);
+            this.btnBack.TabIndex = 56;
+            this.btnBack.Text = "Back";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // lbSum1
+            // 
+            this.lbSum1.AutoSize = true;
+            this.lbSum1.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSum1.Location = new System.Drawing.Point(94, 201);
+            this.lbSum1.Name = "lbSum1";
+            this.lbSum1.Size = new System.Drawing.Size(76, 32);
+            this.lbSum1.TabIndex = 57;
+            this.lbSum1.Text = "SUM: ";
+            // 
+            // lbSUM2
+            // 
+            this.lbSUM2.AutoSize = true;
+            this.lbSUM2.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSUM2.Location = new System.Drawing.Point(640, 199);
+            this.lbSUM2.Name = "lbSUM2";
+            this.lbSUM2.Size = new System.Drawing.Size(76, 32);
+            this.lbSUM2.TabIndex = 58;
+            this.lbSUM2.Text = "SUM: ";
+            // 
             // faddDichVuSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1065, 558);
+            this.Controls.Add(this.lbSUM2);
+            this.Controls.Add(this.lbSum1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
@@ -380,5 +430,8 @@ namespace GUI_Management
         public Guna.UI.WinForms.GunaDataGridView dgvServices;
         public Guna.UI.WinForms.GunaDataGridView dgvSer_Of_ID;
         private Guna.UI.WinForms.GunaGradientButton btnClear;
+        private Guna.UI.WinForms.GunaButton btnBack;
+        private Guna.UI.WinForms.GunaLabel lbSum1;
+        private Guna.UI.WinForms.GunaLabel lbSUM2;
     }
 }

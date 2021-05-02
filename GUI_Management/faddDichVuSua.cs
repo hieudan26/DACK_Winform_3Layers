@@ -16,23 +16,29 @@ namespace GUI_Management
     {
         vehicleFixBUS vehicleFixBUS = new vehicleFixBUS();
         phiDichVuSuaXeBUS phiSuaBUS = new phiDichVuSuaXeBUS();
+        fQuanLyXe fQuanLyXe = new fQuanLyXe();
 
         private int typeXe;
         private DataTable table = new DataTable();
+        private DataTable table_services = new DataTable();
 
-        public faddDichVuSua(int type)
+        public faddDichVuSua(DataTable table_service, int type, fQuanLyXe fQuanLyXe)
         {
             InitializeComponent();
+            //this.loadLabelSum();
             this.typeXe = type;
             this.table.Columns.Add("service", typeof(string));
             this.table.Columns.Add("service_fee", typeof(int));
+            this.table_services = table_service;
+            this.dgvServices.DataSource = table_service;
+            this.fQuanLyXe = fQuanLyXe;
         }
 
-        private bool checkDGV(string service)
+        private bool checkDGV(string service, DataTable tab)
         {
-            for (int i = 0; i < this.table.Rows.Count; i++)
+            for (int i = 0; i < tab.Rows.Count; i++)
             {
-                if (this.table.Rows[i][0].ToString() == service)
+                if (tab.Rows[i][0].ToString() == service)
                 {
                     return false;
                 }    
@@ -40,21 +46,76 @@ namespace GUI_Management
             return true;
         }
 
+        private void AddRow(DataGridView dgv1, DataGridView dgv, DataTable tab)
+        {
+            string service = dgv1.CurrentRow.Cells[0].Value.ToString();
+            string service_fee = dgv1.CurrentRow.Cells[1].Value.ToString();
+            DataRow row = tab.NewRow();
+            row["service"] = service;
+            row["service_fee"] = service_fee;
+            tab.Rows.Add(row);
+            dgv.DataSource = tab;
+            dgv.ReadOnly = true;
+            dgv.AllowUserToAddRows = false;
+        }
+
+        public void loadLabelSum()
+        {
+            int sum1 = 0;
+            if (this.dgvServices.DataSource != null)
+            {
+                for (int i = 0; i < this.dgvServices.RowCount; i++)
+                {
+                    sum1 += int.Parse(this.dgvServices[1, i].Value.ToString());
+                }    
+            }
+            this.lbSum1.Text = "SUM: " + sum1.ToString();
+
+            int sum2 = 0;
+            if (this.dgvSer_Of_ID.DataSource != null)
+            {
+                for (int i = 0; i < this.dgvSer_Of_ID.RowCount; i++)
+                {
+                    sum2 += int.Parse(this.dgvSer_Of_ID[1, i].Value.ToString());
+                }
+            }
+            this.lbSUM2.Text = "SUM: " + sum2.ToString();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string service = this.dgvServices.CurrentRow.Cells[0].Value.ToString();
-            string service_fee = this.dgvServices.CurrentRow.Cells[1].Value.ToString();
-
-            if (this.checkDGV(service))
+            try
             {
-                DataRow row = this.table.NewRow();
-                row["service"] = service;
-                row["service_fee"] = service_fee;
-                this.table.Rows.Add(row);
-                this.dgvSer_Of_ID.DataSource = this.table;
-                this.dgvSer_Of_ID.ReadOnly = true;
-                this.dgvSer_Of_ID.AllowUserToAddRows = false;
-            }    
+                if (this.dgvServices.DataSource != null)
+                {
+                    string service = this.dgvServices.CurrentRow.Cells[0].Value.ToString();
+
+                    if (this.checkDGV(service, this.table))
+                    {
+                        this.AddRow(this.dgvServices, this.dgvSer_Of_ID, this.table);
+                    }
+
+                    this.XoaDichVuDGV_Services(this.table_services);
+                    this.loadLabelSum();
+                }    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void XoaDichVuDGV_Services(DataTable tab)
+        {
+            try
+            {
+                tab.Rows.RemoveAt(this.dgvServices.SelectedRows[0].Index);
+                this.dgvServices.DataSource = tab;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
         }
 
         private DataTable table_DichVuChuaDung(string idXe, DataTable tableBu)
@@ -104,6 +165,7 @@ namespace GUI_Management
                     }
                     this.dgvServices.DataSource = this.table_DichVuChuaDung(this.txtIDXe.Text, this.phiSuaBUS.getDichVu_ByType(this.typeXe));
                     this.dgvSer_Of_ID.DataSource = null;
+                    this.loadLabelSum();
                 }
                 catch (Exception ex)
                 {
@@ -115,7 +177,27 @@ namespace GUI_Management
         private void btnClear_Click(object sender, EventArgs e)
         {
             //MyTypedDataRow row = (MyTypedDataRow)((DataRowView)DataGridViewRow.DataBoundItem).Row
-            this.table.Rows.RemoveAt(this.dgvSer_Of_ID.SelectedRows[0].Index);
+            try
+            {
+                string service = this.dgvSer_Of_ID.CurrentRow.Cells[0].Value.ToString();
+                if (this.checkDGV(service, this.table_services))
+                {
+                   this.AddRow(this.dgvSer_Of_ID, this.dgvServices, this.table_services);
+                }    
+                
+                this.table.Rows.RemoveAt(this.dgvSer_Of_ID.SelectedRows[0].Index);
+                this.loadLabelSum();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            finfoXeSua f = new finfoXeSua(this.fQuanLyXe);
+            this.fQuanLyXe.openChildForm(f);
         }
     }
 }

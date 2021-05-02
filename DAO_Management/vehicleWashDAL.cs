@@ -25,7 +25,7 @@ namespace DAL_Management
         public DataTable getStatus(string id)
         {
             SqlCommand cmd = new SqlCommand("select VEHICLE.id, park, fix, wash from VEHICLE_WASH, VEHICLE where VEHICLE_WASH.id = VEHICLE.id and VEHICLE.id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleWash(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -39,7 +39,7 @@ namespace DAL_Management
             try
             {
                 SqlCommand cmd = new SqlCommand("Delete from VEHICLE_WASH where id = @id", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
                 this.openConnection();
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -61,7 +61,7 @@ namespace DAL_Management
         public int getWash_fee(string id)
         {
             SqlCommand cmd = new SqlCommand("Select * from VEHICLE_WASH inner join SERVICE_VEHICLE_WASH on VEHICLE_WASH.type = SERVICE_VEHICLE_WASH.type and VEHICLE_WASH.id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleWash(cmd);
             if (table.Rows.Count > 0)
                 return (int)table.Rows[0]["wash_fee"];
@@ -74,7 +74,7 @@ namespace DAL_Management
         {
             SqlCommand cmd = new SqlCommand("Select VEHICLE_WASH.id, VEHICLE_WASH.type, img1, img2 from VEHICLE_WASH inner join VEHICLE on VEHICLE_WASH.id = VEHICLE.id " +
                 "where VEHICLE.id like N'%" + id + "%'");
-            //cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            //cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleWash(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -114,7 +114,7 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_WASH (id, type)" +
             "VALUES (@id, @type)", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = vel.id;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = vel.id;
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
                 
                 if (cmd.ExecuteNonQuery() == 1)

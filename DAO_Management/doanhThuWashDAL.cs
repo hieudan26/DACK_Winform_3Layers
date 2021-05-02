@@ -63,7 +63,7 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO REVENUE_WASH (id, timeOut, totalFee)" +
             "VALUES (@id, @timeOut, @totalFee)", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = doanhThu.id;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = doanhThu.id;
                 cmd.Parameters.Add("@timeOut", SqlDbType.DateTime).Value = doanhThu.timeOut;
                 cmd.Parameters.Add("@totalFee", SqlDbType.Int).Value = doanhThu.totalFee;
                 if (cmd.ExecuteNonQuery() == 1)

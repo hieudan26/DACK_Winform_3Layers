@@ -66,7 +66,7 @@ namespace GUI_Management
             this.dgv.AllowUserToAddRows = false;
             if (this.vehicleFixBUS.getVehicleFix_info_all() != null)
             {
-                this.dgv.DataSource = this.vehicleFixBUS.getVehicleFix_info_all();
+                this.dgv.DataSource = this.vehicleFixBUS.getVehicleFix_info_all_distinct();
                 //this.designDataGridView(3, 4);
             }
             else

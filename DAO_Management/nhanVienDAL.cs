@@ -47,13 +47,13 @@ namespace DAL_Management
                 this.openConnection();
 
                 SqlCommand cmd = new SqlCommand("update EMPLOYEES set name = @name, departmentId = @deptid, birthdate = @dob, gender = @gender, typeTho = @typeTho, img = @img where id = @id", this.getConnection);
-                cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
-                cmd.Parameters.Add("@deptid", SqlDbType.NVarChar).Value = idDep;
+                cmd.Parameters.Add("@name", SqlDbType.NChar).Value = name;
+                cmd.Parameters.Add("@deptid", SqlDbType.NChar).Value = idDep;
                 cmd.Parameters.Add("@dob", SqlDbType.Date).Value = dob;
-                cmd.Parameters.Add("@gender", SqlDbType.NVarChar).Value = gender;
-                cmd.Parameters.Add("@typeTho", SqlDbType.NVarChar).Value = typeTho;
+                cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
+                cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
                 cmd.Parameters.Add("@img", SqlDbType.Image).Value = img.ToArray();
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = IdEmployee;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IdEmployee;
 
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -77,7 +77,7 @@ namespace DAL_Management
             try
             {
                 SqlCommand cmd = new SqlCommand("delete from EMPLOYEES where id = @id", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = IDEmployee;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDEmployee;
                 this.openConnection();
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -99,7 +99,7 @@ namespace DAL_Management
         public DataTable getEmployee_byID(string id)
         {
             SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
             {
@@ -145,7 +145,7 @@ namespace DAL_Management
         public DataTable getNv_typeTho(string typeTho)
         {
             SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where typeTho = @typeTho");
-            cmd.Parameters.Add("@typeTho", SqlDbType.NVarChar).Value = typeTho;
+            cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
             {
@@ -166,12 +166,12 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEES(id, name, departmentId, birthdate, gender, typeTho, img)" +
             "VALUES (@id, @name, @depId, @birthdate, @gender, @typeTho, @img)", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = nhanVienDTO.id;
-                cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = nhanVienDTO.name;
-                cmd.Parameters.Add("@depId", SqlDbType.NVarChar).Value = nhanVienDTO.departmentId;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = nhanVienDTO.id;
+                cmd.Parameters.Add("@name", SqlDbType.NChar).Value = nhanVienDTO.name;
+                cmd.Parameters.Add("@depId", SqlDbType.NChar).Value = nhanVienDTO.departmentId;
                 cmd.Parameters.Add("@birthdate", SqlDbType.Date).Value = nhanVienDTO.birthdate;
-                cmd.Parameters.Add("@gender", SqlDbType.NVarChar).Value = nhanVienDTO.gender;
-                cmd.Parameters.Add("@typeTho", SqlDbType.NVarChar).Value = nhanVienDTO.typeTho;
+                cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = nhanVienDTO.gender;
+                cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = nhanVienDTO.typeTho;
                 cmd.Parameters.Add("@img", SqlDbType.Image).Value = nhanVienDTO.Img.ToArray();
 
                 if (cmd.ExecuteNonQuery() == 1)

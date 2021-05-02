@@ -27,7 +27,7 @@ namespace DAL_Management
             try
             {
                 SqlCommand cmd = new SqlCommand("Delete from SERVICE_VEHICLE_FIX where service = @service", this.getConnection);
-                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+                cmd.Parameters.Add("@service", SqlDbType.NChar).Value = service;
 
                 this.openConnection();
                 if (cmd.ExecuteNonQuery() == 1)
@@ -55,7 +55,7 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("update SERVICE_VEHICLE_FIX set service_fee = @service_fee where service = @service", this.getConnection);
 
-                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+                cmd.Parameters.Add("@service", SqlDbType.NChar).Value = service;
                 cmd.Parameters.Add("@service_fee", SqlDbType.Int).Value = service_fee;
 
                 if (cmd.ExecuteNonQuery() == 1)
@@ -84,7 +84,7 @@ namespace DAL_Management
                 SqlCommand cmd = new SqlCommand("INSERT INTO SERVICE_VEHICLE_FIX(type, service, service_fee)" +
             "VALUES (@type, @service, @service_fee)", this.getConnection);
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
-                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+                cmd.Parameters.Add("@service", SqlDbType.NChar).Value = service;
                 cmd.Parameters.Add("@service_fee", SqlDbType.Int).Value = fee;
 
                 if (cmd.ExecuteNonQuery() == 1)
@@ -105,7 +105,7 @@ namespace DAL_Management
         {
             string temp = "";
             SqlCommand cmd = new SqlCommand("select service_fee from SERVICE_VEHICLE_FIX where service = @ser");
-            cmd.Parameters.Add("@ser", SqlDbType.NVarChar).Value = service;
+            cmd.Parameters.Add("@ser", SqlDbType.NChar).Value = service;
             DataTable table = this.GetPrice(cmd);
             if (table.Rows.Count > 0)
                 temp = table.Rows[0]["service_fee"].ToString();

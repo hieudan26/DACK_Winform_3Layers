@@ -34,7 +34,7 @@ namespace DAL_Management
             else
                 cmd = new SqlCommand("update VEHICLE set park = @status where id = @id", this.getConnection);
 
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             cmd.Parameters.Add("@status", SqlDbType.Int).Value = status;
 
             this.openConnection();
@@ -64,7 +64,7 @@ namespace DAL_Management
         public bool DeleteVehicle(string id)
         {
             SqlCommand cmd = new SqlCommand("Delete from VEHICLE where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             this.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -82,7 +82,7 @@ namespace DAL_Management
         public bool UpdateInfoVehicle(string id, int loaiXe, MemoryStream img1, MemoryStream img2)
         {
             SqlCommand cmd = new SqlCommand("update VEHICLE set type = @loaiXe, img1 = @img1, img2 = @img2 where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             cmd.Parameters.Add("@loaiXe", SqlDbType.Int).Value = loaiXe;
             cmd.Parameters.Add("@img1", SqlDbType.Image).Value = img1.ToArray();
             cmd.Parameters.Add("@img2", SqlDbType.Image).Value = img2.ToArray();
@@ -103,7 +103,7 @@ namespace DAL_Management
         public DataTable getVehicleByID(string id)
         {
             SqlCommand cmd = new SqlCommand("Select * from VEHICLE where id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
 
             DataTable table = this.getVehicle(cmd);
             return table;
@@ -118,7 +118,7 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE(id,type, img1, img2, park, fix, wash)" +
             "VALUES (@id,@type, @img1,@img2, @park, @fix, @wash)", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = vel.id;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = vel.id;
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.type;
                 cmd.Parameters.Add("@img1", SqlDbType.Image).Value = vel.Img1.ToArray();
                 cmd.Parameters.Add("@img2", SqlDbType.Image).Value = vel.Img2.ToArray();

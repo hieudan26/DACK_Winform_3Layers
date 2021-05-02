@@ -25,7 +25,7 @@ namespace DAL_Management
         public bool ktraLeader(string idleader)
         {
             SqlCommand cmd = new SqlCommand("select * from DEPARTMENT where leaderId = @leaderId");
-            cmd.Parameters.Add("@leaderId", SqlDbType.NVarChar).Value = idleader;
+            cmd.Parameters.Add("@leaderId", SqlDbType.NChar).Value = idleader;
             DataTable table = this.getDepartment(cmd);
             if (table.Rows.Count > 0)
                 return true;
@@ -37,7 +37,7 @@ namespace DAL_Management
         public DataTable getPhongBan_byName(string nameDept)
         {
             SqlCommand cmd = new SqlCommand("select * from DEPARTMENT where name = @nameDept");
-            cmd.Parameters.Add("@nameDept", SqlDbType.NVarChar).Value = nameDept;
+            cmd.Parameters.Add("@nameDept", SqlDbType.NChar).Value = nameDept;
             DataTable table = this.getDepartment(cmd);
             if (table.Rows.Count > 0)
             {
@@ -53,7 +53,7 @@ namespace DAL_Management
         public bool ktraTruongPhong(string idDepartment)
         {
             SqlCommand cmd = new SqlCommand("select * from DEPARTMENT where leaderId is not null and id = @dep_id");
-            cmd.Parameters.Add("@dep_id", SqlDbType.NVarChar).Value = idDepartment;
+            cmd.Parameters.Add("@dep_id", SqlDbType.NChar).Value = idDepartment;
             DataTable table = this.getDepartment(cmd);
             if (table.Rows.Count > 0)
             {
@@ -74,7 +74,7 @@ namespace DAL_Management
                 this.openConnection();
 
                 SqlCommand cmd = new SqlCommand("update DEPARTMENT set leaderId = NULL where id = @idDepartment", this.getConnection);
-                cmd.Parameters.Add("@idDepartment", SqlDbType.NVarChar).Value = idDepartment;
+                cmd.Parameters.Add("@idDepartment", SqlDbType.NChar).Value = idDepartment;
 
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -100,8 +100,8 @@ namespace DAL_Management
                 this.openConnection();
 
                 SqlCommand cmd = new SqlCommand("update DEPARTMENT set leaderId = @leaderID where id = @idDepartment", this.getConnection);
-                cmd.Parameters.Add("@leaderID", SqlDbType.NVarChar).Value = leaderId;
-                cmd.Parameters.Add("@idDepartment", SqlDbType.NVarChar).Value = idDepartment;
+                cmd.Parameters.Add("@leaderID", SqlDbType.NChar).Value = leaderId;
+                cmd.Parameters.Add("@idDepartment", SqlDbType.NChar).Value = idDepartment;
 
                 if (cmd.ExecuteNonQuery() == 1)
                 {

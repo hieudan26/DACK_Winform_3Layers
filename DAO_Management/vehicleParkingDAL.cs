@@ -28,7 +28,7 @@ namespace GUI_Management
         public DataTable getStatus(string id)
         {
             SqlCommand cmd = new SqlCommand("select VEHICLE.id, park, fix, wash from VEHICLE_PARKING, VEHICLE where VEHICLE_PARKING.id = VEHICLE.id and VEHICLE.id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicle(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -40,7 +40,7 @@ namespace GUI_Management
         public bool DeleteVehicle(string id)
         {
             SqlCommand cmd = new SqlCommand("Delete from VEHICLE_PARKING where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             this.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -58,7 +58,7 @@ namespace GUI_Management
         public bool UpdateInfoVehicle(string id,  int loaiGui, DateTime timeIn)
         {
             SqlCommand cmd = new SqlCommand("update VEHICLE_PARKING set typePark = @loaiGui, timeIn = @tI where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             cmd.Parameters.Add("@loaiGui", SqlDbType.Int).Value = loaiGui;
             cmd.Parameters.Add("@tI", SqlDbType.DateTime).Value = timeIn;
 
@@ -255,7 +255,7 @@ namespace GUI_Management
         {
             int type = -1;
             SqlCommand cmd = new SqlCommand("Select * from VEHICLE_PARKING where id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
 
             DataTable table = this.getVehicle(cmd);
             if (table.Rows.Count == 1)
@@ -275,7 +275,7 @@ namespace GUI_Management
         {
             SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id like N'%" + id + "%'");
-            //cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            //cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicle(cmd);
             return table;
         }
@@ -285,7 +285,7 @@ namespace GUI_Management
         {
             SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicle(cmd);
             return table;
         }
@@ -310,7 +310,7 @@ namespace GUI_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_PARKING (id, typePark, timeIn)" +
             "VALUES (@id, @type, @timeIn)", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = vel.id;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = vel.id;
                 cmd.Parameters.Add("@type", SqlDbType.Int).Value = vel.typeGui;
                 cmd.Parameters.Add("@timeIn", SqlDbType.DateTime).Value = vel.ngayGui;
                 if (cmd.ExecuteNonQuery() == 1)

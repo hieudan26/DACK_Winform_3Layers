@@ -45,7 +45,7 @@ namespace DAL_Management
             try
             {
                 SqlCommand cmd = new SqlCommand("delete from CUSTOMER where id = @id", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
                 this.openConnection();
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -71,12 +71,12 @@ namespace DAL_Management
                 this.openConnection();
 
                 SqlCommand cmd = new SqlCommand("update CUSTOMER set fname = @fname, lname = @lname, gender = @gender, address = @address, phone = @phone where id = @id", this.getConnection);
-                cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = customerDTO.fname;
-                cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customerDTO.lname;
-                cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = customerDTO.gender;
+                cmd.Parameters.Add("@fname", SqlDbType.NChar).Value = customerDTO.fname;
+                cmd.Parameters.Add("@lname", SqlDbType.NChar).Value = customerDTO.lname;
+                cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = customerDTO.gender;
                 cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = customerDTO.address;
                 cmd.Parameters.Add("@phone", SqlDbType.Int).Value = customerDTO.phone;
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = customerDTO.id;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = customerDTO.id;
 
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -98,7 +98,7 @@ namespace DAL_Management
         public DataTable getData_byId(string id)
         {
             SqlCommand cmd = new SqlCommand("select * from CUSTOMER where id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getCustomer(cmd);
             if (table.Rows.Count > 0)
             {
@@ -119,10 +119,10 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO CUSTOMER(id, fname, lname, gender, address, phone, status)" +
             "VALUES (@id, @fname, @lname, @gender, @address, @phone, @status)", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = customerDTO.id;
-                cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = customerDTO.fname;
-                cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customerDTO.lname;
-                cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = customerDTO.gender;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = customerDTO.id;
+                cmd.Parameters.Add("@fname", SqlDbType.NChar).Value = customerDTO.fname;
+                cmd.Parameters.Add("@lname", SqlDbType.NChar).Value = customerDTO.lname;
+                cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = customerDTO.gender;
                 cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = customerDTO.address;
                 cmd.Parameters.Add("@phone", SqlDbType.Int).Value = customerDTO.phone;
                 cmd.Parameters.Add("@status", SqlDbType.Int).Value = customerDTO.status;

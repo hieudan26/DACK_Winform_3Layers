@@ -25,7 +25,7 @@ namespace DAL_Management
         public DataTable getStatus(string id)
         {
             SqlCommand cmd = new SqlCommand("select VEHICLE.id, park, fix, wash from VEHICLE_FIX, VEHICLE where VEHICLE_FIX.id = VEHICLE.id and VEHICLE.id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -37,8 +37,8 @@ namespace DAL_Management
         public bool VerifyIDandService_Existed(string id, string service)
         {
             SqlCommand cmd = new SqlCommand("select * from VEHICLE_FIX where id = @id and service = @service", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
-            cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
+            cmd.Parameters.Add("@service", SqlDbType.NChar).Value = service;
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
             {
@@ -56,8 +56,8 @@ namespace DAL_Management
             try
             {
                 SqlCommand cmd = new SqlCommand("Delete from VEHICLE_FIX where id = @id and service = @service", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
-                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = service;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
+                cmd.Parameters.Add("@service", SqlDbType.NChar).Value = service;
                 this.openConnection();
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -80,7 +80,7 @@ namespace DAL_Management
         {
             SqlCommand cmd = new SqlCommand("Select VEHICLE_FIX.id, service, type, img1, img2  from VEHICLE_FIX inner join VEHICLE on VEHICLE_FIX.id = VEHICLE.id " +
                 "where VEHICLE.id like N'%" + id + "%'");
-            //cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            //cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -103,7 +103,7 @@ namespace DAL_Management
         //get datatable thông tin vehicle fix tất cả distinct
         public DataTable getVehicleFix_info_all_distinct()
         {
-            SqlCommand cmd = new SqlCommand("select distinct VEHICLE_FIX.id, type, CAST(img1 AS VARBINARY(8000)) as img1, CAST(img2 AS VARBINARY(8000)) as img2  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
+            SqlCommand cmd = new SqlCommand("select distinct VEHICLE_FIX.id, type from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -114,7 +114,7 @@ namespace DAL_Management
         //get datatable thông tin vehicle fix tất cả
         public DataTable getVehicleFix_info_all()
         {
-            SqlCommand cmd = new SqlCommand("select distinct VEHICLE_FIX.id, type  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
+            SqlCommand cmd = new SqlCommand("select VEHICLE_FIX.id, service, type, img1, img2  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -131,8 +131,8 @@ namespace DAL_Management
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE_FIX (id, service)" +
             "VALUES (@id, @service)", this.getConnection);
-                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = velFIX.id;
-                cmd.Parameters.Add("@service", SqlDbType.NVarChar).Value = velFIX.service;
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = velFIX.id;
+                cmd.Parameters.Add("@service", SqlDbType.NChar).Value = velFIX.service;
                 if (cmd.ExecuteNonQuery() == 1)
                     return true;
             }
