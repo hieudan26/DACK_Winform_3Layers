@@ -17,6 +17,10 @@ namespace GUI_Management
     {
         nhanVienBUS nhanVienBUS = new nhanVienBUS();
         phongBanBUS phongBanBUS = new phongBanBUS();
+        shift_BaoVeBUS shift_BaoVeBUS = new shift_BaoVeBUS();
+        shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
+        shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
+        shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
 
         public finfoNhanVien()
         {
@@ -40,17 +44,59 @@ namespace GUI_Management
             this.pbNhanVien.Image = null;
         }
 
+        private void Reset(string typeTho)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                this.shift_BaoVeBUS.ResetShift_BaoVe();
+            }
+            else if (typeTho == "Thợ Sửa")
+            {
+                this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe();
+            }
+            else if (typeTho == "Thợ Rửa")
+            {
+                this.shift_ThoRuaXeBUS.ResetShift_ThoRuaXe();
+            }
+            else
+            {
+                this.shift_NhanVienBUS.ResetShift_NhanVien();
+            }
+        }
+
+        private void divShift(string typeTho)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                this.shift_BaoVeBUS.chiaCaBaoVe();
+            }
+            else if (typeTho == "Thợ Sửa")
+            {
+                this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
+            }
+            else if (typeTho == "Thợ Rửa")
+            {
+                this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
+            }
+            else
+            {
+                this.shift_NhanVienBUS.chiaCaNhanVien();
+            }
+        }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
             try
             {
                 if (MessageBox.Show("Are you sure ?", "Info Nhân Viên", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    this.Reset(this.cbTypeTho.Text);
                     if (this.rbYes.Checked == true)
                     {
                         if (this.phongBanBUS.reset_leaderId_Department(this.txtId_CMND.Text))
                         {
                             MessageBox.Show("Xóa trưởng phòng thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //this.divShift(this.cbTypeTho.Text);
                         }
                         else
                         {
@@ -61,6 +107,7 @@ namespace GUI_Management
                     {
                         MessageBox.Show("Xóa nhân viên thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.resetForm();
+                        this.divShift(this.cbTypeTho.Text);
                     }
                     else
                     {

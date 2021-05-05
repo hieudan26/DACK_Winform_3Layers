@@ -195,6 +195,12 @@
     <Compile Include="fQuanLyNhanVien.Designer.cs">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="fShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fShift.Designer.cs">
+      <DependentUpon>fShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="fStatics_DTvehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fShift.resx">
+      <DependentUpon>fShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fStatics_DTvehicle.resx">
       <DependentUpon>fStatics_DTvehicle.cs</DependentUpon>

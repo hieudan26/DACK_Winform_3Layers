@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_Management;
+using DTO_Management;
 
 namespace GUI_Management
 {
     public partial class fQuanLyNhanVien : Form
     {
+        
+
         private Form activeForm = null;
         public fQuanLyNhanVien()
         {
@@ -70,6 +74,14 @@ namespace GUI_Management
         private void btnInfoNhanVien_Click(object sender, EventArgs e)
         {
             this.openChildForm(new finfoNhanVien());
+        }
+
+        //tets
+        //shift_BaoVeBUS shift_BaoVeBUS = new shift_BaoVeBUS();
+        //divShiftBUS divShiftBUS = new divShiftBUS();
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            this.openChildForm(new fShift());
         }
     }
 }

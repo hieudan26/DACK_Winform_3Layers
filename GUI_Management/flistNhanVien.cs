@@ -18,6 +18,10 @@ namespace GUI_Management
         nhanVienBUS nhanVienBUS = new nhanVienBUS();
         phongBanBUS phongBanBUS = new phongBanBUS();
         fQuanLyNhanVien fQuanLyNhanVien = new fQuanLyNhanVien();
+        shift_BaoVeBUS shift_BaoVeBUS = new shift_BaoVeBUS();
+        shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
+        shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
+        shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
 
         public flistNhanVien(fQuanLyNhanVien fQuanLy)
         {
@@ -98,19 +102,63 @@ namespace GUI_Management
             }    
         }
 
+        private void Reset(string typeTho)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                this.shift_BaoVeBUS.ResetShift_BaoVe();
+            }
+            else if (typeTho == "Thợ Sửa")
+            {
+                this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe();
+            }    
+            else if (typeTho == "Thợ Rửa")
+            {
+                this.shift_ThoRuaXeBUS.ResetShift_ThoRuaXe();
+            }    
+            else
+            {
+                this.shift_NhanVienBUS.ResetShift_NhanVien();
+            }    
+        }
+        
+        private void divShift(string typeTho)
+        {
+            if (typeTho == "Bảo Vệ")
+            {   
+                this.shift_BaoVeBUS.chiaCaBaoVe();
+            }
+            else if (typeTho == "Thợ Sửa")
+            {
+                this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
+            }
+            else if (typeTho == "Thợ Rửa")
+            {
+                 this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
+            }
+            else
+            {
+                this.shift_NhanVienBUS.chiaCaNhanVien();
+            }
+        }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
             try
             {
                 string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
                 string id_dept = this.dgv.CurrentRow.Cells[2].Value.ToString();
+                string typeTho = this.dgv.CurrentRow.Cells[5].Value.ToString().Trim();
 
                 if (MessageBox.Show("Are you sure", "List Nhân Viên", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
+                    this.Reset(typeTho);
                     if (this.phongBanBUS.ktraLeader(id))
                     {
                         if (this.phongBanBUS.reset_leaderId_Department(id_dept))
+                        {
                             MessageBox.Show("Xóa Trưởng Phòng Thành Công", "List Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }    
                         else
                             MessageBox.Show("Xóa Trưởng Phòng Không Thành Công", "List Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -118,6 +166,11 @@ namespace GUI_Management
                     if (this.nhanVienBUS.DelEmployee(id))
                     {
                         MessageBox.Show("Xóa Thành Công", "List Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.divShift(typeTho);
+                        this.cbFilter.SelectedIndex = 4;
+                        DataTable table = this.nhanVienBUS.getAllEmployees();
+                        this.dgv.DataSource = table;
+                        this.designDataGridView(6);
                     }
                     else
                     {
@@ -131,7 +184,43 @@ namespace GUI_Management
             }
         }
 
-        private void dgv_DoubleClick(object sender, EventArgs e)
+        private int indexTypeTho(string typeTho)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                return 0;
+            }    
+            else if (typeTho == "Thợ Sửa")
+            {
+                return 1;
+            }    
+            else if (typeTho == "Thợ Rửa")
+            {
+                return 2;
+            }    
+            else
+            {
+                return 3;
+            }    
+        }
+
+        private int indexGender(string gender)
+        {
+            if (gender == "Nam")
+            {
+                return 0;
+            }    
+            else if (gender == "Nữ")
+            {
+                return 1;
+            }    
+            else
+            {
+                return 2;
+            }
+        }
+
+        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             finfoNhanVien form = new finfoNhanVien();
             string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
@@ -142,12 +231,12 @@ namespace GUI_Management
             Byte[] pic = new Byte[0];
             pic = (Byte[])(this.dgv.CurrentRow.Cells[6].Value);
             MemoryStream ms = new MemoryStream(pic);
-
+                
             form.txtId_CMND.Text = id;
             form.txtTenNV.Text = name;
             form.dtpDoB.Value = dob;
-            form.cbSex.Text = gender;
-            form.cbTypeTho.Text = typeTho;
+            form.cbSex.SelectedIndex = this.indexGender(gender);
+            form.cbTypeTho.SelectedIndex = this.indexTypeTho(typeTho);
             form.pbNhanVien.Image = Image.FromStream(ms);
             form.pbNhanVien.SizeMode = PictureBoxSizeMode.StretchImage;
             if (this.phongBanBUS.ktraLeader(id))

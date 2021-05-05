@@ -24,6 +24,17 @@ namespace DAL_Management
             return table;
         }
 
+        //count nhân viên theo loại
+        public int countEmployee_byType(string typeTho)
+        {
+            SqlCommand cmd = new SqlCommand("select count(*) as count from EMPLOYEES where typeTho = @tT");
+            cmd.Parameters.Add("@tT", SqlDbType.NChar).Value = typeTho;
+
+            DataTable table = this.getEmployee(cmd);
+
+            return int.Parse(table.Rows[0]["count"].ToString());
+        }
+
         //update thông tin nhân viên theo id
         public bool UpdateInfoEmployee(string name, DateTime dob, string gender, string typeTho, MemoryStream img,string IdEmployee)
         {

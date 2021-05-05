@@ -198,6 +198,7 @@ namespace GUI_Management
             this.btnSchedule.TabIndex = 8;
             this.btnSchedule.Text = "Lịch Làm Việc";
             this.btnSchedule.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // btnAddEmployee
             // 

@@ -217,7 +217,7 @@ namespace GUI_Management
             this.dgv.ThemeStyle.RowsStyle.Height = 24;
             this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
             // 
             // btnRemove
             // 

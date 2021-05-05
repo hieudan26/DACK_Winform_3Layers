@@ -49,6 +49,7 @@
     <Compile Include="AccountBUS.cs" />
     <Compile Include="customerBUS.cs" />
     <Compile Include="customer_VehicleBUS.cs" />
+    <Compile Include="shift_BaoVeBUS.cs" />
     <Compile Include="doanhThuFixBUS.cs" />
     <Compile Include="doanhThuParkingBUS.cs" />
     <Compile Include="doanhThuWashBUS.cs" />
@@ -65,6 +66,9 @@
     <Compile Include="phongBanBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="shift_NhanVienBUS.cs" />
+    <Compile Include="shift_ThoRuaXeBUS.cs" />
+    <Compile Include="shift_ThoSuaXeBUS.cs" />
     <Compile Include="vehicleBUS.cs" />
     <Compile Include="vehicleFixBUS.cs" />
     <Compile Include="vehicleParkingBUS.cs" />

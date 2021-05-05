@@ -68,6 +68,11 @@
     <Compile Include="phiDichVuRuaXeDAL.cs" />
     <Compile Include="phiDichVuSuaXeDAL.cs" />
     <Compile Include="phongBanDAL.cs" />
+    <Compile Include="Properties\vehicleWashBUS.cs" />
+    <Compile Include="shift_BaoVeDAL.cs" />
+    <Compile Include="shift_NhanVienDAL.cs" />
+    <Compile Include="shift_ThoRuaXeDAL.cs" />
+    <Compile Include="shift_ThoSuaXeDAL.cs" />
     <Compile Include="vehicleDAL.cs" />
     <Compile Include="MyDB.cs" />
     <Compile Include="Program.cs" />

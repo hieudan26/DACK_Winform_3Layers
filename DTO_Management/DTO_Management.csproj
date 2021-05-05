@@ -63,6 +63,10 @@
     <Compile Include="phiDichVuSuaXeDTO.cs" />
     <Compile Include="phiDichVuGuiXeDTO.cs" />
     <Compile Include="phongBanDTO.cs" />
+    <Compile Include="shift_BaoVeDTO.cs" />
+    <Compile Include="shift_NhanVienDTO.cs" />
+    <Compile Include="shift_ThoRuaXeDTO.cs" />
+    <Compile Include="shift_ThoSuaXeDTO.cs" />
     <Compile Include="vehicleDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

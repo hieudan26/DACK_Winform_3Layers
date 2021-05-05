@@ -71,7 +71,7 @@ namespace GUI_Management
             // 
             this.panel1.Controls.Add(this.rbNo);
             this.panel1.Controls.Add(this.rbYes);
-            this.panel1.Location = new System.Drawing.Point(219, 205);
+            this.panel1.Location = new System.Drawing.Point(219, 223);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 73);
             this.panel1.TabIndex = 49;
@@ -104,7 +104,7 @@ namespace GUI_Management
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 229);
+            this.label5.Location = new System.Drawing.Point(41, 247);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 25);
             this.label5.TabIndex = 48;
@@ -121,7 +121,7 @@ namespace GUI_Management
             this.dtpDoB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDoB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dtpDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDoB.Location = new System.Drawing.Point(219, 300);
+            this.dtpDoB.Location = new System.Drawing.Point(219, 318);
             this.dtpDoB.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDoB.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDoB.Name = "dtpDoB";
@@ -142,7 +142,7 @@ namespace GUI_Management
             this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.DarkTurquoise;
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.White;
             this.gunaGradient2Panel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.gunaGradient2Panel1.Location = new System.Drawing.Point(562, 145);
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(562, 163);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
             this.gunaGradient2Panel1.Size = new System.Drawing.Size(5, 340);
             this.gunaGradient2Panel1.TabIndex = 46;
@@ -162,7 +162,7 @@ namespace GUI_Management
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = null;
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEdit.Location = new System.Drawing.Point(562, 548);
+            this.btnEdit.Location = new System.Drawing.Point(599, 566);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnEdit.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -193,7 +193,7 @@ namespace GUI_Management
             "Thợ Sửa",
             "Thợ Rửa",
             "Nhân Viên"});
-            this.cbTypeTho.Location = new System.Drawing.Point(219, 461);
+            this.cbTypeTho.Location = new System.Drawing.Point(219, 479);
             this.cbTypeTho.Name = "cbTypeTho";
             this.cbTypeTho.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTypeTho.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -215,7 +215,7 @@ namespace GUI_Management
             "Nam",
             "Nữ",
             "Khác"});
-            this.cbSex.Location = new System.Drawing.Point(219, 383);
+            this.cbSex.Location = new System.Drawing.Point(219, 401);
             this.cbSex.Name = "cbSex";
             this.cbSex.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbSex.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -229,7 +229,7 @@ namespace GUI_Management
             this.txtId_CMND.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtId_CMND.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtId_CMND.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtId_CMND.Location = new System.Drawing.Point(701, 150);
+            this.txtId_CMND.Location = new System.Drawing.Point(716, 162);
             this.txtId_CMND.Name = "txtId_CMND";
             this.txtId_CMND.PasswordChar = '\0';
             this.txtId_CMND.SelectedText = "";
@@ -243,7 +243,7 @@ namespace GUI_Management
             this.txtTenNV.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenNV.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtTenNV.Location = new System.Drawing.Point(219, 145);
+            this.txtTenNV.Location = new System.Drawing.Point(219, 163);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.PasswordChar = '\0';
             this.txtTenNV.SelectedText = "";
@@ -263,7 +263,7 @@ namespace GUI_Management
             this.btnUpImg.ForeColor = System.Drawing.Color.Black;
             this.btnUpImg.Image = null;
             this.btnUpImg.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpImg.Location = new System.Drawing.Point(700, 456);
+            this.btnUpImg.Location = new System.Drawing.Point(715, 468);
             this.btnUpImg.Name = "btnUpImg";
             this.btnUpImg.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnUpImg.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -280,7 +280,7 @@ namespace GUI_Management
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(695, 248);
+            this.label9.Location = new System.Drawing.Point(710, 260);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(323, 25);
             this.label9.TabIndex = 39;
@@ -288,7 +288,7 @@ namespace GUI_Management
             // 
             // pbNhanVien
             // 
-            this.pbNhanVien.Location = new System.Drawing.Point(701, 295);
+            this.pbNhanVien.Location = new System.Drawing.Point(716, 307);
             this.pbNhanVien.Name = "pbNhanVien";
             this.pbNhanVien.Size = new System.Drawing.Size(332, 155);
             this.pbNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -299,7 +299,7 @@ namespace GUI_Management
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(42, 467);
+            this.label7.Location = new System.Drawing.Point(42, 485);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 25);
             this.label7.TabIndex = 37;
@@ -309,7 +309,7 @@ namespace GUI_Management
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(599, 155);
+            this.label6.Location = new System.Drawing.Point(614, 167);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 25);
             this.label6.TabIndex = 36;
@@ -319,7 +319,7 @@ namespace GUI_Management
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(41, 389);
+            this.label4.Location = new System.Drawing.Point(41, 407);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 25);
             this.label4.TabIndex = 35;
@@ -339,7 +339,7 @@ namespace GUI_Management
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 150);
+            this.label2.Location = new System.Drawing.Point(42, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 25);
             this.label2.TabIndex = 33;
@@ -360,7 +360,7 @@ namespace GUI_Management
             this.btnFind.ForeColor = System.Drawing.Color.Black;
             this.btnFind.Image = null;
             this.btnFind.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFind.Location = new System.Drawing.Point(957, 150);
+            this.btnFind.Location = new System.Drawing.Point(972, 162);
             this.btnFind.Name = "btnFind";
             this.btnFind.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnFind.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -390,7 +390,7 @@ namespace GUI_Management
             this.btnRemove.ForeColor = System.Drawing.Color.Black;
             this.btnRemove.Image = null;
             this.btnRemove.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRemove.Location = new System.Drawing.Point(802, 548);
+            this.btnRemove.Location = new System.Drawing.Point(859, 566);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnRemove.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -410,7 +410,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(1094, 633);
+            this.ClientSize = new System.Drawing.Size(1112, 635);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.panel1);
