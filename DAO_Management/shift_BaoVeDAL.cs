@@ -20,6 +20,24 @@ namespace DAL_Management
             adapter.Fill(table);
             return table;
         }
+
+        public DataTable getIdName_ByCaThu(int Ca, string Thu)
+        {
+            SqlCommand cmd = new SqlCommand("select id, name from SHIFT_BaoVe, EMPLOYEES where id = id_NV and " + Thu + " = @Ca");
+            cmd.Parameters.Add("@Ca", SqlDbType.Int).Value = Ca;
+
+            DataTable table = this.getALL(cmd);
+           
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }    
+            else
+            {
+                return null;
+            }    
+        }
+
         //Reset
         public bool ResetShift_BaoVe()
         {

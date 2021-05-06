@@ -34,9 +34,9 @@ namespace GUI_Management
             this.label3 = new System.Windows.Forms.Label();
             this.llb_BaoVe = new Guna.UI.WinForms.GunaLinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbCa1 = new Guna.UI.WinForms.GunaRadioButton();
-            this.rbCa2 = new Guna.UI.WinForms.GunaRadioButton();
             this.rbCa3 = new Guna.UI.WinForms.GunaRadioButton();
+            this.rbCa2 = new Guna.UI.WinForms.GunaRadioButton();
+            this.rbCa1 = new Guna.UI.WinForms.GunaRadioButton();
             this.llb_SuaXe = new Guna.UI.WinForms.GunaLinkLabel();
             this.llb_RuaXe = new Guna.UI.WinForms.GunaLinkLabel();
             this.llb_NhanVien = new Guna.UI.WinForms.GunaLinkLabel();
@@ -45,6 +45,7 @@ namespace GUI_Management
             this.listB_RX = new System.Windows.Forms.ListBox();
             this.listB_NV = new System.Windows.Forms.ListBox();
             this.dtPicker = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.btnSche = new Guna.UI.WinForms.GunaGradientButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(260, 9);
+            this.label1.Location = new System.Drawing.Point(282, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(558, 106);
             this.label1.TabIndex = 7;
@@ -78,7 +79,7 @@ namespace GUI_Management
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label3.Location = new System.Drawing.Point(900, 9);
+            this.label3.Location = new System.Drawing.Point(918, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 106);
             this.label3.TabIndex = 9;
@@ -109,19 +110,19 @@ namespace GUI_Management
             this.panel1.Size = new System.Drawing.Size(517, 37);
             this.panel1.TabIndex = 11;
             // 
-            // rbCa1
+            // rbCa3
             // 
-            this.rbCa1.BaseColor = System.Drawing.SystemColors.Control;
-            this.rbCa1.CheckedOffColor = System.Drawing.Color.Gray;
-            this.rbCa1.CheckedOnColor = System.Drawing.Color.White;
-            this.rbCa1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.rbCa1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCa1.ForeColor = System.Drawing.Color.Black;
-            this.rbCa1.Location = new System.Drawing.Point(3, 3);
-            this.rbCa1.Name = "rbCa1";
-            this.rbCa1.Size = new System.Drawing.Size(83, 28);
-            this.rbCa1.TabIndex = 12;
-            this.rbCa1.Text = "CA 1";
+            this.rbCa3.BaseColor = System.Drawing.SystemColors.Control;
+            this.rbCa3.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rbCa3.CheckedOnColor = System.Drawing.Color.White;
+            this.rbCa3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rbCa3.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCa3.ForeColor = System.Drawing.Color.Black;
+            this.rbCa3.Location = new System.Drawing.Point(431, 3);
+            this.rbCa3.Name = "rbCa3";
+            this.rbCa3.Size = new System.Drawing.Size(83, 28);
+            this.rbCa3.TabIndex = 14;
+            this.rbCa3.Text = "CA 3";
             // 
             // rbCa2
             // 
@@ -137,19 +138,19 @@ namespace GUI_Management
             this.rbCa2.TabIndex = 13;
             this.rbCa2.Text = "CA 2";
             // 
-            // rbCa3
+            // rbCa1
             // 
-            this.rbCa3.BaseColor = System.Drawing.SystemColors.Control;
-            this.rbCa3.CheckedOffColor = System.Drawing.Color.Gray;
-            this.rbCa3.CheckedOnColor = System.Drawing.Color.White;
-            this.rbCa3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.rbCa3.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCa3.ForeColor = System.Drawing.Color.Black;
-            this.rbCa3.Location = new System.Drawing.Point(431, 3);
-            this.rbCa3.Name = "rbCa3";
-            this.rbCa3.Size = new System.Drawing.Size(83, 28);
-            this.rbCa3.TabIndex = 14;
-            this.rbCa3.Text = "CA 3";
+            this.rbCa1.BaseColor = System.Drawing.SystemColors.Control;
+            this.rbCa1.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rbCa1.CheckedOnColor = System.Drawing.Color.White;
+            this.rbCa1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rbCa1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCa1.ForeColor = System.Drawing.Color.Black;
+            this.rbCa1.Location = new System.Drawing.Point(3, 3);
+            this.rbCa1.Name = "rbCa1";
+            this.rbCa1.Size = new System.Drawing.Size(83, 28);
+            this.rbCa1.TabIndex = 12;
+            this.rbCa1.Text = "CA 1";
             // 
             // llb_SuaXe
             // 
@@ -200,7 +201,7 @@ namespace GUI_Management
             // 
             this.listB_BV.FormattingEnabled = true;
             this.listB_BV.ItemHeight = 16;
-            this.listB_BV.Location = new System.Drawing.Point(12, 277);
+            this.listB_BV.Location = new System.Drawing.Point(12, 265);
             this.listB_BV.Name = "listB_BV";
             this.listB_BV.Size = new System.Drawing.Size(216, 308);
             this.listB_BV.TabIndex = 59;
@@ -209,28 +210,31 @@ namespace GUI_Management
             // 
             this.listB_SX.FormattingEnabled = true;
             this.listB_SX.ItemHeight = 16;
-            this.listB_SX.Location = new System.Drawing.Point(290, 277);
+            this.listB_SX.Location = new System.Drawing.Point(290, 265);
             this.listB_SX.Name = "listB_SX";
             this.listB_SX.Size = new System.Drawing.Size(228, 308);
             this.listB_SX.TabIndex = 60;
+            this.listB_SX.Visible = false;
             // 
             // listB_RX
             // 
             this.listB_RX.FormattingEnabled = true;
             this.listB_RX.ItemHeight = 16;
-            this.listB_RX.Location = new System.Drawing.Point(580, 277);
+            this.listB_RX.Location = new System.Drawing.Point(580, 265);
             this.listB_RX.Name = "listB_RX";
             this.listB_RX.Size = new System.Drawing.Size(228, 308);
             this.listB_RX.TabIndex = 61;
+            this.listB_RX.Visible = false;
             // 
             // listB_NV
             // 
             this.listB_NV.FormattingEnabled = true;
             this.listB_NV.ItemHeight = 16;
-            this.listB_NV.Location = new System.Drawing.Point(872, 277);
+            this.listB_NV.Location = new System.Drawing.Point(872, 265);
             this.listB_NV.Name = "listB_NV";
             this.listB_NV.Size = new System.Drawing.Size(228, 308);
             this.listB_NV.TabIndex = 62;
+            this.listB_NV.Visible = false;
             // 
             // dtPicker
             // 
@@ -258,12 +262,43 @@ namespace GUI_Management
             this.dtPicker.Text = "Wednesday";
             this.dtPicker.Value = new System.DateTime(2021, 5, 5, 16, 34, 40, 642);
             // 
+            // btnSche
+            // 
+            this.btnSche.AnimationHoverSpeed = 0.07F;
+            this.btnSche.AnimationSpeed = 0.03F;
+            this.btnSche.BackColor = System.Drawing.Color.Transparent;
+            this.btnSche.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSche.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSche.BorderColor = System.Drawing.Color.Black;
+            this.btnSche.BorderSize = 1;
+            this.btnSche.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSche.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSche.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSche.ForeColor = System.Drawing.Color.Black;
+            this.btnSche.Image = null;
+            this.btnSche.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSche.Location = new System.Drawing.Point(432, 583);
+            this.btnSche.Name = "btnSche";
+            this.btnSche.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSche.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSche.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSche.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnSche.OnHoverImage = null;
+            this.btnSche.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSche.Radius = 6;
+            this.btnSche.Size = new System.Drawing.Size(267, 42);
+            this.btnSche.TabIndex = 64;
+            this.btnSche.Text = "*   SCHEDULE   *";
+            this.btnSche.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSche.Click += new System.EventHandler(this.btnSche_Click);
+            // 
             // fShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1112, 635);
+            this.Controls.Add(this.btnSche);
             this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.listB_NV);
             this.Controls.Add(this.listB_RX);
@@ -307,5 +342,6 @@ namespace GUI_Management
         private System.Windows.Forms.ListBox listB_RX;
         private System.Windows.Forms.ListBox listB_NV;
         private Guna.UI.WinForms.GunaDateTimePicker dtPicker;
+        private Guna.UI.WinForms.GunaGradientButton btnSche;
     }
 }

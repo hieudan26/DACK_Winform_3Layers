@@ -50,7 +50,11 @@ namespace GUI_Management
             if (this.BD.Series[0].ChartType == System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie)
             {
                 this.BD.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-            }    
+            }  
+            else if (this.BD.Series[0].ChartType == System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column)
+            {
+                this.BD.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            }
             else
             {
                 this.BD.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;

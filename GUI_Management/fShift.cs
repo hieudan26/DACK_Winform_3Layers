@@ -28,37 +28,44 @@ namespace GUI_Management
         private void fShift_Load(object sender, EventArgs e)
         {
             DateTime day = DateTime.Now;
-            //int thu = (int)day.DayOfWeek;
             this.dtPicker.Value = Convert.ToDateTime(day);
         }
 
         private DataTable showName_ID_byDoW(DataTable tableBu, int Ca)
         {
-            int thu = (int)DateTime.Now.DayOfWeek + 1;
-            if (thu == 1)
+            try
             {
-                thu = 8;
-            }
-            //id0, name1, t2 2  ---tableBu
-            //xóa cột thứ ko sài
-            for (int j = 8; j >= 2; j--)
-            {
-                if (j != thu)
+                int thu = (int)DateTime.Now.DayOfWeek + 1;
+                if (thu == 1)
                 {
-                    tableBu.Columns.RemoveAt(j);
+                    thu = 8;
                 }
-            }
-
-            //lấy tên ca
-            for (int i = tableBu.Rows.Count - 1; i >= 0 ; i--)
-            {
-                DataRow item = tableBu.Rows[i];
-                if (int.Parse(item[2].ToString()) != Ca)
+                //id0, name1, t2 2  ---tableBu
+                //xóa cột thứ ko sài
+                for (int j = 8; j >= 2; j--)
                 {
-                    tableBu.Rows.Remove(item);
-                }    
+                    if (j != thu)
+                    {
+                        tableBu.Columns.RemoveAt(j);
+                    }
+                }
+
+                //lấy tên ca
+                for (int i = tableBu.Rows.Count - 1; i >= 0; i--)
+                {
+                    DataRow item = tableBu.Rows[i];
+                    if (int.Parse(item[2].ToString()) != Ca)
+                    {
+                        tableBu.Rows.Remove(item);
+                    }
+                }
+                return tableBu;
             }
-            return tableBu;
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            return null;
         }
 
         private int Ca()
@@ -93,11 +100,18 @@ namespace GUI_Management
                 }
                 else
                 {
-                    this.listB_BV.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    this.listB_BV.DataSource = this.showName_ID_byDoW(this.shift_BaoVeBUS.getALLShift_BaoVe(), ca);
-                    this.listB_BV.ValueMember = "id";
-                    this.listB_BV.DisplayMember = "name";
-                    this.listB_BV.SelectedItem = null;
+                    try
+                    {
+                        this.listB_BV.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_BV.DataSource = this.showName_ID_byDoW(this.shift_BaoVeBUS.getALLShift_BaoVe(), ca);
+                        this.listB_BV.ValueMember = "id";
+                        this.listB_BV.DisplayMember = "name";
+                        this.listB_BV.SelectedItem = null;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }    
             }    
             else
@@ -123,11 +137,18 @@ namespace GUI_Management
                 }
                 else
                 {
-                    this.listB_SX.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    this.listB_SX.DataSource = this.showName_ID_byDoW(this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe(), this.Ca());
-                    this.listB_SX.ValueMember = "id";
-                    this.listB_SX.DisplayMember = "name";
-                    this.listB_SX.SelectedItem = null;
+                    try
+                    {
+                        this.listB_SX.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_SX.DataSource = this.showName_ID_byDoW(this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe(), this.Ca());
+                        this.listB_SX.ValueMember = "id";
+                        this.listB_SX.DisplayMember = "name";
+                        this.listB_SX.SelectedItem = null;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
             }
             else
@@ -153,11 +174,18 @@ namespace GUI_Management
                 }
                 else
                 {
-                    this.listB_RX.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    this.listB_RX.DataSource = this.showName_ID_byDoW(this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe(), this.Ca());
-                    this.listB_RX.ValueMember = "id";
-                    this.listB_RX.DisplayMember = "name";
-                    this.listB_RX.SelectedItem = null;
+                    try
+                    {
+                        this.listB_RX.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_RX.DataSource = this.showName_ID_byDoW(this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe(), this.Ca());
+                        this.listB_RX.ValueMember = "id";
+                        this.listB_RX.DisplayMember = "name";
+                        this.listB_RX.SelectedItem = null;
+                    }    
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: ", ex.Message);
+                    }
                 }
             }
             else
@@ -183,11 +211,18 @@ namespace GUI_Management
                 }
                 else
                 {
-                    this.listB_NV.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    this.listB_NV.DataSource = this.showName_ID_byDoW(this.shift_NhanVienBUS.getALLShift_NhanVien(), this.Ca());
-                    this.listB_NV.ValueMember = "id";
-                    this.listB_NV.DisplayMember = "name";
-                    this.listB_NV.SelectedItem = null;
+                    try
+                    {
+                        this.listB_NV.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_NV.DataSource = this.showName_ID_byDoW(this.shift_NhanVienBUS.getALLShift_NhanVien(), this.Ca());
+                        this.listB_NV.ValueMember = "id";
+                        this.listB_NV.DisplayMember = "name";
+                        this.listB_NV.SelectedItem = null;
+                    }   
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: ", ex.Message);
+                    }
                 }
             }
             else
@@ -197,6 +232,14 @@ namespace GUI_Management
                 this.listB_RX.Visible = true;
                 this.listB_SX.Visible = true;
             }
+        }
+
+        private void btnSche_Click(object sender, EventArgs e)
+        {
+            fSchedule form = new fSchedule();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
     }
 }

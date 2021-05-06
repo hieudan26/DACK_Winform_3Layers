@@ -374,3 +374,4 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Managemen
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.faddDichVuSua.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.flamHopDongChoThue.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.fShift.resources
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v8\GUI_Management\obj\Debug\GUI_Management.fSchedule.resources
