@@ -122,6 +122,100 @@ namespace DAL_Management
             }
         }
 
+        //tìm kiếm hỗn hợp theo gender và gender giữa 2 ngày
+        public DataTable getEmployee_ByIDandNameGenderGender_Giua2Ngay(string ID_name, string gender1, string gender2, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2) and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            cmd.Parameters.Add("@gender1", SqlDbType.NChar).Value = gender1;
+            cmd.Parameters.Add("@gender2", SqlDbType.NChar).Value = gender2;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //tìm kiếm hỗn hợp theo gender và gender
+        public DataTable getEmployee_ByIDandNameGenderGender(string ID_name, string gender1, string gender2)
+        {
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2)");
+            cmd.Parameters.Add("@gender1", SqlDbType.NChar).Value = gender1;
+            cmd.Parameters.Add("@gender2", SqlDbType.NChar).Value = gender2;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //tìm kiếm hỗn hợp theo gender giữa 2 ngày
+        public DataTable getEmployee_ByIDandNameGender_Giua2Ngay(string ID_name, string gender, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //tìm kiếm hỗn hợp theo gender
+        public DataTable getEmployee_ByIDandNameGender(string ID_name, string gender)
+        {
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and gender = @gender");
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //tìm kiếm hỗn hợp giữa 2 ngày
+        public DataTable getEmployee_ByIDandName_Giua2Ngay(string ID_name, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //tìm kiếm hỗn hợp 
         public DataTable getEmployee_ByIDandName(string ID_name)
         {
@@ -137,10 +231,203 @@ namespace DAL_Management
             }    
         }
 
+        //get tất cả nhân viên theo 2giới tính, giữa 2 ngày
+        public DataTable getAllEmployeesGenderAndGender_Giua2Ngay(string gender1, string gender2, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where (gender = @gender or gender = @gen) and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
+            cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get tất cả nhân viên theo 2giới tính
+        public DataTable getAllEmployeesGenderAndGender(string gender1, string gender2)
+        {
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where (gender = @gender or gender = @gen)");
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
+            cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get tất cả nhân viên theo giới tính giữa 2 ngày
+        public DataTable getAllEmployeesGender_Giua2Ngay(string gender, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get tất cả nhân viên theo giới tính
+        public DataTable getAllEmployeesGender(string gender)
+        {
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where gender = @gender");
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get tất cả nhân viên giữa 2 ngày
+        public DataTable getAllEmployees_Giua2Ngay(DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where (birthdate between '" + date1 + "' and '" + date2 + "')");
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //get tất cả nhân viên
         public DataTable getAllEmployees()
         {
             SqlCommand cmd = new SqlCommand("select * from EMPLOYEES");
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get nhân viên theo typeTho và giới tính và giới tính giữa 2 ngày
+        public DataTable getNv_typeThoGenderAndGender_Giua2Ngay(string typeTho, string gender1, string gender2, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where typeTho = @typeTho and (gender = @gender or gender = @gen) and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
+            cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get nhân viên theo typeTho và giới tính và giới tính
+        public DataTable getNv_typeThoGenderAndGender(string typeTho, string gender1, string gender2)
+        {
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where typeTho = @typeTho and (gender = @gender or gender = @gen)");
+            cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
+            cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get nhân viên theo typeTho và giới tính giữa 2 ngày
+        public DataTable getNv_typeThoGender_Giua2Ngay(string typeTho, string gender, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where typeTho = @typeTho and gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get nhân viên theo typeTho và giới tính
+        public DataTable getNv_typeThoGender(string typeTho, string gender)
+        {
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where typeTho = @typeTho and gender = @gender");
+            cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
+            cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
+
+            DataTable table = this.getEmployee(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get nhân viên theo typeTho giữa 2 ngày
+        public DataTable getNv_typeTho_Giua2Ngay(string typeTho, DateTime dt1, DateTime dt2)
+        {
+            string date1 = dt1.ToString("yyyy-MM-dd");
+            string date2 = dt2.ToString("yyyy-MM-dd");
+
+            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where typeTho = @typeTho and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
             {

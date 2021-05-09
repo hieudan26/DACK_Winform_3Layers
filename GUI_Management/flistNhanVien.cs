@@ -51,41 +51,306 @@ namespace GUI_Management
             if (this.cbFilter.SelectedIndex != -1)
             {
                 int index = this.cbFilter.SelectedIndex;
-                if (index == 0)
+                if (this.rbNo.Checked == true)
                 {
-                    string typeTho = "Bảo Vệ";
-                    table = this.nhanVienBUS.getNv_typeTho(typeTho);
-                    this.dgv.DataSource = table;
-                    this.designDataGridView(6);
-                }    
-                else if (index == 1)
+                    if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxKhac.Checked == true && this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true))
+                    {
+                        this.LoadDGV_ordinary(index, table);
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false)
+                    {
+                        this.LoadDGV_Gender(index, table, "Nam");
+                    }
+                    else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == false)
+                    {
+                        this.LoadDGV_Gender(index, table, "Nữ");
+                    }
+                    else if (this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == false)
+                    {
+                        this.LoadDGV_Gender(index, table, "Khác");
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                    {
+                        this.LoadDGV_GenderAndGender(index, table, "Nam", "Nữ");
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                    {
+                        this.LoadDGV_GenderAndGender(index, table, "Nam", "Khác");
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == true)
+                    {
+                        this.LoadDGV_GenderAndGender(index, table, "Nữ", "Khác");
+                    }
+                }   
+                else
                 {
-                    string typeTho = "Thợ Sửa";
-                    table = this.nhanVienBUS.getNv_typeTho(typeTho);
-                    this.dgv.DataSource = table;
-                    this.designDataGridView(6);
-                }    
-                else if (index == 2)
-                {
-                    string typeTho = "Thợ Rửa";
-                    table = this.nhanVienBUS.getNv_typeTho(typeTho);
-                    this.dgv.DataSource = table;
-                    this.designDataGridView(6);
-                }    
-                else if (index == 3)
-                {
-                    string typeTho = "Nhân Viên";
-                    table = this.nhanVienBUS.getNv_typeTho(typeTho);
-                    this.dgv.DataSource = table;
-                    this.designDataGridView(6);
-                }    
-                else 
-                {
-                    table = this.nhanVienBUS.getAllEmployees();
-                    this.dgv.DataSource = table;
-                    this.designDataGridView(6);
+                    if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxKhac.Checked == true && this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true))
+                    {
+                        this.LoadDGV_ordinary_Giua2Ngay(index, table);
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false)
+                    {
+                        this.LoadDGV_Gender_Giua2Ngay(index, table, "Nam");
+                    }
+                    else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == false)
+                    {
+                        this.LoadDGV_Gender_Giua2Ngay(index, table, "Nữ");
+                    }
+                    else if (this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == false)
+                    {
+                        this.LoadDGV_Gender_Giua2Ngay(index, table, "Khác");
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                    {
+                        this.LoadDGV_GenderAndGender_Giua2Ngay(index, table, "Nam", "Nữ");
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                    {
+                        this.LoadDGV_GenderAndGender_Giua2Ngay(index, table, "Nam", "Khác");
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == true)
+                    {
+                        this.LoadDGV_GenderAndGender_Giua2Ngay(index, table, "Nữ", "Khác");
+                    }
                 }    
             }    
+        }
+
+        private void LoadDGV_Gender_Giua2Ngay(int index, DataTable table, string gender)
+        {
+            DateTime dt1 = this.dtp1.Value;
+            DateTime dt2 = this.dtp2.Value;
+
+            if (index == 0)
+            {
+                string typeTho = "Bảo Vệ";
+                table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 1)
+            {
+                string typeTho = "Thợ Sửa";
+                table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 2)
+            {
+                string typeTho = "Thợ Rửa";
+                table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 3)
+            {
+                string typeTho = "Nhân Viên";
+                table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else
+            {
+                table = this.nhanVienBUS.getAllEmployeesGender_Giua2Ngay(gender, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+        }
+
+        private void LoadDGV_GenderAndGender_Giua2Ngay(int index, DataTable table, string gender1, string gender2)
+        {
+            DateTime dt1 = this.dtp1.Value;
+            DateTime dt2 = this.dtp2.Value;
+
+            if (index == 0)
+            {
+                string typeTho = "Bảo Vệ";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 1)
+            {
+                string typeTho = "Thợ Sửa";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 2)
+            {
+                string typeTho = "Thợ Rửa";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 3)
+            {
+                string typeTho = "Nhân Viên";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else
+            {
+                table = this.nhanVienBUS.getAllEmployeesGenderAndGender_Giua2Ngay(gender1, gender2, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+        }
+
+        private void LoadDGV_ordinary_Giua2Ngay(int index, DataTable table)
+        {
+            DateTime dt1 = this.dtp1.Value;
+            DateTime dt2 = this.dtp2.Value;
+
+            if (index == 0)
+            {
+                string typeTho = "Bảo Vệ";
+                table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 1)
+            {
+                string typeTho = "Thợ Sửa";
+                table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 2)
+            {
+                string typeTho = "Thợ Rửa";
+                table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 3)
+            {
+                string typeTho = "Nhân Viên";
+                table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else
+            {
+                table = this.nhanVienBUS.getAllEmployees_Giua2Ngay(dt1, dt2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+        }
+
+        private void LoadDGV_ordinary(int index, DataTable table)
+        {
+            if (index == 0)
+            {
+                string typeTho = "Bảo Vệ";
+                table = this.nhanVienBUS.getNv_typeTho(typeTho);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 1)
+            {
+                string typeTho = "Thợ Sửa";
+                table = this.nhanVienBUS.getNv_typeTho(typeTho);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 2)
+            {
+                string typeTho = "Thợ Rửa";
+                table = this.nhanVienBUS.getNv_typeTho(typeTho);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 3)
+            {
+                string typeTho = "Nhân Viên";
+                table = this.nhanVienBUS.getNv_typeTho(typeTho);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else
+            {
+                table = this.nhanVienBUS.getAllEmployees();
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+        }
+
+        private void LoadDGV_GenderAndGender(int index, DataTable table, string gender1, string gender2)
+        {
+            if (index == 0)
+            {
+                string typeTho = "Bảo Vệ";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 1)
+            {
+                string typeTho = "Thợ Sửa";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 2)
+            {
+                string typeTho = "Thợ Rửa";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 3)
+            {
+                string typeTho = "Nhân Viên";
+                table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else
+            {
+                table = this.nhanVienBUS.getAllEmployeesGenderAndGender(gender1, gender2);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+        }
+
+        private void LoadDGV_Gender(int index, DataTable table, string gender)
+        {
+            if (index == 0)
+            {
+                string typeTho = "Bảo Vệ";
+                table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 1)
+            {
+                string typeTho = "Thợ Sửa";
+                table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 2)
+            {
+                string typeTho = "Thợ Rửa";
+                table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else if (index == 3)
+            {
+                string typeTho = "Nhân Viên";
+                table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
+            else
+            {
+                table = this.nhanVienBUS.getAllEmployeesGender(gender);
+                this.dgv.DataSource = table;
+                this.designDataGridView(6);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -93,7 +358,68 @@ namespace GUI_Management
             if (this.txtSearch.Text != "")
             {
                 this.dgv.RowTemplate.Height = 80;
-                this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandName(this.txtSearch.Text);
+                if (this.rbNo.Checked == true)
+                {
+                    if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == true))
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandName(this.txtSearch.Text);
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGender(this.txtSearch.Text, "Nam");
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == true)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGender(this.txtSearch.Text, "Nữ");
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGender(this.txtSearch.Text, "Khác");
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGenderGender(this.txtSearch.Text, "Nam", "Khác");
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == true)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGenderGender(this.txtSearch.Text, "Nam", "Nữ");
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == true)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGenderGender(this.txtSearch.Text, "Nữ", "Khác");
+                    }
+                }   
+                else
+                {
+                    if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == true))
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandName_Giua2Ngay(this.txtSearch.Text, this.dtp1.Value, this.dtp2.Value);
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGender_Giua2Ngay(this.txtSearch.Text, "Nam", this.dtp1.Value, this.dtp2.Value);
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == true)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGender_Giua2Ngay(this.txtSearch.Text, "Nữ", this.dtp1.Value, this.dtp2.Value);
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGender_Giua2Ngay(this.txtSearch.Text, "Khác", this.dtp1.Value, this.dtp2.Value);
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGenderGender_Giua2Ngay(this.txtSearch.Text, "Nam", "Khác", this.dtp1.Value, this.dtp2.Value);
+                    }
+                    else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == true)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGenderGender_Giua2Ngay(this.txtSearch.Text, "Nam", "Nữ", this.dtp1.Value, this.dtp2.Value);
+                    }
+                    else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == true)
+                    {
+                        this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGenderGender_Giua2Ngay(this.txtSearch.Text, "Nữ", "Khác", this.dtp1.Value, this.dtp2.Value);
+                    }
+                }    
                 this.designDataGridView(6);
             }    
             else
@@ -248,6 +574,356 @@ namespace GUI_Management
                 form.rbNo.Checked = true;
             }
             this.fQuanLyNhanVien.openChildForm(form);
+        }
+
+        private void flistNhanVien_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void checkBoxNam_Click(object sender, EventArgs e)
+        {
+            if (this.cbFilter.SelectedIndex != -1)
+            {
+                DataTable table = new DataTable();
+                if (this.rbNo.Checked == true)
+                {
+                    if (this.checkBoxNam.Checked == true)
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Nam");
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nam", "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nam", "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_ordinary(this.cbFilter.SelectedIndex, table);
+                        }
+                    }
+                    else
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_ordinary(this.cbFilter.SelectedIndex, table);
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nữ", "Khác");
+                        }
+                    }
+                }
+                else
+                {
+                    if (this.checkBoxNam.Checked == true)
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam");
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam", "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam", "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_ordinary_Giua2Ngay(this.cbFilter.SelectedIndex, table);
+                        }
+                    }
+                    else
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_ordinary_Giua2Ngay(this.cbFilter.SelectedIndex, table);
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nữ", "Khác");
+                        }
+                    }
+                }    
+            }
+        }
+
+        private void checkBoxNu_Click(object sender, EventArgs e)
+        {
+            if (this.cbFilter.SelectedIndex != -1)
+            {
+                DataTable table = new DataTable();
+                if (this.rbNo.Checked == true)
+                {
+                    if (this.checkBoxNu.Checked == true)
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNam.Checked == false)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Nữ");
+                        }
+                        else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nam", "Nữ");
+                        }
+                        else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nữ", "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_ordinary(this.cbFilter.SelectedIndex, table);
+                        }
+                    }
+                    else
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_ordinary(this.cbFilter.SelectedIndex, table);
+                        }
+                        else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Nam");
+                        }
+                        else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nam", "Khác");
+                        }
+                    }
+                }    
+                else
+                {
+                    if (this.checkBoxNu.Checked == true)
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNam.Checked == false)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nữ");
+                        }
+                        else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam", "Nữ");
+                        }
+                        else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nữ", "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_ordinary_Giua2Ngay(this.cbFilter.SelectedIndex, table);
+                        }
+                    }
+                    else
+                    {
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_ordinary_Giua2Ngay(this.cbFilter.SelectedIndex, table);
+                        }
+                        else if (this.checkBoxNam.Checked == true && this.checkBoxKhac.Checked == false)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam");
+                        }
+                        else if (this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == true)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam", "Khác");
+                        }
+                    }
+                }    
+            }
+        }
+
+        private void checkBoxKhac_Click(object sender, EventArgs e)
+        {
+            if (this.cbFilter.SelectedIndex != -1)
+            {
+                DataTable table = new DataTable();
+                if (this.rbNo.Checked == true)
+                {
+                    if (this.checkBoxKhac.Checked == true)
+                    {
+                        if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Khác");
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false)
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Khác", "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == true)
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nam", "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_ordinary(this.cbFilter.SelectedIndex, table);
+                        }
+                    }
+                    else
+                    {
+                        if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_ordinary(this.cbFilter.SelectedIndex, table);
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == true)
+                        {
+                            this.LoadDGV_Gender(this.cbFilter.SelectedIndex, table, "Nam");
+                        }
+                        else
+                        {
+                            this.LoadDGV_GenderAndGender(this.cbFilter.SelectedIndex, table, "Nữ", "Nam");
+                        }
+                    }
+                }    
+                else
+                {
+                    if (this.checkBoxKhac.Checked == true)
+                    {
+                        if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Khác");
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false)
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Khác", "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == true)
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam", "Khác");
+                        }
+                        else
+                        {
+                            this.LoadDGV_ordinary_Giua2Ngay(this.cbFilter.SelectedIndex, table);
+                        }
+                    }
+                    else
+                    {
+                        if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false)
+                        {
+                            this.LoadDGV_ordinary_Giua2Ngay(this.cbFilter.SelectedIndex, table);
+                        }
+                        else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nữ");
+                        }
+                        else if (this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == true)
+                        {
+                            this.LoadDGV_Gender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nam");
+                        }
+                        else
+                        {
+                            this.LoadDGV_GenderAndGender_Giua2Ngay(this.cbFilter.SelectedIndex, table, "Nữ", "Nam");
+                        }
+                    }
+                }    
+            }
+        }
+
+        private void rbYes_Click(object sender, EventArgs e)
+        {
+            if (this.cbFilter.SelectedIndex != -1)
+            {
+                this.dgv.RowTemplate.Height = 80;
+                int index = this.cbFilter.SelectedIndex;
+                DataTable table = new DataTable();
+                if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxKhac.Checked == true && this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true))
+                {
+                    this.LoadDGV_ordinary_Giua2Ngay(index, table);
+                }
+                else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false)
+                {
+                    this.LoadDGV_Gender_Giua2Ngay(index, table, "Nam");
+                }
+                else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == false)
+                {
+                    this.LoadDGV_Gender_Giua2Ngay(index, table, "Nữ");
+                }
+                else if (this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == false)
+                {
+                    this.LoadDGV_Gender_Giua2Ngay(index, table, "Khác");
+                }
+                else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                {
+                    this.LoadDGV_GenderAndGender_Giua2Ngay(index, table, "Nam", "Nữ");
+                }
+                else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                {
+                    this.LoadDGV_GenderAndGender_Giua2Ngay(index, table, "Nam", "Khác");
+                }
+                else if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == true)
+                {
+                    this.LoadDGV_GenderAndGender_Giua2Ngay(index, table, "Nữ", "Khác");
+                }
+            }    
+        }
+
+        private void rbNo_Click(object sender, EventArgs e)
+        {
+            if (this.cbFilter.SelectedIndex != -1)
+            {
+                this.dgv.RowTemplate.Height = 80;
+                int index = this.cbFilter.SelectedIndex;
+                DataTable table = new DataTable();
+                if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxKhac.Checked == true && this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true))
+                {
+                    this.LoadDGV_ordinary(index, table);
+                }
+                else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false)
+                {
+                    this.LoadDGV_Gender(index, table, "Nam");
+                }
+                else if (this.checkBoxNu.Checked == true && this.checkBoxNam.Checked == false && this.checkBoxKhac.Checked == false)
+                {
+                    this.LoadDGV_Gender(index, table, "Nữ");
+                }
+                else if (this.checkBoxKhac.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxNam.Checked == false)
+                {
+                    this.LoadDGV_Gender(index, table, "Khác");
+                }
+                else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == false)
+                {
+                    this.LoadDGV_GenderAndGender(index, table, "Nam", "Nữ");
+                }
+                else if (this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == true)
+                {
+                    this.LoadDGV_GenderAndGender(index, table, "Nam", "Khác");
+                }
+                else if (this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == true && this.checkBoxKhac.Checked == true)
+                {
+                    this.LoadDGV_GenderAndGender(index, table, "Nữ", "Khác");
+                }
+            }
         }
     }
 }

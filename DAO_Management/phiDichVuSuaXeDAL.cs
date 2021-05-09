@@ -21,6 +21,23 @@ namespace DAL_Management
             return table;
         }
 
+        public bool Service_Exist(string service)
+        {
+            SqlCommand cmd = new SqlCommand("select * from SERVICE_VEHICLE_FIX where service = @ser", this.getConnection);
+            cmd.Parameters.Add("@ser", SqlDbType.NChar).Value = service;
+
+            DataTable table = this.GetPrice(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //Remove
         public bool DeleteService(string service)
         {
@@ -110,6 +127,22 @@ namespace DAL_Management
             if (table.Rows.Count > 0)
                 temp = table.Rows[0]["service_fee"].ToString();
             return temp;
+        }
+
+        public DataTable getDichVu_All()
+        {
+            SqlCommand cmd = new SqlCommand("select * from SERVICE_VEHICLE_FIX", this.getConnection);
+
+            DataTable table = this.GetPrice(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public DataTable getDichVu_ByType(int type)

@@ -13,6 +13,17 @@ namespace BUS_Management
     {
         customer_VehicleDAL customer_VehicleDAL = new customer_VehicleDAL();
 
+        //get all vehicle by id cus
+        public DataTable getAllVehicle_IdCus(string id_cus)
+        {
+            return this.customer_VehicleDAL.getAllVehicle_IdCus(id_cus);
+        }    
+
+        //get all distinct
+        public DataTable getAll_distinct()
+        {
+            return this.customer_VehicleDAL.getAll_distinct();
+        }
 
         //get all
         public DataTable getAll()

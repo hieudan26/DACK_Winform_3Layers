@@ -46,9 +46,9 @@ namespace GUI_Management
             this.thêmKháchHàngToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.làmHợpĐồngToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánHợpĐồngToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.thanhToánHợpĐồngToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl = new Guna.UI.WinForms.GunaGradient2Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.thanhToánHợpĐồngToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -182,6 +182,13 @@ namespace GUI_Management
             this.thanhToánHợpĐồngToolStripMenuItem1.Name = "thanhToánHợpĐồngToolStripMenuItem1";
             this.thanhToánHợpĐồngToolStripMenuItem1.Size = new System.Drawing.Size(242, 26);
             this.thanhToánHợpĐồngToolStripMenuItem1.Text = "Làm Hợp Đồng";
+            this.thanhToánHợpĐồngToolStripMenuItem1.Click += new System.EventHandler(this.thanhToánHợpĐồngToolStripMenuItem1_Click);
+            // 
+            // thanhToánHợpĐồngToolStripMenuItem2
+            // 
+            this.thanhToánHợpĐồngToolStripMenuItem2.Name = "thanhToánHợpĐồngToolStripMenuItem2";
+            this.thanhToánHợpĐồngToolStripMenuItem2.Size = new System.Drawing.Size(242, 26);
+            this.thanhToánHợpĐồngToolStripMenuItem2.Text = "Thanh Toán Hợp Đồng";
             // 
             // pnl
             // 
@@ -205,12 +212,6 @@ namespace GUI_Management
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(514, 305);
             this.axWindowsMediaPlayer1.TabIndex = 0;
-            // 
-            // thanhToánHợpĐồngToolStripMenuItem2
-            // 
-            this.thanhToánHợpĐồngToolStripMenuItem2.Name = "thanhToánHợpĐồngToolStripMenuItem2";
-            this.thanhToánHợpĐồngToolStripMenuItem2.Size = new System.Drawing.Size(242, 26);
-            this.thanhToánHợpĐồngToolStripMenuItem2.Text = "Thanh Toán Hợp Đồng";
             // 
             // fMain
             // 

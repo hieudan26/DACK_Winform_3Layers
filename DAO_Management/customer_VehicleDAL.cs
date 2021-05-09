@@ -21,6 +21,40 @@ namespace DAL_Management
             return table;
         }
 
+        //get all vehicle by id cus
+        public DataTable getAllVehicle_IdCus(string id_cus)
+        {
+            SqlCommand cmd = new SqlCommand("select * from CUSTOMER_VEHICLE where id_cus = @id");
+
+            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id_cus;
+            
+            DataTable table = this.getcustomer_Vehicle(cmd);
+            
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //get all distinct
+        public DataTable getAll_distinct()
+        {
+            SqlCommand cmd = new SqlCommand("select distinct(id_Cus) from CUSTOMER_VEHICLE");
+            DataTable table = this.getcustomer_Vehicle(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //get all
         public DataTable getAll()
         {

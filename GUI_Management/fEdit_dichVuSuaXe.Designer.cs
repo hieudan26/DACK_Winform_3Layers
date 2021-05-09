@@ -46,6 +46,7 @@ namespace GUI_Management
             this.btnEDIT = new Guna.UI.WinForms.GunaGradientButton();
             this.btnREMOVE = new Guna.UI.WinForms.GunaGradientButton();
             this.cbTxtType = new Guna.UI.WinForms.GunaComboBox();
+            this.lbCount = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +64,7 @@ namespace GUI_Management
             // 
             this.lBoxDichVu.FormattingEnabled = true;
             this.lBoxDichVu.ItemHeight = 16;
-            this.lBoxDichVu.Location = new System.Drawing.Point(807, 166);
+            this.lBoxDichVu.Location = new System.Drawing.Point(807, 132);
             this.lBoxDichVu.Name = "lBoxDichVu";
             this.lBoxDichVu.Size = new System.Drawing.Size(441, 356);
             this.lBoxDichVu.TabIndex = 67;
@@ -73,7 +74,7 @@ namespace GUI_Management
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(802, 120);
+            this.gunaLabel1.Location = new System.Drawing.Point(802, 86);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(199, 28);
             this.gunaLabel1.TabIndex = 68;
@@ -94,8 +95,9 @@ namespace GUI_Management
             this.cbTypeXe.Items.AddRange(new object[] {
             "Xe Đạp",
             "Xe Máy",
-            "Xe Hơi"});
-            this.cbTypeXe.Location = new System.Drawing.Point(1030, 117);
+            "Xe Hơi",
+            "Tất Cả"});
+            this.cbTypeXe.Location = new System.Drawing.Point(1030, 83);
             this.cbTypeXe.Name = "cbTypeXe";
             this.cbTypeXe.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTypeXe.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -105,7 +107,7 @@ namespace GUI_Management
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(901, 539);
+            this.btnNext.Location = new System.Drawing.Point(904, 531);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(56, 37);
             this.btnNext.TabIndex = 70;
@@ -115,7 +117,7 @@ namespace GUI_Management
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(807, 539);
+            this.btnFirst.Location = new System.Drawing.Point(807, 531);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(56, 37);
             this.btnFirst.TabIndex = 71;
@@ -125,7 +127,7 @@ namespace GUI_Management
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(1097, 539);
+            this.btnPrevious.Location = new System.Drawing.Point(1095, 531);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(56, 37);
             this.btnPrevious.TabIndex = 72;
@@ -135,7 +137,7 @@ namespace GUI_Management
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(1192, 539);
+            this.btnLast.Location = new System.Drawing.Point(1192, 531);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(56, 37);
             this.btnLast.TabIndex = 73;
@@ -150,7 +152,7 @@ namespace GUI_Management
             this.txtGiaDichVu.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtGiaDichVu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaDichVu.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtGiaDichVu.Location = new System.Drawing.Point(276, 372);
+            this.txtGiaDichVu.Location = new System.Drawing.Point(282, 339);
             this.txtGiaDichVu.Name = "txtGiaDichVu";
             this.txtGiaDichVu.PasswordChar = '\0';
             this.txtGiaDichVu.SelectedText = "";
@@ -165,7 +167,7 @@ namespace GUI_Management
             this.txtTenDichVu.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTenDichVu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDichVu.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtTenDichVu.Location = new System.Drawing.Point(276, 269);
+            this.txtTenDichVu.Location = new System.Drawing.Point(282, 236);
             this.txtTenDichVu.Name = "txtTenDichVu";
             this.txtTenDichVu.PasswordChar = '\0';
             this.txtTenDichVu.SelectedText = "";
@@ -177,7 +179,7 @@ namespace GUI_Management
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(58, 374);
+            this.gunaLabel3.Location = new System.Drawing.Point(64, 341);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(129, 28);
             this.gunaLabel3.TabIndex = 76;
@@ -187,7 +189,7 @@ namespace GUI_Management
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(58, 269);
+            this.gunaLabel2.Location = new System.Drawing.Point(64, 236);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(94, 28);
             this.gunaLabel2.TabIndex = 75;
@@ -197,7 +199,7 @@ namespace GUI_Management
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.Location = new System.Drawing.Point(58, 168);
+            this.gunaLabel6.Location = new System.Drawing.Point(64, 135);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(89, 28);
             this.gunaLabel6.TabIndex = 74;
@@ -218,7 +220,7 @@ namespace GUI_Management
             this.btnADD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnADD.Image = null;
             this.btnADD.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnADD.Location = new System.Drawing.Point(46, 465);
+            this.btnADD.Location = new System.Drawing.Point(42, 451);
             this.btnADD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnADD.Name = "btnADD";
             this.btnADD.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
@@ -249,7 +251,7 @@ namespace GUI_Management
             this.btnEDIT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnEDIT.Image = null;
             this.btnEDIT.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEDIT.Location = new System.Drawing.Point(317, 465);
+            this.btnEDIT.Location = new System.Drawing.Point(342, 451);
             this.btnEDIT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEDIT.Name = "btnEDIT";
             this.btnEDIT.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
@@ -312,12 +314,22 @@ namespace GUI_Management
             "Xe Đạp",
             "Xe Máy",
             "Xe Hơi"});
-            this.cbTxtType.Location = new System.Drawing.Point(276, 165);
+            this.cbTxtType.Location = new System.Drawing.Point(282, 132);
             this.cbTxtType.Name = "cbTxtType";
             this.cbTxtType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTxtType.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbTxtType.Size = new System.Drawing.Size(197, 32);
             this.cbTxtType.TabIndex = 85;
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.Location = new System.Drawing.Point(900, 491);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(238, 23);
+            this.lbCount.TabIndex = 86;
+            this.lbCount.Text = "Số Lượng Dịch Vụ: 0";
             // 
             // fEdit_dichVuSuaXe
             // 
@@ -325,6 +337,7 @@ namespace GUI_Management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1302, 602);
+            this.Controls.Add(this.lbCount);
             this.Controls.Add(this.cbTxtType);
             this.Controls.Add(this.btnREMOVE);
             this.Controls.Add(this.btnEDIT);
@@ -370,5 +383,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaGradientButton btnEDIT;
         private Guna.UI.WinForms.GunaGradientButton btnREMOVE;
         private Guna.UI.WinForms.GunaComboBox cbTxtType;
+        private Guna.UI.WinForms.GunaLabel lbCount;
     }
 }

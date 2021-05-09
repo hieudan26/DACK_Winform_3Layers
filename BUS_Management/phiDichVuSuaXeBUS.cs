@@ -13,6 +13,12 @@ namespace BUS_Management
     {
         phiDichVuSuaXeDAL phiDAL = new phiDichVuSuaXeDAL();
 
+        //Exist
+        public bool Service_Exist(string service)
+        {
+            return this.phiDAL.Service_Exist(service);
+        }
+
         //Remove
         public bool DeleteService(string service)
         {
@@ -33,6 +39,11 @@ namespace BUS_Management
         public string getFee_byService(string service)
         {
             return this.phiDAL.getFee_byService(service);
+        }
+
+        public DataTable getDichVu_All()
+        {
+            return this.phiDAL.getDichVu_All();
         }
 
         //trả về datatable để load datasource của cbbox

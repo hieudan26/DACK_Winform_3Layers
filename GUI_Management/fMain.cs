@@ -80,5 +80,13 @@ namespace GUI_Management
             form.ShowDialog();
             this.Show();
         }
+
+        private void thanhToánHợpĐồngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            flamHopDongChoThue form = new flamHopDongChoThue();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }

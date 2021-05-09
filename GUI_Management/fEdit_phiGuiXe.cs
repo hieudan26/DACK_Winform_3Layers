@@ -14,6 +14,7 @@ namespace GUI_Management
     public partial class fEdit_phiSuaXe : Form
     {
         phiDichVuGuiXeBUS phiDichVuGuiXeBUS = new phiDichVuGuiXeBUS();
+        private string sThu;
         public fEdit_phiSuaXe()
         {
             InitializeComponent();
@@ -34,18 +35,52 @@ namespace GUI_Management
 
         private void dgvPhiGui_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.txtThu.Text = this.dgvPhiGui.CurrentRow.Cells[0].Value.ToString();
+            this.sThu = this.dgvPhiGui.CurrentRow.Cells[0].Value.ToString();
+            this.txtThu.Text = this.Thu(this.sThu);
             this.txtGio.Text = this.dgvPhiGui.CurrentRow.Cells[1].Value.ToString();
             this.txtNgay.Text = this.dgvPhiGui.CurrentRow.Cells[2].Value.ToString();
             this.txtTuan.Text = this.dgvPhiGui.CurrentRow.Cells[3].Value.ToString();
             this.txtThang.Text = this.dgvPhiGui.CurrentRow.Cells[4].Value.ToString();
         }
 
+        private string Thu(string thu)
+        {
+            int dayofWeek = int.Parse(thu);
+            if (dayofWeek == 2)
+            {
+                return "Hai";
+            }
+            else if (dayofWeek == 3)
+            {
+                return "Ba";
+            }
+            else if (dayofWeek == 4)
+            {
+                return "Tư";
+            }
+            else if (dayofWeek == 5)
+            {
+                return "Năm";
+            }
+            else if (dayofWeek == 6)
+            {
+                return "Sáu";
+            }
+            else if (dayofWeek == 7)
+            {
+                return "Bảy";
+            }    
+            else
+            {
+                return "Chủ Nhật";
+            }    
+        }
+
         private void btnEDIT_Click(object sender, EventArgs e)
         {
             try
             {
-                int thu = int.Parse(this.txtThu.Text);
+                int thu = int.Parse(this.sThu);
                 int gio = int.Parse(this.txtGio.Text);
                 int ngay = int.Parse(this.txtNgay.Text);
                 int tuan = int.Parse(this.txtTuan.Text);

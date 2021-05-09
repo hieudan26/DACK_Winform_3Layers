@@ -116,7 +116,7 @@ namespace GUI_Management
 
         private void cbIDCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.txt_FullName.Text = this.textBox1.Text + " " + this.textBox2.Text;
+            this.txt_FullName.Text = this.textBox1.Text.Trim() + " " + this.textBox2.Text.Trim();
         }
 
         private string LoaiXe(int type)
