@@ -78,7 +78,7 @@ namespace DAL_Management
         //lay vehicle fix bang id gần đúng
         public DataTable getVehicleByID_GanDung(string id)
         {
-            SqlCommand cmd = new SqlCommand("Select VEHICLE_FIX.id, service, type, img1, img2  from VEHICLE_FIX inner join VEHICLE on VEHICLE_FIX.id = VEHICLE.id " +
+            SqlCommand cmd = new SqlCommand("Select VEHICLE_FIX.id as [ID verhicle], service as [Service], type as [Type], img1 as [Image 1], img2 as [Image 2]  from VEHICLE_FIX inner join VEHICLE on VEHICLE_FIX.id = VEHICLE.id " +
                 "where VEHICLE.id like N'%" + id + "%'");
             //cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleFix(cmd);
@@ -91,7 +91,7 @@ namespace DAL_Management
         //get datatable theo type
         public DataTable getVehicleFix_info_byType(int type)
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE_FIX.id, service, type, img1, img2  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id and VEHICLE.type = @type");
+            SqlCommand cmd = new SqlCommand("Select VEHICLE_FIX.id as [ID verhicle], service as [Service], type as [Type], img1 as [Image 1], img2 as [Image 2] from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id and VEHICLE.type = @type");
             cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
@@ -114,7 +114,7 @@ namespace DAL_Management
         //get datatable thông tin vehicle fix tất cả
         public DataTable getVehicleFix_info_all()
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE_FIX.id, service, type, img1, img2  from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
+            SqlCommand cmd = new SqlCommand("Select VEHICLE_FIX.id as [ID verhicle], service as [Service], type as [Type], img1 as [Image 1], img2 as [Image 2]   from VEHICLE_FIX, VEHICLE where VEHICLE.id = VEHICLE_FIX.id");
             DataTable table = this.getVehicleFix(cmd);
             if (table.Rows.Count > 0)
                 return table;

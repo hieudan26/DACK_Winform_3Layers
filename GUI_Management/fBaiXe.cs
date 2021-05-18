@@ -190,10 +190,10 @@ namespace GUI_Management
 
             finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
-            form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
+            form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.pBHinh2.Image = Image.FromStream(this.picture(table, "img2"));
+            form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
             form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             form.txtID.Text = id.ToString();
@@ -218,7 +218,7 @@ namespace GUI_Management
 
             form.txtTongTien.Text = phi_theo_thu.ToString();
 
-            form.txtDTGui.Text = table.Rows[0]["timeIn"].ToString();
+            form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
 
             this.formQuanLyXeGui.openChildForm(form);
         }
@@ -230,10 +230,10 @@ namespace GUI_Management
 
             finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
-            form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
+            form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.pBHinh2.Image = Image.FromStream(this.picture(table, "img2"));
+            form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
             form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             form.txtID.Text = id.ToString();
@@ -256,7 +256,7 @@ namespace GUI_Management
                 phi_theo_thu = this.VehicleBUS.layTienTheoThu(thu, loaiGui);
             }
 
-            form.txtDTGui.Text = table.Rows[0]["timeIn"].ToString();
+            form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
 
             form.txtTongTien.Text = phi_theo_thu.ToString();
 
@@ -270,10 +270,10 @@ namespace GUI_Management
 
             finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "BaiXe");
             DataTable table = this.VehicleBUS.getVehicleByID(id);
-            form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
+            form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.pBHinh2.Image = Image.FromStream(this.picture(table, "img2"));
+            form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
             form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             form.txtID.Text = id.ToString();
@@ -297,7 +297,7 @@ namespace GUI_Management
                 phi_theo_thu = this.VehicleBUS.layTienTheoThu(thu, loaiGui); 
             }
 
-            form.txtDTGui.Text = table.Rows[0]["timeIn"].ToString();
+            form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
 
             form.txtTongTien.Text = phi_theo_thu.ToString();
             

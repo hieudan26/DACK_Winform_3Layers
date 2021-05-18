@@ -74,8 +74,8 @@ namespace GUI_Management
         {
             this.clearpnl();
             DataTable table = this.vehicleWashBUS.getStatus(this.dgv.CurrentRow.Cells[0].Value.ToString());
-            int park = Convert.ToInt32(table.Rows[0]["park"].ToString());
-            int fix = Convert.ToInt32(table.Rows[0]["fix"].ToString());
+            int park = Convert.ToInt32(table.Rows[0]["Park"].ToString());
+            int fix = Convert.ToInt32(table.Rows[0]["Fix"].ToString());
             //int wash = Convert.ToInt32(table.Rows[0]["wash"].ToString());
             if (park == 0)
             {

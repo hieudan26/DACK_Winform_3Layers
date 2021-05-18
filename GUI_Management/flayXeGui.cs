@@ -226,7 +226,7 @@ namespace GUI_Management
             for (int i = table.Rows.Count - 1; i >= 0; i--)
             {
                 DataRow item = table.Rows[i];
-                string timeIn_str = DateTime.Parse(item["timeIn"].ToString()).ToString("yyyy-MM-dd");
+                string timeIn_str = DateTime.Parse(item["Time in"].ToString()).ToString("yyyy-MM-dd");
                 DateTime timeIn = DateTime.Parse(timeIn_str);
                 if ((DateTime.Compare(dt1, timeIn) == 1)
                     || (DateTime.Compare(dt2, timeIn) == -1))
@@ -251,7 +251,7 @@ namespace GUI_Management
             {
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    if (table.Rows[i]["id"].ToString() == id)
+                    if (table.Rows[i]["ID"].ToString() == id)
                     {
                         return true;
                     }
@@ -264,22 +264,22 @@ namespace GUI_Management
         {
             int totalFee;
             int thu = this.xacDinhThu();
-            string loaiGui = this.LoaiGui((int)this.dgvXe.CurrentRow.Cells["typePark"].Value);
+            string loaiGui = this.LoaiGui((int)this.dgvXe.CurrentRow.Cells["Type park"].Value);
             if (!checkHetHan(id))
             {
                 totalFee = this.vehParkingBUS.layTienTheoThu(thu, loaiGui);
             }    
             else
             {
-                if ((int)this.dgvXe.CurrentRow.Cells["typePark"].Value == 0)
+                if ((int)this.dgvXe.CurrentRow.Cells["Type park"].Value == 0)
                 {
                     totalFee = this.vehParkingBUS.layTienTheoThu(thu, "dateFee");
                 }    
-                else if ((int)this.dgvXe.CurrentRow.Cells["typePark"].Value == 1)
+                else if ((int)this.dgvXe.CurrentRow.Cells["Type park"].Value == 1)
                 {
                     totalFee = this.vehParkingBUS.layTienTheoThu(thu, "weekFee");
                 }    
-                else if ((int)this.dgvXe.CurrentRow.Cells["typePark"].Value == 2)
+                else if ((int)this.dgvXe.CurrentRow.Cells["Type park"].Value == 2)
                 {
                     totalFee = this.vehParkingBUS.layTienTheoThu(thu, "monthFee");
                 }    
@@ -304,9 +304,9 @@ namespace GUI_Management
         private bool checkOtherService(string idxe)
         {
             DataTable table = this.vehBUS.getVehicleByID(idxe);
-            int park = int.Parse(table.Rows[0]["park"].ToString());
-            int fix = int.Parse(table.Rows[0]["fix"].ToString());
-            int wash = int.Parse(table.Rows[0]["wash"].ToString());
+            int park = int.Parse(table.Rows[0]["Park"].ToString());
+            int fix = int.Parse(table.Rows[0]["Fix"].ToString());
+            int wash = int.Parse(table.Rows[0]["Wash"].ToString());
             if (park != 0 || fix != 0 || wash != 0)
             {
                 return true;          //đang sài dịch vụ khác không xóa c=khỏi vehicle
@@ -449,10 +449,10 @@ namespace GUI_Management
             finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "LayXeGui");
             string id = this.dgvXe.CurrentRow.Cells[0].Value.ToString();
             DataTable table = this.vehParkingBUS.getVehicleByID(id);
-            form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
+            form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.pBHinh2.Image = Image.FromStream(this.picture(table, "img2"));
+            form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
             form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             form.txtID.Text = id.ToString();
@@ -480,7 +480,7 @@ namespace GUI_Management
             //Xác định thứ trong tuần
             int thu = this.xacDinhThu();
 
-            String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["typePark"].ToString()));
+            String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["Type park"].ToString()));
 
             form.txtLoaiGui.Text = loaiGui;
 
@@ -490,7 +490,7 @@ namespace GUI_Management
                 phi_theo_thu = this.vehParkingBUS.layTienTheoThu(thu, loaiGui);
             }
 
-            form.txtDTGui.Text = table.Rows[0]["timeIn"].ToString();
+            form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
 
             form.txtTongTien.Text = phi_theo_thu.ToString();
 

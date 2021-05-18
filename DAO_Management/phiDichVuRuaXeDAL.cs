@@ -24,7 +24,7 @@ namespace DAL_Management
         //get price by type
         public DataTable getPriceByType(int type)
         {
-            SqlCommand cmd = new SqlCommand("select * from SERVICE_VEHICLE_WASH where type = @type");
+            SqlCommand cmd = new SqlCommand("select type as [Type], wash_fee as [Wash Fee] from SERVICE_VEHICLE_WASH where type = @type");
             cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
             DataTable table = this.GetPrice(cmd);
             if (table.Rows.Count > 0)

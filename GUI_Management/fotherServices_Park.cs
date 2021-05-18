@@ -77,8 +77,8 @@ namespace GUI_Management
             this.clearPnl();
             DataTable table = this.vehicleParkingBUS.getStatus(this.dgv.CurrentRow.Cells[0].Value.ToString());
             //int park = Convert.ToInt32(table.Rows[0]["park"].ToString());
-            int fix = Convert.ToInt32(table.Rows[0]["fix"].ToString());
-            int wash = Convert.ToInt32(table.Rows[0]["wash"].ToString());
+            int fix = Convert.ToInt32(table.Rows[0]["Fix"].ToString());
+            int wash = Convert.ToInt32(table.Rows[0]["Wash"].ToString());
             if (fix == 0)
             {
                 this.sinhbtnFix();
@@ -211,21 +211,21 @@ namespace GUI_Management
             finfoXeGui form = new finfoXeGui(fQuanLy, "Other");
             string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
             DataTable table = this.vehicleParkingBUS.getVehicleByID(id);
-            form.pBHinh1.Image = Image.FromStream(this.picture(table, "img1"));
+            form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
             form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            form.pBHinh2.Image = Image.FromStream(this.picture(table, "img2"));
+            form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
             form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             form.txtID.Text = id.ToString();
 
-            if (int.Parse(table.Rows[0]["type"].ToString()) == 0)
+            if (int.Parse(table.Rows[0]["Type"].ToString()) == 0)
             {
                 form.txtLoaiXe.Text = "Xe Đạp";
                 form.lbHinh1.Text = "Hình Xe";
                 form.lbHinh2.Text = "Người Gửi";
             }
-            else if (int.Parse(table.Rows[0]["type"].ToString()) == 1)
+            else if (int.Parse(table.Rows[0]["Type"].ToString()) == 1)
             {
                 form.txtLoaiXe.Text = "Xe Máy";
                 form.lbHinh1.Text = "Bảng Số";
@@ -242,7 +242,7 @@ namespace GUI_Management
             //Xác định thứ trong tuần
             int thu = this.xacDinhThu();
 
-            String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["typePark"].ToString()));
+            String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["Type park"].ToString()));
 
             form.txtLoaiGui.Text = loaiGui;
 
@@ -252,7 +252,7 @@ namespace GUI_Management
                 phi_theo_thu = this.vehicleParkingBUS.layTienTheoThu(thu, loaiGui);
             }
 
-            form.txtDTGui.Text = table.Rows[0]["timeIn"].ToString();
+            form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
 
             form.txtTongTien.Text = phi_theo_thu.ToString();
 

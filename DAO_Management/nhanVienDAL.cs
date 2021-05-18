@@ -92,7 +92,7 @@ namespace DAL_Management
         //tìm kiếm nhân viên theo id_cmnd
         public DataTable getEmployee_byID(string id)
         {
-            SqlCommand cmd = new SqlCommand("select * from EMPLOYEES where id = @id");
+            SqlCommand cmd = new SqlCommand("select select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
@@ -111,7 +111,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2) and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2) and (birthdate between '" + date1 + "' and '" + date2 + "')");
             cmd.Parameters.Add("@gender1", SqlDbType.NChar).Value = gender1;
             cmd.Parameters.Add("@gender2", SqlDbType.NChar).Value = gender2;
 
@@ -129,7 +129,7 @@ namespace DAL_Management
         //tìm kiếm hỗn hợp theo gender và gender
         public DataTable getEmployee_ByIDandNameGenderGender(string ID_name, string gender1, string gender2)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2)");
+            SqlCommand cmd = new SqlCommand("select select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2)");
             cmd.Parameters.Add("@gender1", SqlDbType.NChar).Value = gender1;
             cmd.Parameters.Add("@gender2", SqlDbType.NChar).Value = gender2;
 
@@ -150,7 +150,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
 
             DataTable table = this.getEmployee(cmd);
@@ -167,7 +167,7 @@ namespace DAL_Management
         //tìm kiếm hỗn hợp theo gender
         public DataTable getEmployee_ByIDandNameGender(string ID_name, string gender)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and gender = @gender");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and gender = @gender");
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
 
             DataTable table = this.getEmployee(cmd);
@@ -187,7 +187,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (birthdate between '" + date1 + "' and '" + date2 + "')");
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
             {
@@ -202,7 +202,7 @@ namespace DAL_Management
         //tìm kiếm hỗn hợp 
         public DataTable getEmployee_ByIDandName(string ID_name)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%'");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%'");
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
             {
@@ -220,7 +220,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where (gender = @gender or gender = @gen) and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where (gender = @gender or gender = @gen) and (birthdate between '" + date1 + "' and '" + date2 + "')");
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
             cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
 
@@ -238,7 +238,7 @@ namespace DAL_Management
         //get tất cả nhân viên theo 2giới tính
         public DataTable getAllEmployeesGenderAndGender(string gender1, string gender2)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where (gender = @gender or gender = @gen)");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where (gender = @gender or gender = @gen)");
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
             cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
 
@@ -259,7 +259,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
 
             DataTable table = this.getEmployee(cmd);
@@ -276,7 +276,7 @@ namespace DAL_Management
         //get tất cả nhân viên theo giới tính
         public DataTable getAllEmployeesGender(string gender)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where gender = @gender");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where gender = @gender");
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
 
             DataTable table = this.getEmployee(cmd);
@@ -296,7 +296,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where (birthdate between '" + date1 + "' and '" + date2 + "')");
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
             {
@@ -311,7 +311,7 @@ namespace DAL_Management
         //get tất cả nhân viên
         public DataTable getAllEmployees()
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES");
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
             {
@@ -329,7 +329,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where typeTho = @typeTho and (gender = @gender or gender = @gen) and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where typeTho = @typeTho and (gender = @gender or gender = @gen) and (birthdate between '" + date1 + "' and '" + date2 + "')");
             cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
             cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
@@ -348,7 +348,7 @@ namespace DAL_Management
         //get nhân viên theo typeTho và giới tính và giới tính
         public DataTable getNv_typeThoGenderAndGender(string typeTho, string gender1, string gender2)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where typeTho = @typeTho and (gender = @gender or gender = @gen)");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where typeTho = @typeTho and (gender = @gender or gender = @gen)");
             cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender1;
             cmd.Parameters.Add("@gen", SqlDbType.NChar).Value = gender2;
@@ -370,7 +370,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where typeTho = @typeTho and gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where typeTho = @typeTho and gender = @gender and (birthdate between '" + date1 + "' and '" + date2 + "')");
             cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
 
@@ -388,7 +388,7 @@ namespace DAL_Management
         //get nhân viên theo typeTho và giới tính
         public DataTable getNv_typeThoGender(string typeTho, string gender)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where typeTho = @typeTho and gender = @gender");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where typeTho = @typeTho and gender = @gender");
             cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = gender;
 
@@ -409,7 +409,7 @@ namespace DAL_Management
             string date1 = dt1.ToString("yyyy-MM-dd");
             string date2 = dt2.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where typeTho = @typeTho and (birthdate between '" + date1 + "' and '" + date2 + "')");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where typeTho = @typeTho and (birthdate between '" + date1 + "' and '" + date2 + "')");
             cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
@@ -425,7 +425,7 @@ namespace DAL_Management
         //get nhân viên theo typeTho
         public DataTable getNv_typeTho(string typeTho)
         {
-            SqlCommand cmd = new SqlCommand("select id as ID_CCCD, name as FullName, birthdate as BOD, gender as Gender, typeTho as LoaiTho, img as Picture_CCCD from EMPLOYEES where typeTho = @typeTho");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where typeTho = @typeTho");
             cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)

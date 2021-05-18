@@ -188,9 +188,9 @@ namespace GUI_Management
         private bool checkOtherService(string idxe)
         {
             DataTable table = this.vehicleBUS.getVehicleByID(idxe);
-            int park = int.Parse(table.Rows[0]["park"].ToString());
-            int fix = int.Parse(table.Rows[0]["fix"].ToString());
-            int wash = int.Parse(table.Rows[0]["wash"].ToString());
+            int park = int.Parse(table.Rows[0]["Park"].ToString());
+            int fix = int.Parse(table.Rows[0]["Fix"].ToString());
+            int wash = int.Parse(table.Rows[0]["Wash"].ToString());
             if (park != 0 || fix != 0 || wash != 0)
             {
                 return true;          //đang sài dịch vụ khác không xóa c=khỏi vehicle
