@@ -16,6 +16,10 @@ namespace GUI_Management
     public partial class flistNhanVien : Form
     {
         nhanVienBUS nhanVienBUS = new nhanVienBUS();
+        nhanVienBaoVeBUS nhanVienBaoVeBUS = new nhanVienBaoVeBUS();
+        nhanVienSuaXeBUS nhanVienSuaXeBUS = new nhanVienSuaXeBUS();
+        nhanVienRuaXeBUS nhanVienRuaXeBUS = new nhanVienRuaXeBUS();
+        nhanVienHopDongBUS nhanVienHopDongBUS = new nhanVienHopDongBUS();
         phongBanBUS phongBanBUS = new phongBanBUS();
         fQuanLyNhanVien fQuanLyNhanVien = new fQuanLyNhanVien();
         shift_BaoVeBUS shift_BaoVeBUS = new shift_BaoVeBUS();
@@ -126,34 +130,34 @@ namespace GUI_Management
                 string typeTho = "Bảo Vệ";
                 table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 1)
             {
                 string typeTho = "Thợ Sửa";
                 table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 2)
             {
                 string typeTho = "Thợ Rửa";
                 table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 3)
             {
                 string typeTho = "Nhân Viên";
                 table = this.nhanVienBUS.getNv_typeThoGender_Giua2Ngay(typeTho, gender, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else
             {
                 table = this.nhanVienBUS.getAllEmployeesGender_Giua2Ngay(gender, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
         }
 
@@ -167,34 +171,34 @@ namespace GUI_Management
                 string typeTho = "Bảo Vệ";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 1)
             {
                 string typeTho = "Thợ Sửa";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 2)
             {
                 string typeTho = "Thợ Rửa";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 3)
             {
                 string typeTho = "Nhân Viên";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender_Giua2Ngay(typeTho, gender1, gender2, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else
             {
                 table = this.nhanVienBUS.getAllEmployeesGenderAndGender_Giua2Ngay(gender1, gender2, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
         }
 
@@ -208,34 +212,34 @@ namespace GUI_Management
                 string typeTho = "Bảo Vệ";
                 table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 1)
             {
                 string typeTho = "Thợ Sửa";
                 table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 2)
             {
                 string typeTho = "Thợ Rửa";
                 table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 3)
             {
                 string typeTho = "Nhân Viên";
                 table = this.nhanVienBUS.getNv_typeTho_Giua2Ngay(typeTho, dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else
             {
                 table = this.nhanVienBUS.getAllEmployees_Giua2Ngay(dt1, dt2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
         }
 
@@ -246,34 +250,34 @@ namespace GUI_Management
                 string typeTho = "Bảo Vệ";
                 table = this.nhanVienBUS.getNv_typeTho(typeTho);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 1)
             {
                 string typeTho = "Thợ Sửa";
                 table = this.nhanVienBUS.getNv_typeTho(typeTho);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 2)
             {
                 string typeTho = "Thợ Rửa";
                 table = this.nhanVienBUS.getNv_typeTho(typeTho);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 3)
             {
                 string typeTho = "Nhân Viên";
                 table = this.nhanVienBUS.getNv_typeTho(typeTho);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else
             {
                 table = this.nhanVienBUS.getAllEmployees();
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
         }
 
@@ -284,34 +288,34 @@ namespace GUI_Management
                 string typeTho = "Bảo Vệ";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 1)
             {
                 string typeTho = "Thợ Sửa";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 2)
             {
                 string typeTho = "Thợ Rửa";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 3)
             {
                 string typeTho = "Nhân Viên";
                 table = this.nhanVienBUS.getNv_typeThoGenderAndGender(typeTho, gender1, gender2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else
             {
                 table = this.nhanVienBUS.getAllEmployeesGenderAndGender(gender1, gender2);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
         }
 
@@ -322,34 +326,34 @@ namespace GUI_Management
                 string typeTho = "Bảo Vệ";
                 table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 1)
             {
                 string typeTho = "Thợ Sửa";
                 table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 2)
             {
                 string typeTho = "Thợ Rửa";
                 table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else if (index == 3)
             {
                 string typeTho = "Nhân Viên";
                 table = this.nhanVienBUS.getNv_typeThoGender(typeTho, gender);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
             else
             {
                 table = this.nhanVienBUS.getAllEmployeesGender(gender);
                 this.dgv.DataSource = table;
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }
         }
 
@@ -420,7 +424,7 @@ namespace GUI_Management
                         this.dgv.DataSource = this.nhanVienBUS.getEmployee_ByIDandNameGenderGender_Giua2Ngay(this.txtSearch.Text, "Nữ", "Khác", this.dtp1.Value, this.dtp2.Value);
                     }
                 }    
-                this.designDataGridView(6);
+                this.designDataGridView(5);
             }    
             else
             {
@@ -468,35 +472,75 @@ namespace GUI_Management
             }
         }
 
+        private void XoaAccount(string typeTho, string id)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                if (this.nhanVienBaoVeBUS.RemoveBAOVE(id))
+                {
+                    MessageBox.Show("Xóa thành công nhân viên Bảo Vệ", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công nhân viên Bảo Vệ", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (typeTho == "Thợ Sửa")
+            {
+                if (this.nhanVienSuaXeBUS.RemoveNhanVienSuaXe(id))
+                {
+                    MessageBox.Show("Xóa thành công nhân viên Sửa Xe", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công nhân viên Sửa Xe", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (typeTho == "Thợ Rửa")
+            {
+                if (this.nhanVienRuaXeBUS.RemoveNhanVienRuaXe(id))
+                {
+                    MessageBox.Show("Xóa thành công nhân viên Rửa Xe", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công nhân viên Rửa Xe", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                if (this.nhanVienHopDongBUS.RemoveNhanVienHopDong(id))
+                {
+                    MessageBox.Show("Xóa thành công nhân viên Hợp Đồng", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công nhân viên Hợp Đồng", "Xóa Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
             try
             {
-                string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
-                string id_dept = this.dgv.CurrentRow.Cells[2].Value.ToString();
-                string typeTho = this.dgv.CurrentRow.Cells[5].Value.ToString().Trim();
+                string id = this.dgv.CurrentRow.Cells[0].Value.ToString().Trim();
+                string typeTho = this.dgv.CurrentRow.Cells[4].Value.ToString().Trim();
 
                 if (MessageBox.Show("Are you sure", "List Nhân Viên", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    this.Reset(typeTho);
-                    if (this.phongBanBUS.ktraLeader(id))
-                    {
-                        if (this.phongBanBUS.reset_leaderId_Department(id_dept))
-                        {
-                            MessageBox.Show("Xóa Trưởng Phòng Thành Công", "List Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }    
-                        else
-                            MessageBox.Show("Xóa Trưởng Phòng Không Thành Công", "List Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    /////////////////////////////////////////////////////////////////////////////
+                    ////this.Reset(typeTho);
+                    //Xóa bảng khóa phụ chứa id, usename, password và status
+                    this.XoaAccount(typeTho, id);
+                    
                     if (this.nhanVienBUS.DelEmployee(id))
                     {
                         MessageBox.Show("Xóa Thành Công", "List Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.divShift(typeTho);
+                        //this.divShift(typeTho);
                         this.cbFilter.SelectedIndex = 4;
                         DataTable table = this.nhanVienBUS.getAllEmployees();
                         this.dgv.DataSource = table;
-                        this.designDataGridView(6);
+                        this.designDataGridView(5);
                     }
                     else
                     {
@@ -549,13 +593,13 @@ namespace GUI_Management
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             finfoNhanVien form = new finfoNhanVien();
-            string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
-            string name = this.dgv.CurrentRow.Cells[1].Value.ToString();
-            DateTime dob = DateTime.Parse(this.dgv.CurrentRow.Cells[3].Value.ToString());
-            string gender = this.dgv.CurrentRow.Cells[4].Value.ToString();
-            string typeTho = this.dgv.CurrentRow.Cells[5].Value.ToString();
+            string id = this.dgv.CurrentRow.Cells[0].Value.ToString().Trim();
+            string name = this.dgv.CurrentRow.Cells[1].Value.ToString().Trim();
+            DateTime dob = DateTime.Parse(this.dgv.CurrentRow.Cells[2].Value.ToString());
+            string gender = this.dgv.CurrentRow.Cells[3].Value.ToString().Trim();
+            string typeTho = this.dgv.CurrentRow.Cells[4].Value.ToString().Trim();
             Byte[] pic = new Byte[0];
-            pic = (Byte[])(this.dgv.CurrentRow.Cells[6].Value);
+            pic = (Byte[])(this.dgv.CurrentRow.Cells[5].Value);
             MemoryStream ms = new MemoryStream(pic);
                 
             form.txtId_CMND.Text = id;
@@ -565,7 +609,8 @@ namespace GUI_Management
             form.cbTypeTho.SelectedIndex = this.indexTypeTho(typeTho);
             form.pbNhanVien.Image = Image.FromStream(ms);
             form.pbNhanVien.SizeMode = PictureBoxSizeMode.StretchImage;
-            if (this.phongBanBUS.ktraLeader(id))
+            
+            if (this.kTraLeader(typeTho, id))
             {
                 form.rbYes.Checked = true;
             }
@@ -573,7 +618,112 @@ namespace GUI_Management
             {
                 form.rbNo.Checked = true;
             }
+
+            DataTable table = new DataTable();
+            if (typeTho == "Bảo Vệ")
+            {
+                table = this.nhanVienBaoVeBUS.getInfo_byID(id);
+            }    
+            else if (typeTho == "Thợ Sửa")
+            {
+                table = this.nhanVienSuaXeBUS.getInfo_byID(id);
+            }    
+            else if (typeTho == "Thợ Rửa")
+            {
+                table = this.nhanVienRuaXeBUS.getInfo_byID(id);
+            }    
+            else
+            {
+                table = this.nhanVienHopDongBUS.getInfo_byID(id);
+            }    
+
+            if (table != null)
+            {
+                form.txtUsername.Text = table.Rows[0][1].ToString().Trim();
+                form.txtPassword.Text = table.Rows[0][2].ToString().Trim();
+            }    
+
             this.fQuanLyNhanVien.openChildForm(form);
+        }
+
+        private bool kTraLeader(string typeTho, string id)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                DataTable table = this.nhanVienBaoVeBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                } 
+                else
+                {
+                    return false;
+                }    
+            }    
+            else if (typeTho == "Thợ Sửa")
+            {
+                DataTable table = this.nhanVienSuaXeBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }   
+                else
+                {
+                    return false;
+                }    
+            }    
+            else if (typeTho == "Thợ Rửa")
+            {
+                DataTable table = this.nhanVienRuaXeBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }    
+            }    
+            else
+            {
+                DataTable table = this.nhanVienHopDongBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                } 
+                else
+                {
+                    return false;
+                }    
+            }    
         }
 
         private void flistNhanVien_Load(object sender, EventArgs e)

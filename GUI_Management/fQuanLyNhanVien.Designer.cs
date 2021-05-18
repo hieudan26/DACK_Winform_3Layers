@@ -57,7 +57,7 @@ namespace GUI_Management
             this.gunaGradient2Panel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.gunaGradient2Panel1.Location = new System.Drawing.Point(0, 0);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1302, 677);
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1385, 727);
             this.gunaGradient2Panel1.TabIndex = 0;
             // 
             // pnlChildForm
@@ -65,7 +65,7 @@ namespace GUI_Management
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(200, 21);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1102, 656);
+            this.pnlChildForm.Size = new System.Drawing.Size(1185, 706);
             this.pnlChildForm.TabIndex = 4;
             // 
             // gunaLinePanel1
@@ -85,7 +85,7 @@ namespace GUI_Management
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 21);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(200, 656);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(200, 706);
             this.gunaLinePanel1.TabIndex = 3;
             // 
             // btnInfoNhanVien
@@ -274,14 +274,14 @@ namespace GUI_Management
             this.gunaShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(1302, 21);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(1385, 21);
             this.gunaShadowPanel1.TabIndex = 0;
             // 
             // fQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 677);
+            this.ClientSize = new System.Drawing.Size(1385, 727);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fQuanLyNhanVien";

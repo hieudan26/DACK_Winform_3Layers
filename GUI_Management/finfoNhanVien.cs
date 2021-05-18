@@ -16,6 +16,10 @@ namespace GUI_Management
     public partial class finfoNhanVien : Form
     {
         nhanVienBUS nhanVienBUS = new nhanVienBUS();
+        nhanVienBaoVeBUS nhanVienBaoVeBUS = new nhanVienBaoVeBUS();
+        nhanVienSuaXeBUS nhanVienSuaXeBUS = new nhanVienSuaXeBUS();
+        nhanVienRuaXeBUS nhanVienRuaXeBUS = new nhanVienRuaXeBUS();
+        nhanVienHopDongBUS nhanVienHopDongBUS = new nhanVienHopDongBUS();
         phongBanBUS phongBanBUS = new phongBanBUS();
         shift_BaoVeBUS shift_BaoVeBUS = new shift_BaoVeBUS();
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
@@ -88,36 +92,153 @@ namespace GUI_Management
         {
             try
             {
-                if (MessageBox.Show("Are you sure ?", "Info Nhân Viên", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (this.cbTypeTho.SelectedIndex != -1)
                 {
-                    this.Reset(this.cbTypeTho.Text);
-                    if (this.rbYes.Checked == true)
+                    string IDEmployee = this.txtId_CMND.Text.Trim();
+                    string typeTho = this.cbTypeTho.Text.Trim();
+                    if (MessageBox.Show("Are you sure ?!?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (this.phongBanBUS.reset_leaderId_Department(this.txtId_CMND.Text))
+                        if (typeTho == "Bảo Vệ")
                         {
-                            MessageBox.Show("Xóa trưởng phòng thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //this.divShift(this.cbTypeTho.Text);
+                            if (this.nhanVienBaoVeBUS.RemoveBAOVE(IDEmployee))
+                            {
+                                MessageBox.Show("Xóa thành công Account Bảo Vệ", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Xóa không thành công Account Bảo Vệ", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }    
                         }
+                        else if (typeTho == "Thợ Sửa")
+                        {
+                            if (this.nhanVienSuaXeBUS.RemoveNhanVienSuaXe(IDEmployee))
+                            {
+                                MessageBox.Show("Xóa thành công Account Sửa Xe", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }   
+                            else
+                            {
+                                MessageBox.Show("Xóa không thành công Account Sửa Xe", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }    
+                        }    
+                        else if (typeTho == "Thợ Rửa")
+                        {
+                            if (this.nhanVienRuaXeBUS.RemoveNhanVienRuaXe(IDEmployee))
+                            {
+                                MessageBox.Show("Xóa thành công Account Rửa Xe", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Xóa không thành công Account Rửa Xe", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }    
+                        }    
                         else
                         {
-                            MessageBox.Show("Xóa trưởng phòng không thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            if (this.nhanVienHopDongBUS.RemoveNhanVienHopDong(IDEmployee))
+                            {
+                                MessageBox.Show("Xóa thành công Account NV Hợp Đồng", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xóa không thành công Account NV Hợp Đồng", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }    
+                        } 
+                        
+                        ///////////////////////Remove Main////////////////////////
+                        
+                        if (this.nhanVienBUS.DelEmployee(IDEmployee))
+                        {
+                            MessageBox.Show("Xóa nhân viên thành công", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }    
+                        else
+                        {
+                            MessageBox.Show("Xóa nhân viên không thành công", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }    
                     }
-                    if (this.nhanVienBUS.DelEmployee(this.txtId_CMND.Text))
-                    {
-                        MessageBox.Show("Xóa nhân viên thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.resetForm();
-                        this.divShift(this.cbTypeTho.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa nhân viên không thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                }    
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private bool kTraLeader(string typeTho, string id)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                DataTable table = this.nhanVienBaoVeBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (typeTho == "Thợ Sửa")
+            {
+                DataTable table = this.nhanVienSuaXeBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (typeTho == "Thợ Rửa")
+            {
+                DataTable table = this.nhanVienRuaXeBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                DataTable table = this.nhanVienHopDongBUS.getInfoLeader();
+                if (table != null)
+                {
+                    if (table.Rows[0][0].ToString().Trim() == id)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
@@ -127,24 +248,50 @@ namespace GUI_Management
             {
                 if (this.nhanVienBUS.getEmployee_byID(this.txtId_CMND.Text) != null)
                 {
-                    DataTable table = this.nhanVienBUS.getEmployee_byID(this.txtId_CMND.Text);
-                    this.txtTenNV.Text = table.Rows[0]["name"].ToString();
-                    this.dtpDoB.Value = DateTime.Parse(table.Rows[0][3].ToString());
-                    this.cbSex.Text = table.Rows[0]["gender"].ToString();
-                    this.cbTypeTho.Text = table.Rows[0]["typeTho"].ToString();
+                    string id = this.txtId_CMND.Text.Trim();
+                    DataTable table = this.nhanVienBUS.getEmployee_byID(id);
+                    this.txtTenNV.Text = table.Rows[0][1].ToString().Trim();
+                    this.dtpDoB.Value = DateTime.Parse(table.Rows[0][2].ToString());
+                    this.cbSex.Text = table.Rows[0][3].ToString().Trim();
+                    this.cbTypeTho.Text = table.Rows[0][4].ToString().Trim();
                     Byte[] pic = new Byte[0];
-                    pic = (Byte[])(table.Rows[0]["img"]);
+                    pic = (Byte[])(table.Rows[0][5]);
                     MemoryStream ms = new MemoryStream(pic);
                     this.pbNhanVien.Image = Image.FromStream(ms);
                     this.pbNhanVien.SizeMode = PictureBoxSizeMode.StretchImage;
-                    if (this.phongBanBUS.ktraLeader(this.txtId_CMND.Text))
+
+                    if (this.kTraLeader(table.Rows[0][4].ToString().Trim(), this.txtId_CMND.Text.Trim()))
                     {
                         this.rbYes.Checked = true;
                     }    
                     else
                     {
                         this.rbNo.Checked = true;
-                    }    
+                    }
+
+                    table.Clear();
+                    if (this.cbTypeTho.Text.Trim() == "Bảo Vệ")
+                    {
+                        table = this.nhanVienBaoVeBUS.getInfo_byID(id);
+                    }
+                    else if (this.cbTypeTho.Text.Trim() == "Thợ Sửa")
+                    {
+                        table = this.nhanVienSuaXeBUS.getInfo_byID(id);
+                    }
+                    else if (this.cbTypeTho.Text.Trim() == "Thợ Rửa")
+                    {
+                        table = this.nhanVienRuaXeBUS.getInfo_byID(id);
+                    }
+                    else
+                    {
+                        table = this.nhanVienHopDongBUS.getInfo_byID(id);
+                    }
+
+                    if (table != null)
+                    {
+                        this.txtUsername.Text = table.Rows[0][1].ToString();
+                        this.txtPassword.Text = table.Rows[0][2].ToString();
+                    }
                 }
                 else
                 {
@@ -219,74 +366,182 @@ namespace GUI_Management
 
         private void xuLyEdit()
         {
-            string dept_id = this.getIdDept_ByTypeTho(this.cbTypeTho.Text);
+            string id = this.txtId_CMND.Text.Trim();
+            string name = this.txtTenNV.Text.Trim();
+            DateTime dt = this.dtpDoB.Value;
+            string gender = this.cbSex.Text.Trim();
+            string typeTho = this.cbTypeTho.Text.Trim();
             MemoryStream pic = new MemoryStream();
             this.pbNhanVien.Image.Save(pic, this.pbNhanVien.Image.RawFormat);
-            //ktra có chọn leader ko
-            if (this.rbYes.Checked == true)
+
+            //update bảng 1
+            if (this.nhanVienBUS.UpdateInfoEmployee(name, dt, gender, typeTho, pic, id))
             {
-                if (this.cbTypeTho.SelectedIndex != -1)
+                MessageBox.Show("Edit nhân viên thành công", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } 
+            else
+            {
+                MessageBox.Show("Edit nhân viên không thành công", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //update bảng 2
+            this.EditAccountPassword(id, typeTho);
+        }
+
+        private void EditAccountPassword(string id, string typeTho)
+        {
+            string Username = this.txtUsername.Text.Trim();
+            string Password = this.txtPassword.Text.Trim();
+            if (this.rbNo.Checked == true)
+            {
+                if (typeTho == "Bảo Vệ")
                 {
-                    if (this.phongBanBUS.ktraLeader(this.txtId_CMND.Text)) //là trưởng phòng sẵn rồi
+                    if (this.nhanVienBaoVeBUS.UpdateAccountBaoVe(id, Username, Password, 0))
                     {
-                        //edit
-                        if (this.nhanVienBUS.UpdateInfoEmployee(this.txtTenNV.Text, this.dtpDoB.Value, this.cbSex.Text, this.cbTypeTho.Text, pic, this.txtId_CMND.Text))
+                        MessageBox.Show("Edit tài khoản Bảo Vệ thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }                  
+                    else
+                    {
+                        MessageBox.Show("Edit tài khoản Bảo Vệ không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }    
+                }
+                else if (typeTho == "Thợ Sửa")
+                {
+                    if (this.nhanVienSuaXeBUS.UpdateAccountNVSuaXe(id, Username, Password, 0))
+                    {
+                        MessageBox.Show("Edit tài khoản Thợ Sửa thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }    
+                    else
+                    {
+                        MessageBox.Show("Edit tài khoản Thợ Sửa không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }    
+                }    
+                else if (typeTho == "Thợ Rửa")
+                {
+                    if (this.nhanVienRuaXeBUS.UpdateAccountNVRuaXe(id, Username, Password, 0))
+                    {
+                        MessageBox.Show("Edit tài khoản Thợ Rửa thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }   
+                    else
+                    {
+                        MessageBox.Show("Edit tài khoản Thợ Rửa không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }    
+                }    
+                else
+                {
+                    if (this.nhanVienHopDongBUS.UpdateAccountNVHopDong(id, Username, Password, 0))
+                    {
+                        MessageBox.Show("Edit tài khoản NV Hợp Đồng thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }   
+                    else
+                    {
+                        MessageBox.Show("Edit tài khoản NV Hợp Đồng không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }    
+                }    
+            }   
+            else
+            {
+                if (typeTho == "Bảo Vệ")
+                {
+                    if (this.nhanVienBaoVeBUS.leaderExist())
+                    {
+                        if (this.nhanVienBaoVeBUS.UpdateAccountBaoVe(id, Username, Password, 0))
                         {
-                            MessageBox.Show("Sửa nhân viên_trưởng phòng thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Edit tài khoản Bảo Vệ thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Sửa nhân viên_trưởng phòng không thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Edit tài khoản Bảo Vệ không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                    else //ko phải là trưởng phòng nhưng edit thành trưởng phòng
+                    }    
+                    else
                     {
-                        //ktra phòng đã có lead chưa
-                        if (!this.phongBanBUS.ktraTruongPhong(dept_id)) //phòng đã có trưởng phòng
+                        if (this.nhanVienBaoVeBUS.UpdateAccountBaoVe(id, Username, Password, 1))
                         {
-                            MessageBox.Show("Phòng đã có trưởng phòng", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Edit tài khoản Bảo Vệ_Leader thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        else //chưa có trưởng phòng
+                        else
                         {
-                            if (this.nhanVienBUS.UpdateInfoEmployee(this.txtTenNV.Text, this.dtpDoB.Value, this.cbSex.Text, this.cbTypeTho.Text, pic, this.txtId_CMND.Text)
-                                && this.phongBanBUS.update_leaderId_Department(dept_id, this.txtId_CMND.Text))
-                            {
-                                MessageBox.Show("Sửa nhân viên_trưởng phòng thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Sửa nhân viên_trưởng phòng không thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            MessageBox.Show("Edit tài khoản Bảo Vệ_Leader không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                }
-            }
-            else // ko chọn lead
-            {
-                if (this.phongBanBUS.ktraLeader(this.txtId_CMND.Text))   //ktra có phải trưởng phòng hay không => nếu là trưởng phòng
+                    }    
+                }    
+                else if (typeTho == "Thợ Sửa")
                 {
-                    if (this.phongBanBUS.reset_leaderId_Department(dept_id) &&
-                        this.nhanVienBUS.UpdateInfoEmployee(this.txtTenNV.Text, this.dtpDoB.Value, this.cbSex.Text, this.cbTypeTho.Text, pic, this.txtId_CMND.Text))
+                    if (this.nhanVienSuaXeBUS.leaderExist())
                     {
-                        MessageBox.Show("Sửa nhân viên thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (this.nhanVienSuaXeBUS.UpdateAccountNVSuaXe(id, Username, Password, 0))
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Sửa thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Sửa không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }   
+                    else
+                    {
+                        if (this.nhanVienSuaXeBUS.UpdateAccountNVSuaXe(id, Username, Password, 1))
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Sửa_Leader thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Sửa_Leader không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }    
+                else if (typeTho == "Thợ Rửa")
+                {
+                    if (this.nhanVienRuaXeBUS.leaderExist())
+                    {
+                        if (this.nhanVienRuaXeBUS.UpdateAccountNVRuaXe(id, Username, Password, 0))
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Rửa thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Rửa không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Sửa nhân viên không thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (this.nhanVienRuaXeBUS.UpdateAccountNVRuaXe(id, Username, Password, 1))
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Rửa_Leader thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit tài khoản Thợ Rửa_Leader không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                }
-                else //ko phải trưởng phòng, ko chọn lead 
+                }  
+                else
                 {
-                    if (this.nhanVienBUS.UpdateInfoEmployee(this.txtTenNV.Text, this.dtpDoB.Value, this.cbSex.Text, this.cbTypeTho.Text, pic, this.txtId_CMND.Text))
+                    if (this.nhanVienHopDongBUS.leaderExist())
                     {
-                        MessageBox.Show("Sửa nhân viên thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        if (this.nhanVienHopDongBUS.UpdateAccountNVHopDong(id, Username, Password, 0))
+                        {
+                            MessageBox.Show("Edit tài khoản NV Hợp Đồng thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit tài khoản NV Hợp Đồng không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }    
                     else
                     {
-                        MessageBox.Show("Sửa nhân viên không thành công", "Info Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
+                        if (this.nhanVienHopDongBUS.UpdateAccountNVHopDong(id, Username, Password, 1))
+                        {
+                            MessageBox.Show("Edit tài khoản NV Hợp Đồng_Leader thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit tài khoản NV Hợp Đồng_Leader không thành công", "Edit Tài Khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }    
+                }    
+            }    
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
