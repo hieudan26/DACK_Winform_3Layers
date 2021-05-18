@@ -88,57 +88,57 @@ namespace GUI_Management
             }    
         }
 
-        //private void divShift(string typeTho)
-        //{
-        //    if (typeTho == "Bảo Vệ")
-        //    {
-        //        if (this.shift_BaoVeBUS.getALLShift_BaoVe() == null)
-        //        {
-        //            this.shift_BaoVeBUS.chiaCaBaoVe();
-        //        }    
-        //        else
-        //        {
-        //            this.shift_BaoVeBUS.ResetShift_BaoVe();
-        //            this.shift_BaoVeBUS.chiaCaBaoVe();
-        //        }    
-        //    }    
-        //    else if (typeTho == "Thợ Sửa")
-        //    {
-        //        if (this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe() == null)
-        //        {
-        //            this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
-        //        }
-        //        else
-        //        {
-        //            this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe();
-        //            this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
-        //        }    
-        //    }    
-        //    else if (typeTho == "Thợ Rửa")
-        //    {
-        //        if (this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe() == null)
-        //        {
-        //            this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
-        //        }    
-        //        else
-        //        {
-        //            this.shift_ThoRuaXeBUS.ResetShift_ThoRuaXe();
-        //            this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
-        //        }    
-        //    }    
-        //    else
-        //    {
-        //        if (this.shift_NhanVienBUS.getALLShift_NhanVien() == null)
-        //        {
-        //            this.shift_NhanVienBUS.chiaCaNhanVien();
-        //        }    
-        //        else
-        //        {
-        //            this.shift_NhanVienBUS.ResetShift_NhanVien();
-        //            this.shift_NhanVienBUS.chiaCaNhanVien();
-        //        }    
-        //    }    
-        //}
+        private void divShift(string typeTho)
+        {
+            if (typeTho == "Bảo Vệ")
+            {
+                if (this.shift_BaoVeBUS.getALLShift_BaoVe() == null)
+                {
+                    this.shift_BaoVeBUS.chiaCaBaoVe();
+                }
+                else
+                {
+                    this.shift_BaoVeBUS.ResetShift_BaoVe();
+                    this.shift_BaoVeBUS.chiaCaBaoVe();
+                }
+            }
+            else if (typeTho == "Thợ Sửa")
+            {
+                if (this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe() == null)
+                {
+                    this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
+                }
+                else
+                {
+                    this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe();
+                    this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
+                }
+            }
+            else if (typeTho == "Thợ Rửa")
+            {
+                if (this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe() == null)
+                {
+                    this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
+                }
+                else
+                {
+                    this.shift_ThoRuaXeBUS.ResetShift_ThoRuaXe();
+                    this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
+                }
+            }
+            else
+            {
+                if (this.shift_NhanVienBUS.getALLShift_NhanVien() == null)
+                {
+                    this.shift_NhanVienBUS.chiaCaNhanVien();
+                }
+                else
+                {
+                    this.shift_NhanVienBUS.ResetShift_NhanVien();
+                    this.shift_NhanVienBUS.chiaCaNhanVien();
+                }
+            }
+        }
 
         private void insertTho_NhanVien(int flag, string id_cmnd, string username, string password, int status)
         {
@@ -344,18 +344,22 @@ namespace GUI_Management
                                 if (this.cbTypeTho.SelectedIndex == 0) //bảo vệ
                                 {
                                     this.insertTho_NhanVien(0, id_cmnd, username, password, 0);
+                                    this.divShift("Bảo Vệ");
                                 }
                                 else if (this.cbTypeTho.SelectedIndex == 1) //thợ sửa xe
                                 {
                                     this.insertTho_NhanVien(1, id_cmnd, username, password, 0);
+                                    this.divShift("Thợ Sửa");
                                 }    
                                 else if (this.cbTypeTho.SelectedIndex == 2) //thợ rửa xe
                                 {
                                     this.insertTho_NhanVien(2, id_cmnd, username, password, 0);
+                                    this.divShift("Thợ Rửa");
                                 } 
                                 else
                                 {
                                     this.insertTho_NhanVien(3, id_cmnd, username, password, 0);
+                                    this.divShift("Nhân Viên");
                                 }    
                             }
                             else if (this.rbYes.Checked == true)
@@ -363,18 +367,22 @@ namespace GUI_Management
                                 if (this.cbTypeTho.SelectedIndex == 0) //bảo vệ
                                 {
                                     this.insertTho_NhanVien(0, id_cmnd, username, password, 1);
+                                    this.divShift("Bảo Vệ");
                                 }
                                 else if (this.cbTypeTho.SelectedIndex == 1) //thợ sửa xe
                                 {
                                     this.insertTho_NhanVien(1, id_cmnd, username, password, 1);
+                                    this.divShift("Thợ Sửa");
                                 }
                                 else if (this.cbTypeTho.SelectedIndex == 2) //thợ rửa xe
                                 {
                                     this.insertTho_NhanVien(2, id_cmnd, username, password, 1);
+                                    this.divShift("Thợ Rửa");
                                 }
                                 else
                                 {
                                     this.insertTho_NhanVien(3, id_cmnd, username, password, 1);
+                                    this.divShift("Nhân Viên");
                                 }
                             }
                         }    
