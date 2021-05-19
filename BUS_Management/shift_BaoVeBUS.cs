@@ -48,7 +48,7 @@ namespace BUS_Management
                 {
                     for (int k = 0; k < Result[i][j].Count; k++)//slnvtc
                     {
-                        string id_NV = table.Rows[Result[i][j][k]]["id"].ToString();
+                        string id_NV = table.Rows[Result[i][j][k]]["ID CCCD"].ToString();
                         shift_BaoVeDTO shift_BaoVeDTO = dto(id_NV, thu, ca);
                         shift_baoveDAL.insertShift(shift_BaoVeDTO);
                     }
