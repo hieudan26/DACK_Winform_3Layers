@@ -24,7 +24,7 @@ namespace DAL_Management
         //get status
         public DataTable getStatus(string id)
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE.id, park, fix, wash from VEHICLE_WASH, VEHICLE where VEHICLE_WASH.id = VEHICLE.id and VEHICLE.id = @id");
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], park as [Park], fix as [Fix], wash as [Wash] from VEHICLE_WASH, VEHICLE where VEHICLE_WASH.id = VEHICLE.id and VEHICLE.id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleWash(cmd);
             if (table.Rows.Count > 0)
@@ -72,7 +72,7 @@ namespace DAL_Management
         //lay vehicle wash bang id gần đúng
         public DataTable getVehicleByID_GanDung(string id)
         {
-            SqlCommand cmd = new SqlCommand("Select VEHICLE_WASH.id, VEHICLE_WASH.type, img1, img2 from VEHICLE_WASH inner join VEHICLE on VEHICLE_WASH.id = VEHICLE.id " +
+            SqlCommand cmd = new SqlCommand("Select VEHICLE_WASH.id as [ID], VEHICLE_WASH.type as [Type], img1 as [Image 1], img2 as [Image 2] from VEHICLE_WASH inner join VEHICLE on VEHICLE_WASH.id = VEHICLE.id " +
                 "where VEHICLE.id like N'%" + id + "%'");
             //cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicleWash(cmd);
@@ -85,7 +85,7 @@ namespace DAL_Management
         //get all
         public DataTable getAllVehicleWash()
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE_WASH.id, VEHICLE_WASH.type, img1, img2 from VEHICLE_WASH, VEHICLE where VEHICLE.id = VEHICLE_WASH.id");
+            SqlCommand cmd = new SqlCommand("Select VEHICLE_WASH.id as [ID], VEHICLE_WASH.type as [Type], img1 as [Image 1], img2 as [Image 2] from VEHICLE_WASH, VEHICLE where VEHICLE.id = VEHICLE_WASH.id");
             DataTable table = this.getVehicleWash(cmd);
             if (table.Rows.Count > 0)
                 return table;

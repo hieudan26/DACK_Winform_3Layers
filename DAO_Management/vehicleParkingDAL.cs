@@ -27,7 +27,7 @@ namespace GUI_Management
         //get status
         public DataTable getStatus(string id)
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE.id, park, fix, wash from VEHICLE_PARKING, VEHICLE where VEHICLE_PARKING.id = VEHICLE.id and VEHICLE.id = @id");
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], park as [Park], fix as[Fix], wash as [Wash] from VEHICLE_PARKING, VEHICLE where VEHICLE_PARKING.id = VEHICLE.id and VEHICLE.id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicle(cmd);
             if (table.Rows.Count > 0)
@@ -125,7 +125,7 @@ namespace GUI_Management
                 string end = " 23:59:59";
                 string tmp = curr.ToString("yyyy-MM-dd");
 
-                SqlCommand cmd = new SqlCommand("select count(*) as SoLuong from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
+                SqlCommand cmd = new SqlCommand("select count(*) as [So luong] from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                     "where timeIn between '" + tmp + start + "' and '" + tmp + end + "' and type = " + type, this.getConnection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -147,7 +147,7 @@ namespace GUI_Management
         //lấy ra danh sách các xe gửi quá hạn
         public DataTable getVehicleExpired()
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in] from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
             DataTable table = this.getVehicle(cmd);
             table.AcceptChanges();
 
@@ -169,7 +169,7 @@ namespace GUI_Management
         //Xe khoong heet han
         public DataTable getVehicleNotExpired()
         {
-            SqlCommand cmd = new SqlCommand("select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in] from VEHICLE inner join VEHICLE_PARKING on VEHICLE_PARKING.id = VEHICLE.id");
             DataTable table = this.getVehicle(cmd);
             table.AcceptChanges();
 
@@ -273,7 +273,7 @@ namespace GUI_Management
         //lay vehicle bang id gần đúng
         public DataTable getVehicleByID_GanDung(string id)
         {
-            SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in] from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id like N'%" + id + "%'");
             //cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicle(cmd);
@@ -283,7 +283,7 @@ namespace GUI_Management
         //lay vehicle bang id
         public DataTable getVehicleByID(string id)
         {
-            SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
+            SqlCommand cmd = new SqlCommand("Sselect VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in] from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicle(cmd);
@@ -293,7 +293,7 @@ namespace GUI_Management
         //lay toan bo xe
         public DataTable getAllVehicle()
         {
-            SqlCommand cmd = new SqlCommand("Select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id ", this.con);
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in] from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id ", this.con);
             DataTable table = this.getVehicle(cmd);
             if (table.Rows.Count > 0)
                 return table;
@@ -394,7 +394,7 @@ namespace GUI_Management
         public DataTable danhSachXetheoLoai(int type)
         {
             this.openConnection();
-            SqlCommand cmd = new SqlCommand("select VEHICLE.id, VEHICLE.type, img1, img2, VEHICLE_PARKING.typePark, VEHICLE_PARKING.timeIn from VEHICLE_PARKING " +
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in]from VEHICLE_PARKING " +
                 "inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id" +
                 " where type = " + type, this.getConnection);
             return this.getVehicle(cmd);

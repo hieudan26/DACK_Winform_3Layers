@@ -73,7 +73,7 @@ namespace GUI_Management
                 dr = this.phiDichVuSuaXeBUS.getDichVu_All().Rows[index];
             }
             this.lBoxDichVu.SelectedIndex = index;
-            this.cbTxtType.SelectedIndex = int.Parse(dr["type"].ToString());
+            this.cbTxtType.SelectedIndex = int.Parse(dr["Type"].ToString());
             this.txtTenDichVu.Text = dr.ItemArray[1].ToString().Trim();
             this.txtGiaDichVu.Text = dr.ItemArray[2].ToString().Trim();
         }
@@ -178,16 +178,16 @@ namespace GUI_Management
         {
             try
             {
-                int type = this.cbTxtType.SelectedIndex;
+                int Type = this.cbTxtType.SelectedIndex;
                 string service = this.txtTenDichVu.Text.Trim();
                 int service_fee = int.Parse(this.txtGiaDichVu.Text.Trim());
                 if (!this.phiDichVuSuaXeBUS.Service_Exist(service))
                 {
-                    if (this.phiDichVuSuaXeBUS.insertService(type, service, service_fee))
+                    if (this.phiDichVuSuaXeBUS.insertService(Type, service, service_fee))
                     {
                         MessageBox.Show("Thêm Dịch Vụ Thành Công", "Edit Dịch Vụ Sửa Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DataTable table = this.phiDichVuSuaXeBUS.getDichVu_ByType(type);
-                        this.cbTypeXe.SelectedIndex = type;
+                        DataTable table = this.phiDichVuSuaXeBUS.getDichVu_ByType(Type);
+                        this.cbTypeXe.SelectedIndex = Type;
                         this.reloadListBoxData(table);
                     }
                     else
@@ -214,14 +214,14 @@ namespace GUI_Management
         {
             try
             {
-                int type = this.cbTxtType.SelectedIndex;
+                int Type = this.cbTxtType.SelectedIndex;
                 string service = this.txtTenDichVu.Text;
                 int service_fee = int.Parse(this.txtGiaDichVu.Text);
                 if (this.phiDichVuSuaXeBUS.UpdateService_fee(service, service_fee))
                 {
                     MessageBox.Show("Chỉnh Sửa Dịch Vụ Thành Công", "Edit Dịch Vụ Sửa Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DataTable table = this.phiDichVuSuaXeBUS.getDichVu_ByType(type);
-                    this.cbTypeXe.SelectedIndex = type;
+                    DataTable table = this.phiDichVuSuaXeBUS.getDichVu_ByType(Type);
+                    this.cbTypeXe.SelectedIndex = Type;
                     this.reloadListBoxData(table);
                 }
                 else

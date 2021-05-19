@@ -25,7 +25,7 @@ namespace GUI_Management
             DataTable table = this.phiDichVuRuaXeBUS.getPriceByType(type);
             if (table != null)
             {
-                this.txtFee.Text = table.Rows[0]["wash_fee"].ToString();
+                this.txtFee.Text = table.Rows[0]["Wash Fee"].ToString();
             }    
         }
 
