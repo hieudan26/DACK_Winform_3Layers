@@ -440,7 +440,7 @@ namespace GUI_Management
             }
             else if (typeTho == "Thợ Sửa")
             {
-                this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe();
+                this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe_New();
             }    
             else if (typeTho == "Thợ Rửa")
             {
@@ -848,7 +848,7 @@ namespace GUI_Management
                     }
                     else
                     {
-                        if (this.checkBoxKhac.Checked == false && this.checkBoxNu.Checked == false)
+                        if (this.checkBoxKhac.Checked == false && this.checkBoxNam.Checked == false)
                         {
                             this.LoadDGV_ordinary(this.cbFilter.SelectedIndex, table);
                         }

@@ -21,6 +21,24 @@ namespace DAL_Management
             return table;
         }
 
+        //username exist
+        public DataTable UsernameExist(string username)
+        {
+            SqlCommand cmd = new SqlCommand("select * from BAOVE where username = @username");
+            cmd.Parameters.Add("@username", SqlDbType.NChar).Value = username;
+
+            DataTable table = this.getBAOVE(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }    
+            else
+            {
+                return null;
+            }    
+        }
+
         //updateAccount Bao Ve
         public bool UpdateAccountBaoVe(string id, string username, string password, int status)
         {
@@ -66,6 +84,23 @@ namespace DAL_Management
             {
                 return null;
             }    
+        }
+
+        //Xác minh login
+        public DataTable VerifyLogin(string username, string password)
+        {
+            SqlCommand cmd = new SqlCommand("select * from BAOVE where username = @username and password = @password", this.getConnection);
+            cmd.Parameters.Add("@username", SqlDbType.NChar).Value = username;
+            cmd.Parameters.Add("@password", SqlDbType.NChar).Value = password;
+
+            DataTable table = this.getBAOVE(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+                return null;
         }
 
         //Get thông tin leader

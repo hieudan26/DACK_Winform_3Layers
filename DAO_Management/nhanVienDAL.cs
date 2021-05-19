@@ -445,14 +445,15 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEES(id, name, birthdate, gender, typeTho, img)" +
-            "VALUES (@id, @name, @birthdate, @gender, @typeTho, @img)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEES(id, name, birthdate, gender, typeTho, img, salary)" +
+            "VALUES (@id, @name, @birthdate, @gender, @typeTho, @img, @salary)", this.getConnection);
                 cmd.Parameters.Add("@id", SqlDbType.NChar).Value = nhanVienDTO.id;
                 cmd.Parameters.Add("@name", SqlDbType.NChar).Value = nhanVienDTO.name;
                 cmd.Parameters.Add("@birthdate", SqlDbType.Date).Value = nhanVienDTO.birthdate;
                 cmd.Parameters.Add("@gender", SqlDbType.NChar).Value = nhanVienDTO.gender;
                 cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = nhanVienDTO.typeTho;
                 cmd.Parameters.Add("@img", SqlDbType.Image).Value = nhanVienDTO.Img.ToArray();
+                cmd.Parameters.Add("@salary", SqlDbType.Float).Value = nhanVienDTO.Luong;
 
                 if (cmd.ExecuteNonQuery() == 1)
                     return true;

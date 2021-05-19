@@ -172,6 +172,18 @@ namespace GUI_Management
             }
         }*/
 
+        private string XuLyTen(string label)
+        {
+            int ViTriSpaceCuoiCung = label.LastIndexOf(" ");
+            if (ViTriSpaceCuoiCung != -1)
+            {
+                label = label.Remove(0, ViTriSpaceCuoiCung + 1);
+                return label;
+            }
+            else
+                return label;
+        }
+
         private void LoadFlowLayoutPanel(DataTable table, FlowLayoutPanel fl)
         {
             for (int i = 0; i < table.Rows.Count; i++)
@@ -179,7 +191,7 @@ namespace GUI_Management
                 Label lbSp = new Label(); lbSp.Text = "--------------------";
                 fl.Controls.Add(lbSp);
                 Label lbName = new Label();
-                lbName.Text = table.Rows[i][1].ToString();
+                lbName.Text = XuLyTen(table.Rows[i][1].ToString().Trim());
                 lbName.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 //lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
                 fl.Controls.Add(lbName);
@@ -510,6 +522,12 @@ namespace GUI_Management
             {
                 MessageBox.Show("Error: ", e.Message);
             }
+        }
+
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+            this.shift_ThoSuaXeBUS.InsertIntoOld_FormNew();
+            this.btnpSX_Click(sender, e);
         }
     }
 }

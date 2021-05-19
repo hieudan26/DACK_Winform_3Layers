@@ -15,6 +15,7 @@ namespace DTO_Management
         private string sgender;
         private string stypeTho;
         private MemoryStream msImg;
+        private float fLuong;
 
         public string id { get => iid; set => iid = value; }
         public string name { get => sname; set => sname = value; }
@@ -22,13 +23,14 @@ namespace DTO_Management
         public string gender { get => sgender; set => sgender = value; }
         public MemoryStream Img { get => msImg; set => msImg = value; }
         public string typeTho { get => stypeTho; set => stypeTho = value; }
+        public float Luong { get => fLuong; set => fLuong = value; }
 
         public nhanVienDTO()
         {
 
         }
 
-        public nhanVienDTO(string id, string name, DateTime birthDate, string gender, MemoryStream Img, string typeTho)
+        public nhanVienDTO(string id, string name, DateTime birthDate, string gender, MemoryStream Img, string typeTho, float Luong)
         {
             this.iid = id;
             this.sname = name;
@@ -36,6 +38,7 @@ namespace DTO_Management
             this.sgender = gender;
             this.msImg = Img;
             this.stypeTho = typeTho;
+            this.fLuong = Luong;
         }
 
         ~nhanVienDTO() { }

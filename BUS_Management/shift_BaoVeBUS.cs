@@ -17,9 +17,26 @@ namespace BUS_Management
         private nhanVienDAL nhanvienDAL = new nhanVienDAL();
         private shift_BaoVeDAL shift_baoveDAL = new shift_BaoVeDAL();
 
+        public DataTable getALLShift_BaoVe_New()
+        {
+            return this.shift_baoveDAL.getALLShift_BaoVe_New();
+        }
+
         public DataTable getIdName_ByCaThu(int Ca, string Thu)
         {
             return this.shift_baoveDAL.getIdName_ByCaThu(Ca, Thu);
+        }
+
+        //Gán bảng new qua bảng show
+        public bool InsertIntoOld_FormNew()
+        {
+            return this.shift_baoveDAL.InsertIntoOld_FormNew();
+        }
+
+        //Reset new 
+        public bool ResetShift_BaoVe_New()
+        {
+            return this.shift_baoveDAL.ResetShift_BaoVe_New();
         }
 
         //Reset
@@ -50,7 +67,7 @@ namespace BUS_Management
                     {
                         string id_NV = table.Rows[Result[i][j][k]]["ID CCCD"].ToString();
                         shift_BaoVeDTO shift_BaoVeDTO = dto(id_NV, thu, ca);
-                        shift_baoveDAL.insertShift(shift_BaoVeDTO);
+                        this.shift_baoveDAL.insertShift_New(shift_BaoVeDTO);
                     }
                     ca++;
                     if (ca == 4)

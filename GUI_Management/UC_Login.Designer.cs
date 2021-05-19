@@ -37,9 +37,9 @@ namespace GUI_Management
             this.btnLog = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ImaBtnShowPass = new Guna.UI.WinForms.GunaImageButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbThoSuaXe = new System.Windows.Forms.RadioButton();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbBaoVe = new System.Windows.Forms.RadioButton();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,6 +59,10 @@ namespace GUI_Management
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.rbThoRuaXe = new System.Windows.Forms.RadioButton();
+            this.rbNhanVien = new System.Windows.Forms.RadioButton();
+            this.rbGiamDoc = new System.Windows.Forms.RadioButton();
+            this.rbDev = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -142,10 +146,14 @@ namespace GUI_Management
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.rbDev);
+            this.panel1.Controls.Add(this.rbGiamDoc);
+            this.panel1.Controls.Add(this.rbNhanVien);
+            this.panel1.Controls.Add(this.rbThoRuaXe);
             this.panel1.Controls.Add(this.ImaBtnShowPass);
-            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.rbThoSuaXe);
             this.panel1.Controls.Add(this.txtPass);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.rbBaoVe);
             this.panel1.Controls.Add(this.txtUser);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -169,16 +177,16 @@ namespace GUI_Management
             this.ImaBtnShowPass.TabIndex = 12;
             this.ImaBtnShowPass.Click += new System.EventHandler(this.ImaBtnShowPass_Click);
             // 
-            // radioButton2
+            // rbThoSuaXe
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(355, 176);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(68, 21);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.Text = "Admin";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbThoSuaXe.AutoSize = true;
+            this.rbThoSuaXe.Location = new System.Drawing.Point(146, 176);
+            this.rbThoSuaXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbThoSuaXe.Name = "rbThoSuaXe";
+            this.rbThoSuaXe.Size = new System.Drawing.Size(104, 21);
+            this.rbThoSuaXe.TabIndex = 12;
+            this.rbThoSuaXe.Text = "Thợ Sửa Xe";
+            this.rbThoSuaXe.UseVisualStyleBackColor = true;
             // 
             // txtPass
             // 
@@ -189,16 +197,16 @@ namespace GUI_Management
             this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
             // 
-            // radioButton1
+            // rbBaoVe
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(131, 176);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 21);
-            this.radioButton1.TabIndex = 13;
-            this.radioButton1.Text = "User";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbBaoVe.AutoSize = true;
+            this.rbBaoVe.Location = new System.Drawing.Point(15, 176);
+            this.rbBaoVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbBaoVe.Name = "rbBaoVe";
+            this.rbBaoVe.Size = new System.Drawing.Size(75, 21);
+            this.rbBaoVe.TabIndex = 13;
+            this.rbBaoVe.Text = "Bảo Vệ";
+            this.rbBaoVe.UseVisualStyleBackColor = true;
             // 
             // txtUser
             // 
@@ -423,6 +431,51 @@ namespace GUI_Management
             this.label6.TabIndex = 17;
             this.label6.Text = "CHANGE INFO";
             // 
+            // rbThoRuaXe
+            // 
+            this.rbThoRuaXe.AutoSize = true;
+            this.rbThoRuaXe.Location = new System.Drawing.Point(317, 176);
+            this.rbThoRuaXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbThoRuaXe.Name = "rbThoRuaXe";
+            this.rbThoRuaXe.Size = new System.Drawing.Size(105, 21);
+            this.rbThoRuaXe.TabIndex = 14;
+            this.rbThoRuaXe.Text = "Thợ Rửa Xe";
+            this.rbThoRuaXe.UseVisualStyleBackColor = true;
+            // 
+            // rbNhanVien
+            // 
+            this.rbNhanVien.AutoSize = true;
+            this.rbNhanVien.Location = new System.Drawing.Point(465, 176);
+            this.rbNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbNhanVien.Name = "rbNhanVien";
+            this.rbNhanVien.Size = new System.Drawing.Size(95, 21);
+            this.rbNhanVien.TabIndex = 15;
+            this.rbNhanVien.Text = "Nhân Viên";
+            this.rbNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // rbGiamDoc
+            // 
+            this.rbGiamDoc.AutoSize = true;
+            this.rbGiamDoc.Location = new System.Drawing.Point(126, 216);
+            this.rbGiamDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbGiamDoc.Name = "rbGiamDoc";
+            this.rbGiamDoc.Size = new System.Drawing.Size(97, 21);
+            this.rbGiamDoc.TabIndex = 16;
+            this.rbGiamDoc.Text = "GIÁM ĐỐC";
+            this.rbGiamDoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rbGiamDoc.UseVisualStyleBackColor = true;
+            // 
+            // rbDev
+            // 
+            this.rbDev.AutoSize = true;
+            this.rbDev.Location = new System.Drawing.Point(365, 216);
+            this.rbDev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbDev.Name = "rbDev";
+            this.rbDev.Size = new System.Drawing.Size(57, 21);
+            this.rbDev.TabIndex = 17;
+            this.rbDev.Text = "DEV";
+            this.rbDev.UseVisualStyleBackColor = true;
+            // 
             // UC_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -457,9 +510,9 @@ namespace GUI_Management
         private System.Windows.Forms.Button btnLog;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaImageButton ImaBtnShowPass;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbThoSuaXe;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbBaoVe;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -479,5 +532,9 @@ namespace GUI_Management
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton rbDev;
+        private System.Windows.Forms.RadioButton rbGiamDoc;
+        private System.Windows.Forms.RadioButton rbNhanVien;
+        private System.Windows.Forms.RadioButton rbThoRuaXe;
     }
 }

@@ -255,6 +255,12 @@
     <Compile Include="fQuanLyXe.Designer.cs">
       <DependentUpon>fQuanLyXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="fWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fWelcome.Designer.cs">
+      <DependentUpon>fWelcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyXe.resx">
       <DependentUpon>fQuanLyXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fWelcome.resx">
+      <DependentUpon>fWelcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

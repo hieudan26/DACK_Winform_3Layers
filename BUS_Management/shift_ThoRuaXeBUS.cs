@@ -17,9 +17,26 @@ namespace BUS_Management
         private nhanVienDAL nhanvienDAL = new nhanVienDAL();
         private shift_ThoRuaXeDAL shift_ThoRuaXeDAL = new shift_ThoRuaXeDAL();
 
+        public DataTable getALLShift_ThoRuaXe_New()
+        {
+            return this.shift_ThoRuaXeDAL.getALLShift_ThoRuaXe_New();
+        }
+
         public DataTable getIdName_ByCaThu(int Ca, string Thu)
         {
             return this.shift_ThoRuaXeDAL.getIdName_ByCaThu(Ca, Thu);
+        }
+
+        //Gán bảng new qua bảng show
+        public bool InsertIntoOld_FormNew()
+        {
+            return this.shift_ThoRuaXeDAL.InsertIntoOld_FormNew();
+        }
+
+        //Reset new 
+        public bool ResetShift_ThoRuaXe_New()
+        {
+            return this.shift_ThoRuaXeDAL.ResetShift_ThoRuaXe();
         }
 
         //Reset
