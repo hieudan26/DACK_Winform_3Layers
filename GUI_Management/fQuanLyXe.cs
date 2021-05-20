@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_Management;
 
 namespace GUI_Management
 {
@@ -102,15 +103,22 @@ namespace GUI_Management
 
         private void btnXeGui_Click(object sender, EventArgs e)
         {
-            if (this.isCollapsed_2 == false)
-                this.HiddenFix();
-            if (this.isCollapsed_3 == false)
-                this.HiddenWash();
-            this.timer1_ParkService.Start();
+            if (Global.GlobalEmployeeType == 0 || Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 5)
+            {
+                if (this.isCollapsed_2 == false)
+                    this.HiddenFix();
+                if (this.isCollapsed_3 == false)
+                    this.HiddenWash();
+                this.timer1_ParkService.Start();
 
-            //panel move
-            this.PanelMoveParkService();
-            //end panel move
+                //panel move
+                this.PanelMoveParkService();
+                //end panel move
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
         //end gửi
 
@@ -187,15 +195,22 @@ namespace GUI_Management
 
         private void btnFixService_Click(object sender, EventArgs e)
         {
-            if (this.isCollapsed_1 == false)
-                this.HiddenPark();
-            if (this.isCollapsed_3 == false)
-                this.HiddenWash();
-            this.timer1_FixService.Start();
+            if (Global.GlobalEmployeeType == 1 || Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 6)
+            {
+                if (this.isCollapsed_1 == false)
+                    this.HiddenPark();
+                if (this.isCollapsed_3 == false)
+                    this.HiddenWash();
+                this.timer1_FixService.Start();
 
-            //panel move
-            this.PanelMoveFix();
-            //end panel move
+                //panel move
+                this.PanelMoveFix();
+                //end panel move
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
 
         //Mở đki cho xe chọn 2 dịch vụ còn lại trong danh sách sửa
@@ -216,15 +231,22 @@ namespace GUI_Management
         //wash
         private void btnWashService_Click(object sender, EventArgs e)
         {
-            if (this.isCollapsed_1 == false)
-                this.HiddenPark();
-            if (this.isCollapsed_2 == false)
-                this.HiddenFix();
-            this.timer1_WashService.Start();
+            if (Global.GlobalEmployeeType == 2 || Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 7)
+            {
+                if (this.isCollapsed_1 == false)
+                    this.HiddenPark();
+                if (this.isCollapsed_2 == false)
+                    this.HiddenFix();
+                this.timer1_WashService.Start();
 
-            //panel move
-            this.PanelMoveWash();
-            //end panel move
+                //panel move
+                this.PanelMoveWash();
+                //end panel move
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
 
         private void timer1_WashService_Tick(object sender, EventArgs e)
@@ -267,18 +289,25 @@ namespace GUI_Management
         //Doanh thu
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
-            if (this.isCollapsed_1 == false)
-                this.HiddenPark();
-            if (this.isCollapsed_2 == false)
-                this.HiddenFix();
-            if (this.isCollapsed_3 == false)
-                this.HiddenWash();
+            if (Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6 || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)
+            {
+                if (this.isCollapsed_1 == false)
+                    this.HiddenPark();
+                if (this.isCollapsed_2 == false)
+                    this.HiddenFix();
+                if (this.isCollapsed_3 == false)
+                    this.HiddenWash();
 
-            //panel move
-            this.PanelMoveDoanhThu();
-            //end panel move
+                //panel move
+                this.PanelMoveDoanhThu();
+                //end panel move
 
-            this.openChildForm(new fdoanhThu(this));
+                this.openChildForm(new fdoanhThu(this));
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
         //end doanh thu
 

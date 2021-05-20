@@ -592,7 +592,7 @@ namespace GUI_Management
 
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            finfoNhanVien form = new finfoNhanVien();
+            finfoNhanVien form = new finfoNhanVien(0);
             string id = this.dgv.CurrentRow.Cells[0].Value.ToString().Trim();
             string name = this.dgv.CurrentRow.Cells[1].Value.ToString().Trim();
             DateTime dob = DateTime.Parse(this.dgv.CurrentRow.Cells[2].Value.ToString());

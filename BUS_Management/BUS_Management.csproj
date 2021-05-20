@@ -49,6 +49,7 @@
     <Compile Include="AccountBUS.cs" />
     <Compile Include="customerBUS.cs" />
     <Compile Include="customer_VehicleBUS.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="nhanVienBaoVeBUS.cs" />
     <Compile Include="nhanVienHopDongBUS.cs" />
     <Compile Include="nhanVienRuaXeBUS.cs" />

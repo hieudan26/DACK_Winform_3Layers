@@ -25,15 +25,22 @@ namespace GUI_Management
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
         shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
         shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
+        private int flag;
 
-        public finfoNhanVien()
+        public finfoNhanVien(int flag)
         {
             InitializeComponent();
+            this.flag = flag;
         }
 
         private void finfoNhanVien_Load(object sender, EventArgs e)
         {
-
+            if (this.flag == 1)
+            {
+                this.btnFind.Visible = false;
+                this.btnRemove.Visible = false;
+                this.btnExit.Visible = true;
+            }    
         }
 
         private void resetForm()
@@ -581,6 +588,11 @@ namespace GUI_Management
             {
                 MessageBox.Show("Can't add image, pls fill cmnd txtbox", "Upload Image", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

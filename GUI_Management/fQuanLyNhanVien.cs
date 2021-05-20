@@ -73,7 +73,7 @@ namespace GUI_Management
 
         private void btnInfoNhanVien_Click(object sender, EventArgs e)
         {
-            this.openChildForm(new finfoNhanVien());
+            this.openChildForm(new finfoNhanVien(0));
         }
 
         //tets

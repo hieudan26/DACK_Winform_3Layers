@@ -41,6 +41,7 @@ namespace GUI_Management
             this.btnInfoFix_Vehicle = new Guna.UI.WinForms.GunaGradientButton();
             this.btnFixService = new Guna.UI.WinForms.GunaGradientButton();
             this.pnlDropDownParkService = new System.Windows.Forms.Panel();
+            this.btnBaiXe = new Guna.UI.WinForms.GunaGradientButton();
             this.btnOther_Park = new Guna.UI.WinForms.GunaGradientButton();
             this.btnParkService = new Guna.UI.WinForms.GunaGradientButton();
             this.btnLayXe = new Guna.UI.WinForms.GunaGradientButton();
@@ -56,7 +57,6 @@ namespace GUI_Management
             this.timer1_ParkService = new System.Windows.Forms.Timer(this.components);
             this.timer1_FixService = new System.Windows.Forms.Timer(this.components);
             this.timer1_WashService = new System.Windows.Forms.Timer(this.components);
-            this.btnBaiXe = new Guna.UI.WinForms.GunaGradientButton();
             this.btn.SuspendLayout();
             this.pnlDropDownWashService.SuspendLayout();
             this.pnlDropDownFixService.SuspendLayout();
@@ -348,6 +348,37 @@ namespace GUI_Management
             this.pnlDropDownParkService.Size = new System.Drawing.Size(160, 50);
             this.pnlDropDownParkService.TabIndex = 1;
             // 
+            // btnBaiXe
+            // 
+            this.btnBaiXe.AnimationHoverSpeed = 0.07F;
+            this.btnBaiXe.AnimationSpeed = 0.03F;
+            this.btnBaiXe.BackColor = System.Drawing.Color.Transparent;
+            this.btnBaiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBaiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBaiXe.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBaiXe.BorderSize = 1;
+            this.btnBaiXe.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBaiXe.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBaiXe.Font = new System.Drawing.Font("High Tower Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaiXe.ForeColor = System.Drawing.Color.Black;
+            this.btnBaiXe.Image = null;
+            this.btnBaiXe.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBaiXe.Location = new System.Drawing.Point(3, 54);
+            this.btnBaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBaiXe.Name = "btnBaiXe";
+            this.btnBaiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBaiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBaiXe.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBaiXe.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBaiXe.OnHoverImage = null;
+            this.btnBaiXe.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBaiXe.Radius = 5;
+            this.btnBaiXe.Size = new System.Drawing.Size(155, 50);
+            this.btnBaiXe.TabIndex = 7;
+            this.btnBaiXe.Text = "BÃI XE";
+            this.btnBaiXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBaiXe.Click += new System.EventHandler(this.btnBaiXe_Click_1);
+            // 
             // btnOther_Park
             // 
             this.btnOther_Park.AnimationHoverSpeed = 0.07F;
@@ -592,37 +623,6 @@ namespace GUI_Management
             this.timer1_WashService.Interval = 60;
             this.timer1_WashService.Tick += new System.EventHandler(this.timer1_WashService_Tick);
             // 
-            // btnBaiXe
-            // 
-            this.btnBaiXe.AnimationHoverSpeed = 0.07F;
-            this.btnBaiXe.AnimationSpeed = 0.03F;
-            this.btnBaiXe.BackColor = System.Drawing.Color.Transparent;
-            this.btnBaiXe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBaiXe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnBaiXe.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBaiXe.BorderSize = 1;
-            this.btnBaiXe.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBaiXe.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBaiXe.Font = new System.Drawing.Font("High Tower Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaiXe.ForeColor = System.Drawing.Color.Black;
-            this.btnBaiXe.Image = null;
-            this.btnBaiXe.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBaiXe.Location = new System.Drawing.Point(3, 54);
-            this.btnBaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBaiXe.Name = "btnBaiXe";
-            this.btnBaiXe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnBaiXe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBaiXe.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnBaiXe.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnBaiXe.OnHoverImage = null;
-            this.btnBaiXe.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBaiXe.Radius = 5;
-            this.btnBaiXe.Size = new System.Drawing.Size(155, 50);
-            this.btnBaiXe.TabIndex = 7;
-            this.btnBaiXe.Text = "BÃI XE";
-            this.btnBaiXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnBaiXe.Click += new System.EventHandler(this.btnBaiXe_Click_1);
-            // 
             // fQuanLyXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -657,7 +657,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaShadowPanel btn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaGradientButton btnDoanhThu;
         private System.Windows.Forms.PictureBox pbLoad;
         private Guna.UI.WinForms.GunaButton btnExit;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
@@ -665,21 +664,22 @@ namespace GUI_Management
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Timer timer1_ParkService;
         private System.Windows.Forms.Timer timer1_FixService;
-        private System.Windows.Forms.Panel pnlDropDownFixService;
         private Guna.UI.WinForms.GunaGradientButton btnOther_Fix;
         private Guna.UI.WinForms.GunaGradientButton btnInfoFix_Vehicle;
-        private Guna.UI.WinForms.GunaGradientButton btnFixService;
         public System.Windows.Forms.Panel pnlDropDownParkService;
         private Guna.UI.WinForms.GunaGradientButton btnOther_Park;
-        private Guna.UI.WinForms.GunaGradientButton btnParkService;
         private Guna.UI.WinForms.GunaGradientButton btnLayXe;
-        private Guna.UI.WinForms.GunaGradientButton btnAddService;
         public System.Windows.Forms.Panel pnlMove;
-        private System.Windows.Forms.Panel pnlDropDownWashService;
         private Guna.UI.WinForms.GunaGradientButton btnOther_Wash;
         private Guna.UI.WinForms.GunaGradientButton btnThanhToan_Wash;
-        private Guna.UI.WinForms.GunaGradientButton btnWashService;
         private System.Windows.Forms.Timer timer1_WashService;
         public Guna.UI.WinForms.GunaGradientButton btnBaiXe;
+        public Guna.UI.WinForms.GunaGradientButton btnDoanhThu;
+        public System.Windows.Forms.Panel pnlDropDownFixService;
+        public Guna.UI.WinForms.GunaGradientButton btnAddService;
+        public System.Windows.Forms.Panel pnlDropDownWashService;
+        public Guna.UI.WinForms.GunaGradientButton btnFixService;
+        public Guna.UI.WinForms.GunaGradientButton btnParkService;
+        public Guna.UI.WinForms.GunaGradientButton btnWashService;
     }
 }

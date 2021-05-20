@@ -56,6 +56,7 @@ namespace GUI_Management
             this.label10 = new System.Windows.Forms.Label();
             this.txtUsername = new Guna.UI.WinForms.GunaLineTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNhanVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -242,6 +243,7 @@ namespace GUI_Management
             this.txtId_CMND.SelectedText = "";
             this.txtId_CMND.Size = new System.Drawing.Size(231, 34);
             this.txtId_CMND.TabIndex = 42;
+            this.txtId_CMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTenNV
             // 
@@ -475,12 +477,40 @@ namespace GUI_Management
             this.label8.TabIndex = 26;
             this.label8.Text = "Username: ";
             // 
+            // btnExit
+            // 
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BaseColor = System.Drawing.Color.Red;
+            this.btnExit.BorderColor = System.Drawing.Color.Black;
+            this.btnExit.BorderSize = 1;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Image = null;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.Location = new System.Drawing.Point(1126, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Size = new System.Drawing.Size(56, 36);
+            this.btnExit.TabIndex = 53;
+            this.btnExit.Text = "X";
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Visible = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // finfoNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1185, 707);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnFind);
@@ -504,6 +534,7 @@ namespace GUI_Management
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "finfoNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "finfoNhanVien";
             this.Load += new System.EventHandler(this.finfoNhanVien_Load);
             this.panel1.ResumeLayout(false);
@@ -545,5 +576,6 @@ namespace GUI_Management
         private System.Windows.Forms.Label label8;
         public Guna.UI.WinForms.GunaLineTextBox txtPassword;
         public Guna.UI.WinForms.GunaLineTextBox txtUsername;
+        private Guna.UI.WinForms.GunaButton btnExit;
     }
 }

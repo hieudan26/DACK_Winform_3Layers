@@ -15,6 +15,7 @@ namespace GUI_Management
     public partial class UC_Login : UserControl
     {
         AccountBUS accBUS = new AccountBUS();
+        nhanVienBUS nhanVienBUS = new nhanVienBUS();
         nhanVienBaoVeBUS nhanVienBaoVeBUS = new nhanVienBaoVeBUS();
         nhanVienSuaXeBUS nhanVienSuaXeBUS = new nhanVienSuaXeBUS();
         nhanVienRuaXeBUS nhanVienRuaXeBUS = new nhanVienRuaXeBUS();
@@ -74,6 +75,9 @@ namespace GUI_Management
 
                     if (this.accBUS.loginAccount(acc))
                     {
+                        Global.SetGlobalEmployeeType(4);
+                        this.txtUser.Text = "";
+                        this.txtPass.Text = "";
                         fMain form = new fMain();
                         this.Hide();
                         form.ShowDialog();
@@ -87,9 +91,25 @@ namespace GUI_Management
                 else if (this.rbBaoVe.Checked == true)
                 {
                     DataTable table = this.nhanVienBaoVeBUS.VerifyLogin(username, password);
+                    
                     if (table != null)
                     {
-                        fMain form = new fMain();
+                        this.txtUser.Text = "";
+                        this.txtPass.Text = "";
+
+                        string id = table.Rows[0][0].ToString().Trim();
+                        Global.SetGlobalEmployeeId(id);
+                        
+                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                        {
+                            Global.SetGlobalEmployeeType(5);
+                        }    
+                        else
+                        {
+                            Global.SetGlobalEmployeeType(0);
+                        }    
+
+                        fWelcome form = new fWelcome();
                         this.Hide();
                         form.ShowDialog();
                         this.Show();
@@ -102,9 +122,25 @@ namespace GUI_Management
                 else if (this.rbThoSuaXe.Checked == true)
                 {
                     DataTable table = this.nhanVienSuaXeBUS.VerifyLogin(username, password);
+
                     if (table != null)
                     {
-                        fMain form = new fMain();
+                        this.txtUser.Text = "";
+                        this.txtPass.Text = "";
+
+                        string id = table.Rows[0][0].ToString().Trim();
+                        Global.SetGlobalEmployeeId(id);
+
+                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                        {
+                            Global.SetGlobalEmployeeType(6);
+                        }
+                        else
+                        {
+                            Global.SetGlobalEmployeeType(1);
+                        }
+
+                        fWelcome form = new fWelcome();
                         this.Hide();
                         form.ShowDialog();
                         this.Show();
@@ -117,9 +153,25 @@ namespace GUI_Management
                 else if (this.rbThoRuaXe.Checked == true)
                 {
                     DataTable table = this.nhanVienRuaXeBUS.VerifyLogin(username, password);
+
                     if (table != null)
                     {
-                        fMain form = new fMain();
+                        this.txtUser.Text = "";
+                        this.txtPass.Text = "";
+
+                        string id = table.Rows[0][0].ToString().Trim();
+                        Global.SetGlobalEmployeeId(id);
+
+                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                        {
+                            Global.SetGlobalEmployeeType(7);
+                        }
+                        else
+                        {
+                            Global.SetGlobalEmployeeType(2);
+                        }
+
+                        fWelcome form = new fWelcome();
                         this.Hide();
                         form.ShowDialog();
                         this.Show();
@@ -132,9 +184,25 @@ namespace GUI_Management
                 else
                 {
                     DataTable table = this.nhanVienHopDongBUS.VerifyLogin(username, password);
+                    
                     if (table != null)
                     {
-                        fMain form = new fMain();
+                        this.txtUser.Text = "";
+                        this.txtPass.Text = "";
+
+                        string id = table.Rows[0][0].ToString().Trim();
+                        Global.SetGlobalEmployeeId(id);
+
+                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                        {
+                            Global.SetGlobalEmployeeType(8);
+                        }
+                        else
+                        {
+                            Global.SetGlobalEmployeeType(3);
+                        }
+
+                        fWelcome form = new fWelcome();
                         this.Hide();
                         form.ShowDialog();
                         this.Show();
