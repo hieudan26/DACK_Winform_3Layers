@@ -29,6 +29,28 @@ namespace GUI_Management
         {
             DateTime day = DateTime.Now;
             this.dtPicker.Value = Convert.ToDateTime(day);
+            if (day.DayOfWeek == DayOfWeek.Monday)
+            {
+                try
+                {
+                    ///////Reset bảo vệ --> đẩy dữ liệu vào table//////
+                    this.shift_BaoVeBUS.ResetShift_BaoVe();
+                    this.shift_BaoVeBUS.InsertIntoOld_FormNew();
+                    //////Reset thợ sửa --> đẩy dữ liệu vào table//////
+                    this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe();
+                    this.shift_ThoSuaXeBUS.InsertIntoOld_FormNew();
+                    //////Reset thợ rửa --> đẩy dữ liệu vào table//////
+                    this.shift_ThoRuaXeBUS.ResetShift_ThoRuaXe();
+                    this.shift_ThoRuaXeBUS.InsertIntoOld_FormNew();
+                    //////Reset nhân viên --> đẩy dữ liệu vào table/////
+                    this.shift_NhanVienBUS.ResetShift_NhanVien();
+                    this.shift_NhanVienBUS.InsertIntoOld_FormNew();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Reset New Shift", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                }
+            }    
         }
 
         private DataTable showName_ID_byDoW(DataTable tableBu, int Ca)
@@ -102,7 +124,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_BV.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_BV.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         this.listB_BV.DataSource = this.showName_ID_byDoW(this.shift_BaoVeBUS.getALLShift_BaoVe(), ca);
                         this.listB_BV.ValueMember = "id";
                         this.listB_BV.DisplayMember = "name";
@@ -139,7 +161,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_SX.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_SX.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         this.listB_SX.DataSource = this.showName_ID_byDoW(this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe(), this.Ca());
                         this.listB_SX.ValueMember = "id";
                         this.listB_SX.DisplayMember = "name";
@@ -176,7 +198,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_RX.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_RX.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         this.listB_RX.DataSource = this.showName_ID_byDoW(this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe(), this.Ca());
                         this.listB_RX.ValueMember = "id";
                         this.listB_RX.DisplayMember = "name";
@@ -213,7 +235,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_NV.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_NV.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         this.listB_NV.DataSource = this.showName_ID_byDoW(this.shift_NhanVienBUS.getALLShift_NhanVien(), this.Ca());
                         this.listB_NV.ValueMember = "id";
                         this.listB_NV.DisplayMember = "name";

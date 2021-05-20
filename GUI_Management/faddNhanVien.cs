@@ -92,49 +92,49 @@ namespace GUI_Management
         {
             if (typeTho == "Bảo Vệ")
             {
-                if (this.shift_BaoVeBUS.getALLShift_BaoVe() == null)
+                if (this.shift_BaoVeBUS.getALLShift_BaoVe_New() == null)
                 {
                     this.shift_BaoVeBUS.chiaCaBaoVe();
                 }
                 else
                 {
-                    this.shift_BaoVeBUS.ResetShift_BaoVe();
+                    this.shift_BaoVeBUS.ResetShift_BaoVe_New();
                     this.shift_BaoVeBUS.chiaCaBaoVe();
                 }
             }
             else if (typeTho == "Thợ Sửa")
             {
-                if (this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe() == null)
+                if (this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe_New() == null)
                 {
                     this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
                 }
                 else
                 {
-                    this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe();
+                    this.shift_ThoSuaXeBUS.ResetShift_ThoSuaXe_New();
                     this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
                 }
             }
             else if (typeTho == "Thợ Rửa")
             {
-                if (this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe() == null)
+                if (this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe_New() == null)
                 {
                     this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
                 }
                 else
                 {
-                    this.shift_ThoRuaXeBUS.ResetShift_ThoRuaXe();
+                    this.shift_ThoRuaXeBUS.ResetShift_ThoRuaXe_New();
                     this.shift_ThoRuaXeBUS.chiaCaThoRuaXe();
                 }
             }
             else
             {
-                if (this.shift_NhanVienBUS.getALLShift_NhanVien() == null)
+                if (this.shift_NhanVienBUS.getALLShift_NhanVien_New() == null)
                 {
                     this.shift_NhanVienBUS.chiaCaNhanVien();
                 }
                 else
                 {
-                    this.shift_NhanVienBUS.ResetShift_NhanVien();
+                    this.shift_NhanVienBUS.ResetShift_NhanVien_New();
                     this.shift_NhanVienBUS.chiaCaNhanVien();
                 }
             }
@@ -335,7 +335,7 @@ namespace GUI_Management
                         string password = this.txtPassword.Text.Trim();
                         MemoryStream pic = new MemoryStream();
                         this.pbNhanVien.Image.Save(pic, this.pbNhanVien.Image.RawFormat);
-                        nhanVienDTO nhanVienDTO = new nhanVienDTO(id_cmnd, name, dob, sex, pic, typeTho);
+                        nhanVienDTO nhanVienDTO = new nhanVienDTO(id_cmnd, name, dob, sex, pic, typeTho, 0);
                         if (this.nhanVienBUS.insertEmployee(nhanVienDTO))
                         {
                             MessageBox.Show("Thêm nhân viên thành công", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);

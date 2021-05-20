@@ -38,6 +38,40 @@ namespace DAL_Management
             }
         }
 
+        //Gán bảng new qua bảng show
+        public bool InsertIntoOld_FormNew()
+        {
+            SqlCommand cmd = new SqlCommand("insert into SHIFT_NhanVien select * from SHIFT_NhanVien_New", this.getConnection);
+            this.openConnection();
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                this.closeConnection();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //Reset new 
+        public bool ResetShift_NhanVien_New()
+        {
+            SqlCommand cmd = new SqlCommand("Delete from SHIFT_NhanVien_New", this.getConnection);
+            this.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                this.closeConnection();
+                return true;
+            }
+            else
+            {
+                this.closeConnection();
+                return false;
+            }
+        }
+
         //Reset
         public bool ResetShift_NhanVien()
         {
@@ -53,6 +87,18 @@ namespace DAL_Management
                 this.closeConnection();
                 return false;
             }
+        }
+
+        public DataTable getALLShift_NhanVien_New()
+        {
+            SqlCommand cmd = new SqlCommand("select id, name, Thu2, Thu3, Thu4, Thu5, Thu6, Thu7, ChuNhat from SHIFT_NhanVien_New, EMPLOYEES where id = id_NV");
+            DataTable table = this.getALL(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+                return null;
         }
 
         public DataTable getALLShift_NhanVien()
@@ -73,7 +119,7 @@ namespace DAL_Management
             {
                 this.openConnection();
 
-                SqlCommand cmd = new SqlCommand("insert into SHIFT_NhanVien (id_NV, Thu2, Thu3, Thu4, Thu5, Thu6, Thu7, ChuNhat) values (@id, @t2, @t3, @t4, @t5, @t6, @t7, @cn)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("insert into SHIFT_NhanVien_New (id_NV, Thu2, Thu3, Thu4, Thu5, Thu6, Thu7, ChuNhat) values (@id, @t2, @t3, @t4, @t5, @t6, @t7, @cn)", this.getConnection);
                 cmd.Parameters.Add("@id", SqlDbType.NChar).Value = shift.id_NV;
                 cmd.Parameters.Add("@t2", SqlDbType.Int).Value = shift.Thu2;
                 cmd.Parameters.Add("@t3", SqlDbType.Int).Value = shift.Thu3;

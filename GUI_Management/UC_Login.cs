@@ -15,6 +15,10 @@ namespace GUI_Management
     public partial class UC_Login : UserControl
     {
         AccountBUS accBUS = new AccountBUS();
+        nhanVienBaoVeBUS nhanVienBaoVeBUS = new nhanVienBaoVeBUS();
+        nhanVienSuaXeBUS nhanVienSuaXeBUS = new nhanVienSuaXeBUS();
+        nhanVienRuaXeBUS nhanVienRuaXeBUS = new nhanVienRuaXeBUS();
+        nhanVienHopDongBUS nhanVienHopDongBUS = new nhanVienHopDongBUS();
         Form1 f;
 
         public UC_Login()
@@ -62,19 +66,85 @@ namespace GUI_Management
             }
             else
             {
-                AccountDTO acc = new AccountDTO(0, this.txtUser.Text, this.txtPass.Text);
-
-                if (this.accBUS.loginAccount(acc))
+                string username = this.txtUser.Text.Trim();
+                string password = this.txtPass.Text.Trim();
+                if (this.rbDev.Checked == true || this.rbGiamDoc.Checked == true)
                 {
-                    fMain form = new fMain();
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Show();
+                    AccountDTO acc = new AccountDTO(0, this.txtUser.Text, this.txtPass.Text);
+
+                    if (this.accBUS.loginAccount(acc))
+                    {
+                        fMain form = new fMain();
+                        this.Hide();
+                        form.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if (this.rbBaoVe.Checked == true)
+                {
+                    DataTable table = this.nhanVienBaoVeBUS.VerifyLogin(username, password);
+                    if (table != null)
+                    {
+                        fMain form = new fMain();
+                        this.Hide();
+                        form.ShowDialog();
+                        this.Show();
+                    }    
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }    
+                }    
+                else if (this.rbThoSuaXe.Checked == true)
+                {
+                    DataTable table = this.nhanVienSuaXeBUS.VerifyLogin(username, password);
+                    if (table != null)
+                    {
+                        fMain form = new fMain();
+                        this.Hide();
+                        form.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }    
+                else if (this.rbThoRuaXe.Checked == true)
+                {
+                    DataTable table = this.nhanVienRuaXeBUS.VerifyLogin(username, password);
+                    if (table != null)
+                    {
+                        fMain form = new fMain();
+                        this.Hide();
+                        form.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    DataTable table = this.nhanVienHopDongBUS.VerifyLogin(username, password);
+                    if (table != null)
+                    {
+                        fMain form = new fMain();
+                        this.Hide();
+                        form.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } 
+                    
             }
         }
 
@@ -219,16 +289,72 @@ namespace GUI_Management
 
         private void lLForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AccountDTO acc = new AccountDTO(0, this.txtUser.Text, this.txtPass.Text);
-            string tmp = accBUS.forgotPassword(acc);
-            if (tmp != "")
+            string username = this.txtUser.Text.Trim();
+            string password = this.txtPass.Text.Trim();
+            if (this.rbDev.Checked == true || this.rbGiamDoc.Checked == true)
             {
-                MessageBox.Show("Don't forget your password anymore: \n=> Your pass: " + tmp, "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AccountDTO acc = new AccountDTO(0, this.txtUser.Text, this.txtPass.Text);
+                string tmp = accBUS.forgotPassword(acc);
+                if (tmp != "")
+                {
+                    MessageBox.Show("Don't forget your password anymore: \n=> Your pass: " + tmp, "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (tmp == "" || this.txtUser.Text == "")
+                {
+                    MessageBox.Show("Account not exist", "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }    
-            else if (tmp == "" || this.txtUser.Text == "")
+            else
             {
-                MessageBox.Show("Account not exist", "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }    
+                if (this.rbBaoVe.Checked == true)
+                {
+                    DataTable table = this.nhanVienBaoVeBUS.UsernameExist(username);
+                    if (table == null)
+                    {
+                        MessageBox.Show("Account not exist", "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }    
+                    else
+                    {
+                        MessageBox.Show("Don't forget your password anymore: \n=> Your pass: " + table.Rows[0][2].ToString(), "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }    
+                }   
+                else if (this.rbThoSuaXe.Checked == true)
+                {
+                    DataTable table = this.nhanVienSuaXeBUS.UsernameExist(username);
+                    if (table == null)
+                    {
+                        MessageBox.Show("Account not exist", "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Don't forget your password anymore: \n=> Your pass: " + table.Rows[0][2].ToString(), "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }    
+                else if (this.rbThoRuaXe.Checked == true)
+                {
+                    DataTable table = this.nhanVienRuaXeBUS.UsernameExist(username);
+                    if (table == null)
+                    {
+                        MessageBox.Show("Account not exist", "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Don't forget your password anymore: \n=> Your pass: " + table.Rows[0][2].ToString(), "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    DataTable table = this.nhanVienHopDongBUS.UsernameExist(username);
+                    if (table == null)
+                    {
+                        MessageBox.Show("Account not exist", "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Don't forget your password anymore: \n=> Your pass: " + table.Rows[0][2].ToString(), "Account usename", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }  
+            }   
         }
     }
 }

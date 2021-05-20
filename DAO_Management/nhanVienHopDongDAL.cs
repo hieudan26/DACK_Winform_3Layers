@@ -21,6 +21,41 @@ namespace DAL_Management
             return table;
         }
 
+        //username exist
+        public DataTable UsernameExist(string username)
+        {
+            SqlCommand cmd = new SqlCommand("select * from NHANVIENHOPDONG where username = @username");
+            cmd.Parameters.Add("@username", SqlDbType.NChar).Value = username;
+
+            DataTable table = this.getNhanVienHopDong(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //Xác minh login
+        public DataTable VerifyLogin(string username, string password)
+        {
+            SqlCommand cmd = new SqlCommand("select * from NHANVIENHOPDONG where username = @username and password = @password", this.getConnection);
+            cmd.Parameters.Add("@username", SqlDbType.NChar).Value = username;
+            cmd.Parameters.Add("@password", SqlDbType.NChar).Value = password;
+
+            DataTable table = this.getNhanVienHopDong(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+                return null;
+        }
+
         //updateAccount Bao Ve
         public bool UpdateAccountNVHopDong(string id, string username, string password, int status)
         {

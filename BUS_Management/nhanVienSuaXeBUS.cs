@@ -13,6 +13,18 @@ namespace BUS_Management
     {
         nhanVienSuaXeDAL nhanVienSuaXeDAL = new nhanVienSuaXeDAL();
 
+        //username exist
+        public DataTable UsernameExist(string username)
+        {
+            return this.nhanVienSuaXeDAL.UsernameExist(username);
+        }
+
+        //Xác minh login
+        public DataTable VerifyLogin(string username, string password)
+        {
+            return this.nhanVienSuaXeDAL.VerifyLogin(username, password);
+        }
+
         //updateAccount Bao Ve
         public bool UpdateAccountNVSuaXe(string id, string username, string password, int status)
         {
