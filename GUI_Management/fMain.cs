@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_Management;
 
 namespace GUI_Management
 {
@@ -28,10 +29,17 @@ namespace GUI_Management
 
         private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fQuanLyXe form = new fQuanLyXe();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8)///
+            {
+                fQuanLyXe form = new fQuanLyXe();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
 
         private void jobsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,18 +49,32 @@ namespace GUI_Management
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fQuanLyNhanVien form = new fQuanLyNhanVien();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if (Global.GlobalEmployeeType != 3 || Global.GlobalEmployeeType != 8)///
+            {
+                fQuanLyNhanVien form = new fQuanLyNhanVien();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            { 
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+            }    
         }
 
         private void quảnLýCôngViệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fQuanLyCongViec form = new fQuanLyCongViec();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if (Global.GlobalEmployeeType == 8)
+            {
+                fQuanLyCongViec form = new fQuanLyCongViec();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void thêmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,6 +109,11 @@ namespace GUI_Management
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void vehicleManagemenyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

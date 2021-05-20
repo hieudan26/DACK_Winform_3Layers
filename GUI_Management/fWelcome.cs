@@ -202,18 +202,10 @@ namespace GUI_Management
             }  
             else
             {
-                //if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8)
-                //{
-                //    fMain form = new fMain();
-                //    this.Hide();
-                //    form.ShowDialog();
-                //    this.Show();
-                //}
-                //else if (Global.GlobalEmployeeType == 8)
-                //{
-
-                //}    
-                //chưa nghĩ ra cho hợp logic
+                fMain form = new fMain();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
             }    
                 //{
                 //    //form.btnDoanhThu.Enabled = false;

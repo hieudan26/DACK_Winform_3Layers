@@ -181,7 +181,7 @@ namespace GUI_Management
                         MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                else if (this.rbNhanVien.Checked == true)
                 {
                     DataTable table = this.nhanVienHopDongBUS.VerifyLogin(username, password);
                     

@@ -75,11 +75,12 @@ namespace GUI_Management
             this.vehicleManagemenyToolStripMenuItem.Name = "vehicleManagemenyToolStripMenuItem";
             this.vehicleManagemenyToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.vehicleManagemenyToolStripMenuItem.Text = "Vehicle Management";
+            this.vehicleManagemenyToolStripMenuItem.Click += new System.EventHandler(this.vehicleManagemenyToolStripMenuItem_Click);
             // 
             // addVehicleToolStripMenuItem
             // 
             this.addVehicleToolStripMenuItem.Name = "addVehicleToolStripMenuItem";
-            this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addVehicleToolStripMenuItem.Text = "Quản Lý Xe Gửi";
             this.addVehicleToolStripMenuItem.Click += new System.EventHandler(this.addVehicleToolStripMenuItem_Click);
             // 
