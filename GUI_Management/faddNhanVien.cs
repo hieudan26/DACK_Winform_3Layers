@@ -95,6 +95,7 @@ namespace GUI_Management
                 if (this.shift_BaoVeBUS.getALLShift_BaoVe_New() == null)
                 {
                     this.shift_BaoVeBUS.chiaCaBaoVe();
+                    
                 }
                 else
                 {
@@ -107,6 +108,7 @@ namespace GUI_Management
                 if (this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe_New() == null)
                 {
                     this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
+                    MessageBox.Show("finish");
                 }
                 else
                 {

@@ -321,56 +321,60 @@ namespace GUI_Management
         {
             try
             {
-                string IDxe = this.dgvXe.CurrentRow.Cells[0].Value.ToString();
-                if (MessageBox.Show("Do you want to take out : " + IDxe, "Take Out vehicle", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if(this.dgvXe.CurrentRow != null)
                 {
-                    if (checkHetHan(IDxe))
+                    string IDxe = this.dgvXe.CurrentRow.Cells[0].Value.ToString();
+                    if (MessageBox.Show("Do you want to take out : " + IDxe, "Take Out vehicle", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        MessageBox.Show("Xe đã quá hạn chi phí thanh toán: " + this.totalfee(IDxe), "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thanh toán: " + this.totalfee(IDxe), "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    doanhThuParkingDTO doanhthuDTO = new doanhThuParkingDTO(IDxe, DateTime.Now, this.totalfee(IDxe));
-                    this.doanhThuBUS.insert_doanhThuParking(doanhthuDTO);
-
-                    if (this.vehParkingBUS.DelVehicle(IDxe) && this.vehBUS.UpdateStatusVehicle(IDxe,"PARK",0))
-                    {
-                        MessageBox.Show("Vehicle is taken out", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (!this.checkOtherService(IDxe))
+                        if (checkHetHan(IDxe))
                         {
-                            if (this.vehBUS.DelVehicle(IDxe))
+                            MessageBox.Show("Xe đã quá hạn chi phí thanh toán: " + this.totalfee(IDxe), "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thanh toán: " + this.totalfee(IDxe), "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        doanhThuParkingDTO doanhthuDTO = new doanhThuParkingDTO(IDxe, DateTime.Now, this.totalfee(IDxe));
+                        this.doanhThuBUS.insert_doanhThuParking(doanhthuDTO);
+
+                        if (this.vehParkingBUS.DelVehicle(IDxe) && this.vehBUS.UpdateStatusVehicle(IDxe, "PARK", 0))
+                        {
+                            MessageBox.Show("Vehicle is taken out", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (!this.checkOtherService(IDxe))
                             {
-                                MessageBox.Show("Đã Xóa Trong Table VEHICLE", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }    
-                            else
-                            {
-                                MessageBox.Show("Đã Xóa Không Thành Công Trong Table VEHICLE", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }    
-                        }    
-                    }    
-                    else
-                        MessageBox.Show("Vehicle is taken out Error", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.cbTypeFilter.SelectedIndex = 5;
-                    this.LoadProgressBar();
-                    DataTable table = this.vehParkingBUS.getAllVehicle();
-                    if (table != null)
-                    {
-                        this.designDataGridView(table, 2, 3);
-                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                                if (this.vehBUS.DelVehicle(IDxe))
+                                {
+                                    MessageBox.Show("Đã Xóa Trong Table VEHICLE", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Đã Xóa Không Thành Công Trong Table VEHICLE", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        else
+                            MessageBox.Show("Vehicle is taken out Error", "Lấy Xe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.cbTypeFilter.SelectedIndex = 5;
+                        this.LoadProgressBar();
+                        DataTable table = this.vehParkingBUS.getAllVehicle();
+                        if (table != null)
+                        {
+                            this.designDataGridView(table, 2, 3);
+                            this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                        }
+                        else
+                        {
+                            this.dgvXe.DataSource = null;
+                            this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                        }
                     }
                     else
                     {
-                        this.dgvXe.DataSource = null;
-                        this.lbCount.Text = "Số Lượng Xe: " + this.dgvXe.Rows.Count;
+                        //Nothing
                     }
-                }
-                else
-                {
-                    //Nothing
                 }    
+                
             }
             catch(Exception ex)
             {
@@ -446,55 +450,58 @@ namespace GUI_Management
 
         private void dgvXe_DoubleClick(object sender, EventArgs e)
         {
-            finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "LayXeGui");
-            string id = this.dgvXe.CurrentRow.Cells[0].Value.ToString();
-            DataTable table = this.vehParkingBUS.getVehicleByID(id);
-            form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
-            form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
-            form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            form.txtID.Text = id.ToString();
-
-            if (int.Parse(table.Rows[0]["type"].ToString()) == 0)
-            { 
-                form.txtLoaiXe.Text = "Xe Đạp";
-                form.lbHinh1.Text = "Hình Xe";
-                form.lbHinh2.Text = "Người Gửi";
-            }    
-            else if (int.Parse(table.Rows[0]["type"].ToString()) == 1)
+            if(this.dgvXe.CurrentRow != null)
             {
-                form.txtLoaiXe.Text = "Xe Máy";
-                form.lbHinh1.Text = "Bảng Số";
-                form.lbHinh2.Text = "Người Gửi";
+                finfoXeGui form = new finfoXeGui(formQuanLyXeGui, "LayXeGui");
+                string id = this.dgvXe.CurrentRow.Cells[0].Value.ToString();
+                DataTable table = this.vehParkingBUS.getVehicleByID(id);
+                form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
+                form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
+                form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                form.txtID.Text = id.ToString();
+
+                if (int.Parse(table.Rows[0]["type"].ToString()) == 0)
+                {
+                    form.txtLoaiXe.Text = "Xe Đạp";
+                    form.lbHinh1.Text = "Hình Xe";
+                    form.lbHinh2.Text = "Người Gửi";
+                }
+                else if (int.Parse(table.Rows[0]["type"].ToString()) == 1)
+                {
+                    form.txtLoaiXe.Text = "Xe Máy";
+                    form.lbHinh1.Text = "Bảng Số";
+                    form.lbHinh2.Text = "Người Gửi";
+                }
+                else
+                {
+                    form.txtLoaiXe.Text = "Xe Hơi";
+                    form.lbHinh1.Text = "Bảng Số";
+                    form.lbHinh2.Text = "Hiệu Xe";
+                }
+
+
+                //Xác định thứ trong tuần
+                int thu = this.xacDinhThu();
+
+                String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["Type park"].ToString()));
+
+                form.txtLoaiGui.Text = loaiGui;
+
+                int phi_theo_thu = 0;
+                if (loaiGui != "")
+                {
+                    phi_theo_thu = this.vehParkingBUS.layTienTheoThu(thu, loaiGui);
+                }
+
+                form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
+
+                form.txtTongTien.Text = phi_theo_thu.ToString();
+
+                this.formQuanLyXeGui.openChildForm(form);
             }    
-            else
-            { 
-                form.txtLoaiXe.Text = "Xe Hơi";
-                form.lbHinh1.Text = "Bảng Số";
-                form.lbHinh2.Text = "Hiệu Xe";
-            }    
-
-
-            //Xác định thứ trong tuần
-            int thu = this.xacDinhThu();
-
-            String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["Type park"].ToString()));
-
-            form.txtLoaiGui.Text = loaiGui;
-
-            int phi_theo_thu = 0;
-            if (loaiGui != "")
-            {
-                phi_theo_thu = this.vehParkingBUS.layTienTheoThu(thu, loaiGui);
-            }
-
-            form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
-
-            form.txtTongTien.Text = phi_theo_thu.ToString();
-
-            this.formQuanLyXeGui.openChildForm(form);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

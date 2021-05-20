@@ -22,7 +22,7 @@ namespace BUS_Management
         //Xác minh login
         public DataTable VerifyLogin(string username, string password)
         {
-            return this.VerifyLogin(username, password);
+            return this.nhanVienRuaXeDAL.VerifyLogin(username, password);
         }
 
         //updateAccount Bao Ve

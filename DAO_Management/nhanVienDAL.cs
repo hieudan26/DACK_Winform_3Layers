@@ -92,7 +92,7 @@ namespace DAL_Management
         //tìm kiếm nhân viên theo id_cmnd
         public DataTable getEmployee_byID(string id)
         {
-            SqlCommand cmd = new SqlCommand("select select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where id = @id");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getEmployee(cmd);
             if (table.Rows.Count > 0)
@@ -129,7 +129,7 @@ namespace DAL_Management
         //tìm kiếm hỗn hợp theo gender và gender
         public DataTable getEmployee_ByIDandNameGenderGender(string ID_name, string gender1, string gender2)
         {
-            SqlCommand cmd = new SqlCommand("select select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2)");
+            SqlCommand cmd = new SqlCommand("select id as [ID CCCD], name as [Full name], birthdate as [Date of birth], gender as Gender, typeTho as [Loai tho], img as [Picture CCCD] from EMPLOYEES where concat(id, name) like N'%" + ID_name + "%' and (gender = @gender1 or gender = @gender2)");
             cmd.Parameters.Add("@gender1", SqlDbType.NChar).Value = gender1;
             cmd.Parameters.Add("@gender2", SqlDbType.NChar).Value = gender2;
 
