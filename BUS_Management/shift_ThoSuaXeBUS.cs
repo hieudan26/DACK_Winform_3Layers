@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAL_Management;
 using DTO_Management;
 
@@ -256,21 +257,25 @@ namespace BUS_Management
 
         private void DienCathieuNguoi(List<List<List<int>>> arrNhom, int SoNV, int SoNVTrongCa)
         {
-            int SoNguoiThieu = SoNV % SoNVTrongCa;
-            int indexFill = SoNV - SoNguoiThieu - 1;
-            int StepNV = 1;
-            for (int j = 0; j < SoCatrongNgay; j++)
+            if (SoNV > SoNVTrongCa)
             {
-                for (int i = 0; i < SoNgay; i++)
+                int SoNguoiThieu = SoNV % SoNVTrongCa;
+                int indexFill = SoNV - SoNguoiThieu - 1;
+                int StepNV = 1;
+
+                for (int j = 0; j < SoCatrongNgay; j++)
                 {
-                    while (arrNhom[i][j].Count < SoNVTrongCa)
+                    for (int i = 0; i < SoNgay; i++)
                     {
-                        if (indexFill < 0)
-                            indexFill = SoNV - SoNguoiThieu - 1;
-                        else
+                        while (arrNhom[i][j].Count < SoNVTrongCa)
                         {
-                            arrNhom[i][j].Add(indexFill);
-                            indexFill = indexFill - StepNV;
+                            if (indexFill < 0)
+                                indexFill = SoNV - SoNguoiThieu - 1;
+                            else
+                            {
+                                arrNhom[i][j].Add(indexFill);
+                                indexFill = indexFill - StepNV;
+                            }
                         }
                     }
                 }

@@ -208,55 +208,58 @@ namespace GUI_Management
 
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            finfoXeGui form = new finfoXeGui(fQuanLy, "Other");
-            string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
-            DataTable table = this.vehicleParkingBUS.getVehicleByID(id);
-            form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
-            form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
-            form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            form.txtID.Text = id.ToString();
-
-            if (int.Parse(table.Rows[0]["Type"].ToString()) == 0)
+            if(this.dgv.CurrentRow != null)
             {
-                form.txtLoaiXe.Text = "Xe Đạp";
-                form.lbHinh1.Text = "Hình Xe";
-                form.lbHinh2.Text = "Người Gửi";
-            }
-            else if (int.Parse(table.Rows[0]["Type"].ToString()) == 1)
-            {
-                form.txtLoaiXe.Text = "Xe Máy";
-                form.lbHinh1.Text = "Bảng Số";
-                form.lbHinh2.Text = "Người Gửi";
-            }
-            else
-            {
-                form.txtLoaiXe.Text = "Xe Hơi";
-                form.lbHinh1.Text = "Bảng Số";
-                form.lbHinh2.Text = "Hiệu Xe";
-            }
+                finfoXeGui form = new finfoXeGui(fQuanLy, "Other");
+                string id = this.dgv.CurrentRow.Cells[0].Value.ToString();
+                DataTable table = this.vehicleParkingBUS.getVehicleByID(id);
+                form.pBHinh1.Image = Image.FromStream(this.picture(table, "Image 1"));
+                form.pBHinh1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                form.pBHinh2.Image = Image.FromStream(this.picture(table, "Image 2"));
+                form.pBHinh2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                form.txtID.Text = id.ToString();
+
+                if (int.Parse(table.Rows[0]["Type"].ToString()) == 0)
+                {
+                    form.txtLoaiXe.Text = "Xe Đạp";
+                    form.lbHinh1.Text = "Hình Xe";
+                    form.lbHinh2.Text = "Người Gửi";
+                }
+                else if (int.Parse(table.Rows[0]["Type"].ToString()) == 1)
+                {
+                    form.txtLoaiXe.Text = "Xe Máy";
+                    form.lbHinh1.Text = "Bảng Số";
+                    form.lbHinh2.Text = "Người Gửi";
+                }
+                else
+                {
+                    form.txtLoaiXe.Text = "Xe Hơi";
+                    form.lbHinh1.Text = "Bảng Số";
+                    form.lbHinh2.Text = "Hiệu Xe";
+                }
 
 
-            //Xác định thứ trong tuần
-            int thu = this.xacDinhThu();
+                //Xác định thứ trong tuần
+                int thu = this.xacDinhThu();
 
-            String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["Type park"].ToString()));
+                String loaiGui = this.LoaiGui(int.Parse(table.Rows[0]["Type park"].ToString()));
 
-            form.txtLoaiGui.Text = loaiGui;
+                form.txtLoaiGui.Text = loaiGui;
 
-            int phi_theo_thu = 0;
-            if (loaiGui != "")
-            {
-                phi_theo_thu = this.vehicleParkingBUS.layTienTheoThu(thu, loaiGui);
-            }
+                int phi_theo_thu = 0;
+                if (loaiGui != "")
+                {
+                    phi_theo_thu = this.vehicleParkingBUS.layTienTheoThu(thu, loaiGui);
+                }
 
-            form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
+                form.txtDTGui.Text = table.Rows[0]["Time in"].ToString();
 
-            form.txtTongTien.Text = phi_theo_thu.ToString();
+                form.txtTongTien.Text = phi_theo_thu.ToString();
 
-            this.fQuanLy.openChildForm(form);
+                this.fQuanLy.openChildForm(form);
+            }    
         }
     }
 }
