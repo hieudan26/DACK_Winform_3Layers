@@ -20,6 +20,10 @@ namespace GUI_Management
         nhanVienSuaXeBUS nhanVienSuaXeBUS = new nhanVienSuaXeBUS();
         nhanVienRuaXeBUS nhanVienRuaXeBUS = new nhanVienRuaXeBUS();
         nhanVienHopDongBUS nhanVienHopDongBUS = new nhanVienHopDongBUS();
+        shift_BaoVeBUS shift_BaoVeBUS = new shift_BaoVeBUS();
+        shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
+        shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
+        shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
         Form1 f;
 
         public UC_Login()
@@ -59,6 +63,101 @@ namespace GUI_Management
             }
         }
 
+        private bool checkShift(string typeTho, string IDNhanVien)
+        {
+            int ca = -1;
+            string Thu = "";
+            DateTime CurrTime = DateTime.Now;
+            if (CurrTime.DayOfWeek == 0)
+            {
+                Thu = "Chủ Nhật";
+            }    
+            else
+            {
+                Thu = "Thu" + (int)CurrTime.DayOfWeek + 1;
+            }    
+
+            //ca1 từ 7h-11h30 //ca2 từ 11h30 - 16h// ca3 từ 16h - 20h30
+            DateTime ca1_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 7, 0, 0, 0);
+            DateTime ca2_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 11, 30, 0, 0);
+            DateTime ca3_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 16, 0, 0, 0);
+            DateTime ca3_End = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 20, 30, 0, 0);
+            //////////////////////////////////////
+            if ((DateTime.Equals(ca1_Begin, CurrTime) || (DateTime.Compare(ca1_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) > 0)))
+            {
+                ca = 1;
+            }
+            else if ((DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) > 0)))
+
+            {
+                ca = 2;
+            }    
+            else if ((DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca3_End, CurrTime) || (DateTime.Compare(ca3_End, CurrTime) > 0)))
+            {
+                ca = 3;
+            }    
+
+            ///////////////////////////////////
+            if (ca == -1)
+            {
+                return false;
+            }    
+            else
+            {
+                if (typeTho == "Bảo Vệ")
+                {
+                    if (this.shift_BaoVeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else if (typeTho == "Thợ Sửa")
+                {
+                    if (this.shift_ThoSuaXeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else if (typeTho == "Thợ Rửa")
+                {
+                    if (this.shift_ThoRuaXeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (this.shift_NhanVienBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }    
+        }
+
         private void btnLog_Click(object sender, EventArgs e)
         {
             if (this.txtUser.Text == "" || this.txtPass.Text == "")
@@ -67,152 +166,189 @@ namespace GUI_Management
             }
             else
             {
-                string username = this.txtUser.Text.Trim();
-                string password = this.txtPass.Text.Trim();
-                if (this.rbDev.Checked == true || this.rbGiamDoc.Checked == true)
+                if (this.rbBaoVe.Checked == false && this.rbThoSuaXe.Checked == false && this.rbThoRuaXe.Checked == false 
+                    && this.rbNhanVien.Checked == false && this.rbDev.Checked == false && this.rbGiamDoc.Checked == false)
                 {
-                    AccountDTO acc = new AccountDTO(0, this.txtUser.Text, this.txtPass.Text);
-
-                    if (this.accBUS.loginAccount(acc))
-                    {
-                        Global.SetGlobalEmployeeType(4);
-                        this.txtUser.Text = "";
-                        this.txtPass.Text = "";
-                        fMain form = new fMain();
-                        this.Hide();
-                        form.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else if (this.rbBaoVe.Checked == true)
+                    MessageBox.Show("Please choose your roll", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }   
+                else
                 {
-                    DataTable table = this.nhanVienBaoVeBUS.VerifyLogin(username, password);
-                    
-                    if (table != null)
+                    string username = this.txtUser.Text.Trim();
+                    string password = this.txtPass.Text.Trim();
+                    if (this.rbDev.Checked == true || this.rbGiamDoc.Checked == true)
                     {
-                        this.txtUser.Text = "";
-                        this.txtPass.Text = "";
+                        AccountDTO acc = new AccountDTO(0, this.txtUser.Text, this.txtPass.Text);
 
-                        string id = table.Rows[0][0].ToString().Trim();
-                        Global.SetGlobalEmployeeId(id);
-                        
-                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                        if (this.accBUS.loginAccount(acc))
                         {
-                            Global.SetGlobalEmployeeType(5);
-                        }    
+                            Global.SetGlobalEmployeeType(4);
+                            this.txtUser.Text = "";
+                            this.txtPass.Text = "";
+                            fMain form = new fMain();
+                            this.Hide();
+                            form.ShowDialog();
+                            this.Show();
+                        }
                         else
                         {
-                            Global.SetGlobalEmployeeType(0);
-                        }    
-
-                        fWelcome form = new fWelcome();
-                        this.Hide();
-                        form.ShowDialog();
-                        this.Show();
-                    }    
-                    else
+                            MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else if (this.rbBaoVe.Checked == true)
                     {
-                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }    
+                        DataTable table = this.nhanVienBaoVeBUS.VerifyLogin(username, password);
+
+                        if (table != null)
+                        {
+                            this.txtUser.Text = "";
+                            this.txtPass.Text = "";
+
+                            string id = table.Rows[0][0].ToString().Trim();
+                            if (this.checkShift("Bảo Vệ", id))
+                            {
+                                Global.SetGlobalEmployeeId(id);
+
+                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                {
+                                    Global.SetGlobalEmployeeType(5);
+                                }
+                                else
+                                {
+                                    Global.SetGlobalEmployeeType(0);
+                                }
+
+                                fWelcome form = new fWelcome();
+                                this.Hide();
+                                form.ShowDialog();
+                                this.Show();
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Chưa đến ca của bạn. Vui lòng làm việc đúng giờ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }    
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else if (this.rbThoSuaXe.Checked == true)
+                    {
+                        DataTable table = this.nhanVienSuaXeBUS.VerifyLogin(username, password);
+
+                        if (table != null)
+                        {
+                            this.txtUser.Text = "";
+                            this.txtPass.Text = "";
+
+                            string id = table.Rows[0][0].ToString().Trim();
+                            if (this.checkShift("Thợ Sửa", id))
+                            {
+                                Global.SetGlobalEmployeeId(id);
+
+                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                {
+                                    Global.SetGlobalEmployeeType(6);
+                                }
+                                else
+                                {
+                                    Global.SetGlobalEmployeeType(1);
+                                }
+
+                                fWelcome form = new fWelcome();
+                                this.Hide();
+                                form.ShowDialog();
+                                this.Show();
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Chưa đến ca của bạn. Vui lòng làm việc đúng giờ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }    
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else if (this.rbThoRuaXe.Checked == true)
+                    {
+                        DataTable table = this.nhanVienRuaXeBUS.VerifyLogin(username, password);
+
+                        if (table != null)
+                        {
+                            this.txtUser.Text = "";
+                            this.txtPass.Text = "";
+
+                            string id = table.Rows[0][0].ToString().Trim();
+                            
+                            if (this.checkShift("Thợ Rửa", id))
+                            {
+                                Global.SetGlobalEmployeeId(id);
+
+                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                {
+                                    Global.SetGlobalEmployeeType(7);
+                                }
+                                else
+                                {
+                                    Global.SetGlobalEmployeeType(2);
+                                }
+
+                                fWelcome form = new fWelcome();
+                                this.Hide();
+                                form.ShowDialog();
+                                this.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chưa đến ca của bạn. Vui lòng làm việc đúng giờ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else if (this.rbNhanVien.Checked == true)
+                    {
+                        DataTable table = this.nhanVienHopDongBUS.VerifyLogin(username, password);
+
+                        if (table != null)
+                        {
+                            this.txtUser.Text = "";
+                            this.txtPass.Text = "";
+
+                            string id = table.Rows[0][0].ToString().Trim();
+                            
+                            if (this.checkShift("Nhân Viên", id))
+                            {
+                                Global.SetGlobalEmployeeId(id);
+
+                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                {
+                                    Global.SetGlobalEmployeeType(8);
+                                }
+                                else
+                                {
+                                    Global.SetGlobalEmployeeType(3);
+                                }
+
+                                fWelcome form = new fWelcome();
+                                this.Hide();
+                                form.ShowDialog();
+                                this.Show();
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Chưa đến ca của bạn. Vui lòng làm việc đúng giờ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }    
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }    
-                else if (this.rbThoSuaXe.Checked == true)
-                {
-                    DataTable table = this.nhanVienSuaXeBUS.VerifyLogin(username, password);
-
-                    if (table != null)
-                    {
-                        this.txtUser.Text = "";
-                        this.txtPass.Text = "";
-
-                        string id = table.Rows[0][0].ToString().Trim();
-                        Global.SetGlobalEmployeeId(id);
-
-                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
-                        {
-                            Global.SetGlobalEmployeeType(6);
-                        }
-                        else
-                        {
-                            Global.SetGlobalEmployeeType(1);
-                        }
-
-                        fWelcome form = new fWelcome();
-                        this.Hide();
-                        form.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }    
-                else if (this.rbThoRuaXe.Checked == true)
-                {
-                    DataTable table = this.nhanVienRuaXeBUS.VerifyLogin(username, password);
-
-                    if (table != null)
-                    {
-                        this.txtUser.Text = "";
-                        this.txtPass.Text = "";
-
-                        string id = table.Rows[0][0].ToString().Trim();
-                        Global.SetGlobalEmployeeId(id);
-
-                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
-                        {
-                            Global.SetGlobalEmployeeType(7);
-                        }
-                        else
-                        {
-                            Global.SetGlobalEmployeeType(2);
-                        }
-
-                        fWelcome form = new fWelcome();
-                        this.Hide();
-                        form.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else if (this.rbNhanVien.Checked == true)
-                {
-                    DataTable table = this.nhanVienHopDongBUS.VerifyLogin(username, password);
-                    
-                    if (table != null)
-                    {
-                        this.txtUser.Text = "";
-                        this.txtPass.Text = "";
-
-                        string id = table.Rows[0][0].ToString().Trim();
-                        Global.SetGlobalEmployeeId(id);
-
-                        if (bool.Parse(table.Rows[0][3].ToString()) == true)
-                        {
-                            Global.SetGlobalEmployeeType(8);
-                        }
-                        else
-                        {
-                            Global.SetGlobalEmployeeType(3);
-                        }
-
-                        fWelcome form = new fWelcome();
-                        this.Hide();
-                        form.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                } 
-                    
             }
         }
 

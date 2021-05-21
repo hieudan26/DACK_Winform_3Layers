@@ -192,38 +192,42 @@ namespace GUI_Management
 
         private void btnWork_Click(object sender, EventArgs e)
         {
-            string typeTho = this.lbTypeTho.Text.Trim();
-            if (typeTho == "Bảo Vệ" || typeTho == "Thợ Sửa" || typeTho == "Thợ Rửa")
-            {
-                fQuanLyXe form = new fQuanLyXe();
-                this.Hide();
-                form.ShowDialog();
-                this.Show();
-            }  
-            else
-            {
-                fMain form = new fMain();
-                this.Hide();
-                form.ShowDialog();
-                this.Show();
-            }    
-                //{
-                //    //form.btnDoanhThu.Enabled = false;
-                //    form.btnFixService.Enabled = false;
-                //    form.btnWashService.Enabled = false;
-                //}
-                //else if (this.lbTypeTho.Text.Trim() == "Thợ Sửa")
-                //{
-                //    form.btnParkService.Enabled = false;
-                //    //form.btnDoanhThu.Enabled = false;
-                //    form.btnWashService.Enabled = false;
-                //}
-                //else /*if (this.lbTypeTho.Text.Trim() == "Thợ Rửa")*/
-                //{
-                //    form.btnParkService.Enabled = false;
-                //    //form.btnDoanhThu.Enabled = false;
-                //    form.btnFixService.Enabled = false;
-                //}
+            //string typeTho = this.lbTypeTho.Text.Trim();
+            //if (typeTho == "Bảo Vệ" || typeTho == "Thợ Sửa" || typeTho == "Thợ Rửa")
+            //{
+            //    fQuanLyXe form = new fQuanLyXe();
+            //    this.Hide();
+            //    form.ShowDialog();
+            //    this.Show();
+            //}  
+            //else
+            //{
+            //    fMain form = new fMain();
+            //    this.Hide();
+            //    form.ShowDialog();
+            //    this.Show();
+            //}
+            fMain form = new fMain();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+            //{
+            //    //form.btnDoanhThu.Enabled = false;
+            //    form.btnFixService.Enabled = false;
+            //    form.btnWashService.Enabled = false;
+            //}
+            //else if (this.lbTypeTho.Text.Trim() == "Thợ Sửa")
+            //{
+            //    form.btnParkService.Enabled = false;
+            //    //form.btnDoanhThu.Enabled = false;
+            //    form.btnWashService.Enabled = false;
+            //}
+            //else /*if (this.lbTypeTho.Text.Trim() == "Thợ Rửa")*/
+            //{
+            //    form.btnParkService.Enabled = false;
+            //    //form.btnDoanhThu.Enabled = false;
+            //    form.btnFixService.Enabled = false;
+            //}
         }
     }
 }

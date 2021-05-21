@@ -123,6 +123,7 @@ namespace GUI_Management
             this.liencesManagementToolStripMenuItem.Name = "liencesManagementToolStripMenuItem";
             this.liencesManagementToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
             this.liencesManagementToolStripMenuItem.Text = "Liences Management";
+            this.liencesManagementToolStripMenuItem.Click += new System.EventHandler(this.liencesManagementToolStripMenuItem_Click);
             // 
             // quảnLýHợpĐồngToolStripMenuItem
             // 
@@ -133,6 +134,7 @@ namespace GUI_Management
             this.quảnLýHợpĐồngToolStripMenuItem.Name = "quảnLýHợpĐồngToolStripMenuItem";
             this.quảnLýHợpĐồngToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
             this.quảnLýHợpĐồngToolStripMenuItem.Text = "Công Ty VS Khách Thuê";
+            this.quảnLýHợpĐồngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýHợpĐồngToolStripMenuItem_Click);
             // 
             // thêmKháchHàngToolStripMenuItem
             // 

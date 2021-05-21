@@ -18,6 +18,11 @@ namespace BUS_Management
         private nhanVienDAL nhanvienDAL = new nhanVienDAL();
         private shift_BaoVeDAL shift_baoveDAL = new shift_BaoVeDAL();
 
+        public DataTable getIdName_ByCaThuID(int Ca, string Thu, string idNV)
+        {
+            return this.shift_baoveDAL.getIdName_ByCaThuID(Ca, Thu, idNV);
+        }
+
         public DataTable getALLShift_BaoVe_New()
         {
             return this.shift_baoveDAL.getALLShift_BaoVe_New();

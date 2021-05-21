@@ -29,7 +29,8 @@ namespace GUI_Management
 
         private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8)///
+            if (Global.GlobalEmployeeType == 0 || Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 1 || Global.GlobalEmployeeType == 2
+                || Global.GlobalEmployeeType == 6 || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 4)///
             {
                 fQuanLyXe form = new fQuanLyXe();
                 this.Hide();
@@ -49,7 +50,8 @@ namespace GUI_Management
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType != 3 || Global.GlobalEmployeeType != 8)///
+            if (Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6
+                || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)///
             {
                 fQuanLyNhanVien form = new fQuanLyNhanVien();
                 this.Hide();
@@ -64,7 +66,8 @@ namespace GUI_Management
 
         private void quảnLýCôngViệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 8)
+            if (Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6
+                || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)
             {
                 fQuanLyCongViec form = new fQuanLyCongViec();
                 this.Hide();
@@ -79,39 +82,77 @@ namespace GUI_Management
 
         private void thêmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faddKhach form = new faddKhach(0);
-            form.Text = "Khách Thuê Xe Form"; 
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            {
+                faddKhach form = new faddKhach(0);
+                form.Text = "Khách Thuê Xe Form";
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }    
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
 
         private void thêmKháchHàngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            faddKhach form = new faddKhach(1);
-            form.Text = "Khách Cho Thuê Xe Form";
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            {
+                faddKhach form = new faddKhach(1);
+                form.Text = "Khách Cho Thuê Xe Form";
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void làmHợpĐồngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            flienKetVehicle form = new flienKetVehicle();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            {
+                flienKetVehicle form = new flienKetVehicle();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void thanhToánHợpĐồngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            flamHopDongChoThue form = new flamHopDongChoThue();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            {
+                flamHopDongChoThue form = new flamHopDongChoThue();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void vehicleManagemenyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void liencesManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýHợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
