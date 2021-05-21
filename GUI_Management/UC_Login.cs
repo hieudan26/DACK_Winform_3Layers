@@ -68,24 +68,24 @@ namespace GUI_Management
             int ca = -1;
             string Thu = "";
             DateTime CurrTime = DateTime.Now;
-            if (CurrTime.DayOfWeek == 0)
+            if ((int)CurrTime.DayOfWeek == 0)
             {
                 Thu = "Chủ Nhật";
             }    
             else
             {
-                Thu = "Thu" + (int)CurrTime.DayOfWeek + 1;
+                Thu = "Thu" + ((int)CurrTime.DayOfWeek + 1);
             }    
 
             //ca1 từ 7h-11h30 //ca2 từ 11h30 - 16h// ca3 từ 16h - 20h30
             DateTime ca1_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
-                , 7, 0, 0, 0);
+                , 7, 0, 0);
             DateTime ca2_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
-                , 11, 30, 0, 0);
+                , 11, 30, 0);
             DateTime ca3_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
                 , 16, 0, 0, 0);
             DateTime ca3_End = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
-                , 20, 30, 0, 0);
+                , 20, 30, 0);
             //////////////////////////////////////
             if ((DateTime.Equals(ca1_Begin, CurrTime) || (DateTime.Compare(ca1_Begin, CurrTime) < 0))
                 && (DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) > 0)))
@@ -124,7 +124,7 @@ namespace GUI_Management
                 }
                 else if (typeTho == "Thợ Sửa")
                 {
-                    if (this.shift_ThoSuaXeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    if (this.shift_ThoSuaXeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString().Trim() == IDNhanVien)
                     {
                         return true;
                     }
@@ -135,7 +135,7 @@ namespace GUI_Management
                 }
                 else if (typeTho == "Thợ Rửa")
                 {
-                    if (this.shift_ThoRuaXeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    if (this.shift_ThoRuaXeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString().Trim() == IDNhanVien)
                     {
                         return true;
                     }
@@ -146,7 +146,7 @@ namespace GUI_Management
                 }
                 else
                 {
-                    if (this.shift_NhanVienBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    if (this.shift_NhanVienBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString().Trim() == IDNhanVien)
                     {
                         return true;
                     }

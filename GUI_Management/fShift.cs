@@ -131,7 +131,7 @@ namespace GUI_Management
                     {
                         this.listB_BV.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         DataTable temp = this.showName_ID_byDoW(this.shift_BaoVeBUS.getALLShift_BaoVe(), ca);
-                        if(temp == null)
+                        if(temp != null)
                         {
                             this.listB_BV.DataSource = temp;
                             this.listB_BV.ValueMember = "id";

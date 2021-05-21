@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDTO.cs" />
+    <Compile Include="contract_ChoThueDTO.cs" />
     <Compile Include="customerDTO.cs" />
     <Compile Include="customer_VehicleDTO.cs" />
     <Compile Include="doanhThuFixDTO.cs" />

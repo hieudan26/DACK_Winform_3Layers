@@ -56,8 +56,8 @@ namespace GUI_Management
             try
             {
                 this.cbIDxe.DataSource = this.UpdateDanhSachVehID(this.vehicleParkingBUS.getAllVehicle());
-                this.cbIDxe.DisplayMember = "id";
-                this.cbIDxe.ValueMember = "typePark";
+                this.cbIDxe.DisplayMember = "ID";
+                this.cbIDxe.ValueMember = "Type park";
             }    
             catch (Exception e)
             {

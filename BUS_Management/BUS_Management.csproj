@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBUS.cs" />
+    <Compile Include="contract_ChoThueBUS.cs" />
     <Compile Include="customerBUS.cs" />
     <Compile Include="customer_VehicleBUS.cs" />
     <Compile Include="Global.cs" />

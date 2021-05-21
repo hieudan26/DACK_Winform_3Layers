@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAL.cs" />
+    <Compile Include="contract_ChoThueDAL.cs" />
     <Compile Include="customerDAL.cs" />
     <Compile Include="customer_VehicleDAL.cs" />
     <Compile Include="doanhThuFixDAL.cs" />
