@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBUS.cs" />
+    <Compile Include="CheckInBUS.cs" />
     <Compile Include="contract_ChoThueBUS.cs" />
     <Compile Include="customerBUS.cs" />
     <Compile Include="customer_VehicleBUS.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="nhanVienHopDongBUS.cs" />
     <Compile Include="nhanVienRuaXeBUS.cs" />
     <Compile Include="nhanVienSuaXeBUS.cs" />
+    <Compile Include="SalaryBUS.cs" />
     <Compile Include="shift_BaoVeBUS.cs" />
     <Compile Include="doanhThuFixBUS.cs" />
     <Compile Include="doanhThuParkingBUS.cs" />

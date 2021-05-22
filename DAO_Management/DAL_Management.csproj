@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAL.cs" />
+    <Compile Include="CheckInDAL.cs" />
     <Compile Include="contract_ChoThueDAL.cs" />
     <Compile Include="customerDAL.cs" />
     <Compile Include="customer_VehicleDAL.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="phiDichVuSuaXeDAL.cs" />
     <Compile Include="phongBanDAL.cs" />
     <Compile Include="Properties\vehicleWashBUS.cs" />
+    <Compile Include="SalaryDAL.cs" />
+    <Compile Include="SalaryPerHourDAL.cs" />
     <Compile Include="shift_BaoVeDAL.cs" />
     <Compile Include="shift_NhanVienDAL.cs" />
     <Compile Include="shift_ThoRuaXeDAL.cs" />

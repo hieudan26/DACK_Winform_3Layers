@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS_Management;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace GUI_Management
 {
     public partial class Form1 : Form
     {
+        CheckInBUS checkinBUS = new CheckInBUS();
         public Form1()
         {
             InitializeComponent();
@@ -81,6 +83,8 @@ namespace GUI_Management
 
         private void uC_Login1_Load_1(object sender, EventArgs e)
         {
+            //this.checkinBUS.ResetBang();//mở ra 1 lần
+            //this.checkinBUS.CreateCheckIn();
             this.uC_Login1.SetParent(this);
         }
 
