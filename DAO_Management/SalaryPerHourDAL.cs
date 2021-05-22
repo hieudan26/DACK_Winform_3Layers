@@ -86,16 +86,29 @@ namespace DAO_Management
         }
         public float getLuongPerHour(string type, int Ca)
         {
-            SqlCommand cmd = new SqlCommand("select Luongperhour from SALARYPERHOUR where  type = @type and Ca =@Ca");
-            cmd.Parameters.Add("@type", SqlDbType.NChar).Value = type;
-            cmd.Parameters.Add("@Ca", SqlDbType.Int).Value = Ca;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            if (table.Rows.Count > 0)
-                return float.Parse(table.Rows[0][0].ToString());
-            else
-                return 0;
+            try
+            {
+                this.openConnection();
+                SqlCommand cmd = new SqlCommand("select Luongperhour from SALARYPERHOUR where  type = @type and Ca =@Ca",this.getConnection);
+                cmd.Parameters.Add("@type", SqlDbType.NChar).Value = type;
+                cmd.Parameters.Add("@Ca", SqlDbType.Int).Value = Ca;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return float.Parse(table.Rows[0][0].ToString());
+                else
+                    return 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return 0;
         }
     }
 }

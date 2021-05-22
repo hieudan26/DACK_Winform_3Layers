@@ -76,7 +76,7 @@ namespace BUS_Management
         }
         public bool UpdateLuongPerHour(string type, int Ca,int SoTien)
         {
-            if (this.salaryhour.UpdateSalaryPerHour(type, Ca, SoTien))
+            if (this.salaryhour.UpdateSalaryPerHour(type, Ca,SoTien))
                 return true;
             return false;
         }

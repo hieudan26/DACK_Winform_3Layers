@@ -15,6 +15,7 @@ namespace GUI_Management
     public partial class Form1 : Form
     {
         CheckInBUS checkinBUS = new CheckInBUS();
+        SalaryBUS salaryBUS = new SalaryBUS();
         public Form1()
         {
             InitializeComponent();
@@ -85,6 +86,10 @@ namespace GUI_Management
         {
             //this.checkinBUS.ResetBang();//mở ra 1 lần
             //this.checkinBUS.CreateCheckIn();
+            //this.salaryBUS.CreateBangLuong();
+            float x = this.salaryBUS.LuongHourPerCa("Bảo Vệ", 3);
+            MessageBox.Show(x.ToString());
+            this.salaryBUS.UpdateLuong("123124125123", x);
             this.uC_Login1.SetParent(this);
         }
 

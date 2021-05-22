@@ -27,7 +27,7 @@ namespace DAO_Management
             try
             {
                 this.openConnection();
-                SqlCommand cmd = new SqlCommand("insert into SALALRY (id,Luong) values (@id,@Luong)", this.getConnection);
+                SqlCommand cmd = new SqlCommand("insert into SALARY (id,Luong) values (@id,@Luong)", this.getConnection);
                 cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDnv;
                 cmd.Parameters.Add("@Luong", SqlDbType.Float).Value = Luong;
                 if (cmd.ExecuteNonQuery() == 1)
@@ -48,7 +48,7 @@ namespace DAO_Management
             try
             {
                 this.openConnection();
-                SqlCommand cmd = new SqlCommand("update SALALRY set Luong=@Luong where id = @id", this.getConnection);
+                SqlCommand cmd = new SqlCommand("update SALARY set Luong=@Luong where id = @id", this.getConnection);
                 cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDnv;
                 cmd.Parameters.Add("@Luong", SqlDbType.Float).Value = Luong;
                 if (cmd.ExecuteNonQuery() == 1)
@@ -69,7 +69,7 @@ namespace DAO_Management
             try
             {
                 this.openConnection();
-                SqlCommand cmd = new SqlCommand("Delete from SALALRY ", this.getConnection);
+                SqlCommand cmd = new SqlCommand("Delete from SALARY ", this.getConnection);
                 if (cmd.ExecuteNonQuery() == 1)
                     return true;
             }
@@ -85,7 +85,7 @@ namespace DAO_Management
         }
         public float getLuongNV(string IDnv)
         {
-            SqlCommand cmd = new SqlCommand("select Luong from SALALRY where id = @id");
+            SqlCommand cmd = new SqlCommand("select Luong from SALARY where id = @id", this.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDnv;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
@@ -97,7 +97,7 @@ namespace DAO_Management
         }
         public DataTable getLuongAll()
         {
-            SqlCommand cmd = new SqlCommand("select * from SALALRY");
+            SqlCommand cmd = new SqlCommand("select * from SALARY");
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
