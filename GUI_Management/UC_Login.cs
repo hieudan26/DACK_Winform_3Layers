@@ -24,11 +24,13 @@ namespace GUI_Management
         shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
         shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
+        CheckInBUS checkinBUS = new CheckInBUS();
         Form1 f;
 
         public UC_Login()
         {
             InitializeComponent();
+            
         }
 
         private void txtUser_Enter(object sender, EventArgs e)
@@ -62,10 +64,40 @@ namespace GUI_Management
                 this.txtUser.ForeColor = Color.Silver;
             }
         }
+        private int getCaNow()
+        {
+            DateTime CurrTime = DateTime.Now;
+            DateTime ca1_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 7, 0, 0);
+            DateTime ca2_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 11, 30, 0);
+            DateTime ca3_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 16, 0, 0, 0);
+            DateTime ca3_End = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 20, 30, 0);
+            //////////////////////////////////////
+            if ((DateTime.Equals(ca1_Begin, CurrTime) || (DateTime.Compare(ca1_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) > 0)))
+            {
+                return 1;
+            }
+            else if ((DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) > 0)))
 
+            {
+                return 2;
+            }
+            else if ((DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca3_End, CurrTime) || (DateTime.Compare(ca3_End, CurrTime) > 0)))
+            {
+                return 3;
+            }
+            else
+                return -1;
+        }
         private bool checkShift(string typeTho, string IDNhanVien)
         {
-            int ca = -1;
+            int ca = this.getCaNow();
             string Thu = "";
             DateTime CurrTime = DateTime.Now;
             if ((int)CurrTime.DayOfWeek == 0)
@@ -78,7 +110,7 @@ namespace GUI_Management
             }    
 
             //ca1 từ 7h-11h30 //ca2 từ 11h30 - 16h// ca3 từ 16h - 20h30
-            DateTime ca1_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+            /*DateTime ca1_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
                 , 7, 0, 0);
             DateTime ca2_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
                 , 11, 30, 0);
@@ -102,7 +134,7 @@ namespace GUI_Management
                 && (DateTime.Equals(ca3_End, CurrTime) || (DateTime.Compare(ca3_End, CurrTime) > 0)))
             {
                 ca = 3;
-            }    
+            }*/
 
             ///////////////////////////////////
             if (ca == -1)
@@ -207,7 +239,7 @@ namespace GUI_Management
                             if (this.checkShift("Bảo Vệ", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-
+                                this.ChamCong();
                                 if (bool.Parse(table.Rows[0][3].ToString()) == true)
                                 {
                                     Global.SetGlobalEmployeeType(5);
@@ -216,7 +248,6 @@ namespace GUI_Management
                                 {
                                     Global.SetGlobalEmployeeType(0);
                                 }
-
                                 fWelcome form = new fWelcome();
                                 this.Hide();
                                 form.ShowDialog();
@@ -245,7 +276,7 @@ namespace GUI_Management
                             if (this.checkShift("Thợ Sửa", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-
+                                this.ChamCong();
                                 if (bool.Parse(table.Rows[0][3].ToString()) == true)
                                 {
                                     Global.SetGlobalEmployeeType(6);
@@ -284,7 +315,7 @@ namespace GUI_Management
                             if (this.checkShift("Thợ Rửa", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-
+                                this.ChamCong();
                                 if (bool.Parse(table.Rows[0][3].ToString()) == true)
                                 {
                                     Global.SetGlobalEmployeeType(7);
@@ -312,7 +343,7 @@ namespace GUI_Management
                     else if (this.rbNhanVien.Checked == true)
                     {
                         DataTable table = this.nhanVienHopDongBUS.VerifyLogin(username, password);
-
+                        this.ChamCong();
                         if (table != null)
                         {
                             this.txtUser.Text = "";
@@ -323,7 +354,7 @@ namespace GUI_Management
                             if (this.checkShift("Nhân Viên", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-
+                                this.ChamCong();
                                 if (bool.Parse(table.Rows[0][3].ToString()) == true)
                                 {
                                     Global.SetGlobalEmployeeType(8);
@@ -559,6 +590,21 @@ namespace GUI_Management
                     }
                 }  
             }   
+        }
+        private void ChamCong()
+        {
+            int ca = this.getCaNow();
+            if(ca != -1)
+            {
+                string IDNV = Global.GlobalEmployeeId;
+                DateTime now = DateTime.Now;
+                string thu = now.DayOfWeek.ToString();
+                if (checkinBUS.AttendNV(IDNV, thu, ca))
+                    MessageBox.Show("Điểm danh thành công");
+                else
+                    MessageBox.Show("Điểm danh thất bai");
+
+            }
         }
     }
 }

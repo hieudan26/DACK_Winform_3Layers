@@ -139,9 +139,14 @@ namespace GUI_Management
         {
             if (this.cbIDxe.SelectedIndex != -1)
             {
-                int type = int.Parse(this.vehicleBUS.getVehicleByID(this.cbIDxe.Text).Rows[0]["type"].ToString());
-                string typeXe = this.LoaiXe(type);
-                this.txtTypeVeh.Text = typeXe;
+                DataTable table = this.vehicleBUS.getVehicleByID(this.cbIDxe.Text);
+                if(table.Rows.Count > 0)
+                {
+                    int type = int.Parse(table.Rows[0]["type"].ToString());
+                    string typeXe = this.LoaiXe(type);
+                    this.txtTypeVeh.Text = typeXe;
+                }    
+                
             }    
         }
 
