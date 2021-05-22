@@ -23,10 +23,41 @@ namespace GUI_Management
             InitializeComponent();
         }
 
+        private void ClearflowLayoutPanel()
+        {
+            this.flpCa1_2.Controls.Clear();
+            this.flpCa1_3.Controls.Clear();
+            this.flpCa1_4.Controls.Clear();
+            this.flpCa1_5.Controls.Clear();
+            this.flpCa1_5.Controls.Clear();
+            this.flpCa1_6.Controls.Clear();
+            this.flpCa1_7.Controls.Clear();
+            this.flpCa1_CN.Controls.Clear();
+
+            this.flpCa2_2.Controls.Clear();
+            this.flpCa2_3.Controls.Clear();
+            this.flpCa2_4.Controls.Clear();
+            this.flpCa2_5.Controls.Clear();
+            this.flpCa2_5.Controls.Clear();
+            this.flpCa2_6.Controls.Clear();
+            this.flpCa2_7.Controls.Clear();
+            this.flpCa2_CN.Controls.Clear();
+
+            this.flpCa3_2.Controls.Clear();
+            this.flpCa3_3.Controls.Clear();
+            this.flpCa3_4.Controls.Clear();
+            this.flpCa3_5.Controls.Clear();
+            this.flpCa3_5.Controls.Clear();
+            this.flpCa3_6.Controls.Clear();
+            this.flpCa3_7.Controls.Clear();
+            this.flpCa3_CN.Controls.Clear();
+        }
+
         private void btnpBV_Click(object sender, EventArgs e)
         {
             try
             {
+                this.ClearflowLayoutPanel();
                 this.LoadDataPhong_BaoVe();
             }
             catch (Exception ex)
@@ -194,6 +225,7 @@ namespace GUI_Management
         {
             try
             {
+                this.ClearflowLayoutPanel();
                 this.LoadDataPhong_SuaXe();
             }    
             catch (Exception ex)
@@ -364,6 +396,7 @@ namespace GUI_Management
         {
             try
             {
+                this.ClearflowLayoutPanel();
                 this.LoadDataPhong_RuaXe();
             }
             catch (Exception ex)
@@ -451,6 +484,7 @@ namespace GUI_Management
         {
             try
             {
+                this.ClearflowLayoutPanel();
                 this.LoadDataPhong_NhanVien();
             }
             catch (Exception ex)

@@ -22,10 +22,12 @@ namespace GUI_Management
         nhanVienHopDongBUS nhanVienHopDongBUS = new nhanVienHopDongBUS();
         private string username = ""; 
         private string password = "";
+        private string status;
 
-        public fWelcome()
+        public fWelcome(string status)
         {
             InitializeComponent();
+            this.status = status;
         }
 
         private void fWelcome_Load(object sender, EventArgs e)
@@ -54,6 +56,7 @@ namespace GUI_Management
             MemoryStream picture = new MemoryStream(pic);
             this.picBox.Image = Image.FromStream(picture);
             this.lbTypeTho.Text = table.Rows[0][4].ToString().Trim();
+            this.lbTrangThai.Text = this.status.Trim();
             this.LoadTextButton(this.lbTypeTho.Text.Trim());
         }
 

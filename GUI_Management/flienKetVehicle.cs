@@ -160,7 +160,7 @@ namespace GUI_Management
                 if (this.customer_VehicleBUS.insertcustomer_Vehicle(customer_VehicleDTO))
                 {
                     MessageBox.Show("Sở hữu xe thành công", "liên kết xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Loadcb_Veh();
+                    this.flienKetVehicle_Load(sender, e);
                 }    
                 else
                 {

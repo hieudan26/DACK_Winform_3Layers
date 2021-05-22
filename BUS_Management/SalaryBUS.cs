@@ -18,6 +18,12 @@ namespace BUS_Management
         SalaryDAL salaryDAL = new SalaryDAL();
         nhanVienBUS nhanvienBUS = new nhanVienBUS();
         SalaryPerHourDAL salaryhour = new SalaryPerHourDAL();
+
+        public DataTable getLuongAll()
+        {
+            return this.salaryDAL.getLuongAll();
+        }
+
         public void CreateBangLuong()
         {
             DataTable table = this.nhanvienBUS.getAllEmployees();
@@ -25,10 +31,11 @@ namespace BUS_Management
             {
                 for(int i = 0;i < table.Rows.Count; i++)
                 {
-                    this.salaryDAL.insertSalaryNV(table.Rows[i][0].ToString(), 0);
+                    this.salaryDAL.insertSalaryNV(table.Rows[i][0].ToString().Trim(), 0);
                 }    
             }    
         }
+
         public bool UpdateLuong(string IDNV, float Bonus)
         {
             float LuongGoc = this.salaryDAL.getLuongNV(IDNV);
@@ -37,10 +44,12 @@ namespace BUS_Management
                 return true;
             return false;
         }
+
         public float LuongHourPerCa(string type, int Ca)
         {
             return this.salaryhour.getLuongPerHour(type,Ca);
         }
+
         public float TruTre(int Minute)//Khỏi làm không điểm danh chơi bị trừ tiền đi
         {
             if (Minute > 30 && Minute <=45)
@@ -50,12 +59,14 @@ namespace BUS_Management
             else
                 return 3;
         }
+
         public bool ResetNV(string IDNV)
         {
             if (this.salaryDAL.UpdateLuong(IDNV, 0))
                 return true;
             return false;
         }
+
         public void ResetAllNV()
         {
             try
@@ -74,6 +85,7 @@ namespace BUS_Management
                 MessageBox.Show(ex.Message);
             }
         }
+        
         public bool UpdateLuongPerHour(string type, int Ca,int SoTien)
         {
             if (this.salaryhour.UpdateSalaryPerHour(type, Ca,SoTien))

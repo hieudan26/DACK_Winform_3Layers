@@ -29,7 +29,7 @@ namespace GUI_Management
         {
             DateTime day = DateTime.Now;
             this.dtPicker.Value = Convert.ToDateTime(day);
-            if (day.DayOfWeek == DayOfWeek.Monday)
+            if (day.DayOfWeek == DayOfWeek.Saturday)
             {
                 try
                 {
@@ -129,7 +129,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_BV.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_BV.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         DataTable temp = this.showName_ID_byDoW(this.shift_BaoVeBUS.getALLShift_BaoVe(), ca);
                         if(temp != null)
                         {
@@ -170,7 +170,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_SX.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_SX.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         DataTable temp = this.showName_ID_byDoW(this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe(), this.Ca());
                         if(temp != null)
                         {
@@ -212,7 +212,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_RX.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_RX.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         DataTable temp = this.showName_ID_byDoW(this.shift_ThoRuaXeBUS.getALLShift_ThoRuaXe(), this.Ca());
                         if(temp != null)
                         {
@@ -254,7 +254,7 @@ namespace GUI_Management
                 {
                     try
                     {
-                        this.listB_NV.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.listB_NV.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         DataTable temp = this.showName_ID_byDoW(this.shift_NhanVienBUS.getALLShift_NhanVien(), this.Ca());
                         if (temp != null)
                         {

@@ -55,7 +55,7 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(282, 9);
+            this.label1.Location = new System.Drawing.Point(318, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(558, 106);
             this.label1.TabIndex = 7;
@@ -67,7 +67,7 @@ namespace GUI_Management
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label2.Location = new System.Drawing.Point(82, 9);
+            this.label2.Location = new System.Drawing.Point(125, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 106);
             this.label2.TabIndex = 8;
@@ -79,7 +79,7 @@ namespace GUI_Management
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label3.Location = new System.Drawing.Point(918, 9);
+            this.label3.Location = new System.Drawing.Point(978, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 106);
             this.label3.TabIndex = 9;
@@ -91,7 +91,7 @@ namespace GUI_Management
             this.llb_BaoVe.AutoSize = true;
             this.llb_BaoVe.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llb_BaoVe.LinkColor = System.Drawing.Color.Black;
-            this.llb_BaoVe.Location = new System.Drawing.Point(50, 222);
+            this.llb_BaoVe.Location = new System.Drawing.Point(79, 251);
             this.llb_BaoVe.Name = "llb_BaoVe";
             this.llb_BaoVe.Size = new System.Drawing.Size(133, 28);
             this.llb_BaoVe.TabIndex = 10;
@@ -105,7 +105,7 @@ namespace GUI_Management
             this.panel1.Controls.Add(this.rbCa3);
             this.panel1.Controls.Add(this.rbCa2);
             this.panel1.Controls.Add(this.rbCa1);
-            this.panel1.Location = new System.Drawing.Point(461, 149);
+            this.panel1.Location = new System.Drawing.Point(503, 178);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(517, 37);
             this.panel1.TabIndex = 11;
@@ -158,7 +158,7 @@ namespace GUI_Management
             this.llb_SuaXe.AutoSize = true;
             this.llb_SuaXe.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llb_SuaXe.LinkColor = System.Drawing.Color.Black;
-            this.llb_SuaXe.Location = new System.Drawing.Point(335, 222);
+            this.llb_SuaXe.Location = new System.Drawing.Point(373, 251);
             this.llb_SuaXe.Name = "llb_SuaXe";
             this.llb_SuaXe.Size = new System.Drawing.Size(131, 28);
             this.llb_SuaXe.TabIndex = 56;
@@ -173,7 +173,7 @@ namespace GUI_Management
             this.llb_RuaXe.AutoSize = true;
             this.llb_RuaXe.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llb_RuaXe.LinkColor = System.Drawing.Color.Black;
-            this.llb_RuaXe.Location = new System.Drawing.Point(624, 222);
+            this.llb_RuaXe.Location = new System.Drawing.Point(679, 251);
             this.llb_RuaXe.Name = "llb_RuaXe";
             this.llb_RuaXe.Size = new System.Drawing.Size(132, 28);
             this.llb_RuaXe.TabIndex = 57;
@@ -188,7 +188,7 @@ namespace GUI_Management
             this.llb_NhanVien.AutoSize = true;
             this.llb_NhanVien.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llb_NhanVien.LinkColor = System.Drawing.Color.Black;
-            this.llb_NhanVien.Location = new System.Drawing.Point(903, 222);
+            this.llb_NhanVien.Location = new System.Drawing.Point(949, 251);
             this.llb_NhanVien.Name = "llb_NhanVien";
             this.llb_NhanVien.Size = new System.Drawing.Size(164, 28);
             this.llb_NhanVien.TabIndex = 58;
@@ -201,18 +201,18 @@ namespace GUI_Management
             // 
             this.listB_BV.FormattingEnabled = true;
             this.listB_BV.ItemHeight = 16;
-            this.listB_BV.Location = new System.Drawing.Point(12, 265);
+            this.listB_BV.Location = new System.Drawing.Point(12, 303);
             this.listB_BV.Name = "listB_BV";
-            this.listB_BV.Size = new System.Drawing.Size(216, 308);
+            this.listB_BV.Size = new System.Drawing.Size(258, 308);
             this.listB_BV.TabIndex = 59;
             // 
             // listB_SX
             // 
             this.listB_SX.FormattingEnabled = true;
             this.listB_SX.ItemHeight = 16;
-            this.listB_SX.Location = new System.Drawing.Point(290, 265);
+            this.listB_SX.Location = new System.Drawing.Point(314, 303);
             this.listB_SX.Name = "listB_SX";
-            this.listB_SX.Size = new System.Drawing.Size(228, 308);
+            this.listB_SX.Size = new System.Drawing.Size(258, 308);
             this.listB_SX.TabIndex = 60;
             this.listB_SX.Visible = false;
             // 
@@ -220,9 +220,9 @@ namespace GUI_Management
             // 
             this.listB_RX.FormattingEnabled = true;
             this.listB_RX.ItemHeight = 16;
-            this.listB_RX.Location = new System.Drawing.Point(580, 265);
+            this.listB_RX.Location = new System.Drawing.Point(618, 303);
             this.listB_RX.Name = "listB_RX";
-            this.listB_RX.Size = new System.Drawing.Size(228, 308);
+            this.listB_RX.Size = new System.Drawing.Size(258, 308);
             this.listB_RX.TabIndex = 61;
             this.listB_RX.Visible = false;
             // 
@@ -230,9 +230,9 @@ namespace GUI_Management
             // 
             this.listB_NV.FormattingEnabled = true;
             this.listB_NV.ItemHeight = 16;
-            this.listB_NV.Location = new System.Drawing.Point(872, 265);
+            this.listB_NV.Location = new System.Drawing.Point(915, 303);
             this.listB_NV.Name = "listB_NV";
-            this.listB_NV.Size = new System.Drawing.Size(228, 308);
+            this.listB_NV.Size = new System.Drawing.Size(258, 308);
             this.listB_NV.TabIndex = 62;
             this.listB_NV.Visible = false;
             // 
@@ -248,7 +248,7 @@ namespace GUI_Management
             this.dtPicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtPicker.ForeColor = System.Drawing.Color.Black;
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPicker.Location = new System.Drawing.Point(133, 152);
+            this.dtPicker.Location = new System.Drawing.Point(175, 181);
             this.dtPicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtPicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtPicker.Name = "dtPicker";
@@ -277,7 +277,7 @@ namespace GUI_Management
             this.btnSche.ForeColor = System.Drawing.Color.Black;
             this.btnSche.Image = null;
             this.btnSche.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSche.Location = new System.Drawing.Point(432, 583);
+            this.btnSche.Location = new System.Drawing.Point(446, 653);
             this.btnSche.Name = "btnSche";
             this.btnSche.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSche.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -297,7 +297,7 @@ namespace GUI_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(1112, 635);
+            this.ClientSize = new System.Drawing.Size(1185, 707);
             this.Controls.Add(this.btnSche);
             this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.listB_NV);

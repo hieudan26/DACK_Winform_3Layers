@@ -30,6 +30,9 @@ namespace GUI_Management
         private void InitializeComponent()
         {
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.txtGia = new Guna.UI.WinForms.GunaLineTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnCamKet = new Guna.UI.WinForms.GunaGradientButton();
             this.flpTypeXe = new System.Windows.Forms.FlowLayoutPanel();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtHo = new System.Windows.Forms.TextBox();
@@ -52,9 +55,8 @@ namespace GUI_Management
             this.label1 = new System.Windows.Forms.Label();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCamKet = new Guna.UI.WinForms.GunaGradientButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtGia = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtTenNhanVien = new Guna.UI.WinForms.GunaLineTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
@@ -65,6 +67,8 @@ namespace GUI_Management
             // gunaGradient2Panel1
             // 
             this.gunaGradient2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel1.Controls.Add(this.txtTenNhanVien);
+            this.gunaGradient2Panel1.Controls.Add(this.label6);
             this.gunaGradient2Panel1.Controls.Add(this.txtGia);
             this.gunaGradient2Panel1.Controls.Add(this.label5);
             this.gunaGradient2Panel1.Controls.Add(this.btnCamKet);
@@ -89,6 +93,63 @@ namespace GUI_Management
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
             this.gunaGradient2Panel1.Size = new System.Drawing.Size(1030, 712);
             this.gunaGradient2Panel1.TabIndex = 0;
+            this.gunaGradient2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaGradient2Panel1_Paint);
+            // 
+            // txtGia
+            // 
+            this.txtGia.BackColor = System.Drawing.Color.White;
+            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGia.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtGia.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtGia.LineSize = 4;
+            this.txtGia.Location = new System.Drawing.Point(745, 569);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.PasswordChar = '\0';
+            this.txtGia.SelectedText = "";
+            this.txtGia.Size = new System.Drawing.Size(245, 37);
+            this.txtGia.TabIndex = 108;
+            this.txtGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(845, 528);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 24);
+            this.label5.TabIndex = 107;
+            this.label5.Text = "Deal: ";
+            // 
+            // btnCamKet
+            // 
+            this.btnCamKet.AnimationHoverSpeed = 0.07F;
+            this.btnCamKet.AnimationSpeed = 0.03F;
+            this.btnCamKet.BackColor = System.Drawing.Color.Transparent;
+            this.btnCamKet.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnCamKet.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCamKet.BorderColor = System.Drawing.Color.Black;
+            this.btnCamKet.BorderSize = 1;
+            this.btnCamKet.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCamKet.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCamKet.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCamKet.ForeColor = System.Drawing.Color.Black;
+            this.btnCamKet.Image = null;
+            this.btnCamKet.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCamKet.Location = new System.Drawing.Point(443, 658);
+            this.btnCamKet.Name = "btnCamKet";
+            this.btnCamKet.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCamKet.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnCamKet.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCamKet.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnCamKet.OnHoverImage = null;
+            this.btnCamKet.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCamKet.Radius = 3;
+            this.btnCamKet.Size = new System.Drawing.Size(160, 42);
+            this.btnCamKet.TabIndex = 106;
+            this.btnCamKet.Text = "CAM KẾT";
+            this.btnCamKet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCamKet.Click += new System.EventHandler(this.btnCamKet_Click);
             // 
             // flpTypeXe
             // 
@@ -123,7 +184,7 @@ namespace GUI_Management
             this.cbCustomer.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbCustomer.ForeColor = System.Drawing.Color.Black;
             this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Location = new System.Drawing.Point(421, 184);
+            this.cbCustomer.Location = new System.Drawing.Point(443, 142);
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbCustomer.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -140,7 +201,7 @@ namespace GUI_Management
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtHoTen.LineSize = 4;
-            this.txtHoTen.Location = new System.Drawing.Point(421, 265);
+            this.txtHoTen.Location = new System.Drawing.Point(443, 202);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PasswordChar = '\0';
             this.txtHoTen.SelectedText = "";
@@ -156,7 +217,7 @@ namespace GUI_Management
             this.txtIDContract.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtIDContract.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtIDContract.LineSize = 4;
-            this.txtIDContract.Location = new System.Drawing.Point(421, 104);
+            this.txtIDContract.Location = new System.Drawing.Point(443, 74);
             this.txtIDContract.Name = "txtIDContract";
             this.txtIDContract.PasswordChar = '\0';
             this.txtIDContract.SelectedText = "";
@@ -306,17 +367,17 @@ namespace GUI_Management
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(154, 271);
+            this.label3.Location = new System.Drawing.Point(185, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 24);
+            this.label3.Size = new System.Drawing.Size(182, 24);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Họ và Tên:";
+            this.label3.Text = "(Bên A) _Họ và Tên:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(75, 187);
+            this.label2.Location = new System.Drawing.Point(96, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 24);
             this.label2.TabIndex = 2;
@@ -326,7 +387,7 @@ namespace GUI_Management
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(75, 104);
+            this.label1.Location = new System.Drawing.Point(96, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 24);
             this.label1.TabIndex = 1;
@@ -336,7 +397,7 @@ namespace GUI_Management
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Gill Sans MT Condensed", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(361, 24);
+            this.gunaLabel1.Location = new System.Drawing.Point(361, 9);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(333, 50);
             this.gunaLabel1.TabIndex = 0;
@@ -352,61 +413,32 @@ namespace GUI_Management
             this.label4.TabIndex = 2;
             this.label4.Text = "ID Xe: ";
             // 
-            // btnCamKet
+            // txtTenNhanVien
             // 
-            this.btnCamKet.AnimationHoverSpeed = 0.07F;
-            this.btnCamKet.AnimationSpeed = 0.03F;
-            this.btnCamKet.BackColor = System.Drawing.Color.Transparent;
-            this.btnCamKet.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnCamKet.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCamKet.BorderColor = System.Drawing.Color.Black;
-            this.btnCamKet.BorderSize = 1;
-            this.btnCamKet.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCamKet.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCamKet.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCamKet.ForeColor = System.Drawing.Color.Black;
-            this.btnCamKet.Image = null;
-            this.btnCamKet.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCamKet.Location = new System.Drawing.Point(443, 658);
-            this.btnCamKet.Name = "btnCamKet";
-            this.btnCamKet.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCamKet.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnCamKet.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCamKet.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnCamKet.OnHoverImage = null;
-            this.btnCamKet.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCamKet.Radius = 3;
-            this.btnCamKet.Size = new System.Drawing.Size(160, 42);
-            this.btnCamKet.TabIndex = 106;
-            this.btnCamKet.Text = "CAM KẾT";
-            this.btnCamKet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCamKet.Click += new System.EventHandler(this.btnCamKet_Click);
+            this.txtTenNhanVien.BackColor = System.Drawing.Color.White;
+            this.txtTenNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenNhanVien.Enabled = false;
+            this.txtTenNhanVien.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtTenNhanVien.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNhanVien.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtTenNhanVien.LineSize = 4;
+            this.txtTenNhanVien.Location = new System.Drawing.Point(443, 269);
+            this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.PasswordChar = '\0';
+            this.txtTenNhanVien.SelectedText = "";
+            this.txtTenNhanVien.Size = new System.Drawing.Size(370, 37);
+            this.txtTenNhanVien.TabIndex = 110;
+            this.txtTenNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(845, 528);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 24);
-            this.label5.TabIndex = 107;
-            this.label5.Text = "Deal: ";
-            // 
-            // txtGia
-            // 
-            this.txtGia.BackColor = System.Drawing.Color.White;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtGia.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtGia.LineSize = 4;
-            this.txtGia.Location = new System.Drawing.Point(745, 569);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.PasswordChar = '\0';
-            this.txtGia.SelectedText = "";
-            this.txtGia.Size = new System.Drawing.Size(245, 37);
-            this.txtGia.TabIndex = 108;
-            this.txtGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(96, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(271, 24);
+            this.label6.TabIndex = 109;
+            this.label6.Text = "(Bên B) _Người làm Hợp Đồng:";
             // 
             // flamHopDongChoThue
             // 
@@ -416,8 +448,10 @@ namespace GUI_Management
             this.Controls.Add(this.gunaGradient2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "flamHopDongChoThue";
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "flamHopDongChoThue";
+            this.Text = "Hợp Đồng Cho Thuê";
             this.Load += new System.EventHandler(this.flamHopDongChoThue_Load);
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel1.PerformLayout();
@@ -458,5 +492,7 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaLineTextBox txtGia;
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaGradientButton btnCamKet;
+        private Guna.UI.WinForms.GunaLineTextBox txtTenNhanVien;
+        private System.Windows.Forms.Label label6;
     }
 }

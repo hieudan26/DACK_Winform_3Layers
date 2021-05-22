@@ -80,7 +80,7 @@ namespace GUI_Management
             // addVehicleToolStripMenuItem
             // 
             this.addVehicleToolStripMenuItem.Name = "addVehicleToolStripMenuItem";
-            this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.addVehicleToolStripMenuItem.Text = "Quản Lý Xe Gửi";
             this.addVehicleToolStripMenuItem.Click += new System.EventHandler(this.addVehicleToolStripMenuItem_Click);
             // 
@@ -148,6 +148,7 @@ namespace GUI_Management
             this.làmHợpĐồngToolStripMenuItem.Name = "làmHợpĐồngToolStripMenuItem";
             this.làmHợpĐồngToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.làmHợpĐồngToolStripMenuItem.Text = "Làm Hợp Đồng";
+            this.làmHợpĐồngToolStripMenuItem.Click += new System.EventHandler(this.làmHợpĐồngToolStripMenuItem_Click);
             // 
             // thanhToánHợpĐồngToolStripMenuItem
             // 

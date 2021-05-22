@@ -84,11 +84,15 @@ namespace GUI_Management
 
         private void uC_Login1_Load_1(object sender, EventArgs e)
         {
-            //this.checkinBUS.ResetBang();//mở ra 1 lần
-            //this.checkinBUS.CreateCheckIn();
+            this.checkinBUS.ResetBang();//mở ra 1 lần
+            this.checkinBUS.CreateCheckIn();
             //this.salaryBUS.CreateBangLuong();
+            if (this.salaryBUS.getLuongAll() == null)
+            {
+                this.salaryBUS.CreateBangLuong();
+            }    
             float x = this.salaryBUS.LuongHourPerCa("Bảo Vệ", 3);
-            MessageBox.Show(x.ToString());
+            //MessageBox.Show(x.ToString());
             this.salaryBUS.UpdateLuong("123124125123", x);
             this.uC_Login1.SetParent(this);
         }

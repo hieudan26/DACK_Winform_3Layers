@@ -21,6 +21,23 @@ namespace DAL_Management
             return table;
         }
 
+        //get full info xe được quyền cho thuê
+        public DataTable getFullInfoVehicle_Thue()
+        {
+            SqlCommand cmd = new SqlCommand("select id as ID, type as [Type], img1 as IMG1, img2 as IMG2 from CUSTOMER_VEHICLE, VEHICLE where CUSTOMER_VEHICLE.id_Veh = VEHICLE.id");
+
+            DataTable table = this.getcustomer_Vehicle(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }    
+            else
+            {
+                return null;
+            }    
+        }
+
         //get all vehicle by id cus
         public DataTable getAllVehicle_IdCus(string id_cus)
         {

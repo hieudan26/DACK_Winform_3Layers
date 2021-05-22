@@ -6,11 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL_Management;
 using DTO_Management;
 
 
-namespace DAO_Management
+namespace DAL_Management
 {
     public class SalaryDAL : MyDB
     {
@@ -22,6 +21,7 @@ namespace DAO_Management
             adapter.Fill(table);
             return table;
         }
+
         public bool insertSalaryNV(string IDnv, float Luong)
         {
             try
@@ -43,6 +43,7 @@ namespace DAO_Management
             }
             return false;
         }
+
         public bool UpdateLuong(string IDnv, float Luong)
         {
             try
@@ -64,6 +65,7 @@ namespace DAO_Management
             }
             return false;
         }
+
         public bool DeleteAll()
         {
             try
@@ -83,6 +85,7 @@ namespace DAO_Management
             }
             return false;
         }
+
         public float getLuongNV(string IDnv)
         {
             SqlCommand cmd = new SqlCommand("select Luong from SALARY where id = @id", this.getConnection);
@@ -95,12 +98,15 @@ namespace DAO_Management
             else
                 return 0;
         }
+
         public DataTable getLuongAll()
         {
             SqlCommand cmd = new SqlCommand("select * from SALARY");
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
+            DataTable table = this.getSalary(cmd);
+
             if (table.Rows.Count > 0)
                 return table;
             else

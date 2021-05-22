@@ -21,6 +21,24 @@ namespace DAL_Management
             return table;
         }
 
+        //get all khách hàng thuê xe
+        public DataTable getAllCustomer_Thue()
+        {
+            SqlCommand cmd = new SqlCommand("select id as ID, fname as [First name], lname as [Last name], gender as Gender, address as Address, phone as Phone from CUSTOMER where status = @status");
+            cmd.Parameters.Add("@status", SqlDbType.Int).Value = 0;
+
+            DataTable table = this.getCustomer(cmd);
+
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //get all khách hàng cho thuê xe
         public DataTable getAllCustomer_ChoThue()
         {

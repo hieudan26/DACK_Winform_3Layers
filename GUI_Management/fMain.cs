@@ -156,5 +156,20 @@ namespace GUI_Management
         {
 
         }
+
+        private void làmHợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            {
+                flamHopDongThue form = new flamHopDongThue();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

@@ -30,9 +30,9 @@ namespace GUI_Management
         private void InitializeComponent()
         {
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.picBox = new System.Windows.Forms.PictureBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.lbWel = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.picBox = new System.Windows.Forms.PictureBox();
             this.btnEDIT = new Guna.UI.WinForms.GunaGradientButton();
             this.btnLogout = new Guna.UI.WinForms.GunaGradientButton();
             this.btnWork = new Guna.UI.WinForms.GunaGradientButton();
@@ -40,10 +40,10 @@ namespace GUI_Management
             this.llbRefresh = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.lbTypeTho = new Guna.UI.WinForms.GunaLabel();
             this.lbTrangThai = new Guna.UI.WinForms.GunaLabel();
+            this.lbTypeTho = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGradient2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -65,6 +65,26 @@ namespace GUI_Management
             this.gunaGradient2Panel1.Size = new System.Drawing.Size(596, 155);
             this.gunaGradient2Panel1.TabIndex = 0;
             // 
+            // lbWel
+            // 
+            this.lbWel.AutoSize = true;
+            this.lbWel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWel.Location = new System.Drawing.Point(189, 93);
+            this.lbWel.Name = "lbWel";
+            this.lbWel.Size = new System.Drawing.Size(121, 26);
+            this.lbWel.TabIndex = 2;
+            this.lbWel.Text = "Họ và Tên: ";
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Snap ITC", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(243, 9);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(287, 55);
+            this.gunaLabel1.TabIndex = 1;
+            this.gunaLabel1.Text = "WELCOME";
+            // 
             // picBox
             // 
             this.picBox.Location = new System.Drawing.Point(0, 0);
@@ -73,26 +93,6 @@ namespace GUI_Management
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Snap ITC", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(243, 9);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(295, 57);
-            this.gunaLabel1.TabIndex = 1;
-            this.gunaLabel1.Text = "WELCOME";
-            // 
-            // lbWel
-            // 
-            this.lbWel.AutoSize = true;
-            this.lbWel.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWel.Location = new System.Drawing.Point(204, 93);
-            this.lbWel.Name = "lbWel";
-            this.lbWel.Size = new System.Drawing.Size(143, 29);
-            this.lbWel.TabIndex = 2;
-            this.lbWel.Text = "Họ và Tên: ";
             // 
             // btnEDIT
             // 
@@ -227,25 +227,15 @@ namespace GUI_Management
             this.panel2.Size = new System.Drawing.Size(528, 106);
             this.panel2.TabIndex = 6;
             // 
-            // gunaLabel2
+            // lbTrangThai
             // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(17, 14);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(99, 23);
-            this.gunaLabel2.TabIndex = 0;
-            this.gunaLabel2.Text = "Loại Thợ: ";
-            // 
-            // gunaLabel3
-            // 
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(17, 68);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(115, 23);
-            this.gunaLabel3.TabIndex = 1;
-            this.gunaLabel3.Text = "Trạng Thái: ";
+            this.lbTrangThai.AutoSize = true;
+            this.lbTrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrangThai.Location = new System.Drawing.Point(267, 68);
+            this.lbTrangThai.Name = "lbTrangThai";
+            this.lbTrangThai.Size = new System.Drawing.Size(115, 23);
+            this.lbTrangThai.TabIndex = 3;
+            this.lbTrangThai.Text = "Trạng Thái: ";
             // 
             // lbTypeTho
             // 
@@ -257,15 +247,25 @@ namespace GUI_Management
             this.lbTypeTho.TabIndex = 2;
             this.lbTypeTho.Text = "Loại Thợ: ";
             // 
-            // lbTrangThai
+            // gunaLabel3
             // 
-            this.lbTrangThai.AutoSize = true;
-            this.lbTrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrangThai.Location = new System.Drawing.Point(267, 68);
-            this.lbTrangThai.Name = "lbTrangThai";
-            this.lbTrangThai.Size = new System.Drawing.Size(115, 23);
-            this.lbTrangThai.TabIndex = 3;
-            this.lbTrangThai.Text = "Trạng Thái: ";
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.Location = new System.Drawing.Point(17, 68);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(115, 23);
+            this.gunaLabel3.TabIndex = 1;
+            this.gunaLabel3.Text = "Trạng Thái: ";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.Location = new System.Drawing.Point(17, 14);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(99, 23);
+            this.gunaLabel2.TabIndex = 0;
+            this.gunaLabel2.Text = "Loại Thợ: ";
             // 
             // fWelcome
             // 

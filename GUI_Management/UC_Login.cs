@@ -26,6 +26,7 @@ namespace GUI_Management
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
         CheckInBUS checkinBUS = new CheckInBUS();
         Form1 f;
+        private string status;
 
         public UC_Login()
         {
@@ -68,33 +69,46 @@ namespace GUI_Management
         {
             DateTime CurrTime = DateTime.Now;
             DateTime ca1_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
-                , 7, 0, 0);
+                , 0, 0, 0);
             DateTime ca2_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
                 , 11, 30, 0);
             DateTime ca3_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
                 , 16, 0, 0, 0);
             DateTime ca3_End = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
-                , 20, 30, 0);
+                , 21, 30, 0);
             //////////////////////////////////////
             if ((DateTime.Equals(ca1_Begin, CurrTime) || (DateTime.Compare(ca1_Begin, CurrTime) < 0))
                 && (DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) > 0)))
             {
+                int hour = CurrTime.Hour - ca1_Begin.Hour;
+                int minute = CurrTime.Minute - ca1_Begin.Minute;
+                int second = CurrTime.Second - ca1_Begin.Second;
+                this.status = "Trễ: " + hour + ":" + minute + ":" + second;
                 return 1;
             }
             else if ((DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) < 0))
                 && (DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) > 0)))
 
             {
+                int hour = CurrTime.Hour - ca2_Begin.Hour;
+                int minute = CurrTime.Minute - ca2_Begin.Minute;
+                int second = CurrTime.Second - ca2_Begin.Second;
+                this.status = "Trễ: " + hour + ":" + minute + ":" + second;
                 return 2;
             }
             else if ((DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) < 0))
                 && (DateTime.Equals(ca3_End, CurrTime) || (DateTime.Compare(ca3_End, CurrTime) > 0)))
             {
+                int hour = CurrTime.Hour - ca3_Begin.Hour;
+                int minute = CurrTime.Minute - ca3_Begin.Minute;
+                int second = CurrTime.Second - ca3_Begin.Second;
+                this.status = "Trễ: " + hour + ":" + minute + ":" + second;
                 return 3;
             }
             else
                 return -1;
         }
+
         private bool checkShift(string typeTho, string IDNhanVien)
         {
             int ca = this.getCaNow();
@@ -102,7 +116,7 @@ namespace GUI_Management
             DateTime CurrTime = DateTime.Now;
             if ((int)CurrTime.DayOfWeek == 0)
             {
-                Thu = "Chủ Nhật";
+                Thu = "ChuNhat";
             }    
             else
             {
@@ -248,7 +262,7 @@ namespace GUI_Management
                                 {
                                     Global.SetGlobalEmployeeType(0);
                                 }
-                                fWelcome form = new fWelcome();
+                                fWelcome form = new fWelcome(this.status);
                                 this.Hide();
                                 form.ShowDialog();
                                 this.Show();
@@ -286,7 +300,7 @@ namespace GUI_Management
                                     Global.SetGlobalEmployeeType(1);
                                 }
 
-                                fWelcome form = new fWelcome();
+                                fWelcome form = new fWelcome(this.status);
                                 this.Hide();
                                 form.ShowDialog();
                                 this.Show();
@@ -325,7 +339,7 @@ namespace GUI_Management
                                     Global.SetGlobalEmployeeType(2);
                                 }
 
-                                fWelcome form = new fWelcome();
+                                fWelcome form = new fWelcome(this.status);
                                 this.Hide();
                                 form.ShowDialog();
                                 this.Show();
@@ -343,7 +357,7 @@ namespace GUI_Management
                     else if (this.rbNhanVien.Checked == true)
                     {
                         DataTable table = this.nhanVienHopDongBUS.VerifyLogin(username, password);
-                        this.ChamCong();
+                        //this.ChamCong();
                         if (table != null)
                         {
                             this.txtUser.Text = "";
@@ -364,7 +378,7 @@ namespace GUI_Management
                                     Global.SetGlobalEmployeeType(3);
                                 }
 
-                                fWelcome form = new fWelcome();
+                                fWelcome form = new fWelcome(this.status);
                                 this.Hide();
                                 form.ShowDialog();
                                 this.Show();
@@ -591,6 +605,7 @@ namespace GUI_Management
                 }  
             }   
         }
+
         private void ChamCong()
         {
             int ca = this.getCaNow();

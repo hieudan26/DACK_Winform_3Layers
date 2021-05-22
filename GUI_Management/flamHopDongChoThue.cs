@@ -19,6 +19,7 @@ namespace GUI_Management
         customer_VehicleBUS customer_VehicleBUS = new customer_VehicleBUS();
         vehicleBUS vehicleBUS = new vehicleBUS();
         contract_ChoThueBUS contract_ChoThueBUS = new contract_ChoThueBUS();
+        nhanVienBUS nhanVienBUS = new nhanVienBUS();
 
         public flamHopDongChoThue()
         {
@@ -28,6 +29,7 @@ namespace GUI_Management
         private void flamHopDongChoThue_Load(object sender, EventArgs e)
         {
             this.LoadComboBoxCMND_Customer();
+            this.txtTenNhanVien.Text = this.nhanVienBUS.getEmployee_byID(Global.GlobalEmployeeId).Rows[0][1].ToString();
         }
 
         private void LoadComboBoxCMND_Customer()
@@ -254,6 +256,11 @@ namespace GUI_Management
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

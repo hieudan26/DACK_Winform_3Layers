@@ -13,6 +13,12 @@ namespace BUS_Management
     {
         customer_VehicleDAL customer_VehicleDAL = new customer_VehicleDAL();
 
+        //get full info xe được quyền cho thuê
+        public DataTable getFullInfoVehicle_Thue()
+        {
+            return this.customer_VehicleDAL.getFullInfoVehicle_Thue();
+        }
+
         //get all vehicle by id cus
         public DataTable getAllVehicle_IdCus(string id_cus)
         {

@@ -145,7 +145,7 @@ namespace GUI_Management
 
         private void btnGuiXe_Click(object sender, EventArgs e)
         {
-            if (this.vehBUS.CheckID_Exited(this.txtID.Text))
+            if (this.vehBUS.CheckID_Exited(this.txtID.Text.Trim()))
             {
                 MessageBox.Show("ID xe đã tồn tại trong bãi xe", "Gửi Xe", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
                 this.txtID.Text = "";
@@ -156,7 +156,7 @@ namespace GUI_Management
                 {
                     MessageBox.Show("Can't insert new vehicle if you don't upload your image", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (this.txtID.Text == "")
+                else if (this.txtID.Text.Trim() == "")
                 {
                     MessageBox.Show("Can't insert new vehicle if you don't have id", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -170,7 +170,7 @@ namespace GUI_Management
                     MemoryStream pic2 = new MemoryStream();
                     this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
 
-                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2, 0, 0, 0);
+                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text.Trim(), type, pic1, pic2, 0, 0, 0);
                     if (this.vehBUS.insertVehicle(vehDTO))
                     {
                         MessageBox.Show("Successfully~~");
@@ -189,7 +189,7 @@ namespace GUI_Management
 
         private void btnSuaXe_Click(object sender, EventArgs e)
         {
-            if (this.vehBUS.CheckID_Exited(this.txtID.Text))
+            if (this.vehBUS.CheckID_Exited(this.txtID.Text.Trim()))
             {
                 MessageBox.Show("ID xe đã tồn tại trong bãi xe", "Gửi Xe", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
                 this.txtID.Text = "";
@@ -200,7 +200,7 @@ namespace GUI_Management
                 {
                     MessageBox.Show("Can't insert new vehicle if you don't upload your image", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (this.txtID.Text == "")
+                else if (this.txtID.Text.Trim() == "")
                 {
                     MessageBox.Show("Can't insert new vehicle if you don't have id", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -214,7 +214,7 @@ namespace GUI_Management
                     MemoryStream pic2 = new MemoryStream();
                     this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
 
-                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2, 0, 0, 0);
+                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text.Trim(), type, pic1, pic2, 0, 0, 0);
 
                     if (this.vehBUS.insertVehicle(vehDTO))
                     {
@@ -234,7 +234,7 @@ namespace GUI_Management
 
         private void btnRuaXe_Click(object sender, EventArgs e)
         {
-            if (this.vehBUS.CheckID_Exited(this.txtID.Text))
+            if (this.vehBUS.CheckID_Exited(this.txtID.Text.Trim()))
             {
                 MessageBox.Show("ID xe đã tồn tại trong bãi xe", "Gửi Xe", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
                 this.txtID.Text = "";
@@ -245,7 +245,7 @@ namespace GUI_Management
                 {
                     MessageBox.Show("Can't insert new vehicle if you don't upload your image", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (this.txtID.Text == "")
+                else if (this.txtID.Text.Trim() == "")
                 {
                     MessageBox.Show("Can't insert new vehicle if you don't have id", "Insert object", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -259,8 +259,8 @@ namespace GUI_Management
                     MemoryStream pic2 = new MemoryStream();
                     this.picBox2.Image.Save(pic2, this.picBox2.Image.RawFormat);
 
-                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text, type, pic1, pic2, 0, 0, 1);
-                    vehicleWashDTO vehWashDTO = new vehicleWashDTO(this.txtID.Text, type);
+                    vehicleDTO vehDTO = new vehicleDTO(this.txtID.Text.Trim(), type, pic1, pic2, 0, 0, 1);
+                    vehicleWashDTO vehWashDTO = new vehicleWashDTO(this.txtID.Text.Trim(), type);
                     if (this.vehBUS.insertVehicle(vehDTO) && this.vehWashBUS.insertVehicleWash(vehWashDTO))
                         MessageBox.Show("Successfully~~");
 

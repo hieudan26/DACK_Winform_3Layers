@@ -13,6 +13,12 @@ namespace BUS_Management
     {
         customerDAL customerDAL = new customerDAL();
 
+        //get all khách hàng thuê xe
+        public DataTable getAllCustomer_Thue()
+        {
+            return this.customerDAL.getAllCustomer_Thue();
+        }
+
         //get all khách hàng cho thuê xe
         public DataTable getAllCustomer_ChoThue()
         {
