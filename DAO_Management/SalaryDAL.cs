@@ -22,7 +22,7 @@ namespace DAO_Management
             adapter.Fill(table);
             return table;
         }
-        public bool insertSalaryNV(string IDnv, int Luong)
+        public bool insertSalaryNV(string IDnv, float Luong)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace DAO_Management
             }
             return false;
         }
-        public bool UpdateLuong(string IDnv, int Luong)
+        public bool UpdateLuong(string IDnv, float Luong)
         {
             try
             {
@@ -94,6 +94,17 @@ namespace DAO_Management
                 return float.Parse(table.Rows[0][0].ToString());
             else
                 return 0;
+        }
+        public DataTable getLuongAll()
+        {
+            SqlCommand cmd = new SqlCommand("select * from SALALRY");
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return table;
+            else
+                return null;
         }
     }
 }

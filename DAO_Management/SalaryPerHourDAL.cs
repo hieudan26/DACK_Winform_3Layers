@@ -84,12 +84,11 @@ namespace DAO_Management
             }
             return false;
         }
-        public float getLuongPerHour(string type, int Ca, float Luongperhour)
+        public float getLuongPerHour(string type, int Ca)
         {
             SqlCommand cmd = new SqlCommand("select Luongperhour from SALARYPERHOUR where  type = @type and Ca =@Ca");
             cmd.Parameters.Add("@type", SqlDbType.NChar).Value = type;
-                cmd.Parameters.Add("@Ca", SqlDbType.Int).Value = Ca;
-                cmd.Parameters.Add("@Luongperhour", SqlDbType.Float).Value = Luongperhour;
+            cmd.Parameters.Add("@Ca", SqlDbType.Int).Value = Ca;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
