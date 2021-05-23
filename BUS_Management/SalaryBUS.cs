@@ -27,13 +27,13 @@ namespace BUS_Management
         public void CreateBangLuong()
         {
             DataTable table = this.nhanvienBUS.getAllEmployees();
-            if(table.Rows != null && table.Rows.Count > 0)
+            if (table != null && table.Rows.Count > 0)
             {
-                for(int i = 0;i < table.Rows.Count; i++)
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
                     this.salaryDAL.insertSalaryNV(table.Rows[i][0].ToString().Trim(), 0);
-                }    
-            }    
+                }
+            }
         }
 
         public bool UpdateLuong(string IDNV, float Bonus)
@@ -45,14 +45,14 @@ namespace BUS_Management
             return false;
         }
 
-        public float LuongHourPerCa(string type, int Ca)
+        public float getLuongHourPerCa(string type, int Ca)
         {
-            return this.salaryhour.getLuongPerHour(type,Ca);
+            return this.salaryhour.getLuongPerHour(type, Ca);
         }
 
         public float TruTre(int Minute)//Khỏi làm không điểm danh chơi bị trừ tiền đi
         {
-            if (Minute > 30 && Minute <=45)
+            if (Minute > 30 && Minute <= 45)
                 return 1;
             else if (Minute > 45 && Minute <= 60)
                 return 2;
@@ -80,17 +80,25 @@ namespace BUS_Management
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        
-        public bool UpdateLuongPerHour(string type, int Ca,int SoTien)
+
+        public bool UpdateLuongPerHour(string type, int Ca, float SoTien)
         {
-            if (this.salaryhour.UpdateSalaryPerHour(type, Ca,SoTien))
+            if (this.salaryhour.UpdateSalaryPerHour(type, Ca, SoTien))
                 return true;
             return false;
+        }
+        public DataTable getFullLuongPerHour()
+        {
+            return this.salaryhour.getAllLuongPerHour();
+        }
+        public DataTable getLuongTypePerHour(string type)
+        {
+            return this.salaryhour.getLuongTypePerHour(type);
         }
     }
 }

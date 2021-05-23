@@ -171,5 +171,21 @@ namespace GUI_Management
                 MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void chỉnhSửaLươngTheoGiờToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6
+                || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)///
+            {
+                fQuanLySalaryPerHour form = new fQuanLySalaryPerHour();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
