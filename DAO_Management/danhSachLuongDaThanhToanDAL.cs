@@ -14,11 +14,22 @@ namespace DAL_Management
     {
         public DataTable getLuong(SqlCommand cmd)
         {
-            cmd.Connection = this.getConnection;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try {
+                cmd.Connection = this.getConnection;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return null;
         }
 
         //sum luong by type

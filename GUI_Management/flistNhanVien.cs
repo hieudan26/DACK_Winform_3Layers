@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS_Management;
 using DTO_Management;
-
+using Microsoft.Office.Interop.Word;
 namespace GUI_Management
 {
     public partial class flistNhanVien : Form
@@ -58,7 +58,7 @@ namespace GUI_Management
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.dgv.RowTemplate.Height = 80;
-            DataTable table = new DataTable();
+            System.Data.DataTable table = new System.Data.DataTable();
             if (this.cbFilter.SelectedIndex != -1)
             {
                 this.loadPB();
@@ -128,7 +128,7 @@ namespace GUI_Management
             }    
         }
 
-        private void LoadDGV_Gender_Giua2Ngay(int index, DataTable table, string gender)
+        private void LoadDGV_Gender_Giua2Ngay(int index, System.Data.DataTable table, string gender)
         {
             DateTime dt1 = this.dtp1.Value;
             DateTime dt2 = this.dtp2.Value;
@@ -169,7 +169,7 @@ namespace GUI_Management
             }
         }
 
-        private void LoadDGV_GenderAndGender_Giua2Ngay(int index, DataTable table, string gender1, string gender2)
+        private void LoadDGV_GenderAndGender_Giua2Ngay(int index, System.Data.DataTable table, string gender1, string gender2)
         {
             DateTime dt1 = this.dtp1.Value;
             DateTime dt2 = this.dtp2.Value;
@@ -210,7 +210,7 @@ namespace GUI_Management
             }
         }
 
-        private void LoadDGV_ordinary_Giua2Ngay(int index, DataTable table)
+        private void LoadDGV_ordinary_Giua2Ngay(int index, System.Data.DataTable table)
         {
             DateTime dt1 = this.dtp1.Value;
             DateTime dt2 = this.dtp2.Value;
@@ -251,7 +251,7 @@ namespace GUI_Management
             }
         }
 
-        private void LoadDGV_ordinary(int index, DataTable table)
+        private void LoadDGV_ordinary(int index, System.Data.DataTable table)
         {
             if (index == 0)
             {
@@ -289,7 +289,7 @@ namespace GUI_Management
             }
         }
 
-        private void LoadDGV_GenderAndGender(int index, DataTable table, string gender1, string gender2)
+        private void LoadDGV_GenderAndGender(int index, System.Data.DataTable table, string gender1, string gender2)
         {
             if (index == 0)
             {
@@ -327,7 +327,7 @@ namespace GUI_Management
             }
         }
 
-        private void LoadDGV_Gender(int index, DataTable table, string gender)
+        private void LoadDGV_Gender(int index, System.Data.DataTable table, string gender)
         {
             if (index == 0)
             {
@@ -548,7 +548,7 @@ namespace GUI_Management
                         //this.divShift(typeTho);
                         this.cbFilter.SelectedIndex = 4;
                         this.loadPB();
-                        DataTable table = this.nhanVienBUS.getAllEmployees();
+                        System.Data.DataTable table = this.nhanVienBUS.getAllEmployees();
                         this.dgv.DataSource = table;
                         this.designDataGridView(5);
                     }
@@ -629,7 +629,7 @@ namespace GUI_Management
                 form.rbNo.Checked = true;
             }
 
-            DataTable table = new DataTable();
+            System.Data.DataTable table = new System.Data.DataTable();
             if (typeTho == "Bảo Vệ")
             {
                 table = this.nhanVienBaoVeBUS.getInfo_byID(id);
@@ -660,7 +660,7 @@ namespace GUI_Management
         {
             if (typeTho == "Bảo Vệ")
             {
-                DataTable table = this.nhanVienBaoVeBUS.getInfoLeader();
+                System.Data.DataTable table = this.nhanVienBaoVeBUS.getInfoLeader();
                 if (table != null)
                 {
                     if (table.Rows[0][0].ToString().Trim() == id)
@@ -679,7 +679,7 @@ namespace GUI_Management
             }    
             else if (typeTho == "Thợ Sửa")
             {
-                DataTable table = this.nhanVienSuaXeBUS.getInfoLeader();
+                System.Data.DataTable table = this.nhanVienSuaXeBUS.getInfoLeader();
                 if (table != null)
                 {
                     if (table.Rows[0][0].ToString().Trim() == id)
@@ -698,7 +698,7 @@ namespace GUI_Management
             }    
             else if (typeTho == "Thợ Rửa")
             {
-                DataTable table = this.nhanVienRuaXeBUS.getInfoLeader();
+                System.Data.DataTable table = this.nhanVienRuaXeBUS.getInfoLeader();
                 if (table != null)
                 {
                     if (table.Rows[0][0].ToString().Trim() == id)
@@ -717,7 +717,7 @@ namespace GUI_Management
             }    
             else
             {
-                DataTable table = this.nhanVienHopDongBUS.getInfoLeader();
+                System.Data.DataTable table = this.nhanVienHopDongBUS.getInfoLeader();
                 if (table != null)
                 {
                     if (table.Rows[0][0].ToString().Trim() == id)
@@ -744,7 +744,7 @@ namespace GUI_Management
         {
             if (this.cbFilter.SelectedIndex != -1)
             {
-                DataTable table = new DataTable();
+                System.Data.DataTable table = new System.Data.DataTable();
                 if (this.rbNo.Checked == true)
                 {
                     if (this.checkBoxNam.Checked == true)
@@ -834,7 +834,7 @@ namespace GUI_Management
         {
             if (this.cbFilter.SelectedIndex != -1)
             {
-                DataTable table = new DataTable();
+                System.Data.DataTable table = new System.Data.DataTable();
                 if (this.rbNo.Checked == true)
                 {
                     if (this.checkBoxNu.Checked == true)
@@ -924,7 +924,7 @@ namespace GUI_Management
         {
             if (this.cbFilter.SelectedIndex != -1)
             {
-                DataTable table = new DataTable();
+                System.Data.DataTable table = new System.Data.DataTable();
                 if (this.rbNo.Checked == true)
                 {
                     if (this.checkBoxKhac.Checked == true)
@@ -1016,7 +1016,7 @@ namespace GUI_Management
             {
                 this.dgv.RowTemplate.Height = 80;
                 int index = this.cbFilter.SelectedIndex;
-                DataTable table = new DataTable();
+                System.Data.DataTable table = new System.Data.DataTable();
                 if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxKhac.Checked == true && this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true))
                 {
                     this.LoadDGV_ordinary_Giua2Ngay(index, table);
@@ -1054,7 +1054,7 @@ namespace GUI_Management
             {
                 this.dgv.RowTemplate.Height = 80;
                 int index = this.cbFilter.SelectedIndex;
-                DataTable table = new DataTable();
+                System.Data.DataTable table = new System.Data.DataTable();
                 if ((this.checkBoxNam.Checked == false && this.checkBoxNu.Checked == false && this.checkBoxKhac.Checked == false) || (this.checkBoxKhac.Checked == true && this.checkBoxNam.Checked == true && this.checkBoxNu.Checked == true))
                 {
                     this.LoadDGV_ordinary(index, table);
@@ -1103,6 +1103,195 @@ namespace GUI_Management
         private void timer2_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void A_Click(object sender, EventArgs e)
+        {
+            if(this.cbFilter.SelectedItem != null)
+            {
+                string nameType = this.cbFilter.SelectedItem.ToString().Trim();
+                if (nameType == "Tất Cả")
+                    nameType = "";
+
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.DefaultExt = "*.docx";
+                savefile.Filter = "DOCX files(*.docx)|*.docx";
+                if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
+                {
+                    Export_Data_To_Word(this.dgv, savefile.FileName, nameType);
+                    MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have choose one in combobox");
+            }    
+            
+        }
+        public void CreateDocument(string docFilePath, Image image)
+        {
+            _Application oWord = new Microsoft.Office.Interop.Word.Application();
+            //Nếu tạo một Document
+            _Document oDoc = oWord.Documents.Add();
+            //Nếu mở một Document
+            //Microsoft.Office.Interop.Word._Document oDoc = oWord.Documents.Open(docFilePath, ReadOnly: false, Visible: true);
+
+            //Để xem điều gì đang xảy ra trong khi điền tập tài liệu từ Visible = true
+            oWord.Visible = true;
+
+            //Chèn ảnh từ mảng byte vào MS Word, sử dụng Clipboard để dán Image vào tài liệu
+            Object oMissing = System.Reflection.Missing.Value;
+            Clipboard.SetDataObject(image);
+            var oPara = oDoc.Content.Paragraphs.Add(ref oMissing);
+            oPara.Range.Paste();
+            oPara.Range.InsertParagraphAfter();
+
+            //Nếu tạo document
+            oDoc.SaveAs(docFilePath);
+            //Nếu mở một document
+            //oDoc.Save();
+            oDoc.Close();
+            oWord.Quit();
+        }
+        public Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+        }
+        public void Export_Data_To_Word(DataGridView DGV, string filename, string nameType)
+        {
+            try
+            {
+                Microsoft.Office.Interop.Word.Application winword = new Microsoft.Office.Interop.Word.Application();
+                winword.ShowAnimation = false;
+                winword.Visible = false;
+                object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Document document = winword.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+                document.Content.SetRange(0, 0);
+                document.Content.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+
+
+                Microsoft.Office.Interop.Word.Paragraph paraHeading = document.Content.Paragraphs.Add(ref missing);
+                paraHeading.Range.Text = "Công Ty TNHH MTV SPKT";
+                paraHeading.Range.Font.Size = 14;
+                paraHeading.Range.Font.Name = "Times New Roman";
+                paraHeading.Range.Bold = 1;
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                paraHeading.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                paraHeading.Range.InsertParagraphAfter();
+
+                paraHeading.Range.Text = "Phòng nhân sự";
+                paraHeading.Range.Font.Size = 16;
+                paraHeading.Range.Font.Name = "Times New Roman";
+                paraHeading.Range.Bold = 1;
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                paraHeading.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                paraHeading.Range.InsertParagraphAfter();
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
+                System.Data.DataTable table = DGV.DataSource as System.Data.DataTable;
+                this.ExporterObjects_Paragraph(ref document, table, "Danh sách nhân viên " + nameType);
+
+
+
+                // Word.WdParagraphAlignment.wdAlignParagraphRight;
+                //Save the document
+                document.SaveAs2(filename);
+
+                ((Microsoft.Office.Interop.Word._Document)document).Close(ref missing, ref missing, ref missing);
+                ((Microsoft.Office.Interop.Word._Application)winword).Quit(ref missing, ref missing, ref missing);
+
+
+                MessageBox.Show("Document created successfully !");
+                System.Diagnostics.Process.Start(filename);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ExporterObjects_Paragraph(ref Document document, System.Data.DataTable datatable, string namePara)
+        {
+            try
+            {
+                object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Paragraph para = document.Content.Paragraphs.Add(ref missing);
+                para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                para.Range.Font.Bold = 1;
+                para.Range.Font.Size = 13;
+                para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para.Range.Text = "\n" + namePara;
+                para.Range.InsertParagraphAfter();
+
+
+                para.Range.Font.Bold = 1;
+                para.Range.Font.Size = 10;
+                para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                if (datatable.Rows.Count > 0)
+                {
+                    Microsoft.Office.Interop.Word.Table firstTable = document.Tables.Add(para.Range, 1, datatable.Columns.Count, ref missing, ref missing);
+                    firstTable.AllowAutoFit = true;
+                    firstTable.Borders.Enable = 1;
+                    firstTable.Cell(1, 1).Range.Text = "ID Nhân Viên";
+                    firstTable.Cell(1, 2).Range.Text = "Tên Nhân Viên";
+                    firstTable.Cell(1, 3).Range.Text = "Ngày Sinh";
+                    firstTable.Cell(1, 4).Range.Text = "Giới Tính";
+                    firstTable.Cell(1, 5).Range.Text = "Loại Thợ";
+                    firstTable.Cell(1, 6).Range.Text = "Ảnh Nhân Viên";
+
+                    Object beforeRow = Type.Missing;
+
+                    para.Range.Font.Bold = 0;
+                    para.Range.Font.Size = 10;
+                    para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                    para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
+
+                    for (int i = 0; i < datatable.Rows.Count; i++)
+                    {
+                        firstTable.Rows.Add(ref beforeRow);
+                        firstTable.Cell(i + 2, 1).Range.Text = datatable.Rows[i][0].ToString();
+                        firstTable.Cell(i + 2, 2).Range.Text = datatable.Rows[i][1].ToString();
+                        firstTable.Cell(i + 2, 3).Range.Text = DateTime.Parse(datatable.Rows[i][2].ToString()).ToString("dd/MM/yyyy");
+                        firstTable.Cell(i + 2, 4).Range.Text = datatable.Rows[i][3].ToString();
+                        firstTable.Cell(i + 2, 5).Range.Text = datatable.Rows[i][4].ToString();
+                    }
+                    byte[] imgbyte;
+                    MemoryStream ms;
+                    Image finalPic;
+                    for (int i = 0; i < datatable.Rows.Count; i++)
+                    {
+                        imgbyte = (byte[])datatable.Rows[i][5];
+                        ms = new MemoryStream(imgbyte);
+                        finalPic = (Image)(new Bitmap(Image.FromStream(ms), new Size(50, 50)));
+                        Clipboard.SetDataObject(finalPic);
+                        firstTable.Cell(i + 2, 6).Range.Paste();
+                        firstTable.Cell(i + 2, 6).Range.InsertParagraph();
+                    }
+                }
+                else
+                {
+                    Microsoft.Office.Interop.Word.Table firstTable = document.Tables.Add(para.Range, 1, datatable.Columns.Count, ref missing, ref missing);
+                    firstTable.Borders.Enable = 1;
+                    firstTable.Cell(1, 1).Range.Text = "ID Nhân Viên";
+                    firstTable.Cell(1, 2).Range.Text = "Tên Nhân Viên";
+                    firstTable.Cell(1, 3).Range.Text = "Ngày Sinh";
+                    firstTable.Cell(1, 4).Range.Text = "Giới Tính";
+                    firstTable.Cell(1, 5).Range.Text = "Loại Thợ";
+                    firstTable.Cell(1, 6).Range.Text = "Ảnh Nhân Viên";
+                    Object beforeRow = Type.Missing;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Err " + ex.Message);
+            }
         }
     }
 }

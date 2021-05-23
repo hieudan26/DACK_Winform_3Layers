@@ -190,9 +190,10 @@ namespace GUI_Management
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.DefaultExt = "*.pdf";
             savefile.Filter = "PDF files(*.PDF)|*.pdf";
-
+            
             if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
             {
+                
                 Export_AllData_To_Word(dgvExpired, savefile.FileName, 2);
                 MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

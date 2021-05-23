@@ -283,7 +283,7 @@ namespace GUI_Management
         //lay vehicle bang id
         public DataTable getVehicleByID(string id)
         {
-            SqlCommand cmd = new SqlCommand("Sselect VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in] from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
+            SqlCommand cmd = new SqlCommand("select VEHICLE.id as [ID], VEHICLE.type as [Type], img1 as [Image 1], img2 as [Image 2], VEHICLE_PARKING.typePark as [Type park], VEHICLE_PARKING.timeIn as [Time in] from VEHICLE_PARKING inner join VEHICLE on VEHICLE_PARKING.id = VEHICLE.id " +
                 "where VEHICLE.id = @id");
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = id;
             DataTable table = this.getVehicle(cmd);
