@@ -18,6 +18,8 @@ namespace BUS_Management
         public static int GlobalEmployeeType { get; private set; }
         public static System.Timers.Timer MyTimer = new System.Timers.Timer();
         public static int check = 0;
+        public static DateTime TimeLogin;
+        public static SalaryBUS salaryBUS = new SalaryBUS();
         public static void SetGlobalEmployeeType(int typeTho)
         {
             GlobalEmployeeType = typeTho;
@@ -28,10 +30,66 @@ namespace BUS_Management
         {
             GlobalEmployeeId = employeeId;
         }
-        
+
+        public static void TinhGioLam()
+        {
+            //Ở đây set Interval để tính thời gian bn + lương 1 lần 1000 = 1s
+            MessageBox.Show("Bắt đầu tính giờ làm");
+            MyTimer.Interval = (60000);
+            MyTimer.Elapsed += new ElapsedEventHandler(MyTimeCongLuong);
+            MyTimer.Start();
+
+        }
+        public static int getCaNowGlobal()
+        {
+            DateTime CurrTime = DateTime.Now;
+            DateTime ca1_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 0, 0, 0);
+            DateTime ca2_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 11, 30, 0);
+            DateTime ca3_Begin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 16, 0, 0, 0);
+            DateTime ca3_End = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day
+                , 21, 30, 0);
+            //////////////////////////////////////
+            if ((DateTime.Equals(ca1_Begin, CurrTime) || (DateTime.Compare(ca1_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) > 0)))
+            {
+                return 1;
+            }
+            else if ((DateTime.Equals(ca2_Begin, CurrTime) || (DateTime.Compare(ca2_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) > 0)))
+
+            {
+                return 2;
+            }
+            else if ((DateTime.Equals(ca3_Begin, CurrTime) || (DateTime.Compare(ca3_Begin, CurrTime) < 0))
+                && (DateTime.Equals(ca3_End, CurrTime) || (DateTime.Compare(ca3_End, CurrTime) > 0)))
+            {
+                return 3;
+            }
+            else
+                return -1;
+        }
+        public static void MyTimeCongLuong(object sender, EventArgs e)
+        {
+
+            try {
+                int Ca = getCaNowGlobal();
+                nhanVienBUS NV = new nhanVienBUS();
+                DataTable table = NV.getEmployee_byID(Global.GlobalEmployeeId);
+                string Type = table.Rows[0][4].ToString().Trim();
+                float Luong = Global.salaryBUS.getLuongHourPerCa(Type, Ca);
+                Global.salaryBUS.UpdateLuong(GlobalEmployeeId, Luong);
+                table.Reset();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public static void AutoSave()
         {
-            MessageBox.Show("Bat dau");
             MyTimer.Interval = (1000);
             MyTimer.Elapsed += new ElapsedEventHandler(MyTimer_Tick);
             MyTimer.Start();

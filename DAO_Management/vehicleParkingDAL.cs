@@ -131,7 +131,7 @@ namespace GUI_Management
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
-                return (int)table.Rows[0]["SoLuong"];
+                return (int)table.Rows[0][0];
             }
             catch (Exception ex)
             {
@@ -154,7 +154,7 @@ namespace GUI_Management
             for (int i = table.Rows.Count - 1; i >= 0; i--)
             {
                 DataRow item = table.Rows[i];
-                if (this.compareDateTime_theoTypeGui((int)item["typePark"], (DateTime)item["timeIn"]) == 1)
+                if (this.compareDateTime_theoTypeGui((int)item[4], (DateTime)item[5]) == 1)
                     table.Rows.Remove(item);
             }
 
@@ -176,7 +176,7 @@ namespace GUI_Management
             for (int i = table.Rows.Count - 1; i >= 0; i--)
             {
                 DataRow item = table.Rows[i];
-                if (this.compareDateTime_theoTypeGui((int)item["typePark"], (DateTime)item["timeIn"]) == 0)
+                if (this.compareDateTime_theoTypeGui((int)item[4], (DateTime)item[5]) == 0)
                     table.Rows.Remove(item);
             }
 
@@ -413,7 +413,7 @@ namespace GUI_Management
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
-                return (int)table.Rows[0]["SoLuong"];
+                return (int)table.Rows[0][0];
             }
             catch (Exception ex)
             {

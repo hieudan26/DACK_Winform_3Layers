@@ -28,6 +28,7 @@ namespace GUI_Management
         {
             InitializeComponent();
             this.status = status;
+            Global.TinhGioLam();
         }
 
         private void fWelcome_Load(object sender, EventArgs e)

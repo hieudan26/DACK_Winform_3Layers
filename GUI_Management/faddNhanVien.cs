@@ -109,7 +109,6 @@ namespace GUI_Management
                 if (this.shift_ThoSuaXeBUS.getALLShift_ThoSuaXe_New() == null)
                 {
                     this.shift_ThoSuaXeBUS.chiaCaThoSuaXe();
-                    MessageBox.Show("finish");
                 }
                 else
                 {
