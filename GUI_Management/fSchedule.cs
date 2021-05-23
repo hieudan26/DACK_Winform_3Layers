@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS_Management;
+using System.IO;
+using Microsoft.Office.Interop.Word;
+using System.Drawing.Printing;
 
 namespace GUI_Management
 {
@@ -17,7 +20,7 @@ namespace GUI_Management
         shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
         shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
-
+        private int check = 0;
         public fSchedule()
         {
             InitializeComponent();
@@ -57,6 +60,7 @@ namespace GUI_Management
         {
             try
             {
+                this.check = 1;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_BaoVe();
             }
@@ -65,7 +69,7 @@ namespace GUI_Management
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        private void LoadLaiFlow(DataTable table, FlowLayoutPanel fl)
+        private void LoadLaiFlow(System.Data.DataTable table, FlowLayoutPanel fl)
         {
             if(table != null)
             {
@@ -78,7 +82,7 @@ namespace GUI_Management
         {
             try
             {
-                DataTable table;
+                System.Data.DataTable table;
                 //load Ca1_Thu2
                 table = this.shift_BaoVeBUS.getIdName_ByCaThu(1, "Thu2");
                 this.LoadLaiFlow(table, this.flpCa1_2);
@@ -202,7 +206,7 @@ namespace GUI_Management
                 return label;
         }
 
-        private void LoadFlowLayoutPanel(DataTable table, FlowLayoutPanel fl)
+        private void LoadFlowLayoutPanel(System.Data.DataTable table, FlowLayoutPanel fl)
         {
             if (table != null)
             {
@@ -225,6 +229,7 @@ namespace GUI_Management
         {
             try
             {
+                this.check = 2;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_SuaXe();
             }    
@@ -238,7 +243,7 @@ namespace GUI_Management
         {
             try
             {
-                DataTable table;
+                System.Data.DataTable table;
                 //load Ca1_Thu2
                 table = this.shift_ThoSuaXeBUS.getIdName_ByCaThu(1, "Thu2");
                 if(table != null)
@@ -396,6 +401,7 @@ namespace GUI_Management
         {
             try
             {
+                this.check = 3;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_RuaXe();
             }
@@ -409,7 +415,7 @@ namespace GUI_Management
         {
             try
             {
-                DataTable table;
+                System.Data.DataTable table;
                 //load Ca1_Thu2
                 table = this.shift_ThoRuaXeBUS.getIdName_ByCaThu(1, "Thu2");
                 this.LoadLaiFlow(table, this.flpCa1_2);
@@ -484,6 +490,7 @@ namespace GUI_Management
         {
             try
             {
+                this.check = 4;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_NhanVien();
             }
@@ -497,7 +504,7 @@ namespace GUI_Management
         {
             try
             {
-                DataTable table;
+                System.Data.DataTable table;
                 //load Ca1_Thu2
                 table = this.shift_NhanVienBUS.getIdName_ByCaThu(1, "Thu2");
                 this.LoadLaiFlow(table, this.flpCa1_2);
@@ -572,6 +579,273 @@ namespace GUI_Management
         {
             this.shift_ThoSuaXeBUS.InsertIntoOld_FormNew();
             this.btnpSX_Click(sender, e);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            System.Data.DataTable table = null;
+            string head = "";
+            switch (this.check)
+            {
+                
+                case 0:
+                    {
+                        table = null;
+                        break;
+                    }
+                case 1:
+                    {
+                        table = this.shift_BaoVeBUS.getShift();
+                        head = "bảo vệ";
+                        break;
+                    }
+                case 2:
+                    {
+                        table = this.shift_ThoSuaXeBUS.getShift();
+                        head = "thợ sửa xe";
+                        break;
+                    }
+                case 3:
+                    {
+                        table = this.shift_ThoRuaXeBUS.getShift();
+                        head = "thợ rửa xe";
+                        break;
+
+                    }
+                case 4:
+                    {
+                        table = this.shift_NhanVienBUS.getShift();
+                        head = "nhân viên";
+                        break;
+                    }
+            }
+            if (table != null)
+            {
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.DefaultExt = "*.docx";
+                savefile.Filter = "DOCX files(*.docx)|*.docx";
+
+                if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
+                {
+                    MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Export_AllData_To_Word(table, savefile.FileName, head);
+                }
+            }
+            else
+                MessageBox.Show("Vui lòng chọn để in");
+        }
+
+        public void CreateDocument(string docFilePath, Image image)
+        {
+            _Application oWord = new Microsoft.Office.Interop.Word.Application();
+            //Nếu tạo một Document
+            _Document oDoc = oWord.Documents.Add();
+            //Nếu mở một Document
+            //Microsoft.Office.Interop.Word._Document oDoc = oWord.Documents.Open(docFilePath, ReadOnly: false, Visible: true);
+
+            //Để xem điều gì đang xảy ra trong khi điền tập tài liệu từ Visible = true
+            oWord.Visible = true;
+
+            //Chèn ảnh từ mảng byte vào MS Word, sử dụng Clipboard để dán Image vào tài liệu
+            Object oMissing = System.Reflection.Missing.Value;
+            Clipboard.SetDataObject(image);
+            var oPara = oDoc.Content.Paragraphs.Add(ref oMissing);
+            oPara.Range.Paste();
+            oPara.Range.InsertParagraphAfter();
+
+            //Nếu tạo document
+            oDoc.SaveAs(docFilePath);
+            //Nếu mở một document
+            //oDoc.Save();
+            oDoc.Close();
+            oWord.Quit();
+        }
+        public Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+        }
+
+        public void Export_AllData_To_Word(System.Data.DataTable table, string filename, string head)//1: Word,2: PDF
+        {
+
+            try
+            {
+                Microsoft.Office.Interop.Word.Application winword = new Microsoft.Office.Interop.Word.Application();
+                winword.ShowAnimation = false;
+                winword.Visible = false;
+                object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Document document = winword.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+                document.Content.SetRange(0, 0);
+                document.Content.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+
+
+                Microsoft.Office.Interop.Word.Paragraph paraHeading = document.Content.Paragraphs.Add(ref missing);
+                DateTime date = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
+                paraHeading.Range.Font.Size = 28;
+                paraHeading.Range.Font.Name = "Times New Roman";
+                paraHeading.Range.Bold = 1;
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                paraHeading.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                paraHeading.Range.Text = "Bảng phân công việc hàng tuần bắt đầu từ " + date.ToString("dd/MM/yyyy");
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                paraHeading.Range.InsertParagraphAfter();
+                paraHeading.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
+                this.ExporterObjects_Paragraph(ref document, table, "Bảng phân công công việc "+head);
+                Microsoft.Office.Interop.Word.Paragraph para1 = document.Content.Paragraphs.Add(ref missing);
+                para1.Range.Font.Size = 16;
+                para1.Range.Font.Name = "Times New Roman";
+                para1.Range.Bold = 0;
+                para1.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                para1.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+
+                para1.Range.InsertParagraphAfter();
+
+
+                // Word.WdParagraphAlignment.wdAlignParagraphRight;
+                //Save pdf
+                //object outputFileName = filename.Replace(".doc", ".pdf");
+                //object fileFormat = WdSaveFormat.wdFormatPDF;
+                //document.SaveAs(ref outputFileName, ref fileFormat);
+                //Save the document
+                document.SaveAs2(filename);
+
+                ((Microsoft.Office.Interop.Word._Document)document).Close(ref missing, ref missing, ref missing);
+                ((Microsoft.Office.Interop.Word._Application)winword).Quit(ref missing, ref missing, ref missing);
+
+
+                MessageBox.Show("Document created successfully !");
+                System.Diagnostics.Process.Start(filename);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+       
+        private void ExporterObjects_Paragraph(ref Document document, System.Data.DataTable datatable, string namePara)
+        {
+            try
+            {
+                object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Paragraph para = document.Content.Paragraphs.Add(ref missing);
+                para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                para.Range.Font.Bold = 1;
+                para.Range.Font.Size = 16;
+                para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para.Range.Text = "\n" + namePara;
+                para.Range.InsertParagraphAfter();
+
+
+                para.Range.Font.Bold = 1;
+                para.Range.Font.Size = 13;
+                para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                if (datatable.Rows.Count > 0)
+                {
+                    Microsoft.Office.Interop.Word.Table firstTable = document.Tables.Add(para.Range, 8, 4, ref missing, ref missing);
+                    firstTable.Borders.Enable = 1;
+                    firstTable.AllowAutoFit = true;
+                    firstTable.Cell(1, 1).Range.Text = "Thứ ";
+                    firstTable.Cell(1, 2).Range.Text = "Ca 1";
+                    firstTable.Cell(1, 3).Range.Text = "Ca 2";
+                    firstTable.Cell(1, 4).Range.Text = "Ca 3";
+
+                    firstTable.Cell(2, 1).Range.Text = "Thứ 2";
+                    firstTable.Cell(3, 1).Range.Text = "Thứ 3";
+                    firstTable.Cell(4, 1).Range.Text = "Thứ 4";
+                    firstTable.Cell(5, 1).Range.Text = "Thứ 5";
+                    firstTable.Cell(6, 1).Range.Text = "Thứ 6";
+                    firstTable.Cell(7, 1).Range.Text = "Thứ 7";
+                    firstTable.Cell(8, 1).Range.Text = "Chủ Nhật";
+                    Object beforeRow = Type.Missing;
+                    para.Range.Font.Bold = 0;
+                    para.Range.Font.Size = 13;
+                    para.Range.Font.Color = Microsoft.Office.Interop.Word.WdColor.wdColorBlack;
+                    para.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
+
+
+                    for (int i = 1; i <= 3; i++)
+                    {
+                        for (int j = 2; j <= 8; j++)
+                        {
+                            string res = "";
+                            string tempstr = "";
+                            if (j < 8)
+                            {
+                                tempstr = "Thu" + j;
+                            }
+                            else
+                            {
+                                tempstr = "ChuNhat";
+                            }
+                            System.Data.DataTable dt = shift_BaoVeBUS.getIdName_ByCaThu(i, tempstr);
+                            switch(check)
+                            {
+                                case 1:
+                                    {
+                                        dt = shift_BaoVeBUS.getIdName_ByCaThu(i, tempstr);
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        dt = this.shift_ThoSuaXeBUS.getIdName_ByCaThu(i, tempstr);
+                                        break;
+                                    }
+                                case 3:
+                                    {
+                                        dt = this.shift_ThoRuaXeBUS.getIdName_ByCaThu(i, tempstr);
+                                        break;
+                                    }
+                                case 4:
+                                    {
+                                        dt = this.shift_NhanVienBUS.getIdName_ByCaThu(i, tempstr);
+                                        break;
+                                    }
+                            }    
+                            if (dt != null)
+                            {
+                                for (int k = 0; k < dt.Rows.Count; k++)
+                                {
+                                    res += dt.Rows[k][1].ToString() + "\n";
+
+                                }
+                                firstTable.Cell(j, i + 1).Range.Text = res;
+                            }
+
+
+                        }
+                    }
+                }
+                else
+                {
+                    Microsoft.Office.Interop.Word.Table firstTable = document.Tables.Add(para.Range, 1, datatable.Columns.Count, ref missing, ref missing);
+                    firstTable.Borders.Enable = 1;
+                    firstTable.Cell(1, 1).Range.Text = "Ca 1";
+                    firstTable.Cell(1, 2).Range.Text = "Ca 2";
+                    firstTable.Cell(1, 3).Range.Text = "Ca 3";
+                    Object beforeRow = Type.Missing;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Err " + ex.Message);
+            }
+        }
+    }
+    public static class DateTimeExtensions
+    {
+        public static DateTime StartOfWeek(this DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = (7 + (dt.DayOfWeek - startOfWeek)) % 7;
+            return dt.AddDays(-1 * diff).Date;
         }
     }
 }

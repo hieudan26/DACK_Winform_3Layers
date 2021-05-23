@@ -20,7 +20,19 @@ namespace DAL_Management
             adapter.Fill(table);
             return table;
         }
-
+        public DataTable getShift()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT ROW_NUMBER() OVER (ORDER BY (SELECT NULL))  as STT,EMPLOYEES.ID,EMPLOYEES.name from EMPLOYEES inner join NHANVIENHOPDONG on EMPLOYEES.id = NHANVIENHOPDONG.id");
+            DataTable table = this.getALL(cmd);
+            if (table.Rows.Count > 0)
+            {
+                return table;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public DataTable getIdName_ByCaThuID(int Ca, string Thu, string idNV)
         {
             SqlCommand cmd = new SqlCommand("select id, name from SHIFT_NhanVien, EMPLOYEES where id = id_NV and " + Thu + " = @Ca and id = @id");

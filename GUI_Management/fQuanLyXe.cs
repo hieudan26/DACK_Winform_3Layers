@@ -289,7 +289,7 @@ namespace GUI_Management
         //Doanh thu
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6 || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)
+            if (Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6 || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)
             {
                 if (this.isCollapsed_1 == false)
                     this.HiddenPark();

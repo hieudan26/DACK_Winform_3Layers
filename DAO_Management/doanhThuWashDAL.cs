@@ -48,7 +48,7 @@ namespace DAL_Management
             string end = " 23:59:59";
             string tmp = curr.ToString("yyyy-MM-dd");
 
-            SqlCommand cmd = new SqlCommand("select * from REVENUE_WASH " +
+            SqlCommand cmd = new SqlCommand("select id as [ID], timeOut as [Time Out], totalFee as [Total Fee] from REVENUE_WASH " +
                 "where timeOut between '" + tmp + start + "' and '" + tmp + end + "'", this.getConnection);
 
             DataTable table = this.getDoanhThuWash(cmd);
