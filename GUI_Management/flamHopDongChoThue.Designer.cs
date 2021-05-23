@@ -30,6 +30,8 @@ namespace GUI_Management
         private void InitializeComponent()
         {
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.dtPicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtTenNhanVien = new Guna.UI.WinForms.GunaLineTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtGia = new Guna.UI.WinForms.GunaLineTextBox();
@@ -57,8 +59,6 @@ namespace GUI_Management
             this.label1 = new System.Windows.Forms.Label();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtPicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
@@ -98,6 +98,38 @@ namespace GUI_Management
             this.gunaGradient2Panel1.Size = new System.Drawing.Size(1030, 755);
             this.gunaGradient2Panel1.TabIndex = 0;
             this.gunaGradient2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaGradient2Panel1_Paint);
+            // 
+            // dtPicker1
+            // 
+            this.dtPicker1.BaseColor = System.Drawing.Color.White;
+            this.dtPicker1.BorderColor = System.Drawing.Color.Silver;
+            this.dtPicker1.CustomFormat = null;
+            this.dtPicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtPicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtPicker1.ForeColor = System.Drawing.Color.Black;
+            this.dtPicker1.Location = new System.Drawing.Point(495, 338);
+            this.dtPicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtPicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtPicker1.Name = "dtPicker1";
+            this.dtPicker1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtPicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker1.OnPressedColor = System.Drawing.Color.Black;
+            this.dtPicker1.Size = new System.Drawing.Size(271, 30);
+            this.dtPicker1.TabIndex = 112;
+            this.dtPicker1.Text = "Sunday, May 23, 2021";
+            this.dtPicker1.Value = new System.DateTime(2021, 5, 23, 10, 48, 30, 221);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(90, 344);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(277, 24);
+            this.label7.TabIndex = 111;
+            this.label7.Text = "Hợp Đồng Hiệu Lực Đến Ngày: ";
             // 
             // txtTenNhanVien
             // 
@@ -289,6 +321,7 @@ namespace GUI_Management
             this.btnIDXe.TabIndex = 0;
             this.btnIDXe.Text = "gunaButton1";
             this.btnIDXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnIDXe.Click += new System.EventHandler(this.btnIDXe_Click);
             // 
             // gunaPanel1
             // 
@@ -443,38 +476,6 @@ namespace GUI_Management
             this.label4.Size = new System.Drawing.Size(67, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "ID Xe: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(90, 344);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(277, 24);
-            this.label7.TabIndex = 111;
-            this.label7.Text = "Hợp Đồng Hiệu Lực Đến Ngày: ";
-            // 
-            // dtPicker1
-            // 
-            this.dtPicker1.BaseColor = System.Drawing.Color.White;
-            this.dtPicker1.BorderColor = System.Drawing.Color.Silver;
-            this.dtPicker1.CustomFormat = null;
-            this.dtPicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtPicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtPicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtPicker1.ForeColor = System.Drawing.Color.Black;
-            this.dtPicker1.Location = new System.Drawing.Point(495, 338);
-            this.dtPicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtPicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtPicker1.Name = "dtPicker1";
-            this.dtPicker1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtPicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtPicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtPicker1.OnPressedColor = System.Drawing.Color.Black;
-            this.dtPicker1.Size = new System.Drawing.Size(271, 30);
-            this.dtPicker1.TabIndex = 112;
-            this.dtPicker1.Text = "Sunday, May 23, 2021";
-            this.dtPicker1.Value = new System.DateTime(2021, 5, 23, 10, 48, 30, 221);
             // 
             // flamHopDongChoThue
             // 

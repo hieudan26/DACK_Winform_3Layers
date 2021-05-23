@@ -83,5 +83,15 @@ namespace GUI_Management
         {
             this.openChildForm(new fShift());
         }
+
+        private void btnThanhToanLuong_Click(object sender, EventArgs e)
+        {
+            this.openChildForm(new fQuanLyLuong());
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            this.openChildForm(new fStaticLuong());
+        }
     }
 }

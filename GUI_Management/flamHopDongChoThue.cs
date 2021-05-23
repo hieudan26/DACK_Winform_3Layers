@@ -21,6 +21,7 @@ namespace GUI_Management
         contract_ChoThueBUS contract_ChoThueBUS = new contract_ChoThueBUS();
         nhanVienBUS nhanVienBUS = new nhanVienBUS();
 
+
         public flamHopDongChoThue()
         {
             InitializeComponent();
@@ -265,6 +266,10 @@ namespace GUI_Management
         private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnIDXe_Click(object sender, EventArgs e)
+        {
         }
     }
 }

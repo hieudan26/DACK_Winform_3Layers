@@ -18,6 +18,7 @@ namespace GUI_Management
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
         shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
         shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
+        CheckInBUS checkinBUS = new CheckInBUS();
 
         private int thu;
         public fShift()
@@ -45,6 +46,9 @@ namespace GUI_Management
                     //////Reset nhân viên --> đẩy dữ liệu vào table/////
                     this.shift_NhanVienBUS.ResetShift_NhanVien();
                     this.shift_NhanVienBUS.InsertIntoOld_FormNew();
+                    //
+                    this.checkinBUS.ResetBang();//mở ra 1 lần
+                    this.checkinBUS.CreateCheckIn();
                 }
                 catch (Exception ex)
                 {

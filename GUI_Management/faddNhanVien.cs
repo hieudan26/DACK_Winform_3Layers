@@ -25,6 +25,7 @@ namespace GUI_Management
         shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
         shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
+        SalaryBUS SalaryBUS = new SalaryBUS();
 
         public faddNhanVien()
         {
@@ -387,6 +388,14 @@ namespace GUI_Management
                                     this.divShift("Nhân Viên");
                                 }
                             }
+                            if (this.SalaryBUS.insertSalaryNV(id_cmnd, 0))
+                            {
+                                MessageBox.Show("Khởi tạo lương thành công");
+                            }    
+                            else
+                            {
+                                MessageBox.Show("Khởi tạo lương thất bại");
+                            }    
                         }    
                     }
                     else

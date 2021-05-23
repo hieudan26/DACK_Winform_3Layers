@@ -253,19 +253,21 @@ namespace GUI_Management
                             if (this.checkShift("Bảo Vệ", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-                                this.ChamCong();
-                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                if (this.ChamCong() == 1)
                                 {
-                                    Global.SetGlobalEmployeeType(5);
+                                    if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                    {
+                                        Global.SetGlobalEmployeeType(5);
+                                    }
+                                    else
+                                    {
+                                        Global.SetGlobalEmployeeType(0);
+                                    }
+                                    fWelcome form = new fWelcome(this.status);
+                                    this.Hide();
+                                    form.ShowDialog();
+                                    this.Show();
                                 }
-                                else
-                                {
-                                    Global.SetGlobalEmployeeType(0);
-                                }
-                                fWelcome form = new fWelcome(this.status);
-                                this.Hide();
-                                form.ShowDialog();
-                                this.Show();
                             }    
                             else
                             {
@@ -290,20 +292,22 @@ namespace GUI_Management
                             if (this.checkShift("Thợ Sửa", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-                                this.ChamCong();
-                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                if (this.ChamCong() == 1)
                                 {
-                                    Global.SetGlobalEmployeeType(6);
-                                }
-                                else
-                                {
-                                    Global.SetGlobalEmployeeType(1);
-                                }
+                                    if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                    {
+                                        Global.SetGlobalEmployeeType(6);
+                                    }
+                                    else
+                                    {
+                                        Global.SetGlobalEmployeeType(1);
+                                    }
 
-                                fWelcome form = new fWelcome(this.status);
-                                this.Hide();
-                                form.ShowDialog();
-                                this.Show();
+                                    fWelcome form = new fWelcome(this.status);
+                                    this.Hide();
+                                    form.ShowDialog();
+                                    this.Show();
+                                }    
                             }    
                             else
                             {
@@ -329,20 +333,22 @@ namespace GUI_Management
                             if (this.checkShift("Thợ Rửa", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-                                this.ChamCong();
-                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                if (this.ChamCong() == 1)
                                 {
-                                    Global.SetGlobalEmployeeType(7);
-                                }
-                                else
-                                {
-                                    Global.SetGlobalEmployeeType(2);
-                                }
+                                    if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                    {
+                                        Global.SetGlobalEmployeeType(7);
+                                    }
+                                    else
+                                    {
+                                        Global.SetGlobalEmployeeType(2);
+                                    }
 
-                                fWelcome form = new fWelcome(this.status);
-                                this.Hide();
-                                form.ShowDialog();
-                                this.Show();
+                                    fWelcome form = new fWelcome(this.status);
+                                    this.Hide();
+                                    form.ShowDialog();
+                                    this.Show();
+                                }    
                             }
                             else
                             {
@@ -368,20 +374,23 @@ namespace GUI_Management
                             if (this.checkShift("Nhân Viên", id))
                             {
                                 Global.SetGlobalEmployeeId(id);
-                                this.ChamCong();
-                                if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                if (this.ChamCong() == 1)
                                 {
-                                    Global.SetGlobalEmployeeType(8);
-                                }
-                                else
-                                {
-                                    Global.SetGlobalEmployeeType(3);
-                                }
 
-                                fWelcome form = new fWelcome(this.status);
-                                this.Hide();
-                                form.ShowDialog();
-                                this.Show();
+                                    if (bool.Parse(table.Rows[0][3].ToString()) == true)
+                                    {
+                                        Global.SetGlobalEmployeeType(8);
+                                    }
+                                    else
+                                    {
+                                        Global.SetGlobalEmployeeType(3);
+                                    }
+
+                                    fWelcome form = new fWelcome(this.status);
+                                    this.Hide();
+                                    form.ShowDialog();
+                                    this.Show();
+                                }    
                             }    
                             else
                             {
@@ -606,7 +615,7 @@ namespace GUI_Management
             }   
         }
 
-        private void ChamCong()
+        private int ChamCong()
         {
             int ca = this.getCaNow();
             if(ca != -1)
@@ -615,11 +624,20 @@ namespace GUI_Management
                 DateTime now = DateTime.Now;
                 string thu = now.DayOfWeek.ToString();
                 if (checkinBUS.AttendNV(IDNV, thu, ca))
+                {
                     MessageBox.Show("Điểm danh thành công");
+                    return 1;
+                }    
                 else
+                { 
                     MessageBox.Show("Điểm danh thất bai");
-
+                    return 0;
+                }   
             }
+            else
+            {
+                return 0;
+            }    
         }
     }
 }

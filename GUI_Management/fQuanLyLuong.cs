@@ -16,6 +16,8 @@ namespace GUI_Management
     public partial class fQuanLyLuong : Form
     {
         SalaryBUS salaryBUS = new SalaryBUS();
+        danhSachLuongDaThanhToanBUS danhSachLuongDaThanhToanBUS = new danhSachLuongDaThanhToanBUS();
+
         public fQuanLyLuong()
         {
             InitializeComponent();
@@ -65,10 +67,10 @@ namespace GUI_Management
         }
         private void FIllForm(DataTable table)
         {
-            this.txtID.Text = table.Rows[0][0].ToString();
-            this.txtName.Text = table.Rows[0][1].ToString();
+            this.txtID.Text = table.Rows[0][0].ToString().Trim();
+            this.txtName.Text = table.Rows[0][1].ToString().Trim();
             this.cbTxtType.SelectedItem = table.Rows[0][2].ToString().Trim();
-            this.txtLuong.Text = table.Rows[0][4].ToString();
+            this.txtLuong.Text = table.Rows[0][4].ToString().Trim();
             byte[] pic = (byte[])table.Rows[0][3];
             MemoryStream picture = new MemoryStream(pic);
             this.picBox.Image = Image.FromStream(picture);
@@ -94,24 +96,35 @@ namespace GUI_Management
 
         private void btnKetToan_Click(object sender, EventArgs e)
         {
-            string IDNV = txtID.Text;
-            if(IDNV == "")
+            try
             {
-                MessageBox.Show("ID trống");
-            }
-            else
-            {
-                //Làm gì đó ở đây
-                //
-                if(this.salaryBUS.ResetNV(IDNV))
+                string IDNV = this.txtID.Text.Trim();
+                DateTime currTime = DateTime.Now;
+                float Luong = float.Parse(this.txtLuong.Text.Trim());
+                if (IDNV == "")
                 {
-                    MessageBox.Show("Kết toán lương thành công");
+                    MessageBox.Show("ID trống");
                 }
                 else
                 {
-                    MessageBox.Show("Kết toán lương thất bại");
-                }    
-            }    
+                    danhSachLuongDaThanhToanDTO danhSachLuongDaThanhToanDTO = new danhSachLuongDaThanhToanDTO(IDNV, currTime, Luong);
+                    if (this.danhSachLuongDaThanhToanBUS.insert(danhSachLuongDaThanhToanDTO))
+                    {
+                        if (this.salaryBUS.ResetNV(IDNV))
+                        {
+                            MessageBox.Show("Kết toán lương thành công");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Kết toán lương thất bại");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void DGVLuongperhour_CellContentClick(object sender, DataGridViewCellEventArgs e)

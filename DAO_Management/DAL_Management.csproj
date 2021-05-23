@@ -57,6 +57,7 @@
     <Compile Include="contract_ThueDAL.cs" />
     <Compile Include="customerDAL.cs" />
     <Compile Include="customer_VehicleDAL.cs" />
+    <Compile Include="danhSachLuongDaThanhToanDAL.cs" />
     <Compile Include="doanhThuContract_ChoThueDAL.cs" />
     <Compile Include="doanhThuContract_ThueDAL.cs" />
     <Compile Include="doanhThuFixDAL.cs" />

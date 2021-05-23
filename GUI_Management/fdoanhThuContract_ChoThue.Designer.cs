@@ -29,6 +29,7 @@ namespace GUI_Management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,6 +58,7 @@ namespace GUI_Management
             this.lbNameEmpl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV = new Guna.UI.WinForms.GunaDataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -425,6 +427,10 @@ namespace GUI_Management
             this.DGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // fdoanhThuContract_ChoThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -489,5 +495,6 @@ namespace GUI_Management
         private System.Windows.Forms.Label lbNameEmpl;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaDataGridView DGV;
+        private System.Windows.Forms.Timer timer1;
     }
 }

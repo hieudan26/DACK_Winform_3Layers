@@ -18,10 +18,17 @@ namespace GUI_Management
         vehicleParkingBUS vehicleParkingBUS = new vehicleParkingBUS();
         vehicleBUS vehicleBUS = new vehicleBUS();
         customer_VehicleBUS customer_VehicleBUS = new customer_VehicleBUS();
+        fProgressBar fLoad = new fProgressBar();
 
         public flienKetVehicle()
         {
             InitializeComponent();
+        }
+
+        private void LoadPB()
+        {
+            this.timer1.Start();
+            fLoad.ShowDialog();
         }
 
         private DataTable UpdateDanhSachVehID(DataTable tableBu)
@@ -116,6 +123,7 @@ namespace GUI_Management
 
         private void cbIDCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.LoadPB();
             this.txt_FullName.Text = this.textBox1.Text.Trim() + " " + this.textBox2.Text.Trim();
         }
 
@@ -170,6 +178,18 @@ namespace GUI_Management
             catch (Exception ex)
             {
                 MessageBox.Show("Error: ", ex.Message);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //fProgressBar form = new fProgressBar();
+            fLoad.gunaCircleProgressBar1.Increment(25);
+
+            if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
+            {
+                timer1.Stop();
+                fLoad.Close();
             }
         }
     }

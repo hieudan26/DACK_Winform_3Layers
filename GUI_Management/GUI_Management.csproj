@@ -237,6 +237,12 @@
     <Compile Include="fShift.Designer.cs">
       <DependentUpon>fShift.cs</DependentUpon>
     </Compile>
+    <Compile Include="fStaticLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fStaticLuong.Designer.cs">
+      <DependentUpon>fStaticLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="fStatics_DTThue_ChoThue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fShift.resx">
       <DependentUpon>fShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fStaticLuong.resx">
+      <DependentUpon>fStaticLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fStatics_DTThue_ChoThue.resx">
       <DependentUpon>fStatics_DTThue_ChoThue.cs</DependentUpon>

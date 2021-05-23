@@ -51,6 +51,7 @@
     <Compile Include="contract_ThueDTO.cs" />
     <Compile Include="customerDTO.cs" />
     <Compile Include="customer_VehicleDTO.cs" />
+    <Compile Include="danhSachLuongDaThanhToanDTO.cs" />
     <Compile Include="doanhThuContract_ChoThueDTO.cs" />
     <Compile Include="doanhThuContract_ThueDTO.cs" />
     <Compile Include="doanhThuFixDTO.cs" />

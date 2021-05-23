@@ -20,10 +20,17 @@ namespace GUI_Management
         customerBUS customerBUS = new customerBUS();
         vehicleBUS vehicleBUS = new vehicleBUS();
         doanhThuContract_ChoThueBUS doanhThuContract_ChoThueBUS = new doanhThuContract_ChoThueBUS();
+        fProgressBar fLoad = new fProgressBar();
 
         public fdoanhThuContract_ChoThue()
         {
             InitializeComponent();
+        }
+
+        private void LoadPB()
+        {
+            this.timer1.Start();
+            fLoad.ShowDialog();
         }
 
         private void fdoanhThuContract_ChoThue_Load(object sender, EventArgs e)
@@ -51,6 +58,7 @@ namespace GUI_Management
         {
             try
             {
+                this.LoadPB();
                 DataTable table = this.contract_ChoThueBUS.getAllVehicle_ContractChoThueByIDEmployee(Global.GlobalEmployeeId);
                 this.DGV.ReadOnly = true;
                 this.DGV.RowTemplate.Height = 30;
@@ -69,6 +77,7 @@ namespace GUI_Management
             {
                 try
                 {
+                    this.LoadPB();
                     DataTable table = this.contract_ChoThueBUS.getAllVehicle_ContractChoThueByIDEmployee(Global.GlobalEmployeeId);
                     this.DGV.ReadOnly = true;
                     this.DGV.RowTemplate.Height = 30;
@@ -86,6 +95,7 @@ namespace GUI_Management
         {
             try
             {
+                this.LoadPB();
                 DataTable table = this.contract_ChoThueBUS.getAllContractChoThue_Expired(Global.GlobalEmployeeId);
                 this.DGV.ReadOnly = true;
                 this.DGV.RowTemplate.Height = 30;
@@ -200,6 +210,18 @@ namespace GUI_Management
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //fProgressBar form = new fProgressBar();
+            fLoad.gunaCircleProgressBar1.Increment(25);
+
+            if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
+            {
+                timer1.Stop();
+                fLoad.Close();
             }
         }
     }

@@ -37,7 +37,6 @@ namespace GUI_Management
             this.LoaiNVLabel = new Guna.UI.WinForms.GunaLabel();
             this.cbTypeNV = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtID = new Guna.UI.WinForms.GunaLineTextBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.txtName = new Guna.UI.WinForms.GunaLineTextBox();
@@ -49,10 +48,13 @@ namespace GUI_Management
             // 
             // DGVLuongperhour
             // 
+            this.DGVLuongperhour.BackgroundColor = System.Drawing.Color.LavenderBlush;
             this.DGVLuongperhour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVLuongperhour.Location = new System.Drawing.Point(582, 146);
+            this.DGVLuongperhour.Location = new System.Drawing.Point(140, 65);
+            this.DGVLuongperhour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DGVLuongperhour.Name = "DGVLuongperhour";
-            this.DGVLuongperhour.Size = new System.Drawing.Size(684, 342);
+            this.DGVLuongperhour.RowHeadersWidth = 51;
+            this.DGVLuongperhour.Size = new System.Drawing.Size(912, 347);
             this.DGVLuongperhour.TabIndex = 117;
             this.DGVLuongperhour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLuongperhour_CellContentClick);
             this.DGVLuongperhour.Click += new System.EventHandler(this.DGVLuongperhour_Click);
@@ -74,12 +76,12 @@ namespace GUI_Management
             "Thợ Sửa",
             "Thợ Rửa",
             "Nhân Viên"});
-            this.cbTxtType.Location = new System.Drawing.Point(184, 321);
-            this.cbTxtType.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTxtType.Location = new System.Drawing.Point(936, 475);
+            this.cbTxtType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTxtType.Name = "cbTxtType";
             this.cbTxtType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTxtType.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbTxtType.Size = new System.Drawing.Size(148, 28);
+            this.cbTxtType.Size = new System.Drawing.Size(237, 32);
             this.cbTxtType.TabIndex = 115;
             // 
             // btnKetToan
@@ -97,8 +99,8 @@ namespace GUI_Management
             this.btnKetToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.btnKetToan.Image = null;
             this.btnKetToan.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnKetToan.Location = new System.Drawing.Point(399, 442);
-            this.btnKetToan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKetToan.Location = new System.Drawing.Point(494, 648);
+            this.btnKetToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKetToan.Name = "btnKetToan";
             this.btnKetToan.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnKetToan.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -107,7 +109,7 @@ namespace GUI_Management
             this.btnKetToan.OnHoverImage = null;
             this.btnKetToan.OnPressedColor = System.Drawing.Color.Black;
             this.btnKetToan.Radius = 3;
-            this.btnKetToan.Size = new System.Drawing.Size(128, 30);
+            this.btnKetToan.Size = new System.Drawing.Size(171, 48);
             this.btnKetToan.TabIndex = 114;
             this.btnKetToan.Text = "KÊT TOÁN";
             this.btnKetToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -120,12 +122,12 @@ namespace GUI_Management
             this.txtLuong.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLuong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuong.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtLuong.Location = new System.Drawing.Point(184, 393);
-            this.txtLuong.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLuong.Location = new System.Drawing.Point(936, 569);
+            this.txtLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.PasswordChar = '\0';
             this.txtLuong.SelectedText = "";
-            this.txtLuong.Size = new System.Drawing.Size(148, 30);
+            this.txtLuong.Size = new System.Drawing.Size(237, 42);
             this.txtLuong.TabIndex = 113;
             this.txtLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -133,10 +135,9 @@ namespace GUI_Management
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(43, 402);
-            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel3.Location = new System.Drawing.Point(822, 583);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(61, 21);
+            this.gunaLabel3.Size = new System.Drawing.Size(75, 28);
             this.gunaLabel3.TabIndex = 112;
             this.gunaLabel3.Text = "Lương:";
             // 
@@ -144,10 +145,9 @@ namespace GUI_Management
             // 
             this.LoaiNVLabel.AutoSize = true;
             this.LoaiNVLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoaiNVLabel.Location = new System.Drawing.Point(43, 321);
-            this.LoaiNVLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LoaiNVLabel.Location = new System.Drawing.Point(735, 479);
             this.LoaiNVLabel.Name = "LoaiNVLabel";
-            this.LoaiNVLabel.Size = new System.Drawing.Size(126, 21);
+            this.LoaiNVLabel.Size = new System.Drawing.Size(162, 28);
             this.LoaiNVLabel.TabIndex = 110;
             this.LoaiNVLabel.Text = "Loại Nhân Viên: ";
             // 
@@ -168,12 +168,12 @@ namespace GUI_Management
             "Thợ Sửa",
             "Thợ Rửa",
             "Nhân Viên"});
-            this.cbTypeNV.Location = new System.Drawing.Point(793, 107);
-            this.cbTypeNV.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTypeNV.Location = new System.Drawing.Point(616, 11);
+            this.cbTypeNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTypeNV.Name = "cbTypeNV";
             this.cbTypeNV.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbTypeNV.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbTypeNV.Size = new System.Drawing.Size(144, 30);
+            this.cbTypeNV.Size = new System.Drawing.Size(191, 35);
             this.cbTypeNV.TabIndex = 109;
             this.cbTypeNV.SelectedIndexChanged += new System.EventHandler(this.cbTypeNV_SelectedIndexChanged);
             // 
@@ -181,24 +181,11 @@ namespace GUI_Management
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(623, 110);
-            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel1.Location = new System.Drawing.Point(372, 18);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(146, 21);
+            this.gunaLabel1.Size = new System.Drawing.Size(185, 28);
             this.gunaLabel1.TabIndex = 108;
             this.gunaLabel1.Text = "Các Loại Nhân viên";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(274, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(479, 55);
-            this.label1.TabIndex = 107;
-            this.label1.Text = "LƯƠNG NHÂN VIÊN";
             // 
             // txtID
             // 
@@ -207,12 +194,12 @@ namespace GUI_Management
             this.txtID.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtID.Location = new System.Drawing.Point(329, 155);
-            this.txtID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtID.Location = new System.Drawing.Point(194, 479);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.SelectedText = "";
-            this.txtID.Size = new System.Drawing.Size(198, 30);
+            this.txtID.Size = new System.Drawing.Size(264, 42);
             this.txtID.TabIndex = 119;
             this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -220,10 +207,9 @@ namespace GUI_Management
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(228, 132);
-            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel2.Location = new System.Drawing.Point(6, 493);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(104, 21);
+            this.gunaLabel2.Size = new System.Drawing.Size(134, 28);
             this.gunaLabel2.TabIndex = 118;
             this.gunaLabel2.Text = "ID Nhân Viên";
             // 
@@ -234,12 +220,12 @@ namespace GUI_Management
             this.txtName.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.LineColor = System.Drawing.Color.LimeGreen;
-            this.txtName.Location = new System.Drawing.Point(329, 227);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Location = new System.Drawing.Point(194, 561);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(198, 30);
+            this.txtName.Size = new System.Drawing.Size(264, 42);
             this.txtName.TabIndex = 121;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -247,29 +233,28 @@ namespace GUI_Management
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(228, 204);
-            this.gunaLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel4.Location = new System.Drawing.Point(6, 575);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(113, 21);
+            this.gunaLabel4.Size = new System.Drawing.Size(146, 28);
             this.gunaLabel4.TabIndex = 120;
             this.gunaLabel4.Text = "Tên Nhân Viên";
             // 
             // picBox
             // 
-            this.picBox.Location = new System.Drawing.Point(63, 132);
-            this.picBox.Margin = new System.Windows.Forms.Padding(2);
+            this.picBox.Location = new System.Drawing.Point(494, 449);
+            this.picBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(137, 125);
+            this.picBox.Size = new System.Drawing.Size(224, 154);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 122;
             this.picBox.TabStop = false;
             // 
             // fQuanLyLuong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(1278, 500);
+            this.ClientSize = new System.Drawing.Size(1185, 707);
             this.Controls.Add(this.picBox);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.gunaLabel4);
@@ -283,8 +268,8 @@ namespace GUI_Management
             this.Controls.Add(this.LoaiNVLabel);
             this.Controls.Add(this.cbTypeNV);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fQuanLyLuong";
             this.Text = "fQuanLyLuong";
             this.Load += new System.EventHandler(this.fQuanLyLuong_Load);
@@ -305,7 +290,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaLabel LoaiNVLabel;
         private Guna.UI.WinForms.GunaComboBox cbTypeNV;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaLineTextBox txtID;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLineTextBox txtName;

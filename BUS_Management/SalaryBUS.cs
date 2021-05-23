@@ -19,6 +19,11 @@ namespace BUS_Management
         nhanVienBUS nhanvienBUS = new nhanVienBUS();
         SalaryPerHourDAL salaryhour = new SalaryPerHourDAL();
 
+        public bool insertSalaryNV(string IDnv, float Luong)
+        {
+            return this.salaryDAL.insertSalaryNV(IDnv, Luong);
+        }
+
         public DataTable getLuongAll()
         {
             return this.salaryDAL.getLuongAll();

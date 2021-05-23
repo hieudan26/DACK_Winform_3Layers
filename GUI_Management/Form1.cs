@@ -87,10 +87,12 @@ namespace GUI_Management
             //this.checkinBUS.ResetBang();//mở ra 1 lần
             //this.checkinBUS.CreateCheckIn();
             //this.salaryBUS.CreateBangLuong();
-            if (this.salaryBUS.getLuongAll() == null)
-            {
-                this.salaryBUS.CreateBangLuong();
-            }    
+
+
+            //if (this.salaryBUS.getLuongAll() == null)
+            //{
+            //    this.salaryBUS.CreateBangLuong();
+            //}    
             float x = this.salaryBUS.getLuongHourPerCa("Bảo Vệ", 3);
             //MessageBox.Show(x.ToString());
             this.salaryBUS.UpdateLuong("123124125123", x);

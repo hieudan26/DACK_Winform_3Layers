@@ -26,11 +26,18 @@ namespace GUI_Management
         shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
         shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
+        fProgressBar formLoad = new fProgressBar();
 
         public flistNhanVien(fQuanLyNhanVien fQuanLy)
         {
             InitializeComponent();
             this.fQuanLyNhanVien = fQuanLy;
+        }
+
+        private void loadPB()
+        {
+            this.timer1.Start();
+            formLoad.ShowDialog();
         }
 
         //design dgv
@@ -54,6 +61,7 @@ namespace GUI_Management
             DataTable table = new DataTable();
             if (this.cbFilter.SelectedIndex != -1)
             {
+                this.loadPB();
                 int index = this.cbFilter.SelectedIndex;
                 if (this.rbNo.Checked == true)
                 {
@@ -361,6 +369,7 @@ namespace GUI_Management
         {
             if (this.txtSearch.Text != "")
             {
+                this.loadPB();
                 this.dgv.RowTemplate.Height = 80;
                 if (this.rbNo.Checked == true)
                 {
@@ -538,6 +547,7 @@ namespace GUI_Management
                         MessageBox.Show("Xóa Thành Công", "List Nhân Viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //this.divShift(typeTho);
                         this.cbFilter.SelectedIndex = 4;
+                        this.loadPB();
                         DataTable table = this.nhanVienBUS.getAllEmployees();
                         this.dgv.DataSource = table;
                         this.designDataGridView(5);
@@ -1074,6 +1084,25 @@ namespace GUI_Management
                     this.LoadDGV_GenderAndGender(index, table, "Nữ", "Khác");
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ////fProgressBar form = new fProgressBar();
+            this.formLoad.gunaCircleProgressBar1.Increment(25);
+
+            if (formLoad.gunaCircleProgressBar1.Value >= formLoad.gunaCircleProgressBar1.Maximum)
+            {
+                timer1.Stop();
+                formLoad.Close();
+                //this.formQuanLyXeGui.btnBaiXe.BorderColor = Color.White;
+                //this.formQuanLyXeGui.btnBaiXe.ForeColor = Color.Black;
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

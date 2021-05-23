@@ -37,9 +37,10 @@ namespace GUI_Management
             this.btnLuong = new Guna.UI.WinForms.GunaButton();
             this.btnSchedule = new Guna.UI.WinForms.GunaButton();
             this.btnAddEmployee = new Guna.UI.WinForms.GunaButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDanhSach = new Guna.UI.WinForms.GunaButton();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.btnThanhToanLuong = new Guna.UI.WinForms.GunaButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,6 +72,7 @@ namespace GUI_Management
             // gunaLinePanel1
             // 
             this.gunaLinePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.gunaLinePanel1.Controls.Add(this.btnThanhToanLuong);
             this.gunaLinePanel1.Controls.Add(this.btnInfoNhanVien);
             this.gunaLinePanel1.Controls.Add(this.btnExit);
             this.gunaLinePanel1.Controls.Add(this.btnLuong);
@@ -129,7 +131,7 @@ namespace GUI_Management
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = null;
             this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(69, 609);
+            this.btnExit.Location = new System.Drawing.Point(65, 664);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -159,7 +161,7 @@ namespace GUI_Management
             this.btnLuong.ForeColor = System.Drawing.Color.Black;
             this.btnLuong.Image = null;
             this.btnLuong.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLuong.Location = new System.Drawing.Point(6, 510);
+            this.btnLuong.Location = new System.Drawing.Point(6, 586);
             this.btnLuong.Name = "btnLuong";
             this.btnLuong.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnLuong.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -169,8 +171,9 @@ namespace GUI_Management
             this.btnLuong.Radius = 3;
             this.btnLuong.Size = new System.Drawing.Size(194, 42);
             this.btnLuong.TabIndex = 9;
-            this.btnLuong.Text = "Tổng Lương";
+            this.btnLuong.Text = "Static/Print Lương";
             this.btnLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
             // 
             // btnSchedule
             // 
@@ -228,16 +231,6 @@ namespace GUI_Management
             this.btnAddEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.money;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 129);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnDanhSach
             // 
             this.btnDanhSach.AnimationHoverSpeed = 0.07F;
@@ -277,6 +270,44 @@ namespace GUI_Management
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1385, 21);
             this.gunaShadowPanel1.TabIndex = 0;
             // 
+            // btnThanhToanLuong
+            // 
+            this.btnThanhToanLuong.AnimationHoverSpeed = 0.07F;
+            this.btnThanhToanLuong.AnimationSpeed = 0.03F;
+            this.btnThanhToanLuong.BackColor = System.Drawing.Color.Transparent;
+            this.btnThanhToanLuong.BaseColor = System.Drawing.Color.LemonChiffon;
+            this.btnThanhToanLuong.BorderColor = System.Drawing.Color.Black;
+            this.btnThanhToanLuong.BorderSize = 2;
+            this.btnThanhToanLuong.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnThanhToanLuong.FocusedColor = System.Drawing.Color.Empty;
+            this.btnThanhToanLuong.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToanLuong.ForeColor = System.Drawing.Color.Black;
+            this.btnThanhToanLuong.Image = null;
+            this.btnThanhToanLuong.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnThanhToanLuong.Location = new System.Drawing.Point(6, 508);
+            this.btnThanhToanLuong.Name = "btnThanhToanLuong";
+            this.btnThanhToanLuong.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnThanhToanLuong.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnThanhToanLuong.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnThanhToanLuong.OnHoverImage = null;
+            this.btnThanhToanLuong.OnPressedColor = System.Drawing.Color.Black;
+            this.btnThanhToanLuong.Radius = 3;
+            this.btnThanhToanLuong.Size = new System.Drawing.Size(194, 42);
+            this.btnThanhToanLuong.TabIndex = 12;
+            this.btnThanhToanLuong.Text = "Thanh Toán Lương";
+            this.btnThanhToanLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnThanhToanLuong.Click += new System.EventHandler(this.btnThanhToanLuong_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI_Management.Properties.Resources.money;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 129);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // fQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,5 +338,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaButton btnExit;
         private System.Windows.Forms.Panel pnlChildForm;
         private Guna.UI.WinForms.GunaButton btnInfoNhanVien;
+        private Guna.UI.WinForms.GunaButton btnThanhToanLuong;
     }
 }

@@ -29,6 +29,7 @@ namespace GUI_Management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@ namespace GUI_Management
             this.cbIDCustomer = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaGradient2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,6 +221,10 @@ namespace GUI_Management
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "XÁC MINH CHỦ QUYỀN XE";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // flienKetVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,5 +256,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaGradientButton btnConfirm;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

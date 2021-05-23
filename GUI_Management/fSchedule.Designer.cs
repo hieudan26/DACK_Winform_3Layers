@@ -29,7 +29,9 @@ namespace GUI_Management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnpNS = new Guna.UI.WinForms.GunaGradientButton();
             this.btnpRS = new Guna.UI.WinForms.GunaGradientButton();
@@ -72,7 +74,7 @@ namespace GUI_Management
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaGradient2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,10 +129,41 @@ namespace GUI_Management
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
             this.gunaGradient2Panel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.gunaGradient2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1131, 749);
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1508, 922);
             this.gunaGradient2Panel1.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            this.btnSave.AnimationHoverSpeed = 0.07F;
+            this.btnSave.AnimationSpeed = 0.03F;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSave.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Image = null;
+            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSave.Location = new System.Drawing.Point(652, 878);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSave.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSave.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnSave.OnHoverImage = null;
+            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSave.Radius = 3;
+            this.btnSave.Size = new System.Drawing.Size(201, 31);
+            this.btnSave.TabIndex = 60;
+            this.btnSave.Text = "SAVE TO WORD";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -138,10 +171,9 @@ namespace GUI_Management
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MV Boli", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightCoral;
-            this.label1.Location = new System.Drawing.Point(355, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(473, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(428, 85);
+            this.label1.Size = new System.Drawing.Size(530, 105);
             this.label1.TabIndex = 59;
             this.label1.Text = "TIME TABLE";
             // 
@@ -160,8 +192,8 @@ namespace GUI_Management
             this.btnpNS.ForeColor = System.Drawing.Color.Black;
             this.btnpNS.Image = null;
             this.btnpNS.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnpNS.Location = new System.Drawing.Point(960, 69);
-            this.btnpNS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnpNS.Location = new System.Drawing.Point(1280, 85);
+            this.btnpNS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnpNS.Name = "btnpNS";
             this.btnpNS.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnpNS.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -170,7 +202,7 @@ namespace GUI_Management
             this.btnpNS.OnHoverImage = null;
             this.btnpNS.OnPressedColor = System.Drawing.Color.Black;
             this.btnpNS.Radius = 3;
-            this.btnpNS.Size = new System.Drawing.Size(151, 25);
+            this.btnpNS.Size = new System.Drawing.Size(201, 31);
             this.btnpNS.TabIndex = 58;
             this.btnpNS.Text = "Phòng Nhân Sự";
             this.btnpNS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -191,8 +223,8 @@ namespace GUI_Management
             this.btnpRS.ForeColor = System.Drawing.Color.Black;
             this.btnpRS.Image = null;
             this.btnpRS.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnpRS.Location = new System.Drawing.Point(960, 20);
-            this.btnpRS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnpRS.Location = new System.Drawing.Point(1280, 25);
+            this.btnpRS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnpRS.Name = "btnpRS";
             this.btnpRS.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnpRS.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -201,7 +233,7 @@ namespace GUI_Management
             this.btnpRS.OnHoverImage = null;
             this.btnpRS.OnPressedColor = System.Drawing.Color.Black;
             this.btnpRS.Radius = 3;
-            this.btnpRS.Size = new System.Drawing.Size(151, 25);
+            this.btnpRS.Size = new System.Drawing.Size(201, 31);
             this.btnpRS.TabIndex = 57;
             this.btnpRS.Text = "Phòng Rửa Xe";
             this.btnpRS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -222,8 +254,8 @@ namespace GUI_Management
             this.btnpSX.ForeColor = System.Drawing.Color.Black;
             this.btnpSX.Image = null;
             this.btnpSX.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnpSX.Location = new System.Drawing.Point(23, 69);
-            this.btnpSX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnpSX.Location = new System.Drawing.Point(31, 85);
+            this.btnpSX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnpSX.Name = "btnpSX";
             this.btnpSX.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnpSX.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -232,7 +264,7 @@ namespace GUI_Management
             this.btnpSX.OnHoverImage = null;
             this.btnpSX.OnPressedColor = System.Drawing.Color.Black;
             this.btnpSX.Radius = 3;
-            this.btnpSX.Size = new System.Drawing.Size(151, 25);
+            this.btnpSX.Size = new System.Drawing.Size(201, 31);
             this.btnpSX.TabIndex = 56;
             this.btnpSX.Text = "Phòng Sửa Xe";
             this.btnpSX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -253,8 +285,8 @@ namespace GUI_Management
             this.btnpBV.ForeColor = System.Drawing.Color.Black;
             this.btnpBV.Image = null;
             this.btnpBV.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnpBV.Location = new System.Drawing.Point(23, 20);
-            this.btnpBV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnpBV.Location = new System.Drawing.Point(31, 25);
+            this.btnpBV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnpBV.Name = "btnpBV";
             this.btnpBV.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnpBV.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -263,7 +295,7 @@ namespace GUI_Management
             this.btnpBV.OnHoverImage = null;
             this.btnpBV.OnPressedColor = System.Drawing.Color.Black;
             this.btnpBV.Radius = 3;
-            this.btnpBV.Size = new System.Drawing.Size(151, 25);
+            this.btnpBV.Size = new System.Drawing.Size(201, 31);
             this.btnpBV.TabIndex = 55;
             this.btnpBV.Text = "Phòng Bảo Vệ";
             this.btnpBV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -271,261 +303,260 @@ namespace GUI_Management
             // 
             // flpCa3_CN
             // 
-            this.flpCa3_CN.Location = new System.Drawing.Point(970, 531);
-            this.flpCa3_CN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa3_CN.Location = new System.Drawing.Point(1293, 654);
+            this.flpCa3_CN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa3_CN.Name = "flpCa3_CN";
-            this.flpCa3_CN.Size = new System.Drawing.Size(149, 172);
+            this.flpCa3_CN.Size = new System.Drawing.Size(199, 212);
             this.flpCa3_CN.TabIndex = 35;
             // 
             // flpCa2_CN
             // 
-            this.flpCa2_CN.Location = new System.Drawing.Point(970, 347);
-            this.flpCa2_CN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa2_CN.Location = new System.Drawing.Point(1293, 427);
+            this.flpCa2_CN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa2_CN.Name = "flpCa2_CN";
-            this.flpCa2_CN.Size = new System.Drawing.Size(149, 172);
+            this.flpCa2_CN.Size = new System.Drawing.Size(199, 212);
             this.flpCa2_CN.TabIndex = 34;
             // 
             // flpCa1_CN
             // 
-            this.flpCa1_CN.Location = new System.Drawing.Point(970, 163);
-            this.flpCa1_CN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa1_CN.Location = new System.Drawing.Point(1293, 201);
+            this.flpCa1_CN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa1_CN.Name = "flpCa1_CN";
-            this.flpCa1_CN.Size = new System.Drawing.Size(149, 172);
+            this.flpCa1_CN.Size = new System.Drawing.Size(199, 212);
             this.flpCa1_CN.TabIndex = 33;
             // 
             // flpCa3_7
             // 
-            this.flpCa3_7.Location = new System.Drawing.Point(810, 531);
-            this.flpCa3_7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa3_7.Location = new System.Drawing.Point(1080, 654);
+            this.flpCa3_7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa3_7.Name = "flpCa3_7";
-            this.flpCa3_7.Size = new System.Drawing.Size(149, 172);
+            this.flpCa3_7.Size = new System.Drawing.Size(199, 212);
             this.flpCa3_7.TabIndex = 32;
             // 
             // flpCa2_7
             // 
-            this.flpCa2_7.Location = new System.Drawing.Point(810, 347);
-            this.flpCa2_7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa2_7.Location = new System.Drawing.Point(1080, 427);
+            this.flpCa2_7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa2_7.Name = "flpCa2_7";
-            this.flpCa2_7.Size = new System.Drawing.Size(149, 172);
+            this.flpCa2_7.Size = new System.Drawing.Size(199, 212);
             this.flpCa2_7.TabIndex = 31;
             // 
             // flpCa1_7
             // 
-            this.flpCa1_7.Location = new System.Drawing.Point(810, 163);
-            this.flpCa1_7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa1_7.Location = new System.Drawing.Point(1080, 201);
+            this.flpCa1_7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa1_7.Name = "flpCa1_7";
-            this.flpCa1_7.Size = new System.Drawing.Size(149, 172);
+            this.flpCa1_7.Size = new System.Drawing.Size(199, 212);
             this.flpCa1_7.TabIndex = 30;
             // 
             // flpCa3_6
             // 
-            this.flpCa3_6.Location = new System.Drawing.Point(650, 531);
-            this.flpCa3_6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa3_6.Location = new System.Drawing.Point(867, 654);
+            this.flpCa3_6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa3_6.Name = "flpCa3_6";
-            this.flpCa3_6.Size = new System.Drawing.Size(149, 172);
+            this.flpCa3_6.Size = new System.Drawing.Size(199, 212);
             this.flpCa3_6.TabIndex = 29;
             // 
             // flpCa2_6
             // 
-            this.flpCa2_6.Location = new System.Drawing.Point(650, 347);
-            this.flpCa2_6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa2_6.Location = new System.Drawing.Point(867, 427);
+            this.flpCa2_6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa2_6.Name = "flpCa2_6";
-            this.flpCa2_6.Size = new System.Drawing.Size(149, 172);
+            this.flpCa2_6.Size = new System.Drawing.Size(199, 212);
             this.flpCa2_6.TabIndex = 28;
             // 
             // flpCa1_6
             // 
-            this.flpCa1_6.Location = new System.Drawing.Point(650, 163);
-            this.flpCa1_6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa1_6.Location = new System.Drawing.Point(867, 201);
+            this.flpCa1_6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa1_6.Name = "flpCa1_6";
-            this.flpCa1_6.Size = new System.Drawing.Size(149, 172);
+            this.flpCa1_6.Size = new System.Drawing.Size(199, 212);
             this.flpCa1_6.TabIndex = 27;
             // 
             // flpCa3_5
             // 
-            this.flpCa3_5.Location = new System.Drawing.Point(489, 531);
-            this.flpCa3_5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa3_5.Location = new System.Drawing.Point(652, 654);
+            this.flpCa3_5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa3_5.Name = "flpCa3_5";
-            this.flpCa3_5.Size = new System.Drawing.Size(149, 172);
+            this.flpCa3_5.Size = new System.Drawing.Size(199, 212);
             this.flpCa3_5.TabIndex = 26;
             // 
             // flpCa2_5
             // 
-            this.flpCa2_5.Location = new System.Drawing.Point(489, 347);
-            this.flpCa2_5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa2_5.Location = new System.Drawing.Point(652, 427);
+            this.flpCa2_5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa2_5.Name = "flpCa2_5";
-            this.flpCa2_5.Size = new System.Drawing.Size(149, 172);
+            this.flpCa2_5.Size = new System.Drawing.Size(199, 212);
             this.flpCa2_5.TabIndex = 25;
             // 
             // flpCa1_5
             // 
-            this.flpCa1_5.Location = new System.Drawing.Point(489, 162);
-            this.flpCa1_5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa1_5.Location = new System.Drawing.Point(652, 199);
+            this.flpCa1_5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa1_5.Name = "flpCa1_5";
-            this.flpCa1_5.Size = new System.Drawing.Size(149, 172);
+            this.flpCa1_5.Size = new System.Drawing.Size(199, 212);
             this.flpCa1_5.TabIndex = 24;
             // 
             // flpCa3_4
             // 
-            this.flpCa3_4.Location = new System.Drawing.Point(328, 531);
-            this.flpCa3_4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa3_4.Location = new System.Drawing.Point(437, 654);
+            this.flpCa3_4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa3_4.Name = "flpCa3_4";
-            this.flpCa3_4.Size = new System.Drawing.Size(149, 172);
+            this.flpCa3_4.Size = new System.Drawing.Size(199, 212);
             this.flpCa3_4.TabIndex = 23;
             // 
             // flpCa2_4
             // 
-            this.flpCa2_4.Location = new System.Drawing.Point(328, 347);
-            this.flpCa2_4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa2_4.Location = new System.Drawing.Point(437, 427);
+            this.flpCa2_4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa2_4.Name = "flpCa2_4";
-            this.flpCa2_4.Size = new System.Drawing.Size(149, 172);
+            this.flpCa2_4.Size = new System.Drawing.Size(199, 212);
             this.flpCa2_4.TabIndex = 22;
             // 
             // flpCa1_4
             // 
-            this.flpCa1_4.Location = new System.Drawing.Point(328, 162);
-            this.flpCa1_4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa1_4.Location = new System.Drawing.Point(437, 199);
+            this.flpCa1_4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa1_4.Name = "flpCa1_4";
-            this.flpCa1_4.Size = new System.Drawing.Size(149, 172);
+            this.flpCa1_4.Size = new System.Drawing.Size(199, 212);
             this.flpCa1_4.TabIndex = 20;
             // 
             // flpCa3_3
             // 
-            this.flpCa3_3.Location = new System.Drawing.Point(171, 531);
-            this.flpCa3_3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa3_3.Location = new System.Drawing.Point(228, 654);
+            this.flpCa3_3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa3_3.Name = "flpCa3_3";
-            this.flpCa3_3.Size = new System.Drawing.Size(146, 172);
+            this.flpCa3_3.Size = new System.Drawing.Size(195, 212);
             this.flpCa3_3.TabIndex = 21;
             // 
             // flpCa2_3
             // 
-            this.flpCa2_3.Location = new System.Drawing.Point(171, 347);
-            this.flpCa2_3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa2_3.Location = new System.Drawing.Point(228, 427);
+            this.flpCa2_3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa2_3.Name = "flpCa2_3";
-            this.flpCa2_3.Size = new System.Drawing.Size(146, 172);
+            this.flpCa2_3.Size = new System.Drawing.Size(195, 212);
             this.flpCa2_3.TabIndex = 20;
             // 
             // flpCa1_3
             // 
-            this.flpCa1_3.Location = new System.Drawing.Point(171, 162);
-            this.flpCa1_3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa1_3.Location = new System.Drawing.Point(228, 199);
+            this.flpCa1_3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa1_3.Name = "flpCa1_3";
-            this.flpCa1_3.Size = new System.Drawing.Size(146, 172);
+            this.flpCa1_3.Size = new System.Drawing.Size(195, 212);
             this.flpCa1_3.TabIndex = 19;
             // 
             // flpCa3_2
             // 
-            this.flpCa3_2.Location = new System.Drawing.Point(13, 531);
-            this.flpCa3_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa3_2.Location = new System.Drawing.Point(17, 654);
+            this.flpCa3_2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa3_2.Name = "flpCa3_2";
-            this.flpCa3_2.Size = new System.Drawing.Size(146, 172);
+            this.flpCa3_2.Size = new System.Drawing.Size(195, 212);
             this.flpCa3_2.TabIndex = 18;
             // 
             // flpCa2_2
             // 
-            this.flpCa2_2.Location = new System.Drawing.Point(13, 347);
-            this.flpCa2_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa2_2.Location = new System.Drawing.Point(17, 427);
+            this.flpCa2_2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa2_2.Name = "flpCa2_2";
-            this.flpCa2_2.Size = new System.Drawing.Size(146, 172);
+            this.flpCa2_2.Size = new System.Drawing.Size(195, 212);
             this.flpCa2_2.TabIndex = 17;
             // 
             // flpCa1_2
             // 
-            this.flpCa1_2.Location = new System.Drawing.Point(13, 162);
-            this.flpCa1_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCa1_2.Location = new System.Drawing.Point(17, 199);
+            this.flpCa1_2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCa1_2.Name = "flpCa1_2";
-            this.flpCa1_2.Size = new System.Drawing.Size(146, 171);
+            this.flpCa1_2.Size = new System.Drawing.Size(195, 210);
             this.flpCa1_2.TabIndex = 16;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Black;
-            this.panel9.Location = new System.Drawing.Point(964, 109);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Location = new System.Drawing.Point(1285, 134);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(2, 585);
+            this.panel9.Size = new System.Drawing.Size(3, 720);
             this.panel9.TabIndex = 15;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.Location = new System.Drawing.Point(803, 109);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Location = new System.Drawing.Point(1071, 134);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(2, 585);
+            this.panel8.Size = new System.Drawing.Size(3, 720);
             this.panel8.TabIndex = 14;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(643, 109);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Location = new System.Drawing.Point(857, 134);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2, 585);
+            this.panel7.Size = new System.Drawing.Size(3, 720);
             this.panel7.TabIndex = 13;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(482, 109);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Location = new System.Drawing.Point(643, 134);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2, 585);
+            this.panel6.Size = new System.Drawing.Size(3, 720);
             this.panel6.TabIndex = 12;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(322, 109);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Location = new System.Drawing.Point(429, 134);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2, 585);
+            this.panel5.Size = new System.Drawing.Size(3, 720);
             this.panel5.TabIndex = 11;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(23, 156);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(31, 192);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1088, 2);
+            this.panel4.Size = new System.Drawing.Size(1451, 2);
             this.panel4.TabIndex = 10;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(23, 524);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(31, 645);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1088, 2);
+            this.panel3.Size = new System.Drawing.Size(1451, 2);
             this.panel3.TabIndex = 9;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(164, 109);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(219, 134);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2, 585);
+            this.panel2.Size = new System.Drawing.Size(3, 720);
             this.panel2.TabIndex = 8;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(23, 340);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(31, 418);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1088, 2);
+            this.panel1.Size = new System.Drawing.Size(1451, 2);
             this.panel1.TabIndex = 7;
             // 
             // gunaLabel7
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.Location = new System.Drawing.Point(1009, 125);
-            this.gunaLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel7.Location = new System.Drawing.Point(1345, 154);
             this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(88, 18);
+            this.gunaLabel7.Size = new System.Drawing.Size(106, 23);
             this.gunaLabel7.TabIndex = 6;
             this.gunaLabel7.Text = "Chủ Nhật";
             // 
@@ -533,10 +564,9 @@ namespace GUI_Management
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.Location = new System.Drawing.Point(700, 125);
-            this.gunaLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel6.Location = new System.Drawing.Point(933, 154);
             this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(58, 18);
+            this.gunaLabel6.Size = new System.Drawing.Size(70, 23);
             this.gunaLabel6.TabIndex = 5;
             this.gunaLabel6.Text = "Thứ 6";
             // 
@@ -544,10 +574,9 @@ namespace GUI_Management
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(861, 125);
-            this.gunaLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel5.Location = new System.Drawing.Point(1148, 154);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(58, 18);
+            this.gunaLabel5.Size = new System.Drawing.Size(70, 23);
             this.gunaLabel5.TabIndex = 4;
             this.gunaLabel5.Text = "Thứ 7";
             // 
@@ -555,10 +584,9 @@ namespace GUI_Management
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(538, 125);
-            this.gunaLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel4.Location = new System.Drawing.Point(717, 154);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(58, 18);
+            this.gunaLabel4.Size = new System.Drawing.Size(70, 23);
             this.gunaLabel4.TabIndex = 3;
             this.gunaLabel4.Text = "Thứ 5";
             // 
@@ -566,10 +594,9 @@ namespace GUI_Management
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(377, 125);
-            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel3.Location = new System.Drawing.Point(503, 154);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(58, 18);
+            this.gunaLabel3.Size = new System.Drawing.Size(70, 23);
             this.gunaLabel3.TabIndex = 2;
             this.gunaLabel3.Text = "Thứ 4";
             // 
@@ -577,10 +604,9 @@ namespace GUI_Management
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(215, 125);
-            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel2.Location = new System.Drawing.Point(287, 154);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(58, 18);
+            this.gunaLabel2.Size = new System.Drawing.Size(70, 23);
             this.gunaLabel2.TabIndex = 1;
             this.gunaLabel2.Text = "Thứ 3";
             // 
@@ -588,53 +614,25 @@ namespace GUI_Management
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(51, 125);
-            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel1.Location = new System.Drawing.Point(68, 154);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(58, 18);
+            this.gunaLabel1.Size = new System.Drawing.Size(70, 23);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Thứ 2";
             // 
-            // btnSave
+            // timer1
             // 
-            this.btnSave.AnimationHoverSpeed = 0.07F;
-            this.btnSave.AnimationSpeed = 0.03F;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.BorderSize = 1;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Image = null;
-            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(489, 713);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSave.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnSave.OnHoverImage = null;
-            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSave.Radius = 3;
-            this.btnSave.Size = new System.Drawing.Size(151, 25);
-            this.btnSave.TabIndex = 60;
-            this.btnSave.Text = "SAVE TO WORD";
-            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(1131, 749);
+            this.ClientSize = new System.Drawing.Size(1508, 922);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule";
@@ -690,5 +688,6 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaGradientButton btnpBV;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
+        private System.Windows.Forms.Timer timer1;
     }
 }

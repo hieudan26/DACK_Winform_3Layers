@@ -20,6 +20,7 @@ namespace GUI_Management
         shift_ThoSuaXeBUS shift_ThoSuaXeBUS = new shift_ThoSuaXeBUS();
         shift_ThoRuaXeBUS shift_ThoRuaXeBUS = new shift_ThoRuaXeBUS();
         shift_NhanVienBUS shift_NhanVienBUS = new shift_NhanVienBUS();
+        fProgressBar fLoad = new fProgressBar();
         private int check = 0;
         public fSchedule()
         {
@@ -56,10 +57,17 @@ namespace GUI_Management
             this.flpCa3_CN.Controls.Clear();
         }
 
+        private void LoadPB()
+        {
+            this.timer1.Start();
+            this.fLoad.ShowDialog();
+        }
+
         private void btnpBV_Click(object sender, EventArgs e)
         {
             try
             {
+                this.LoadPB();
                 this.check = 1;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_BaoVe();
@@ -229,6 +237,7 @@ namespace GUI_Management
         {
             try
             {
+                this.LoadPB();
                 this.check = 2;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_SuaXe();
@@ -401,6 +410,7 @@ namespace GUI_Management
         {
             try
             {
+                this.LoadPB();
                 this.check = 3;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_RuaXe();
@@ -490,6 +500,7 @@ namespace GUI_Management
         {
             try
             {
+                this.LoadPB();
                 this.check = 4;
                 this.ClearflowLayoutPanel();
                 this.LoadDataPhong_NhanVien();
@@ -837,6 +848,18 @@ namespace GUI_Management
             catch (Exception ex)
             {
                 MessageBox.Show(" Err " + ex.Message);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //fProgressBar form = new fProgressBar();
+            fLoad.gunaCircleProgressBar1.Increment(25);
+
+            if (fLoad.gunaCircleProgressBar1.Value >= fLoad.gunaCircleProgressBar1.Maximum)
+            {
+                timer1.Stop();
+                fLoad.Close();
             }
         }
     }

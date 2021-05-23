@@ -52,6 +52,7 @@
     <Compile Include="contract_ThueBUS.cs" />
     <Compile Include="customerBUS.cs" />
     <Compile Include="customer_VehicleBUS.cs" />
+    <Compile Include="danhSachLuongDaThanhToanBUS.cs" />
     <Compile Include="doanhThuContract_ChoThueBUS.cs" />
     <Compile Include="doanhThuContract_ThueBUS.cs" />
     <Compile Include="Global.cs" />

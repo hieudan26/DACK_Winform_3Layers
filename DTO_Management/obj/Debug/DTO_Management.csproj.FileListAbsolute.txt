@@ -119,3 +119,12 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\DTO_Manageme
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\DTO_Management\obj\Debug\DTO_Management.csproj.CoreCompileInputs.cache
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\DTO_Management\obj\Debug\DTO_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\DTO_Management\obj\Debug\DTO_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\bin\Debug\DTO_Management.exe.config
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\bin\Debug\DTO_Management.exe
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\bin\Debug\DTO_Management.pdb
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\obj\Debug\DTO_Management.csprojAssemblyReference.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\obj\Debug\DTO_Management.Properties.Resources.resources
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\obj\Debug\DTO_Management.csproj.GenerateResource.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\obj\Debug\DTO_Management.csproj.CoreCompileInputs.cache
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\obj\Debug\DTO_Management.exe
+E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v13\DTO_Management\obj\Debug\DTO_Management.pdb
