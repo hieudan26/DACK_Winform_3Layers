@@ -35,7 +35,7 @@ namespace DAL_Management
         //sum luong by type
         public DataTable sum(string typeTho)
         {
-            SqlCommand cmd = new SqlCommand("select sum(Luong) as SUM from LISTSALARY_DATHANHTOAN left join EMPLOYEES on LISTSALARY_DATHANHTOAN.id = EMPLOYEES.id where typeTho = @typeTho group by LISTSALARY_DATHANHTOAN.id");
+            SqlCommand cmd = new SqlCommand("select sum(LISTSALARY_DATHANHTOAN.Luong) as SUM from LISTSALARY_DATHANHTOAN left join EMPLOYEES on LISTSALARY_DATHANHTOAN.id = EMPLOYEES.id where typeTho = @typeTho group by LISTSALARY_DATHANHTOAN.id");
             cmd.Parameters.Add("@typeTho", SqlDbType.NChar).Value = typeTho;
 
             DataTable table = this.getLuong(cmd);

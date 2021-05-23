@@ -37,18 +37,21 @@ namespace GUI_Management
         {
             try
             {
-                this.txtTen.Visible = false;
-                this.txtHo.Visible = false;
+                if (this.customerBUS.getAllCustomer_ChoThue() != null)
+                {
+                    this.txtTen.Visible = false;
+                    this.txtHo.Visible = false;
 
-                this.cbCustomer.DataSource = this.customerBUS.getAllCustomer_ChoThue();
-                this.cbCustomer.DisplayMember = "id";
-                this.cbCustomer.ValueMember = "fname";
+                    this.cbCustomer.DataSource = this.customerBUS.getAllCustomer_ChoThue();
+                    this.cbCustomer.DisplayMember = "id";
+                    this.cbCustomer.ValueMember = "id";
 
-                this.LoadTxt_FullName();
+                    this.LoadTxt_FullName();
+                }    
             }
-            catch (Exception e)
+            catch
             {
-                MessageBox.Show("Error: " + e.Message);
+                //MessageBox.Show("Error: " + e.Message);
             }
         }
 
@@ -86,7 +89,7 @@ namespace GUI_Management
         private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.txtHoTen.Text = this.txtHo.Text.Trim() + " " + this.txtTen.Text.Trim();
-            string id_cus = this.cbCustomer.Text;
+            string id_cus = this.cbCustomer.Text.Trim();
             this.LoadLabelVehicleOfCustomer(id_cus);
         }
 

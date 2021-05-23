@@ -24,7 +24,7 @@ namespace DAL_Management
         //get số hợp đồng thuê xe và tổng thu
         public DataTable CountContract_SumTotal(string idEmployee)
         {
-            SqlCommand cmd = new SqlCommand("select count(id) as SLHD, sum(TotalCost) as TDT from DOANHTHUCONTRACT_THUE where idEmployee = @id group by id");
+            SqlCommand cmd = new SqlCommand("select count(id) as SLHD, sum(TotalCost) as TDT from DOANHTHUCONTRACT_THUE where idEmployee = @id");
             cmd.Parameters.Add("@id", SqlDbType.NChar).Value = idEmployee;
 
             DataTable table = this.getContract(cmd);

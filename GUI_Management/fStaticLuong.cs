@@ -41,8 +41,7 @@ namespace GUI_Management
 
         private void LoadLabel()
         {
-            System.Data.DataTable table = new System.Data.DataTable();
-            table = this.danhSachLuongDaThanhToanBUS.sum("Bảo Vệ");
+            System.Data.DataTable table = this.danhSachLuongDaThanhToanBUS.sum("Bảo Vệ");
             if (table != null)
             { 
                 this.txtBV.Text = table.Rows[0][0].ToString().Trim();

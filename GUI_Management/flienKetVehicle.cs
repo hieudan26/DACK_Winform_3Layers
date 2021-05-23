@@ -115,9 +115,9 @@ namespace GUI_Management
             {
                 this.textBox2.DataBindings.Add(new Binding("Text", this.cbIDCustomer.DataSource, "lname"));
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: " + e.Message);
+               MessageBox.Show("Error: " + ex.Message);
             }
         }
 

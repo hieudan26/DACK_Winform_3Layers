@@ -18,6 +18,7 @@ namespace GUI_Management
         doanhThuContract_ChoThueBUS doanhThuContract_ChoThueBUS = new doanhThuContract_ChoThueBUS();
         contract_ThueBUS contract_ThueBUS = new contract_ThueBUS();
         contract_ChoThueBUS contract_ChoThueBUS = new contract_ChoThueBUS();
+        private int i = 0;
 
         public fStatics_DTThue_ChoThue()
         {
@@ -26,6 +27,7 @@ namespace GUI_Management
 
         private void fStatics_DTThue_ChoThue_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(i.ToString().Trim()());
             this.LoadPanel1();
             this.LoadPanel2();
             this.LoadPanel3();
@@ -68,8 +70,8 @@ namespace GUI_Management
             }    
             else
             {
-                this.lbSoHDThue_DTT.Text = "0";
-                this.txtTongThuThue_DTT.Text = "0";
+                this.lbSoHDThue_DTT.Text = i.ToString().Trim();
+                this.txtTongThuThue_DTT.Text = i.ToString().Trim();
             }    
 
             DataTable table1 = this.doanhThuContract_ChoThueBUS.CountContract_SumTotal(Global.GlobalEmployeeId);
@@ -80,8 +82,8 @@ namespace GUI_Management
             }    
             else
             {
-                this.lbSoHDChoThue_DTT.Text = "0";
-                this.txtTongthuChoThue_DTT.Text = "0";
+                this.lbSoHDChoThue_DTT.Text = i.ToString().Trim();
+                this.txtTongthuChoThue_DTT.Text = i.ToString().Trim();
             }    
         }
 
@@ -96,8 +98,8 @@ namespace GUI_Management
             }    
             else
             {
-                this.lbSHDT_CTT.Text = "0";
-                this.txtTongChi2.Text = "0";
+                this.lbSHDT_CTT.Text = i.ToString().Trim();
+                this.txtTongChi2.Text = i.ToString().Trim();
             }    
 
             //table.Clear();
@@ -108,21 +110,30 @@ namespace GUI_Management
             }    
             else
             {
-                this.lbxedapThue.Text = "0";
+                this.lbxedapThue.Text = i.ToString().Trim();
             }   
 
             //table.Clear();
             table = this.contract_ThueBUS.countTypeXe(Global.GlobalEmployeeId, 1);
             if (table != null)
             {
-                this.lbxedapThue.Text = table.Rows[0][0].ToString().Trim();
+                this.lbXeMayThue.Text = table.Rows[0][0].ToString().Trim();
             }    
             else
             {
-                this.lbXeMayThue.Text = "0";
-            }    
+                this.lbXeMayThue.Text = i.ToString().Trim();
+            }
 
-            this.lbXeHoiThue.Text = (int.Parse(this.lbSHDT_CTT.Text.Trim()) - int.Parse(this.lbxedapThue.Text.Trim()) + int.Parse(this.lbXeMayThue.Text.Trim())).ToString();
+            table = this.contract_ThueBUS.countTypeXe(Global.GlobalEmployeeId, 2);
+            if (table != null)
+            {
+                this.lbXeHoiThue.Text = table.Rows[0][0].ToString().Trim();
+            }
+            else
+            {
+                this.lbXeHoiThue.Text = i.ToString().Trim();
+            }
+            //this.lbXeHoiThue.Text = (int.Parse(this.lbSHDT_CTT.Text.Trim()) - int.Parse(this.lbxedapThue.Text.Trim()) + int.Parse(this.lbXeMayThue.Text.Trim())).ToString();
         }
 
         private void LoadPanel3()
@@ -136,8 +147,8 @@ namespace GUI_Management
             }
             else
             {
-                this.lb1.Text = "0";
-                this.txt1.Text = "0";
+                this.lb1.Text = i.ToString().Trim();
+                this.txt1.Text = i.ToString().Trim();
             }
 
             //table.Clear();
@@ -148,7 +159,7 @@ namespace GUI_Management
             }
             else
             {
-                this.lb2.Text = "0";
+                this.lb2.Text = i.ToString().Trim();
             }
 
             //table.Clear();
@@ -159,10 +170,20 @@ namespace GUI_Management
             }
             else
             {
-                this.lb3.Text = "0";
+                this.lb3.Text = i.ToString().Trim();
             }
 
-            this.lb4.Text = (int.Parse(this.lb1.Text.Trim()) - int.Parse(this.lb2.Text.Trim()) + int.Parse(this.lb3.Text.Trim())).ToString();
+            table = this.contract_ChoThueBUS.countTypeXe(Global.GlobalEmployeeId, 2);
+            if (table != null)
+            {
+                this.lb4.Text = table.Rows[0][0].ToString().Trim();
+            }
+            else
+            {
+                this.lb4.Text = i.ToString().Trim();
+            }
+
+            //this.lb4.Text = (int.Parse(this.lb1.Text.Trim()) - int.Parse(this.lb2.Text.Trim()) + int.Parse(this.lb3.Text.Trim())).ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
