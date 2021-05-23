@@ -161,7 +161,7 @@ namespace GUI_Management
                 string idContract = this.txtIDContract.Text.Trim();
                 string idCustomer = this.dgv_CusThue.CurrentRow.Cells[0].Value.ToString().Trim();
                 string idVehicle = this.lbBienSo.Text.Trim();
-                DateTime dateSign = DateTime.Now;
+                DateTime dateSign = this.dtPicker1.Value;
                 float totalCost = float.Parse(this.txtCost.Text.Trim());
                 string idEmployee = Global.GlobalEmployeeId;
                 contract_ThueDTO contract_ThueDTO = new contract_ThueDTO(idContract, idCustomer, idVehicle, dateSign, totalCost, idEmployee);

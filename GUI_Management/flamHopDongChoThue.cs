@@ -91,21 +91,25 @@ namespace GUI_Management
 
         private DataTable RemoveVehicleDaTrongHopDong(DataTable tableBu)
         {
-            DataTable table = this.contract_ChoThueBUS.getAllVehicle_ContractChoThue();
-            if (table != null)
+            if (tableBu != null)
             {
-                for (int i = tableBu.Rows.Count - 1; i >= 0; i--)
+                DataTable table = this.contract_ChoThueBUS.getAllVehicle_ContractChoThue();
+                if (table != null)
                 {
-                    for (int j = table.Rows.Count - 1; j >= 0; j--)
+                    for (int i = tableBu.Rows.Count - 1; i >= 0; i--)
                     {
-                        if (tableBu.Rows[i][1].ToString() == table.Rows[j][2].ToString())
+                        for (int j = table.Rows.Count - 1; j >= 0; j--)
                         {
-                            tableBu.Rows.RemoveAt(i);
-                        }    
+                            if (tableBu.Rows[i][1].ToString() == table.Rows[j][2].ToString())
+                            {
+                                tableBu.Rows.RemoveAt(i);
+                            }
+                        }
                     }
                 }
+                return tableBu;
             }
-            return tableBu;
+            return null;
         }
 
         private void LoadLabelVehicleOfCustomer(string id_cus)
@@ -237,7 +241,7 @@ namespace GUI_Management
                     string idContract = this.txtIDContract.Text.Trim();
                     string idCustomer = this.cbCustomer.Text.Trim();
                     string idVehicle = this.btnIDXe.Text.Trim();
-                    DateTime dateSign = DateTime.Now;
+                    DateTime dateSign = this.dtPicker1.Value;
                     float TotalCost = float.Parse(this.txtGia.Text.Trim()) + (1/10);
                     string idEmployee = Global.GlobalEmployeeId;
                     contract_ChoThueDTO contract_ChoThueDTO = new contract_ChoThueDTO(idContract, idCustomer, idVehicle, dateSign, TotalCost, idEmployee);

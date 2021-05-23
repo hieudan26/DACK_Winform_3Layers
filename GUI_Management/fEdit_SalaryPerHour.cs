@@ -12,10 +12,10 @@ using DTO_Management;
 
 namespace GUI_Management
 {
-    public partial class fQuanLySalaryPerHour : Form
+    public partial class fEdit_SalaryPerHour : Form
     {
         SalaryBUS salaryBUS = new SalaryBUS();
-        public fQuanLySalaryPerHour()
+        public fEdit_SalaryPerHour()
         {
             InitializeComponent();
         }
@@ -33,16 +33,7 @@ namespace GUI_Management
                 string text = this.cbTypeNV.SelectedItem.ToString().Trim();
                 DataTable table = this.salaryBUS.getLuongTypePerHour(text);
                 this.DGVLuongperhour.DataSource = table;
-            }
-        }
-
-        private void DGVLuongperhour_Click(object sender, EventArgs e)
-        {
-            if (this.DGVLuongperhour.CurrentRow != null)
-            {
-                this.cbTxtType.SelectedItem = this.DGVLuongperhour.CurrentRow.Cells[0].Value.ToString().Trim();
-                this.numerCa.Value = int.Parse(this.DGVLuongperhour.CurrentRow.Cells[1].Value.ToString());
-                this.txtLuong.Text = this.DGVLuongperhour.CurrentRow.Cells[2].Value.ToString().Trim();
+                this.DGVLuongperhour.AllowUserToAddRows = false;
             }
         }
 
@@ -70,6 +61,16 @@ namespace GUI_Management
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DGVLuongperhour_Click_1(object sender, EventArgs e)
+        {
+            if (this.DGVLuongperhour.CurrentRow != null)
+            {
+                this.cbTxtType.SelectedItem = this.DGVLuongperhour.CurrentRow.Cells[0].Value.ToString().Trim();
+                this.numerCa.Value = int.Parse(this.DGVLuongperhour.CurrentRow.Cells[1].Value.ToString());
+                this.txtLuong.Text = this.DGVLuongperhour.CurrentRow.Cells[2].Value.ToString().Trim();
             }
         }
     }

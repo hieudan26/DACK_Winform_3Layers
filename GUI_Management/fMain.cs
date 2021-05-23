@@ -82,7 +82,7 @@ namespace GUI_Management
 
         private void thêmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 /*|| Global.GlobalEmployeeType == 4*/)
             {
                 faddKhach form = new faddKhach(0);
                 form.Text = "Khách Thuê Xe Form";
@@ -98,7 +98,7 @@ namespace GUI_Management
 
         private void thêmKháchHàngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 /*|| Global.GlobalEmployeeType == 4*/)
             {
                 faddKhach form = new faddKhach(1);
                 form.Text = "Khách Cho Thuê Xe Form";
@@ -114,7 +114,7 @@ namespace GUI_Management
 
         private void làmHợpĐồngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8/* || Global.GlobalEmployeeType == 4*/)
             {
                 flienKetVehicle form = new flienKetVehicle();
                 this.Hide();
@@ -129,7 +129,7 @@ namespace GUI_Management
 
         private void thanhToánHợpĐồngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 /*|| Global.GlobalEmployeeType == 4*/)
             {
                 flamHopDongChoThue form = new flamHopDongChoThue();
                 this.Hide();
@@ -159,7 +159,7 @@ namespace GUI_Management
 
         private void làmHợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 || Global.GlobalEmployeeType == 4)
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8)
             {
                 flamHopDongThue form = new flamHopDongThue();
                 this.Hide();
@@ -174,10 +174,55 @@ namespace GUI_Management
 
         private void chỉnhSửaLươngTheoGiờToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6
-                || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)///
+            //if (Global.GlobalEmployeeType == 4 || Global.GlobalEmployeeType == 5 || Global.GlobalEmployeeType == 6
+            //    || Global.GlobalEmployeeType == 7 || Global.GlobalEmployeeType == 8)///
+            //{
+            //    fEdit_SalaryPerHour form = new fEdit_SalaryPerHour();
+            //    this.Hide();
+            //    form.ShowDialog();
+            //    this.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+        }
+
+        private void thanhToánHợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 /*|| Global.GlobalEmployeeType == 4*/)
             {
-                fQuanLySalaryPerHour form = new fQuanLySalaryPerHour();
+                fdoanhThuContract_Thue form = new fdoanhThuContract_Thue();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void thanhToánHợpĐồngToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 /*|| Global.GlobalEmployeeType == 4*/)
+            {
+                fdoanhThuContract_ChoThue form = new fdoanhThuContract_ChoThue();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền hạn này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalEmployeeType == 3 || Global.GlobalEmployeeType == 8 /*|| Global.GlobalEmployeeType == 4*/)
+            {
+                fStatics_DTThue_ChoThue form = new fStatics_DTThue_ChoThue();
                 this.Hide();
                 form.ShowDialog();
                 this.Show();

@@ -13,6 +13,36 @@ namespace BUS_Management
     {
         contract_ThueDAL contract_ThueDAL = new contract_ThueDAL();
 
+        //count so hơp đồng thuê xe, xe đạp ,máy hơi
+        public DataTable countTypeXe(string idEmployee, int typeXe)
+        {
+            return this.contract_ThueDAL.countTypeXe(idEmployee, typeXe);
+        }
+
+        //count so hơp đồng thuê xe, xe đạp ,máy hơi
+        public DataTable count(string idEmployee)
+        {
+            return this.contract_ThueDAL.count(idEmployee);
+        }
+
+        //del contract
+        public bool RemoveContract(string idContract)
+        {
+            return this.contract_ThueDAL.RemoveContract(idContract);
+        }
+
+        //get all contract expired by idemployee
+        public DataTable getAllContract_Expired(string idEmployee)
+        {
+            return this.contract_ThueDAL.getAllContract_Expired(idEmployee);
+        }
+
+        //get all contract_Id employee
+        public DataTable getAllContract_byIDEmployee(string idEmployee)
+        {
+            return this.contract_ThueDAL.getAllContract_byIDEmployee(idEmployee);
+        }
+
         //get all id vehicle
         public DataTable getAllVehicle_ContractThue()
         {

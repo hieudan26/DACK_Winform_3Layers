@@ -30,6 +30,8 @@ namespace GUI_Management
         private void InitializeComponent()
         {
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.txtTenNhanVien = new Guna.UI.WinForms.GunaLineTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtGia = new Guna.UI.WinForms.GunaLineTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCamKet = new Guna.UI.WinForms.GunaGradientButton();
@@ -55,8 +57,8 @@ namespace GUI_Management
             this.label1 = new System.Windows.Forms.Label();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTenNhanVien = new Guna.UI.WinForms.GunaLineTextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtPicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
@@ -67,6 +69,8 @@ namespace GUI_Management
             // gunaGradient2Panel1
             // 
             this.gunaGradient2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel1.Controls.Add(this.dtPicker1);
+            this.gunaGradient2Panel1.Controls.Add(this.label7);
             this.gunaGradient2Panel1.Controls.Add(this.txtTenNhanVien);
             this.gunaGradient2Panel1.Controls.Add(this.label6);
             this.gunaGradient2Panel1.Controls.Add(this.txtGia);
@@ -91,9 +95,36 @@ namespace GUI_Management
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.LightGreen;
             this.gunaGradient2Panel1.Location = new System.Drawing.Point(0, 0);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1030, 712);
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1030, 755);
             this.gunaGradient2Panel1.TabIndex = 0;
             this.gunaGradient2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaGradient2Panel1_Paint);
+            // 
+            // txtTenNhanVien
+            // 
+            this.txtTenNhanVien.BackColor = System.Drawing.Color.White;
+            this.txtTenNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenNhanVien.Enabled = false;
+            this.txtTenNhanVien.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtTenNhanVien.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNhanVien.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtTenNhanVien.LineSize = 4;
+            this.txtTenNhanVien.Location = new System.Drawing.Point(443, 269);
+            this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.PasswordChar = '\0';
+            this.txtTenNhanVien.SelectedText = "";
+            this.txtTenNhanVien.Size = new System.Drawing.Size(370, 37);
+            this.txtTenNhanVien.TabIndex = 110;
+            this.txtTenNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(96, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(271, 24);
+            this.label6.TabIndex = 109;
+            this.label6.Text = "(Bên B) _Người làm Hợp Đồng:";
             // 
             // txtGia
             // 
@@ -103,7 +134,7 @@ namespace GUI_Management
             this.txtGia.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtGia.LineSize = 4;
-            this.txtGia.Location = new System.Drawing.Point(745, 569);
+            this.txtGia.Location = new System.Drawing.Point(745, 610);
             this.txtGia.Name = "txtGia";
             this.txtGia.PasswordChar = '\0';
             this.txtGia.SelectedText = "";
@@ -115,7 +146,7 @@ namespace GUI_Management
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(845, 528);
+            this.label5.Location = new System.Drawing.Point(845, 569);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 24);
             this.label5.TabIndex = 107;
@@ -136,7 +167,7 @@ namespace GUI_Management
             this.btnCamKet.ForeColor = System.Drawing.Color.Black;
             this.btnCamKet.Image = null;
             this.btnCamKet.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCamKet.Location = new System.Drawing.Point(443, 658);
+            this.btnCamKet.Location = new System.Drawing.Point(443, 699);
             this.btnCamKet.Name = "btnCamKet";
             this.btnCamKet.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCamKet.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -154,7 +185,7 @@ namespace GUI_Management
             // flpTypeXe
             // 
             this.flpTypeXe.AutoScroll = true;
-            this.flpTypeXe.Location = new System.Drawing.Point(199, 347);
+            this.flpTypeXe.Location = new System.Drawing.Point(199, 388);
             this.flpTypeXe.Name = "flpTypeXe";
             this.flpTypeXe.Size = new System.Drawing.Size(142, 276);
             this.flpTypeXe.TabIndex = 13;
@@ -229,7 +260,7 @@ namespace GUI_Management
             // 
             this.gunaPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gunaPanel2.Controls.Add(this.btnIDXe);
-            this.gunaPanel2.Location = new System.Drawing.Point(723, 391);
+            this.gunaPanel2.Location = new System.Drawing.Point(723, 432);
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(285, 91);
             this.gunaPanel2.TabIndex = 6;
@@ -268,7 +299,7 @@ namespace GUI_Management
             this.gunaPanel1.Controls.Add(this.pb1);
             this.gunaPanel1.Controls.Add(this.lbpic2);
             this.gunaPanel1.Controls.Add(this.lbPic1);
-            this.gunaPanel1.Location = new System.Drawing.Point(375, 347);
+            this.gunaPanel1.Location = new System.Drawing.Point(375, 388);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(321, 276);
             this.gunaPanel1.TabIndex = 5;
@@ -358,7 +389,7 @@ namespace GUI_Management
             // flpLabelIDVeh
             // 
             this.flpLabelIDVeh.AutoScroll = true;
-            this.flpLabelIDVeh.Location = new System.Drawing.Point(20, 347);
+            this.flpLabelIDVeh.Location = new System.Drawing.Point(20, 388);
             this.flpLabelIDVeh.Name = "flpLabelIDVeh";
             this.flpLabelIDVeh.Size = new System.Drawing.Size(142, 276);
             this.flpLabelIDVeh.TabIndex = 4;
@@ -407,44 +438,49 @@ namespace GUI_Management
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(845, 350);
+            this.label4.Location = new System.Drawing.Point(845, 391);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "ID Xe: ";
             // 
-            // txtTenNhanVien
+            // label7
             // 
-            this.txtTenNhanVien.BackColor = System.Drawing.Color.White;
-            this.txtTenNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenNhanVien.Enabled = false;
-            this.txtTenNhanVien.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtTenNhanVien.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNhanVien.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtTenNhanVien.LineSize = 4;
-            this.txtTenNhanVien.Location = new System.Drawing.Point(443, 269);
-            this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.PasswordChar = '\0';
-            this.txtTenNhanVien.SelectedText = "";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(370, 37);
-            this.txtTenNhanVien.TabIndex = 110;
-            this.txtTenNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(90, 344);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(277, 24);
+            this.label7.TabIndex = 111;
+            this.label7.Text = "Hợp Đồng Hiệu Lực Đến Ngày: ";
             // 
-            // label6
+            // dtPicker1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(96, 282);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(271, 24);
-            this.label6.TabIndex = 109;
-            this.label6.Text = "(Bên B) _Người làm Hợp Đồng:";
+            this.dtPicker1.BaseColor = System.Drawing.Color.White;
+            this.dtPicker1.BorderColor = System.Drawing.Color.Silver;
+            this.dtPicker1.CustomFormat = null;
+            this.dtPicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtPicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtPicker1.ForeColor = System.Drawing.Color.Black;
+            this.dtPicker1.Location = new System.Drawing.Point(495, 338);
+            this.dtPicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtPicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtPicker1.Name = "dtPicker1";
+            this.dtPicker1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtPicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtPicker1.OnPressedColor = System.Drawing.Color.Black;
+            this.dtPicker1.Size = new System.Drawing.Size(271, 30);
+            this.dtPicker1.TabIndex = 112;
+            this.dtPicker1.Text = "Sunday, May 23, 2021";
+            this.dtPicker1.Value = new System.DateTime(2021, 5, 23, 10, 48, 30, 221);
             // 
             // flamHopDongChoThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 712);
+            this.ClientSize = new System.Drawing.Size(1030, 755);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "flamHopDongChoThue";
@@ -494,5 +530,7 @@ namespace GUI_Management
         private Guna.UI.WinForms.GunaGradientButton btnCamKet;
         private Guna.UI.WinForms.GunaLineTextBox txtTenNhanVien;
         private System.Windows.Forms.Label label6;
+        private Guna.UI.WinForms.GunaDateTimePicker dtPicker1;
+        private System.Windows.Forms.Label label7;
     }
 }

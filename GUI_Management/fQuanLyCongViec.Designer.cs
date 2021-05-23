@@ -38,6 +38,7 @@ namespace GUI_Management
             this.gunaGradientButton3 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
             this.btnPhiSuaXe = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnSalary = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gunaLinePanel1.SuspendLayout();
@@ -111,6 +112,7 @@ namespace GUI_Management
             // gunaLinePanel1
             // 
             this.gunaLinePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLinePanel1.Controls.Add(this.btnSalary);
             this.gunaLinePanel1.Controls.Add(this.gunaGradientButton3);
             this.gunaLinePanel1.Controls.Add(this.gunaGradientButton2);
             this.gunaLinePanel1.Controls.Add(this.btnPhiSuaXe);
@@ -139,7 +141,7 @@ namespace GUI_Management
             this.gunaGradientButton3.ForeColor = System.Drawing.Color.Black;
             this.gunaGradientButton3.Image = null;
             this.gunaGradientButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton3.Location = new System.Drawing.Point(1007, 20);
+            this.gunaGradientButton3.Location = new System.Drawing.Point(1092, 20);
             this.gunaGradientButton3.Name = "gunaGradientButton3";
             this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.FloralWhite;
             this.gunaGradientButton3.OnHoverBaseColor2 = System.Drawing.Color.IndianRed;
@@ -168,7 +170,7 @@ namespace GUI_Management
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.Black;
             this.gunaGradientButton2.Image = null;
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton2.Location = new System.Drawing.Point(549, 20);
+            this.gunaGradientButton2.Location = new System.Drawing.Point(364, 20);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.FloralWhite;
             this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.IndianRed;
@@ -197,7 +199,7 @@ namespace GUI_Management
             this.btnPhiSuaXe.ForeColor = System.Drawing.Color.Black;
             this.btnPhiSuaXe.Image = null;
             this.btnPhiSuaXe.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPhiSuaXe.Location = new System.Drawing.Point(108, 20);
+            this.btnPhiSuaXe.Location = new System.Drawing.Point(50, 20);
             this.btnPhiSuaXe.Name = "btnPhiSuaXe";
             this.btnPhiSuaXe.OnHoverBaseColor1 = System.Drawing.Color.FloralWhite;
             this.btnPhiSuaXe.OnHoverBaseColor2 = System.Drawing.Color.IndianRed;
@@ -211,6 +213,35 @@ namespace GUI_Management
             this.btnPhiSuaXe.Text = "Phí Gửi Xe";
             this.btnPhiSuaXe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPhiSuaXe.Click += new System.EventHandler(this.btnPhiSuaXe_Click);
+            // 
+            // btnSalary
+            // 
+            this.btnSalary.AnimationHoverSpeed = 0.07F;
+            this.btnSalary.AnimationSpeed = 0.03F;
+            this.btnSalary.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalary.BaseColor1 = System.Drawing.Color.IndianRed;
+            this.btnSalary.BaseColor2 = System.Drawing.Color.FloralWhite;
+            this.btnSalary.BorderColor = System.Drawing.Color.Black;
+            this.btnSalary.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSalary.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSalary.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalary.ForeColor = System.Drawing.Color.Black;
+            this.btnSalary.Image = null;
+            this.btnSalary.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSalary.Location = new System.Drawing.Point(718, 20);
+            this.btnSalary.Name = "btnSalary";
+            this.btnSalary.OnHoverBaseColor1 = System.Drawing.Color.FloralWhite;
+            this.btnSalary.OnHoverBaseColor2 = System.Drawing.Color.IndianRed;
+            this.btnSalary.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSalary.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSalary.OnHoverImage = null;
+            this.btnSalary.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSalary.Radius = 8;
+            this.btnSalary.Size = new System.Drawing.Size(223, 42);
+            this.btnSalary.TabIndex = 3;
+            this.btnSalary.Text = "Lương Mỗi Giờ/Ca";
+            this.btnSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSalary.Click += new System.EventHandler(this.btnSalary_Click);
             // 
             // fQuanLyCongViec
             // 
@@ -240,5 +271,6 @@ namespace GUI_Management
         private System.Windows.Forms.Panel pnlChildForm;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaButton btnExit;
+        private Guna.UI.WinForms.GunaGradientButton btnSalary;
     }
 }

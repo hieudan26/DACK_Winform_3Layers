@@ -70,5 +70,10 @@ namespace GUI_Management
         {
             this.openChildForm(new fEdit_phiRuaXe());
         }
+
+        private void btnSalary_Click(object sender, EventArgs e)
+        {
+            this.openChildForm(new fEdit_SalaryPerHour());
+        }
     }
 }

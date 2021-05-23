@@ -93,6 +93,18 @@
     <Compile Include="fdoanhThu.Designer.cs">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="fdoanhThuContract_ChoThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdoanhThuContract_ChoThue.Designer.cs">
+      <DependentUpon>fdoanhThuContract_ChoThue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdoanhThuContract_Thue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdoanhThuContract_Thue.Designer.cs">
+      <DependentUpon>fdoanhThuContract_Thue.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEdit_dichVuSuaXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,11 +213,11 @@
     <Compile Include="fQuanLyNhanVien.Designer.cs">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="fQuanLySalaryPerHour.cs">
+    <Compile Include="fEdit_SalaryPerHour.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLySalaryPerHour.designer.cs">
-      <DependentUpon>fQuanLySalaryPerHour.cs</DependentUpon>
+    <Compile Include="fEdit_SalaryPerHour.designer.cs">
+      <DependentUpon>fEdit_SalaryPerHour.cs</DependentUpon>
     </Compile>
     <Compile Include="fSchedule.cs">
       <SubType>Form</SubType>
@@ -218,6 +230,12 @@
     </Compile>
     <Compile Include="fShift.Designer.cs">
       <DependentUpon>fShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fStatics_DTThue_ChoThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fStatics_DTThue_ChoThue.Designer.cs">
+      <DependentUpon>fStatics_DTThue_ChoThue.cs</DependentUpon>
     </Compile>
     <Compile Include="fStatics_DTvehicle.cs">
       <SubType>Form</SubType>
@@ -313,6 +331,12 @@
     <EmbeddedResource Include="fdoanhThu.resx">
       <DependentUpon>fdoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fdoanhThuContract_ChoThue.resx">
+      <DependentUpon>fdoanhThuContract_ChoThue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdoanhThuContract_Thue.resx">
+      <DependentUpon>fdoanhThuContract_Thue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fEdit_dichVuSuaXe.resx">
       <DependentUpon>fEdit_dichVuSuaXe.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,14 +391,17 @@
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLySalaryPerHour.resx">
-      <DependentUpon>fQuanLySalaryPerHour.cs</DependentUpon>
+    <EmbeddedResource Include="fEdit_SalaryPerHour.resx">
+      <DependentUpon>fEdit_SalaryPerHour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSchedule.resx">
       <DependentUpon>fSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fShift.resx">
       <DependentUpon>fShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fStatics_DTThue_ChoThue.resx">
+      <DependentUpon>fStatics_DTThue_ChoThue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fStatics_DTvehicle.resx">
       <DependentUpon>fStatics_DTvehicle.cs</DependentUpon>
