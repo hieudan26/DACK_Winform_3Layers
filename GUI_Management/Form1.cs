@@ -91,7 +91,7 @@ namespace GUI_Management
             {
                 this.salaryBUS.CreateBangLuong();
             }    
-            float x = this.salaryBUS.LuongHourPerCa("Bảo Vệ", 3);
+            float x = this.salaryBUS.getLuongHourPerCa("Bảo Vệ", 3);
             //MessageBox.Show(x.ToString());
             this.salaryBUS.UpdateLuong("123124125123", x);
             this.uC_Login1.SetParent(this);

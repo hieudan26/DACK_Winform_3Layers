@@ -581,3 +581,5 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v11\GUI_Manageme
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v11\GUI_Management\obj\Debug\GUI_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v11\GUI_Management\obj\Debug\GUI_Management.pdb
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v11\GUI_Management\obj\Debug\GUI_Management.flamHopDongThue.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.flamHopDongThue.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fQuanLySalaryPerHour.resources

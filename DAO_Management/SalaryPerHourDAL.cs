@@ -11,7 +11,7 @@ using DTO_Management;
 
 namespace DAO_Management
 {
-    public class SalaryPerHourDAL :MyDB
+    public class SalaryPerHourDAL : MyDB
     {
         public DataTable getSalary(SqlCommand cmd)
         {
@@ -21,7 +21,7 @@ namespace DAO_Management
             adapter.Fill(table);
             return table;
         }
-        public bool insertSalaryPerHour(string type, int Ca,float Luongperhour)
+        public bool insertSalaryPerHour(string type, int Ca, float Luongperhour)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace DAO_Management
             try
             {
                 this.openConnection();
-                SqlCommand cmd = new SqlCommand("select Luongperhour from SALARYPERHOUR where  type = @type and Ca =@Ca",this.getConnection);
+                SqlCommand cmd = new SqlCommand("select Luongperhour from SALARYPERHOUR where  type = @type and Ca =@Ca", this.getConnection);
                 cmd.Parameters.Add("@type", SqlDbType.NChar).Value = type;
                 cmd.Parameters.Add("@Ca", SqlDbType.Int).Value = Ca;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -109,6 +109,43 @@ namespace DAO_Management
                 this.closeConnection();
             }
             return 0;
+        }
+        public DataTable getAllLuongPerHour()
+        {
+            SqlCommand cmd = new SqlCommand("select type as [Type], Ca, Luongperhour as [Salary per hour] from SALARYPERHOUR");
+            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
+            DataTable table = this.getSalary(cmd);
+
+            if (table.Rows.Count > 0)
+                return table;
+            else
+                return null;
+        }
+        public DataTable getLuongTypePerHour(string Type)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select type as [Type], Ca, Luongperhour as [Salary per hour] from SALARYPERHOUR where type = @type", this.getConnection);
+                cmd.Parameters.Add("@type", SqlDbType.NChar).Value = Type;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return table;
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return null;
         }
     }
 }

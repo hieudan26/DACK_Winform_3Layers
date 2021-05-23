@@ -201,6 +201,12 @@
     <Compile Include="fQuanLyNhanVien.Designer.cs">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="fQuanLySalaryPerHour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLySalaryPerHour.designer.cs">
+      <DependentUpon>fQuanLySalaryPerHour.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLySalaryPerHour.resx">
+      <DependentUpon>fQuanLySalaryPerHour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSchedule.resx">
       <DependentUpon>fSchedule.cs</DependentUpon>
