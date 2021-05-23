@@ -582,7 +582,6 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v11\GUI_Manageme
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v11\GUI_Management\obj\Debug\GUI_Management.pdb
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v11\GUI_Management\obj\Debug\GUI_Management.flamHopDongThue.resources
 D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.flamHopDongThue.resources
-D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fQuanLySalaryPerHour.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\GUI_Management\bin\Debug\GUI_Management.exe.config
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\GUI_Management\bin\Debug\GUI_Management.exe
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\GUI_Management\bin\Debug\GUI_Management.pdb
@@ -651,3 +650,8 @@ E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\GUI_Manageme
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\GUI_Management\obj\Debug\GUI_Management.fdoanhThuContract_Thue.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\GUI_Management\obj\Debug\GUI_Management.fdoanhThuContract_ChoThue.resources
 E:\HK2_21\Lập trình trên Window HK2_21\DACK_Winform_3Layers_v12\GUI_Management\obj\Debug\GUI_Management.fStatics_DTThue_ChoThue.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fdoanhThuContract_ChoThue.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fdoanhThuContract_Thue.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fQuanLyLuong.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fEdit_SalaryPerHour.resources
+D:\HK2N2\WIndow\DACK\GUI_Management\obj\Debug\GUI_Management.fStatics_DTThue_ChoThue.resources

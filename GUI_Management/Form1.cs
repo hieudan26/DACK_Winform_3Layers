@@ -84,8 +84,8 @@ namespace GUI_Management
 
         private void uC_Login1_Load_1(object sender, EventArgs e)
         {
-            this.checkinBUS.ResetBang();//mở ra 1 lần
-            this.checkinBUS.CreateCheckIn();
+            //this.checkinBUS.ResetBang();//mở ra 1 lần
+            //this.checkinBUS.CreateCheckIn();
             //this.salaryBUS.CreateBangLuong();
             if (this.salaryBUS.getLuongAll() == null)
             {

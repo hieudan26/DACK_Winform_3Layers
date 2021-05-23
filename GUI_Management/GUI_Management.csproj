@@ -207,6 +207,12 @@
     <Compile Include="fQuanLyHopDong.Designer.cs">
       <DependentUpon>fQuanLyHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="fQuanLyLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyLuong.designer.cs">
+      <DependentUpon>fQuanLyLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyHopDong.resx">
       <DependentUpon>fQuanLyHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyLuong.resx">
+      <DependentUpon>fQuanLyLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>

@@ -22,7 +22,10 @@ namespace BUS_Management
         {
             return this.shift_baoveDAL.getIdName_ByCaThuID(Ca, Thu, idNV);
         }
-
+        public DataTable getShift()
+        {
+            return this.shift_baoveDAL.getShift();
+        }
         public DataTable getALLShift_BaoVe_New()
         {
             return this.shift_baoveDAL.getALLShift_BaoVe_New();

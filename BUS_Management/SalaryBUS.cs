@@ -100,5 +100,17 @@ namespace BUS_Management
         {
             return this.salaryhour.getLuongTypePerHour(type);
         }
+        public DataTable getKetToanLuongAll()
+        {
+            return this.salaryDAL.getKetToanLuongAll();
+        }
+        public DataTable getKetToanLuongType(string type)
+        {
+            return this.salaryDAL.getKetToanLuongType(type);
+        }
+        public DataTable getKetToanLuongID(string idNV)
+        {
+            return this.salaryDAL.getKetToanLuongID(idNV);
+        }
     }
 }

@@ -15,10 +15,22 @@ namespace DAL_Management
     {
         public DataTable getSalary(SqlCommand cmd)
         {
-            cmd.Connection = this.getConnection;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
-            adapter.Fill(table);
+            try
+            {
+                cmd.Connection = this.getConnection;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
             return table;
         }
 
@@ -88,15 +100,27 @@ namespace DAL_Management
 
         public float getLuongNV(string IDnv)
         {
-            SqlCommand cmd = new SqlCommand("select Luong from SALARY where id = @id", this.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDnv;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            if (table.Rows.Count > 0)
-                return float.Parse(table.Rows[0][0].ToString());
-            else
-                return 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select Luong from SALARY where id = @id", this.getConnection);
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDnv;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return float.Parse(table.Rows[0][0].ToString());
+                else
+                    return 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return 0;
         }
 
         public DataTable getLuongAll()
@@ -111,6 +135,67 @@ namespace DAL_Management
                 return table;
             else
                 return null;
+        }
+        public DataTable getKetToanLuongAll()
+        {
+            SqlCommand cmd = new SqlCommand("Select EMPLOYEES.ID as[ID],name as Name, EMPLOYEES.img as [Picture], SALARY.Luong from  EMPLOYEES inner join SALARY on EMPLOYEES.id = SALARY.ID");
+            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
+            DataTable table = this.getSalary(cmd);
+
+            if (table.Rows.Count > 0)
+                return table;
+            else
+                return null;
+        }
+        public DataTable getKetToanLuongType(string type)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Select EMPLOYEES.ID as[ID],name as Name, EMPLOYEES.img as [Picture], SALARY.Luong from  EMPLOYEES inner join SALARY on EMPLOYEES.id = SALARY.ID where EMPLOYEES.typeTho =@type ", this.getConnection);
+                cmd.Parameters.Add("@type", SqlDbType.NChar).Value = type;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return table;
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return null;
+        }
+        public DataTable getKetToanLuongID(string IDnv)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Select EMPLOYEES.ID,name as Name ,typeTho, EMPLOYEES.img, SALARY.Luong from  EMPLOYEES inner join SALARY on EMPLOYEES.id = SALARY.ID where SALARY.ID = @id", this.getConnection);
+                cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDnv;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return table;
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", ex.Message);
+            }
+            finally
+            {
+                this.closeConnection();
+            }
+            return null;
         }
     }
 }
