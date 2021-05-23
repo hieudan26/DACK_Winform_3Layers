@@ -49,7 +49,6 @@ namespace DAO_Management
         {
             try
             {
-                MessageBox.Show(IDnv + " " + thu + " " + Ca + " " + attend);
                 this.openConnection();
                 SqlCommand cmd = new SqlCommand("update CHECKIN set attend=@attend where id = @id and ngay = @ngay and Ca = @Ca", this.getConnection);
                 cmd.Parameters.Add("@id", SqlDbType.NChar).Value = IDnv;

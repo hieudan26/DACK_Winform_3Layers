@@ -159,7 +159,7 @@ namespace GUI_Management
             {
                 if (typeTho == "Bảo Vệ")
                 {
-                    if (this.shift_BaoVeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString() == IDNhanVien)
+                    if (this.shift_BaoVeBUS.getIdName_ByCaThuID(ca, Thu, IDNhanVien).Rows[0][0].ToString().Trim() == IDNhanVien)
                     {
                         return true;
                     }

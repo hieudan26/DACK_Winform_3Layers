@@ -80,8 +80,8 @@ namespace GUI_Management
             this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
-            this.dgv.Location = new System.Drawing.Point(12, 25);
-            this.dgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv.Location = new System.Drawing.Point(9, 20);
+            this.dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -96,7 +96,7 @@ namespace GUI_Management
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1161, 462);
+            this.dgv.Size = new System.Drawing.Size(871, 375);
             this.dgv.TabIndex = 25;
             this.dgv.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Teal;
             this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
@@ -127,13 +127,14 @@ namespace GUI_Management
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 525);
+            this.chart1.Location = new System.Drawing.Point(9, 427);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(319, 170);
+            this.chart1.Size = new System.Drawing.Size(239, 138);
             this.chart1.TabIndex = 26;
             this.chart1.Text = "chart1";
             // 
@@ -152,7 +153,8 @@ namespace GUI_Management
             this.btnPrint.ForeColor = System.Drawing.Color.Black;
             this.btnPrint.Image = null;
             this.btnPrint.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPrint.Location = new System.Drawing.Point(459, 573);
+            this.btnPrint.Location = new System.Drawing.Point(344, 466);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnPrint.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -161,18 +163,20 @@ namespace GUI_Management
             this.btnPrint.OnHoverImage = null;
             this.btnPrint.OnPressedColor = System.Drawing.Color.Black;
             this.btnPrint.Radius = 6;
-            this.btnPrint.Size = new System.Drawing.Size(267, 59);
+            this.btnPrint.Size = new System.Drawing.Size(200, 48);
             this.btnPrint.TabIndex = 65;
             this.btnPrint.Text = "PRINT";
             this.btnPrint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(862, 504);
+            this.gunaLabel1.Location = new System.Drawing.Point(646, 410);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(78, 23);
+            this.gunaLabel1.Size = new System.Drawing.Size(64, 19);
             this.gunaLabel1.TabIndex = 66;
             this.gunaLabel1.Text = "BẢO VỆ: ";
             // 
@@ -180,9 +184,10 @@ namespace GUI_Management
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(862, 557);
+            this.gunaLabel2.Location = new System.Drawing.Point(646, 453);
+            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(92, 23);
+            this.gunaLabel2.Size = new System.Drawing.Size(76, 19);
             this.gunaLabel2.TabIndex = 67;
             this.gunaLabel2.Text = "THỢ SỬA: ";
             // 
@@ -190,9 +195,10 @@ namespace GUI_Management
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(862, 608);
+            this.gunaLabel3.Location = new System.Drawing.Point(646, 494);
+            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(94, 23);
+            this.gunaLabel3.Size = new System.Drawing.Size(77, 19);
             this.gunaLabel3.TabIndex = 68;
             this.gunaLabel3.Text = "THỢ RỬA: ";
             // 
@@ -200,46 +206,51 @@ namespace GUI_Management
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(862, 663);
+            this.gunaLabel4.Location = new System.Drawing.Point(646, 539);
+            this.gunaLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(112, 23);
+            this.gunaLabel4.Size = new System.Drawing.Size(92, 19);
             this.gunaLabel4.TabIndex = 69;
             this.gunaLabel4.Text = "NHÂN VIÊN: ";
             // 
             // txtBV
             // 
-            this.txtBV.Location = new System.Drawing.Point(992, 506);
+            this.txtBV.Location = new System.Drawing.Point(744, 411);
+            this.txtBV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBV.Name = "txtBV";
-            this.txtBV.Size = new System.Drawing.Size(181, 22);
+            this.txtBV.Size = new System.Drawing.Size(137, 20);
             this.txtBV.TabIndex = 70;
             // 
             // txtTS
             // 
-            this.txtTS.Location = new System.Drawing.Point(992, 559);
+            this.txtTS.Location = new System.Drawing.Point(744, 454);
+            this.txtTS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTS.Name = "txtTS";
-            this.txtTS.Size = new System.Drawing.Size(181, 22);
+            this.txtTS.Size = new System.Drawing.Size(137, 20);
             this.txtTS.TabIndex = 71;
             // 
             // txtTR
             // 
-            this.txtTR.Location = new System.Drawing.Point(992, 610);
+            this.txtTR.Location = new System.Drawing.Point(744, 496);
+            this.txtTR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTR.Name = "txtTR";
-            this.txtTR.Size = new System.Drawing.Size(181, 22);
+            this.txtTR.Size = new System.Drawing.Size(137, 20);
             this.txtTR.TabIndex = 72;
             // 
             // txtNV
             // 
-            this.txtNV.Location = new System.Drawing.Point(992, 662);
+            this.txtNV.Location = new System.Drawing.Point(744, 538);
+            this.txtNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNV.Name = "txtNV";
-            this.txtNV.Size = new System.Drawing.Size(181, 22);
+            this.txtNV.Size = new System.Drawing.Size(137, 20);
             this.txtNV.TabIndex = 73;
             // 
             // fStaticLuong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(1185, 707);
+            this.ClientSize = new System.Drawing.Size(889, 574);
             this.Controls.Add(this.txtNV);
             this.Controls.Add(this.txtTR);
             this.Controls.Add(this.txtTS);
@@ -252,6 +263,7 @@ namespace GUI_Management
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fStaticLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fStaticLuong";
