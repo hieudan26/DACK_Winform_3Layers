@@ -191,6 +191,7 @@ namespace GUI_Management
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            Global.MyTimer2.Close();
             this.Close();
         }
 

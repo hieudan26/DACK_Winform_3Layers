@@ -17,6 +17,7 @@ namespace BUS_Management
         ////0_Bảo Vệ //1_Thợ Sửa //2_Thợ Rửa //3_Nhân viên //4_All //5_Leaderbv //6_Leaderts //7_leadertr //8_leadernv
         public static int GlobalEmployeeType { get; private set; }
         public static System.Timers.Timer MyTimer = new System.Timers.Timer();
+        public static System.Timers.Timer MyTimer2 = new System.Timers.Timer();
         public static int check = 0;
         public static DateTime TimeLogin;
         public static SalaryBUS salaryBUS = new SalaryBUS();
@@ -35,9 +36,9 @@ namespace BUS_Management
         {
             //Ở đây set Interval để tính thời gian bn + lương 1 lần 1000 = 1s
             MessageBox.Show("Bắt đầu tính giờ làm");
-            MyTimer.Interval = (60000);
-            MyTimer.Elapsed += new ElapsedEventHandler(MyTimeCongLuong);
-            MyTimer.Start();
+            MyTimer2.Interval = (60000);
+            MyTimer2.Elapsed += new ElapsedEventHandler(MyTimeCongLuong);
+            MyTimer2.Start();
 
         }
         public static int getCaNowGlobal()
